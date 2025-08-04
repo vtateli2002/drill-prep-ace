@@ -12,6 +12,11 @@ export interface Question {
   unit?: string;
   hint?: string;
   explanation?: string;
+  learnContent?: {
+    concept: string;
+    formula: string;
+    example: string;
+  };
 }
 
 export interface UserProgress {

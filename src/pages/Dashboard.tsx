@@ -33,7 +33,7 @@ const Dashboard = () => {
   });
 
   const handleStartTrack = (track: Track) => {
-    navigate(`/practice/${track}`);
+    navigate(`/problems?track=${track}`);
   };
 
   const handleDailyChallenge = () => {

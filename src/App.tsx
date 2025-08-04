@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import Dashboard from "./pages/Dashboard";
 import Onboarding from "./pages/Onboarding";
 import PracticeMode from "./pages/PracticeMode";
+import Problems from "./pages/Problems";
+import QuestionView from "./pages/QuestionView";
 import Library from "./pages/Library";
 import NotFound from "./pages/NotFound";
 
@@ -23,6 +25,8 @@ const App = () => (
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/onboarding" element={<Onboarding />} />
           <Route path="/practice/:track" element={<PracticeMode />} />
+          <Route path="/problems" element={<Problems />} />
+          <Route path="/question/:questionId" element={<QuestionView />} />
           <Route path="/library" element={<Library />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
