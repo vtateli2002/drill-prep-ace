@@ -23,6 +23,9 @@ const QuestionView = () => {
   const [showHint, setShowHint] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
+  const [attemptCount, setAttemptCount] = useState(0);
+  const [hintUsed, setHintUsed] = useState(false);
+  const [finalXP, setFinalXP] = useState(0);
 
   useEffect(() => {
     if (questionId) {
@@ -31,29 +34,68 @@ const QuestionView = () => {
     }
   }, [questionId]);
 
+  const calculateXP = (baseXP: number, attempts: number, usedHint: boolean) => {
+    let xp = baseXP;
+    
+    // Reduce XP for wrong attempts
+    if (attempts > 0) {
+      const reductions = [0.2, 0.4, 0.6, 0.8];
+      const reduction = reductions[Math.min(attempts - 1, 3)];
+      xp *= (1 - reduction);
+    }
+    
+    // Reduce XP for using hint
+    if (usedHint) {
+      xp *= 0.5;
+    }
+    
+    return Math.round(xp);
+  };
+
   const handleSubmit = () => {
-    if (!currentQuestion || !userAnswer || isSubmitted) return;
+    if (!currentQuestion || !userAnswer) return;
 
     const numericAnswer = parseFloat(userAnswer);
     const correct = Math.abs(numericAnswer - currentQuestion.answer) < 0.01;
+    const newAttemptCount = attemptCount + 1;
     
+    setAttemptCount(newAttemptCount);
     setIsCorrect(correct);
-    setIsSubmitted(true);
     
     if (correct) {
-      const xpEarned = XP_VALUES[currentQuestion.difficulty];
+      const baseXP = XP_VALUES[currentQuestion.difficulty];
+      const earnedXP = calculateXP(baseXP, attemptCount, hintUsed);
+      setFinalXP(earnedXP);
+      setIsSubmitted(true);
+      
       toast({
         title: "Correct! 🎉",
-        description: `You earned ${xpEarned} XP`,
+        description: `You earned ${earnedXP} XP`,
         className: "border-success",
       });
     } else {
-      toast({
-        title: "Not quite right",
-        description: "Check the explanation or try again",
-        variant: "destructive",
-      });
+      if (newAttemptCount >= 4) {
+        setIsSubmitted(true);
+        setFinalXP(0);
+        toast({
+          title: "Out of attempts",
+          description: "You've used all 4 attempts. XP = 0",
+          variant: "destructive",
+        });
+      } else {
+        const attemptsLeft = 4 - newAttemptCount;
+        toast({
+          title: "Not quite right",
+          description: `${attemptsLeft} attempts remaining`,
+          variant: "destructive",
+        });
+      }
     }
+  };
+
+  const handleHint = () => {
+    setShowHint(true);
+    setHintUsed(true);
   };
 
   const handleReset = () => {
@@ -61,6 +103,40 @@ const QuestionView = () => {
     setIsSubmitted(false);
     setIsCorrect(null);
     setShowHint(false);
+    setAttemptCount(0);
+    setHintUsed(false);
+    setFinalXP(0);
+  };
+
+  const getNextQuestion = () => {
+    if (!currentQuestion) return null;
+    const currentIndex = QUESTIONS.findIndex(q => q.id === currentQuestion.id);
+    const nextInTrack = QUESTIONS.find((q, index) => 
+      index > currentIndex && q.track === currentQuestion.track
+    );
+    return nextInTrack;
+  };
+
+  const handleNextQuestion = () => {
+    const nextQuestion = getNextQuestion();
+    if (nextQuestion) {
+      navigate(`/question/${nextQuestion.id}`);
+      // Reset state for new question
+      setUserAnswer('');
+      setIsSubmitted(false);
+      setIsCorrect(null);
+      setShowHint(false);
+      setAttemptCount(0);
+      setHintUsed(false);
+      setFinalXP(0);
+    } else {
+      // Show completion modal
+      toast({
+        title: "🎉 Track Completed!",
+        description: `Congratulations! You've completed all ${TRACK_NAMES[currentQuestion.track]} questions!`,
+        className: "border-success",
+      });
+    }
   };
 
   const getDifficultyColor = (difficulty: string) => {
@@ -227,8 +303,8 @@ const QuestionView = () => {
                       </Button>
                       <Button
                         variant="outline"
-                        onClick={() => setShowHint(true)}
-                        disabled={showHint}
+                        onClick={handleHint}
+                        disabled={showHint || attemptCount >= 4}
                       >
                         <Lightbulb size={16} />
                       </Button>
@@ -245,9 +321,15 @@ const QuestionView = () => {
                           {isCorrect ? 'Correct!' : `Correct answer: ${currentQuestion.answer}${currentQuestion.unit || ''}`}
                         </span>
                       </div>
-                      <Button variant="outline" onClick={handleReset}>
-                        Try Again
-                      </Button>
+                       {isCorrect ? (
+                         <Button onClick={handleNextQuestion}>
+                           Next Question
+                         </Button>
+                       ) : (
+                         <Button variant="outline" onClick={handleReset}>
+                           Try Again
+                         </Button>
+                       )}
                     </>
                   )}
                 </div>
