@@ -60,8 +60,10 @@ const Leaderboard = () => {
     }
   };
 
-  // Set up real-time subscription
+  // Set up real-time subscription with debouncing
   useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+    
     const channel = supabase
       .channel('leaderboard_updates')
       .on(
@@ -72,15 +74,20 @@ const Leaderboard = () => {
           table: 'profiles'
         },
         () => {
-          fetchLeaderboard();
+          // Debounce the refresh to prevent constant updates
+          clearTimeout(timeoutId);
+          timeoutId = setTimeout(() => {
+            fetchLeaderboard();
+          }, 2000); // Wait 2 seconds before refreshing
         }
       )
       .subscribe();
 
     return () => {
+      clearTimeout(timeoutId);
       supabase.removeChannel(channel);
     };
-  }, [updateAllUserTitles]);
+  }, []);
 
   if (loading) {
     return (
