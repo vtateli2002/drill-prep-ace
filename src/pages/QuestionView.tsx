@@ -308,14 +308,7 @@ const QuestionView = () => {
                               📘 Concept
                             </h4>
                             <div className="text-base text-foreground leading-relaxed">
-                              {currentQuestion.learnContent.concept.split(/(\b(?:Accounts Receivable|A\/R|accounts receivable|deferred revenue|revenue|accrual accounting|cash flows|assets|liabilities|Gross Profit|gross profit|Current Ratio|current ratio|liquidity)\b)/gi).map((part, index) => {
-                                const isKeyword = /^(Accounts Receivable|A\/R|accounts receivable|deferred revenue|revenue|accrual accounting|cash flows|assets|liabilities|Gross Profit|gross profit|Current Ratio|current ratio|liquidity)$/i.test(part);
-                                return isKeyword ? (
-                                  <span key={index} className="font-bold text-white">{part}</span>
-                                ) : (
-                                  <span key={index}>{part}</span>
-                                );
-                              })}
+                              {currentQuestion.learnContent.concept}
                             </div>
                           </CardContent>
                         </Card>
@@ -327,19 +320,8 @@ const QuestionView = () => {
                               🧮 Formula
                             </h4>
                             <div className="bg-muted/50 rounded-lg p-4 border border-success/20">
-                              <div className="text-base font-mono text-foreground leading-relaxed">
-                                {currentQuestion.learnContent.formula.split(/(\n|=|÷|\+|\-|\×|Revenue|COGS|Current Assets|Current Liabilities|Gross Profit)/gi).map((part, index) => {
-                                  if (part === '\n') return <br key={index} />;
-                                  const isOperator = /^(=|÷|\+|\-|\×)$/.test(part);
-                                  const isKeyword = /^(Revenue|COGS|Current Assets|Current Liabilities|Gross Profit)$/i.test(part);
-                                  return isOperator ? (
-                                    <span key={index} className="font-bold text-white mx-1">{part}</span>
-                                  ) : isKeyword ? (
-                                    <span key={index} className="font-bold text-white">{part}</span>
-                                  ) : (
-                                    <span key={index}>{part}</span>
-                                  );
-                                })}
+                              <div className="text-base font-mono text-foreground leading-relaxed whitespace-pre-line">
+                                {currentQuestion.learnContent.formula}
                               </div>
                             </div>
                           </CardContent>
@@ -358,16 +340,7 @@ const QuestionView = () => {
                                   className="bg-muted/30 rounded-lg p-3 border border-success/20"
                                 >
                                   <div className="text-base text-foreground leading-normal">
-                                    {example.split(/(\$[\d,]+|→|=|Deferred Revenue|deferred revenue|Revenue \+ A\/R|revenue \+ A\/R|Cash \+ Revenue|cash \+ revenue|Revenue|COGS|Current Assets|Current Liabilities|Gross Profit|Current Ratio)/gi).map((part, partIndex) => {
-                                      const isMoney = /^\$[\d,]+$/.test(part);
-                                      const isOperator = /^(→|=)$/.test(part);
-                                      const isKeyword = /^(Deferred Revenue|deferred revenue|Revenue \+ A\/R|revenue \+ A\/R|Cash \+ Revenue|cash \+ revenue|Revenue|COGS|Current Assets|Current Liabilities|Gross Profit|Current Ratio)$/i.test(part);
-                                      return isMoney || isOperator || isKeyword ? (
-                                        <span key={partIndex} className="font-bold text-white">{part}</span>
-                                      ) : (
-                                        <span key={partIndex}>{part}</span>
-                                      );
-                                    })}
+                                    {example}
                                   </div>
                                 </div>
                               ))}
