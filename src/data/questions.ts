@@ -609,5 +609,213 @@ export const QUESTIONS: Question[] = [
       formula: 'Pro Forma EPS = (Combined Earnings + Synergies + Financing Benefits) / Pro Forma Shares',
       example: 'Including $100M cost synergies and $20M interest savings can significantly improve deal economics'
     }
+  },
+  {
+    id: 'acc-easy-21',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Interest Coverage Ratio',
+    description: `A company reports the following data:
+
+Revenue: $35,000
+COGS: $20,000
+Operating Expenses: $3,000
+Interest Expense: $3,000
+
+What is its interest coverage ratio?`,
+    answer: 4,
+    unit: 'x',
+    hint: 'First find operating income, then divide by interest expense.',
+    explanation: 'Operating Income = Revenue - COGS - Operating Expenses = $35,000 - $20,000 - $3,000 = $12,000. Interest Coverage = Operating Income ÷ Interest Expense = $12,000 ÷ $3,000 = 4.0x',
+    learnContent: {
+      concept: 'The interest coverage ratio measures how well a company can meet its interest obligations using its operating profit. A higher number means stronger ability to pay.',
+      formula: 'Interest Coverage = Operating Income ÷ Interest Expense',
+      example: 'OpInc = $10K, Interest = $2K → Coverage = 5.0x\nOpInc = $8K, Interest = $4K → Coverage = 2.0x\nOpInc = $12K, Interest = $3K → Coverage = 4.0x'
+    }
+  },
+  {
+    id: 'acc-easy-22',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Basic Earnings Per Share (EPS)',
+    description: `A company has the following:
+
+Revenue: $60,000
+COGS: $30,000
+Operating Expenses: $10,000
+Interest Expense: $5,000
+Tax Rate: 25%
+Shares Outstanding: 5,000
+
+What is its earnings per share?`,
+    answer: 2.25,
+    hint: 'Calculate Net Income using tax rate, then divide by shares.',
+    explanation: 'OpInc = $60K - $30K - $10K = $20K. Pre-tax = $20K - $5K = $15K. Net Income = $15K × (1 - 0.25) = $11.25K. EPS = $11,250 ÷ 5,000 = 2.25',
+    learnContent: {
+      concept: 'EPS shows how much profit is available to each common share. It\'s a key profitability metric in financial analysis.',
+      formula: 'EPS = Net Income ÷ Shares Outstanding',
+      example: 'NI = $20K, Shares = 10K → EPS = 2.0\nNI = $15K, Shares = 5K → EPS = 3.0\nNI = $12K, Shares = 6K → EPS = 2.0'
+    }
+  },
+  {
+    id: 'acc-easy-23',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Net Change in Cash',
+    description: `You're reviewing a company's financials:
+
+Cash Flow from Operating Activities (CFO): $8,000
+Cash Flow from Investing Activities (CFI): -$2,000
+Cash Flow from Financing Activities (CFF): -$1,000
+
+What is the total net change in cash for the period?`,
+    answer: 5000,
+    unit: '$',
+    hint: 'Add CFO, CFI, and CFF to find the cash change.',
+    explanation: 'Net Cash = $8,000 - $2,000 - $1,000 = $5,000',
+    learnContent: {
+      concept: 'Net change in cash reflects how much cash a company gained or lost during a period from all three cash flow segments.',
+      formula: 'Net Cash Change = CFO + CFI + CFF',
+      example: '$12K + (-$4K) + (-$3K) = $5K\n$5K + (-$1K) + $1K = $5K\n$10K + (-$3K) + (-$2K) = $5K'
+    }
+  },
+  {
+    id: 'acc-easy-24',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Inventory Turnover Ratio',
+    description: `A business has:
+
+Beginning Inventory: $5,000
+Ending Inventory: $7,000
+COGS: $48,000
+
+What is its inventory turnover ratio?`,
+    answer: 8,
+    unit: 'x',
+    hint: 'Use average inventory between beginning and end, then divide COGS by it.',
+    explanation: 'Average Inventory = ($5,000 + $7,000) ÷ 2 = $6,000. Turnover = $48,000 ÷ $6,000 = 8.0x',
+    learnContent: {
+      concept: 'Inventory turnover tells how often a company sells and replaces inventory. A high turnover can indicate strong sales.',
+      formula: 'Turnover = COGS ÷ Average Inventory',
+      example: 'COGS = $30K; Avg Inv = $6K → 5.0x\nCOGS = $20K; Avg Inv = $4K → 5.0x\nCOGS = $60K; Avg Inv = $12K → 5.0x'
+    }
+  },
+  {
+    id: 'acc-easy-25',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Book Value of Equity',
+    description: `A company has the following balances:
+
+Cash: $10,000
+Accounts Receivable: $15,000
+Equipment: $30,000
+Accounts Payable: $5,000
+Short-term Debt: $10,000
+Long-term Debt: $20,000
+
+What is the company's book value of equity?`,
+    answer: 20000,
+    unit: '$',
+    hint: 'Assets minus liabilities gives equity.',
+    explanation: 'Total Assets = $10K + $15K + $30K = $55K. Total Liabilities = $5K + $10K + $20K = $35K. Equity = $55K - $35K = $20K',
+    learnContent: {
+      concept: 'Equity is what remains for shareholders after paying off liabilities. It\'s calculated from the balance sheet.',
+      formula: 'Equity = Assets - Liabilities',
+      example: 'A = $100K; L = $80K → E = $20K\nA = $60K; L = $40K → E = $20K\nA = $75K; L = $50K → E = $25K'
+    }
+  },
+  {
+    id: 'acc-easy-26',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Depreciation Tax Shield',
+    description: `A company has the following details for the year:
+
+Depreciation Expense: $6,000
+Tax Rate: 25%
+
+What is the value of the depreciation tax shield?`,
+    answer: 1500,
+    unit: '$',
+    hint: 'Multiply depreciation expense by tax rate.',
+    explanation: 'Tax Shield = $6,000 × 0.25 = $1,500',
+    learnContent: {
+      concept: 'Depreciation reduces taxable income, creating a "shield" that lowers taxes. This tax savings improves cash flow.',
+      formula: 'Depreciation Tax Shield = Depreciation × Tax Rate',
+      example: 'Dep = $8K, Tax Rate = 30% → Shield = $2.4K\nDep = $4K, Tax Rate = 25% → Shield = $1K\nDep = $10K, Tax Rate = 20% → Shield = $2K'
+    }
+  },
+  {
+    id: 'acc-easy-27',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Asset Turnover Ratio',
+    description: `A company generated $120,000 in revenue. It had total assets of $60,000 at the beginning of the year and $100,000 at the end of the year. What is the asset turnover ratio?`,
+    answer: 1.5,
+    unit: 'x',
+    hint: 'Use average total assets, then divide revenue by that number.',
+    explanation: 'Avg Assets = ($60K + $100K) ÷ 2 = $80K. Turnover = $120K ÷ $80K = 1.5x',
+    learnContent: {
+      concept: 'Asset turnover measures how efficiently a company uses assets to generate revenue.',
+      formula: 'Asset Turnover = Revenue ÷ Average Total Assets',
+      example: 'Rev = $100K, Avg Assets = $50K → 2.0x\nRev = $75K, Avg Assets = $75K → 1.0x\nRev = $60K, Avg Assets = $30K → 2.0x'
+    }
+  },
+  {
+    id: 'acc-easy-28',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Change in Deferred Revenue',
+    description: `A company receives $12,000 in cash from customers in Q1 for services it will deliver later. By the end of Q1, it has only provided $4,000 worth of services. What is the change in deferred revenue?`,
+    answer: 8000,
+    unit: '$',
+    hint: 'Cash received - revenue recognized = deferred revenue.',
+    explanation: 'Deferred Revenue = $12K - $4K = $8K',
+    learnContent: {
+      concept: 'Deferred revenue is a liability created when a company receives payment for goods/services it hasn\'t yet delivered.',
+      formula: 'Change in Deferred Revenue = Cash Collected - Revenue Recognized',
+      example: '$10K received, $2K delivered → Deferred = $8K\n$15K received, $5K delivered → Deferred = $10K\n$8K received, $4K delivered → Deferred = $4K'
+    }
+  },
+  {
+    id: 'acc-easy-29',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Dividend Payout Ratio',
+    description: `A company reported net income of $40,000 this year and paid $8,000 in dividends. What is the dividend payout ratio?`,
+    answer: 0.2,
+    hint: 'Divide dividends by net income.',
+    explanation: 'Payout = $8K ÷ $40K = 0.2 or 20%',
+    learnContent: {
+      concept: 'This ratio shows the proportion of earnings a company returns to shareholders as dividends.',
+      formula: 'Payout Ratio = Dividends ÷ Net Income',
+      example: 'NI = $50K, Div = $10K → 0.2\nNI = $40K, Div = $8K → 0.2\nNI = $100K, Div = $25K → 0.25'
+    }
+  },
+  {
+    id: 'acc-easy-30',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Working Capital Calculation',
+    description: `At year-end, a company reports the following balances:
+
+Accounts Receivable: $12,000
+Inventory: $18,000
+Prepaid Expenses: $2,000
+Accounts Payable: $15,000
+Accrued Expenses: $5,000
+
+What is the company's net working capital?`,
+    answer: 12000,
+    unit: '$',
+    hint: 'Use formula: (AR + Inventory + Prepaid) - (AP + Accrued)',
+    explanation: 'Current Assets = $12K + $18K + $2K = $32K. Current Liabilities = $15K + $5K = $20K. Net Working Capital = $32K - $20K = $12K',
+    learnContent: {
+      concept: 'Working capital measures a company\'s short-term liquidity. It represents assets available to pay current liabilities.',
+      formula: 'Net Working Capital = Current Assets - Current Liabilities',
+      example: 'CA = $50K, CL = $30K → WC = $20K\nCA = $60K, CL = $40K → WC = $20K\nCA = $45K, CL = $25K → WC = $20K'
+    }
   }
 ];
