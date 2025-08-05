@@ -8,47 +8,31 @@ import { Button } from '@/components/ui/button';
 import { Trophy, Zap, Target, Award, Loader2, User, LogOut } from 'lucide-react';
 import { useProfile } from '@/hooks/useProfile';
 import { useAuth } from '@/hooks/useAuth';
+import { useQuestions } from '@/hooks/useQuestions';
 import { BADGES, RANK_TITLES } from '@/types/leaderboard';
 
 const Profile = () => {
-  const { profile, loading } = useProfile();
+  const { profile, loading, calculatePercentile } = useProfile();
   const { signOut } = useAuth();
+  const [percentile, setPercentile] = useState<number>(50);
 
   const getRankIcon = (title: string) => {
     const config = RANK_TITLES[title as keyof typeof RANK_TITLES];
     return config ? config.emoji : '🎓';
   };
 
-  const getPercentile = () => {
-    // Simple calculation - in a real app this would be based on actual user rankings
-    if (!profile) return 50;
-    const level = profile.level;
-    if (level >= 50) return 99.9;
-    if (level >= 40) return 99;
-    if (level >= 30) return 95;
-    if (level >= 20) return 90;
-    if (level >= 10) return 80;
-    return 50;
-  };
+  // Get real badges from profile
+  const unlockedBadges = (profile?.badges || []).filter((badge: any) => badge.unlocked);
+  const lockedBadges = BADGES.filter(badge => 
+    !(profile?.badges || []).some((userBadge: any) => userBadge.id === badge.id && userBadge.unlocked)
+  );
 
-  // Mock badge unlocking logic - in real app this would be based on actual achievements
-  const checkBadgeUnlocked = (badge: any): boolean => {
-    if (!profile) return false;
-    
-    switch (badge.id) {
-      case 'technical-titan':
-        return profile.xp >= 5000;
-      case 'weekend-warrior':
-        return profile.streak >= 3;
-      case 'ten-day-tear':
-        return profile.streak >= 10;
-      default:
-        return Math.random() > 0.7; // Random unlocking for demo
+  // Calculate real percentile
+  useEffect(() => {
+    if (profile?.xp !== undefined) {
+      calculatePercentile(profile.xp).then(setPercentile);
     }
-  };
-
-  const unlockedBadges = BADGES.filter(badge => checkBadgeUnlocked(badge));
-  const lockedBadges = BADGES.filter(badge => !checkBadgeUnlocked(badge));
+  }, [profile?.xp, calculatePercentile]);
 
   const handleSignOut = async () => {
     await signOut();
@@ -117,10 +101,10 @@ const Profile = () => {
                     <div className="text-2xl font-bold text-foreground">{profile.level}</div>
                     <div className="text-sm text-muted-foreground">Level</div>
                   </div>
-                  <div className="bg-muted/50 rounded-lg p-3">
-                    <div className="text-2xl font-bold text-foreground">{getPercentile()}%</div>
-                    <div className="text-sm text-muted-foreground">Percentile</div>
-                  </div>
+                   <div className="bg-muted/50 rounded-lg p-3">
+                     <div className="text-2xl font-bold text-foreground">{percentile}%</div>
+                     <div className="text-sm text-muted-foreground">Percentile</div>
+                   </div>
                   <div className="bg-muted/50 rounded-lg p-3">
                     <div className="text-2xl font-bold text-foreground">{profile.xp.toLocaleString()}</div>
                     <div className="text-sm text-muted-foreground">Total XP</div>

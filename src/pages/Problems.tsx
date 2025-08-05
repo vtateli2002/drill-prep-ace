@@ -5,13 +5,28 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
-import { ChevronDown, Lightbulb } from 'lucide-react';
+import { ChevronDown, Lightbulb, CheckCircle, Loader2 } from 'lucide-react';
 import { Track, Difficulty, TRACK_NAMES, XP_VALUES } from '@/types/drill';
 import { QUESTIONS } from '@/data/questions';
+import { useQuestions } from '@/hooks/useQuestions';
+import { useAuth } from '@/hooks/useAuth';
 
 const Problems = () => {
   const navigate = useNavigate();
+  const { user } = useAuth();
+  const { isQuestionSolved, getQuestionXP, loading } = useQuestions();
   const [expandedQuestion, setExpandedQuestion] = useState<string | null>(null);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Navbar />
+        <div className="container mx-auto px-4 py-8 flex items-center justify-center">
+          <Loader2 className="h-8 w-8 animate-spin text-primary" />
+        </div>
+      </div>
+    );
+  }
 
   const getDifficultyColor = (difficulty: Difficulty) => {
     const colors = {
@@ -78,37 +93,47 @@ const Problems = () => {
                             {/* Question Row */}
                             <CollapsibleTrigger className="w-full">
                               <div className="flex items-center justify-between p-4 text-left">
-                                <div className="flex items-center space-x-4 flex-1">
-                                  <span className="text-base font-medium text-foreground">
-                                    📘 {question.title}
-                                  </span>
-                                  <Badge variant="outline" className="text-xs">
-                                    🏷️ {TRACK_NAMES[question.track]}
-                                  </Badge>
-                                  <Badge className={`${getDifficultyColor(question.difficulty)} text-xs`}>
-                                    💥 {question.difficulty.replace('-', ' ').toUpperCase()}
-                                  </Badge>
-                                </div>
-                                
-                                <div className="flex items-center space-x-4">
-                                  <span className="text-sm font-medium text-primary">
-                                    ⭐ +{XP_VALUES[question.difficulty]} XP
-                                  </span>
-                                  <Button
-                                    size="sm"
-                                    onClick={(e) => {
-                                      e.stopPropagation();
-                                      handleStartQuestion(question.id);
-                                    }}
-                                  >
-                                    ✅ Start
-                                  </Button>
-                                  <ChevronDown 
-                                    className={`w-4 h-4 text-muted-foreground transition-transform ${
-                                      expandedQuestion === question.id ? 'rotate-180' : ''
-                                    }`} 
-                                  />
-                                </div>
+                                 <div className="flex items-center space-x-4 flex-1">
+                                   {isQuestionSolved(question.id) && (
+                                     <CheckCircle className="w-5 h-5 text-green-500" />
+                                   )}
+                                   <span className="text-base font-medium text-foreground">
+                                     📘 {question.title}
+                                   </span>
+                                   <Badge variant="outline" className="text-xs">
+                                     🏷️ {TRACK_NAMES[question.track]}
+                                   </Badge>
+                                   <Badge className={`${getDifficultyColor(question.difficulty)} text-xs`}>
+                                     💥 {question.difficulty.replace('-', ' ').toUpperCase()}
+                                   </Badge>
+                                 </div>
+                                 
+                                 <div className="flex items-center space-x-4">
+                                   {isQuestionSolved(question.id) ? (
+                                     <span className="text-sm font-medium text-green-600">
+                                       ✅ +{getQuestionXP(question.id)} XP Earned
+                                     </span>
+                                   ) : (
+                                     <span className="text-sm font-medium text-primary">
+                                       ⭐ +{XP_VALUES[question.difficulty]} XP
+                                     </span>
+                                   )}
+                                   <Button
+                                     size="sm"
+                                     variant={isQuestionSolved(question.id) ? "outline" : "default"}
+                                     onClick={(e) => {
+                                       e.stopPropagation();
+                                       handleStartQuestion(question.id);
+                                     }}
+                                   >
+                                     {isQuestionSolved(question.id) ? "✅ Solved" : "📝 Start"}
+                                   </Button>
+                                   <ChevronDown 
+                                     className={`w-4 h-4 text-muted-foreground transition-transform ${
+                                       expandedQuestion === question.id ? 'rotate-180' : ''
+                                     }`} 
+                                   />
+                                 </div>
                               </div>
                             </CollapsibleTrigger>
                             

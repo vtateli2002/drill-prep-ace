@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import XPProgress from '@/components/XPProgress';
@@ -6,31 +6,46 @@ import TrackCard from '@/components/TrackCard';
 import RivalProgress from '@/components/RivalProgress';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Target, Calendar } from 'lucide-react';
+import { Target, Calendar, Loader2 } from 'lucide-react';
 import { Track, UserProgress, AIRival } from '@/types/drill';
+import { useProfile } from '@/hooks/useProfile';
+import { useAuth } from '@/hooks/useAuth';
 
 const Dashboard = () => {
   const navigate = useNavigate();
-  
-  // Mock data - would come from API/state management
-  const [userProgress] = useState<UserProgress>({
-    totalXP: 1250,
-    level: 3,
-    streak: 5,
-    trackProgress: {
-      accounting: { completed: 4, total: 10, xp: 300 },
-      valuation: { completed: 2, total: 8, xp: 150 },
-      lbo: { completed: 0, total: 12, xp: 0 },
-      ma: { completed: 1, total: 6, xp: 100 }
-    }
-  });
+  const { user } = useAuth();
+  const { profile, loading } = useProfile();
   
   const [aiRival] = useState<AIRival>({
     name: "FinanceBot",
-    totalXP: 1100,
+    totalXP: Math.max(0, (profile?.xp || 0) - 150 + Math.random() * 300),
     dailyXPGoal: 300,
     daysRemaining: 12
   });
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Navbar />
+        <div className="container mx-auto px-4 py-8 flex items-center justify-center">
+          <Loader2 className="h-8 w-8 animate-spin text-primary" />
+        </div>
+      </div>
+    );
+  }
+
+  if (!profile) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Navbar />
+        <div className="container mx-auto px-4 py-8">
+          <div className="text-center">
+            <p className="text-muted-foreground">Please complete your profile setup.</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   const handleStartTrack = (track: Track) => {
     navigate(`/problems?track=${track}`);
@@ -72,10 +87,10 @@ const Dashboard = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="space-y-4">
             <XPProgress 
-              currentXP={userProgress.totalXP} 
-              levelXP={2000} 
-              level={userProgress.level}
-              streak={userProgress.streak}
+              currentXP={profile.xp} 
+              levelXP={(profile.level + 1) * 100} 
+              level={profile.level}
+              streak={profile.streak}
             />
             
             <Card>
@@ -85,11 +100,11 @@ const Dashboard = () => {
               <CardContent>
                 <div className="grid grid-cols-2 gap-4 text-center">
                   <div>
-                    <div className="text-2xl font-bold text-primary">{userProgress.totalXP}</div>
+                    <div className="text-2xl font-bold text-primary">{profile.xp}</div>
                     <div className="text-sm text-muted-foreground">Total XP</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-primary">{userProgress.streak}</div>
+                    <div className="text-2xl font-bold text-primary">{profile.streak}</div>
                     <div className="text-sm text-muted-foreground">Day Streak</div>
                   </div>
                 </div>
@@ -97,20 +112,20 @@ const Dashboard = () => {
             </Card>
           </div>
           
-          <RivalProgress rival={aiRival} userXP={userProgress.totalXP} />
+          <RivalProgress rival={aiRival} userXP={profile.xp} />
         </div>
 
         {/* Tracks Section */}
         <div>
           <h2 className="text-2xl font-bold text-foreground mb-4">Your Tracks</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {Object.entries(userProgress.trackProgress).map(([track, progress]) => (
+            {Object.entries(profile.track_progress || {}).map(([track, progress]: [string, any]) => (
               <TrackCard
                 key={track}
                 track={track as Track}
-                completed={progress.completed}
-                total={progress.total}
-                xp={progress.xp}
+                completed={progress?.completed || 0}
+                total={progress?.total || 4}
+                xp={profile.difficulty_xp?.[track] || 0}
                 onStart={() => handleStartTrack(track as Track)}
               />
             ))}

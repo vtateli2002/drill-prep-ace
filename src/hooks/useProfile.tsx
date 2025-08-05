@@ -100,14 +100,32 @@ export const useProfile = () => {
   };
 
   const calculateRank = (level: number): string => {
-    // Simple rank calculation based on level
-    // This can be enhanced with actual percentile calculation
     if (level >= 50) return 'Partner';
     if (level >= 40) return 'Managing Director';
     if (level >= 30) return 'Vice President';
     if (level >= 20) return 'Associate';
     if (level >= 10) return 'Analyst';
     return 'Intern';
+  };
+
+  const calculatePercentile = async (currentXP: number): Promise<number> => {
+    try {
+      const { data, error } = await supabase
+        .from('profiles')
+        .select('xp')
+        .order('xp', { ascending: false });
+
+      if (error || !data) return 50;
+
+      const totalUsers = data.length;
+      const usersAbove = data.filter(user => user.xp > currentXP).length;
+      const percentile = Math.max(1, Math.round(((totalUsers - usersAbove) / totalUsers) * 100));
+      
+      return percentile;
+    } catch (error) {
+      console.error('Error calculating percentile:', error);
+      return 50;
+    }
   };
 
   useEffect(() => {
@@ -148,6 +166,7 @@ export const useProfile = () => {
     updateProfile,
     addXP,
     updateTrackProgress,
+    calculatePercentile,
     refetch: fetchProfile
   };
 };

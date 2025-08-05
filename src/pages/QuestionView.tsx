@@ -10,6 +10,8 @@ import { ArrowLeft, CheckCircle, XCircle, Lightbulb } from 'lucide-react';
 import { Question, XP_VALUES, TRACK_NAMES } from '@/types/drill';
 import { QUESTIONS } from '@/data/questions';
 import { useToast } from '@/hooks/use-toast';
+import { useQuestions } from '@/hooks/useQuestions';
+import { useAuth } from '@/hooks/useAuth';
 import ExcelUtility from '@/components/ExcelUtility';
 import NotesUtility from '@/components/NotesUtility';
 
@@ -17,6 +19,8 @@ const QuestionView = () => {
   const { questionId } = useParams<{ questionId: string }>();
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { user } = useAuth();
+  const { submitAnswer, isQuestionSolved } = useQuestions();
   
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
   const [userAnswer, setUserAnswer] = useState('');
@@ -26,6 +30,14 @@ const QuestionView = () => {
   const [attemptCount, setAttemptCount] = useState(0);
   const [hintUsed, setHintUsed] = useState(false);
   const [finalXP, setFinalXP] = useState(0);
+
+  // Check if question is already solved
+  useEffect(() => {
+    if (questionId && isQuestionSolved(questionId)) {
+      setIsSubmitted(true);
+      setIsCorrect(true);
+    }
+  }, [questionId, isQuestionSolved]);
 
   useEffect(() => {
     if (questionId) {
@@ -52,7 +64,7 @@ const QuestionView = () => {
     return Math.round(xp);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!currentQuestion || !userAnswer) return;
 
     const numericAnswer = parseFloat(userAnswer);
@@ -68,18 +80,25 @@ const QuestionView = () => {
       setFinalXP(earnedXP);
       setIsSubmitted(true);
       
+      // Submit to backend and award XP
+      await submitAnswer(currentQuestion.id, true, currentQuestion.difficulty, currentQuestion.track);
+      
       toast({
         title: "Correct! 🎉",
-        description: `You earned ${earnedXP} XP`,
+        description: `You earned XP and your progress has been saved!`,
         className: "border-success",
       });
     } else {
       if (newAttemptCount >= 4) {
         setIsSubmitted(true);
         setFinalXP(0);
+        
+        // Submit failed attempt to backend
+        await submitAnswer(currentQuestion.id, false, currentQuestion.difficulty, currentQuestion.track);
+        
         toast({
           title: "Out of attempts",
-          description: "You've used all 4 attempts. XP = 0",
+          description: "You've used all 4 attempts. No XP earned.",
           variant: "destructive",
         });
       } else {

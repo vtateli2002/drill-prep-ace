@@ -20,6 +20,7 @@ export type Database = {
           created_at: string
           difficulty_xp: Json | null
           id: string
+          is_bot: boolean | null
           level: number
           profile_pic: string | null
           rank: string
@@ -34,6 +35,7 @@ export type Database = {
           created_at?: string
           difficulty_xp?: Json | null
           id: string
+          is_bot?: boolean | null
           level?: number
           profile_pic?: string | null
           rank?: string
@@ -48,6 +50,7 @@ export type Database = {
           created_at?: string
           difficulty_xp?: Json | null
           id?: string
+          is_bot?: boolean | null
           level?: number
           profile_pic?: string | null
           rank?: string
@@ -59,12 +62,48 @@ export type Database = {
         }
         Relationships: []
       }
+      user_questions: {
+        Row: {
+          difficulty: string
+          id: string
+          question_id: string
+          solved_at: string
+          solved_correctly: boolean
+          track: string
+          user_id: string
+          xp_earned: number
+        }
+        Insert: {
+          difficulty: string
+          id?: string
+          question_id: string
+          solved_at?: string
+          solved_correctly?: boolean
+          track: string
+          user_id: string
+          xp_earned?: number
+        }
+        Update: {
+          difficulty?: string
+          id?: string
+          question_id?: string
+          solved_at?: string
+          solved_correctly?: boolean
+          track?: string
+          user_id?: string
+          xp_earned?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      update_ai_users_daily: {
+        Args: Record<PropertyKey, never>
+        Returns: undefined
+      }
     }
     Enums: {
       [_ in never]: never
