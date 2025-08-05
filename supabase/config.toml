@@ -27,3 +27,6 @@ verify_jwt = false
 
 [functions.update-rank-changes]
 verify_jwt = false
+
+[functions.randomize-dummy-names]
+verify_jwt = false

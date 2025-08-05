@@ -27,13 +27,16 @@ export interface UserProfile extends LeaderboardUser {
 }
 
 export const RANK_TITLES = {
-  'Partner': { threshold: 99.9, emoji: '👑' },
-  'Managing Director': { threshold: 99, emoji: '🏦' },
-  'Vice President': { threshold: 95, emoji: '📊' },
-  'Associate': { threshold: 90, emoji: '📈' },
-  'Analyst': { threshold: 80, emoji: '💼' },
-  'Intern': { threshold: 50, emoji: '🎓' },
-} as const;
+  'CEO': { xp: 0, emoji: '🥇' },
+  'CFO': { xp: 0, emoji: '🥈' },
+  'CIO': { xp: 0, emoji: '🥉' },
+  'Partner': { xp: 0, emoji: '👑' },
+  'Managing Director': { xp: 0, emoji: '🏦' },
+  'Vice President': { xp: 0, emoji: '📊' },
+  'Associate': { xp: 0, emoji: '📈' },
+  'Analyst': { xp: 0, emoji: '💼' },
+  'Intern': { xp: 0, emoji: '🎓' }
+};
 
 export const BADGES: Badge[] = [
   // Track-Based Badges

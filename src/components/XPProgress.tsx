@@ -9,7 +9,15 @@ interface XPProgressProps {
 }
 
 const XPProgress = ({ currentXP, levelXP, level, streak }: XPProgressProps) => {
-  const progress = (currentXP / levelXP) * 100;
+  // Calculate current level's total XP requirement and progress within level
+  const calculateLevelXP = (level: number) => (100 * level) + (level * level * 5);
+  
+  const totalXPForCurrentLevel = calculateLevelXP(level);
+  const totalXPForPreviousLevel = level > 1 ? calculateLevelXP(level - 1) : 0;
+  const xpInCurrentLevel = currentXP - totalXPForPreviousLevel;
+  const xpNeededForCurrentLevel = totalXPForCurrentLevel - totalXPForPreviousLevel;
+  
+  const progress = Math.min((xpInCurrentLevel / xpNeededForCurrentLevel) * 100, 100);
   
   return (
     <div className="bg-card border border-border rounded-lg p-4">
@@ -29,8 +37,8 @@ const XPProgress = ({ currentXP, levelXP, level, streak }: XPProgressProps) => {
       <Progress value={progress} className="mb-2" />
       
       <div className="flex justify-between text-xs text-muted-foreground">
-        <span>{currentXP.toLocaleString()} XP</span>
-        <span>{levelXP.toLocaleString()} XP</span>
+        <span>{xpInCurrentLevel.toLocaleString()} / {xpNeededForCurrentLevel.toLocaleString()} XP</span>
+        <span>Next: {(totalXPForCurrentLevel + calculateLevelXP(level + 1) - totalXPForCurrentLevel).toLocaleString()} XP</span>
       </div>
     </div>
   );

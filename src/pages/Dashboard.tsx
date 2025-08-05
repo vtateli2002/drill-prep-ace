@@ -12,6 +12,7 @@ import { Target, Calendar, Loader2, Bot } from 'lucide-react';
 import { Track, AIRival, TRACK_NAMES } from '@/types/drill';
 import { useProfile } from '@/hooks/useProfile';
 import { useAuth } from '@/hooks/useAuth';
+import { useLoginDailyChallenge } from '@/hooks/useLoginDailyChallenge';
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -20,6 +21,7 @@ const Dashboard = () => {
   const [showRivalModal, setShowRivalModal] = useState(false);
   const [showDailyChallengeModal, setShowDailyChallengeModal] = useState(false);
   const [hasShownLoginModal, setHasShownLoginModal] = useState(false);
+  const { shouldShowModal: shouldShowLoginChallenge, hideDailyChallengeModal } = useLoginDailyChallenge();
 
   // Create AI rival object from profile data
   const aiRival = profile ? {
@@ -90,6 +92,14 @@ const Dashboard = () => {
     setShowDailyChallengeModal(true);
   };
 
+  // Show daily challenge on login
+  useEffect(() => {
+    if (shouldShowLoginChallenge && profile) {
+      setShowDailyChallengeModal(true);
+      hideDailyChallengeModal();
+    }
+  }, [shouldShowLoginChallenge, profile]);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -123,7 +133,7 @@ const Dashboard = () => {
           <div className="space-y-4">
             <XPProgress 
               currentXP={profile.xp} 
-              levelXP={(profile.level + 1) * 100} 
+              levelXP={(100 * (profile.level + 1)) + (Math.pow(profile.level + 1, 2) * 5)} 
               level={profile.level}
               streak={profile.streak}
             />

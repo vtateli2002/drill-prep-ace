@@ -14,6 +14,8 @@ export interface SolvedQuestion {
   difficulty: string;
   track: string;
   solved_at: string;
+  attempt_count?: number;
+  max_attempts_reached?: boolean;
 }
 
 export const useQuestions = () => {
@@ -113,13 +115,21 @@ export const useQuestions = () => {
     if (!user || !profile) return false;
 
     try {
-      // Check if question was already solved
+      // Check if question was already solved correctly
       const existingAnswer = solvedQuestions.find(q => q.question_id === questionId);
       if (existingAnswer?.solved_correctly) {
         return false; // Already solved correctly, no XP awarded
       }
 
+      // Check attempt count - max 3 attempts
+      const currentAttempts = existingAnswer?.attempt_count || 0;
+      if (currentAttempts >= 3 && !isCorrect) {
+        return false; // Max attempts reached, no more XP possible
+      }
+
       const xpEarned = isCorrect ? XP_VALUES[difficulty as keyof typeof XP_VALUES] : 0;
+      const newAttemptCount = currentAttempts + 1;
+      const maxAttemptsReached = newAttemptCount >= 3 && !isCorrect;
 
       // Insert or update the question attempt
       const { error: insertError } = await supabase
@@ -131,7 +141,9 @@ export const useQuestions = () => {
           xp_earned: xpEarned,
           difficulty,
           track,
-          solved_at: new Date().toISOString()
+          solved_at: new Date().toISOString(),
+          attempt_count: newAttemptCount,
+          max_attempts_reached: maxAttemptsReached
         });
 
       if (insertError) throw insertError;

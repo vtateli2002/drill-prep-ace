@@ -71,19 +71,14 @@ export const useProfile = () => {
     if (!profile) return;
 
     const newXP = profile.xp + amount;
-    const newLevel = Math.floor(newXP / 100) + 1;
     const newDifficultyXP = {
       ...profile.difficulty_xp,
       [difficulty]: (profile.difficulty_xp[difficulty] || 0) + amount
     };
 
-    // Calculate new rank based on percentile
-    const newRank = calculateRank(newLevel);
-
+    // Update XP and difficulty XP - level will be calculated automatically by trigger
     await updateProfile({
       xp: newXP,
-      level: newLevel,
-      rank: newRank,
       difficulty_xp: newDifficultyXP
     });
   };
@@ -101,13 +96,9 @@ export const useProfile = () => {
     });
   };
 
-  const calculateRank = (level: number): string => {
-    if (level >= 50) return 'Partner';
-    if (level >= 40) return 'Managing Director';
-    if (level >= 30) return 'Vice President';
-    if (level >= 20) return 'Associate';
-    if (level >= 10) return 'Analyst';
-    return 'Intern';
+  const calculateXPForNextLevel = (currentLevel: number): number => {
+    // Incremental leveling: XP_required = 100 * level + (level ^ 2) * 5
+    return (100 * (currentLevel + 1)) + (Math.pow(currentLevel + 1, 2) * 5);
   };
 
   const calculatePercentile = async (currentXP: number): Promise<number> => {
@@ -169,6 +160,7 @@ export const useProfile = () => {
     addXP,
     updateTrackProgress,
     calculatePercentile,
+    calculateXPForNextLevel,
     refetch: fetchProfile
   };
 };

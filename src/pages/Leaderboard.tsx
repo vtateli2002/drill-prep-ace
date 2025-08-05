@@ -6,6 +6,7 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Trophy, Crown, Loader2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { RANK_TITLES } from '@/types/leaderboard';
+import { useDynamicTitles } from '@/hooks/useDynamicTitles';
 
 interface LeaderboardUser {
   id: string;
@@ -20,6 +21,7 @@ interface LeaderboardUser {
 const Leaderboard = () => {
   const [leaderboardData, setLeaderboardData] = useState<LeaderboardUser[]>([]);
   const [loading, setLoading] = useState(true);
+  const { updateAllUserTitles } = useDynamicTitles();
 
   const getRankIcon = (title: string) => {
     const config = RANK_TITLES[title as keyof typeof RANK_TITLES];
@@ -39,6 +41,10 @@ const Leaderboard = () => {
   const fetchLeaderboard = async () => {
     try {
       setLoading(true);
+      
+      // Update all user titles first
+      await updateAllUserTitles();
+      
       const { data, error } = await supabase
         .from('profiles')
         .select('id, username, xp, level, rank, profile_pic, rank_change')

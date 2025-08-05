@@ -610,13 +610,19 @@ export const LEADERBOARD_DATA: LeaderboardUser[] = RAW_LEADERBOARD_DATA.map((use
 }));
 
 function getRankTitle(rank: number, totalUsers: number): string {
-  const percentile = ((totalUsers - rank) / totalUsers) * 100;
+  // Special titles for top 3
+  if (rank === 1) return 'CEO';
+  if (rank === 2) return 'CFO';
+  if (rank === 3) return 'CIO';
   
-  for (const [title, config] of Object.entries(RANK_TITLES)) {
-    if (percentile >= config.threshold) {
-      return title;
-    }
-  }
+  // Calculate percentile (higher rank = lower percentile)
+  const percentile = (1.0 - (rank - 1.0) / totalUsers) * 100;
   
+  // Assign titles based on percentile
+  if (percentile >= 99.9) return 'Partner';
+  if (percentile >= 99) return 'Managing Director';
+  if (percentile >= 95) return 'Vice President';
+  if (percentile >= 90) return 'Associate';
+  if (percentile >= 80) return 'Analyst';
   return 'Intern';
 }
