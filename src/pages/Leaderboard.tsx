@@ -7,8 +7,6 @@ import { Trophy, Crown, Loader2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { RANK_TITLES } from '@/types/leaderboard';
 import { useDynamicTitles } from '@/hooks/useDynamicTitles';
-// Import to trigger dummy user population
-import '@/utils/populateDummyUsers';
 
 interface LeaderboardUser {
   id: string;
@@ -44,8 +42,8 @@ const Leaderboard = () => {
     try {
       setLoading(true);
       
-      // Update all user titles first
-      await updateAllUserTitles();
+      // Update all user titles first, but don't wait for it to complete
+      updateAllUserTitles().catch(console.error);
       
       const { data, error } = await supabase
         .from('profiles')
@@ -57,39 +55,46 @@ const Leaderboard = () => {
       setLeaderboardData(data || []);
     } catch (error) {
       console.error('Error fetching leaderboard:', error);
+      setLeaderboardData([]); // Set empty array on error
     } finally {
-      setLoading(false);
+      setLoading(false); // Always set loading to false
     }
   };
 
-  // Set up real-time subscription with debouncing
+  // Set up real-time subscription with minimal refreshing
   useEffect(() => {
     let timeoutId: NodeJS.Timeout;
+    let isSubscribed = true;
     
     const channel = supabase
       .channel('leaderboard_updates')
       .on(
         'postgres_changes',
         {
-          event: '*',
+          event: 'UPDATE',
           schema: 'public',
           table: 'profiles'
         },
         () => {
+          if (!isSubscribed) return;
+          
           // Debounce the refresh to prevent constant updates
           clearTimeout(timeoutId);
           timeoutId = setTimeout(() => {
-            fetchLeaderboard();
-          }, 2000); // Wait 2 seconds before refreshing
+            if (isSubscribed && !loading) {
+              fetchLeaderboard();
+            }
+          }, 3000); // Wait 3 seconds before refreshing
         }
       )
       .subscribe();
 
     return () => {
+      isSubscribed = false;
       clearTimeout(timeoutId);
       supabase.removeChannel(channel);
     };
-  }, []);
+  }, [loading]);
 
   if (loading) {
     return (
