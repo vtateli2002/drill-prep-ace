@@ -41,13 +41,13 @@ export const QUESTIONS: Question[] = [
     title: 'Current Ratio',
     description: 'A business has:\n- Current Assets = $45,000\n- Current Liabilities = $15,000\n\nWhat is the Current Ratio?',
     answer: 3,
-    unit: '',
+    unit: 'x',
     hint: 'Current Ratio = Current Assets ÷ Current Liabilities',
-    explanation: 'Current Ratio = $45,000 ÷ $15,000 = 3.0',
+    explanation: 'Current Ratio = $45,000 ÷ $15,000 = 3.0x',
     learnContent: {
       concept: 'The Current Ratio tells us how well a company can pay off its short-term obligations using its short-term assets. A ratio over 1 means the company can meet its short-term liabilities. A high ratio can indicate strong liquidity, but too high might mean inefficient use of assets.',
       formula: 'Current Ratio = Current Assets ÷ Current Liabilities',
-      example: 'Assets = $80,000, Liabilities = $40,000 → Ratio = 2.0\nAssets = $25,000, Liabilities = $50,000 → Ratio = 0.5\nAssets = $100,000, Liabilities = $20,000 → Ratio = 5.0'
+      example: 'Assets = $80,000, Liabilities = $40,000 → Ratio = 2.0x\nAssets = $25,000, Liabilities = $50,000 → Ratio = 0.5x\nAssets = $100,000, Liabilities = $20,000 → Ratio = 5.0x'
     }
   },
 
