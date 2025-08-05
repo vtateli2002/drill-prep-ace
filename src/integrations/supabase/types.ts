@@ -100,8 +100,10 @@ export type Database = {
       }
       user_questions: {
         Row: {
+          attempt_count: number | null
           difficulty: string
           id: string
+          max_attempts_reached: boolean | null
           question_id: string
           solved_at: string
           solved_correctly: boolean
@@ -110,8 +112,10 @@ export type Database = {
           xp_earned: number
         }
         Insert: {
+          attempt_count?: number | null
           difficulty: string
           id?: string
+          max_attempts_reached?: boolean | null
           question_id: string
           solved_at?: string
           solved_correctly?: boolean
@@ -120,8 +124,10 @@ export type Database = {
           xp_earned?: number
         }
         Update: {
+          attempt_count?: number | null
           difficulty?: string
           id?: string
+          max_attempts_reached?: boolean | null
           question_id?: string
           solved_at?: string
           solved_correctly?: boolean
@@ -136,6 +142,18 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      calculate_level_from_xp: {
+        Args: { total_xp: number }
+        Returns: number
+      }
+      calculate_title_from_rank: {
+        Args: { user_rank: number; total_users: number }
+        Returns: string
+      }
+      calculate_xp_for_level: {
+        Args: { level_num: number }
+        Returns: number
+      }
       update_ai_users_daily: {
         Args: Record<PropertyKey, never>
         Returns: undefined
