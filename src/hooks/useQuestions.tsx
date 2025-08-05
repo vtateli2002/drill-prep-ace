@@ -53,41 +53,37 @@ export const useQuestions = () => {
 
     const correctAnswers = newSolvedQuestions.filter(q => q.solved_correctly);
     
-    // Get total questions available in database for dynamic badge logic
-    const { data: allQuestions } = await supabase
-      .from('user_questions')
-      .select('question_id, track, difficulty')
-      .limit(1000); // Get a large sample to understand available questions
-
-    // Count unique questions per track from database
-    const uniqueQuestions = [...new Set(allQuestions?.map(q => q.question_id) || [])];
+    // Import questions data to count actual available questions by track
+    const { QUESTIONS } = await import('@/data/questions');
+    
+    // Count actual questions per track from the questions data
     const questionsByTrack = {
-      accounting: uniqueQuestions.filter(id => id.startsWith('acc-')).length,
-      valuation: uniqueQuestions.filter(id => id.startsWith('val-')).length,
-      lbo: uniqueQuestions.filter(id => id.startsWith('lbo-')).length,
-      ma: uniqueQuestions.filter(id => id.startsWith('ma-')).length
+      accounting: QUESTIONS.filter(q => q.track === 'accounting').length,
+      valuation: QUESTIONS.filter(q => q.track === 'valuation').length,
+      lbo: QUESTIONS.filter(q => q.track === 'lbo').length,
+      ma: QUESTIONS.filter(q => q.track === 'ma').length
     };
     
     switch (badgeId) {
       case 'accounting-apprentice':
         // Must solve ALL accounting questions available
         const accountingSolved = correctAnswers.filter(q => q.track === 'accounting').length;
-        return accountingSolved >= Math.max(4, questionsByTrack.accounting);
+        return accountingSolved >= questionsByTrack.accounting;
       
       case 'valuation-strategist':
         // Must solve ALL valuation questions available
         const valuationSolved = correctAnswers.filter(q => q.track === 'valuation').length;
-        return valuationSolved >= Math.max(4, questionsByTrack.valuation);
+        return valuationSolved >= questionsByTrack.valuation;
       
       case 'lbo-operator':
         // Must solve ALL LBO questions available
         const lboSolved = correctAnswers.filter(q => q.track === 'lbo').length;
-        return lboSolved >= Math.max(4, questionsByTrack.lbo);
+        return lboSolved >= questionsByTrack.lbo;
       
       case 'ma-architect':
         // Must solve ALL M&A questions available
         const maSolved = correctAnswers.filter(q => q.track === 'ma').length;
-        return maSolved >= Math.max(4, questionsByTrack.ma);
+        return maSolved >= questionsByTrack.ma;
       
       case 'weekend-warrior':
         return currentProfile?.streak >= 3;
@@ -103,7 +99,7 @@ export const useQuestions = () => {
         const tracks = ['accounting', 'valuation', 'lbo', 'ma'];
         return tracks.every(track => {
           const trackSolved = correctAnswers.filter(q => q.track === track).length;
-          return trackSolved >= Math.max(4, questionsByTrack[track as keyof typeof questionsByTrack]);
+          return trackSolved >= questionsByTrack[track as keyof typeof questionsByTrack];
         });
       
       default:

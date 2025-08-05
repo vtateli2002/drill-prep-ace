@@ -33,7 +33,7 @@ const Problems = () => {
       'easy': 'bg-success text-success-foreground',
       'medium': 'bg-muted text-muted-foreground',
       'hard': 'bg-destructive text-destructive-foreground',
-      'interview-ready': 'bg-background text-foreground border-2 border-primary shadow-lg'
+      'interview_ready': 'bg-background text-foreground border-2 border-primary shadow-lg'
     };
     return colors[difficulty];
   };
@@ -44,7 +44,7 @@ const Problems = () => {
 
   // Group questions by track and difficulty in the specified order
   const tracks: Track[] = ['accounting', 'valuation', 'ma', 'lbo'];
-  const difficulties: Difficulty[] = ['easy', 'medium', 'hard', 'interview-ready'];
+  const difficulties: Difficulty[] = ['easy', 'medium', 'hard', 'interview_ready'];
 
   const groupedQuestions = tracks.map(track => ({
     track,

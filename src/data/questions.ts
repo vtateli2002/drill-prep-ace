@@ -59,7 +59,7 @@ export const QUESTIONS: Question[] = [
   {
     id: 'acc-interview-1',
     track: 'accounting',
-    difficulty: 'interview-ready',
+    difficulty: 'interview_ready',
     title: 'Advanced CFO Calculation',
     description: 'Adjust Net Income = $200 to Cash Flow from Operations given: D&A = $40, Change in Working Capital = -$25, Taxes Paid (vs. Tax Expense) difference = $15',
     answer: 250,
@@ -131,7 +131,7 @@ export const QUESTIONS: Question[] = [
   {
     id: 'val-interview-1',
     track: 'valuation',
-    difficulty: 'interview-ready',
+    difficulty: 'interview_ready',
     title: 'Implied Share Price Calculation',
     description: 'Calculate implied share price: Enterprise Value = $1000, Total Debt = $200, Cash = $50, Shares Outstanding = 10',
     answer: 85,
@@ -203,7 +203,7 @@ export const QUESTIONS: Question[] = [
   {
     id: 'lbo-interview-1',
     track: 'lbo',
-    difficulty: 'interview-ready',
+    difficulty: 'interview_ready',
     title: 'LBO IRR Calculation',
     description: 'Calculate IRR: Entry Investment = $800, Exit Value = $1400, Hold Period = 4 years, No interim cash flows',
     answer: 15.09,
@@ -275,7 +275,7 @@ export const QUESTIONS: Question[] = [
   {
     id: 'ma-interview-1',
     track: 'ma',
-    difficulty: 'interview-ready',
+    difficulty: 'interview_ready',
     title: 'Pro Forma EPS with Synergies',
     description: 'Calculate Pro Forma EPS: Combined Earnings = $300, Synergies = $50, Interest Savings = $10, Combined Shares = 100',
     answer: 3.6,

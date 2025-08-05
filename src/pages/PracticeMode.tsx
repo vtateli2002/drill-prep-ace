@@ -64,7 +64,7 @@ const PracticeMode = () => {
       {
         id: 'ma1',
         track: 'ma',
-        difficulty: 'interview-ready',
+        difficulty: 'interview_ready',
         title: 'Accretion/Dilution Analysis',
         description: 'Acquirer EPS: $2.00, Target EPS: $1.50, Exchange ratio: 0.8x. What is pro forma EPS?',
         answer: 1.95,
@@ -146,7 +146,7 @@ const PracticeMode = () => {
       'easy': 'bg-green-500',
       'medium': 'bg-yellow-500',
       'hard': 'bg-orange-500',
-      'interview-ready': 'bg-red-500'
+      'interview_ready': 'bg-red-500'
     };
     return colors[difficulty];
   };

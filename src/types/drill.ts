@@ -1,6 +1,6 @@
 export type Track = 'accounting' | 'valuation' | 'lbo' | 'ma';
 
-export type Difficulty = 'easy' | 'medium' | 'hard' | 'interview-ready';
+export type Difficulty = 'easy' | 'medium' | 'hard' | 'interview_ready';
 
 export interface Question {
   id: string;
@@ -47,7 +47,7 @@ export const XP_VALUES: Record<Difficulty, number> = {
   'easy': 10,
   'medium': 50,
   'hard': 100,
-  'interview-ready': 250
+  'interview_ready': 250
 };
 
 export const TRACK_NAMES: Record<Track, string> = {
