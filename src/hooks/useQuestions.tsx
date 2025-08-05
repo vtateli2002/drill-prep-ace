@@ -44,24 +44,47 @@ export const useQuestions = () => {
     }
   };
 
-  const checkBadgeUnlocked = (badgeId: string, currentBadges: any[], newSolvedQuestions: SolvedQuestion[], currentProfile: any): boolean => {
+  const checkBadgeUnlocked = async (badgeId: string, currentBadges: any[], newSolvedQuestions: SolvedQuestion[], currentProfile: any): Promise<boolean> => {
     // Don't re-award badges
     if (currentBadges.some((badge: any) => badge.id === badgeId)) return false;
 
     const correctAnswers = newSolvedQuestions.filter(q => q.solved_correctly);
     
+    // Get total questions available in database for dynamic badge logic
+    const { data: allQuestions } = await supabase
+      .from('user_questions')
+      .select('question_id, track, difficulty')
+      .limit(1000); // Get a large sample to understand available questions
+
+    // Count unique questions per track from database
+    const uniqueQuestions = [...new Set(allQuestions?.map(q => q.question_id) || [])];
+    const questionsByTrack = {
+      accounting: uniqueQuestions.filter(id => id.startsWith('acc-')).length,
+      valuation: uniqueQuestions.filter(id => id.startsWith('val-')).length,
+      lbo: uniqueQuestions.filter(id => id.startsWith('lbo-')).length,
+      ma: uniqueQuestions.filter(id => id.startsWith('ma-')).length
+    };
+    
     switch (badgeId) {
       case 'accounting-apprentice':
-        return correctAnswers.filter(q => q.track === 'accounting').length >= 4;
+        // Must solve ALL accounting questions available
+        const accountingSolved = correctAnswers.filter(q => q.track === 'accounting').length;
+        return accountingSolved >= Math.max(4, questionsByTrack.accounting);
       
       case 'valuation-strategist':
-        return correctAnswers.some(q => q.track === 'valuation' && q.difficulty === 'medium');
+        // Must solve ALL valuation questions available
+        const valuationSolved = correctAnswers.filter(q => q.track === 'valuation').length;
+        return valuationSolved >= Math.max(4, questionsByTrack.valuation);
       
       case 'lbo-operator':
-        return correctAnswers.some(q => q.track === 'lbo' && q.difficulty === 'interview-ready');
+        // Must solve ALL LBO questions available
+        const lboSolved = correctAnswers.filter(q => q.track === 'lbo').length;
+        return lboSolved >= Math.max(4, questionsByTrack.lbo);
       
       case 'ma-architect':
-        return correctAnswers.filter(q => q.track === 'ma' && (q.difficulty === 'hard' || q.difficulty === 'interview-ready')).length >= 10;
+        // Must solve ALL M&A questions available
+        const maSolved = correctAnswers.filter(q => q.track === 'ma').length;
+        return maSolved >= Math.max(4, questionsByTrack.ma);
       
       case 'weekend-warrior':
         return currentProfile?.streak >= 3;
@@ -73,10 +96,12 @@ export const useQuestions = () => {
         return currentProfile?.xp >= 5000;
       
       case 'all-track-master':
+        // Must complete ALL questions in ALL tracks
         const tracks = ['accounting', 'valuation', 'lbo', 'ma'];
-        return tracks.every(track => 
-          correctAnswers.some(q => q.track === track && q.difficulty === 'interview-ready')
-        );
+        return tracks.every(track => {
+          const trackSolved = correctAnswers.filter(q => q.track === track).length;
+          return trackSolved >= Math.max(4, questionsByTrack[track as keyof typeof questionsByTrack]);
+        });
       
       default:
         return false;
@@ -123,14 +148,15 @@ export const useQuestions = () => {
         }
 
         // Check for new badges
-        const updatedSolvedQuestions = await fetchSolvedQuestions();
+        await fetchSolvedQuestions();
         const newBadges = [...(profile.badges || [])];
         
-        BADGES.forEach(badge => {
-          if (checkBadgeUnlocked(badge.id, newBadges, solvedQuestions, profile)) {
+        for (const badge of BADGES) {
+          const isUnlocked = await checkBadgeUnlocked(badge.id, newBadges, solvedQuestions, profile);
+          if (isUnlocked) {
             newBadges.push({ ...badge, unlocked: true });
           }
-        });
+        }
 
         if (newBadges.length > (profile.badges || []).length) {
           await updateProfile({ badges: newBadges });

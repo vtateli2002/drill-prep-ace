@@ -14,6 +14,7 @@ interface LeaderboardUser {
   level: number;
   rank: string;
   profile_pic?: string;
+  rank_change?: number;
 }
 
 const Leaderboard = () => {
@@ -25,10 +26,10 @@ const Leaderboard = () => {
     return config ? config.emoji : '🎓';
   };
 
-  const getMovementColor = (movement: string) => {
-    if (movement.includes('⬆')) return 'text-green-400';
-    if (movement.includes('⬇')) return 'text-red-400';
-    return 'text-muted-foreground';
+  const getRankChangeDisplay = (change?: number) => {
+    if (!change || change === 0) return { text: '–', color: 'text-muted-foreground' };
+    if (change > 0) return { text: `🔼 +${change}`, color: 'text-green-500' };
+    return { text: `🔽 ${change}`, color: 'text-red-500' };
   };
 
   useEffect(() => {
@@ -40,7 +41,7 @@ const Leaderboard = () => {
       setLoading(true);
       const { data, error } = await supabase
         .from('profiles')
-        .select('id, username, xp, level, rank, profile_pic')
+        .select('id, username, xp, level, rank, profile_pic, rank_change')
         .order('xp', { ascending: false })
         .limit(20);
 
@@ -98,12 +99,12 @@ const Leaderboard = () => {
         <Card className="bg-card border-border">
           <div className="p-6">
             <div className="grid grid-cols-12 gap-4 pb-4 border-b border-border text-sm font-medium text-muted-foreground">
-              <div className="col-span-1">Rank</div>
-              <div className="col-span-4">Player</div>
-              <div className="col-span-2">Title</div>
-              <div className="col-span-2">Level</div>
-              <div className="col-span-2">XP</div>
-              <div className="col-span-1">Change</div>
+              <div className="col-span-1 text-left">Rank</div>
+              <div className="col-span-4 text-left">Player</div>
+              <div className="col-span-2 text-center">Title</div>
+              <div className="col-span-2 text-center">Level</div>
+              <div className="col-span-2 text-center">XP</div>
+              <div className="col-span-1 text-center">Change</div>
             </div>
 
             <div className="space-y-2 mt-4">
@@ -133,23 +134,23 @@ const Leaderboard = () => {
                     <span className="font-medium text-foreground">{user.username}</span>
                   </div>
 
-                  <div className="col-span-2 flex items-center">
+                  <div className="col-span-2 flex items-center justify-center">
                     <Badge variant="secondary" className="text-xs">
                       {getRankIcon(user.rank)} {user.rank}
                     </Badge>
                   </div>
 
-                  <div className="col-span-2 flex items-center">
+                  <div className="col-span-2 flex items-center justify-center">
                     <span className="text-foreground font-medium">{user.level}</span>
                   </div>
 
-                  <div className="col-span-2 flex items-center">
+                  <div className="col-span-2 flex items-center justify-center">
                     <span className="text-foreground font-medium">{user.xp.toLocaleString()}</span>
                   </div>
 
-                  <div className="col-span-1 flex items-center">
-                    <span className="text-sm font-medium text-muted-foreground">
-                      –
+                  <div className="col-span-1 flex items-center justify-center">
+                    <span className={`text-sm font-medium ${getRankChangeDisplay(user.rank_change).color}`}>
+                      {getRankChangeDisplay(user.rank_change).text}
                     </span>
                   </div>
                 </div>

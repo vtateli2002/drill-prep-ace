@@ -31,14 +31,26 @@ const Dashboard = () => {
       : 0
   } : null;
 
-  // Check if rival passed user for the first time
+  // Check if should show rival modal (once per day)
   useEffect(() => {
     if (profile && aiRival && !hasShownLoginModal) {
-      const isRivalAhead = aiRival.totalXP > profile.xp;
+      const lastModalDate = localStorage.getItem('lastRivalModalDate');
+      const today = new Date().toDateString();
       
-      // Show modal on login or when rival passes user
-      setShowRivalModal(true);
-      setHasShownLoginModal(true);
+      // Show modal once per day or when rival passes user for first time
+      const isRivalAhead = aiRival.totalXP > profile.xp;
+      const shouldShowModal = lastModalDate !== today || 
+        (isRivalAhead && localStorage.getItem('rivalEverAhead') !== 'true');
+      
+      if (shouldShowModal) {
+        setShowRivalModal(true);
+        setHasShownLoginModal(true);
+        localStorage.setItem('lastRivalModalDate', today);
+        
+        if (isRivalAhead) {
+          localStorage.setItem('rivalEverAhead', 'true');
+        }
+      }
     }
   }, [profile, aiRival, hasShownLoginModal]);
 
