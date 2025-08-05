@@ -254,19 +254,29 @@ const QuestionView = () => {
                 </TabsList>
                 
                 <TabsContent value="question" className="mt-4">
-                  <div className="space-y-4">
-                    <div className="bg-muted rounded-lg p-4">
-                      <p className="text-foreground leading-relaxed">{currentQuestion.description}</p>
+                  <div className="space-y-6">
+                    <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-lg p-6 border border-primary/10">
+                      <div className="prose prose-lg max-w-none">
+                        <div 
+                          className="text-foreground leading-relaxed text-lg"
+                          dangerouslySetInnerHTML={{
+                            __html: currentQuestion.description
+                              .replace(/\n/g, '<br />')
+                              .replace(/(\$[\d,]+)/g, '<span class="font-bold text-primary">$1</span>')
+                              .replace(/(Revenue|COGS|Cost of Goods Sold|Current Assets|Current Liabilities|EBITDA|Cash|Debt|Equity Value|Enterprise Value)/gi, '<span class="font-semibold text-accent-foreground">$1</span>')
+                          }}
+                        />
+                      </div>
                     </div>
                     
                     {showHint && currentQuestion.hint && (
-                      <Card className="border-warning/50 bg-warning/5">
-                        <CardContent className="p-4">
-                          <div className="flex items-start space-x-2">
-                            <Lightbulb size={16} className="text-warning mt-1" />
+                      <Card className="border-warning/50 bg-gradient-to-br from-warning/10 to-warning/5 shadow-lg">
+                        <CardContent className="p-5">
+                          <div className="flex items-start space-x-3">
+                            <Lightbulb size={20} className="text-warning mt-1 flex-shrink-0" />
                             <div>
-                              <p className="text-sm font-medium text-warning">Hint</p>
-                              <p className="text-sm text-muted-foreground">{currentQuestion.hint}</p>
+                              <p className="text-base font-semibold text-warning mb-2">💡 Hint</p>
+                              <p className="text-base text-foreground leading-relaxed">{currentQuestion.hint}</p>
                             </div>
                           </div>
                         </CardContent>
@@ -274,12 +284,15 @@ const QuestionView = () => {
                     )}
                     
                     {isSubmitted && currentQuestion.explanation && (
-                      <Card className="border-primary/20">
-                        <CardHeader>
-                          <CardTitle className="text-lg">Explanation</CardTitle>
+                      <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-lg">
+                        <CardHeader className="pb-3">
+                          <CardTitle className="text-xl text-success flex items-center gap-2">
+                            <CheckCircle size={20} />
+                            💡 Explanation
+                          </CardTitle>
                         </CardHeader>
                         <CardContent>
-                          <p className="text-muted-foreground">{currentQuestion.explanation}</p>
+                          <p className="text-base text-foreground leading-relaxed">{currentQuestion.explanation}</p>
                         </CardContent>
                       </Card>
                     )}
@@ -288,30 +301,77 @@ const QuestionView = () => {
                 
                 <TabsContent value="learn" className="mt-4">
                   {currentQuestion.learnContent ? (
-                    <div className="space-y-4">
-                      <Card>
-                        <CardContent className="p-4">
-                          <div className="space-y-3">
-                            <div>
-                              <h4 className="font-semibold text-foreground mb-2">📘 Concept</h4>
-                              <p className="text-muted-foreground text-sm">{currentQuestion.learnContent.concept}</p>
+                    <div className="space-y-6">
+                      <div className="space-y-6">
+                        {/* Concept Section */}
+                        <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10 shadow-md">
+                          <CardContent className="p-6">
+                            <h4 className="text-xl font-bold text-primary mb-4 flex items-center gap-2">
+                              📘 Concept
+                            </h4>
+                            <div 
+                              className="text-base text-foreground leading-relaxed"
+                              dangerouslySetInnerHTML={{
+                                __html: currentQuestion.learnContent.concept
+                                  .replace(/(Accounts Receivable|A\/R|revenue|accrual accounting|cash flows|assets|liabilities|Gross Profit|Current Ratio|liquidity)/gi, '<span class="font-semibold text-primary">$1</span>')
+                                  .replace(/\. /g, '.<br><br>')
+                              }}
+                            />
+                          </CardContent>
+                        </Card>
+
+                        {/* Formula Section */}
+                        <Card className="border-accent/30 bg-gradient-to-br from-accent/5 to-accent/10 shadow-md">
+                          <CardContent className="p-6">
+                            <h4 className="text-xl font-bold text-accent-foreground mb-4 flex items-center gap-2">
+                              🧮 Formula
+                            </h4>
+                            <div className="bg-muted/50 rounded-lg p-4 border border-accent/20">
+                              <div 
+                                className="text-base font-mono text-foreground leading-relaxed"
+                                dangerouslySetInnerHTML={{
+                                  __html: currentQuestion.learnContent.formula
+                                    .replace(/\n/g, '<br />')
+                                    .replace(/(=|÷|\+|\-|\×)/g, '<span class="text-accent font-bold mx-1">$1</span>')
+                                    .replace(/(Revenue|COGS|Assets|Liabilities|FCF|EBITDA|Cash|Debt)/gi, '<span class="font-semibold text-accent-foreground">$1</span>')
+                                }}
+                              />
                             </div>
-                            <div>
-                              <h4 className="font-semibold text-foreground mb-2">📊 Formula</h4>
-                              <p className="text-muted-foreground text-sm font-mono bg-muted p-2 rounded">
-                                {currentQuestion.learnContent.formula}
-                              </p>
+                          </CardContent>
+                        </Card>
+
+                        {/* Examples Section */}
+                        <Card className="border-secondary/30 bg-gradient-to-br from-secondary/5 to-secondary/10 shadow-md">
+                          <CardContent className="p-6">
+                            <h4 className="text-xl font-bold text-secondary-foreground mb-4 flex items-center gap-2">
+                              💡 Examples
+                            </h4>
+                            <div className="space-y-3">
+                              {currentQuestion.learnContent.example.split('\n').map((example, index) => (
+                                <div 
+                                  key={index}
+                                  className="bg-muted/30 rounded-lg p-4 border border-secondary/20"
+                                >
+                                  <div 
+                                    className="text-base text-foreground leading-relaxed"
+                                    dangerouslySetInnerHTML={{
+                                      __html: example
+                                        .replace(/(\$[\d,]+)/g, '<span class="font-bold text-primary">$1</span>')
+                                        .replace(/(→|=)/g, '<span class="text-secondary font-bold mx-2">$1</span>')
+                                        .replace(/(Revenue|COGS|Assets|Liabilities|Ratio|Gross Profit)/gi, '<span class="font-semibold text-secondary-foreground">$1</span>')
+                                    }}
+                                  />
+                                </div>
+                              ))}
                             </div>
-                            <div>
-                              <h4 className="font-semibold text-foreground mb-2">ℹ️ Example</h4>
-                              <p className="text-muted-foreground text-sm">{currentQuestion.learnContent.example}</p>
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
+                          </CardContent>
+                        </Card>
+                      </div>
                     </div>
                   ) : (
-                    <p className="text-muted-foreground">No learning content available for this question.</p>
+                    <div className="text-center py-8">
+                      <p className="text-base text-muted-foreground">No learning content available for this question.</p>
+                    </div>
                   )}
                 </TabsContent>
               </Tabs>
