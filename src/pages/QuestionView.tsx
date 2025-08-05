@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
+import BadgeUnlockedModal from '@/components/BadgeUnlockedModal';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -22,7 +23,7 @@ const QuestionView = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
   const { user } = useAuth();
-  const { submitAnswer, isQuestionSolved } = useQuestions();
+  const { submitAnswer, isQuestionSolved, newBadge, clearNewBadge } = useQuestions();
   const { completeChallengeQuestion } = useDailyChallenge();
   
   const isFromDailyChallenge = searchParams.get('challenge') === 'true';
@@ -399,6 +400,12 @@ const QuestionView = () => {
           </div>
         </div>
       </div>
+      
+      {/* Badge Unlocked Modal */}
+      <BadgeUnlockedModal 
+        badge={newBadge}
+        onClose={clearNewBadge}
+      />
     </div>
   );
 };

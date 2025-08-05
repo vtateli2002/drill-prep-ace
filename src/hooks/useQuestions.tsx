@@ -21,6 +21,7 @@ export const useQuestions = () => {
   const { profile, addXP, updateTrackProgress, updateProfile } = useProfile();
   const [solvedQuestions, setSolvedQuestions] = useState<SolvedQuestion[]>([]);
   const [loading, setLoading] = useState(true);
+  const [newBadge, setNewBadge] = useState<any>(null);
 
   const fetchSolvedQuestions = async () => {
     if (!user) {
@@ -155,6 +156,7 @@ export const useQuestions = () => {
           const isUnlocked = await checkBadgeUnlocked(badge.id, newBadges, solvedQuestions, profile);
           if (isUnlocked) {
             newBadges.push({ ...badge, unlocked: true });
+            setNewBadge(badge); // Show congratulations modal
           }
         }
 
@@ -215,6 +217,8 @@ export const useQuestions = () => {
     submitAnswer,
     isQuestionSolved,
     getQuestionXP,
-    refetch: fetchSolvedQuestions
+    refetch: fetchSolvedQuestions,
+    newBadge,
+    clearNewBadge: () => setNewBadge(null)
   };
 };

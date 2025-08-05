@@ -1,1 +1,29 @@
 project_id = "mvyhclgxuraxphrnjbsi"
+
+[auth]
+enabled = true
+email_confirm_changes = true
+email_double_confirm_changes = true
+
+[db]
+shadow_port = 54320
+pooler_port = 54321
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[functions.update-rival-xp]
+verify_jwt = false
+
+[functions.generate-ai-users]
+verify_jwt = false
+
+[functions.update-ai-leaderboard]
+verify_jwt = false
+
+[functions.update-rank-changes]
+verify_jwt = false
