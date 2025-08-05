@@ -1353,5 +1353,117 @@ What were the Capital Expenditures during the year?`,
       formula: 'CapEx = Ending PP&E - Beginning PP&E + Depreciation',
       example: 'Start $300K, End $330K, Dep $20K → CapEx = 50K\nStart $600K, End $590K, Dep $50K → CapEx = 40K'
     }
+  },
+  {
+    id: 'acc-easy-56',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Average Shareholders\' Equity',
+    description: `A company reports the following:
+
+Beginning Equity: $400,000
+Ending Equity: $500,000
+Net Income: $90,000
+Dividends Paid: $30,000
+
+What is the average shareholders' equity used for ROE calculation?`,
+    answer: 450000,
+    unit: '$',
+    hint: 'Average Equity = (Beginning Equity + Ending Equity) ÷ 2',
+    explanation: '($400,000 + $500,000) ÷ 2 = $450,000',
+    learnContent: {
+      concept: 'Average equity is used when calculating return-based metrics like ROE.',
+      formula: 'Average Shareholders\' Equity = (Beginning + Ending Equity) ÷ 2',
+      example: 'Begin $300K, End $500K → Avg = $400K\nBegin $600K, End $600K → Avg = $600K'
+    }
+  },
+  {
+    id: 'acc-easy-57',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Interest Coverage Ratio',
+    description: `A company has:
+
+Revenue: $1,000,000
+COGS: $400,000
+Operating Expenses: $300,000
+Depreciation: $50,000
+Interest Expense: $25,000
+
+What is the interest coverage ratio (EBIT / Interest Expense)?`,
+    answer: 10,
+    hint: 'EBIT = Revenue - COGS - Opex - Depreciation\nThen: EBIT ÷ Interest',
+    explanation: 'EBIT = $1,000,000 - $400,000 - $300,000 - $50,000 = $250,000. $250,000 ÷ $25,000 = 10',
+    learnContent: {
+      concept: 'Interest coverage shows how easily a firm can pay interest on its debt.',
+      formula: 'Interest Coverage = EBIT ÷ Interest Expense',
+      example: 'EBIT $200K, Interest $20K → Coverage = 10\nEBIT $100K, Interest $25K → Coverage = 4'
+    }
+  },
+  {
+    id: 'acc-easy-58',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Quick Ratio',
+    description: `A company has the following current assets and liabilities:
+
+Cash: $50,000
+Accounts Receivable: $60,000
+Inventory: $40,000
+Current Liabilities: $90,000
+
+What is the quick ratio?`,
+    answer: 1.22,
+    hint: 'Quick Ratio = (Cash + AR) ÷ Current Liabilities',
+    explanation: '($50,000 + $60,000) ÷ $90,000 = 1.22',
+    learnContent: {
+      concept: 'The quick ratio measures short-term liquidity excluding inventory.',
+      formula: 'Quick Ratio = (Cash + Accounts Receivable) ÷ Current Liabilities',
+      example: 'Cash $40K, AR $30K, CL $70K → QR = 1\nCash $60K, AR $40K, CL $80K → QR = 1.25'
+    }
+  },
+  {
+    id: 'acc-easy-59',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Cash Flow from Financing',
+    description: `A company reports the following financing activities:
+
+Issued Common Stock: $100,000
+Repaid Long-term Debt: $40,000
+Paid Dividends: $20,000
+
+What is the net cash flow from financing activities?`,
+    answer: 40000,
+    unit: '$',
+    hint: 'Add inflows, subtract outflows.',
+    explanation: '$100,000 - $40,000 - $20,000 = $40,000',
+    learnContent: {
+      concept: 'Cash from financing shows inflows/outflows from capital structure decisions.',
+      formula: 'Cash Flow from Financing = Stock Issuance - Debt Repayment - Dividends Paid',
+      example: 'Inflow $120K, Outflows $50K + $30K → Net = $40K\nInflow $80K, Outflows $20K → Net = $60K'
+    }
+  },
+  {
+    id: 'acc-easy-60',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Change in Working Capital Impact',
+    description: `Over Q3, a company saw the following changes:
+
+Accounts Receivable increased by $10,000
+Inventory decreased by $5,000
+Accounts Payable increased by $3,000
+
+What is the net change in working capital?`,
+    answer: 2000,
+    unit: '$',
+    hint: 'Change in WC = Increase in AR + Decrease in Inventory - Increase in AP',
+    explanation: '$10,000 (↑AR) - $5,000 (↓Inventory) - $3,000 (↑AP) = $2,000',
+    learnContent: {
+      concept: 'Working capital change impacts cash in indirect method cash flow statements.',
+      formula: 'Change in WC = ΔAR + ΔInventory - ΔAP',
+      example: 'ΔAR +$5K, ΔInv -$2K, ΔAP +$1K → Net = +2K\nΔAR -$4K, ΔInv +$3K, ΔAP -$1K → Net = -2K'
+    }
   }
 ];
