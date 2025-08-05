@@ -1555,5 +1555,95 @@ What is the annual amortization expense?`,
       formula: 'Annual Amortization = Cost / Useful Life\nNBV = Cost - (Amortization × Years)',
       example: '$60k, 5 years → $12k/year → NBV after 2 = $36k\n$100k, 10 years → $10k/year → NBV after 5 = $50k\n$90k, 9 years → $10k/year → NBV after 4 = $50k'
     }
+  },
+  {
+    id: 'acc-medium-67',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'DTL Adjustment After Tax Rate Change',
+    description: `A company has a Deferred Tax Liability (DTL) of $6,000 on its balance sheet, based on a historical corporate tax rate of 30%. The government has recently reduced the corporate tax rate to 25%.
+
+What is the new value of the DTL the company should report?`,
+    answer: 5000,
+    unit: '$',
+    hint: 'Think about how DTLs are tied to future tax payments — lower rates mean lower liabilities.',
+    explanation: 'DTL is reduced when tax rates drop. You multiply the underlying temporary difference by the new tax rate.',
+    learnContent: {
+      concept: 'Deferred Tax Liabilities (DTLs) represent taxes owed in the future due to temporary timing differences. When tax rates change, the value of those liabilities must be adjusted accordingly.',
+      formula: 'New DTL = Old DTL ÷ Old Tax Rate × New Tax Rate',
+      example: '$8,000 DTL at 40% → New tax rate is 30% → New DTL = 8,000 ÷ 0.40 × 0.30 = $6,000\n$10,000 DTL at 35% → New rate 25% → DTL = 10,000 ÷ 0.35 × 0.25 = $7,143\n$4,000 DTL at 28% → New rate 21% → DTL = 4,000 ÷ 0.28 × 0.21 = $3,000'
+    }
+  },
+  {
+    id: 'acc-medium-68',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Capitalized vs. Expensed Purchase Impact',
+    description: `A company buys a $120,000 machine. In Scenario A, they expense the full amount immediately. In Scenario B, they capitalize it and depreciate it straight-line over 4 years.
+
+What is the difference in pre-tax income in Year 1 between the two scenarios?`,
+    answer: 90000,
+    unit: '$',
+    hint: 'Compare full expensing vs. 1-year depreciation.',
+    explanation: 'Expensing the full $120,000 hits income immediately, while depreciation spreads cost. Year 1 difference = $120,000 - $30,000 = $90,000.',
+    learnContent: {
+      concept: 'Capitalizing means spreading the cost over time; expensing means taking the hit now. This impacts net income and taxes.',
+      formula: 'Difference = Immediate Expense - Depreciation in Year 1',
+      example: '$80,000 over 4 years → Difference = 80,000 - 20,000 = $60,000\n$100,000 over 5 years → Difference = 100,000 - 20,000 = $80,000\n$200,000 over 10 years → Difference = 200,000 - 20,000 = $180,000'
+    }
+  },
+  {
+    id: 'acc-medium-69',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Non-Cash Adjustment to Net Income',
+    description: `A company reports net income of $60,000. This includes $5,000 of interest expense and $15,000 in depreciation. The tax rate is 25%.
+
+What is the cash flow from operations using the indirect method, ignoring changes in working capital?`,
+    answer: 75000,
+    unit: '$',
+    hint: 'Start with net income, then add back non-cash charges.',
+    explanation: 'Cash Flow from Ops = Net Income + Depreciation = 60,000 + 15,000 = 75,000',
+    learnContent: {
+      concept: 'Non-cash charges like depreciation must be added back to reconcile net income with cash flow.',
+      formula: 'CFO = Net Income + Non-Cash Charges ± Working Capital Changes',
+      example: 'Net Income = 50k, Depreciation = 10k → CFO = 60k\nNet = 70k, Dep = 5k → CFO = 75k\nNet = 40k, Dep = 12k → CFO = 52k'
+    }
+  },
+  {
+    id: 'acc-medium-70',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Asset Impairment Effect on Financials',
+    description: `A company has equipment worth $100,000 on its books. After a poor performance year, it conducts an impairment test and writes the value down to $65,000.
+
+Assuming a 20% tax rate, what is the net income impact of this impairment?`,
+    answer: 28000,
+    unit: '$',
+    hint: 'Think about after-tax impact of a write-down.',
+    explanation: 'Impairment = $100,000 - $65,000 = $35,000. After-tax impact = $35,000 × (1 - 0.20) = $28,000',
+    learnContent: {
+      concept: 'An asset impairment is a non-cash charge that reduces net income after taxes.',
+      formula: 'After-Tax Impact = Write-down × (1 - Tax Rate)',
+      example: '50k write-down, 25% tax → Impact = 37.5k\n40k write-down, 30% tax → Impact = 28k\n20k write-down, 21% tax → Impact = 15.8k'
+    }
+  },
+  {
+    id: 'acc-medium-71',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Deferred Revenue Recognition Over Time',
+    description: `A company receives $120,000 in cash upfront for a 12-month software subscription. It starts delivering the service evenly starting in January.
+
+How much revenue is recognized by the end of April?`,
+    answer: 40000,
+    unit: '$',
+    hint: 'Revenue is recognized monthly.',
+    explanation: '$120,000 ÷ 12 = $10,000 per month. $10,000 × 4 months = $40,000',
+    learnContent: {
+      concept: 'Deferred revenue is a liability that\'s reduced as services are delivered.',
+      formula: 'Recognized Revenue = Total Contract ÷ Duration × Months Delivered',
+      example: '$60k for 6 months → 2 months = $20k\n$240k for 12 months → 6 months = $120k\n$36k for 3 months → 1 month = $12k'
+    }
   }
 ];
