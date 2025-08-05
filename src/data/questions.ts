@@ -162,6 +162,166 @@ export const QUESTIONS: Question[] = [
       example: 'Rev = $200K, COGS = $90K, OpEx = $60K → Margin = 25%\nRev = $250K, COGS = $100K, OpEx = $75K → Margin = 30%\nRev = $300K, COGS = $100K, OpEx = $120K → Margin = 26.7%'
     }
   },
+  {
+    id: 'acc-easy-11',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Ending Inventory Calculation',
+    description: 'A company starts the year with $5,000 in inventory. It purchases $12,000 in raw materials, and sells goods worth $13,500. What is the ending inventory, assuming all sales come from inventory?',
+    answer: 3500,
+    unit: '$',
+    hint: 'Ending Inventory = Beginning Inventory + Purchases - COGS',
+    explanation: 'Ending Inventory = $5,000 + $12,000 - $13,500 = $3,500',
+    learnContent: {
+      concept: 'Ending inventory is the unsold portion of inventory after accounting for purchases and goods sold.',
+      formula: 'Ending Inventory = Beginning Inventory + Purchases - COGS',
+      example: 'Begin = $2,000, Purchases = $5,000, COGS = $4,000 → End = $3,000\nBegin = $10,000, Purchases = $15,000, COGS = $18,000 → End = $7,000\nBegin = $3,000, Purchases = $8,000, COGS = $9,000 → End = $2,000'
+    }
+  },
+  {
+    id: 'acc-easy-12',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Shareholders\' Equity Breakdown',
+    description: 'A firm has the following on its balance sheet:\n\n- Cash: $10,000\n- Inventory: $20,000\n- Equipment: $70,000\n- Accounts Payable: $15,000\n- Notes Payable: $30,000\n- Accrued Expenses: $5,000\n\nWhat is the total Shareholders\' Equity?',
+    answer: 50000,
+    unit: '$',
+    hint: 'Equity = Total Assets - Total Liabilities',
+    explanation: 'Total Assets = $10,000 + $20,000 + $70,000 = $100,000. Total Liabilities = $15,000 + $30,000 + $5,000 = $50,000. Equity = $100,000 - $50,000 = $50,000',
+    learnContent: {
+      concept: 'Shareholders\' equity is what\'s left after subtracting liabilities from assets.',
+      formula: 'Equity = Total Assets - Total Liabilities\n= (Cash + Inventory + Equipment) - (Accounts Payable + Notes Payable + Accrued Expenses)',
+      example: 'Assets = $100K, Liabilities = $60K → Equity = $40K\nAssets = $80K, Liabilities = $30K → Equity = $50K\nAssets = $60K, Liabilities = $20K → Equity = $40K'
+    }
+  },
+  {
+    id: 'acc-easy-13',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Operating Income (OpInc)',
+    description: 'A company earns $18,000 in revenue. It incurs $7,000 in COGS, $4,000 in SG&A, and $2,000 in R&D expenses. What is the Operating Income (OpInc)?',
+    answer: 5000,
+    unit: '$',
+    hint: 'Operating Income = Revenue - COGS - SG&A - R&D',
+    explanation: 'Operating Income = $18,000 - $7,000 - $4,000 - $2,000 = $5,000',
+    learnContent: {
+      concept: 'Operating income (OpInc) is the company\'s profit from core operations before interest and taxes.',
+      formula: 'Operating Income = Revenue - COGS - SG&A - R&D',
+      example: 'Revenue = $10K, COGS + Opex = $7K → OpInc = $3K\nRevenue = $25K, COGS + Opex = $20K → OpInc = $5K\nRevenue = $30K, COGS + Opex = $26K → OpInc = $4K'
+    }
+  },
+  {
+    id: 'acc-easy-14',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Depreciation Impact on Net Income',
+    description: 'A company reports $2,000 of depreciation and has a tax rate of 30%. What is the net income impact?',
+    answer: -1400,
+    unit: '$',
+    hint: 'Net Income Impact = -Depreciation × (1 - Tax Rate)',
+    explanation: 'Net Income Impact = -$2,000 × (1 - 0.30) = -$2,000 × 0.70 = -$1,400',
+    learnContent: {
+      concept: 'Depreciation lowers taxable income and therefore reduces taxes, but it also reduces net income.',
+      formula: 'Net Income Impact = -Depreciation × (1 - Tax Rate)',
+      example: 'Dep = $1,000, Tax Rate = 25% → Impact = -$750\nDep = $3,000, Tax Rate = 20% → Impact = -$2,400\nDep = $1,500, Tax Rate = 30% → Impact = -$1,050'
+    }
+  },
+  {
+    id: 'acc-easy-15',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Change in Working Capital',
+    description: 'During Q1, a company sees A/R increase by $3,000, Inventory increase by $2,000, and A/P increase by $1,500. What is the change in Working Capital?',
+    answer: 3500,
+    unit: '$',
+    hint: 'Change in WC = ΔA/R + ΔInventory - ΔA/P',
+    explanation: 'Change in WC = $3,000 + $2,000 - $1,500 = $3,500',
+    learnContent: {
+      concept: 'Changes in working capital affect cash flow. Increases in A/R and Inventory use cash; increases in A/P free up cash.',
+      formula: 'Change in WC = ΔA/R + ΔInventory - ΔA/P',
+      example: 'ΔA/R = $2K, ΔInv = $1K, ΔA/P = $1K → ΔWC = $2K\nΔA/R = $1K, ΔInv = $0, ΔA/P = $500 → ΔWC = $500\nΔA/R = $3K, ΔInv = $2K, ΔA/P = $0 → ΔWC = $5K'
+    }
+  },
+  {
+    id: 'acc-easy-16',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Cash Flow from Operations (CFO)',
+    description: 'A company reports net income of $12,000. Depreciation is $2,000. Accounts receivable increased by $3,000, and accounts payable increased by $1,000. What is the Cash Flow from Operations?',
+    answer: 12000,
+    unit: '$',
+    hint: 'CFO = Net Income + Depreciation - Increase in A/R + Increase in A/P',
+    explanation: 'CFO = $12,000 + $2,000 - $3,000 + $1,000 = $12,000',
+    learnContent: {
+      concept: 'Cash Flow from Operations (CFO) adjusts net income for non-cash expenses and working capital changes.',
+      formula: 'CFO = Net Income + Depreciation - Increase in A/R + Increase in A/P',
+      example: 'NI = $10K, Dep = $1K, ΔA/R = -$2K, ΔA/P = $0 → CFO = $9K\nNI = $15K, Dep = $3K, ΔA/R = -$1K, ΔA/P = $2K → CFO = $19K\nNI = $8K, Dep = $2K, ΔA/R = $1K, ΔA/P = $500 → CFO = $9.5K'
+    }
+  },
+  {
+    id: 'acc-easy-17',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Debt-to-Equity Ratio with Embedded Data',
+    description: 'A company has the following on its balance sheet:\n\n- Short-term Debt: $5,000\n- Long-term Debt: $15,000\n- Common Stock: $10,000\n- Retained Earnings: $10,000\n\nWhat is the Debt-to-Equity ratio?',
+    answer: 1.0,
+    unit: 'x',
+    hint: 'Debt / Equity = (Short-term + Long-term Debt) / (Common Stock + Retained Earnings)',
+    explanation: 'Total Debt = $5,000 + $15,000 = $20,000. Total Equity = $10,000 + $10,000 = $20,000. D/E = $20,000 ÷ $20,000 = 1.0x',
+    learnContent: {
+      concept: 'The Debt-to-Equity ratio shows the proportion of a company\'s funding from debt vs. shareholder equity.',
+      formula: 'Debt / Equity = (Short-term + Long-term Debt) / (Common Stock + Retained Earnings)',
+      example: 'Debt = $30K, Equity = $60K → 0.5x\nDebt = $15K, Equity = $15K → 1.0x\nDebt = $20K, Equity = $10K → 2.0x'
+    }
+  },
+  {
+    id: 'acc-easy-18',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Net PPE Calculation',
+    description: 'A business owns equipment with an initial value of $50,000. After three years, it has accumulated $12,000 in depreciation. What is the net value of Property, Plant, and Equipment (PPE)?',
+    answer: 38000,
+    unit: '$',
+    hint: 'Net PPE = Gross PPE - Accumulated Depreciation',
+    explanation: 'Net PPE = $50,000 - $12,000 = $38,000',
+    learnContent: {
+      concept: 'Net PPE is the book value of fixed assets after subtracting depreciation.',
+      formula: 'Net PPE = Gross PPE - Accumulated Depreciation',
+      example: 'Gross = $80K, Dep = $30K → Net PPE = $50K\nGross = $40K, Dep = $10K → Net PPE = $30K\nGross = $25K, Dep = $5K → Net PPE = $20K'
+    }
+  },
+  {
+    id: 'acc-easy-19',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Ending Retained Earnings',
+    description: 'A company starts the year with $20,000 in retained earnings. It earns $5,000 in net income and pays $1,000 in dividends. What is the ending retained earnings?',
+    answer: 24000,
+    unit: '$',
+    hint: 'Ending RE = Beginning RE + Net Income - Dividends',
+    explanation: 'Ending RE = $20,000 + $5,000 - $1,000 = $24,000',
+    learnContent: {
+      concept: 'Retained earnings grow with profits and shrink with dividend payments.',
+      formula: 'Ending RE = Beginning RE + Net Income - Dividends',
+      example: 'RE = $10K, NI = $2K, Div = $500 → New RE = $11.5K\nRE = $15K, NI = $4K, Div = $2K → New RE = $17K\nRE = $50K, NI = $6K, Div = $1K → New RE = $55K'
+    }
+  },
+  {
+    id: 'acc-easy-20',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Gross Profit Margin with Realistic Breakdown',
+    description: 'Revenue is $25,000. COGS is $18,000. What is the gross margin percentage?',
+    answer: 28,
+    unit: '%',
+    hint: 'Gross Margin % = (Revenue - COGS) / Revenue × 100',
+    explanation: 'Gross Margin % = ($25,000 - $18,000) ÷ $25,000 × 100 = $7,000 ÷ $25,000 × 100 = 28%',
+    learnContent: {
+      concept: 'Gross margin percentage reflects how efficiently a company produces goods compared to what it earns.',
+      formula: 'Gross Margin % = (Revenue - COGS) / Revenue × 100',
+      example: 'Rev = $10K, COGS = $6K → 40%\nRev = $20K, COGS = $15K → 25%\nRev = $8K, COGS = $5K → 37.5%'
+    }
+  },
 
   // ACCOUNTING - Easy - BETA QUESTIONS
   {
