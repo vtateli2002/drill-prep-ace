@@ -1645,5 +1645,165 @@ How much revenue is recognized by the end of April?`,
       formula: 'Recognized Revenue = Total Contract ÷ Duration × Months Delivered',
       example: '$60k for 6 months → 2 months = $20k\n$240k for 12 months → 6 months = $120k\n$36k for 3 months → 1 month = $12k'
     }
+  },
+  {
+    id: 'acc-medium-67',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'DTA Reversal Timing',
+    description: `A company has a Deferred Tax Asset (DTA) of $12,000 related to net operating losses (NOLs), which can be used to offset taxable income over the next 3 years. If the company expects to utilize $3,000 of the DTA in Year 1, $5,000 in Year 2, and the remainder in Year 3, what is the DTA balance at the end of Year 2?`,
+    answer: 4000,
+    unit: '$',
+    hint: 'Subtract used portions of the DTA from the beginning balance year-by-year.',
+    explanation: 'Year 1 usage = $3,000\nYear 2 usage = $5,000\nTotal used = $8,000\nRemaining DTA = $12,000 − $8,000 = $4,000',
+    learnContent: {
+      concept: 'Deferred Tax Assets (DTAs) arise when a company overpays taxes or records losses that can be used to reduce future taxable income.',
+      formula: 'Remaining DTA = Initial DTA − ∑ Annual DTA usage',
+      example: 'Initial DTA = $10,000; used $4,000 in Y1 and $3,000 in Y2 → Remaining = $3,000\nDTA from NOLs = $5,000, used $1,000 per year for 5 years\nDTA = $20,000, used unevenly: $7,000, $6,000, then $4,000'
+    }
+  },
+  {
+    id: 'acc-medium-68',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Depreciation Method Impact on Earnings',
+    description: `A company purchases equipment for $90,000. Under straight-line depreciation over 3 years with no salvage value, it records $30,000 annually. Under an accelerated method, it depreciates $50,000 in Year 1, $30,000 in Year 2, and $10,000 in Year 3. What is the difference in pre-tax income between the two methods in Year 1?`,
+    answer: 20000,
+    unit: '$',
+    hint: 'Compare the Year 1 depreciation charges.',
+    explanation: 'Straight-line depreciation in Y1 = $30,000\nAccelerated depreciation in Y1 = $50,000\nHigher depreciation = Lower pre-tax income\nDifference = $50,000 − $30,000 = $20,000',
+    learnContent: {
+      concept: 'Accelerated depreciation lowers net income earlier, while straight-line smooths the impact.',
+      formula: 'Δ Pre-Tax Income = SL Depreciation − Accelerated Depreciation',
+      example: 'SL = 25K, Accelerated = 40K → Difference = 15K\nSL = 10K, Accelerated = 18K → Difference = 8K\nSL = 15K, Accelerated = 15K → Difference = 0'
+    }
+  },
+  {
+    id: 'acc-medium-69',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Capital Lease Liability Calculation',
+    description: `A company signs a capital lease requiring $5,000 annual payments over 4 years. The lease uses a 6% discount rate. Using the present value formula, calculate the initial lease liability recorded on the balance sheet at lease inception.`,
+    answer: 17237,
+    unit: '$',
+    hint: 'Use the PV of annuity formula for lease payments.',
+    explanation: 'PV = Pmt × [(1 − (1 + r)^−n) / r]\n= 5,000 × [(1 − (1.06)^−4) / 0.06] ≈ $17,237',
+    learnContent: {
+      concept: 'Capital leases create a liability equal to the present value of lease payments.',
+      formula: 'PV = Pmt × [(1 − (1 + r)^−n) / r]',
+      example: '$10,000/yr, 3 yrs, 5% → PV ≈ $27,231\n$2,000/yr, 5 yrs, 8% → PV ≈ $7,986\n$1,000/yr, 4 yrs, 10% → PV ≈ $3,170'
+    }
+  },
+  {
+    id: 'acc-medium-70',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Warranty Liability Accrual',
+    description: `A company sells $200,000 worth of products and expects 2% of them to require warranty repairs. Actual warranty claims during the year totaled $2,500. What is the ending warranty liability on the balance sheet?`,
+    answer: 1500,
+    unit: '$',
+    hint: 'Start with estimated expense, then subtract actual claims.',
+    explanation: 'Expected warranty = 2% × $200,000 = $4,000\nClaims = $2,500\nEnding liability = $4,000 − $2,500 = $1,500',
+    learnContent: {
+      concept: 'Warranty liabilities are estimated and adjusted for actual claims.',
+      formula: 'Ending Warranty Liability = Expected − Actual Claims',
+      example: 'Sales = $500K, 1% warranty, $3K used → $2K remaining\nSales = $300K, 2% expected, $4.5K used → $1.5K remaining\nSales = $100K, 5% expected, $2K used → $3K remaining'
+    }
+  },
+  {
+    id: 'acc-medium-71',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Impairment Loss Calculation',
+    description: `A company owns equipment with a carrying value of $40,000. Due to damage, the recoverable fair value is now $28,000. What impairment loss should the company recognize on its income statement?`,
+    answer: 12000,
+    unit: '$',
+    hint: 'Compare book value and fair value.',
+    explanation: 'Impairment = Book Value − Fair Value\n= $40,000 − $28,000 = $12,000',
+    learnContent: {
+      concept: 'Impairments occur when asset values drop below their book values.',
+      formula: 'Impairment = Book Value − Recoverable Value',
+      example: 'BV = $70K, FV = $60K → $10K impairment\nBV = $25K, FV = $20K → $5K impairment\nBV = $10K, FV = $12K → No impairment'
+    }
+  },
+  {
+    id: 'acc-medium-72',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Treasury Stock Repurchase Impact',
+    description: `A company repurchases 2,000 shares of its own stock at $15 per share. What is the total impact to shareholders' equity from this transaction?`,
+    answer: 30000,
+    unit: '$',
+    hint: 'Treasury stock reduces equity by the repurchase amount.',
+    explanation: 'Repurchase = 2,000 × $15 = $30,000',
+    learnContent: {
+      concept: 'Treasury stock is a contra-equity account that reduces equity.',
+      formula: 'Treasury Stock = Shares × Price',
+      example: '1,000 × $10 = $10,000\n500 × $20 = $10,000\n3,000 × $12 = $36,000'
+    }
+  },
+  {
+    id: 'acc-medium-73',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Allowance for Doubtful Accounts Adjustment',
+    description: `Beginning ADA = $5,000. During the year, the company writes off $2,000 in uncollectible AR and estimates $4,000 of new bad debt. What is the ending ADA balance?`,
+    answer: 7000,
+    unit: '$',
+    hint: 'Ending ADA = Beginning − Write-offs + New Estimates',
+    explanation: '= $5,000 − $2,000 + $4,000 = $7,000',
+    learnContent: {
+      concept: 'ADA reflects future expected AR that won\'t be collected.',
+      formula: 'Ending ADA = Beginning − Write-offs + Provision',
+      example: '$10K − $3K + $5K = $12K\n$4K − $1K + $2K = $5K\n$6K − $2K + $2K = $6K'
+    }
+  },
+  {
+    id: 'acc-medium-74',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Interest Expense on Amortizing Loan',
+    description: `A company takes a $100,000 loan at 8% annual interest. It pays $20,000 of principal at the end of Year 1. What is the interest expense for Year 2?`,
+    answer: 6400,
+    unit: '$',
+    hint: 'Use the remaining principal to calculate interest.',
+    explanation: 'Remaining principal = $100K − $20K = $80K\nInterest = 8% × $80K = $6,400',
+    learnContent: {
+      concept: 'Interest expense on amortizing debt is based on remaining principal.',
+      formula: 'Interest = Rate × Remaining Principal',
+      example: '$50K remaining, 10% → $5,000\n$80K remaining, 6% → $4,800\n$120K remaining, 5% → $6,000'
+    }
+  },
+  {
+    id: 'acc-medium-75',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Bad Debt Expense on AR Growth',
+    description: `A company's AR increased from $100K to $130K during the year. It estimates 4% of year-end AR is uncollectible. What bad debt expense should be recorded?`,
+    answer: 5200,
+    unit: '$',
+    hint: 'Ending ADA = 4% × $130K = $5,200',
+    explanation: 'ADA = 4% × $130K = $5,200\nThis is the expense for the current year if no prior ADA exists.',
+    learnContent: {
+      concept: 'Bad debt expense is matched to expected uncollectible AR.',
+      formula: 'Bad Debt = % Uncollectible × Ending AR',
+      example: 'AR = $50K, 5% → $2,500\nAR = $80K, 2% → $1,600\nAR = $200K, 1% → $2,000'
+    }
+  },
+  {
+    id: 'acc-medium-76',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Inventory Write-Down',
+    description: `Inventory has a book value of $45,000, but due to obsolescence, its net realizable value is $35,000. What inventory write-down should be recorded?`,
+    answer: 10000,
+    unit: '$',
+    hint: 'Write-down = Book value − NRV',
+    explanation: '= $45,000 − $35,000 = $10,000',
+    learnContent: {
+      concept: 'Inventory is written down when its market value drops below book value.',
+      formula: 'Write-Down = Book Value − NRV',
+      example: 'BV = $60K, NRV = $55K → $5K\nBV = $30K, NRV = $25K → $5K\nBV = $20K, NRV = $18K → $2K'
+    }
   }
 ];
