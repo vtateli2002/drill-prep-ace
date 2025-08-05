@@ -14,7 +14,6 @@ import { useToast } from '@/hooks/use-toast';
 import { useQuestions } from '@/hooks/useQuestions';
 import { useDailyChallenge } from '@/hooks/useDailyChallenge';
 import { useAuth } from '@/hooks/useAuth';
-import ExcelUtility from '@/components/ExcelUtility';
 import NotesUtility from '@/components/NotesUtility';
 
 const QuestionView = () => {
@@ -396,21 +395,11 @@ const QuestionView = () => {
             {/* Utility Tabs */}
             <Card className="flex-1">
               <CardHeader>
-                <Tabs defaultValue="notes" className="w-full">
-                  <TabsList className="grid w-full grid-cols-2">
-                    <TabsTrigger value="notes">🗒️ Notes</TabsTrigger>
-                    <TabsTrigger value="excel">📊 Excel</TabsTrigger>
-                  </TabsList>
-                  
-                  <TabsContent value="notes" className="mt-4">
-                    <NotesUtility />
-                  </TabsContent>
-                  
-                  <TabsContent value="excel" className="mt-4">
-                    <ExcelUtility />
-                  </TabsContent>
-                </Tabs>
+                <CardTitle>🗒️ Notes & Tools</CardTitle>
               </CardHeader>
+              <CardContent className="overflow-y-auto max-h-[calc(100vh-400px)]">
+                <NotesUtility />
+              </CardContent>
             </Card>
           </div>
         </div>
