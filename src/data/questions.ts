@@ -1242,5 +1242,116 @@ Assume all sales are made on credit. What is the DSO (Days Sales Outstanding)? U
       formula: 'DSO = (AR ÷ Revenue) × 365',
       example: 'AR $50K, Rev $600K → DSO = 30.4\nAR $80K, Rev $960K → DSO = 30.4\nAR $120K, Rev $1.2M → DSO = 36.5'
     }
+  },
+  {
+    id: 'acc-easy-51',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Net Working Capital',
+    description: `A company has the following current items on its balance sheet:
+
+Cash: $40,000
+Accounts Receivable: $60,000
+Inventory: $30,000
+Accounts Payable: $50,000
+Accrued Expenses: $20,000
+
+What is the company's Net Working Capital (NWC)?`,
+    answer: 60000,
+    unit: '$',
+    hint: 'NWC = (Cash + AR + Inventory) - (AP + Accrued Expenses)',
+    explanation: '($40,000 + $60,000 + $30,000) - ($50,000 + $20,000) = $60,000',
+    learnContent: {
+      concept: 'NWC measures short-term liquidity and operational efficiency.',
+      formula: 'NWC = Current Assets - Current Liabilities\nCurrent Assets = Cash + AR + Inventory\nCurrent Liabilities = AP + Accrued Expenses',
+      example: 'CA: 100K, CL: 40K → NWC = 60K\nCA: 90K, CL: 70K → NWC = 20K\nCA: 80K, CL: 100K → NWC = -20K'
+    }
+  },
+  {
+    id: 'acc-easy-52',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Ending Cash Balance',
+    description: `A company begins with $15,000 in cash. Over the period, it records:
+
+Operating Cash Flow: $10,000
+Investing Cash Flow: -$4,000
+Financing Cash Flow: $2,000
+
+What is the ending cash balance?`,
+    answer: 23000,
+    unit: '$',
+    hint: 'Ending Cash = Starting Cash + OCF + ICF + FCF',
+    explanation: '$15,000 + $10,000 - $4,000 + $2,000 = $23,000',
+    learnContent: {
+      concept: 'Cash flow statements reconcile the beginning and ending cash balances.',
+      formula: 'Ending Cash = Starting Cash + Cash Flows from Operating, Investing, and Financing Activities',
+      example: 'Start $10K, Flows +5K, -3K, +2K → End $14K\nStart $20K, Flows +8K, -6K, -4K → End $18K'
+    }
+  },
+  {
+    id: 'acc-easy-53',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Days Inventory Outstanding',
+    description: `A company has:
+
+Cost of Goods Sold: $730,000
+Average Inventory: $60,000
+
+What is the Days Inventory Outstanding (DIO)?`,
+    answer: 30.0,
+    unit: 'days',
+    hint: 'DIO = (Inventory ÷ COGS) × 365',
+    explanation: '($60,000 ÷ $730,000) × 365 = 30.0',
+    learnContent: {
+      concept: 'DIO shows how long inventory sits before being sold.',
+      formula: 'DIO = (Average Inventory ÷ COGS) × 365',
+      example: 'Inv $50K, COGS $600K → DIO = 30.4\nInv $40K, COGS $400K → DIO = 36.5'
+    }
+  },
+  {
+    id: 'acc-easy-54',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Enterprise to Equity Value',
+    description: `A company has:
+
+Enterprise Value: $800,000
+Cash: $50,000
+Debt: $200,000
+
+What is the company's Equity Value?`,
+    answer: 650000,
+    unit: '$',
+    hint: 'Equity Value = Enterprise Value - Net Debt',
+    explanation: 'Net Debt = Debt - Cash = $200,000 - $50,000 = $150,000. $800,000 - $150,000 = $650,000',
+    learnContent: {
+      concept: 'Equity Value reflects the portion of enterprise value that belongs to shareholders.',
+      formula: 'Equity Value = EV - Net Debt',
+      example: 'EV $900K, Cash $100K, Debt $200K → Equity = $800K\nEV $700K, Cash $50K, Debt $150K → Equity = $600K'
+    }
+  },
+  {
+    id: 'acc-easy-55',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Deriving CapEx from PP&E',
+    description: `A company has:
+
+Beginning PP&E: $500,000
+Ending PP&E: $560,000
+Depreciation during year: $40,000
+
+What were the Capital Expenditures during the year?`,
+    answer: 100000,
+    unit: '$',
+    hint: 'CapEx = Ending PP&E - Beginning PP&E + Depreciation',
+    explanation: '$560,000 - $500,000 + $40,000 = $100,000',
+    learnContent: {
+      concept: 'To maintain and grow assets, companies invest via CapEx, shown in changes to PP&E.',
+      formula: 'CapEx = Ending PP&E - Beginning PP&E + Depreciation',
+      example: 'Start $300K, End $330K, Dep $20K → CapEx = 50K\nStart $600K, End $590K, Dep $50K → CapEx = 40K'
+    }
   }
 ];
