@@ -1,6 +1,6 @@
 import { LeaderboardUser, RANK_TITLES, BADGES } from '@/types/leaderboard';
 
-export const LEADERBOARD_DATA: LeaderboardUser[] = [
+const RAW_LEADERBOARD_DATA = [
   {
     "username": "sablelock",
     "xp": 5000,
@@ -601,10 +601,12 @@ export const LEADERBOARD_DATA: LeaderboardUser[] = [
     "level": 5,
     "daily_movement": "⬇1"
   }
-].map((user, index) => ({
+];
+
+export const LEADERBOARD_DATA: LeaderboardUser[] = RAW_LEADERBOARD_DATA.map((user, index) => ({
   ...user,
   rank: index + 1,
-  title: getRankTitle(index + 1, LEADERBOARD_DATA.length)
+  title: getRankTitle(index + 1, RAW_LEADERBOARD_DATA.length)
 }));
 
 function getRankTitle(rank: number, totalUsers: number): string {
