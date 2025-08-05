@@ -262,8 +262,6 @@ const QuestionView = () => {
                           dangerouslySetInnerHTML={{
                             __html: currentQuestion.description
                               .replace(/\n/g, '<br />')
-                              .replace(/(\$[\d,]+)/g, '<span class="font-bold text-primary">$1</span>')
-                              .replace(/(Revenue|COGS|Cost of Goods Sold|Current Assets|Current Liabilities|EBITDA|Cash|Debt|Equity Value|Enterprise Value)/gi, '<span class="font-semibold text-accent-foreground">$1</span>')
                           }}
                         />
                       </div>
@@ -304,16 +302,16 @@ const QuestionView = () => {
                     <div className="space-y-6">
                       <div className="space-y-6">
                         {/* Concept Section */}
-                        <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10 shadow-md">
+                        <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-md">
                           <CardContent className="p-6">
-                            <h4 className="text-xl font-bold text-primary mb-4 flex items-center gap-2">
+                            <h4 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
                               📘 Concept
                             </h4>
                             <div 
                               className="text-base text-foreground leading-relaxed"
                               dangerouslySetInnerHTML={{
                                 __html: currentQuestion.learnContent.concept
-                                  .replace(/(Accounts Receivable|A\/R|revenue|accrual accounting|cash flows|assets|liabilities|Gross Profit|Current Ratio|liquidity)/gi, '<span class="font-semibold text-primary">$1</span>')
+                                  .replace(/(Accounts Receivable|A\/R|revenue|accrual accounting|cash flows|assets|liabilities|Gross Profit|Current Ratio|liquidity)/gi, '<span class="font-bold text-foreground">$1</span>')
                                   .replace(/\. /g, '.<br><br>')
                               }}
                             />
@@ -321,19 +319,19 @@ const QuestionView = () => {
                         </Card>
 
                         {/* Formula Section */}
-                        <Card className="border-accent/30 bg-gradient-to-br from-accent/5 to-accent/10 shadow-md">
+                        <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-md">
                           <CardContent className="p-6">
-                            <h4 className="text-xl font-bold text-accent-foreground mb-4 flex items-center gap-2">
+                            <h4 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
                               🧮 Formula
                             </h4>
-                            <div className="bg-muted/50 rounded-lg p-4 border border-accent/20">
+                            <div className="bg-muted/50 rounded-lg p-4 border border-success/20">
                               <div 
                                 className="text-base font-mono text-foreground leading-relaxed"
                                 dangerouslySetInnerHTML={{
                                   __html: currentQuestion.learnContent.formula
                                     .replace(/\n/g, '<br />')
-                                    .replace(/(=|÷|\+|\-|\×)/g, '<span class="text-accent font-bold mx-1">$1</span>')
-                                    .replace(/(Revenue|COGS|Assets|Liabilities|FCF|EBITDA|Cash|Debt)/gi, '<span class="font-semibold text-accent-foreground">$1</span>')
+                                    .replace(/(=|÷|\+|\-|\×)/g, '<span class="font-bold text-foreground mx-1">$1</span>')
+                                    .replace(/(Revenue|COGS|Assets|Liabilities|FCF|EBITDA|Cash|Debt)/gi, '<span class="font-bold text-foreground">$1</span>')
                                 }}
                               />
                             </div>
@@ -341,24 +339,24 @@ const QuestionView = () => {
                         </Card>
 
                         {/* Examples Section */}
-                        <Card className="border-secondary/30 bg-gradient-to-br from-secondary/5 to-secondary/10 shadow-md">
+                        <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-md">
                           <CardContent className="p-6">
-                            <h4 className="text-xl font-bold text-secondary-foreground mb-4 flex items-center gap-2">
+                            <h4 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
                               💡 Examples
                             </h4>
                             <div className="space-y-3">
                               {currentQuestion.learnContent.example.split('\n').map((example, index) => (
                                 <div 
                                   key={index}
-                                  className="bg-muted/30 rounded-lg p-4 border border-secondary/20"
+                                  className="bg-muted/30 rounded-lg p-4 border border-success/20"
                                 >
                                   <div 
                                     className="text-base text-foreground leading-relaxed"
                                     dangerouslySetInnerHTML={{
                                       __html: example
-                                        .replace(/(\$[\d,]+)/g, '<span class="font-bold text-primary">$1</span>')
-                                        .replace(/(→|=)/g, '<span class="text-secondary font-bold mx-2">$1</span>')
-                                        .replace(/(Revenue|COGS|Assets|Liabilities|Ratio|Gross Profit)/gi, '<span class="font-semibold text-secondary-foreground">$1</span>')
+                                        .replace(/(\$[\d,]+)/g, '<span class="font-bold text-foreground">$1</span>')
+                                        .replace(/(→|=)/g, '<span class="font-bold text-foreground mx-2">$1</span>')
+                                        .replace(/(Revenue|COGS|Assets|Liabilities|Ratio|Gross Profit)/gi, '<span class="font-bold text-foreground">$1</span>')
                                     }}
                                   />
                                 </div>
