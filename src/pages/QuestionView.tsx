@@ -27,6 +27,7 @@ const QuestionView = () => {
   const { completeChallengeQuestion } = useDailyChallenge();
   
   const isFromDailyChallenge = searchParams.get('challenge') === 'true';
+  const returnToModal = searchParams.get('return') === 'modal';
   
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
   const [userAnswer, setUserAnswer] = useState('');
@@ -210,11 +211,17 @@ const QuestionView = () => {
           <Button
             variant="ghost"
             size="sm"
-            onClick={() => navigate('/problems')}
+            onClick={() => {
+              if (returnToModal) {
+                navigate('/dashboard');
+              } else {
+                navigate('/problems');
+              }
+            }}
             className="mb-4"
           >
             <ArrowLeft size={16} className="mr-2" />
-            Back to Problems
+            {returnToModal ? 'Back to Dashboard' : 'Back to Problems'}
           </Button>
           
           <div className="flex items-center space-x-4">
@@ -364,8 +371,14 @@ const QuestionView = () => {
                         </span>
                       </div>
                        {isCorrect ? (
-                         <Button onClick={handleNextQuestion}>
-                           Next Question
+                         <Button onClick={() => {
+                           if (returnToModal) {
+                             navigate('/dashboard');
+                           } else {
+                             handleNextQuestion();
+                           }
+                         }}>
+                           {returnToModal ? 'Back to Challenge' : 'Next Question'}
                          </Button>
                        ) : (
                          <Button variant="outline" onClick={handleReset}>

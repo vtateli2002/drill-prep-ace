@@ -3,7 +3,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Target, Clock, Trophy, X } from 'lucide-react';
+import { Target, Clock, Trophy, X, CheckCircle } from 'lucide-react';
 import { Question } from '@/types/drill';
 import { TRACK_NAMES } from '@/types/drill';
 import { useDailyChallenge } from '@/hooks/useDailyChallenge';
@@ -24,9 +24,13 @@ const DailyChallengeModal = ({ isOpen, onClose }: DailyChallengeModalProps) => {
   } = useDailyChallenge();
 
   const handleStartChallenge = () => {
-    onClose();
-    // Navigate to standalone daily challenge page
-    navigate('/daily-challenge');
+    // Don't close modal, just navigate to first question
+    if (todaysChallenge) {
+      const firstUncompletedQuestion = todaysChallenge.find(q => !isQuestionCompleted(q.id));
+      if (firstUncompletedQuestion) {
+        navigate(`/question/${firstUncompletedQuestion.id}?challenge=true&return=modal`);
+      }
+    }
   };
 
   const handleGenerateChallenge = async () => {
@@ -91,14 +95,14 @@ const DailyChallengeModal = ({ isOpen, onClose }: DailyChallengeModalProps) => {
                 {todaysChallenge.map((question, index) => {
                   const isCompleted = isQuestionCompleted(question.id);
                   return (
-                    <Card key={question.id} className={`${isCompleted ? 'bg-green-50 border-green-200' : ''}`}>
+                    <Card key={question.id} className={`${isCompleted ? 'bg-primary/10 border-primary/20' : ''}`}>
                       <CardHeader className="pb-2">
                         <div className="flex items-center justify-between">
                           <CardTitle className="text-sm">
                             Question {index + 1}
                           </CardTitle>
                           {isCompleted && (
-                            <Trophy className="h-4 w-4 text-green-600" />
+                            <CheckCircle className="h-4 w-4 text-primary" />
                           )}
                         </div>
                       </CardHeader>
@@ -114,6 +118,25 @@ const DailyChallengeModal = ({ isOpen, onClose }: DailyChallengeModalProps) => {
                         <p className="text-sm text-muted-foreground line-clamp-2">
                           {question.description}
                         </p>
+                        
+                        <div className="pt-2">
+                          {isCompleted ? (
+                            <Button variant="outline" className="w-full" disabled>
+                              <CheckCircle className="h-4 w-4 mr-2 text-primary" />
+                              Completed
+                            </Button>
+                          ) : (
+                            <Button 
+                              onClick={() => {
+                                navigate(`/question/${question.id}?challenge=true&return=modal`);
+                              }}
+                              className="w-full"
+                              size="sm"
+                            >
+                              Start Question
+                            </Button>
+                          )}
+                        </div>
                       </CardContent>
                     </Card>
                   );
