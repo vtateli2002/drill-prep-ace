@@ -1,26 +1,31 @@
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ArrowLeft, CheckCircle, XCircle, Lightbulb } from 'lucide-react';
+import { ArrowLeft, CheckCircle, XCircle, Lightbulb, Target } from 'lucide-react';
 import { Question, XP_VALUES, TRACK_NAMES } from '@/types/drill';
 import { QUESTIONS } from '@/data/questions';
 import { useToast } from '@/hooks/use-toast';
 import { useQuestions } from '@/hooks/useQuestions';
+import { useDailyChallenge } from '@/hooks/useDailyChallenge';
 import { useAuth } from '@/hooks/useAuth';
 import ExcelUtility from '@/components/ExcelUtility';
 import NotesUtility from '@/components/NotesUtility';
 
 const QuestionView = () => {
   const { questionId } = useParams<{ questionId: string }>();
+  const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const { toast } = useToast();
   const { user } = useAuth();
   const { submitAnswer, isQuestionSolved } = useQuestions();
+  const { completeChallengeQuestion } = useDailyChallenge();
+  
+  const isFromDailyChallenge = searchParams.get('challenge') === 'true';
   
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
   const [userAnswer, setUserAnswer] = useState('');
@@ -76,16 +81,27 @@ const QuestionView = () => {
     
     if (correct) {
       const baseXP = XP_VALUES[currentQuestion.difficulty];
-      const earnedXP = calculateXP(baseXP, attemptCount, hintUsed);
+      let earnedXP = calculateXP(baseXP, attemptCount, hintUsed);
+      
+      // Double XP for daily challenge
+      if (isFromDailyChallenge) {
+        earnedXP *= 2;
+      }
+      
       setFinalXP(earnedXP);
       setIsSubmitted(true);
       
       // Submit to backend and award XP
       await submitAnswer(currentQuestion.id, true, currentQuestion.difficulty, currentQuestion.track);
       
+      // Mark as completed in daily challenge if applicable
+      if (isFromDailyChallenge && questionId) {
+        await completeChallengeQuestion(questionId);
+      }
+      
       toast({
         title: "Correct! 🎉",
-        description: `You earned XP and your progress has been saved!`,
+        description: `You earned ${earnedXP} XP${isFromDailyChallenge ? ' (2x bonus!)' : ''}!`,
         className: "border-success",
       });
     } else {
@@ -206,7 +222,13 @@ const QuestionView = () => {
             <Badge className={`${getDifficultyColor(currentQuestion.difficulty)} text-white`}>
               {currentQuestion.difficulty.replace('-', ' ').toUpperCase()}
             </Badge>
-            <Badge variant="secondary">+{XP_VALUES[currentQuestion.difficulty]} XP</Badge>
+            <Badge variant="secondary">+{XP_VALUES[currentQuestion.difficulty]}{isFromDailyChallenge ? ' × 2' : ''} XP</Badge>
+            {isFromDailyChallenge && (
+              <Badge className="bg-primary text-primary-foreground">
+                <Target className="w-3 h-3 mr-1" />
+                Daily Challenge
+              </Badge>
+            )}
           </div>
         </div>
 

@@ -4,10 +4,12 @@ import Navbar from '@/components/Navbar';
 import XPProgress from '@/components/XPProgress';
 import TrackCard from '@/components/TrackCard';
 import RivalProgress from '@/components/RivalProgress';
+import RivalMotivationModal from '@/components/RivalMotivationModal';
+import DailyChallengeModal from '@/components/DailyChallengeModal';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Target, Calendar, Loader2 } from 'lucide-react';
-import { Track, AIRival } from '@/types/drill';
+import { Target, Calendar, Loader2, Bot } from 'lucide-react';
+import { Track, AIRival, TRACK_NAMES } from '@/types/drill';
 import { useProfile } from '@/hooks/useProfile';
 import { useAuth } from '@/hooks/useAuth';
 
@@ -15,13 +17,34 @@ const Dashboard = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
   const { profile, loading } = useProfile();
-  
-  const [aiRival] = useState<AIRival>({
+  const [showRivalModal, setShowRivalModal] = useState(false);
+  const [showDailyChallengeModal, setShowDailyChallengeModal] = useState(false);
+  const [hasShownLoginModal, setHasShownLoginModal] = useState(false);
+
+  // Create AI rival object from profile data
+  const aiRival = profile ? {
     name: "FinanceBot",
-    totalXP: Math.max(0, (profile?.xp || 0) - 150 + Math.random() * 300),
+    totalXP: profile.rival_xp || 0,
     dailyXPGoal: 300,
-    daysRemaining: 12
-  });
+    daysRemaining: profile.interview_deadline 
+      ? Math.ceil((new Date(profile.interview_deadline).getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24))
+      : 0
+  } : null;
+
+  // Check if rival passed user for the first time
+  useEffect(() => {
+    if (profile && aiRival && !hasShownLoginModal) {
+      const isRivalAhead = aiRival.totalXP > profile.xp;
+      
+      // Show modal on login or when rival passes user
+      setShowRivalModal(true);
+      setHasShownLoginModal(true);
+    }
+  }, [profile, aiRival, hasShownLoginModal]);
+
+  // Always show all 4 tracks
+  const allTracks: Track[] = ['accounting', 'valuation', 'lbo', 'ma'];
+  const trackProgress = profile?.track_progress || {};
 
   if (loading) {
     return (
@@ -52,7 +75,7 @@ const Dashboard = () => {
   };
 
   const handleDailyChallenge = () => {
-    navigate('/daily-challenge');
+    setShowDailyChallengeModal(true);
   };
 
   return (
@@ -112,26 +135,57 @@ const Dashboard = () => {
             </Card>
           </div>
           
-          <RivalProgress rival={aiRival} userXP={profile.xp} />
+          <div className="space-y-2">
+            {aiRival && (
+              <RivalProgress rival={aiRival} userXP={profile.xp} />
+            )}
+            
+            {/* AI Rival Explanation */}
+            <div className="flex items-center gap-2 p-3 bg-muted rounded-lg">
+              <Bot className="h-4 w-4 text-primary" />
+              <p className="text-sm text-muted-foreground">
+                This AI rival is custom-built for your interview timeline. Your goal: beat FinanceBot before your interview date.
+              </p>
+            </div>
+          </div>
         </div>
 
-        {/* Tracks Section */}
+        {/* Tracks Section - Always show all 4 tracks */}
         <div>
           <h2 className="text-2xl font-bold text-foreground mb-4">Your Tracks</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {Object.entries(profile.track_progress || {}).map(([track, progress]: [string, any]) => (
-              <TrackCard
-                key={track}
-                track={track as Track}
-                completed={progress?.completed || 0}
-                total={progress?.total || 4}
-                xp={profile.difficulty_xp?.[track] || 0}
-                onStart={() => handleStartTrack(track as Track)}
-              />
-            ))}
+            {allTracks.map((track) => {
+              const progress = trackProgress[track] || { completed: 0, total: 4 };
+              return (
+                <TrackCard
+                  key={track}
+                  track={track}
+                  completed={progress.completed}
+                  total={progress.total}
+                  xp={profile.difficulty_xp?.[track] || 0}
+                  onStart={() => handleStartTrack(track)}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
+
+      {/* Modals */}
+      {showRivalModal && aiRival && (
+        <RivalMotivationModal
+          userXP={profile.xp}
+          rivalXP={aiRival.totalXP}
+          interviewDeadline={profile.interview_deadline}
+          isRivalAhead={aiRival.totalXP > profile.xp}
+          onClose={() => setShowRivalModal(false)}
+        />
+      )}
+
+      <DailyChallengeModal
+        isOpen={showDailyChallengeModal}
+        onClose={() => setShowDailyChallengeModal(false)}
+      />
     </div>
   );
 };

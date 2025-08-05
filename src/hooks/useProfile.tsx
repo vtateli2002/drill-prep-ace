@@ -14,6 +14,8 @@ export interface UserProfile {
   streak: number;
   track_progress: any;
   difficulty_xp: any;
+  rival_xp: number;
+  interview_deadline?: string;
   created_at: string;
   updated_at: string;
 }

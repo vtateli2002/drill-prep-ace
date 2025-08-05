@@ -14,16 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
+      daily_challenges: {
+        Row: {
+          challenge_date: string
+          completed_questions: string[] | null
+          created_at: string
+          id: string
+          question_ids: string[]
+          user_id: string
+        }
+        Insert: {
+          challenge_date?: string
+          completed_questions?: string[] | null
+          created_at?: string
+          id?: string
+          question_ids: string[]
+          user_id: string
+        }
+        Update: {
+          challenge_date?: string
+          completed_questions?: string[] | null
+          created_at?: string
+          id?: string
+          question_ids?: string[]
+          user_id?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           badges: Json | null
           created_at: string
           difficulty_xp: Json | null
           id: string
+          interview_deadline: string | null
           is_bot: boolean | null
           level: number
           profile_pic: string | null
           rank: string
+          rival_xp: number
           streak: number
           track_progress: Json | null
           updated_at: string
@@ -35,10 +64,12 @@ export type Database = {
           created_at?: string
           difficulty_xp?: Json | null
           id: string
+          interview_deadline?: string | null
           is_bot?: boolean | null
           level?: number
           profile_pic?: string | null
           rank?: string
+          rival_xp?: number
           streak?: number
           track_progress?: Json | null
           updated_at?: string
@@ -50,10 +81,12 @@ export type Database = {
           created_at?: string
           difficulty_xp?: Json | null
           id?: string
+          interview_deadline?: string | null
           is_bot?: boolean | null
           level?: number
           profile_pic?: string | null
           rank?: string
+          rival_xp?: number
           streak?: number
           track_progress?: Json | null
           updated_at?: string
@@ -101,6 +134,10 @@ export type Database = {
     }
     Functions: {
       update_ai_users_daily: {
+        Args: Record<PropertyKey, never>
+        Returns: undefined
+      }
+      update_rival_xp_daily: {
         Args: Record<PropertyKey, never>
         Returns: undefined
       }
