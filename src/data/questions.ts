@@ -1805,5 +1805,166 @@ How much revenue is recognized by the end of April?`,
       formula: 'Write-Down = Book Value − NRV',
       example: 'BV = $60K, NRV = $55K → $5K\nBV = $30K, NRV = $25K → $5K\nBV = $20K, NRV = $18K → $2K'
     }
+  },
+  // Medium Questions 77-86
+  {
+    id: 'acc-medium-77',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Deferred Revenue Recognition Timing',
+    description: `At the start of Q1, Riker Corp receives $36,000 in cash for a 12-month subscription service. The company recognizes revenue evenly over the term of the subscription. By the end of Q2, how much deferred revenue remains on the balance sheet?`,
+    answer: 18000,
+    unit: '$',
+    hint: 'Deferred revenue decreases each month as revenue is recognized.',
+    explanation: 'Riker Corp receives $36,000 in Q1 for 12 months of service → $3,000 revenue recognized per month. By end of Q2, 6 months have passed → $3,000 × 6 = $18,000 recognized → $36,000 – $18,000 = $18,000 deferred revenue remains.',
+    learnContent: {
+      concept: 'Deferred revenue represents cash collected before revenue is earned. As services are delivered, revenue is recognized, and the deferred liability decreases.',
+      formula: 'Deferred Revenue Remaining = Total Prepaid Revenue – (Monthly Revenue × Months Passed)',
+      example: '$12,000 received for a 6-month gym membership. After 4 months, deferred revenue = $12,000 – ($2,000 × 4) = $4,000\n$60,000 received for 1-year software license. After 9 months → $60,000 – ($5,000 × 9) = $15,000 deferred\n$24,000 received for 8-month contract → $3,000/month → after 5 months, $9,000 remains as deferred revenue'
+    }
+  },
+  {
+    id: 'acc-medium-78',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Inventory Obsolescence Impact on Statements',
+    description: `Harley Foods identifies $6,000 in obsolete inventory. The company writes it off directly through COGS. Assume a 25% tax rate. What is the net income impact of this inventory write-off?`,
+    answer: -4500,
+    unit: '$',
+    hint: 'A write-off through COGS reduces taxable income. Adjust for taxes.',
+    explanation: 'Write-off = $6,000; tax shield = $6,000 × 25% = $1,500 → Net income impact = $6,000 – $1,500 = $4,500 decrease',
+    learnContent: {
+      concept: 'Inventory write-offs reduce gross profit (and taxable income). When written off through COGS, they lower net income but partially offset by the tax shield.',
+      formula: 'Net Income Impact = Write-off Amount × (1 – Tax Rate)',
+      example: '$10,000 obsolete inventory, 30% tax → Net income drops by $7,000\n$8,000 write-down, 25% tax → Net income drops by $6,000\n$15,000 write-off, 20% tax → Impact = $12,000 on net income'
+    }
+  },
+  {
+    id: 'acc-medium-79',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Treasury Stock Repurchase',
+    description: `Midwood Inc repurchases 2,000 shares at $25 per share. Prior to this, total shareholders' equity was $600,000. What is the updated shareholders' equity after the repurchase?`,
+    answer: 550000,
+    unit: '$',
+    hint: 'Share buybacks reduce equity via treasury stock.',
+    explanation: 'Repurchase cost = 2,000 × $25 = $50,000 → New equity = $600,000 – $50,000 = $550,000',
+    learnContent: {
+      concept: 'Treasury stock represents shares repurchased by the company. This reduces total shareholders\' equity without affecting net income.',
+      formula: 'New Shareholders\' Equity = Previous Equity – (Repurchased Shares × Price)',
+      example: 'Equity $800K, buys back $60K → new equity = $740K\nRepurchase 500 shares at $100 → reduces equity by $50K\nBuys back $25K worth of shares → equity drops accordingly'
+    }
+  },
+  {
+    id: 'acc-medium-80',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Tax Benefit of Stock-Based Compensation',
+    description: `A firm reports $40,000 in stock-based compensation expense. The tax rate is 30%. How much is the tax shield (benefit) created by this non-cash expense?`,
+    answer: 12000,
+    unit: '$',
+    hint: 'Multiply non-cash expense by tax rate.',
+    explanation: 'Stock comp = $40K; tax shield = $40K × 30% = $12,000',
+    learnContent: {
+      concept: 'Non-cash expenses like stock-based compensation reduce taxable income and generate a tax benefit without reducing cash.',
+      formula: 'Tax Shield = Expense × Tax Rate',
+      example: '$25K stock comp, 40% tax → $10K shield\n$80K expense, 25% tax → $20K benefit\n$100K depreciation, 30% tax → $30K tax shield'
+    }
+  },
+  {
+    id: 'acc-medium-81',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'AR Collection Lag and Cash Flow',
+    description: `Revere Corp has revenue of $400,000 in Q1 but collects only 75% of this during the quarter. By the end of Q2, the rest is collected. What is the Q1 impact on operating cash flow?`,
+    answer: 300000,
+    unit: '$',
+    hint: 'Use cash collections only.',
+    explanation: 'Collected in Q1 = 75% × $400,000 = $300,000 → That\'s what hits cash flow.',
+    learnContent: {
+      concept: 'Revenue recognition doesn\'t equal cash received. Uncollected revenue becomes Accounts Receivable, delaying its impact on cash flow.',
+      formula: 'Cash Collected = Revenue × Collection %',
+      example: '$500K revenue, collects 80% → $400K operating cash\n$250K sales, 70% collected → $175K cash inflow\n$900K revenue, 60% collected → $540K operating cash flow'
+    }
+  },
+  {
+    id: 'acc-medium-82',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'CapEx vs. Repairs Expense',
+    description: `Landmark Inc spends $70,000 renovating equipment. $50,000 of this extends the useful life, while $20,000 is for normal maintenance. If the tax rate is 20%, what is the total net income impact?`,
+    answer: -16000,
+    unit: '$',
+    hint: 'CapEx doesn\'t hit income statement; only repairs do.',
+    explanation: 'Only $20K hits IS as expense → tax shield = $20K × 20% = $4K → net income impact = $20K – $4K = $16K',
+    learnContent: {
+      concept: 'Expenses that extend asset life are capitalized (on BS); routine maintenance is expensed (on IS).',
+      formula: 'Net Income Impact = Expense × (1 – Tax Rate)',
+      example: '$10K repairs, 30% tax → NI drops $7K\n$60K CapEx, no immediate IS impact\n$5K maintenance → $5K – $1K tax = $4K net income drop'
+    }
+  },
+  {
+    id: 'acc-medium-83',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Non-Cash Working Capital Adjustment',
+    description: `In Q4, Accounts Receivable increases by $8,000, and Inventory decreases by $5,000. What is the net change in non-cash working capital?`,
+    answer: 3000,
+    unit: '$',
+    hint: 'Use formula: ∆AR + ∆Inventory – ∆AP',
+    explanation: 'Net Change = +8,000 (AR up) –5,000 (Inventory down) → net = +$3,000 increase',
+    learnContent: {
+      concept: 'Working capital changes reflect operational efficiency and impact cash flow.',
+      formula: '∆WC = ∆AR + ∆Inventory – ∆AP',
+      example: 'AR ↑10K, Inventory ↓4K → WC ↑6K\nAR ↓3K, AP ↑2K → WC ↓5K\nInventory ↑5K, AR ↑5K → WC ↑10K'
+    }
+  },
+  {
+    id: 'acc-medium-84',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Interest Expense Timing',
+    description: `GlobalTech issued $100,000 in debt on July 1 with a 10% annual interest rate. Interest is paid annually. How much interest expense is reported on the income statement by year-end?`,
+    answer: 5000,
+    unit: '$',
+    hint: 'Annual interest prorated for 6 months.',
+    explanation: 'Interest = $100,000 × 10% × 6/12 = $5,000',
+    learnContent: {
+      concept: 'Interest is accrued over time. Even if unpaid, it\'s expensed based on the period owed.',
+      formula: 'Interest = Principal × Rate × Time',
+      example: '$50K loan, 6%, 1 year = $3K\n$200K, 5%, 3 months → $2.5K\n$120K, 8%, 9 months → $7,200'
+    }
+  },
+  {
+    id: 'acc-medium-85',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Asset Disposal Impact',
+    description: `Milltown sells equipment for $28,000. The original cost was $50,000, and accumulated depreciation is $30,000. What is the gain or loss on sale?`,
+    answer: 8000,
+    unit: '$',
+    hint: 'Compare selling price to net book value.',
+    explanation: 'Net book value = $50K – $30K = $20K → Gain = $28K – $20K = $8K',
+    learnContent: {
+      concept: 'Gain/loss = Sale price – Book value. Affects income statement directly.',
+      formula: 'Gain/Loss = Sale Price – (Original Cost – Accumulated Depreciation)',
+      example: 'Sell at $15K, NBV = $20K → $5K loss\nSell at $60K, NBV = $40K → $20K gain\nSell at $10K, NBV = $10K → No gain/loss'
+    }
+  },
+  {
+    id: 'acc-medium-86',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Dividend Impact on Financials',
+    description: `A company declares and pays $12,000 in cash dividends. How does this affect the balance sheet and cash flow statement?`,
+    answer: 12000,
+    unit: '$',
+    hint: 'Dividends reduce both cash and retained earnings.',
+    explanation: 'Dividend reduces assets (cash) and equity (RE). Cash flow from financing shows an outflow of $12,000.',
+    learnContent: {
+      concept: 'Dividends reduce retained earnings and cash. No income statement impact.',
+      formula: 'Dividend Impact = Cash Outflow = Reduction in Retained Earnings',
+      example: '$5K dividend → Cash –$5K, RE –$5K\n$20K → Same impacts\n$0.50/share × 10K shares → $5K outflow'
+    }
   }
 ];
