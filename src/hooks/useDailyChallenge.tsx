@@ -211,7 +211,10 @@ export const useDailyChallenge = (): UseDailyChallengeReturn => {
   };
 
   const isQuestionCompleted = (questionId: string): boolean => {
-    return challengeData?.completed_questions.includes(questionId) || false;
+    console.log('Checking if question completed:', questionId);
+    console.log('Challenge data:', challengeData);
+    console.log('Completed questions:', challengeData?.completed_questions);
+    return challengeData?.completed_questions?.includes(questionId) || false;
   };
 
   useEffect(() => {

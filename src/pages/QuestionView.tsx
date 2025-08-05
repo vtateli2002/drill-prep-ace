@@ -38,17 +38,19 @@ const QuestionView = () => {
   const [hintUsed, setHintUsed] = useState(false);
   const [finalXP, setFinalXP] = useState(0);
 
-  // Check if question is already solved
+  // Check if question is already solved (but allow daily challenge questions to be attempted)
   useEffect(() => {
-    if (questionId && isQuestionSolved(questionId)) {
+    if (questionId && isQuestionSolved(questionId) && !isFromDailyChallenge) {
       setIsSubmitted(true);
       setIsCorrect(true);
     }
-  }, [questionId, isQuestionSolved]);
+  }, [questionId, isQuestionSolved, isFromDailyChallenge]);
 
   useEffect(() => {
     if (questionId) {
+      console.log('QuestionView - Looking for question ID:', questionId);
       const question = QUESTIONS.find(q => q.id === questionId);
+      console.log('QuestionView - Found question:', question?.title || 'NOT FOUND');
       setCurrentQuestion(question || null);
     }
   }, [questionId]);

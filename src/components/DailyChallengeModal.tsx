@@ -24,13 +24,22 @@ const DailyChallengeModal = ({ isOpen, onClose }: DailyChallengeModalProps) => {
   } = useDailyChallenge();
 
   const handleStartChallenge = () => {
-    // Don't close modal, just navigate to first question
+    // Navigate to the first uncompleted question for Continue Challenge button
     if (todaysChallenge) {
       const firstUncompletedQuestion = todaysChallenge.find(q => !isQuestionCompleted(q.id));
       if (firstUncompletedQuestion) {
         navigate(`/question/${firstUncompletedQuestion.id}?challenge=true&return=modal`);
       }
     }
+  };
+
+  const handleStartSpecificQuestion = (questionId: string) => {
+    // Debug logging
+    console.log('Daily Challenge - Starting specific question:', questionId);
+    console.log('Available questions:', todaysChallenge?.map(q => ({ id: q.id, title: q.title })));
+    
+    // Navigate to a specific question
+    navigate(`/question/${questionId}?challenge=true&return=modal`);
   };
 
   const handleGenerateChallenge = async () => {
@@ -127,9 +136,7 @@ const DailyChallengeModal = ({ isOpen, onClose }: DailyChallengeModalProps) => {
                             </Button>
                           ) : (
                             <Button 
-                              onClick={() => {
-                                navigate(`/question/${question.id}?challenge=true&return=modal`);
-                              }}
+                              onClick={() => handleStartSpecificQuestion(question.id)}
                               className="w-full"
                               size="sm"
                             >
