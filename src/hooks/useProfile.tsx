@@ -1,0 +1,153 @@
+import { useEffect, useState } from 'react';
+import { useAuth } from './useAuth';
+import { supabase } from '@/integrations/supabase/client';
+import { RANK_TITLES } from '@/types/leaderboard';
+
+export interface UserProfile {
+  id: string;
+  username: string;
+  xp: number;
+  rank: string;
+  level: number;
+  profile_pic?: string;
+  badges: any;
+  streak: number;
+  track_progress: any;
+  difficulty_xp: any;
+  created_at: string;
+  updated_at: string;
+}
+
+export const useProfile = () => {
+  const { user } = useAuth();
+  const [profile, setProfile] = useState<UserProfile | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const fetchProfile = async () => {
+    if (!user) {
+      setProfile(null);
+      setLoading(false);
+      return;
+    }
+
+    try {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from('profiles')
+        .select('*')
+        .eq('id', user.id)
+        .single();
+
+      if (error) throw error;
+      setProfile(data);
+    } catch (error: any) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const updateProfile = async (updates: Partial<UserProfile>) => {
+    if (!user || !profile) return;
+
+    try {
+      const { error } = await supabase
+        .from('profiles')
+        .update(updates)
+        .eq('id', user.id);
+
+      if (error) throw error;
+      
+      setProfile({ ...profile, ...updates });
+    } catch (error: any) {
+      setError(error.message);
+    }
+  };
+
+  const addXP = async (amount: number, difficulty: string) => {
+    if (!profile) return;
+
+    const newXP = profile.xp + amount;
+    const newLevel = Math.floor(newXP / 100) + 1;
+    const newDifficultyXP = {
+      ...profile.difficulty_xp,
+      [difficulty]: (profile.difficulty_xp[difficulty] || 0) + amount
+    };
+
+    // Calculate new rank based on percentile
+    const newRank = calculateRank(newLevel);
+
+    await updateProfile({
+      xp: newXP,
+      level: newLevel,
+      rank: newRank,
+      difficulty_xp: newDifficultyXP
+    });
+  };
+
+  const updateTrackProgress = async (track: string, completed: number, total: number) => {
+    if (!profile) return;
+
+    const newTrackProgress = {
+      ...profile.track_progress,
+      [track]: { completed, total }
+    };
+
+    await updateProfile({
+      track_progress: newTrackProgress
+    });
+  };
+
+  const calculateRank = (level: number): string => {
+    // Simple rank calculation based on level
+    // This can be enhanced with actual percentile calculation
+    if (level >= 50) return 'Partner';
+    if (level >= 40) return 'Managing Director';
+    if (level >= 30) return 'Vice President';
+    if (level >= 20) return 'Associate';
+    if (level >= 10) return 'Analyst';
+    return 'Intern';
+  };
+
+  useEffect(() => {
+    fetchProfile();
+  }, [user]);
+
+  // Set up real-time subscription
+  useEffect(() => {
+    if (!user) return;
+
+    const channel = supabase
+      .channel('profile_changes')
+      .on(
+        'postgres_changes',
+        {
+          event: '*',
+          schema: 'public',
+          table: 'profiles',
+          filter: `id=eq.${user.id}`
+        },
+        (payload) => {
+          if (payload.eventType === 'UPDATE') {
+            setProfile(payload.new as UserProfile);
+          }
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [user]);
+
+  return {
+    profile,
+    loading,
+    error,
+    updateProfile,
+    addXP,
+    updateTrackProgress,
+    refetch: fetchProfile
+  };
+};

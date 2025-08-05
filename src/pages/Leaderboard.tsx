@@ -1,14 +1,24 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
-import { Trophy, Crown } from 'lucide-react';
-import { LEADERBOARD_DATA } from '@/data/leaderboard';
+import { Trophy, Crown, Loader2 } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
 import { RANK_TITLES } from '@/types/leaderboard';
 
+interface LeaderboardUser {
+  id: string;
+  username: string;
+  xp: number;
+  level: number;
+  rank: string;
+  profile_pic?: string;
+}
+
 const Leaderboard = () => {
-  const [selectedUser, setSelectedUser] = useState<string | null>(null);
+  const [leaderboardData, setLeaderboardData] = useState<LeaderboardUser[]>([]);
+  const [loading, setLoading] = useState(true);
 
   const getRankIcon = (title: string) => {
     const config = RANK_TITLES[title as keyof typeof RANK_TITLES];
@@ -20,6 +30,61 @@ const Leaderboard = () => {
     if (movement.includes('⬇')) return 'text-red-400';
     return 'text-muted-foreground';
   };
+
+  useEffect(() => {
+    fetchLeaderboard();
+  }, []);
+
+  const fetchLeaderboard = async () => {
+    try {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from('profiles')
+        .select('id, username, xp, level, rank, profile_pic')
+        .order('xp', { ascending: false })
+        .limit(20);
+
+      if (error) throw error;
+      setLeaderboardData(data || []);
+    } catch (error) {
+      console.error('Error fetching leaderboard:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Set up real-time subscription
+  useEffect(() => {
+    const channel = supabase
+      .channel('leaderboard_updates')
+      .on(
+        'postgres_changes',
+        {
+          event: '*',
+          schema: 'public',
+          table: 'profiles'
+        },
+        () => {
+          fetchLeaderboard();
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Navbar />
+        <div className="container mx-auto px-4 py-8 flex items-center justify-center">
+          <Loader2 className="h-8 w-8 animate-spin text-primary" />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -42,9 +107,9 @@ const Leaderboard = () => {
             </div>
 
             <div className="space-y-2 mt-4">
-              {LEADERBOARD_DATA.map((user, index) => (
+              {leaderboardData.map((user, index) => (
                 <div
-                  key={user.username}
+                  key={user.id}
                   className={`grid grid-cols-12 gap-4 p-3 rounded-lg transition-colors hover:bg-muted/50 ${
                     index < 3 ? 'bg-primary/10 border border-primary/20' : ''
                   }`}
@@ -54,13 +119,13 @@ const Leaderboard = () => {
                       {index === 0 && <Crown className="text-yellow-500" size={16} />}
                       {index === 1 && <Crown className="text-gray-400" size={16} />}
                       {index === 2 && <Crown className="text-amber-600" size={16} />}
-                      <span className="font-bold text-foreground">#{user.rank}</span>
+                      <span className="font-bold text-foreground">#{index + 1}</span>
                     </div>
                   </div>
 
                   <div className="col-span-4 flex items-center space-x-3">
                     <Avatar className="h-8 w-8">
-                      <AvatarImage src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${user.username}`} />
+                      <AvatarImage src={user.profile_pic || `https://api.dicebear.com/7.x/avataaars/svg?seed=${user.username}`} />
                       <AvatarFallback className="text-xs bg-primary/10 text-primary font-medium">
                         {user.username.substring(0, 2).toUpperCase()}
                       </AvatarFallback>
@@ -70,7 +135,7 @@ const Leaderboard = () => {
 
                   <div className="col-span-2 flex items-center">
                     <Badge variant="secondary" className="text-xs">
-                      {getRankIcon(user.title || 'Intern')} {user.title || 'Intern'}
+                      {getRankIcon(user.rank)} {user.rank}
                     </Badge>
                   </div>
 
@@ -83,12 +148,18 @@ const Leaderboard = () => {
                   </div>
 
                   <div className="col-span-1 flex items-center">
-                    <span className={`text-sm font-medium ${getMovementColor(user.daily_movement)}`}>
-                      {user.daily_movement}
+                    <span className="text-sm font-medium text-muted-foreground">
+                      –
                     </span>
                   </div>
                 </div>
               ))}
+              
+              {leaderboardData.length === 0 && (
+                <div className="text-center py-8 text-muted-foreground">
+                  No users found. Be the first to join!
+                </div>
+              )}
             </div>
           </div>
         </Card>
