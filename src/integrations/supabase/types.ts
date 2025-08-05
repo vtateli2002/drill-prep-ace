@@ -14,7 +14,51 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      profiles: {
+        Row: {
+          badges: Json | null
+          created_at: string
+          difficulty_xp: Json | null
+          id: string
+          level: number
+          profile_pic: string | null
+          rank: string
+          streak: number
+          track_progress: Json | null
+          updated_at: string
+          username: string
+          xp: number
+        }
+        Insert: {
+          badges?: Json | null
+          created_at?: string
+          difficulty_xp?: Json | null
+          id: string
+          level?: number
+          profile_pic?: string | null
+          rank?: string
+          streak?: number
+          track_progress?: Json | null
+          updated_at?: string
+          username: string
+          xp?: number
+        }
+        Update: {
+          badges?: Json | null
+          created_at?: string
+          difficulty_xp?: Json | null
+          id?: string
+          level?: number
+          profile_pic?: string | null
+          rank?: string
+          streak?: number
+          track_progress?: Json | null
+          updated_at?: string
+          username?: string
+          xp?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
