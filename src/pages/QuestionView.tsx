@@ -307,14 +307,16 @@ const QuestionView = () => {
                             <h4 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
                               📘 Concept
                             </h4>
-                            <div 
-                              className="text-base text-foreground leading-relaxed"
-                              dangerouslySetInnerHTML={{
-                                __html: currentQuestion.learnContent.concept
-                                  .replace(/(Accounts Receivable|A\/R|revenue|accrual accounting|cash flows|assets|liabilities|Gross Profit|Current Ratio|liquidity)/gi, '<strong style="color: white;">$1</strong>')
-                                  .replace(/\. /g, '.<br><br>')
-                              }}
-                            />
+                            <div className="text-base text-foreground leading-relaxed">
+                              {currentQuestion.learnContent.concept.split(/(\b(?:Accounts Receivable|A\/R|revenue|accrual accounting|cash flows|assets|liabilities|Gross Profit|Current Ratio|liquidity)\b)/gi).map((part, index) => {
+                                const isKeyword = /^(Accounts Receivable|A\/R|revenue|accrual accounting|cash flows|assets|liabilities|Gross Profit|Current Ratio|liquidity)$/i.test(part);
+                                return isKeyword ? (
+                                  <span key={index} className="font-bold text-white">{part}</span>
+                                ) : (
+                                  <span key={index}>{part}</span>
+                                );
+                              })}
+                            </div>
                           </CardContent>
                         </Card>
 
@@ -325,15 +327,20 @@ const QuestionView = () => {
                               🧮 Formula
                             </h4>
                             <div className="bg-muted/50 rounded-lg p-4 border border-success/20">
-                              <div 
-                                className="text-base font-mono text-foreground leading-relaxed"
-                                dangerouslySetInnerHTML={{
-                                  __html: currentQuestion.learnContent.formula
-                                    .replace(/\n/g, '<br />')
-                                    .replace(/(=|÷|\+|\-|\×)/g, '<strong style="color: white; margin: 0 4px;">$1</strong>')
-                                    .replace(/(Revenue|COGS|Assets|Liabilities|FCF|EBITDA|Cash|Debt)/gi, '<strong style="color: white;">$1</strong>')
-                                }}
-                              />
+                              <div className="text-base font-mono text-foreground leading-relaxed">
+                                {currentQuestion.learnContent.formula.split(/(\n|=|÷|\+|\-|\×|Revenue|COGS|Assets|Liabilities|FCF|EBITDA|Cash|Debt)/gi).map((part, index) => {
+                                  if (part === '\n') return <br key={index} />;
+                                  const isOperator = /^(=|÷|\+|\-|\×)$/.test(part);
+                                  const isKeyword = /^(Revenue|COGS|Assets|Liabilities|FCF|EBITDA|Cash|Debt)$/i.test(part);
+                                  return isOperator ? (
+                                    <span key={index} className="font-bold text-white mx-1">{part}</span>
+                                  ) : isKeyword ? (
+                                    <span key={index} className="font-bold text-white">{part}</span>
+                                  ) : (
+                                    <span key={index}>{part}</span>
+                                  );
+                                })}
+                              </div>
                             </div>
                           </CardContent>
                         </Card>
@@ -350,15 +357,18 @@ const QuestionView = () => {
                                   key={index}
                                   className="bg-muted/30 rounded-lg p-3 border border-success/20"
                                 >
-                                  <div 
-                                    className="text-base text-foreground leading-normal"
-                                    dangerouslySetInnerHTML={{
-                                      __html: example
-                                        .replace(/(\$[\d,]+)/g, '<strong style="color: white;">$1</strong>')
-                                        .replace(/(→|=)/g, '<strong style="color: white; margin: 0 8px;">$1</strong>')
-                                        .replace(/(Revenue|COGS|Assets|Liabilities|Ratio|Gross Profit)/gi, '<strong style="color: white;">$1</strong>')
-                                    }}
-                                  />
+                                  <div className="text-base text-foreground leading-normal">
+                                    {example.split(/(\$[\d,]+|→|=|Revenue|COGS|Assets|Liabilities|Ratio|Gross Profit)/gi).map((part, partIndex) => {
+                                      const isMoney = /^\$[\d,]+$/.test(part);
+                                      const isOperator = /^(→|=)$/.test(part);
+                                      const isKeyword = /^(Revenue|COGS|Assets|Liabilities|Ratio|Gross Profit)$/i.test(part);
+                                      return isMoney || isOperator || isKeyword ? (
+                                        <span key={partIndex} className="font-bold text-white">{part}</span>
+                                      ) : (
+                                        <span key={partIndex}>{part}</span>
+                                      );
+                                    })}
+                                  </div>
                                 </div>
                               ))}
                             </div>
