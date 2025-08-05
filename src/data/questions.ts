@@ -1137,5 +1137,110 @@ What is the company's Shareholders' Equity?`,
       formula: 'Equity = Assets - Liabilities',
       example: 'Assets $600K, Liab $300K → Equity = $300K\nAssets $500K, Liab $200K → Equity = $300K\nAssets $1M, Liab $700K → Equity = $300K'
     }
+  },
+  {
+    id: 'acc-easy-46',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Interest Coverage Ratio',
+    description: `A firm reports:
+
+EBIT: $75,000
+Interest Expense: $15,000
+Depreciation: $10,000
+
+What is the firm's interest coverage ratio?`,
+    answer: 5.0,
+    hint: 'Interest Coverage = EBIT / Interest Expense',
+    explanation: '$75,000 ÷ $15,000 = 5.0',
+    learnContent: {
+      concept: 'The interest coverage ratio measures how easily a company can pay its interest expense using earnings before interest and taxes (EBIT).',
+      formula: 'Interest Coverage Ratio = EBIT ÷ Interest Expense',
+      example: 'EBIT $60K, Interest $10K → 6.0\nEBIT $40K, Interest $8K → 5.0\nEBIT $90K, Interest $15K → 6.0'
+    }
+  },
+  {
+    id: 'acc-easy-47',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Net PP&E After Additions',
+    description: `A company starts the year with PP&E of $200,000. During the year, it:
+
+Purchases new equipment for $60,000
+Records $20,000 in depreciation
+
+What is the net PP&E at year-end?`,
+    answer: 240000,
+    unit: '$',
+    hint: 'Net PP&E = Starting PP&E + CapEx - Depreciation',
+    explanation: '$200,000 + $60,000 - $20,000 = $240,000',
+    learnContent: {
+      concept: 'PP&E grows from capital expenditures and shrinks from depreciation.',
+      formula: 'Net PP&E = Beginning PP&E + Capital Expenditures - Depreciation',
+      example: 'Start $150K, CapEx $30K, Dep $10K → $170K\nStart $100K, CapEx $25K, Dep $15K → $110K\nStart $250K, CapEx $20K, Dep $50K → $220K'
+    }
+  },
+  {
+    id: 'acc-easy-48',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Retained Earnings Reconciliation',
+    description: `A company begins the year with retained earnings of $50,000.
+
+Net income this year is $35,000
+It pays out $10,000 in dividends
+
+What is the ending retained earnings?`,
+    answer: 75000,
+    unit: '$',
+    hint: 'Ending Retained Earnings = Beginning + Net Income - Dividends',
+    explanation: '$50,000 + $35,000 - $10,000 = $75,000',
+    learnContent: {
+      concept: 'Retained earnings grow with profit and shrink with dividends.',
+      formula: 'Ending RE = Beginning RE + Net Income - Dividends',
+      example: 'Begin $40K, NI $20K, Div $5K → $55K\nBegin $30K, NI $15K, Div $10K → $35K\nBegin $60K, NI $10K, Div $20K → $50K'
+    }
+  },
+  {
+    id: 'acc-easy-49',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Asset Turnover Ratio (Using Averages)',
+    description: `A company has:
+
+Revenue: $500,000
+Beginning Total Assets: $200,000
+Ending Total Assets: $300,000
+
+What is the asset turnover ratio?`,
+    answer: 2.0,
+    hint: 'Asset Turnover = Revenue ÷ Average Total Assets',
+    explanation: 'Avg Assets = ($200K + $300K)/2 = $250K. $500K ÷ $250K = 2.0',
+    learnContent: {
+      concept: 'This ratio tells how efficiently a company uses its assets to generate sales.',
+      formula: 'Asset Turnover = Revenue ÷ Average Assets',
+      example: 'Rev $400K, Avg Assets $200K → 2.0\nRev $600K, Avg Assets $300K → 2.0\nRev $750K, Avg Assets $250K → 3.0'
+    }
+  },
+  {
+    id: 'acc-easy-50',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Days Sales Outstanding',
+    description: `A company has:
+
+Revenue: $1,200,000
+Ending Accounts Receivable: $100,000
+
+Assume all sales are made on credit. What is the DSO (Days Sales Outstanding)? Use a 365-day year.`,
+    answer: 30.4,
+    unit: 'days',
+    hint: 'DSO = (Accounts Receivable ÷ Revenue) × 365',
+    explanation: '($100,000 ÷ $1,200,000) × 365 = 30.4 days',
+    learnContent: {
+      concept: 'DSO tells how long it takes a company to collect its receivables.',
+      formula: 'DSO = (AR ÷ Revenue) × 365',
+      example: 'AR $50K, Rev $600K → DSO = 30.4\nAR $80K, Rev $960K → DSO = 30.4\nAR $120K, Rev $1.2M → DSO = 36.5'
+    }
   }
 ];
