@@ -3,9 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent } from '@/components/ui/card';
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
-import { ChevronDown, Lightbulb, CheckCircle, Loader2 } from 'lucide-react';
+import { Card } from '@/components/ui/card';
+import { CheckCircle, Loader2 } from 'lucide-react';
 import { Track, Difficulty, TRACK_NAMES, XP_VALUES } from '@/types/drill';
 import { QUESTIONS } from '@/data/questions';
 import { useQuestions } from '@/hooks/useQuestions';
@@ -15,7 +14,6 @@ const Problems = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
   const { isQuestionSolved, getQuestionXP, loading } = useQuestions();
-  const [expandedQuestion, setExpandedQuestion] = useState<string | null>(null);
 
   if (loading) {
     return (
@@ -30,10 +28,10 @@ const Problems = () => {
 
   const getDifficultyColor = (difficulty: Difficulty) => {
     const colors = {
-      'easy': 'bg-success text-success-foreground',
-      'medium': 'bg-muted text-muted-foreground',
-      'hard': 'bg-destructive text-destructive-foreground',
-      'interview_ready': 'bg-background text-foreground border-2 border-primary shadow-lg'
+      'easy': 'bg-green-500 text-white',
+      'medium': 'bg-blue-500 text-white', 
+      'hard': 'bg-orange-500 text-white',
+      'interview_ready': 'bg-red-500 text-white'
     };
     return colors[difficulty];
   };
@@ -42,18 +40,15 @@ const Problems = () => {
     navigate(`/question/${questionId}`);
   };
 
-  // Group questions by track and difficulty in the specified order
+  // Create flat list of questions in the desired order
   const tracks: Track[] = ['accounting', 'valuation', 'ma', 'lbo'];
   const difficulties: Difficulty[] = ['easy', 'medium', 'hard', 'interview_ready'];
 
-  const groupedQuestions = tracks.map(track => ({
-    track,
-    trackName: TRACK_NAMES[track],
-    difficultyGroups: difficulties.map(difficulty => ({
-      difficulty,
-      questions: QUESTIONS.filter(q => q.track === track && q.difficulty === difficulty)
-    })).filter(group => group.questions.length > 0)
-  })).filter(trackGroup => trackGroup.difficultyGroups.length > 0);
+  const orderedQuestions = tracks.flatMap(track => 
+    difficulties.flatMap(difficulty => 
+      QUESTIONS.filter(q => q.track === track && q.difficulty === difficulty)
+    )
+  );
 
   return (
     <div className="min-h-screen bg-background">
@@ -63,116 +58,81 @@ const Problems = () => {
         <div className="space-y-6">
           <div className="flex items-center justify-between">
             <h1 className="text-3xl font-bold text-foreground">Problems</h1>
+            <div className="text-sm text-muted-foreground">
+              {orderedQuestions.filter(q => isQuestionSolved(q.id)).length} / {orderedQuestions.length} solved
+            </div>
           </div>
           
-          {/* Problems List */}
-          <div className="space-y-8">
-            {groupedQuestions.map(({ track, trackName, difficultyGroups }) => (
-              <div key={track} className="space-y-4">
-                {difficultyGroups.map(({ difficulty, questions }) => (
-                  <div key={`${track}-${difficulty}`} className="space-y-3">
-                    {/* Section Header */}
-                    <div className="flex items-center space-x-3">
-                      <h2 className="text-xl font-semibold text-foreground">
-                        {trackName} – {difficulty.replace('-', ' ').split(' ').map(word => 
-                          word.charAt(0).toUpperCase() + word.slice(1)
-                        ).join(' ')}
-                      </h2>
-                      <div className="flex-1 h-px bg-border"></div>
-                    </div>
-                    
-                    {/* Questions in this group */}
-                    <div className="space-y-2">
-                      {questions.map((question) => (
-                        <Collapsible
-                          key={question.id}
-                          open={expandedQuestion === question.id}
-                          onOpenChange={(open) => setExpandedQuestion(open ? question.id : null)}
-                        >
-                          <div className="border border-border rounded-lg hover:border-muted-foreground transition-colors">
-                            {/* Question Row */}
-                            <CollapsibleTrigger className="w-full">
-                              <div className="flex items-center justify-between p-4 text-left">
-                                 <div className="flex items-center space-x-4 flex-1">
-                                   {isQuestionSolved(question.id) && (
-                                     <CheckCircle className="w-5 h-5 text-green-500" />
-                                   )}
-                                   <span className="text-base font-medium text-foreground">
-                                     📘 {question.title}
-                                   </span>
-                                   <Badge variant="outline" className="text-xs">
-                                     🏷️ {TRACK_NAMES[question.track]}
-                                   </Badge>
-                                   <Badge className={`${getDifficultyColor(question.difficulty)} text-xs`}>
-                                     💥 {question.difficulty.replace('-', ' ').toUpperCase()}
-                                   </Badge>
-                                 </div>
-                                 
-                                 <div className="flex items-center space-x-4">
-                                   {isQuestionSolved(question.id) ? (
-                                     <span className="text-sm font-medium text-green-600">
-                                       ✅ +{getQuestionXP(question.id)} XP Earned
-                                     </span>
-                                   ) : (
-                                     <span className="text-sm font-medium text-primary">
-                                       ⭐ +{XP_VALUES[question.difficulty]} XP
-                                     </span>
-                                   )}
-                                   <Button
-                                     size="sm"
-                                     variant={isQuestionSolved(question.id) ? "outline" : "default"}
-                                     onClick={(e) => {
-                                       e.stopPropagation();
-                                       handleStartQuestion(question.id);
-                                     }}
-                                   >
-                                     {isQuestionSolved(question.id) ? "✅ Solved" : "📝 Start"}
-                                   </Button>
-                                   <ChevronDown 
-                                     className={`w-4 h-4 text-muted-foreground transition-transform ${
-                                       expandedQuestion === question.id ? 'rotate-180' : ''
-                                     }`} 
-                                   />
-                                 </div>
-                              </div>
-                            </CollapsibleTrigger>
-                            
-                            {/* Expandable Content */}
-                            <CollapsibleContent>
-                              <Card className="m-4 mt-0">
-                                <CardContent className="p-4 space-y-4">
-                                  <div className="bg-muted rounded-lg p-4">
-                                    <p className="text-foreground leading-relaxed">🧾 {question.description}</p>
-                                  </div>
-                                  
-                                  <div className="flex items-center justify-between">
-                                    <div className="flex items-center space-x-4">
-                                      {question.hint && (
-                                        <div className="flex items-center space-x-2 text-warning">
-                                          <Lightbulb size={16} />
-                                          <span className="text-sm font-medium">💡 Hint Available</span>
-                                        </div>
-                                      )}
-                                      <span className="text-sm font-medium text-primary">
-                                        ⭐ +{XP_VALUES[question.difficulty]} XP
-                                      </span>
-                                    </div>
-                                    <Button onClick={() => handleStartQuestion(question.id)}>
-                                      ✅ Start
-                                    </Button>
-                                  </div>
-                                </CardContent>
-                              </Card>
-                            </CollapsibleContent>
-                          </div>
-                        </Collapsible>
-                      ))}
+          {/* Problems List - LeetCode Style */}
+          <div className="space-y-3">
+            {orderedQuestions.map((question, index) => {
+              const isSolved = isQuestionSolved(question.id);
+              const earnedXP = getQuestionXP(question.id);
+
+              return (
+                <Card key={question.id} className="p-4 hover:shadow-md transition-shadow">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-4 flex-1">
+                      {/* Question Number */}
+                      <div className="flex items-center justify-center w-8 h-8 rounded bg-muted text-muted-foreground font-mono text-sm">
+                        {index + 1}
+                      </div>
+
+                      {/* Status Icon */}
+                      {isSolved && (
+                        <CheckCircle className="h-5 w-5 text-green-500" />
+                      )}
+
+                      {/* Question Title and Track */}
+                      <div className="flex-1">
+                        <h3 className="font-medium text-foreground hover:text-primary cursor-pointer" 
+                            onClick={() => handleStartQuestion(question.id)}>
+                          {question.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground mt-1">
+                          {TRACK_NAMES[question.track]}
+                        </p>
+                      </div>
+
+                      {/* Difficulty Badge */}
+                      <Badge className={`${getDifficultyColor(question.difficulty)} text-xs`}>
+                        {question.difficulty === 'interview_ready' ? 'Interview Ready' : 
+                         question.difficulty.charAt(0).toUpperCase() + question.difficulty.slice(1)}
+                      </Badge>
+
+                      {/* Status and XP */}
+                      <div className="flex items-center space-x-3">
+                        {isSolved ? (
+                          <span className="text-sm font-medium text-green-600">
+                            +{earnedXP} XP
+                          </span>
+                        ) : (
+                          <span className="text-sm font-medium text-primary">
+                            +{XP_VALUES[question.difficulty]} XP
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Action Button */}
+                      <Button
+                        onClick={() => handleStartQuestion(question.id)}
+                        size="sm"
+                        variant={isSolved ? "outline" : "default"}
+                      >
+                        {isSolved ? "Review" : "Solve"}
+                      </Button>
                     </div>
                   </div>
-                ))}
-              </div>
-            ))}
+                </Card>
+              );
+            })}
           </div>
+
+          {orderedQuestions.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-muted-foreground">No problems available yet.</p>
+            </div>
+          )}
         </div>
       </div>
     </div>
