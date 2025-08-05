@@ -7,7 +7,7 @@ import RivalProgress from '@/components/RivalProgress';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Target, Calendar, Loader2 } from 'lucide-react';
-import { Track, UserProgress, AIRival } from '@/types/drill';
+import { Track, AIRival } from '@/types/drill';
 import { useProfile } from '@/hooks/useProfile';
 import { useAuth } from '@/hooks/useAuth';
 
