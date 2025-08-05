@@ -10,6 +10,8 @@ import PracticeMode from "./pages/PracticeMode";
 import Problems from "./pages/Problems";
 import QuestionView from "./pages/QuestionView";
 import Library from "./pages/Library";
+import Leaderboard from "./pages/Leaderboard";
+import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +30,8 @@ const App = () => (
           <Route path="/problems" element={<Problems />} />
           <Route path="/question/:questionId" element={<QuestionView />} />
           <Route path="/library" element={<Library />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
+          <Route path="/profile" element={<Profile />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
