@@ -817,5 +817,105 @@ What is the company's net working capital?`,
       formula: 'Net Working Capital = Current Assets - Current Liabilities',
       example: 'CA = $50K, CL = $30K → WC = $20K\nCA = $60K, CL = $40K → WC = $20K\nCA = $45K, CL = $25K → WC = $20K'
     }
+  },
+  {
+    id: 'acc-easy-31',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Total Current Liabilities Calculation',
+    description: `A company reports the following liabilities:
+
+Accounts Payable: $12,000
+Accrued Expenses: $8,000
+Short-Term Debt: $10,000
+Long-Term Debt: $40,000
+Deferred Tax Liability: $5,000
+
+What is the company's total current liabilities?`,
+    answer: 30000,
+    unit: '$',
+    hint: 'Add up only the short-term obligations due within 12 months.',
+    explanation: 'Current liabilities include Accounts Payable, Accrued Expenses, and Short-Term Debt. Long-Term Debt and Deferred Tax Liabilities are excluded because they are not due in the current year. $12,000 + $8,000 + $10,000 = $30,000',
+    learnContent: {
+      concept: 'Current liabilities represent a company\'s obligations that are expected to be settled within one year. Understanding what qualifies as a short-term liability is essential for liquidity analysis.',
+      formula: 'Current Liabilities = A/P + Accrued Expenses + Short-Term Debt',
+      example: 'A/P $5K, Accrued $2K, Short-Term Debt $3K → Current Liabilities = $10K\nA/P $6K, Accrued $1K, STD $2K → Current = $9K\nA/P $10K, Accrued $4K, STD $5K → Current = $19K'
+    }
+  },
+  {
+    id: 'acc-easy-32',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Ending Inventory Calculation',
+    description: `A company begins the year with $15,000 in inventory. During the year, it purchases $40,000 of additional inventory and reports $45,000 in Cost of Goods Sold.
+
+What is the ending inventory?`,
+    answer: 10000,
+    unit: '$',
+    hint: 'Use the inventory flow formula.',
+    explanation: 'Ending Inventory = Beginning Inventory + Purchases - COGS = $15,000 + $40,000 - $45,000 = $10,000',
+    learnContent: {
+      concept: 'Ending inventory reflects the value of unsold goods. It directly impacts both the balance sheet and cost reporting.',
+      formula: 'Ending Inventory = Beginning Inventory + Purchases - COGS',
+      example: 'BI $20K, Purchases $30K, COGS $40K → EI = $10K\nBI $10K, Purchases $25K, COGS $20K → EI = $15K\nBI $5K, Purchases $10K, COGS $8K → EI = $7K'
+    }
+  },
+  {
+    id: 'acc-easy-33',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Debt-to-Assets Ratio',
+    description: `A company has the following balance sheet items:
+
+Short-Term Debt: $10,000
+Long-Term Debt: $40,000
+Total Assets: $100,000
+
+What is the company's Debt-to-Assets ratio?`,
+    answer: 0.5,
+    hint: 'Divide total debt by total assets.',
+    explanation: 'Debt = Short-Term + Long-Term = $10,000 + $40,000 = $50,000. Debt-to-Assets = $50,000 ÷ $100,000 = 0.5',
+    learnContent: {
+      concept: 'The Debt-to-Assets ratio measures financial leverage, showing what portion of a company\'s assets are financed by debt.',
+      formula: 'Debt-to-Assets = (Short-Term + Long-Term Debt) ÷ Total Assets',
+      example: 'Debt $60K, Assets $120K → Ratio = 0.5\nDebt $30K, Assets $90K → Ratio = 0.33\nDebt $70K, Assets $100K → Ratio = 0.7'
+    }
+  },
+  {
+    id: 'acc-easy-34',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Deferred Revenue Adjustment',
+    description: `A company receives $24,000 in cash upfront for a 12-month service contract. By the end of Q1, how much deferred revenue remains?`,
+    answer: 18000,
+    unit: '$',
+    hint: 'Recognize only the portion of service already provided.',
+    explanation: '$24,000 ÷ 12 months = $2,000/month. By end of Q1 (3 months): $2,000 × 3 = $6,000 recognized. Deferred = $24,000 - $6,000 = $18,000',
+    learnContent: {
+      concept: 'Deferred revenue represents money received for goods or services not yet delivered. It\'s a liability until earned.',
+      formula: 'Deferred Revenue = Total Cash Received - Earned Revenue',
+      example: '$12K received, 2 months used @ $1K/month → Deferred = $10K\n$6K upfront, 1 month recognized → Deferred = $5K\n$48K received, 6 months used @ $4K/month → Deferred = $24K'
+    }
+  },
+  {
+    id: 'acc-easy-35',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Operating Margin Calculation',
+    description: `A company reports:
+
+Revenue: $100,000
+COGS: $40,000
+Operating Expenses: $30,000
+
+What is the company's operating margin?`,
+    answer: 0.3,
+    hint: 'Use Operating Income ÷ Revenue.',
+    explanation: 'Operating Income = $100,000 - $40,000 - $30,000 = $30,000. Operating Margin = $30,000 ÷ $100,000 = 0.3',
+    learnContent: {
+      concept: 'Operating margin measures operating efficiency, excluding interest and tax effects.',
+      formula: 'Operating Margin = Operating Income ÷ Revenue\nWhere: Operating Income = Revenue - COGS - Operating Expenses',
+      example: 'Rev $80K, COGS $30K, OpEx $20K → Margin = 0.375\nRev $200K, COGS $120K, OpEx $40K → Margin = 0.2\nRev $50K, COGS $20K, OpEx $15K → Margin = 0.3'
+    }
   }
 ];
