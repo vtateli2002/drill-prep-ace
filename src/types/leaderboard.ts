@@ -44,7 +44,7 @@ export const BADGES: Badge[] = [
     id: 'accounting-apprentice',
     name: 'Accounting Apprentice',
     emoji: '📘',
-    description: 'Complete 5 Accounting questions',
+    description: 'Complete All Accounting Questions',
     type: 'track',
     unlocked: false
   },
@@ -52,7 +52,7 @@ export const BADGES: Badge[] = [
     id: 'valuation-strategist',
     name: 'Valuation Strategist',
     emoji: '📗',
-    description: 'Complete all Medium Valuation questions',
+    description: 'Complete All Valuation Questions',
     type: 'track',
     unlocked: false
   },
@@ -60,7 +60,7 @@ export const BADGES: Badge[] = [
     id: 'lbo-operator',
     name: 'LBO Operator',
     emoji: '📙',
-    description: 'Complete all LBO Interview Ready questions',
+    description: 'Complete All LBO Questions',
     type: 'track',
     unlocked: false
   },
@@ -68,7 +68,7 @@ export const BADGES: Badge[] = [
     id: 'ma-architect',
     name: 'M&A Architect',
     emoji: '📕',
-    description: 'Solve 10 M&A Hard+ questions',
+    description: 'Complete All M&A Questions',
     type: 'track',
     unlocked: false
   },
@@ -102,7 +102,7 @@ export const BADGES: Badge[] = [
     id: 'all-track-master',
     name: 'All-Track Master',
     emoji: '🧠',
-    description: 'Solve at least one Interview Ready question in each track',
+    description: 'Complete All Questions in Every Track',
     type: 'mastery',
     unlocked: false
   }

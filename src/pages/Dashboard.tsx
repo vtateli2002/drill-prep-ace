@@ -97,7 +97,7 @@ const Dashboard = () => {
   };
 
   const handleDailyChallenge = () => {
-    setShowDailyChallengeModal(true);
+    navigate('/daily-challenge');
   };
 
   return (
@@ -133,7 +133,7 @@ const Dashboard = () => {
           <div className="space-y-4">
             <XPProgress 
               currentXP={profile.xp} 
-              levelXP={(100 * (profile.level + 1)) + (Math.pow(profile.level + 1, 2) * 5)} 
+              levelXP={0} // Not used anymore - calculated internally
               level={profile.level}
               streak={profile.streak}
             />

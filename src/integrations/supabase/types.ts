@@ -154,6 +154,10 @@ export type Database = {
         Args: { level_num: number }
         Returns: number
       }
+      standardize_difficulty_xp: {
+        Args: Record<PropertyKey, never>
+        Returns: undefined
+      }
       update_ai_users_daily: {
         Args: Record<PropertyKey, never>
         Returns: undefined

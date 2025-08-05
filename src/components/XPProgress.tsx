@@ -9,13 +9,21 @@ interface XPProgressProps {
 }
 
 const XPProgress = ({ currentXP, levelXP, level, streak }: XPProgressProps) => {
-  // Calculate current level's total XP requirement and progress within level
+  // Calculate XP required for current level and total cumulative XP
   const calculateLevelXP = (level: number) => (100 * level) + (level * level * 5);
   
-  const totalXPForCurrentLevel = calculateLevelXP(level);
-  const totalXPForPreviousLevel = level > 1 ? calculateLevelXP(level - 1) : 0;
-  const xpInCurrentLevel = currentXP - totalXPForPreviousLevel;
-  const xpNeededForCurrentLevel = totalXPForCurrentLevel - totalXPForPreviousLevel;
+  // Calculate cumulative XP required to reach current level
+  const calculateCumulativeXP = (targetLevel: number): number => {
+    let cumulative = 0;
+    for (let l = 1; l < targetLevel; l++) {
+      cumulative += calculateLevelXP(l);
+    }
+    return cumulative;
+  };
+  
+  const xpForPreviousLevels = calculateCumulativeXP(level);
+  const xpNeededForCurrentLevel = calculateLevelXP(level);
+  const xpInCurrentLevel = currentXP - xpForPreviousLevels;
   
   const progress = Math.min((xpInCurrentLevel / xpNeededForCurrentLevel) * 100, 100);
   
@@ -38,7 +46,7 @@ const XPProgress = ({ currentXP, levelXP, level, streak }: XPProgressProps) => {
       
       <div className="flex justify-between text-xs text-muted-foreground">
         <span>{xpInCurrentLevel.toLocaleString()} / {xpNeededForCurrentLevel.toLocaleString()} XP</span>
-        <span>Next: {(totalXPForCurrentLevel + calculateLevelXP(level + 1) - totalXPForCurrentLevel).toLocaleString()} XP</span>
+        <span>Next Level: {calculateLevelXP(level + 1).toLocaleString()} XP</span>
       </div>
     </div>
   );

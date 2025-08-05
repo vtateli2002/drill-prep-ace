@@ -25,13 +25,8 @@ const DailyChallengeModal = ({ isOpen, onClose }: DailyChallengeModalProps) => {
 
   const handleStartChallenge = () => {
     onClose();
-    // Navigate to the first uncompleted question
-    if (todaysChallenge) {
-      const firstUncompletedQuestion = todaysChallenge.find(q => !isQuestionCompleted(q.id));
-      if (firstUncompletedQuestion) {
-        navigate(`/question/${firstUncompletedQuestion.id}?challenge=true`);
-      }
-    }
+    // Navigate to standalone daily challenge page
+    navigate('/daily-challenge');
   };
 
   const handleGenerateChallenge = async () => {

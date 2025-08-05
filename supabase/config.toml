@@ -30,3 +30,6 @@ verify_jwt = false
 
 [functions.randomize-dummy-names]
 verify_jwt = false
+
+[functions.populate-dummy-users]
+verify_jwt = false

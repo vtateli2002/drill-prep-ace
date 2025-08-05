@@ -15,6 +15,7 @@ import QuestionView from "./pages/QuestionView";
 import Library from "./pages/Library";
 import Leaderboard from "./pages/Leaderboard";
 import Profile from "./pages/Profile";
+import DailyChallengeStandalone from "./components/DailyChallengeStandalone";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -67,6 +68,11 @@ const App = () => (
             <Route path="/profile" element={
               <ProtectedRoute>
                 <Profile />
+              </ProtectedRoute>
+            } />
+            <Route path="/daily-challenge" element={
+              <ProtectedRoute>
+                <DailyChallengeStandalone />
               </ProtectedRoute>
             } />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

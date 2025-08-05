@@ -134,30 +134,34 @@ const Profile = () => {
                 {/* Track Progress */}
                 <div className="space-y-4">
                   <h3 className="font-semibold text-foreground">Track Progress</h3>
-                  {Object.entries(profile.track_progress || {}).length > 0 ? (
-                    Object.entries(profile.track_progress).map(([track, progress]: [string, any]) => (
+                  {['accounting', 'valuation', 'lbo', 'ma'].map((track) => {
+                    const progress = profile.track_progress?.[track] || { completed: 0, total: 4 };
+                    const displayName = track === 'ma' ? 'M&A' : track === 'lbo' ? 'LBO' : track.charAt(0).toUpperCase() + track.slice(1);
+                    return (
                       <div key={track} className="space-y-2">
                         <div className="flex justify-between text-sm">
-                          <span className="capitalize text-foreground">{track}</span>
-                          <span className="text-muted-foreground">{progress.completed || 0}/{progress.total || 0}</span>
+                          <span className="text-foreground">{displayName}</span>
+                          <span className="text-muted-foreground">{progress.completed || 0}/{progress.total || 4}</span>
                         </div>
                         <Progress value={((progress.completed || 0) / (progress.total || 1)) * 100} />
                       </div>
-                    ))
-                  ) : (
-                    <p className="text-muted-foreground">No progress yet. Start solving problems!</p>
-                  )}
+                    );
+                  })}
                 </div>
 
                 {/* XP by Difficulty */}
                 <div className="space-y-4">
                   <h3 className="font-semibold text-foreground">XP by Difficulty</h3>
-                  {Object.entries(profile.difficulty_xp || {}).map(([difficulty, xp]: [string, any]) => (
-                    <div key={difficulty} className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
-                      <span className="capitalize text-foreground">{difficulty.replace('-', ' ')}</span>
-                      <span className="font-semibold text-foreground">{xp || 0} XP</span>
-                    </div>
-                  ))}
+                  {['easy', 'medium', 'hard', 'interview_ready'].map((difficulty) => {
+                    const xp = profile.difficulty_xp?.[difficulty] || 0;
+                    const displayName = difficulty === 'interview_ready' ? 'Interview Ready' : difficulty.charAt(0).toUpperCase() + difficulty.slice(1);
+                    return (
+                      <div key={difficulty} className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
+                        <span className="text-foreground">{displayName}</span>
+                        <span className="font-semibold text-foreground">{xp} XP</span>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </CardContent>

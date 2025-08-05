@@ -121,10 +121,10 @@ export const useQuestions = () => {
         return false; // Already solved correctly, no XP awarded
       }
 
-      // Check attempt count - max 3 attempts
+      // Check attempt count - max 3 attempts for XP
       const currentAttempts = existingAnswer?.attempt_count || 0;
-      if (currentAttempts >= 3 && !isCorrect) {
-        return false; // Max attempts reached, no more XP possible
+      if (currentAttempts >= 3) {
+        return false; // Max attempts reached, no XP possible even if correct
       }
 
       const xpEarned = isCorrect ? XP_VALUES[difficulty as keyof typeof XP_VALUES] : 0;
