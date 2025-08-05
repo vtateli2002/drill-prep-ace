@@ -56,6 +56,14 @@ const Dashboard = () => {
     }
   }, [profile, aiRival, hasShownLoginModal]);
 
+  // Show daily challenge on login
+  useEffect(() => {
+    if (shouldShowLoginChallenge && profile) {
+      setShowDailyChallengeModal(true);
+      hideDailyChallengeModal();
+    }
+  }, [shouldShowLoginChallenge, profile, hideDailyChallengeModal]);
+
   // Always show all 4 tracks
   const allTracks: Track[] = ['accounting', 'valuation', 'lbo', 'ma'];
   const trackProgress = profile?.track_progress || {};
@@ -91,14 +99,6 @@ const Dashboard = () => {
   const handleDailyChallenge = () => {
     setShowDailyChallengeModal(true);
   };
-
-  // Show daily challenge on login
-  useEffect(() => {
-    if (shouldShowLoginChallenge && profile) {
-      setShowDailyChallengeModal(true);
-      hideDailyChallengeModal();
-    }
-  }, [shouldShowLoginChallenge, profile]);
 
   return (
     <div className="min-h-screen bg-background">
