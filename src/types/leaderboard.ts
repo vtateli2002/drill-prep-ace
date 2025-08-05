@@ -44,7 +44,7 @@ export const BADGES: Badge[] = [
     id: 'accounting-apprentice',
     name: 'Accounting Apprentice',
     emoji: '📘',
-    description: 'Complete All Accounting Questions',
+    description: 'Complete All Accounting Questions', // Updated description
     type: 'track',
     unlocked: false
   },
