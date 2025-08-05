@@ -52,6 +52,7 @@ export type Database = {
           level: number
           profile_pic: string | null
           rank: string
+          rank_change: number | null
           rival_xp: number
           streak: number
           track_progress: Json | null
@@ -69,6 +70,7 @@ export type Database = {
           level?: number
           profile_pic?: string | null
           rank?: string
+          rank_change?: number | null
           rival_xp?: number
           streak?: number
           track_progress?: Json | null
@@ -86,6 +88,7 @@ export type Database = {
           level?: number
           profile_pic?: string | null
           rank?: string
+          rank_change?: number | null
           rival_xp?: number
           streak?: number
           track_progress?: Json | null
