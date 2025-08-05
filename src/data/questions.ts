@@ -917,5 +917,112 @@ What is the company's operating margin?`,
       formula: 'Operating Margin = Operating Income ÷ Revenue\nWhere: Operating Income = Revenue - COGS - Operating Expenses',
       example: 'Rev $80K, COGS $30K, OpEx $20K → Margin = 0.375\nRev $200K, COGS $120K, OpEx $40K → Margin = 0.2\nRev $50K, COGS $20K, OpEx $15K → Margin = 0.3'
     }
+  },
+  {
+    id: 'acc-easy-36',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Adjusted Net Working Capital Calculation',
+    description: `A company reports:
+
+Cash: $5,000
+Accounts Receivable: $12,000
+Inventory: $8,000
+Prepaid Expenses: $2,000
+Accounts Payable: $10,000
+Accrued Expenses: $3,000
+
+What is the net working capital, excluding cash and prepaid expenses?`,
+    answer: 7000,
+    unit: '$',
+    hint: 'Adjusted NWC = (AR + Inventory) - (AP + Accrued)',
+    explanation: 'Assets (AR + Inventory) = $12,000 + $8,000 = $20,000. Liabilities (AP + Accrued) = $10,000 + $3,000 = $13,000. NWC = $20,000 - $13,000 = $7,000',
+    learnContent: {
+      concept: 'Net Working Capital (NWC) measures operational liquidity. Analysts often exclude non-operating items like cash and prepaids.',
+      formula: 'NWC = (Operating Current Assets - Operating Current Liabilities)',
+      example: 'AR $10K, Inv $5K, AP $8K → NWC = $7K\nAR $20K, Inv $10K, AP $15K, Accrued $5K → NWC = $10K\nAR $18K, Inv $12K, AP $20K → NWC = $10K'
+    }
+  },
+  {
+    id: 'acc-easy-37',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Gross Profit from Tiered Revenue',
+    description: `A company sells:
+
+Product A: $80,000 at 50% margin
+Product B: $120,000 at 30% margin
+
+What is the total gross profit?`,
+    answer: 76000,
+    unit: '$',
+    hint: 'Gross Profit = (Revenue × Margin%) summed across products',
+    explanation: 'GP A = $80K × 50% = $40K. GP B = $120K × 30% = $36K. Total = $76K',
+    learnContent: {
+      concept: 'Gross Profit is calculated for each product line, based on its margin. Total GP aggregates those values.',
+      formula: 'Gross Profit = Σ (Revenue_i × Margin_i)',
+      example: '$100K @ 40%, $50K @ 60% → GP = $40K + $30K = $70K\n$200K @ 25%, $100K @ 35% → GP = $50K + $35K = $85K\n$80K @ 20%, $70K @ 40% → GP = $16K + $28K = $44K'
+    }
+  },
+  {
+    id: 'acc-easy-38',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Retained Earnings with Loss and Dividend',
+    description: `Beginning Retained Earnings: $200,000
+Net Income: -$20,000 (net loss)
+Dividends Paid: $5,000
+
+What is the ending retained earnings?`,
+    answer: 175000,
+    unit: '$',
+    hint: 'Ending RE = Beginning RE + Net Income - Dividends',
+    explanation: '$200,000 - $20,000 - $5,000 = $175,000',
+    learnContent: {
+      concept: 'Net losses reduce retained earnings, as do dividends. The formula is still consistent even with negative income.',
+      formula: 'Ending RE = Beginning RE + Net Income - Dividends',
+      example: 'Start $100K, Loss $10K, Div $5K → RE = $85K\nStart $150K, NI $20K, Div $10K → RE = $160K\nStart $120K, Loss $30K, Div $0 → RE = $90K'
+    }
+  },
+  {
+    id: 'acc-easy-39',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Net PPE from Depreciated Asset Pool',
+    description: `A company's balance sheet shows:
+
+Buildings: $200,000
+Equipment: $100,000
+Furniture: $50,000
+Total Accumulated Depreciation: $120,000
+
+What is the net book value of PPE?`,
+    answer: 230000,
+    unit: '$',
+    hint: 'NBV = Sum of assets - Accumulated Depreciation',
+    explanation: 'Total Gross PPE = $200K + $100K + $50K = $350K. NBV = $350K - $120K = $230K',
+    learnContent: {
+      concept: 'Net PPE is derived by summing gross PPE assets and subtracting the total accumulated depreciation.',
+      formula: 'NBV = (Buildings + Equipment + Furniture + ...) - Depreciation',
+      example: 'PPE $300K, Dep $90K → NBV = $210K\nPPE $400K, Dep $120K → NBV = $280K\nPPE $180K, Dep $30K → NBV = $150K'
+    }
+  },
+  {
+    id: 'acc-easy-40',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Depreciation Tax Shield from Equipment',
+    description: `A company purchases $100,000 of equipment. It uses straight-line depreciation over 5 years. The tax rate is 25%.
+
+What is the cash flow benefit from depreciation in Year 1?`,
+    answer: 5000,
+    unit: '$',
+    hint: 'Annual Dep = Equipment / Life. Tax shield = Dep × Tax rate.',
+    explanation: 'Dep = $100,000 ÷ 5 = $20,000. Tax shield = $20,000 × 25% = $5,000',
+    learnContent: {
+      concept: 'Depreciation saves cash by lowering taxes. The tax shield = depreciation × tax rate.',
+      formula: 'Tax Shield = Depreciation × Tax Rate',
+      example: 'Dep $10K, Tax 30% → $3K\nDep $25K, Tax 20% → $5K\nDep $15K, Tax 35% → $5.25K'
+    }
   }
 ];
