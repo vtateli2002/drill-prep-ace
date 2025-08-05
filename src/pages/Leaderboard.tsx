@@ -80,7 +80,7 @@ const Leaderboard = () => {
     return () => {
       supabase.removeChannel(channel);
     };
-  }, []);
+  }, [updateAllUserTitles]);
 
   if (loading) {
     return (
