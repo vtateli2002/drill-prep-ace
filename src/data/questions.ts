@@ -1,12 +1,62 @@
 import { Question, Track, Difficulty } from '@/types/drill';
 
 export const QUESTIONS: Question[] = [
-  // ACCOUNTING - Easy
+  // ACCOUNTING - Easy - NEW QUESTIONS
+  {
+    id: 'acc-easy-new-1',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Accounts Receivable Recognition',
+    description: 'Your client pays you $1,000 today for a service you will perform next month. You\'re using accrual accounting.\n\nHow much revenue do you record this month?',
+    answer: 0,
+    unit: '$',
+    hint: 'Under accrual accounting, revenue is only recognized when earned, not when cash is received',
+    explanation: 'Since the service will be performed next month, no revenue is recognized this month. The $1,000 should be recorded as Deferred Revenue (a liability) until the service is performed.',
+    learnContent: {
+      concept: 'Accounts Receivable (A/R) represents money owed to a business for services rendered or products delivered. Under accrual accounting, revenue is only recognized when earned, not when cash is received. This avoids overstating performance in the wrong time period.',
+      formula: 'Recognize Revenue: When service is performed\n\nIf payment is received early → record as Deferred Revenue (Liability)\nIf service is done but unpaid → record as Accounts Receivable (Asset)\nIf service is done and paid → record as Cash + Revenue',
+      example: 'You receive $500 in March for a service in April → Record as Deferred Revenue in March\nYou invoice $750 after delivering goods → Record as Revenue + A/R\nYou collect cash after providing consulting → Record as Cash + Revenue'
+    }
+  },
+  {
+    id: 'acc-easy-new-2',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Gross Profit Calculation',
+    description: 'A company has the following data this quarter:\n- Revenue = $50,000\n- Cost of Goods Sold (COGS) = $30,000\n\nWhat is Gross Profit?',
+    answer: 20000,
+    unit: '$',
+    hint: 'Gross Profit = Revenue - Cost of Goods Sold',
+    explanation: 'Gross Profit = $50,000 - $30,000 = $20,000',
+    learnContent: {
+      concept: 'Gross Profit shows how much money a company keeps after covering its direct production costs. It\'s a key profitability measure and helps gauge efficiency in producing and selling goods.',
+      formula: 'Gross Profit = Revenue − Cost of Goods Sold (COGS)',
+      example: 'Revenue = $80,000, COGS = $60,000 → Gross Profit = $20,000\nRevenue = $120,000, COGS = $90,000 → Gross Profit = $30,000\nRevenue = $55,000, COGS = $20,000 → Gross Profit = $35,000'
+    }
+  },
+  {
+    id: 'acc-easy-new-3',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Current Ratio',
+    description: 'A business has:\n- Current Assets = $45,000\n- Current Liabilities = $15,000\n\nWhat is the Current Ratio?',
+    answer: 3,
+    unit: '',
+    hint: 'Current Ratio = Current Assets ÷ Current Liabilities',
+    explanation: 'Current Ratio = $45,000 ÷ $15,000 = 3.0',
+    learnContent: {
+      concept: 'The Current Ratio tells us how well a company can pay off its short-term obligations using its short-term assets. A ratio over 1 means the company can meet its short-term liabilities. A high ratio can indicate strong liquidity, but too high might mean inefficient use of assets.',
+      formula: 'Current Ratio = Current Assets ÷ Current Liabilities',
+      example: 'Assets = $80,000, Liabilities = $40,000 → Ratio = 2.0\nAssets = $25,000, Liabilities = $50,000 → Ratio = 0.5\nAssets = $100,000, Liabilities = $20,000 → Ratio = 5.0'
+    }
+  },
+
+  // ACCOUNTING - Easy - BETA QUESTIONS
   {
     id: 'acc-easy-1',
     track: 'accounting',
     difficulty: 'easy',
-    title: 'Basic Net Income Calculation',
+    title: 'Beta - Basic Net Income Calculation',
     description: 'What is Net Income if Revenue = $500 and COGS = $300?',
     answer: 200,
     unit: '$',
@@ -19,12 +69,12 @@ export const QUESTIONS: Question[] = [
     }
   },
   
-  // ACCOUNTING - Medium
+  // ACCOUNTING - Medium - BETA QUESTIONS
   {
     id: 'acc-medium-1',
     track: 'accounting',
     difficulty: 'medium',
-    title: 'Net Income with Operating Expenses',
+    title: 'Beta - Net Income with Operating Expenses',
     description: 'Calculate Net Income: Revenue = $500, COGS = $300, SG&A = $50, Tax Rate = 20%',
     answer: 120,
     unit: '$',
@@ -37,12 +87,12 @@ export const QUESTIONS: Question[] = [
     }
   },
 
-  // ACCOUNTING - Hard
+  // ACCOUNTING - Hard - BETA QUESTIONS
   {
     id: 'acc-hard-1',
     track: 'accounting',
     difficulty: 'hard',
-    title: 'Cash Flow from Operations',
+    title: 'Beta - Cash Flow from Operations',
     description: 'Calculate Cash from Operations: Net Income = $100, Change in Working Capital = -$20, Depreciation & Amortization = $30',
     answer: 150,
     unit: '$',
@@ -55,12 +105,12 @@ export const QUESTIONS: Question[] = [
     }
   },
 
-  // ACCOUNTING - Interview Ready
+  // ACCOUNTING - Interview Ready - BETA QUESTIONS
   {
     id: 'acc-interview-1',
     track: 'accounting',
     difficulty: 'interview_ready',
-    title: 'Advanced CFO Calculation',
+    title: 'Beta - Advanced CFO Calculation',
     description: 'Adjust Net Income = $200 to Cash Flow from Operations given: D&A = $40, Change in Working Capital = -$25, Taxes Paid (vs. Tax Expense) difference = $15',
     answer: 250,
     unit: '$',
@@ -73,12 +123,12 @@ export const QUESTIONS: Question[] = [
     }
   },
 
-  // VALUATION - Easy
+  // VALUATION - Easy - BETA QUESTIONS
   {
     id: 'val-easy-1',
     track: 'valuation',
     difficulty: 'easy',
-    title: 'Enterprise Value Calculation',
+    title: 'Beta - Enterprise Value Calculation',
     description: 'What is Enterprise Value? Equity Value = $100, Total Debt = $50, Cash = $20',
     answer: 130,
     unit: '$',
@@ -91,12 +141,12 @@ export const QUESTIONS: Question[] = [
     }
   },
 
-  // VALUATION - Medium
+  // VALUATION - Medium - BETA QUESTIONS
   {
     id: 'val-medium-1',
     track: 'valuation',
     difficulty: 'medium',
-    title: 'DCF Enterprise Value',
+    title: 'Beta - DCF Enterprise Value',
     description: 'Calculate Enterprise Value using DCF: Terminal Value = $200, Present Value of FCF = $300',
     answer: 500,
     unit: '$',
@@ -109,12 +159,12 @@ export const QUESTIONS: Question[] = [
     }
   },
 
-  // VALUATION - Hard
+  // VALUATION - Hard - BETA QUESTIONS
   {
     id: 'val-hard-1',
     track: 'valuation',
     difficulty: 'hard',
-    title: 'Terminal Value Calculation',
+    title: 'Beta - Terminal Value Calculation',
     description: 'Calculate Terminal Value using Gordon Growth Model: Final Year FCF = $100, Growth Rate = 2%, Discount Rate = 10%',
     answer: 1275,
     unit: '$',
@@ -127,12 +177,12 @@ export const QUESTIONS: Question[] = [
     }
   },
 
-  // VALUATION - Interview Ready
+  // VALUATION - Interview Ready - BETA QUESTIONS
   {
     id: 'val-interview-1',
     track: 'valuation',
     difficulty: 'interview_ready',
-    title: 'Implied Share Price Calculation',
+    title: 'Beta - Implied Share Price Calculation',
     description: 'Calculate implied share price: Enterprise Value = $1000, Total Debt = $200, Cash = $50, Shares Outstanding = 10',
     answer: 85,
     unit: '$',
@@ -145,12 +195,12 @@ export const QUESTIONS: Question[] = [
     }
   },
 
-  // LBO - Easy
+  // LBO - Easy - BETA QUESTIONS
   {
     id: 'lbo-easy-1',
     track: 'lbo',
     difficulty: 'easy',
-    title: 'Entry Enterprise Value',
+    title: 'Beta - Entry Enterprise Value',
     description: 'Calculate Entry Enterprise Value: EBITDA = $100, Purchase Multiple = 8x',
     answer: 800,
     unit: '$',
@@ -163,12 +213,12 @@ export const QUESTIONS: Question[] = [
     }
   },
 
-  // LBO - Medium
+  // LBO - Medium - BETA QUESTIONS
   {
     id: 'lbo-medium-1',
     track: 'lbo',
     difficulty: 'medium',
-    title: 'Exit Enterprise Value',
+    title: 'Beta - Exit Enterprise Value',
     description: 'Calculate Exit Enterprise Value: Exit EBITDA = $120, Exit Multiple = 9x',
     answer: 1080,
     unit: '$',
@@ -181,12 +231,12 @@ export const QUESTIONS: Question[] = [
     }
   },
 
-  // LBO - Hard
+  // LBO - Hard - BETA QUESTIONS
   {
     id: 'lbo-hard-1',
     track: 'lbo',
     difficulty: 'hard',
-    title: 'Net Debt Paydown',
+    title: 'Beta - Net Debt Paydown',
     description: 'Calculate Net Debt Paydown: Beginning Debt = $500, Annual Cash Flow to Debt = $150, Hold Period = 3 years',
     answer: 450,
     unit: '$',
@@ -199,12 +249,12 @@ export const QUESTIONS: Question[] = [
     }
   },
 
-  // LBO - Interview Ready
+  // LBO - Interview Ready - BETA QUESTIONS
   {
     id: 'lbo-interview-1',
     track: 'lbo',
     difficulty: 'interview_ready',
-    title: 'LBO IRR Calculation',
+    title: 'Beta - LBO IRR Calculation',
     description: 'Calculate IRR: Entry Investment = $800, Exit Value = $1400, Hold Period = 4 years, No interim cash flows',
     answer: 15.09,
     unit: '%',
@@ -217,12 +267,12 @@ export const QUESTIONS: Question[] = [
     }
   },
 
-  // M&A - Easy
+  // M&A - Easy - BETA QUESTIONS
   {
     id: 'ma-easy-1',
     track: 'ma',
     difficulty: 'easy',
-    title: 'Combined Revenue',
+    title: 'Beta - Combined Revenue',
     description: 'Calculate Combined Revenue: Company A Revenue = $200, Company B Revenue = $150',
     answer: 350,
     unit: '$',
@@ -235,12 +285,12 @@ export const QUESTIONS: Question[] = [
     }
   },
 
-  // M&A - Medium
+  // M&A - Medium - BETA QUESTIONS
   {
     id: 'ma-medium-1',
     track: 'ma',
     difficulty: 'medium',
-    title: 'EPS Accretion Analysis',
+    title: 'Beta - EPS Accretion Analysis',
     description: 'Is this deal accretive? Buyer EPS = $2.00, Target EPS = $1.00, All-stock deal with 1:1 exchange ratio',
     answer: 1.5,
     unit: '$',
@@ -253,12 +303,12 @@ export const QUESTIONS: Question[] = [
     }
   },
 
-  // M&A - Hard
+  // M&A - Hard - BETA QUESTIONS
   {
     id: 'ma-hard-1',
     track: 'ma',
     difficulty: 'hard',
-    title: 'Buyer Ownership Percentage',
+    title: 'Beta - Buyer Ownership Percentage',
     description: 'Calculate Buyer Ownership %: Buyer Market Cap = $800, Target Market Cap = $200, 100% stock deal',
     answer: 80,
     unit: '%',
@@ -271,12 +321,12 @@ export const QUESTIONS: Question[] = [
     }
   },
 
-  // M&A - Interview Ready
+  // M&A - Interview Ready - BETA QUESTIONS
   {
     id: 'ma-interview-1',
     track: 'ma',
     difficulty: 'interview_ready',
-    title: 'Pro Forma EPS with Synergies',
+    title: 'Beta - Pro Forma EPS with Synergies',
     description: 'Calculate Pro Forma EPS: Combined Earnings = $300, Synergies = $50, Interest Savings = $10, Combined Shares = 100',
     answer: 3.6,
     unit: '$',
