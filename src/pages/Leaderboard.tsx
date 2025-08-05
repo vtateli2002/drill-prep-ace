@@ -7,6 +7,8 @@ import { Trophy, Crown, Loader2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { RANK_TITLES } from '@/types/leaderboard';
 import { useDynamicTitles } from '@/hooks/useDynamicTitles';
+// Import to trigger dummy user population
+import '@/utils/populateDummyUsers';
 
 interface LeaderboardUser {
   id: string;
