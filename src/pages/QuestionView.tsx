@@ -311,7 +311,7 @@ const QuestionView = () => {
                               className="text-base text-foreground leading-relaxed"
                               dangerouslySetInnerHTML={{
                                 __html: currentQuestion.learnContent.concept
-                                  .replace(/(Accounts Receivable|A\/R|revenue|accrual accounting|cash flows|assets|liabilities|Gross Profit|Current Ratio|liquidity)/gi, '<span class="font-bold text-foreground">$1</span>')
+                                  .replace(/(Accounts Receivable|A\/R|revenue|accrual accounting|cash flows|assets|liabilities|Gross Profit|Current Ratio|liquidity)/gi, '<strong style="color: white;">$1</strong>')
                                   .replace(/\. /g, '.<br><br>')
                               }}
                             />
@@ -330,8 +330,8 @@ const QuestionView = () => {
                                 dangerouslySetInnerHTML={{
                                   __html: currentQuestion.learnContent.formula
                                     .replace(/\n/g, '<br />')
-                                    .replace(/(=|÷|\+|\-|\×)/g, '<span class="font-bold text-foreground mx-1">$1</span>')
-                                    .replace(/(Revenue|COGS|Assets|Liabilities|FCF|EBITDA|Cash|Debt)/gi, '<span class="font-bold text-foreground">$1</span>')
+                                    .replace(/(=|÷|\+|\-|\×)/g, '<strong style="color: white; margin: 0 4px;">$1</strong>')
+                                    .replace(/(Revenue|COGS|Assets|Liabilities|FCF|EBITDA|Cash|Debt)/gi, '<strong style="color: white;">$1</strong>')
                                 }}
                               />
                             </div>
@@ -344,19 +344,19 @@ const QuestionView = () => {
                             <h4 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
                               💡 Examples
                             </h4>
-                            <div className="space-y-3">
+                            <div className="space-y-2">
                               {currentQuestion.learnContent.example.split('\n').map((example, index) => (
                                 <div 
                                   key={index}
-                                  className="bg-muted/30 rounded-lg p-4 border border-success/20"
+                                  className="bg-muted/30 rounded-lg p-3 border border-success/20"
                                 >
                                   <div 
-                                    className="text-base text-foreground leading-relaxed"
+                                    className="text-base text-foreground leading-normal"
                                     dangerouslySetInnerHTML={{
                                       __html: example
-                                        .replace(/(\$[\d,]+)/g, '<span class="font-bold text-foreground">$1</span>')
-                                        .replace(/(→|=)/g, '<span class="font-bold text-foreground mx-2">$1</span>')
-                                        .replace(/(Revenue|COGS|Assets|Liabilities|Ratio|Gross Profit)/gi, '<span class="font-bold text-foreground">$1</span>')
+                                        .replace(/(\$[\d,]+)/g, '<strong style="color: white;">$1</strong>')
+                                        .replace(/(→|=)/g, '<strong style="color: white; margin: 0 8px;">$1</strong>')
+                                        .replace(/(Revenue|COGS|Assets|Liabilities|Ratio|Gross Profit)/gi, '<strong style="color: white;">$1</strong>')
                                     }}
                                   />
                                 </div>
