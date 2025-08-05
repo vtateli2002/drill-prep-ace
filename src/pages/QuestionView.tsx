@@ -308,8 +308,8 @@ const QuestionView = () => {
                               📘 Concept
                             </h4>
                             <div className="text-base text-foreground leading-relaxed">
-                              {currentQuestion.learnContent.concept.split(/(\b(?:Accounts Receivable|A\/R|revenue|accrual accounting|cash flows|assets|liabilities|Gross Profit|Current Ratio|liquidity)\b)/gi).map((part, index) => {
-                                const isKeyword = /^(Accounts Receivable|A\/R|revenue|accrual accounting|cash flows|assets|liabilities|Gross Profit|Current Ratio|liquidity)$/i.test(part);
+                              {currentQuestion.learnContent.concept.split(/(\b(?:Accounts Receivable|A\/R|accounts receivable|deferred revenue|revenue|accrual accounting|cash flows|assets|liabilities|Gross Profit|gross profit|Current Ratio|current ratio|liquidity)\b)/gi).map((part, index) => {
+                                const isKeyword = /^(Accounts Receivable|A\/R|accounts receivable|deferred revenue|revenue|accrual accounting|cash flows|assets|liabilities|Gross Profit|gross profit|Current Ratio|current ratio|liquidity)$/i.test(part);
                                 return isKeyword ? (
                                   <span key={index} className="font-bold text-white">{part}</span>
                                 ) : (
@@ -328,10 +328,10 @@ const QuestionView = () => {
                             </h4>
                             <div className="bg-muted/50 rounded-lg p-4 border border-success/20">
                               <div className="text-base font-mono text-foreground leading-relaxed">
-                                {currentQuestion.learnContent.formula.split(/(\n|=|÷|\+|\-|\×|Revenue|COGS|Assets|Liabilities|FCF|EBITDA|Cash|Debt)/gi).map((part, index) => {
+                                {currentQuestion.learnContent.formula.split(/(\n|=|÷|\+|\-|\×|Revenue|COGS|Current Assets|Current Liabilities|Gross Profit)/gi).map((part, index) => {
                                   if (part === '\n') return <br key={index} />;
                                   const isOperator = /^(=|÷|\+|\-|\×)$/.test(part);
-                                  const isKeyword = /^(Revenue|COGS|Assets|Liabilities|FCF|EBITDA|Cash|Debt)$/i.test(part);
+                                  const isKeyword = /^(Revenue|COGS|Current Assets|Current Liabilities|Gross Profit)$/i.test(part);
                                   return isOperator ? (
                                     <span key={index} className="font-bold text-white mx-1">{part}</span>
                                   ) : isKeyword ? (
@@ -358,10 +358,10 @@ const QuestionView = () => {
                                   className="bg-muted/30 rounded-lg p-3 border border-success/20"
                                 >
                                   <div className="text-base text-foreground leading-normal">
-                                    {example.split(/(\$[\d,]+|→|=|Revenue|COGS|Assets|Liabilities|Ratio|Gross Profit)/gi).map((part, partIndex) => {
+                                    {example.split(/(\$[\d,]+|→|=|Deferred Revenue|deferred revenue|Revenue \+ A\/R|revenue \+ A\/R|Cash \+ Revenue|cash \+ revenue|Revenue|COGS|Current Assets|Current Liabilities|Gross Profit|Current Ratio)/gi).map((part, partIndex) => {
                                       const isMoney = /^\$[\d,]+$/.test(part);
                                       const isOperator = /^(→|=)$/.test(part);
-                                      const isKeyword = /^(Revenue|COGS|Assets|Liabilities|Ratio|Gross Profit)$/i.test(part);
+                                      const isKeyword = /^(Deferred Revenue|deferred revenue|Revenue \+ A\/R|revenue \+ A\/R|Cash \+ Revenue|cash \+ revenue|Revenue|COGS|Current Assets|Current Liabilities|Gross Profit|Current Ratio)$/i.test(part);
                                       return isMoney || isOperator || isKeyword ? (
                                         <span key={partIndex} className="font-bold text-white">{part}</span>
                                       ) : (
