@@ -1465,5 +1465,95 @@ What is the net change in working capital?`,
       formula: 'Change in WC = ΔAR + ΔInventory - ΔAP',
       example: 'ΔAR +$5K, ΔInv -$2K, ΔAP +$1K → Net = +2K\nΔAR -$4K, ΔInv +$3K, ΔAP -$1K → Net = -2K'
     }
+  },
+  {
+    id: 'acc-medium-46',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Deferred Tax Asset Creation',
+    description: `Your company recognizes $50,000 in revenue this year for accounting purposes, but only $30,000 of that is taxable this year due to deferred billing. The tax rate is 25%.
+
+What is the amount of the deferred tax asset created?`,
+    answer: 5000,
+    unit: '$',
+    hint: 'Deferred Tax Asset = (Accounting Revenue - Taxable Revenue) × Tax Rate',
+    explanation: 'Since you recognize more revenue for accounting than for tax purposes, the company pays less in taxes now and will pay more in the future — creating a deferred tax asset. ($50,000 - $30,000) × 25% = $5,000',
+    learnContent: {
+      concept: 'A deferred tax asset arises when a company pays less tax now but expects to pay more in the future due to timing differences in revenue or expense recognition.',
+      formula: 'Deferred Tax Asset = (Book Income - Taxable Income) × Tax Rate',
+      example: '$40k book vs. $30k tax income @ 30% → DTA = $3,000\n$70k book vs. $60k tax income @ 25% → DTA = $2,500\n$90k book vs. $85k tax income @ 20% → DTA = $1,000'
+    }
+  },
+  {
+    id: 'acc-medium-47',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Installment Sales Recognition',
+    description: `Your company sells $120,000 worth of products in Q1, receiving only $60,000 in cash and the rest to be paid over time. COGS for the products was $70,000.
+
+What is the gross profit recognized under installment sales accounting?`,
+    answer: 25000,
+    unit: '$',
+    hint: 'Gross Profit % = (Revenue - COGS) / Revenue → then apply % to actual cash received',
+    explanation: 'Installment sales recognize revenue and profit as cash is received. Gross Profit % = ($120,000 - $70,000) / $120,000 = 41.67%. Gross Profit Recognized = $60,000 × 41.67% = $25,000',
+    learnContent: {
+      concept: 'Installment sales accounting defers revenue recognition until cash is received, useful when collectability is uncertain.',
+      formula: 'Gross Profit Recognized = (Cash Received × Gross Profit %)\nGross Profit % = (Revenue - COGS) / Revenue',
+      example: 'Sale $100k, COGS $60k → 40% GP → $20k recognized on $50k received\nSale $80k, COGS $48k → 40% GP → $12k on $30k\nSale $200k, COGS $150k → 25% GP → $25k on $100k'
+    }
+  },
+  {
+    id: 'acc-medium-48',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Vendor Discount Impact on COGS',
+    description: `Your company expects COGS of $200,000 for the quarter. After a negotiation, your supplier grants a 5% discount on the total, plus an additional $2,000 rebate for early payment.
+
+What is your final COGS?`,
+    answer: 188000,
+    unit: '$',
+    hint: 'Apply percentage discount, then subtract rebate to get final COGS.',
+    explanation: 'A 5% discount on $200,000 = $10,000. Adding the $2,000 rebate brings your total savings to $12,000. Final COGS = $200,000 - $10,000 - $2,000 = $188,000',
+    learnContent: {
+      concept: 'Vendor negotiations can directly reduce COGS via discounts and rebates, improving gross margins without operational changes.',
+      formula: 'Final COGS = Expected COGS - % Discount - Fixed Rebate',
+      example: '$100k COGS, 10% discount, $1k rebate → $89k final\n$50k, 5% discount, $500 rebate → $47,000\n$150k, 3% discount, $2,000 rebate → $142,500'
+    }
+  },
+  {
+    id: 'acc-medium-49',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Expense Classification - Prepaid or Accrued?',
+    description: `You pay $24,000 upfront for an annual software subscription on July 1. By year-end (December 31), how much should be recorded as an expense, and how much as a prepaid asset?
+
+What is the expense amount for the current year?`,
+    answer: 12000,
+    unit: '$',
+    hint: 'Split the payment based on usage vs. future use.',
+    explanation: 'Only 6 months of service is consumed this year (July-December). Expense = $24,000 × (6/12) = $12,000. The remaining $12,000 is a prepaid asset.',
+    learnContent: {
+      concept: 'Expenses must match the period in which benefits are received. Prepaid expenses are future-period costs paid upfront.',
+      formula: 'Expense = Total × (Months Used / 12)\nPrepaid = Total - Expense',
+      example: '$12k paid in Oct → 3 months used = $3k expense\n$6k paid in Jan for 6 months → full expense in year\n$18k paid in Sep → 4 months used = $6k expense, $12k prepaid'
+    }
+  },
+  {
+    id: 'acc-medium-50',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Amortization of Intangible Assets',
+    description: `You acquire a brand trademark for $120,000 with a 10-year useful life and no residual value.
+
+What is the annual amortization expense?`,
+    answer: 12000,
+    unit: '$',
+    hint: 'Amortization = Cost / Useful Life',
+    explanation: 'Annual amortization = $120,000 / 10 years = $12,000. After 3 years, cumulative amortization would be $36,000, leaving a net book value of $84,000.',
+    learnContent: {
+      concept: 'Intangible assets like trademarks and patents are amortized over their useful lives to reflect declining value.',
+      formula: 'Annual Amortization = Cost / Useful Life\nNBV = Cost - (Amortization × Years)',
+      example: '$60k, 5 years → $12k/year → NBV after 2 = $36k\n$100k, 10 years → $10k/year → NBV after 5 = $50k\n$90k, 9 years → $10k/year → NBV after 4 = $50k'
+    }
   }
 ];
