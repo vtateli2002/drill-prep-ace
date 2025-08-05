@@ -1024,5 +1024,118 @@ What is the cash flow benefit from depreciation in Year 1?`,
       formula: 'Tax Shield = Depreciation × Tax Rate',
       example: 'Dep $10K, Tax 30% → $3K\nDep $25K, Tax 20% → $5K\nDep $15K, Tax 35% → $5.25K'
     }
+  },
+  {
+    id: 'acc-easy-41',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Free Cash Flow from Operations',
+    description: `A company reports the following for the year:
+
+Net Income: $90,000
+Depreciation: $10,000
+Capital Expenditures: $25,000
+Change in Net Working Capital: +$5,000
+
+What is the company's Free Cash Flow (FCF)?`,
+    answer: 70000,
+    unit: '$',
+    hint: 'FCF = Net Income + Depreciation - CapEx - Change in NWC',
+    explanation: '$90,000 + $10,000 - $25,000 - $5,000 = $70,000',
+    learnContent: {
+      concept: 'Free Cash Flow represents the cash available after reinvesting to maintain or expand operations. It\'s used in DCF analysis.',
+      formula: 'FCF = Net Income + Depreciation - CapEx - Change in NWC',
+      example: 'NI $80K, Dep $15K, CapEx $20K, NWC +$5K → FCF = $70K\nNI $50K, Dep $10K, CapEx $5K, NWC -$5K → FCF = $60K\nNI $100K, Dep $20K, CapEx $25K, NWC +$10K → FCF = $85K'
+    }
+  },
+  {
+    id: 'acc-easy-42',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Ending Inventory Calculation',
+    description: `A retail company begins the year with $40,000 in inventory.
+
+It purchases $100,000 in additional inventory during the year.
+
+Cost of Goods Sold (COGS) was $110,000.
+
+What is the ending inventory balance?`,
+    answer: 30000,
+    unit: '$',
+    hint: 'Ending Inventory = Beginning Inventory + Purchases - COGS',
+    explanation: '$40,000 + $100,000 - $110,000 = $30,000',
+    learnContent: {
+      concept: 'Ending Inventory reflects what hasn\'t been sold. COGS reduces it, while purchases increase it.',
+      formula: 'Ending Inventory = Beginning Inventory + Purchases - COGS',
+      example: 'Begin $50K, Buy $60K, COGS $70K → End = $40K\nBegin $20K, Buy $80K, COGS $75K → End = $25K\nBegin $30K, Buy $40K, COGS $50K → End = $20K'
+    }
+  },
+  {
+    id: 'acc-easy-43',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Indirect OCF Calculation',
+    description: `A firm has:
+
+Net Income: $120,000
+Depreciation: $15,000
+Increase in Accounts Receivable: $10,000
+Decrease in Accounts Payable: $5,000
+
+What is the Operating Cash Flow (OCF) using the indirect method?`,
+    answer: 120000,
+    unit: '$',
+    hint: 'OCF = Net Income + Non-Cash Expenses - Increases in Assets + Decreases in Liabilities',
+    explanation: '$120,000 + $15,000 - $10,000 - $5,000 = $120,000',
+    learnContent: {
+      concept: 'The indirect method starts with net income, adds back non-cash charges, and adjusts for working capital changes.',
+      formula: 'OCF = NI + Depreciation - ΔAR + ΔAP',
+      example: 'NI $90K, Dep $10K, AR +$5K, AP +$5K → OCF = $100K\nNI $100K, Dep $20K, AR +$15K, AP -$5K → OCF = $100K\nNI $70K, Dep $10K, AR -$5K, AP -$10K → OCF = $65K'
+    }
+  },
+  {
+    id: 'acc-easy-44',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'EBITDA Calculation',
+    description: `Given the following:
+
+Revenue: $500,000
+COGS: $200,000
+Operating Expenses: $120,000
+Depreciation & Amortization: $30,000
+
+What is EBITDA?`,
+    answer: 180000,
+    unit: '$',
+    hint: 'EBITDA = Revenue - COGS - OpEx (excluding D&A)',
+    explanation: '$500,000 - $200,000 - $120,000 = $180,000',
+    learnContent: {
+      concept: 'EBITDA is earnings before interest, taxes, depreciation, and amortization — often used to measure core profitability.',
+      formula: 'EBITDA = Revenue - COGS - Operating Expenses (excl. D&A)',
+      example: 'Rev $400K, COGS $150K, OpEx $100K → EBITDA = $150K\nRev $600K, COGS $250K, OpEx $200K → EBITDA = $150K\nRev $300K, COGS $100K, OpEx $80K → EBITDA = $120K'
+    }
+  },
+  {
+    id: 'acc-easy-45',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Shareholders\' Equity from Balance Sheet',
+    description: `A company has the following:
+
+Total Assets: $750,000
+Current Liabilities: $100,000
+Long-Term Debt: $250,000
+
+What is the company's Shareholders' Equity?`,
+    answer: 400000,
+    unit: '$',
+    hint: 'Equity = Total Assets - Total Liabilities',
+    explanation: 'Liabilities = $100,000 + $250,000 = $350,000. Equity = $750,000 - $350,000 = $400,000',
+    learnContent: {
+      concept: 'Equity represents the residual interest in assets after liabilities are settled.',
+      formula: 'Equity = Assets - Liabilities',
+      example: 'Assets $600K, Liab $300K → Equity = $300K\nAssets $500K, Liab $200K → Equity = $300K\nAssets $1M, Liab $700K → Equity = $300K'
+    }
   }
 ];
