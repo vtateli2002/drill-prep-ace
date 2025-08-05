@@ -15,6 +15,8 @@ import { useQuestions } from '@/hooks/useQuestions';
 import { useDailyChallenge } from '@/hooks/useDailyChallenge';
 import { useAuth } from '@/hooks/useAuth';
 import NotesUtility from '@/components/NotesUtility';
+import DrawingCanvas from '@/components/DrawingCanvas';
+import Calculator from '@/components/Calculator';
 
 const QuestionView = () => {
   const { questionId } = useParams<{ questionId: string }>();
@@ -395,11 +397,26 @@ const QuestionView = () => {
             {/* Utility Tabs */}
             <Card className="flex-1">
               <CardHeader>
-                <CardTitle>🗒️ Notes & Tools</CardTitle>
+                <Tabs defaultValue="notes" className="w-full">
+                  <TabsList className="grid w-full grid-cols-3">
+                    <TabsTrigger value="notes">🗒️ Notes</TabsTrigger>
+                    <TabsTrigger value="scribble">✏️ Draw</TabsTrigger>
+                    <TabsTrigger value="calculator">🧮 Calculator</TabsTrigger>
+                  </TabsList>
+                  
+                  <TabsContent value="notes" className="mt-4">
+                    <NotesUtility />
+                  </TabsContent>
+                  
+                  <TabsContent value="scribble" className="mt-4">
+                    <DrawingCanvas />
+                  </TabsContent>
+                  
+                  <TabsContent value="calculator" className="mt-4">
+                    <Calculator />
+                  </TabsContent>
+                </Tabs>
               </CardHeader>
-              <CardContent className="overflow-y-auto max-h-[calc(100vh-400px)]">
-                <NotesUtility />
-              </CardContent>
             </Card>
           </div>
         </div>

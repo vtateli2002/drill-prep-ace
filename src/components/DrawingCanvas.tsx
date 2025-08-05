@@ -142,7 +142,7 @@ const DrawingCanvas = ({ className }: DrawingCanvasProps) => {
 
       <canvas
         ref={canvasRef}
-        className="w-full h-40 border border-border rounded-md cursor-crosshair bg-white"
+        className="w-full h-60 border border-border rounded-md cursor-crosshair bg-white"
         onMouseDown={startDrawing}
         onMouseMove={draw}
         onMouseUp={stopDrawing}
