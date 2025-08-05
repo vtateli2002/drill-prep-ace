@@ -12,7 +12,6 @@ import Onboarding from "./pages/Onboarding";
 import PracticeMode from "./pages/PracticeMode";
 import Problems from "./pages/Problems";
 import QuestionView from "./pages/QuestionView";
-import Library from "./pages/Library";
 import Leaderboard from "./pages/Leaderboard";
 import Profile from "./pages/Profile";
 import DailyChallengeStandalone from "./components/DailyChallengeStandalone";
@@ -53,11 +52,6 @@ const App = () => (
             <Route path="/question/:questionId" element={
               <ProtectedRoute>
                 <QuestionView />
-              </ProtectedRoute>
-            } />
-            <Route path="/library" element={
-              <ProtectedRoute>
-                <Library />
               </ProtectedRoute>
             } />
             <Route path="/leaderboard" element={

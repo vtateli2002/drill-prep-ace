@@ -8,7 +8,7 @@ import RivalMotivationModal from '@/components/RivalMotivationModal';
 import DailyChallengeModal from '@/components/DailyChallengeModal';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Target, Calendar, Loader2, Bot } from 'lucide-react';
+import { Target, Loader2, Bot } from 'lucide-react';
 import { Track, AIRival, TRACK_NAMES } from '@/types/drill';
 import { useProfile } from '@/hooks/useProfile';
 import { useAuth } from '@/hooks/useAuth';
@@ -120,10 +120,6 @@ const Dashboard = () => {
             <Button onClick={handleDailyChallenge} className="px-6">
               <Target className="mr-2" size={16} />
               Daily Challenge
-            </Button>
-            <Button variant="outline" onClick={() => navigate('/library')}>
-              <Calendar className="mr-2" size={16} />
-              Study Library
             </Button>
           </div>
         </div>
