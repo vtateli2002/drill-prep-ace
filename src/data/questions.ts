@@ -1147,7 +1147,14 @@ What is the company's net working capital?`,
     answer: 12000,
     unit: '$',
     hint: 'Use formula: (AR + Inventory + Prepaid) - (AP + Accrued)',
-    explanation: 'Current Assets = $12K + $18K + $2K = $32K. Current Liabilities = $15K + $5K = $20K. Net Working Capital = $32K - $20K = $12K',
+    explanation: `Current Assets = $12K + $18K + $2K = $32K. Current Liabilities = $15K + $5K = $20K. Net Working Capital = $32K - $20K = $12K
+
+Working capital components:
+• Accounts Receivable - money owed to the company by customers for sales made on credit
+• Inventory - goods held for sale in the ordinary course of business
+• Prepaid Expenses - payments made in advance for future services or goods
+• Accounts Payable - money owed by the company to suppliers for goods/services received
+• Accrued Expenses - expenses that have been incurred but not yet paid`,
     learnContent: {
       concept: 'Working capital measures a company\'s short-term liquidity. It represents assets available to pay current liabilities.',
       formula: 'Net Working Capital = Current Assets - Current Liabilities',
