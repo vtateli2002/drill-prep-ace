@@ -13,11 +13,13 @@ import { Track, AIRival, TRACK_NAMES } from '@/types/drill';
 import { useProfile } from '@/hooks/useProfile';
 import { useAuth } from '@/hooks/useAuth';
 import { useLoginDailyChallenge } from '@/hooks/useLoginDailyChallenge';
+import { useRealProgress } from '@/hooks/useRealProgress';
 
 const Dashboard = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
   const { profile, loading } = useProfile();
+  const { trackStats, loading: progressLoading } = useRealProgress();
   const [showRivalModal, setShowRivalModal] = useState(false);
   const [showDailyChallengeModal, setShowDailyChallengeModal] = useState(false);
   const [hasShownLoginModal, setHasShownLoginModal] = useState(false);
@@ -64,11 +66,10 @@ const Dashboard = () => {
     }
   }, [shouldShowLoginChallenge, profile, hideDailyChallengeModal]);
 
-  // Always show all 4 tracks
+  // Always show all 4 tracks with real data
   const allTracks: Track[] = ['accounting', 'valuation', 'lbo', 'ma'];
-  const trackProgress = profile?.track_progress || {};
 
-  if (loading) {
+  if (loading || progressLoading) {
     return (
       <div className="min-h-screen bg-background">
         <Navbar />
@@ -173,14 +174,14 @@ const Dashboard = () => {
           <h2 className="text-2xl font-bold text-foreground mb-4">Your Tracks</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {allTracks.map((track) => {
-              const progress = trackProgress[track] || { completed: 0, total: 4 };
+              const stats = trackStats[track];
               return (
                 <TrackCard
                   key={track}
                   track={track}
-                  completed={progress.completed}
-                  total={progress.total}
-                  xp={profile.difficulty_xp?.[track] || 0}
+                  completed={stats.completed}
+                  total={stats.total}
+                  xp={stats.xp}
                   onStart={() => handleStartTrack(track)}
                 />
               );

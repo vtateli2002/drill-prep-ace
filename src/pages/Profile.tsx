@@ -9,11 +9,13 @@ import { Trophy, Zap, Target, Award, Loader2, User, LogOut } from 'lucide-react'
 import { useProfile } from '@/hooks/useProfile';
 import { useAuth } from '@/hooks/useAuth';
 import { useQuestions } from '@/hooks/useQuestions';
+import { useRealProgress } from '@/hooks/useRealProgress';
 import { BADGES, RANK_TITLES } from '@/types/leaderboard';
 
 const Profile = () => {
   const { profile, loading, calculatePercentile } = useProfile();
   const { signOut } = useAuth();
+  const { trackStats, difficultyXP, loading: progressLoading } = useRealProgress();
   const [percentile, setPercentile] = useState<number>(50);
 
   const getRankIcon = (title: string) => {
@@ -38,7 +40,7 @@ const Profile = () => {
     await signOut();
   };
 
-  if (loading) {
+  if (loading || progressLoading) {
     return (
       <div className="min-h-screen bg-background">
         <Navbar />
@@ -135,15 +137,15 @@ const Profile = () => {
                 <div className="space-y-4">
                   <h3 className="font-semibold text-foreground">Track Progress</h3>
                   {['accounting', 'valuation', 'lbo', 'ma'].map((track) => {
-                    const progress = profile.track_progress?.[track] || { completed: 0, total: 4 };
+                    const stats = trackStats[track as keyof typeof trackStats];
                     const displayName = track === 'ma' ? 'M&A' : track === 'lbo' ? 'LBO' : track.charAt(0).toUpperCase() + track.slice(1);
                     return (
                       <div key={track} className="space-y-2">
                         <div className="flex justify-between text-sm">
                           <span className="text-foreground">{displayName}</span>
-                          <span className="text-muted-foreground">{progress.completed || 0}/{progress.total || 4}</span>
+                          <span className="text-muted-foreground">{stats.completed}/{stats.total}</span>
                         </div>
-                        <Progress value={((progress.completed || 0) / (progress.total || 1)) * 100} />
+                        <Progress value={stats.total > 0 ? (stats.completed / stats.total) * 100 : 0} />
                       </div>
                     );
                   })}
@@ -153,7 +155,7 @@ const Profile = () => {
                 <div className="space-y-4">
                   <h3 className="font-semibold text-foreground">XP by Difficulty</h3>
                   {['easy', 'medium', 'hard', 'interview_ready'].map((difficulty) => {
-                    const xp = profile.difficulty_xp?.[difficulty] || 0;
+                    const xp = difficultyXP[difficulty as keyof typeof difficultyXP] || 0;
                     const displayName = difficulty === 'interview_ready' ? 'Interview Ready' : difficulty.charAt(0).toUpperCase() + difficulty.slice(1);
                     return (
                       <div key={difficulty} className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
