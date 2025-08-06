@@ -250,6 +250,8 @@ Key insights:
     explanation: `Calculation:
 Current Ratio = $30,000 ÷ $20,000 = 1.5x
 
+────────────────────────────────────────
+
 Step-by-step breakdown:
 
 1. Current Assets:
@@ -263,7 +265,7 @@ Step-by-step breakdown:
    • Short-Term Loan: $12,000
    → Total Current Liabilities: $20,000
 
-Analysis:
+Key Points:
 • Current Assets represent resources convertible to cash within one year
 • Current Liabilities are obligations due within one year
 • A 1.5x ratio means the company has $1.50 of current assets for every $1.00 of current liabilities
