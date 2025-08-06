@@ -488,7 +488,14 @@ const QuestionView = () => {
                           </CardTitle>
                         </CardHeader>
                         <CardContent>
-                          <p className="text-base text-foreground leading-relaxed">{currentQuestion.explanation}</p>
+                          <div 
+                            className="text-base text-foreground leading-relaxed"
+                            dangerouslySetInnerHTML={{
+                              __html: currentQuestion.explanation
+                                .replace(/\n/g, '<br />')
+                                .replace(/•/g, '&bull;')
+                            }}
+                          />
                         </CardContent>
                       </Card>
                     )}
