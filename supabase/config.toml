@@ -33,3 +33,6 @@ verify_jwt = false
 
 [functions.populate-dummy-users]
 verify_jwt = false
+
+[functions.update-ai-rival-xp]
+verify_jwt = false
