@@ -4855,7 +4855,7 @@ Key Points:
     answer: 6000,
     unit: '$',
     hint: 'Calculate how much service has been delivered.',
-    explanation: 'Unearned revenue decreases as services are performed.',
+    explanation: "**Calculation:** $18,000 - ($18,000 × 4/6) = **$6,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Contract Details**\n   - Total prepayment: $18,000\n   - Service period: 6 months (September 1 - February 28)\n   - Payment date: September 1st\n\n2. **Service Delivered by December 31**\n   - September, October, November, December = 4 months\n   - Service delivered: 4/6 = 67% of contract\n   - Revenue earned: $18,000 × (4/6) = $12,000\n\n3. **Remaining Unearned Revenue**\n   - Original unearned revenue: $18,000\n   - Less: Revenue earned: $12,000\n   - Unearned revenue remaining: $18,000 - $12,000 = $6,000\n\n**Key Points:**\n   • Unearned revenue represents future service obligations\n   • Revenue is recognized as services are performed\n   • Remaining balance covers January and February services\n   • Monthly service value is $3,000 ($18,000 ÷ 6)",
     learnContent: {
       concept: 'Unearned revenue is a liability until earned.',
       formula: 'Unearned Revenue = Total – Earned = Total – (Monthly × Months elapsed)',
@@ -4871,7 +4871,7 @@ Key Points:
     answer: 6000,
     unit: '$ gain',
     hint: 'First calculate net book value.',
-    explanation: 'Net book value = cost – accumulated depreciation. Compare to sale price.',
+    explanation: "**Calculation:** $62,000 - $56,000 = **$6,000 gain**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Calculate Net Book Value**\n   - Original cost: $80,000\n   - Annual depreciation: $8,000\n   - Years owned: 3 years\n   - Accumulated depreciation: $8,000 × 3 = $24,000\n   - Net book value: $80,000 - $24,000 = $56,000\n\n2. **Compare to Sale Price**\n   - Sale price received: $62,000\n   - Net book value: $56,000\n   - Difference: $62,000 - $56,000 = $6,000\n\n3. **Gain Recognition**\n   - Since sale price > net book value = Gain\n   - Gain on sale: $6,000\n   - Journal entry: Dr. Cash $62,000, Dr. Accum Deprec $24,000, Cr. Asset $80,000, Cr. Gain $6,000\n\n**Key Points:**\n   • Net book value = Cost - Accumulated depreciation\n   • Gain occurs when sale price exceeds net book value\n   • Gain increases net income in the period of sale\n   • Accumulated depreciation must be removed upon disposal",
     learnContent: {
       concept: 'Disposals affect income via gain/loss.',
       formula: 'Sale price – Net Book Value',
@@ -4887,7 +4887,7 @@ Key Points:
     answer: 15000,
     unit: '$',
     hint: 'Only capitalize interest during construction.',
-    explanation: 'Capitalized interest becomes part of the asset\'s cost.',
+    explanation: "**Calculation:** $500,000 × 6% × (6/12) = **$15,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Construction Loan Details**\n   - Loan amount: $500,000\n   - Interest rate: 6% annually\n   - Construction period: 6 months\n\n2. **Interest Capitalization Calculation**\n   - Annual interest: $500,000 × 6% = $30,000\n   - Construction period ratio: 6 months ÷ 12 months = 0.5\n   - Capitalized interest: $30,000 × 0.5 = $15,000\n\n3. **Accounting Treatment**\n   - Debit: Construction in Progress $15,000\n   - Credit: Interest Payable/Cash $15,000\n   - Interest becomes part of asset cost, not expense\n\n**Key Points:**\n   • Interest during construction is capitalized, not expensed\n   • Only interest during active construction qualifies\n   • Capitalized interest increases the asset's cost basis\n   • Begins depreciating when asset is placed in service",
     learnContent: {
       concept: 'Interest during construction is not expensed immediately.',
       formula: 'Loan × Rate × (Construction months ÷ 12)',
@@ -4903,7 +4903,7 @@ Key Points:
     answer: 10000,
     unit: '$ increase liabilities',
     hint: 'Expense must be matched to the period it\'s incurred.',
-    explanation: 'Record as an accrued liability.',
+    explanation: "**Calculation:** Services received = **$10,000 increase in liabilities**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Accrual Accounting Principle**\n   - Services received in December: $10,000\n   - Payment due in January\n   - Expense must be recorded in December (matching principle)\n\n2. **December Journal Entry**\n   - Debit: Consulting expense $10,000\n   - Credit: Accrued expenses payable $10,000\n\n3. **Financial Statement Impact**\n   - Income statement: Increases expenses by $10,000\n   - Balance sheet: Increases liabilities by $10,000\n   - Cash flow: No immediate impact (payment is next period)\n\n**Key Points:**\n   • Expenses are recognized when incurred, not when paid\n   • Creates accrued liability until payment is made\n   • Follows matching principle of accrual accounting\n   • Payment in January will reduce cash and the liability",
     learnContent: {
       concept: 'Accrual accounting recognizes expenses when incurred.',
       formula: 'Recognize expense → Increase accrued liabilities',
@@ -4919,7 +4919,7 @@ Key Points:
     answer: 100000,
     unit: '$ increase liabilities',
     hint: 'Dividends become a liability when declared.',
-    explanation: 'Declaration reduces retained earnings and creates a payable.',
+    explanation: "**Calculation:** $2 × 50,000 shares = **$100,000 increase in liabilities**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Dividend Declaration Details**\n   - Dividend per share: $2.00\n   - Shares outstanding: 50,000\n   - Total dividend declared: $2.00 × 50,000 = $100,000\n\n2. **Balance Sheet Impact at Declaration**\n   - Debit: Retained earnings $100,000\n   - Credit: Dividends payable (liability) $100,000\n\n3. **Key Timing Effects**\n   - Declaration date: Creates liability and reduces equity\n   - Payment date: Reduces cash and eliminates liability\n   - No income statement impact (dividends are not expenses)\n\n**Key Points:**\n   • Dividends become a liability when declared, not when paid\n   • Reduces retained earnings immediately upon declaration\n   • Creates dividend payable liability until payment\n   • Dividends are distributions of earnings, not expenses",
     learnContent: {
       concept: 'Dividends reduce equity when declared, not when paid.',
       formula: 'Dividend Payable = Dividend × Shares Outstanding',
@@ -4935,7 +4935,7 @@ Key Points:
     answer: 1200000,
     unit: 'shares',
     hint: 'Add convertible shares if in-the-money.',
-    explanation: 'If converted, additional shares dilute ownership.',
+    explanation: "**Calculation:** 1,000,000 + 200,000 = **1,200,000 shares**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Current Share Structure**\n   - Basic shares outstanding: 1,000,000\n   - Convertible debt amount: $5,000,000\n   - Conversion ratio: 200,000 shares\n\n2. **Dilution Analysis**\n   - Assume convertible debt is \"in-the-money\"\n   - If converted, debt would become equity\n   - Additional shares issued: 200,000\n\n3. **Diluted Share Count**\n   - Basic shares: 1,000,000\n   - Plus: Convertible shares: 200,000\n   - Total diluted shares: 1,200,000\n\n**Key Points:**\n   • Convertible securities are included if dilutive\n   • Used for calculating diluted earnings per share\n   • Assumes conversion occurred at beginning of period\n   • Interest on convertible debt would be added back to net income",
     learnContent: {
       concept: 'Convertible securities affect diluted EPS.',
       formula: 'Basic shares + Converted shares',
@@ -4951,7 +4951,7 @@ Key Points:
     answer: 30000,
     unit: '$',
     hint: 'Beginning + Additions – Recognized',
-    explanation: 'Deferred revenue decreases as service is delivered.',
+    explanation: "**Calculation:** $40,000 + $15,000 - $25,000 = **$30,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Beginning Deferred Revenue**\n   - Starting balance: $40,000\n   - Represents cash received for undelivered services\n\n2. **Period Activity**\n   - New cash prepayments: +$15,000\n   - Revenue earned/recognized: -$25,000\n   - Running calculation: $40,000 + $15,000 - $25,000\n\n3. **Ending Deferred Revenue**\n   - Final balance: $30,000\n   - Represents remaining service obligations\n\n**Key Points:**\n   • Deferred revenue increases with cash prepayments\n   • Deferred revenue decreases as services are delivered\n   • Ending balance represents future performance obligations\n   • Cash collection timing differs from revenue recognition timing",
     learnContent: {
       concept: 'Ending deferred revenue reflects liabilities for unearned income.',
       formula: 'Ending = Beginning + Cash collected – Revenue recognized',
@@ -4967,7 +4967,7 @@ Key Points:
     answer: 80000,
     unit: '$ under investing',
     hint: 'Focus on cash received.',
-    explanation: 'Sale proceeds go to investing section; gain goes to income.',
+    explanation: "**Calculation:** Sale proceeds = **$80,000 under investing activities**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Asset Sale Details**\n   - Sale price received: $80,000\n   - Book value of equipment: $70,000\n   - Gain on sale: $80,000 - $70,000 = $10,000\n\n2. **Cash Flow Statement Treatment**\n   - Investing activities (cash inflow): +$80,000\n   - This represents the actual cash received\n\n3. **Income Statement Treatment**\n   - The $10,000 gain appears on the income statement\n   - In operating cash flow, this gain is subtracted (indirect method)\n   - Prevents double-counting the cash impact\n\n**Key Points:**\n   • Cash received goes to investing activities at full amount\n   • Gains/losses appear in income but are adjusted in operating section\n   • Focus on cash received, not book value or gain\n   • Asset sales are investing activities, not operating",
     learnContent: {
       concept: 'Cash from asset sales is investing activity.',
       formula: 'Sale price → Investing inflow',
@@ -4983,7 +4983,7 @@ Key Points:
     answer: 10000,
     unit: '$',
     hint: 'Apply the write-down percentage to total inventory.',
-    explanation: 'A 20% write-down of $50,000 results in a $10,000 non-cash expense.',
+    explanation: "**Calculation:** $50,000 × 20% = **$10,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Inventory Assessment**\n   - Original inventory value: $50,000\n   - Obsolescence percentage: 20%\n   - Unsellable inventory: $50,000 × 20% = $10,000\n\n2. **Write-Down Recognition**\n   - Debit: Inventory write-down expense $10,000\n   - Credit: Inventory $10,000\n   - This reduces inventory to net realizable value\n\n3. **Financial Statement Impact**\n   - Income statement: $10,000 non-cash expense\n   - Balance sheet: Inventory reduced from $50,000 to $40,000\n   - Cash flow: $10,000 added back in operating section (non-cash)\n\n**Key Points:**\n   • Write-downs are non-cash expenses that reduce net income\n   • Inventory is written down to lower of cost or market\n   • Expense recognition follows conservatism principle\n   • Write-downs are typically not reversible",
     learnContent: {
       concept: 'Write-downs reduce assets and net income but are non-cash.',
       formula: 'Write-down amount = Inventory × Write-down %',
@@ -4999,7 +4999,7 @@ Key Points:
     answer: 30000,
     unit: '$',
     hint: 'Multiply the original value by the impairment percentage.',
-    explanation: '$50,000 × 60% = $30,000 impairment expense.',
+    explanation: "**Calculation:** $50,000 × 60% = **$30,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Intangible Asset Details**\n   - Original patent value: $50,000\n   - Market value decline: 60%\n   - Impairment amount: $50,000 × 60% = $30,000\n\n2. **Impairment Recognition**\n   - Debit: Impairment loss (expense) $30,000\n   - Credit: Patents (or accumulated impairment) $30,000\n   - Reduces carrying value from $50,000 to $20,000\n\n3. **Financial Statement Impact**\n   - Income statement: $30,000 non-cash impairment expense\n   - Balance sheet: Patent value reduced to $20,000\n   - Cash flow: $30,000 added back as non-cash charge\n\n**Key Points:**\n   • Impairments are non-cash, non-recurring charges\n   • Required when carrying value exceeds fair value\n   • Generally not reversible under US GAAP\n   • Reduces future amortization expense",
     learnContent: {
       concept: 'Impairments are non-cash, non-recurring charges.',
       formula: 'Impairment expense = Asset value × Impairment %',
@@ -5015,7 +5015,7 @@ Key Points:
     answer: 40000,
     unit: '$',
     hint: 'Subtract book value from sale proceeds.',
-    explanation: '$120,000 – $80,000 = $40,000 gain.',
+    explanation: "**Calculation:** $120,000 - $80,000 = **$40,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Investment Details**\n   - Original purchase price: $80,000\n   - Sale proceeds: $120,000\n   - Holding period: 2 years\n\n2. **Gain Calculation**\n   - Gain = Sale price - Purchase price\n   - Gain = $120,000 - $80,000 = $40,000\n\n3. **Financial Statement Treatment**\n   - Income statement: $40,000 gain on investment sale\n   - Balance sheet: Investment removed, cash increased\n   - Cash flow: $120,000 cash inflow (investing section)\n\n**Key Points:**\n   • Gains are recognized when investments are sold\n   • Gain equals sale proceeds minus original cost basis\n   • Unrealized gains during holding period are not recognized\n   • Investment sales are investing activities on cash flow statement",
     learnContent: {
       concept: 'Gains reflect increase in asset value realized upon sale.',
       formula: 'Gain = Sale Price – Book Value',
@@ -5031,7 +5031,7 @@ Key Points:
     answer: 8000,
     unit: '$',
     hint: 'Divide total intangible by useful life.',
-    explanation: '$40,000 / 5 years = $8,000 amortization per year.',
+    explanation: "**Calculation:** $40,000 ÷ 5 years = **$8,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Intangible Asset Details**\n   - Customer list cost: $40,000\n   - Useful life: 5 years\n   - Amortization method: Straight-line\n\n2. **Annual Amortization**\n   - Annual amortization = Cost ÷ Useful life\n   - Annual amortization = $40,000 ÷ 5 = $8,000\n\n3. **Cash Flow Treatment**\n   - Income statement: $8,000 amortization expense (reduces net income)\n   - Cash flow statement: +$8,000 added back (non-cash expense)\n   - Balance sheet: Reduces net book value of customer list\n\n**Key Points:**\n   • Amortization is a non-cash expense\n   • Reduces net income but doesn't affect cash\n   • Added back to net income in operating cash flow\n   • Finite-life intangibles are amortized over useful life",
     learnContent: {
       concept: 'Amortization is non-cash but reduces net income.',
       formula: 'Amortization = Total / Useful Life',
@@ -5047,7 +5047,7 @@ Key Points:
     answer: 60000,
     unit: '$',
     hint: 'Calculate portion not owned.',
-    explanation: '30% × $200,000 = $60,000 minority interest.',
+    explanation: "**Calculation:** $200,000 × (100% - 70%) = **$60,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Ownership Structure**\n   - Subsidiary net income: $200,000\n   - Parent company ownership: 70%\n   - Minority (non-controlling) ownership: 30%\n\n2. **Income Attribution**\n   - Parent company's share: $200,000 × 70% = $140,000\n   - Minority interest share: $200,000 × 30% = $60,000\n\n3. **Consolidated Income Statement**\n   - Consolidated net income includes: $200,000\n   - Less: Minority interest: ($60,000)\n   - Net income attributable to parent: $140,000\n\n**Key Points:**\n   • Minority interest represents non-controlling shareholders' portion\n   • Consolidated statements include 100% of subsidiary results\n   • Minority interest is deducted to show parent's share\n   • Appears as separate line item on consolidated income statement",
     learnContent: {
       concept: 'Minority interest = % not owned × sub income.',
       formula: 'Minority = Sub income × (1 – % owned)',
@@ -5063,7 +5063,7 @@ Key Points:
     answer: 40000,
     unit: '$',
     hint: 'Use equity method for 20–50% stakes.',
-    explanation: '40% of $100,000 = $40,000 equity income.',
+    explanation: "**Calculation:** $100,000 × 40% = **$40,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Equity Method Application**\n   - Joint venture earnings: $100,000\n   - Company's ownership stake: 40%\n   - Ownership range for equity method: 20-50%\n\n2. **Equity Income Recognition**\n   - Equity income = Investee earnings × Ownership percentage\n   - Equity income = $100,000 × 40% = $40,000\n\n3. **Accounting Treatment**\n   - Debit: Investment in joint venture $40,000\n   - Credit: Equity income $40,000\n   - Increases both investment value and income\n\n**Key Points:**\n   • Equity method applies to 20-50% ownership stakes\n   • Company recognizes its proportionate share of earnings\n   • Investment account increases with earnings, decreases with dividends\n   • Provides income recognition without cash receipt",
     learnContent: {
       concept: 'Equity method accounts for ownership share.',
       formula: 'Equity Income = Affiliate NI × Ownership %',
@@ -5079,7 +5079,7 @@ Key Points:
     answer: 5000,
     unit: '$',
     hint: 'Multiply NOL by tax rate.',
-    explanation: '$20,000 × 25% = $5,000 DTA.',
+    explanation: "**Calculation:** $20,000 × 25% = **$5,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Net Operating Loss Details**\n   - NOL carryforward: $20,000\n   - Corporate tax rate: 25%\n   - Future tax benefit available\n\n2. **Deferred Tax Asset Calculation**\n   - DTA = NOL × Tax rate\n   - DTA = $20,000 × 25% = $5,000\n\n3. **Accounting Recognition**\n   - Debit: Deferred tax asset $5,000\n   - Credit: Tax benefit (income statement) $5,000\n   - Represents future tax savings\n\n**Key Points:**\n   • NOLs create future tax benefits when used\n   • DTA represents prepaid taxes or future tax savings\n   • Requires assessment of realizability (future taxable income)\n   • Reduces cash taxes when NOL is utilized",
     learnContent: {
       concept: 'DTA reflects future tax savings.',
       formula: 'DTA = NOL × Tax Rate',
@@ -5095,7 +5095,7 @@ Key Points:
     answer: 4500,
     unit: '$',
     hint: 'Difference × tax rate.',
-    explanation: '($35K – $20K) × 30% = $4,500 DTL',
+    explanation: "**Calculation:** ($35,000 - $20,000) × 30% = **$4,500**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Depreciation Timing Difference**\n   - Tax depreciation (accelerated): $35,000\n   - Book depreciation (straight-line): $20,000\n   - Timing difference: $35,000 - $20,000 = $15,000\n\n2. **Deferred Tax Liability Calculation**\n   - Temporary difference: $15,000\n   - Tax rate: 30%\n   - DTL = $15,000 × 30% = $4,500\n\n3. **Economic Impact**\n   - Company pays less tax now due to accelerated depreciation\n   - Will pay more tax in future when book depreciation exceeds tax\n   - DTL represents future tax obligation\n\n**Key Points:**\n   • DTL arises when tax depreciation exceeds book depreciation\n   • Represents taxes deferred to future periods\n   • Timing difference will reverse over asset life\n   • Accelerated tax depreciation creates temporary benefit",
     learnContent: {
       concept: 'DTL results from temporary timing differences.',
       formula: 'DTL = (Tax Dep – Book Dep) × Tax Rate',
@@ -5111,7 +5111,7 @@ Key Points:
     answer: 300000,
     unit: '$',
     hint: 'Goodwill = Price – Net assets acquired',
-    explanation: '$2.5M – ($1.9M + $300K) = $300K',
+    explanation: "**Calculation:** $2,500,000 - ($1,900,000 + $300,000) = **$300,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Purchase Price Allocation**\n   - Total acquisition cost: $2,500,000\n   - Book value of net assets: $1,900,000\n   - Identified intangibles: $300,000\n   - Fair value of net assets: $1,900,000 + $300,000 = $2,200,000\n\n2. **Goodwill Calculation**\n   - Goodwill = Purchase price - Fair value of net assets\n   - Goodwill = $2,500,000 - $2,200,000 = $300,000\n\n3. **Goodwill Characteristics**\n   - Represents premium paid for intangible benefits\n   - Not amortized under current standards\n   - Subject to annual impairment testing\n   - Reflects synergies, market position, workforce\n\n**Key Points:**\n   • Goodwill is excess of purchase price over fair value of net assets\n   • Includes both book value and identified intangibles\n   • Cannot be amortized but must be tested for impairment\n   • Represents value of assembled business beyond identifiable assets",
     learnContent: {
       concept: 'Goodwill represents premium over fair value.',
       formula: 'Goodwill = Purchase Price – (Book Value + Intangibles)',
@@ -5127,7 +5127,7 @@ Key Points:
     answer: 120000,
     unit: '$',
     hint: 'Multiply equity by % minority.',
-    explanation: '15% × $800K = $120K NCI',
+    explanation: "**Calculation:** $800,000 × (100% - 85%) = **$120,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Subsidiary Equity Structure**\n   - Total subsidiary equity: $800,000\n   - Parent company ownership: 85%\n   - Non-controlling interest: 100% - 85% = 15%\n\n2. **Non-Controlling Interest Calculation**\n   - NCI = Subsidiary equity × Minority percentage\n   - NCI = $800,000 × 15% = $120,000\n\n3. **Balance Sheet Presentation**\n   - NCI appears in equity section of consolidated balance sheet\n   - Represents minority shareholders' claim on subsidiary net assets\n   - Separate from parent company's equity\n\n**Key Points:**\n   • NCI represents minority shareholders' equity interest\n   • Shown separately in consolidated equity section\n   • Changes with subsidiary's earnings and dividend distributions\n   • Calculated as minority percentage of subsidiary's equity",
     learnContent: {
       concept: 'NCI = Sub equity × % minority',
       formula: 'NCI = Sub equity × (1 – % owned)',
