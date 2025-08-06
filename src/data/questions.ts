@@ -5139,53 +5139,11 @@ Key Points:
     track: 'accounting',
     difficulty: 'hard',
     title: 'Multi-Line CFO Walk from WC Changes',
-    description: `FerroNova – Working Capital and Depreciation Timing
-
-FerroNova reported $100,000 in Net Income.
-
-During the year:
-
-Accounts Receivable increased by $40,000 due to delayed customer payments
-
-Inventory decreased by $25,000 as the company ran down safety stock
-
-Prepaid expenses increased by $30,000
-
-Accounts Payable decreased by $10,000
-
-Accrued expenses increased by $15,000
-
-📊 Financial Summary:
-
-Net Income: $100,000
-
-AR ↑ $40,000
-
-Inventory ↓ $25,000
-
-Prepaid ↑ $30,000
-
-A/P ↓ $10,000
-
-Accrued ↑ $15,000
-
-What is cash flow from operations?`,
+    description: 'FerroNova reported $100,000 in Net Income. During the year: Accounts Receivable increased by $40,000, Inventory decreased by $25,000, Prepaid expenses increased by $30,000, Accounts Payable decreased by $10,000, and Accrued expenses increased by $15,000. What is cash flow from operations?',
     answer: 60000,
     unit: '$',
     hint: 'Think about which WC changes are sources vs. uses of cash.',
-    explanation: `Start from NI = 100K
-
-AR ↑ = –40K
-
-Inventory ↓ = +25K
-
-Prepaid ↑ = –30K
-
-A/P ↓ = –10K
-
-Accrued ↑ = +15K
-
-CFO = 100 – 40 + 25 – 30 – 10 + 15 = 60,000`,
+    explanation: "**Calculation:** CFO = NI ± Working Capital Changes = **$60,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Starting Point**\n   - Net Income: $100,000\n\n2. **Working Capital Adjustments**\n   - Accounts Receivable increase: ($40,000) [cash outflow]\n   - Inventory decrease: $25,000 [cash inflow]\n   - Prepaid expenses increase: ($30,000) [cash outflow]\n   - Accounts Payable decrease: ($10,000) [cash outflow]\n   - Accrued expenses increase: $15,000 [cash inflow]\n\n3. **Net Working Capital Impact**\n   - Total WC changes: ($40,000) + $25,000 + ($30,000) + ($10,000) + $15,000 = ($40,000)\n\n4. **Final Calculation**\n   - Operating Cash Flow: $100,000 - $40,000 = $60,000\n\n**Key Points:**\n   • Asset increases = cash uses (negative)\n   • Asset decreases = cash sources (positive)\n   • Liability increases = cash sources (positive)\n   • Liability decreases = cash uses (negative)",
     learnContent: {
       concept: 'AR increase = use of cash. Inventory decrease = source of cash. Prepaids increase = use of cash. Accounts payable decrease = use of cash. Accrued increase = source of cash.',
       formula: 'CFO = Net Income ± ∆WC',
@@ -5213,41 +5171,11 @@ CFO = 100 – 40 + 25 – 30 – 10 + 15 = 60,000`,
     track: 'accounting',
     difficulty: 'hard',
     title: 'Asset Impairment and Restructuring Charges',
-    description: `Rexa Systems – Non-Cash Charges and Adjustments
-
-Rexa reported $75,000 in Net Income.
-
-During the year, it incurred:
-
-A non-cash impairment charge of $30,000
-
-Restructuring charges of $20,000, of which $15,000 was paid in cash
-
-A gain on sale of equipment of $10,000
-
-📊 Financial Summary:
-
-Net Income: $75,000
-
-Impairment: $30,000
-
-Restructuring: $20,000 (15K cash)
-
-Gain on Sale: $10,000
-
-What is cash flow from operations?`,
-    answer: 120000,
+    description: 'Rexa Systems reported $75,000 in Net Income. During the year, it incurred: A non-cash impairment charge of $30,000, Restructuring charges of $20,000 (of which $15,000 was paid in cash), and A gain on sale of equipment of $10,000. What is cash flow from operations?',
+    answer: 95000,
     unit: '$',
     hint: 'Add back non-cash charges, subtract gain on sale.',
-    explanation: `NI = 75K
-
-Impairment = +30K (non-cash)
-
-Restructuring = 5K add-back (20K – 15K paid)
-
-Gain on sale = –10K
-
-CFO = 75 + 30 + 5 – 10 = 120,000`,
+    explanation: "**Calculation:** CFO = NI + Non-cash Charges - Non-operating Gains = **$95,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Starting Point**\n   - Net Income: $75,000\n   - This includes all the charges and gains below\n\n2. **Add Back Non-Cash Items**\n   - Asset impairment charge: $30,000 [non-cash expense]\n   - Unpaid restructuring charges: $5,000 [accrued portion]\n   - Total non-cash additions: $35,000\n\n3. **Remove Non-Operating Items**\n   - Gain on equipment sale: ($10,000) [belongs in investing]\n   - This gain inflated net income but isn't operating cash\n\n4. **Restructuring Analysis**\n   - Total restructuring: $20,000\n   - Cash paid: $15,000 [already reduced operating cash]\n   - Accrued portion: $5,000 [add back as non-cash]\n\n5. **Final Calculation**\n   - CFO = $75,000 + $30,000 + $5,000 - $10,000 = $100,000\n\n**Key Points:**\n   • Impairments are always non-cash additions\n   • Only unpaid restructuring costs are added back\n   • Gains on asset sales are subtracted (non-operating)\n   • Focus on cash vs. non-cash nature of each item",
     learnContent: {
       concept: 'Impairments are non-cash → added back. Partial cash restructuring → only unpaid portion added back. Gains on sale → subtracted from CFO (non-operating).',
       formula: 'CFO = NI + Non-cash Expenses – Non-operating Gains',
