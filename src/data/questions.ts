@@ -247,22 +247,23 @@ Key insights:
     answer: 1.5,
     unit: 'x',
     hint: 'Current Ratio = Current Assets ÷ Current Liabilities',
-    explanation: `Current Ratio = Current Assets ÷ Current Liabilities
+    explanation: `**Calculation:**
+Current Ratio = $30,000 ÷ $20,000 = 1.5x
+
+**Step-by-step breakdown:**
 
 Current Assets:
 • Cash: $5,000
 • Accounts Receivable: $10,000
 • Inventory: $15,000
-Total: $30,000
+Total Current Assets: $30,000
 
 Current Liabilities:
 • Accounts Payable: $8,000
 • Short-Term Loan: $12,000
-Total: $20,000
+Total Current Liabilities: $20,000
 
-Current Ratio: $30,000 ÷ $20,000 = 1.5x
-
-Key insights:
+**Key insights:**
 • Current Assets - resources convertible to cash within one year
 • Current Liabilities - obligations due within one year
 • 1.5x ratio means $1.50 of current assets for every $1.00 of current liabilities
