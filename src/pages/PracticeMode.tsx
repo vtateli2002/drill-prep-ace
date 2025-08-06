@@ -120,7 +120,9 @@ const PracticeMode = () => {
     if (!currentQuestion || !userAnswer) return;
 
     const numericAnswer = parseFloat(userAnswer);
-    const correct = Math.abs(numericAnswer - currentQuestion.answer) < 0.01;
+    const correct = typeof currentQuestion.answer === 'string' 
+      ? userAnswer.trim().toLowerCase() === currentQuestion.answer.toLowerCase()
+      : Math.abs(numericAnswer - currentQuestion.answer) < 0.01;
     
     setIsCorrect(correct);
     

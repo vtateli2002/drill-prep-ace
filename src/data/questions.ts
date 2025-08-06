@@ -1,6 +1,524 @@
 import { Question, Track, Difficulty } from '@/types/drill';
 
 export const QUESTIONS: Question[] = [
+  // Topic 47: Accrual vs. Cash Accounting
+  {
+    id: 'acc-easy-146',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Accrual vs. Cash Accounting – Timing Differences',
+    description: `A company performs $10,000 of consulting work in December but receives cash payment in January. Under accrual accounting, how much revenue is recognized in December?`,
+    answer: 10000,
+    unit: '$',
+    hint: 'Accrual accounting recognizes revenue when earned, regardless of cash.',
+    explanation: `Revenue is recognized when the service is performed, not when cash is received. Thus, $10,000 in December.
+
+• • •
+
+Step-by-step breakdown:
+
+1. Accrual Accounting Principle:
+   • Revenue recognized when earned/performed
+   • Cash timing is irrelevant
+
+2. Service Analysis:
+   • Consulting work completed: December
+   • Cash received: January (next period)
+   
+3. Revenue Recognition:
+   → December revenue: $10,000
+   → January revenue: $0 (cash collection only)
+
+Key Points:
+   • Accrual basis matches revenue to performance period
+   • Cash basis would recognize $0 in December, $10,000 in January
+   • This creates timing differences between the two methods`,
+    learnContent: {
+      concept: 'Accrual accounting matches revenues to the period earned, not when cash is collected.',
+      formula: 'Revenue recognized = Services performed (accrual basis)',
+      example: 'Invoice in Dec, payment in Jan → recognize in Dec\nPaid in advance, service in future → recognize when service delivered\nWork done in March, paid in May → recognize in March'
+    }
+  },
+  {
+    id: 'acc-medium-52',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Accrual vs. Cash Accounting – Mixed Entries',
+    description: `A business earns $40,000 in services, of which $25,000 is paid in cash immediately. The remaining $15,000 is billed for future payment. What amount is reported as revenue under: (1) Accrual accounting, and (2) Cash accounting? What is the difference between the two approaches?`,
+    answer: 15000,
+    unit: '$',
+    hint: 'Accrual = full $40k. Cash = $25k. Difference = $15k.',
+    explanation: `Accrual recognizes $40k when earned. Cash only records $25k collected. Difference = $15k.
+
+• • •
+
+Step-by-step breakdown:
+
+1. Service Performance Analysis:
+   • Total services performed: $40,000
+   • Cash received immediately: $25,000
+   • Accounts receivable created: $15,000
+
+2. Accrual Accounting:
+   → Revenue recognized: $40,000 (full amount earned)
+
+3. Cash Accounting:
+   → Revenue recognized: $25,000 (only cash received)
+
+4. Difference Calculation:
+   → Accrual - Cash = $40,000 - $25,000 = $15,000
+
+Key Points:
+   • Accrual captures economic reality of earnings
+   • Cash basis understates performance when receivables exist
+   • Difference equals uncollected receivables`,
+    learnContent: {
+      concept: 'Cash accounting records only received cash. Accrual records all earned revenue.',
+      formula: 'Difference = Accrual Revenue − Cash Revenue',
+      example: '$50k earned, $30k paid = $20k difference\n$100k earned, $100k paid = $0 difference\n$75k earned, $50k paid = $25k difference'
+    }
+  },
+  {
+    id: 'acc-hard-28',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Accrual vs. Cash – Complex Expense Recognition',
+    description: `A firm incurs $24,000 in annual rent paid upfront on Jan 1. It also earns $120,000 in service revenue over the year but collects only $90,000 in cash. By year-end, what is Net Income under: (1) Accrual basis and (2) Cash basis? What is the difference?`,
+    answer: 30000,
+    unit: '$',
+    hint: 'Accrual: Rent = $24k/12 × 12 = $24k; Revenue = $120k. Cash: Rent = $24k, Revenue = $90k. Compare Net Income.',
+    explanation: `Accrual Net Income = $120k − $24k = $96k. Cash Net Income = $90k − $24k = $66k. Difference = $96k − $66k = $30k.
+
+• • •
+
+Step-by-step breakdown:
+
+1. Expense Analysis:
+   • Annual rent paid upfront: $24,000
+   • Both methods recognize full rent (cash paid)
+
+2. Revenue Analysis:
+   • Services performed: $120,000
+   • Cash collected: $90,000
+   • Uncollected receivables: $30,000
+
+3. Accrual Net Income:
+   • Revenue: $120,000 (earned)
+   • Expenses: $24,000 (rent)
+   → Net Income: $120,000 - $24,000 = $96,000
+
+4. Cash Net Income:
+   • Revenue: $90,000 (collected)
+   • Expenses: $24,000 (rent paid)
+   → Net Income: $90,000 - $24,000 = $66,000
+
+5. Difference:
+   → $96,000 - $66,000 = $30,000
+
+Key Points:
+   • Difference equals uncollected revenue ($30k)
+   • Accrual provides better performance measurement
+   • Cash basis useful for liquidity analysis`,
+    learnContent: {
+      concept: 'Accrual recognizes revenue when earned and expenses when incurred. Cash recognizes only cash transactions.',
+      formula: 'Difference = Accrual NI − Cash NI',
+      example: 'Accrual: $80k − $20k = $60k; Cash: $60k − $20k = $40k → Difference = $20k\nAccrual = $100k − $30k = $70k; Cash = $80k − $30k = $50k → $20k difference'
+    }
+  },
+  // Topic 48: Matching Principle
+  {
+    id: 'acc-easy-147',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Matching Principle – Revenue & Expense',
+    description: `A firm earns $50,000 in revenue in June. It paid a $5,000 commission in July related to the June sale. When is the $5,000 commission recognized under accrual accounting?`,
+    answer: 'June',
+    hint: 'Match expense to the period when the associated revenue is earned.',
+    explanation: `Even though paid in July, the commission supports June revenue, so it is recognized in June.
+
+• • •
+
+Step-by-step breakdown:
+
+1. Revenue Recognition:
+   • Sales transaction: June
+   • Revenue recognized: June ($50,000)
+
+2. Commission Analysis:
+   • Commission earned: June (relates to June sale)
+   • Commission paid: July (cash timing)
+
+3. Matching Principle Application:
+   → Commission expense recognized: June
+   → Matches revenue period, not cash payment period
+
+4. Accounting Treatment:
+   • June: Record commission expense and accrued liability
+   • July: Pay commission and reduce liability
+
+Key Points:
+   • Expenses matched to revenue period they help generate
+   • Cash payment timing irrelevant under accrual accounting
+   • Creates temporary accrued liability until payment`,
+    learnContent: {
+      concept: 'The matching principle requires aligning expenses with the revenue they help generate.',
+      formula: 'Expense period = Revenue recognition period (accrual)',
+      example: 'Sale in Jan, shipping cost paid in Feb → record both in Jan\nAd cost in April for April sales → record in April\nCommission in March for March sale → recognize in March'
+    }
+  },
+  {
+    id: 'acc-medium-53',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Matching Principle – Inventory and COGS',
+    description: `A company sells $80,000 worth of goods in Q2. The goods cost $50,000, purchased in Q1. When is the $50,000 COGS recognized under accrual accounting?`,
+    answer: 'Q2',
+    hint: 'COGS is recognized when related sales revenue is recorded, not when inventory was purchased.',
+    explanation: `The $50,000 was incurred earlier but matched to Q2 sales. Under accrual, both revenue and cost are recognized in Q2.
+
+• • •
+
+Step-by-step breakdown:
+
+1. Inventory Timeline:
+   • Q1: Purchased goods for $50,000 (asset recorded)
+   • Q2: Sold goods for $80,000
+
+2. Revenue Recognition:
+   • Q2: Revenue recognized $80,000 (when sold)
+
+3. Matching Principle Application:
+   • COGS recognized: Q2 (matches revenue period)
+   • Amount: $50,000 (historical cost)
+
+4. Q2 Journal Entry Impact:
+   • Revenue: +$80,000
+   • COGS: -$50,000
+   • Gross Profit: $30,000
+
+Key Points:
+   • Inventory becomes COGS when goods are sold
+   • Purchase timing (Q1) irrelevant for expense recognition
+   • Matching ensures proper profit measurement`,
+    learnContent: {
+      concept: 'Expenses like COGS are recorded in the same period as the related revenue under the matching principle.',
+      formula: 'COGS period = Revenue recognition period',
+      example: 'Inventory bought in Jan, sold in March → COGS in March\nAdvertising in April for May launch → expense in May\nProduct costs in Q1, sales in Q3 → COGS in Q3'
+    }
+  },
+  {
+    id: 'acc-hard-29',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Matching Principle – Deferred Expenses and Revenue',
+    description: `A software company receives $120,000 in Jan for a 12-month contract. It pays $24,000 commission in Feb for the sale. By end of June, how much commission expense is recognized under accrual accounting?`,
+    answer: 12000,
+    unit: '$',
+    hint: 'Expense is matched to the same period as recognized revenue. Revenue is recognized evenly, so match proportion of the year.',
+    explanation: `Revenue recognized from Jan–Jun = 6/12 = 50%. Matching principle dictates 50% of $24k commission = $12k.
+
+• • •
+
+Step-by-step breakdown:
+
+1. Contract Analysis:
+   • Total contract value: $120,000
+   • Contract duration: 12 months
+   • Monthly revenue: $120,000 ÷ 12 = $10,000
+
+2. Revenue Recognition (Jan-June):
+   • Months elapsed: 6 months
+   • Revenue recognized: 6 × $10,000 = $60,000
+   • Percentage complete: 6/12 = 50%
+
+3. Commission Matching:
+   • Total commission: $24,000
+   • Commission to match: 50% × $24,000 = $12,000
+
+4. Accounting Treatment:
+   • Feb: Record $24,000 prepaid commission (asset)
+   • Jan-June: Recognize $2,000 expense monthly ($12,000 total)
+   • Remaining: $12,000 prepaid commission asset
+
+Key Points:
+   • Commission expense matched to revenue recognition pattern
+   • Prepaid commission treated as asset until earned
+   • Systematic allocation over contract period`,
+    learnContent: {
+      concept: 'Prepaid costs like commissions are expensed in sync with revenue over time.',
+      formula: 'Recognized Expense = Total Expense × % of revenue recognized',
+      example: '$36k prepaid expense, 9-month service → 3 months = 3/9 × $36k = $12k\n$12k commission on 1-year deal, 6 months used = $6k expense\n$18k prepaid, 8-month contract, 4 months = $9k expense'
+    }
+  },
+  // Topic 49: Capitalization vs. Expensing
+  {
+    id: 'acc-easy-148',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Capitalize vs. Expense – Equipment',
+    description: `A company buys a $10,000 machine expected to last 5 years. Should the cost be capitalized or expensed immediately under accrual accounting?`,
+    answer: 'Capitalized',
+    hint: 'Long-lived assets are not expensed immediately. They are depreciated over useful life.',
+    explanation: `Because the machine provides benefit beyond one year, the cost is capitalized and depreciated.
+
+• • •
+
+Step-by-step breakdown:
+
+1. Asset Evaluation:
+   • Cost: $10,000
+   • Expected useful life: 5 years
+   • Benefits extend beyond current period
+
+2. Capitalization Test:
+   • Does asset provide future economic benefits? Yes
+   • Does benefit extend beyond one year? Yes
+   → Meets capitalization criteria
+
+3. Accounting Treatment:
+   • Initial: Capitalize $10,000 as equipment asset
+   • Ongoing: Depreciate $2,000 annually ($10,000 ÷ 5 years)
+
+4. Income Statement Impact:
+   • Year 1-5: $2,000 depreciation expense each year
+   • No immediate $10,000 expense
+
+Key Points:
+   • Capital expenditures create long-term assets
+   • Expense recognition spread over useful life
+   • Matches expense to periods receiving benefit`,
+    learnContent: {
+      concept: 'Capitalize when the benefit lasts >1 year. Expense if consumed immediately.',
+      formula: 'Capitalize if economic life > 1 year',
+      example: '$5k laptop (3-year use) → capitalized\n$200 printer ink → expensed\n$50k truck (10-year life) → capitalized'
+    }
+  },
+  {
+    id: 'acc-medium-54',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Capitalize vs. Expense – Mixed Example',
+    description: `A company develops a $50,000 software tool. $20,000 is spent in planning (research), and $30,000 is spent coding the functional product. According to GAAP, how much should be capitalized?`,
+    answer: 30000,
+    unit: '$',
+    hint: 'Only development phase costs (post feasibility) are capitalized. Research is expensed.',
+    explanation: `The $20,000 research is expensed. The $30,000 development qualifies for capitalization once feasibility is met.
+
+• • •
+
+Step-by-step breakdown:
+
+1. Cost Analysis:
+   • Total software costs: $50,000
+   • Research phase: $20,000 (planning)
+   • Development phase: $30,000 (coding)
+
+2. GAAP Software Rules:
+   • Research costs: Always expensed
+   • Development costs: Capitalized after technological feasibility
+
+3. Technological Feasibility:
+   • Achieved when detailed design is complete
+   • Coding phase indicates feasibility established
+
+4. Accounting Treatment:
+   • Research phase: Expense $20,000 immediately
+   • Development phase: Capitalize $30,000 as software asset
+
+Key Points:
+   • Research and early development are uncertain
+   • Post-feasibility development has probable future benefits
+   • Creates intangible asset for completed software`,
+    learnContent: {
+      concept: 'GAAP allows capitalization of software costs incurred after technological feasibility is established.',
+      formula: 'Capitalized = Dev Phase Costs; Expensed = Research/Pre-feasibility',
+      example: '$10k design + $40k coding = capitalize $40k\n$5k research + $15k dev = capitalize $15k\n$25k planning + $75k development = capitalize $75k'
+    }
+  },
+  {
+    id: 'acc-hard-30',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Capitalize vs. Expense – Maintenance vs. Improvement',
+    description: `A company spends $80,000 on a building: - $20,000 to repaint and fix minor wear - $30,000 to install a new HVAC system with 10-year life - $30,000 to improve roof extending its life by 15 years. How much is capitalized under accrual accounting?`,
+    answer: 60000,
+    unit: '$',
+    hint: 'Maintenance = expense. Improvements = capitalize if they extend useful life or improve value.',
+    explanation: `Painting is maintenance → expense. HVAC and roof upgrades extend life → capitalize. Total capitalized = $30k + $30k = $60k.
+
+• • •
+
+Step-by-step breakdown:
+
+1. Expenditure Analysis:
+   • Repainting/minor repairs: $20,000
+   • New HVAC system: $30,000
+   • Roof improvements: $30,000
+
+2. Capitalization Criteria Assessment:
+   a) Repainting ($20,000):
+      • Maintains existing condition
+      • No life extension or improvement
+      → Expense immediately
+
+   b) HVAC System ($30,000):
+      • Adds new functionality
+      • 10-year useful life
+      → Capitalize as building improvement
+
+   c) Roof Improvements ($30,000):
+      • Extends building life by 15 years
+      • Enhances asset value
+      → Capitalize as building improvement
+
+3. Total Capitalization:
+   → HVAC + Roof = $30,000 + $30,000 = $60,000
+
+Key Points:
+   • Maintenance preserves existing capacity
+   • Improvements enhance or extend asset life
+   • Capitalized costs increase depreciation base`,
+    learnContent: {
+      concept: 'Only capital improvements are capitalized. Repairs and maintenance are expensed.',
+      formula: 'Capitalized = Life-extending/improving costs; Expensed = routine maintenance',
+      example: '$10k repair + $20k upgrade = capitalize $20k\n$5k cleaning + $25k asset improvement = $25k capitalized\n$15k maintenance + $35k addition = $35k capitalized'
+    }
+  },
+  // Topic 50: Book vs. Market Equity
+  {
+    id: 'acc-easy-149',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Book vs. Market Equity – Basics',
+    description: `A company has: - Common Stock = $10,000 - APIC = $40,000 - Retained Earnings = $30,000 - Treasury Stock = $5,000. What is Book Value of Equity?`,
+    answer: 75000,
+    unit: '$',
+    hint: 'Book Value = Total Shareholder\'s Equity (sum of components).',
+    explanation: `Total = $10k + $40k + $30k − $5k = $75k.
+
+• • •
+
+Step-by-step breakdown:
+
+1. Equity Components:
+   • Common Stock (par value): $10,000
+   • Additional Paid-in Capital: $40,000
+   • Retained Earnings: $30,000
+   • Treasury Stock (contra): ($5,000)
+
+2. Book Value Calculation:
+   Book Equity = Common + APIC + Retained - Treasury
+   Book Equity = $10,000 + $40,000 + $30,000 - $5,000
+   Book Equity = $75,000
+
+3. Component Analysis:
+   • Positive equity sources: $80,000
+   • Treasury stock reduction: $5,000
+   • Net book value: $75,000
+
+Key Points:
+   • Book value reflects historical accounting values
+   • Treasury stock reduces total equity
+   • Based on balance sheet, not market prices`,
+    learnContent: {
+      concept: 'Book equity reflects historical capital and retained earnings on the balance sheet.',
+      formula: 'Book Equity = Common + APIC + Retained Earnings − Treasury',
+      example: '$5k + $15k + $20k − $2k = $38k\n$50k + $60k − $10k = $100k\n$25k + $35k + $45k − $8k = $97k'
+    }
+  },
+  {
+    id: 'acc-medium-55',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Book vs. Market Equity – Share Price Application',
+    description: `A company has 1 million shares outstanding. Its Book Equity is $80 million, and its current share price is $120. What is the difference between Book Value and Market Value of Equity?`,
+    answer: 40,
+    unit: 'million $',
+    hint: 'Market Value = Share Price × Shares Outstanding. Subtract Book Value to find the difference.',
+    explanation: `Market Equity = $120 × 1M = $120M; Difference = $120M − $80M = $40M.
+
+• • •
+
+Step-by-step breakdown:
+
+1. Given Information:
+   • Shares outstanding: 1,000,000
+   • Book equity: $80,000,000
+   • Share price: $120
+
+2. Market Value Calculation:
+   Market Value = Share Price × Shares Outstanding
+   Market Value = $120 × 1,000,000 = $120,000,000
+
+3. Difference Analysis:
+   Difference = Market Value - Book Value
+   Difference = $120,000,000 - $80,000,000 = $40,000,000
+
+4. Per-Share Analysis:
+   • Book value per share: $80M ÷ 1M = $80
+   • Market value per share: $120
+   • Premium per share: $40
+
+Key Points:
+   • Market value reflects investor expectations
+   • $40M premium suggests growth prospects
+   • Book value understates market perception`,
+    learnContent: {
+      concept: 'Book Equity is historical; Market Equity reflects investor valuation via stock price.',
+      formula: 'Market Equity = Share Price × Shares; Difference = Market − Book',
+      example: 'Price $60 × 2M shares = $120M; Book = $100M → Diff = $20M\n$150 × 500k shares = $75M; Book = $60M → Diff = $15M\n$90 × 1.5M shares = $135M; Book = $110M → Diff = $25M'
+    }
+  },
+  {
+    id: 'acc-hard-31',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Book vs. Market Equity – Dilution Adjustments',
+    description: `A company has: - Book Equity = $150 million - 2 million basic shares outstanding - 100,000 in-the-money options with $50 strike - Share price = $70. What is: (1) Diluted Market Equity, and (2) Difference vs. Book Value?`,
+    answer: 64,
+    unit: 'million $',
+    hint: 'Use Treasury Stock Method to adjust shares, then calculate Market Cap and subtract Book Value.',
+    explanation: `Proceeds = 100k × $50 = $5M → Shares repurchased = $5M / $70 ≈ 71.4k → Net new shares = 28.6k → Total diluted shares = 2.0286M × $70 ≈ $142M → Difference = $142M − $150M = −$8M deficit.
+
+• • •
+
+Step-by-step breakdown:
+
+1. Treasury Stock Method Calculation:
+   • Options exercised: 100,000 shares
+   • Strike price: $50
+   • Proceeds from exercise: 100,000 × $50 = $5,000,000
+
+2. Share Repurchase Analysis:
+   • Current stock price: $70
+   • Shares repurchased: $5,000,000 ÷ $70 = 71,429 shares
+
+3. Net Dilution:
+   • Gross shares issued: 100,000
+   • Shares repurchased: 71,429
+   • Net new shares: 100,000 - 71,429 = 28,571
+
+4. Diluted Share Count:
+   • Basic shares: 2,000,000
+   • Net dilution: 28,571
+   • Total diluted: 2,028,571 shares
+
+5. Diluted Market Value:
+   Market Cap = 2,028,571 × $70 = $142,000,000
+
+6. Difference vs Book:
+   Difference = $142M - $150M = -$8M (Market below Book)
+
+Key Points:
+   • Options dilute when in-the-money
+   • Treasury method reduces dilution impact
+   • Market trading below book value indicates undervaluation`,
+    learnContent: {
+      concept: 'Diluted Equity reflects fully diluted share count including in-the-money options/warrants.',
+      formula: 'Diluted Shares = Basic + (Options − Repurchased); Market Cap = Diluted × Price',
+      example: '2M shares + 50k options − 20k repurchased → 2.03M × $80 = $162.4M\n1M shares + 25k options net → 1.025M × $90 = $92.25M\n3M + 75k options - 30k repurchased → 3.045M × $60 = $182.7M'
+    }
+  },
   // Statement of Comprehensive Income
   {
     id: 'acc-easy-143',

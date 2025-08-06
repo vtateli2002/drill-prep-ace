@@ -8,7 +8,7 @@ export interface Question {
   difficulty: Difficulty;
   title: string;
   description: string;
-  answer: number;
+  answer: number | string;
   unit?: string;
   hint?: string;
   explanation?: string;
