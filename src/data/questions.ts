@@ -252,16 +252,16 @@ Current Ratio = $30,000 ÷ $20,000 = 1.5x
 
 Step-by-step breakdown:
 
-   Current Assets:
+1. Current Assets:
    • Cash: $5,000
    • Accounts Receivable: $10,000
    • Inventory: $15,000
-   Total Current Assets: $30,000
+   → Total Current Assets: $30,000
 
-   Current Liabilities:
+2. Current Liabilities:
    • Accounts Payable: $8,000
    • Short-Term Loan: $12,000
-   Total Current Liabilities: $20,000
+   → Total Current Liabilities: $20,000
 
 Analysis:
 • Current Assets represent resources convertible to cash within one year
