@@ -4042,6 +4042,256 @@ Key Points:
       example: '$500K revenue, $300K COGS, $100K SG&A: EBIT = $100K'
     }
   },
+
+  // RESEARCH & DEVELOPMENT (R&D) EXPENSE QUESTIONS
+  {
+    id: 'acc-easy-76',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Impact of Capitalizing vs. Expensing R&D',
+    description: 'Arcadia Pharma spent $8,000,000 on R&D this year, of which $2,000,000 was capitalized as an intangible asset under IFRS rules, with a 4-year straight-line amortization.\n\nHow much R&D expense will appear on the income statement for this year?',
+    answer: 6500000,
+    unit: '$',
+    hint: 'Only capitalized R&D is amortized; rest is expensed immediately.',
+    explanation: 'Expensed immediately: $8,000,000 – $2,000,000 = $6,000,000\nAmortization for this year: $2,000,000 / 4 = $500,000\nTotal IS expense: $6,000,000 + $500,000 = $6,500,000\n\nLogic: R&D partially appears through direct expense, partially as amortization.',
+    learnContent: {
+      concept: 'IFRS allows some R&D capitalization; GAAP rarely does.',
+      formula: 'R&D IS Expense = (Expensed R&D) + (Capitalized R&D ÷ Useful Life)',
+      example: '$3M expensed, $1M capitalized over 5 years: $3M + $200K = $3.2M\n\n$9M expensed, $3M capitalized over 3 years: $9M + $1M = $10M'
+    }
+  },
+  {
+    id: 'acc-easy-77',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'R&D Expense and Profitability',
+    description: 'If Sumatra Inc. generated $15,000,000 in revenue, $4,000,000 gross profit, and $2,500,000 was spent on R&D, what percentage of gross profit was spent on R&D (rounded to the nearest whole number)?',
+    answer: 63,
+    unit: '%',
+    hint: '(R&D / Gross Profit) × 100',
+    explanation: '$2,500,000 / $4,000,000 = 0.625 = 63%\n\nLogic: Shows how large R&D is relative to profits.',
+    learnContent: {
+      concept: 'R&D intensity can indicate innovation focus.',
+      formula: '(R&D Expense/Gross Profit) × 100%',
+      example: '$1M R&D/$4M GP: 25%\n\n$600K R&D/$1.2M GP: 50%'
+    }
+  },
+  {
+    id: 'acc-easy-78',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Deferred R&D from Capitalized Projects',
+    description: 'Polygon Tech capitalized $1,200,000 of R&D. Amortization is over 3 years on a straight-line basis. After 2 years, what is the remaining value on the balance sheet?',
+    answer: 400000,
+    unit: '$',
+    hint: 'Annual amortization × 2 years. Subtract from capitalized amount.',
+    explanation: 'Annual amortization = $1,200,000 / 3 = $400,000/year\nAfter 2 years: $400,000 × 2 = $800,000 amortized\nRemaining balance: $1,200,000 – $800,000 = $400,000\n\nLogic: Intangibles only appear on BS if not fully amortized.',
+    learnContent: {
+      concept: 'Only capitalized R&D appears as an asset; amortization erodes value over time.',
+      formula: 'Remaining Value = Cost - (Annual Amortization × Years)',
+      example: '$600K over 5 years, after 3: $600K - (3×$120K) = $240K'
+    }
+  },
+
+  // DEPRECIATION EXPENSE QUESTIONS
+  {
+    id: 'acc-easy-79',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Depreciation & Tax Shield',
+    description: 'Glenmont Tools records $600,000 depreciation. If their tax rate is 30%, what is the company\'s tax shield (total cash saved due to depreciation)?',
+    answer: 180000,
+    unit: '$',
+    hint: 'Tax shield = Depreciation × Tax Rate',
+    explanation: '$600,000 × 0.30 = $180,000\n\nLogic: Depreciation lowers taxable income, thus taxes paid.',
+    learnContent: {
+      concept: 'Non-cash expenses provide real cash savings via lower taxes.',
+      formula: 'Tax Shield = Depreciation × Tax Rate',
+      example: '$500K depreciation, 25% tax rate: $125K tax shield\n\n$200K depreciation, 21% tax rate: $42K tax shield'
+    }
+  },
+  {
+    id: 'acc-easy-80',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Straight-Line Depreciation Calculation',
+    description: 'A company buys $80,000 of equipment, expects $10,000 salvage value after 7 years. What\'s annual depreciation expense?',
+    answer: 10000,
+    unit: '$',
+    hint: '(Initial Cost – Salvage) ÷ Useful Life',
+    explanation: '($80,000 – $10,000) ÷ 7 = $70,000 ÷ 7 = $10,000\n\nLogic: Depreciation spreads the net depreciable amount over the asset\'s life.',
+    learnContent: {
+      concept: 'Salvage value reduces total amount to depreciate.',
+      formula: 'Annual Depreciation = (Cost - Salvage Value) ÷ Useful Life',
+      example: '$50K cost, $5K salvage, 5 years: ($45K ÷ 5) = $9K/year\n\n$120K cost, $20K salvage, 10 years: ($100K ÷ 10) = $10K/year'
+    }
+  },
+  {
+    id: 'acc-easy-81',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Accumulated Depreciation after Write-Down',
+    description: 'Vista Inc. owns machinery with a historical cost of $100,000 and 4 years of straight-line depreciation over a 10-year life. After 4 years, the machine is written down by $12,000.\n\nWhat is the new accumulated depreciation after the write-down?',
+    answer: 52000,
+    unit: '$',
+    hint: 'Accum. Depreciation = 4 years\' depreciation + write-down.',
+    explanation: 'Annual dep = $100,000 ÷ 10 = $10,000\nAfter 4 years = $40,000\nWrite-down adds $12,000\nTotal = $40,000 + $12,000 = $52,000\n\nLogic: Impairments/write-downs add to accumulated depreciation.',
+    learnContent: {
+      concept: 'Accumulated depreciation is cumulative—including write-downs.',
+      formula: 'Accumulated Depreciation = (Annual Depreciation × Years) + Write-downs',
+      example: '$15K/year × 3 years + $5K write-down = $50K total'
+    }
+  },
+
+  // AMORTIZATION EXPENSE QUESTIONS
+  {
+    id: 'acc-easy-82',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Annual Amortization with Residual Value',
+    description: 'Banner Corp. acquires an intangible for $60,000, expects $10,000 residual after 5 years. What is the annual amortization?',
+    answer: 10000,
+    unit: '$',
+    hint: '(Asset value – Residual) ÷ Useful Life',
+    explanation: '($60,000 – $10,000) ÷ 5 = $50,000 ÷ 5 = $10,000\n\nLogic: Same as depreciation, but for intangibles.',
+    learnContent: {
+      concept: 'Amortization schedules reduce asset value over useful life.',
+      formula: 'Annual Amortization = (Cost - Residual Value) ÷ Useful Life',
+      example: '$30K cost, $5K residual, 5 years: ($25K ÷ 5) = $5K/year'
+    }
+  },
+  {
+    id: 'acc-easy-83',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Book Value of Intangible after Early Disposal',
+    description: 'A patent was acquired for $20,000 and amortized over 4 years. After 3 years, it was sold for $5,000. What was its book value just before sale?',
+    answer: 5000,
+    unit: '$',
+    hint: 'Amortization per year × years elapsed; subtract from original.',
+    explanation: '$20,000/4 = $5,000/year; after 3 years: $5,000 × 3 = $15,000 amortized\nBook value = $20,000 – $15,000 = $5,000\n\nLogic: Intangibles\' value declines each year via amortization.',
+    learnContent: {
+      concept: 'Book value drops annually; matches undepreciated/unamortized value.',
+      formula: 'Book Value = Original Cost - Accumulated Amortization',
+      example: '$40K cost, $8K/year, after 2 years: $40K - $16K = $24K book value'
+    }
+  },
+  {
+    id: 'acc-easy-84',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Amortization Impact on Net Income',
+    description: 'Company X has $200,000 EBIT and records $40,000 annual amortization expense (tax rate 25%). What is the new after-tax income?',
+    answer: 120000,
+    unit: '$',
+    hint: 'EBIT minus amortization, then apply taxes.',
+    explanation: 'Pretax profit = $200,000 – $40,000 = $160,000\nTax = $160,000 × 0.25 = $40,000\nNet income = $160,000 – $40,000 = $120,000\n\nLogic: Amortization is subtracted before calculating taxes.',
+    learnContent: {
+      concept: 'Amortization reduces taxable income, affecting net profit, not cash.',
+      formula: 'Net Income = (EBIT - Amortization) × (1 - Tax Rate)',
+      example: '$300K EBIT, $50K amortization, 30% tax: ($250K × 0.7) = $175K net'
+    }
+  },
+
+  // STOCK-BASED COMPENSATION (SBC) QUESTIONS
+  {
+    id: 'acc-easy-85',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'SBC Expense and Net Income',
+    description: 'Nira Foods reported $13,000,000 in pre-tax earnings and included $1,200,000 of stock-based compensation. If the tax rate is 21%, what is the reported net income?',
+    answer: 10270000,
+    unit: '$',
+    hint: 'Taxable income = pre-tax; SBC is a deductible expense.',
+    explanation: 'Tax = $13,000,000 × 21% = $2,730,000\nNet income = $13,000,000 – $2,730,000 = $10,270,000\n\nLogic: SBC reduces pre-tax income, lowering taxes paid and reported net income.',
+    learnContent: {
+      concept: 'SBC is a non-cash expense, but tax-deductible for net income.',
+      formula: 'Net Income = Pre-tax Income × (1 - Tax Rate)',
+      example: '$10M pre-tax, 25% tax: $10M × 0.75 = $7.5M net income'
+    }
+  },
+  {
+    id: 'acc-easy-86',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Add-Back of SBC on Cash Flow Statement',
+    description: 'A company earns $2 million in net income, including $300,000 of SBC. What is CFO (cash flow from operations) before working capital if there are no other non-cash adjustments?',
+    answer: 2300000,
+    unit: '$',
+    hint: 'Non-cash SBC must be added back.',
+    explanation: 'CFO = Net Income + Non-cash Expenses = $2,000,000 + $300,000 = $2,300,000\n\nLogic: Non-cash charges suppress net income, but add back to reach CFO.',
+    learnContent: {
+      concept: 'SBC reduces net income but doesn\'t use cash.',
+      formula: 'CFO = Net Income + Non-cash Expenses (like SBC)',
+      example: '$5M net income, $400K SBC: CFO = $5.4M before working capital'
+    }
+  },
+  {
+    id: 'acc-easy-87',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Dilution from SBC',
+    description: 'A company had 1,000,000 shares at year start. During the year, it issued SBC worth $100,000 at a $20/share stock price, with no buyback.\n\nHow many shares are outstanding at year end?',
+    answer: 1005000,
+    unit: 'shares',
+    hint: 'SBC value / share price = new shares issued. Add to starting shares.',
+    explanation: '$100,000 / $20 = 5,000 shares\nShares outstanding = 1,000,000 + 5,000 = 1,005,000\n\nLogic: SBC creates new dilution, raising share count.',
+    learnContent: {
+      concept: 'SBC increases share count and potential dilution.',
+      formula: 'New Shares = SBC Value ÷ Share Price; Total = Starting + New',
+      example: '$200K SBC at $25/share = 8K new shares'
+    }
+  },
+
+  // OPERATING INCOME (EBIT) QUESTIONS
+  {
+    id: 'acc-easy-88',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Calculating EBIT from Multi-Step Income Statement',
+    description: 'A company reports $700,000 in gross profit, $220,000 in SG&A, $35,000 depreciation, and $47,500 R&D.\n\nWhat is operating income (EBIT)?',
+    answer: 397500,
+    unit: '$',
+    hint: 'EBIT = Gross Profit – SG&A – Depreciation – R&D.',
+    explanation: '$700,000 – $220,000 – $35,000 – $47,500 = $397,500\n\nLogic: All core operating expenses below gross profit must be subtracted.',
+    learnContent: {
+      concept: 'EBIT includes all core operating costs, but not interest/taxes.',
+      formula: 'EBIT = Gross Profit - SG&A - Depreciation - Other Operating Expenses',
+      example: '$500K GP, $200K SG&A, $50K depreciation: EBIT = $250K'
+    }
+  },
+  {
+    id: 'acc-easy-89',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'EBIT after Non-Recurring Gain',
+    description: 'Waters Group had $1,500,000 operating income before a $100,000 gain from selling equipment.\n\nWhat is reported EBIT?',
+    answer: 1600000,
+    unit: '$',
+    hint: 'Include the non-recurring gain in EBIT.',
+    explanation: 'Operating income = $1,500,000\nNon-recurring gain: +$100,000\nEBIT = $1,600,000\n\nLogic: One-off gains increase EBIT for the period.',
+    learnContent: {
+      concept: 'EBIT sometimes includes one-time gains/losses, unless adjusted for "core" EBIT.',
+      formula: 'EBIT = Operating Income + One-time Gains - One-time Losses',
+      example: '$2M operating income + $50K asset sale gain = $2.05M EBIT'
+    }
+  },
+  {
+    id: 'acc-easy-90',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'EBIT after Restructuring Charge',
+    description: 'BlueStar Inc. reports $2,300,000 EBIT before a $200,000 restructuring expense. What is EBIT after the charge?',
+    answer: 2100000,
+    unit: '$',
+    hint: 'Subtract restructuring expense from operating income.',
+    explanation: '$2,300,000 – $200,000 = $2,100,000\n\nLogic: Restructuring and other non-core items reduce operating income at the EBIT line.',
+    learnContent: {
+      concept: 'Adjusted EBIT removes non-core items for comparability.',
+      formula: 'EBIT = Operating Income - Restructuring - Other One-time Charges',
+      example: '$5M operating income - $300K restructuring = $4.7M EBIT'
+    }
+  },
   {
     id: 'acc-medium-46',
     track: 'accounting',
