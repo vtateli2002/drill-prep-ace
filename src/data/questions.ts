@@ -2766,5 +2766,165 @@ How much revenue is recognized by the end of April?`,
       formula: 'Sale price → Investing inflow',
       example: 'Sell asset for $50K → Investing inflow $50K\nSell land for $100K → Investing inflow $100K'
     }
+  },
+  {
+    id: 'acc-medium-137',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Inventory Write-Down Impact',
+    description: 'A company originally held $50,000 in inventory. Due to obsolescence, 20% of this inventory became unsellable. What is the non-cash expense recorded on the income statement?',
+    answer: 10000,
+    unit: '$',
+    hint: 'Apply the write-down percentage to total inventory.',
+    explanation: 'A 20% write-down of $50,000 results in a $10,000 non-cash expense.',
+    learnContent: {
+      concept: 'Write-downs reduce assets and net income but are non-cash.',
+      formula: 'Write-down amount = Inventory × Write-down %',
+      example: '$100,000 inventory, 10% write-down → $10,000 non-cash expense\n$60,000 inventory, 25% write-down → $15,000 non-cash expense'
+    }
+  },
+  {
+    id: 'acc-medium-138',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Impairment of Intangible Assets',
+    description: 'A company has $50,000 in patents. Due to a loss in market value, it writes off 60% of their value. What is the non-cash charge recognized on the income statement?',
+    answer: 30000,
+    unit: '$',
+    hint: 'Multiply the original value by the impairment percentage.',
+    explanation: '$50,000 × 60% = $30,000 impairment expense.',
+    learnContent: {
+      concept: 'Impairments are non-cash, non-recurring charges.',
+      formula: 'Impairment expense = Asset value × Impairment %',
+      example: '$40,000 intangible, 50% impairment → $20,000 expense\n$100,000 asset, 25% impairment → $25,000 expense'
+    }
+  },
+  {
+    id: 'acc-medium-139',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Gain on Sale of Investment',
+    description: 'A company bought stock for $80,000 and sells it two years later for $120,000. What is the gain reported on the income statement?',
+    answer: 40000,
+    unit: '$',
+    hint: 'Subtract book value from sale proceeds.',
+    explanation: '$120,000 – $80,000 = $40,000 gain.',
+    learnContent: {
+      concept: 'Gains reflect increase in asset value realized upon sale.',
+      formula: 'Gain = Sale Price – Book Value',
+      example: 'Buy at $60K, sell at $75K → $15K gain\nBuy at $100K, sell at $95K → $5K loss'
+    }
+  },
+  {
+    id: 'acc-medium-140',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Amortization of Intangibles',
+    description: 'A $40,000 customer list is amortized over 5 years using straight-line. What is the annual non-cash expense added back to the cash flow statement?',
+    answer: 8000,
+    unit: '$',
+    hint: 'Divide total intangible by useful life.',
+    explanation: '$40,000 / 5 years = $8,000 amortization per year.',
+    learnContent: {
+      concept: 'Amortization is non-cash but reduces net income.',
+      formula: 'Amortization = Total / Useful Life',
+      example: '$25K over 5 years → $5K/year\n$60K over 3 years → $20K/year'
+    }
+  },
+  {
+    id: 'acc-medium-141',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Minority Interest Accounting',
+    description: 'A subsidiary earns $200,000 in net income. The parent company owns 70%. What is the portion of income attributable to minority interest?',
+    answer: 60000,
+    unit: '$',
+    hint: 'Calculate portion not owned.',
+    explanation: '30% × $200,000 = $60,000 minority interest.',
+    learnContent: {
+      concept: 'Minority interest = % not owned × sub income.',
+      formula: 'Minority = Sub income × (1 – % owned)',
+      example: '75% owned, $100K income → $25K minority\n90% owned, $300K income → $30K minority'
+    }
+  },
+  {
+    id: 'acc-medium-142',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Equity Investment Accounting',
+    description: 'A company owns 40% of a joint venture that reports $100,000 in earnings. What is the equity income recognized?',
+    answer: 40000,
+    unit: '$',
+    hint: 'Use equity method for 20–50% stakes.',
+    explanation: '40% of $100,000 = $40,000 equity income.',
+    learnContent: {
+      concept: 'Equity method accounts for ownership share.',
+      formula: 'Equity Income = Affiliate NI × Ownership %',
+      example: '30% of $60K → $18K\n25% of $80K → $20K'
+    }
+  },
+  {
+    id: 'acc-medium-143',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Deferred Tax Asset Recognition',
+    description: 'A company reports a $20,000 NOL and has a tax rate of 25%. What is the deferred tax asset?',
+    answer: 5000,
+    unit: '$',
+    hint: 'Multiply NOL by tax rate.',
+    explanation: '$20,000 × 25% = $5,000 DTA.',
+    learnContent: {
+      concept: 'DTA reflects future tax savings.',
+      formula: 'DTA = NOL × Tax Rate',
+      example: '$10K NOL at 30% → $3K DTA\n$50K NOL at 20% → $10K DTA'
+    }
+  },
+  {
+    id: 'acc-medium-144',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'DTL from Depreciation Timing',
+    description: 'A company uses accelerated tax depreciation of $35,000 and book depreciation of $20,000. Tax rate is 30%. What is the DTL?',
+    answer: 4500,
+    unit: '$',
+    hint: 'Difference × tax rate.',
+    explanation: '($35K – $20K) × 30% = $4,500 DTL',
+    learnContent: {
+      concept: 'DTL results from temporary timing differences.',
+      formula: 'DTL = (Tax Dep – Book Dep) × Tax Rate',
+      example: '$15K difference, 25% → $3,750 DTL\n$5K diff, 20% → $1K DTL'
+    }
+  },
+  {
+    id: 'acc-medium-145',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Purchase Accounting Adjustment',
+    description: 'A company acquires another for $2.5M. The book value is $1.9M and identified intangibles are $300K. What is the goodwill?',
+    answer: 300000,
+    unit: '$',
+    hint: 'Goodwill = Price – Net assets acquired',
+    explanation: '$2.5M – ($1.9M + $300K) = $300K',
+    learnContent: {
+      concept: 'Goodwill represents premium over fair value.',
+      formula: 'Goodwill = Purchase Price – (Book Value + Intangibles)',
+      example: 'Paid $3M, BV $2.6M, Intangibles $200K → $200K goodwill\nPaid $1.5M, net assets $1.5M → $0 goodwill'
+    }
+  },
+  {
+    id: 'acc-medium-146',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Non-Controlling Interest on Balance Sheet',
+    description: 'A company owns 85% of a subsidiary with $800,000 in equity. What is the NCI shown on the balance sheet?',
+    answer: 120000,
+    unit: '$',
+    hint: 'Multiply equity by % minority.',
+    explanation: '15% × $800K = $120K NCI',
+    learnContent: {
+      concept: 'NCI = Sub equity × % minority',
+      formula: 'NCI = Sub equity × (1 – % owned)',
+      example: '20% minority, $500K equity → $100K NCI\n10% minority, $900K equity → $90K NCI'
+    }
   }
 ];
