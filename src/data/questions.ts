@@ -401,7 +401,7 @@ export const QUESTIONS: Question[] = [
     answer: 15000,
     unit: '$',
     hint: 'Start with net income, then add back non-cash expenses and remove non-operating gains. Net income already includes tax effects.',
-    explanation: '**Start with Net Income:** $15,000\n\n**Add Back Depreciation:** $300,000 ÷ 10 years = $30,000\n(Non-cash expense)\n\n**Subtract Gain on Sale:** $70,000 - $40,000 = $30,000\n(Non-operating item)\n\n**Final CFO:** $15,000 + $30,000 - $30,000 = $15,000\n\n*Note: Tax effects are already included in net income.*',
+    explanation: 'Start with Net Income: $15,000\n\nAdd Back Depreciation: $300,000 ÷ 10 years = $30,000\n(Non-cash expense)\n\nSubtract Gain on Sale: $70,000 - $40,000 = $30,000\n(Non-operating item)\n\nFinal CFO: $15,000 + $30,000 - $30,000 = $15,000\n\nNote: Tax effects are already included in net income.',
     learnContent: {
       concept: 'CFO using the indirect method starts with net income, adds back non-cash expenses (like depreciation), and subtracts non-operating items (like gains on asset sales). Tax effects are already included in net income.',
       formula: 'CFO = Net Income + Non-Cash Expenses - Non-Operating Gains',
