@@ -5123,51 +5123,11 @@ Key Points:
     track: 'accounting',
     difficulty: 'hard',
     title: 'Step-Up Allocation and DTL Creation',
-    description: `HavenSteel – Asset Allocation from Acquisition
-
-HavenSteel acquired Keystone Metals for $800,000.
-
-The fair value of net assets acquired was $600,000, consisting of:
-
-Cash: $50,000
-
-Inventory: $150,000
-
-Intangibles: $100,000
-
-The remaining portion was allocated to PP&E
-
-The tax basis of PP&E was $200,000, and the tax rate is 25%.
-
-📊 Financial Summary:
-
-Purchase Price: $800,000
-
-Fair Value of Net Assets: $600,000
-
-Cash: $50,000
-
-Inventory: $150,000
-
-Intangibles: $100,000
-
-Tax Basis of PP&E: $200,000
-
-Tax Rate: 25%
-
-What deferred tax liability is created from the basis difference in PP&E?`,
+    description: 'HavenSteel acquired Keystone Metals for $800,000. The fair value of net assets acquired was $600,000, consisting of: Cash: $50,000, Inventory: $150,000, Intangibles: $100,000. The remaining portion was allocated to PP&E. The tax basis of PP&E was $200,000, and the tax rate is 25%. What deferred tax liability is created from the basis difference in PP&E?',
     answer: 25000,
     unit: '$',
     hint: 'You must first compute the fair value of PP&E.',
-    explanation: `Total net assets = $600,000
-
-Cash + Inventory + Intangibles = 50K + 150K + 100K = 300K
-
-Therefore, PP&E fair value = 600K – 300K = 300K
-
-Book Basis = 300K; Tax Basis = 200K → Step-up = 100K
-
-DTL = 100K × 25% = 25,000`,
+    explanation: "**Calculation:** DTL = (Fair Value - Tax Basis) × Tax Rate = **$25,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Calculate Fair Value of PP&E**\n   - Total net assets fair value: $600,000\n   - Less: Cash: $50,000\n   - Less: Inventory: $150,000\n   - Less: Intangibles: $100,000\n   - PP&E fair value: $600,000 - $300,000 = $300,000\n\n2. **Calculate Step-Up Amount**\n   - PP&E fair value: $300,000\n   - PP&E tax basis: $200,000\n   - Step-up amount: $300,000 - $200,000 = $100,000\n\n3. **Calculate Deferred Tax Liability**\n   - Step-up creates temporary difference\n   - DTL = $100,000 × 25% = $25,000\n\n**Key Points:**\n   • Step-ups create book/tax differences requiring DTL recognition\n   • Fair value allocation starts with total net assets\n   • PP&E value calculated as residual after other assets\n   • DTL = temporary difference × tax rate",
     learnContent: {
       concept: 'Step-ups arise in acquisitions when fair value exceeds tax basis. PP&E fair value must often be backed into by subtracting other known assets. Deferred Tax Liabilities arise when book depreciation > tax depreciation.',
       formula: 'DTL = (Fair Value – Tax Basis) × Tax Rate\nFair Value of PP&E = FV of Net Assets – Other FV Assets',
@@ -5237,39 +5197,11 @@ CFO = 100 – 40 + 25 – 30 – 10 + 15 = 60,000`,
     track: 'accounting',
     difficulty: 'hard',
     title: 'Cash Flow Impact of Lease Reclassification',
-    description: `Strathmore – Lease Transition Effects
-
-Strathmore previously had a long-term lease treated as operating, with annual rent payments of $80,000.
-
-Due to ASC 842, the lease was reclassified as a finance lease, and the company recorded:
-
-Depreciation expense of $60,000
-
-Interest expense of $20,000
-
-Assume the company's Net Income for the year was $100,000.
-
-📊 Financial Summary:
-
-Rent Expense (prior method): $80,000
-
-Depreciation: $60,000
-
-Interest Expense: $20,000
-
-Net Income: $100,000
-
-What is the cash flow from operations after lease reclassification?`,
+    description: 'Strathmore previously had a long-term lease treated as operating, with annual rent payments of $80,000. Due to ASC 842, the lease was reclassified as a finance lease, and the company recorded: Depreciation expense of $60,000 and Interest expense of $20,000. Assume the company\'s Net Income for the year was $100,000. What is the cash flow from operations after lease reclassification?',
     answer: 160000,
     unit: '$',
     hint: 'Interest is already included in Net Income. Add back depreciation.',
-    explanation: `Start with Net Income = 100K
-
-Depreciation (non-cash) = +60K
-
-Interest is already included in Net Income
-
-CFO = 100 + 60 = 160,000`,
+    explanation: "**Calculation:** CFO = Net Income + Depreciation = **$160,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Starting Point**\n   - Net Income: $100,000\n   - This already includes the $20,000 interest expense\n\n2. **Finance Lease Impact**\n   - Depreciation expense: $60,000 [non-cash expense]\n   - Interest expense: $20,000 [already included in NI]\n   - Principal payment: $60,000 [moves to financing activities]\n\n3. **Operating Cash Flow Calculation**\n   - Net Income: $100,000\n   - Add back depreciation: $60,000\n   - Operating Cash Flow: $160,000\n\n4. **Comparison to Operating Lease**\n   - Under operating lease: CFO would be reduced by full $80,000 rent\n   - Under finance lease: CFO improved by treating depreciation as non-cash\n\n**Key Points:**\n   • Finance leases improve operating cash flow metrics\n   • Depreciation is non-cash and added back\n   • Only interest portion affects operating activities\n   • Principal payments classified as financing activities",
     learnContent: {
       concept: 'Finance leases increase depreciation and interest. Depreciation is non-cash → added back. CFO rises under finance lease since rent was fully operating before.',
       formula: 'CFO = Net Income + Depreciation',
@@ -5327,35 +5259,11 @@ CFO = 75 + 30 + 5 – 10 = 120,000`,
     track: 'accounting',
     difficulty: 'hard',
     title: 'Inventory Prepayment and FX Loss Impact',
-    description: `Graviton Corp – Operating vs. Non-Cash Flow Impacts
-
-Graviton paid $200,000 upfront for inventory.
-
-Only $150,000 of it was sold and recorded in COGS.
-
-Separately, Graviton recorded a $10,000 FX loss from revaluing a foreign subsidiary.
-
-Net Income was $90,000.
-
-📊 Financial Summary:
-
-Net Income: $90,000
-
-Inventory Paid: $200,000
-
-Inventory Used (COGS): $150,000
-
-FX Loss: $10,000
-
-What is cash flow from operations?`,
+    description: 'Graviton Corp paid $200,000 upfront for inventory. Only $150,000 of it was sold and recorded in COGS. Separately, Graviton recorded a $10,000 FX loss from revaluing a foreign subsidiary. Net Income was $90,000. What is cash flow from operations?',
     answer: 50000,
     unit: '$',
     hint: 'Unutilized inventory increases working capital. FX loss is non-cash.',
-    explanation: `Inventory increase = 200K – 150K = 50K use of cash
-
-FX loss = +10K (non-cash add-back)
-
-CFO = 90 - 50 + 10 = 50,000`,
+    explanation: "**Calculation:** CFO = NI - Inventory Increase + Non-cash Losses = **$50,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Starting Point**\n   - Net Income: $90,000\n   - This includes the FX loss and COGS\n\n2. **Inventory Analysis**\n   - Cash paid for inventory: $200,000\n   - Inventory sold (COGS): $150,000\n   - Inventory increase: $200,000 - $150,000 = $50,000\n   - This represents cash tied up in unsold inventory\n\n3. **Foreign Exchange Loss**\n   - FX loss: $10,000 (non-cash item)\n   - Add back to operating cash flow\n   - This was an unrealized translation loss\n\n4. **Cash Flow Calculation**\n   - Net Income: $90,000\n   - Less: Inventory increase: ($50,000) [cash use]\n   - Add: FX loss (non-cash): $10,000\n   - Operating Cash Flow: $90,000 - $50,000 + $10,000 = $50,000\n\n**Key Points:**\n   • Inventory builds are cash uses in operating activities\n   • COGS timing doesn't match cash payment timing\n   • FX losses are typically non-cash translation adjustments\n   • Focus on actual cash movements vs. income statement timing",
     learnContent: {
       concept: 'Inventory builds are cash uses. FX losses are non-cash - added back. COGS does not match payment timing in CFO.',
       formula: 'CFO = NI - Delta Inventory + Non-cash Losses',
@@ -5367,37 +5275,11 @@ CFO = 90 - 50 + 10 = 50,000`,
     track: 'accounting',
     difficulty: 'hard',
     title: 'Accrued Bonus Reversal and Payable Timing',
-    description: `NovaLend – WC and Accrual Reversal
-
-At the start of the year, NovaLend had $50,000 in accrued bonuses from the prior year.
-
-During the year:
-
-It paid out the full $50,000
-
-It also accrued a new $70,000 for year-end bonuses
-
-Net Income was $90,000
-
-📊 Financial Summary:
-
-Beginning Accrual: $50,000
-
-Accrual Paid: $50,000
-
-New Accrual: $70,000
-
-Net Income: $90,000
-
-What is NovaLend's cash flow from operations?`,
-    answer: 160000,
+    description: 'At the start of the year, NovaLend had $50,000 in accrued bonuses from the prior year. During the year: It paid out the full $50,000 and It also accrued a new $70,000 for year-end bonuses. Net Income was $90,000. What is NovaLend\'s cash flow from operations?',
+    answer: 110000,
     unit: '$',
-    hint: 'Beginning accrual paid → no impact. New accrual unpaid → CFO increase.',
-    explanation: `Payment of prior year bonus = no CFO effect
-
-New accrual (not paid) = +70K
-
-CFO = 90 + 70 = 160,000`,
+    hint: 'Bonus payments reduce cash. New accruals increase liabilities (cash source).',
+    explanation: "**Calculation:** CFO = NI - Bonus Payments + Accrual Increase = **$110,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Starting Point**\n   - Net Income: $90,000\n   - This includes the $70,000 current year bonus expense\n\n2. **Prior Year Bonus Payment**\n   - Accrued bonuses paid: ($50,000) [cash outflow]\n   - This reduces the accrued liability\n   - No P&L impact (already expensed last year)\n\n3. **Current Year Bonus Accrual**\n   - New bonus expense: $70,000 [included in NI]\n   - Cash to be paid: $0 (accrued for next year)\n   - This creates a liability increase\n\n4. **Working Capital Analysis**\n   - Beginning accrued bonuses: $50,000\n   - Less: Cash payments: ($50,000)\n   - Plus: New accruals: $70,000\n   - Ending accrued bonuses: $70,000\n   - Net change in accruals: $20,000 increase\n\n5. **Operating Cash Flow Calculation**\n   - Net Income: $90,000\n   - Less: Prior bonus payment: ($50,000)\n   - Add: Net accrual increase: $20,000\n   - Alternative: NI + Liability increase = $90,000 + $20,000 = $110,000\n\n**Key Points:**\n   • Cash payments reduce operating cash flow\n   • Accrual increases are sources of cash (liability increase)\n   • Current year bonus expense is non-cash until paid\n   • Focus on net change in accrued liabilities",
     learnContent: {
       concept: 'Accruals paid = no impact (already expensed). New unpaid accruals = source of cash. Cash flow ignores timing of expense recognition vs. payment.',
       formula: 'CFO = NI + Increase in Accrued Liabilities',
