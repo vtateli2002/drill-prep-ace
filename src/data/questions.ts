@@ -396,15 +396,15 @@ export const QUESTIONS: Question[] = [
     id: 'acc-hard-150',
     track: 'accounting',
     difficulty: 'hard',
-    title: 'Capex + Depreciation + Gain on Sale',
-    description: 'StrikeCore purchased $300,000 of new equipment, depreciated straight-line over 10 years. It also sold an old asset with a book value of $40,000 for $70,000, recognizing a gain.\n\nAssume a 25% tax rate.\n\nWhat is the net CFO adjustment from these items?',
+    title: 'Cash Flow from Operations Calculation',
+    description: 'ABC Company reported net income of $15,000 for the year. During the year, they had the following activities:\n\n• Purchased new equipment for $300,000 with a 10-year useful life (straight-line depreciation)\n• Sold old equipment with a book value of $40,000 for $70,000\n• Company tax rate is 25%\n\nWhat is the company\'s cash flow from operations for the year?',
     answer: 22500,
     unit: '$',
-    hint: 'Depreciation is added back. Gains inflate NI → subtract them in CFO.',
-    explanation: 'Annual Depreciation = $300,000 ÷ 10 = $30,000. This is a non-cash expense that reduces net income, so we add it back to CFO.\n\nGain on Sale = $70,000 - $40,000 = $30,000. Since this is a non-operating gain that inflated net income, we subtract it from CFO.\n\nTax Impact = $30,000 × 25% = $7,500. The gain increases taxable income, creating additional tax liability.\n\nNet CFO adjustment = +$30,000 (Depreciation) - $30,000 (Gain) + $7,500 (Tax benefit) = $7,500.',
+    hint: 'Start with net income, then add back non-cash expenses and remove non-operating gains. Consider tax effects.',
+    explanation: 'Starting with Net Income: $15,000\n\nAdd back Depreciation (non-cash expense): Equipment cost $300,000 ÷ 10 years = $30,000\n\nSubtract Gain on Sale (non-operating item): Sale price $70,000 - Book value $40,000 = $30,000 gain to remove\n\nAdd back Tax Shield from Gain: The $30,000 gain increases taxes by $30,000 × 25% = $7,500\n\nCash Flow from Operations = $15,000 + $30,000 - $30,000 + $7,500 = $22,500',
     learnContent: {
-      concept: 'Depreciation is added back. Gain on Sale is non-operating and must be subtracted from CFO. Capex goes in investing section, not CFO. Gains affect Net Income, so tax must be adjusted.',
-      formula: 'CFO = –Gain + Depreciation + Tax Impact on Gain',
+      concept: 'CFO starts with net income, adds back non-cash expenses (depreciation), subtracts non-operating gains, and adjusts for tax effects.',
+      formula: 'CFO = Net Income + Depreciation - Gains + Tax Shield on Gains',
       example: 'FabWorks sells equipment for $80K (book = $50K) and books $100K Dep → CFO = 52.5K\nFleetMax gains $20K on truck sale, Dep $60K → CFO = 45K\nBrickline gains $10K, depreciation = $30K → CFO = 27.5K'
     }
   },
