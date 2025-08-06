@@ -2462,7 +2462,30 @@ What is the Operating Cash Flow (OCF) using the indirect method?`,
     answer: 120000,
     unit: '$',
     hint: 'OCF = Net Income + Non-Cash Expenses - Increases in Assets + Decreases in Liabilities',
-    explanation: '$120,000 + $15,000 - $10,000 - $5,000 = $120,000',
+    explanation: `Calculation:
+OCF = $120,000 + $15,000 - $10,000 - $5,000 = $120,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Starting Point:
+   → Net Income: $120,000
+
+2. Non-Cash Adjustments:
+   • Add: Depreciation: +$15,000 (non-cash expense)
+   → Subtotal: $135,000
+
+3. Working Capital Changes:
+   • Accounts Receivable increase: -$10,000 (cash tied up)
+   • Accounts Payable decrease: -$5,000 (cash used to pay vendors)
+   → Working capital impact: -$15,000
+
+Key Points:
+   • Indirect method starts with net income and adjusts for non-cash items
+   • Depreciation is added back as it reduced income without using cash
+   • A/R increases represent cash not yet collected from customers
+   • A/P decreases represent cash paid to reduce vendor balances`,
     learnContent: {
       concept: 'The indirect method starts with net income, adds back non-cash charges, and adjusts for working capital changes.',
       formula: 'OCF = NI + Depreciation - ΔAR + ΔAP',
@@ -2485,7 +2508,29 @@ What is EBITDA?`,
     answer: 180000,
     unit: '$',
     hint: 'EBITDA = Revenue - COGS - OpEx (excluding D&A)',
-    explanation: '$500,000 - $200,000 - $120,000 = $180,000',
+    explanation: `Calculation:
+EBITDA = $500,000 - $200,000 - $120,000 = $180,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Revenue:
+   → Total Revenue: $500,000
+
+2. Operating Costs (excluding D&A):
+   • COGS: $200,000
+   • Operating Expenses: $120,000
+   → Total Operating Costs: $320,000
+
+3. EBITDA Calculation:
+   → EBITDA: $500,000 - $320,000 = $180,000
+
+Key Points:
+   • EBITDA excludes depreciation and amortization to focus on cash profitability
+   • This metric is useful for comparing companies with different capital structures
+   • D&A of $30,000 is excluded from the calculation
+   • EBITDA measures core operational performance before financing decisions`,
     learnContent: {
       concept: 'EBITDA is earnings before interest, taxes, depreciation, and amortization — often used to measure core profitability.',
       formula: 'EBITDA = Revenue - COGS - Operating Expenses (excl. D&A)',
@@ -2507,7 +2552,29 @@ What is the company's Shareholders' Equity?`,
     answer: 400000,
     unit: '$',
     hint: 'Equity = Total Assets - Total Liabilities',
-    explanation: 'Liabilities = $100,000 + $250,000 = $350,000. Equity = $750,000 - $350,000 = $400,000',
+    explanation: `Calculation:
+Shareholders' Equity = $750,000 - $350,000 = $400,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Total Assets:
+   → Assets: $750,000
+
+2. Total Liabilities:
+   • Current Liabilities: $100,000
+   • Long-Term Debt: $250,000
+   → Total Liabilities: $350,000
+
+3. Shareholders' Equity:
+   → Equity: $750,000 - $350,000 = $400,000
+
+Key Points:
+   • Equity represents residual interest in assets after paying liabilities
+   • Follows the fundamental accounting equation: Assets = Liabilities + Equity
+   • Shareholders' equity includes common stock, retained earnings, and other equity components
+   • This represents the book value available to shareholders`,
     learnContent: {
       concept: 'Equity represents the residual interest in assets after liabilities are settled.',
       formula: 'Equity = Assets - Liabilities',
@@ -2528,7 +2595,27 @@ Depreciation: $10,000
 What is the firm's interest coverage ratio?`,
     answer: 5.0,
     hint: 'Interest Coverage = EBIT / Interest Expense',
-    explanation: '$75,000 ÷ $15,000 = 5.0',
+    explanation: `Calculation:
+Interest Coverage Ratio = $75,000 ÷ $15,000 = 5.0
+
+• • •
+
+Step-by-step breakdown:
+
+1. Earnings Available:
+   → EBIT: $75,000
+
+2. Interest Obligation:
+   → Interest Expense: $15,000
+
+3. Coverage Ratio:
+   → Interest Coverage: $75,000 ÷ $15,000 = 5.0x
+
+Key Points:
+   • Interest coverage measures ability to pay interest obligations
+   • 5.0x means EBIT can cover interest expense 5 times over
+   • Higher ratios indicate stronger ability to service debt
+   • Depreciation of $10,000 is not used in this calculation`,
     learnContent: {
       concept: 'The interest coverage ratio measures how easily a company can pay its interest expense using earnings before interest and taxes (EBIT).',
       formula: 'Interest Coverage Ratio = EBIT ÷ Interest Expense',
@@ -2976,7 +3063,28 @@ What is the amount of the deferred tax asset created?`,
     answer: 5000,
     unit: '$',
     hint: 'Deferred Tax Asset = (Accounting Revenue - Taxable Revenue) × Tax Rate',
-    explanation: 'Since you recognize more revenue for accounting than for tax purposes, the company pays less in taxes now and will pay more in the future — creating a deferred tax asset. ($50,000 - $30,000) × 25% = $5,000',
+    explanation: `Calculation:
+Deferred Tax Asset = ($50,000 - $30,000) × 25% = $5,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Revenue Timing Difference:
+   • Accounting Revenue: $50,000
+   • Taxable Revenue: $30,000
+   → Temporary Difference: $20,000
+
+2. Deferred Tax Asset:
+   • Temporary Difference: $20,000
+   • Tax Rate: 25%
+   → DTA: $20,000 × 25% = $5,000
+
+Key Points:
+   • DTA arises when company pays less tax now but expects to pay more later
+   • Revenue recognized for books exceeds current taxable revenue
+   • $20,000 will be taxable in future periods when collected
+   • DTA represents prepaid taxes that will reduce future tax payments`,
     learnContent: {
       concept: 'A deferred tax asset arises when a company pays less tax now but expects to pay more in the future due to timing differences in revenue or expense recognition.',
       formula: 'Deferred Tax Asset = (Book Income - Taxable Income) × Tax Rate',
@@ -2994,7 +3102,29 @@ What is the gross profit recognized under installment sales accounting?`,
     answer: 25000,
     unit: '$',
     hint: 'Gross Profit % = (Revenue - COGS) / Revenue → then apply % to actual cash received',
-    explanation: 'Installment sales recognize revenue and profit as cash is received. Gross Profit % = ($120,000 - $70,000) / $120,000 = 41.67%. Gross Profit Recognized = $60,000 × 41.67% = $25,000',
+    explanation: `Calculation:
+Gross Profit Recognized = $60,000 × 41.67% = $25,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Gross Profit Percentage:
+   • Total Revenue: $120,000
+   • Total COGS: $70,000
+   → Gross Profit %: ($120,000 - $70,000) ÷ $120,000 = 41.67%
+
+2. Cash Collection:
+   • Cash Received: $60,000 (50% of total sale)
+
+3. Installment Method Recognition:
+   → Gross Profit: $60,000 × 41.67% = $25,000
+
+Key Points:
+   • Installment sales defer profit recognition until cash is collected
+   • Only 50% of the sale was collected, so only 50% of gross profit is recognized
+   • This method is used when collectability is uncertain
+   • Remaining $60,000 receivable will recognize $25,000 more profit when collected`,
     learnContent: {
       concept: 'Installment sales accounting defers revenue recognition until cash is received, useful when collectability is uncertain.',
       formula: 'Gross Profit Recognized = (Cash Received × Gross Profit %)\nGross Profit % = (Revenue - COGS) / Revenue',
@@ -3012,7 +3142,29 @@ What is your final COGS?`,
     answer: 188000,
     unit: '$',
     hint: 'Apply percentage discount, then subtract rebate to get final COGS.',
-    explanation: 'A 5% discount on $200,000 = $10,000. Adding the $2,000 rebate brings your total savings to $12,000. Final COGS = $200,000 - $10,000 - $2,000 = $188,000',
+    explanation: `Calculation:
+Final COGS = $200,000 - $10,000 - $2,000 = $188,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Initial COGS:
+   → Expected COGS: $200,000
+
+2. Vendor Discounts:
+   • Percentage discount: 5% × $200,000 = $10,000
+   • Early payment rebate: $2,000
+   → Total savings: $12,000
+
+3. Final COGS:
+   → Final COGS: $200,000 - $12,000 = $188,000
+
+Key Points:
+   • Vendor negotiations directly reduce cost of goods sold
+   • Both percentage discounts and fixed rebates improve margins
+   • Early payment incentives provide additional cost savings
+   • Final COGS improvement of $12,000 flows directly to gross profit`,
     learnContent: {
       concept: 'Vendor negotiations can directly reduce COGS via discounts and rebates, improving gross margins without operational changes.',
       formula: 'Final COGS = Expected COGS - % Discount - Fixed Rebate',
@@ -3030,7 +3182,30 @@ What is the expense amount for the current year?`,
     answer: 12000,
     unit: '$',
     hint: 'Split the payment based on usage vs. future use.',
-    explanation: 'Only 6 months of service is consumed this year (July-December). Expense = $24,000 × (6/12) = $12,000. The remaining $12,000 is a prepaid asset.',
+    explanation: `Calculation:
+Current Year Expense = $24,000 × (6/12) = $12,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Payment Analysis:
+   • Total payment: $24,000
+   • Payment date: July 1
+   • Contract duration: 12 months
+
+2. Usage Calculation:
+   • Months used in current year: July to December = 6 months
+   → Current year expense: $24,000 × (6/12) = $12,000
+
+3. Remaining Prepaid Asset:
+   → Prepaid asset: $24,000 - $12,000 = $12,000
+
+Key Points:
+   • Expenses must match the period when benefits are received
+   • Only 6 months of the annual subscription were used this year
+   • $12,000 remains as prepaid asset for next year's expense
+   • This follows the matching principle in accounting`,
     learnContent: {
       concept: 'Expenses must match the period in which benefits are received. Prepaid expenses are future-period costs paid upfront.',
       formula: 'Expense = Total × (Months Used / 12)\nPrepaid = Total - Expense',
@@ -3048,7 +3223,30 @@ What is the annual amortization expense?`,
     answer: 12000,
     unit: '$',
     hint: 'Amortization = Cost / Useful Life',
-    explanation: 'Annual amortization = $120,000 / 10 years = $12,000. After 3 years, cumulative amortization would be $36,000, leaving a net book value of $84,000.',
+    explanation: `Calculation:
+Annual Amortization = $120,000 ÷ 10 years = $12,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Intangible Asset Details:
+   • Cost: $120,000
+   • Useful life: 10 years
+   • Residual value: $0
+
+2. Annual Amortization:
+   → Annual expense: $120,000 ÷ 10 = $12,000
+
+3. Net Book Value Over Time:
+   • After Year 1: $120,000 - $12,000 = $108,000
+   • After Year 3: $120,000 - $36,000 = $84,000
+
+Key Points:
+   • Intangible assets are amortized over their useful lives
+   • Straight-line method spreads cost evenly across years
+   • Net book value decreases by $12,000 annually
+   • This reflects the declining economic value of the trademark`,
     learnContent: {
       concept: 'Intangible assets like trademarks and patents are amortized over their useful lives to reflect declining value.',
       formula: 'Annual Amortization = Cost / Useful Life\nNBV = Cost - (Amortization × Years)',
@@ -3066,7 +3264,28 @@ What is the new value of the DTL the company should report?`,
     answer: 5000,
     unit: '$',
     hint: 'Think about how DTLs are tied to future tax payments — lower rates mean lower liabilities.',
-    explanation: 'DTL is reduced when tax rates drop. You multiply the underlying temporary difference by the new tax rate.',
+    explanation: `Calculation:
+New DTL = $6,000 ÷ 30% × 25% = $5,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Current DTL Analysis:
+   • Current DTL: $6,000
+   • Original tax rate: 30%
+   → Underlying temporary difference: $6,000 ÷ 30% = $20,000
+
+2. Tax Rate Change Impact:
+   • New tax rate: 25%
+   • Same temporary difference: $20,000
+   → New DTL: $20,000 × 25% = $5,000
+
+Key Points:
+   • DTL represents future tax obligations on temporary differences
+   • Lower tax rates reduce the value of future tax liabilities
+   • The $1,000 reduction ($6,000 - $5,000) creates a one-time income benefit
+   • Companies must adjust DTL balances when tax rates change`,
     learnContent: {
       concept: 'Deferred Tax Liabilities (DTLs) represent taxes owed in the future due to temporary timing differences. When tax rates change, the value of those liabilities must be adjusted accordingly.',
       formula: 'New DTL = Old DTL ÷ Old Tax Rate × New Tax Rate',
@@ -3084,7 +3303,29 @@ What is the difference in pre-tax income in Year 1 between the two scenarios?`,
     answer: 90000,
     unit: '$',
     hint: 'Compare full expensing vs. 1-year depreciation.',
-    explanation: 'Expensing the full $120,000 hits income immediately, while depreciation spreads cost. Year 1 difference = $120,000 - $30,000 = $90,000.',
+    explanation: `Calculation:
+Income Difference = $120,000 - $30,000 = $90,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Scenario A - Full Expensing:
+   • Year 1 expense: $120,000
+   → Pre-tax income impact: -$120,000
+
+2. Scenario B - Capitalization:
+   • Annual depreciation: $120,000 ÷ 4 years = $30,000
+   → Year 1 expense: $30,000
+
+3. Income Difference:
+   → Difference: $120,000 - $30,000 = $90,000
+
+Key Points:
+   • Capitalizing spreads the cost over the asset's useful life
+   • Expensing hits income immediately in full
+   • Year 1 pre-tax income is $90,000 higher with capitalization
+   • Future years will show higher expenses under capitalization approach`,
     learnContent: {
       concept: 'Capitalizing means spreading the cost over time; expensing means taking the hit now. This impacts net income and taxes.',
       formula: 'Difference = Immediate Expense - Depreciation in Year 1',
@@ -3102,7 +3343,28 @@ What is the cash flow from operations using the indirect method, ignoring change
     answer: 75000,
     unit: '$',
     hint: 'Start with net income, then add back non-cash charges.',
-    explanation: 'Cash Flow from Ops = Net Income + Depreciation = 60,000 + 15,000 = 75,000',
+    explanation: `Calculation:
+CFO = $60,000 + $15,000 = $75,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Starting Point:
+   → Net Income: $60,000
+
+2. Non-Cash Adjustments:
+   • Depreciation: +$15,000 (non-cash expense, add back)
+   → Cash Flow from Operations: $75,000
+
+3. Items Not Adjusted:
+   • Interest expense: $5,000 (already cash-based in net income)
+
+Key Points:
+   • Indirect method starts with net income and adjusts for non-cash items
+   • Depreciation reduced net income but didn't use cash
+   • Interest expense is already reflected as a cash outflow in net income
+   • Working capital changes are ignored per the question`,
     learnContent: {
       concept: 'Non-cash charges like depreciation must be added back to reconcile net income with cash flow.',
       formula: 'CFO = Net Income + Non-Cash Charges ± Working Capital Changes',
@@ -3120,7 +3382,31 @@ Assuming a 20% tax rate, what is the net income impact of this impairment?`,
     answer: 28000,
     unit: '$',
     hint: 'Think about after-tax impact of a write-down.',
-    explanation: 'Impairment = $100,000 - $65,000 = $35,000. After-tax impact = $35,000 × (1 - 0.20) = $28,000',
+    explanation: `Calculation:
+After-Tax Impact = $35,000 × (1 - 0.20) = $28,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Asset Impairment:
+   • Original book value: $100,000
+   • Impaired value: $65,000
+   → Impairment charge: $35,000
+
+2. Tax Impact:
+   • Impairment charge: $35,000
+   • Tax rate: 20%
+   → Tax savings: $35,000 × 20% = $7,000
+
+3. Net Income Impact:
+   → After-tax impact: $35,000 - $7,000 = $28,000
+
+Key Points:
+   • Asset impairment is a non-cash charge reducing net income
+   • Tax deductible nature of impairment provides some offset
+   • Net impact is reduced by the tax shield benefit
+   • This represents the true economic cost after tax effects`,
     learnContent: {
       concept: 'An asset impairment is a non-cash charge that reduces net income after taxes.',
       formula: 'After-Tax Impact = Write-down × (1 - Tax Rate)',
@@ -3138,7 +3424,31 @@ How much revenue is recognized by the end of April?`,
     answer: 40000,
     unit: '$',
     hint: 'Revenue is recognized monthly.',
-    explanation: '$120,000 ÷ 12 = $10,000 per month. $10,000 × 4 months = $40,000',
+    explanation: `Calculation:
+Revenue Recognized = $10,000 × 4 months = $40,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Monthly Revenue Rate:
+   • Total contract: $120,000
+   • Contract duration: 12 months
+   → Monthly revenue: $120,000 ÷ 12 = $10,000
+
+2. Service Period:
+   • Start date: January
+   • End of measurement: April
+   → Months of service: 4 months
+
+3. Revenue Recognition:
+   → Total recognized: $10,000 × 4 = $40,000
+
+Key Points:
+   • Revenue is recognized evenly as services are delivered
+   • Deferred revenue liability decreases as revenue is recognized
+   • Remaining deferred revenue: $120,000 - $40,000 = $80,000
+   • This follows the performance obligation satisfaction approach`,
     learnContent: {
       concept: 'Deferred revenue is a liability that\'s reduced as services are delivered.',
       formula: 'Recognized Revenue = Total Contract ÷ Duration × Months Delivered',
@@ -3186,7 +3496,29 @@ How much revenue is recognized by the end of April?`,
     answer: 17237,
     unit: '$',
     hint: 'Use the PV of annuity formula for lease payments.',
-    explanation: 'PV = Pmt × [(1 − (1 + r)^−n) / r]\n= 5,000 × [(1 − (1.06)^−4) / 0.06] ≈ $17,237',
+    explanation: `Calculation:
+Present Value = $5,000 × 3.4447 = $17,237
+
+• • •
+
+Step-by-step breakdown:
+
+1. Lease Terms:
+   • Annual payment: $5,000
+   • Lease term: 4 years
+   • Discount rate: 6%
+
+2. Present Value Factor:
+   • PV annuity factor: [(1 - (1.06)^-4) / 0.06] = 3.4447
+
+3. Initial Lease Liability:
+   → PV: $5,000 × 3.4447 = $17,237
+
+Key Points:
+   • Capital leases create both an asset and liability at lease inception
+   • Liability equals present value of future lease payments
+   • Discount rate reflects the company's incremental borrowing rate
+   • This liability will be reduced as lease payments are made`,
     learnContent: {
       concept: 'Capital leases create a liability equal to the present value of lease payments.',
       formula: 'PV = Pmt × [(1 − (1 + r)^−n) / r]',
