@@ -325,7 +325,7 @@ export const QUESTIONS: Question[] = [
 
   // ACCOUNTING - Easy - BETA QUESTIONS
   {
-    id: 'acc-easy-1',
+    id: 'acc-easy-beta-1',
     track: 'accounting',
     difficulty: 'easy',
     title: 'Beta - Basic Net Income Calculation',

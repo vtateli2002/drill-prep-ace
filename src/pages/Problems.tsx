@@ -82,6 +82,16 @@ const Problems = () => {
     return trackMatches && difficultyMatches;
   });
 
+  // Debug logging
+  console.log('Filter Debug:', {
+    selectedTrack,
+    selectedDifficulty,
+    totalQuestions: allQuestions.length,
+    filteredQuestions: filteredQuestions.length,
+    trackFilter: selectedTrack !== 'all' ? filteredQuestions.filter(q => q.track === selectedTrack).length : 'N/A',
+    difficultyFilter: selectedDifficulty !== 'all' ? filteredQuestions.filter(q => q.difficulty === selectedDifficulty).length : 'N/A'
+  });
+
   const getTrackConfig = (track: Track) => {
     const configs = {
       'accounting': { label: 'Accounting', color: 'bg-blue-500 hover:bg-blue-600', icon: '📊' },
