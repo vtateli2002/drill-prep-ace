@@ -417,7 +417,7 @@ export const QUESTIONS: Question[] = [
     answer: 80000,
     unit: '$',
     hint: 'Deferred revenue and unpaid SG&A increase CFO. Add back depreciation.',
-    explanation: 'Deferred Revenue Increase = $100,000 - $60,000 = $40,000\nUnpaid SG&A (Accrued Expenses) = +$10,000\nDepreciation = +$30,000\nCFO = $40,000 (NI) + $40,000 + $10,000 + $30,000 = $120,000\n\nWait, let me recalculate: CFO = $40,000 + $30,000 + $40,000 + $10,000 = $120,000',
+    explanation: 'CFO = Net Income + Depreciation + Deferred Revenue Increase + Accrued Expenses Increase\nCFO = $40,000 + $30,000 + $40,000 + $10,000 = $120,000\n\nDeferred revenue represents cash collected but not yet recognized as revenue.\nAccrued expenses are costs incurred but unpaid, meaning cash was retained.\nDepreciation is a non-cash expense added back to CFO.',
     learnContent: {
       concept: 'Deferred Revenue = cash received before revenue earned → add to CFO. Accrued Expenses = costs incurred but unpaid → add to CFO. Depreciation = non-cash → add to CFO.',
       formula: 'CFO = NI + Depreciation + Deferred Revenue Increase + Accrued Expenses Increase',
@@ -433,7 +433,7 @@ export const QUESTIONS: Question[] = [
     answer: 3000,
     unit: '$',
     hint: 'Taxable gain > book gain → DTL is created.',
-    explanation: 'Book Gain = $120,000 - $90,000 = $30,000\nTaxable Gain = $120,000 - $80,000 = $40,000\nDifference = $10,000 more taxable income than book income\nDTL = $10,000 × 30% = $3,000',
+    explanation: 'DTL = (Taxable Gain - Book Gain) × Tax Rate\nDTL = ($40,000 - $30,000) × 30% = $3,000\n\nBook gain is calculated as sale price minus book value.\nTaxable gain uses tax basis instead of book value.\nDTL arises when taxable income exceeds book income.',
     learnContent: {
       concept: 'DTL arises when taxable income > book income. Common in asset sales when tax basis differs from book basis. DTL is a balance sheet liability, reversed over time.',
       formula: 'DTL = (Taxable Gain – Book Gain) × Tax Rate',
@@ -449,7 +449,7 @@ export const QUESTIONS: Question[] = [
     answer: 65000,
     unit: '$',
     hint: 'DTA write-down reduces NI but doesn\'t use cash. Amortization is non-cash too.',
-    explanation: 'Amortization = +$40,000 (non-cash add-back)\nDTA write-down = increases tax expense → lowers net income\nSince DTA write-down is non-cash, add back full $25,000\nCFO adjustment = $40,000 + $25,000 = $65,000',
+    explanation: 'CFO Adjustment = Amortization + DTA Write-down\nCFO Adjustment = $40,000 + $25,000 = $65,000\n\nAmortization is a non-cash expense that reduces net income.\nDTA write-down increases tax expense but involves no cash payment.\nBoth are added back to reconcile net income to cash flow.',
     learnContent: {
       concept: 'Amortization reduces net income, added back to CFO. DTA write-down increases tax expense (non-cash), also added back. DTA reversals typically lower book earnings, but not cash.',
       formula: 'CFO Adjustment = Amortization + DTA Write-down',
@@ -465,7 +465,7 @@ export const QUESTIONS: Question[] = [
     answer: 140000,
     unit: '$',
     hint: 'Prepaids use cash. Accruals and depreciation increase CFO.',
-    explanation: 'CFO = Net Income - ∆Prepaids + Depreciation + ∆Accrued Liabilities\nCFO = $90,000 - $15,000 + $40,000 + $25,000 = $140,000',
+    explanation: 'CFO = Net Income - Prepaid Increase + Depreciation + Accrued Liabilities Increase\nCFO = $90,000 - $15,000 + $40,000 + $25,000 = $140,000\n\nPrepaid expenses represent cash paid for future services.\nAccrued liabilities are unpaid costs, meaning cash was retained.\nDepreciation is a non-cash expense added back to CFO.',
     learnContent: {
       concept: 'Prepaid expenses are cash out → decrease CFO. Accrued liabilities = unpaid costs → cash held → increase CFO. Depreciation = non-cash → added back.',
       formula: 'CFO = NI – ∆Prepaids + Depreciation + ∆Accrued Liabilities',
@@ -481,7 +481,7 @@ export const QUESTIONS: Question[] = [
     answer: 55000,
     unit: '$',
     hint: 'Add back impairment and depreciation. Subtract gain on sale.',
-    explanation: 'Goodwill Impairment = +$50,000 (non-cash, add back)\nDepreciation = +$25,000 (non-cash, add back)\nGain on Sale = -$20,000 (non-operating, subtract)\nCFO adjustment = $50,000 + $25,000 - $20,000 = $55,000',
+    explanation: 'CFO Adjustment = Goodwill Impairment + Depreciation - Gain on Sale\nCFO Adjustment = $50,000 + $25,000 - $20,000 = $55,000\n\nGoodwill impairment reduces net income but involves no cash payment.\nDepreciation is a non-cash expense added back to CFO.\nGain on sale is non-operating income subtracted from CFO.',
     learnContent: {
       concept: 'Impairments reduce net income but are non-cash. Gains on sale are non-core and subtracted from CFO. Depreciation is always added back.',
       formula: 'CFO = Depreciation + Impairment – Gain on Sale',
@@ -497,7 +497,7 @@ export const QUESTIONS: Question[] = [
     answer: 37800,
     unit: '$',
     hint: 'Book income is lower than taxable income → DTL created.',
-    explanation: 'Book Expense = $200,000 (full expensing)\nTax Deduction in Year 1 = $200,000 × 10% = $20,000\nTaxable Income is higher by = $200,000 - $20,000 = $180,000\nDTL = $180,000 × 21% = $37,800',
+    explanation: 'DTL = (Book Expense - Tax Deduction) × Tax Rate\nDTL = ($200,000 - $20,000) × 21% = $37,800\n\nBook treatment fully expenses R&D in Year 1.\nTax rules capitalize and amortize over 5 years (10% in Year 1).\nDTL arises because book income is lower than taxable income.',
     learnContent: {
       concept: 'Capitalized R&D lowers tax deduction in early years. Full expensing for book reduces book income. Tax timing difference → DTL created.',
       formula: 'DTL = (Book Expense – Tax Deduction) × Tax Rate',
@@ -513,7 +513,7 @@ export const QUESTIONS: Question[] = [
     answer: 148000,
     unit: '$',
     hint: 'Inventory write-down is non-cash. Accrued liabilities and deferred revenue increase CFO.',
-    explanation: 'Inventory Write-down = +$25,000 (non-cash, add back)\nAccrued Expenses = +$18,000 (unpaid costs, cash held)\nDeferred Revenue Increase = $60,000 - $45,000 = +$15,000 (cash collected)\nCFO = $90,000 + $25,000 + $18,000 + $15,000 = $148,000',
+    explanation: 'CFO = Net Income + Inventory Write-down + Accrued Expenses + Deferred Revenue Increase\nCFO = $90,000 + $25,000 + $18,000 + $15,000 = $148,000\n\nInventory write-down is a non-cash charge reducing net income.\nAccrued expenses represent unpaid costs, retaining cash.\nDeferred revenue is cash collected before revenue recognition.',
     learnContent: {
       concept: 'Inventory write-down → non-cash, increases CFO. Accrued liabilities → expenses unpaid, boosts CFO. Deferred revenue → cash in, not yet earned, increases CFO.',
       formula: 'CFO = Net Income + Write-down + ∆Accruals + ∆Deferred Revenue',
@@ -529,7 +529,7 @@ export const QUESTIONS: Question[] = [
     answer: 118750,
     unit: '$ DTA',
     hint: 'Taxable income is lower than book → DTA created.',
-    explanation: 'Book Expense (Depreciation) = $500,000 ÷ 20 = $25,000\nTax Expense = $500,000 (fully expensed)\nDifference = $475,000 more tax expense than book expense\nDTA = $475,000 × 25% = $118,750',
+    explanation: 'DTA = (Tax Expense - Book Expense) × Tax Rate\nDTA = ($500,000 - $25,000) × 25% = $118,750\n\nBook treatment capitalizes and depreciates over 20 years.\nTax rules allow full expense deduction in Year 1.\nDTA arises because tax income is lower than book income.',
     learnContent: {
       concept: 'Capitalized interest → delays expense for book, immediate for tax. Timing mismatch → DTA created. Reverses as book depreciation catches up over time.',
       formula: 'DTA = (Tax Expense – Book Expense) × Tax Rate',
@@ -545,7 +545,7 @@ export const QUESTIONS: Question[] = [
     answer: -140000,
     unit: '$',
     hint: 'AR up = cash out. COGS vs. inventory creates WC increase.',
-    explanation: 'AR Increase = +$140,000 (customer hasn\'t paid → cash out)\nInventory Increase = $100,000 - $80,000 = +$20,000 (use of cash)\nAccrued Expenses = +$20,000 (unpaid costs → source of cash)\nNet CFO Impact = -$140,000 - $20,000 + $20,000 = -$140,000',
+    explanation: 'CFO Impact = -AR Increase - Inventory Increase + Accrued Expenses Increase\nCFO Impact = -$140,000 - $20,000 + $20,000 = -$140,000\n\nAR increase represents uncollected revenue, reducing cash.\nInventory increase occurs when COGS exceeds inventory shipped.\nAccrued expenses are unpaid costs, preserving cash.',
     learnContent: {
       concept: 'AR increase = customer hasn\'t paid → reduces CFO. COGS mismatch → more cost booked than inventory moved → inventory ↑ → cash out. Accruals = unpaid expenses → cash retained.',
       formula: 'CFO Adjustment = –∆AR – ∆Inventory + ∆Accruals',
@@ -561,7 +561,7 @@ export const QUESTIONS: Question[] = [
     answer: 10000,
     unit: '$',
     hint: 'Deferred rent used to boost CFO, now removed.',
-    explanation: 'Annual Depreciation = $300,000 ÷ 6 = $50,000\nRent expense replaced by depreciation → no net CFO effect\nDeferred rent decrease = $10,000 → previously added back to CFO, now lost\nNet CFO impact = +$10,000 compared to old method',
+    explanation: 'CFO Impact = Depreciation - Deferred Rent Decrease\nCFO Impact = $50,000 - $50,000 + $10,000 = $10,000\n\nRent expense is replaced by equal depreciation (no net CFO effect).\nDeferred rent decrease eliminates a previous CFO add-back.\nNet result is the loss of the deferred rent benefit.',
     learnContent: {
       concept: 'ASC 842 = operating leases now capitalized → D&A replaces rent. Deferred rent disappears → no longer a CFO add-back. Change in lease treatment impacts comparability.',
       formula: 'CFO Impact = +Depreciation – ∆Deferred Rent',
@@ -577,7 +577,7 @@ export const QUESTIONS: Question[] = [
     answer: 5000,
     unit: '$',
     hint: 'Book expense > tax deduction → DTA created.',
-    explanation: 'Book Write-off = $40,000\nTax Deduction Allowed = $20,000\nDifference = $40,000 - $20,000 = $20,000\nDTA = $20,000 × 25% = $5,000',
+    explanation: 'DTA = (Book Write-off - Tax Deduction) × Tax Rate\nDTA = ($40,000 - $20,000) × 25% = $5,000\n\nBook accounting allows full write-off when determined uncollectible.\nTax rules are more restrictive on timing of deductions.\nDTA arises because book income is lower than taxable income.',
     learnContent: {
       concept: 'Bad debt expense recorded for book when expected. Tax rules only allow actual write-offs. Creates a DTA since tax catches up later.',
       formula: 'DTA = (Book Deducted – Tax Deducted) × Tax Rate',
@@ -593,7 +593,7 @@ export const QUESTIONS: Question[] = [
     answer: 70000,
     unit: '$',
     hint: 'AR increase reduces cash. Write-offs don\'t affect CFO. Prepaids use cash.',
-    explanation: 'Start with Net Income: $120,000\nAR Increase (accrued revenue): -$30,000 (customer hasn\'t paid)\nBad Debt Write-off: $0 (already reflected in net income, no CFO adjustment)\nPrepaid Increase: -$20,000 (cash paid upfront)\nCFO = $120,000 - $30,000 - $20,000 = $70,000',
+    explanation: 'CFO = Net Income - AR Increase - Prepaid Increase\nCFO = $120,000 - $30,000 - $20,000 = $70,000\n\nAccrued revenue increases AR when customers haven\'t paid yet.\nBad debt write-off is already reflected in net income (no separate CFO adjustment).\nPrepaid increases represent cash paid for future services.',
     learnContent: {
       concept: 'Accrued revenue (AR increase) = customer hasn\'t paid. AR write-offs are non-cash but reflected in NI. Prepaids = cash paid up front, reduce CFO.',
       formula: 'CFO = Net Income – ∆AR – ∆Prepaids',
@@ -609,7 +609,7 @@ export const QUESTIONS: Question[] = [
     answer: 45000,
     unit: '$',
     hint: 'Gains are subtracted, impairments and depreciation are added back.',
-    explanation: 'Gain on Sale = -$40,000 (non-operating, subtract from CFO)\nGoodwill Impairment = +$60,000 (non-cash, add back)\nDepreciation = +$25,000 (non-cash, add back)\nTotal CFO adjustment = -$40,000 + $60,000 + $25,000 = $45,000',
+    explanation: 'CFO Adjustment = -Gain on Sale + Goodwill Impairment + Depreciation\nCFO Adjustment = -$40,000 + $60,000 + $25,000 = $45,000\n\nGain on sale is non-operating income subtracted from CFO.\nGoodwill impairment is a non-cash charge added back.\nDepreciation is a non-cash expense added back to CFO.',
     learnContent: {
       concept: 'Gain on sale is non-operating, subtracted. Impairment is non-cash, added back. Depreciation = non-cash, always added back.',
       formula: 'CFO = Net Income – Gain + Impairment + Depreciation',
@@ -625,7 +625,7 @@ export const QUESTIONS: Question[] = [
     answer: 60000,
     unit: '$',
     hint: 'Equity income = % of NI. Dividends are balance sheet-only.',
-    explanation: 'Equity Income = $200,000 × 30% = $60,000 → recorded in income statement\nDividends received = $60,000 × 30% = $18,000 → reduces investment balance on balance sheet, no income statement impact\nIncome Statement Impact = $60,000',
+    explanation: 'Equity Income = Ownership % × Associate Net Income\nEquity Income = 30% × $200,000 = $60,000\n\nEquity method records proportional share of investee\'s net income.\nDividends received reduce investment balance, not income.\nOnly equity income appears on the income statement.',
     learnContent: {
       concept: 'Equity method = income recognized proportionally. Dividends reduce the investment on B/S, not P&L. Useful for modeling long-term strategic holdings.',
       formula: 'Equity Income = Ownership % × Associate\'s NI',
@@ -641,7 +641,7 @@ export const QUESTIONS: Question[] = [
     answer: 28350,
     unit: '$',
     hint: 'Tax deduction is lower → DTA created',
-    explanation: 'Book Expense = $150,000 (fully expensed)\nTax Deduction = $150,000 × 10% = $15,000\nDifference = $150,000 - $15,000 = $135,000\nDTA = $135,000 × 21% = $28,350',
+    explanation: 'DTA = (Book Expense - Tax Deduction) × Tax Rate\nDTA = ($150,000 - $15,000) × 21% = $28,350\n\nBook accounting fully expenses R&D in Year 1.\nTax rules capitalize and amortize over 5 years (10% annually).\nDTA arises because book income is lower than taxable income.',
     learnContent: {
       concept: 'Capitalized R&D → mismatch between book and tax. Creates DTA when book deducts more upfront. Reverses as tax deductions increase over time.',
       formula: 'DTA = (Book – Tax) × Tax Rate',
@@ -657,7 +657,7 @@ export const QUESTIONS: Question[] = [
     answer: 95000,
     unit: '$ CFO, $10,000 DTA',
     hint: 'Unrealized loss doesn\'t affect NI, but creates DTA.',
-    explanation: 'CFO Calculation:\nNet Income = $70,000\nAccounts Payable Increase = +$25,000 (cash held, increases CFO)\nUnrealized Loss = $0 impact on CFO (affects OCI, not cash flow)\nCFO = $70,000 + $25,000 = $95,000\n\nDTA Calculation:\nDTA from OCI Loss = $40,000 × 25% = $10,000',
+    explanation: 'CFO = Net Income + Accounts Payable Increase\nCFO = $70,000 + $25,000 = $95,000\n\nDTA = Unrealized Loss × Tax Rate = $40,000 × 25% = $10,000\n\nUnrealized losses in OCI don\'t affect net income or CFO.\nAccounts payable increase represents cash retained.\nDTA arises from temporary difference between book and tax treatment.',
     learnContent: {
       concept: 'OCI items don\'t impact NI/CFO, but affect tax assets. DTA from OCI increases balance sheet, not CFO. Payables increase = CFO boost.',
       formula: 'CFO = NI + ∆Payables; DTA = OCI Loss × Tax Rate',
@@ -673,7 +673,7 @@ export const QUESTIONS: Question[] = [
     answer: 150,
     unit: '$',
     hint: 'CFO = Net Income + D&A - Change in Working Capital (negative change means WC decreased, adding cash)',
-    explanation: 'CFO = $100 + $30 - (-$20) = $100 + $30 + $20 = $150',
+    explanation: 'CFO = Net Income + Depreciation & Amortization - Change in Working Capital\nCFO = $100 + $30 - (-$20) = $150\n\nNegative change in working capital means working capital decreased.\nDecreased working capital releases cash, increasing CFO.\nDepreciation & amortization are non-cash expenses added back.',
     learnContent: {
       concept: 'Net Income calculation includes all operating expenses and taxes.',
       formula: 'Net Income = (Revenue - COGS - Operating Expenses) × (1 - Tax Rate)',
@@ -689,7 +689,7 @@ export const QUESTIONS: Question[] = [
     answer: 100000,
     unit: '$',
     hint: 'Impairment is non-cash. Amortization is non-cash with a tax impact.',
-    explanation: 'Annual Amortization = $100,000 ÷ 5 = $20,000 (non-cash, add back)\nGoodwill Impairment = $80,000 (non-cash, add back)\nBoth items reduced Net Income but did not affect cash\nTotal CFO adjustment = $20,000 + $80,000 = $100,000',
+    explanation: 'CFO Adjustment = Amortization + Goodwill Impairment\nCFO Adjustment = $20,000 + $80,000 = $100,000\n\nAmortization is a non-cash expense reducing net income.\nGoodwill impairment is a non-cash charge reducing net income.\nBoth are added back to reconcile net income to cash flow.',
     learnContent: {
       concept: 'Amortization = non-cash → add back. Goodwill Impairment = non-cash → fully add back. Tax impact from amort is already reflected in Net Income.',
       formula: 'CFO Adjustment = Amortization + Impairment',
