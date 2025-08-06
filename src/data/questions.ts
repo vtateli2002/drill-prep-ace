@@ -1,6 +1,255 @@
 import { Question, Track, Difficulty } from '@/types/drill';
 
 export const QUESTIONS: Question[] = [
+  // REVENUE / SALES QUESTIONS
+  {
+    id: 'acc-rev-1',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Multi-Product Net Revenue with Returns and Timing',
+    description: 'Matrix Fitness sells 900 year-long gym memberships at $400 each in January. By June, 60 members cancel for a pro-rated refund—each used 4 months. The gym recognizes revenue monthly as it delivers service.\n\nWhat is the total revenue recognized as of June 30?',
+    answer: 176000,
+    unit: '$',
+    hint: 'For canceled members, recognize revenue for months delivered only. For current members, recognize revenue for 6 months.',
+    explanation: 'Calculate total revenue recognized for June 30 (6 months of service):\n\nNon-canceled: 900 - 60 = 840 members × $400 × (6/12) = $168,000\n\nCanceled: 60 members × $400 × (4/12) = $8,000\nTotal Revenue = $168,000 + $8,000 = $176,000\n\nLogic: Recognize revenue on a prorated basis for the portion delivered—accrual accounting.',
+    learnContent: {
+      concept: 'Only delivered service is recognized as revenue.',
+      formula: 'Revenue = (# Active × Unit Price × % Delivered) + (Canceled × Unit Price × % Used)',
+      example: '50 annual subscriptions @ $120, all active after 6 months: 50×$120×(6/12)=$3,000\n\n100 subscriptions @ $240, 10 cancel after 3 months: (90×$240×0.5)+(10×$240×0.25) = $10,800+$600=$11,400\n\n1,000 users @ $60, 50 canceled at 2 months: (950×$60×0.5)+(50×$60×0.1667)=$28,500+$500=$29,000'
+    }
+  },
+  {
+    id: 'acc-rev-2',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Revenue Recognition Including Discounts and Gift Cards',
+    description: 'A bookstore sold $12,000 in gift cards during December, redeemable only for books. By March 31, customers used $7,800 of those cards to buy books. Also, during a March promotion, the store sold 120 books at $15 with a 20% discount.\n\nWhat was the total revenue recognized by March 31?',
+    answer: 9240,
+    unit: '$',
+    hint: 'Recognize only the portion of prepaid cards redeemed; add direct sales (after discount).',
+    explanation: 'Recognized from gift cards: $7,800\n\nPromotional sales: 120 × $15 × 0.8 = $1,440\nTotal Revenue = $7,800 + $1,440 = $9,240\n\nLogic: Revenue from gift cards is recognized only when books are delivered.',
+    learnContent: {
+      concept: 'Break down deferred and current revenue.',
+      formula: 'Revenue = (Gift Cards Redeemed) + (Direct Sales × (1–Discount%))',
+      example: '$5,000 in cards, $3,200 redeemed, 40 books @ $25 w/10% off: $3,200 + 40×$22.5 = $4,100\n\n$1,000 in cards, $600 redeemed, 10 at $12 w/25% off: $600 + 10×$9 = $690'
+    }
+  },
+  {
+    id: 'acc-rev-3',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Channel Sales Net Revenue with Shipping Income',
+    description: 'Siena Apparel sells 400 jackets online ($60 each) and 350 jackets through a retail partner ($45 each, wholesale). Online buyers pay a $10 shipping fee per jacket. Three jackets shipped online were returned by buyers—full refund including shipping.\n\nWhat is the net revenue for the period?',
+    answer: 43540,
+    unit: '$',
+    hint: 'Returns reduce revenue; include shipping only for non-refunded sales.',
+    explanation: 'Online: (400 – 3) = 397 jackets\nOnline Revenue: 397 × ($60 + $10) = 397 × $70 = $27,790\nRetail: 350 × $45 = $15,750\nTotal Revenue = $27,790 + $15,750 = $43,540\n\nLogic: Freight revenue only counted when earned; returns are deducted.',
+    learnContent: {
+      concept: 'Track returns and ancillary fees for true net revenue.',
+      formula: 'Revenue = [(Units Sold – Returns) × (Unit Price + Shipping)] + (Retail Units × Wholesale Price)',
+      example: '50 online @ $100, 2 returned; 30 retail @ $80; shipping $10/unit: (48×110)+(30×80)=$5,280+$2,400=$7,680\n\n200 online @ $25, 1 return, shipping $5: (199×30)=$5,970'
+    }
+  },
+
+  // COST OF GOODS SOLD (COGS) QUESTIONS
+  {
+    id: 'acc-cogs-1',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Multi-Component COGS Calculation with Inventory Adjustment',
+    description: 'A bakery started the month with $1,500 in flour. They purchased $4,500 in new flour and finished the month with $800 of flour. 40% of the flour used during the month went into unsold inventory (not yet sold to customers).\n\nWhat is the COGS for flour on the income statement?',
+    answer: 3120,
+    unit: '$',
+    hint: 'First, find how much flour was used during the month. Then, only include the portion that matches sold goods.',
+    explanation: 'Flour used: $1,500 + $4,500 – $800 = $5,200\nCOGS (portion sold) = $5,200 × 60% = $3,120\n\nLogic: COGS only reflects what was actually sold, not just used.',
+    learnContent: {
+      concept: 'Inventory adjustments and matching principle in COGS.',
+      formula: 'COGS = (Begin + Purchases – End) × % Used for Sold Goods',
+      example: '$2,000 + $10,000 – $3,000 = $9,000 used, 80% sold: $7,200\n\n$500 + $2,000 – $300 = $2,200 used, 50% sold: $1,100'
+    }
+  },
+  {
+    id: 'acc-cogs-2',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'COGS by Units, FIFO Inventory',
+    description: 'A store started the month with 70 shirts @ $10 each, purchased 120 @ $12 each, sold 150 shirts, and uses FIFO.\n\nWhat is COGS for the month?',
+    answer: 1660,
+    unit: '$',
+    hint: 'Under FIFO, sell oldest inventory first, then newer.',
+    explanation: 'First 70 × $10 = $700\nNext 80 × $12 = $960\nTotal = $700 + $960 = $1,660\n\nLogic: FIFO assumption provides older inventory matches; calculations follow usage sequence.',
+    learnContent: {
+      concept: 'FIFO means "oldest" inventory cost recognized first.',
+      formula: 'COGS = (Old Units at Old Price) + (New Units at Purchase Price) until sold qty filled',
+      example: '100 units (50 @ $5, 50 @ $6), sold 75 FIFO: (50×$5)+(25×$6)=$250+$150=$400\n\n40 @ $3, 60 @ $4, sell 50 FIFO: (40×$3)+(10×$4)=$120+$40=$160'
+    }
+  },
+  {
+    id: 'acc-cogs-3',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'COGS Allocation with Manufacturing Variance',
+    description: 'Fulton Bikes produced 300 bikes: $18,000 in direct materials, $4,800 in labor. Due to a defect, 20 bikes were scrapped with no resale.\n\nWhat is the COGS per bike sold (whole number, rounding up if necessary), assuming the rest were sold?',
+    answer: 82,
+    unit: '$',
+    hint: 'Total cost is allocated across only the sellable units.',
+    explanation: 'Sellable bikes: 300 – 20 = 280\nTotal cost = $18,000 + $4,800 = $22,800\nCOGS per bike = $22,800 ÷ 280 = $81.43, rounds up to $82\n\nLogic: Scrapped units increase per-unit cost since they consume total costs.',
+    learnContent: {
+      concept: 'Loss/shrinkage impacts per-unit COGS for actual goods sold.',
+      formula: 'Per-unit COGS = Total Direct Cost / Net Sellable Units',
+      example: '$9,000 for 450 made, 10 spoiled: $9,000 / 440 = ~$20.45\n\n$12,000 for 200, 5 spoiled: $12,000 / 195 = $61.54'
+    }
+  },
+
+  // GROSS PROFIT QUESTIONS
+  {
+    id: 'acc-gp-1',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Gross Profit with Multiple Products and Returns',
+    description: 'Sparks Audio sold 80 speakers at $250 (COGS $170) and 200 headphones at $90 (COGS $50). Five speakers and ten headphones were returned for refund.\n\nWhat is gross profit for the period?',
+    answer: 13600,
+    unit: '$',
+    hint: 'Subtract returns, then calculate gross profit (revenue minus COGS) for each.',
+    explanation: 'Speakers: Net sold = 75, GP per = $80 → $6,000\nHeadphones: Net sold = 190, GP per = $40 → $7,600\nTotal gross profit = $6,000 + $7,600 = $13,600\n\nLogic: Each returned product removes both the revenue and COGS for that unit.',
+    learnContent: {
+      concept: 'Returns reduce both sales and COGS.',
+      formula: 'GP = (Net Units × Profit per Unit), summed across products',
+      example: '20 @ $100 ($60 COGS), 2 returned: 18×$40 = $720\n\n200 @ $25 ($10 COGS), 10 returned: 190×$15 = $2,850'
+    }
+  },
+  {
+    id: 'acc-gp-2',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Gross Profit after Promotional Discounts',
+    description: 'Garcia Foods sold 1,200 pizzas at $18. 200 were sold at a 25% discount; all others were regular price. COGS per pizza is $7.\n\nWhat is total gross profit?',
+    answer: 12300,
+    unit: '$',
+    hint: 'Calculate GP separately for discounted and regular price sales.',
+    explanation: 'Regular: 1,000 × ($18–$7) = $11,000\n\nDiscounted: 200 × ($13.5–$7) = 200 × $6.5 = $1,300\nTotal gross profit = $11,000 + $1,300 = $12,300\n\nLogic: Profits are reduced for discounted units, all COGS included.',
+    learnContent: {
+      concept: 'Discounts reduce gross profit per unit.',
+      formula: 'GP = ∑ (Units × [Price–COGS], by price tier)',
+      example: '100 @ $50, 20% discount, COGS $30: 100×($40-$30)=$1,000'
+    }
+  },
+  {
+    id: 'acc-gp-3',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Gross Profit—Bundle Pricing Scenario',
+    description: 'Elite Market sold 120 weekly produce boxes bundled at $80/box. Each box contains $22 fruit (COGS), $26 veggies (COGS), and $10 packaged snacks (COGS).\n\nWhat is gross profit for the week?',
+    answer: 2640,
+    unit: '$',
+    hint: 'Calculate GP per box and multiply by units.',
+    explanation: 'Per box: $80 – $58 = $22\nGross profit: 120 × $22 = $2,640\n\nLogic: Bundled sales—add COGS totals, subtract from price.',
+    learnContent: {
+      concept: 'Bundle pricing requires total cost view per unit; GP = Price – (total COGS).',
+      formula: 'GP = Units × (Price–COGS)',
+      example: '50 bundles @ $100, COGS $70: 50×$30=$1,500'
+    }
+  },
+
+  // GROSS MARGIN QUESTIONS
+  {
+    id: 'acc-gm-1',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Blended Gross Margin Calculation',
+    description: 'Ranger Supplies sold $18,000 in tents (COGS $12,000) and $12,000 in backpacks (COGS $6,000).\n\nWhat is the company\'s gross margin (%), rounded to the nearest whole number?',
+    answer: 40,
+    unit: '%',
+    hint: 'Totals: Revenue minus COGS, then divide.',
+    explanation: 'Total revenue = $30,000\nTotal COGS = $18,000\nGross profit = $12,000\nGross margin = $12,000 / $30,000 = 40%\n\nLogic: Aggregate all products for blended company margin.',
+    learnContent: {
+      concept: 'Gross margin expresses overall business markup.',
+      formula: 'Gross Margin = Total GP / Total Revenue × 100',
+      example: 'Rev $100K, COGS $60K: 40% margin'
+    }
+  },
+  {
+    id: 'acc-gm-2',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Gross Margin Change Year-over-Year',
+    description: 'Last year, Eastern Tools had $80,000 revenue, $60,000 COGS. This year, revenue grew by 25% and COGS by 20%.\n\nWhat is this year\'s gross margin (%) (nearest whole number)?',
+    answer: 28,
+    unit: '%',
+    hint: 'Calculate new revenue/COGS, then gross margin.',
+    explanation: 'Revenue: $80,000 × 1.25 = $100,000\n\nCOGS: $60,000 × 1.20 = $72,000\n\nGP = $100,000 – $72,000 = $28,000\n\nMargin = $28,000 / $100,000 = 28%\n\nLogic: Compare growth rates to see if margins are improving or declining.',
+    learnContent: {
+      concept: 'Margin changes if sales and COGS don\'t move proportionally.',
+      formula: 'Margin = GP / Revenue × 100',
+      example: 'Sales up 20%, COGS up 10%: margin improves'
+    }
+  },
+  {
+    id: 'acc-gm-3',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Margin Calculation after Returns',
+    description: 'Westlake sold $24,000 merchandise with COGS $16,000, but $4,000 in goods were returned (COGS $3,000).\n\nWhat is gross margin (%) (whole number)?',
+    answer: 35,
+    unit: '%',
+    hint: 'Net revenue and net COGS should be calculated first.',
+    explanation: 'Net revenue = $24,000 – $4,000 = $20,000\nNet COGS = $16,000 – $3,000 = $13,000\nGross profit = $7,000\nGross margin = $7,000 / $20,000 = 35%\n\nLogic: Returns reduce both revenue and COGS; net both for actual margin.',
+    learnContent: {
+      concept: 'Always use net amounts for gross margin.',
+      formula: 'Margin = (Net Revenue – Net COGS) / Net Revenue × 100',
+      example: 'Rev $50K, returns $5K, COGS $30K, returns COGS $3K: ($45K-$27K)/$45K=40%'
+    }
+  },
+
+  // SG&A QUESTIONS
+  {
+    id: 'acc-sga-1',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'SG&A as % of Revenue across Years',
+    description: 'North Pines reported $85,000 SG&A and $380,000 revenue in Year 1. In Year 2, SG&A rose by $10,000, revenue by $50,000.\n\nWhat is SG&A as a % of revenue in Year 2 (whole number)?',
+    answer: 22,
+    unit: '%',
+    hint: 'Calculate new SG&A and revenue first.',
+    explanation: 'SG&A Year 2 = $85,000 + $10,000 = $95,000\n\nRevenue Year 2 = $380,000 + $50,000 = $430,000\n\n% = $95,000 / $430,000 = 22.1% → 22%\n\nLogic: Percentage tracks efficiency or scale.',
+    learnContent: {
+      concept: 'SG&A % signals cost control as company grows.',
+      formula: 'SG&A / Revenue × 100',
+      example: 'SG&A $50K, Rev $200K: 25%'
+    }
+  },
+  {
+    id: 'acc-sga-2',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Identifying True SG&A in a Mixed Expense List',
+    description: 'Alpha Design lists expenses: $18,000 office rent, $6,000 warehouse labor, $2,000 sales commissions, $5,000 advertising, $32,000 materials.\n\nWhat is the total SG&A expense?',
+    answer: 25000,
+    unit: '$',
+    hint: 'Exclude direct production costs (warehouse labor/materials).',
+    explanation: 'SG&A = $18,000 (rent) + $2,000 (commissions) + $5,000 (ads) = $25,000\n\nLogic: SG&A excludes production/production labor.',
+    learnContent: {
+      concept: 'Indirect costs only! Direct production is COGS.',
+      formula: 'SG&A = Operating Expenses - Production Costs',
+      example: 'Office rent, sales salaries, marketing = SG&A'
+    }
+  },
+  {
+    id: 'acc-sga-3',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'SG&A Impact on Operating Income',
+    description: 'Serano Inc. generated $250,000 in revenue, $120,000 COGS, and $48,000 SG&A this year.\n\nWhat is operating income (EBIT)?',
+    answer: 82000,
+    unit: '$',
+    hint: 'Operating income = revenue – COGS – SG&A.',
+    explanation: 'GP = $250,000 – $120,000 = $130,000\nEBIT = $130,000 – $48,000 = $82,000\n\nLogic: SG&A reduces gross profit to reach EBIT.',
+    learnContent: {
+      concept: 'EBIT is "earnings before interest and taxes"—removes all operating expenses.',
+      formula: 'EBIT = Revenue - COGS - SG&A',
+      example: 'Rev $100K, COGS $40K, SG&A $20K: EBIT $40K'
+    }
+  },
   // ACCOUNTING - Easy
   {
     id: 'acc-easy-1',
