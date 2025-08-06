@@ -6386,7 +6386,7 @@ Key Points:
     answer: 195000,
     unit: '$',
     hint: 'EBITDA = Revenue – COGS – SG&A',
-    explanation: "**Calculation:** EBITDA = $195,000\n\n• • •\n\n**Step-by-step breakdown:**\n\n1. **Start with Revenue**\n   - Total Revenue: $440,000\n\n2. **Subtract Cost of Goods Sold**\n   - COGS: $180,000\n   - Remaining: $440,000 - $180,000 = $260,000\n\n3. **Subtract SG&A Expenses**\n   - SG&A: $65,000\n   - EBITDA: $260,000 - $65,000 = $195,000\n\n4. **Ignore Depreciation & Amortization**\n   - Depreciation: $20,000 (not subtracted)\n   - Amortization: $5,000 (not subtracted)\n   - These are non-cash expenses excluded from EBITDA\n\n**Key Points:**\n   • EBITDA measures core operating performance\n   • Excludes financing, tax, and non-cash expenses\n   • Useful for comparing operational efficiency across companies\n   • Higher EBITDA indicates stronger core profitability",
+    explanation: "Calculation: $440,000 - $180,000 - $65,000 = $195,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Start with Revenue\n   - Total Revenue: $440,000\n\n2. Subtract Cost of Goods Sold\n   - COGS: $180,000\n   - Remaining: $440,000 - $180,000 = $260,000\n\n3. Subtract SG&A Expenses\n   - SG&A: $65,000\n   - EBITDA: $260,000 - $65,000 = $195,000\n\n4. Ignore Depreciation & Amortization\n   - Depreciation: $20,000 (not subtracted)\n   - Amortization: $5,000 (not subtracted)\n   - These are non-cash expenses excluded from EBITDA\n\nKey Points:\n   • EBITDA measures core operating performance\n   • Excludes financing, tax, and non-cash expenses\n   • Useful for comparing operational efficiency across companies\n   • Higher EBITDA indicates stronger core profitability",
     learnContent: {
       concept: 'EBITDA stands for Earnings Before Interest, Taxes, Depreciation & Amortization.',
       formula: 'EBITDA = Revenue – COGS – SG&A',
@@ -6569,7 +6569,7 @@ Key Points:
     difficulty: 'easy',
     title: 'EPS after Share Issuance',
     description: 'Net income is $250,000. Company had 50,000 shares, issued 10,000 new ones at year end (assume 55,000 weighted average shares). What is EPS?',
-    answer: 5,
+    answer: 4.55,
     unit: '$',
     hint: 'EPS = Net income / average shares.',
     explanation: "**Calculation:** Basic EPS = $4.55 (rounded to $5)\n\n• • •\n\n**Step-by-step breakdown:**\n\n1. **Share Structure Analysis**\n   - Beginning Shares: 50,000\n   - New Shares Issued: 10,000 (at year-end)\n   - Weighted Average Shares: 55,000\n\n2. **EPS Calculation**\n   - Net Income: $250,000\n   - Weighted Average Shares: 55,000\n   - Basic EPS: $250,000 ÷ 55,000 = $4.55\n\n3. **Dilution Analysis**\n   - Pre-Issuance EPS: $250,000 ÷ 50,000 = $5.00\n   - Post-Issuance EPS: $4.55\n   - Dilution: $5.00 - $4.55 = $0.45 per share\n\n**Business Implications:**\n   • Share issuance dilutes existing shareholders\n   • 20% increase in shares with same earnings\n   • Dilution of 9% in per-share earnings\n   • New capital can fund growth to offset dilution\n\n**Key Points:**\n   • Weighted average accounts for timing of issuance\n   • Dilution occurs unless earnings grow proportionally\n   • New capital should generate returns to benefit all shareholders\n   • Timing of issuance affects weighted average calculation",
