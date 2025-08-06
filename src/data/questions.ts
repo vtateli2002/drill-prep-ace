@@ -7672,5 +7672,205 @@ Key Points:
       formula: 'Treasury Balance = (Total Bought - All Reissued) × Original Cost',
       example: '(200k bought - 170k reissued) × $25 = 30k × $25 = $750k treasury'
     }
+  },
+
+  // Topic 41: Retained Earnings
+  {
+    id: 'acc-easy-147',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Basic Retained Earnings Calculation',
+    description: 'A company starts the year with $50,000 in Retained Earnings. During the year, it earns $40,000 in Net Income and pays $10,000 in dividends.\n\nWhat is the year-end Retained Earnings balance?',
+    answer: 80000,
+    unit: '$',
+    hint: 'Start with beginning Retained Earnings, add Net Income, subtract Dividends paid.',
+    explanation: "Calculation: $50,000 + $40,000 - $10,000 = $80,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Beginning Retained Earnings\n   - Starting balance: $50,000\n   - This represents cumulative earnings retained from prior years\n\n2. Current Year Net Income\n   - Net income earned: $40,000\n   - This increases retained earnings as profits are retained\n\n3. Dividends Paid\n   - Cash dividends: $10,000\n   - This reduces retained earnings as profits are distributed\n\n4. Ending Retained Earnings\n   - Beginning: $50,000\n   - Plus net income: +$40,000\n   - Less dividends: -$10,000\n   - Ending balance: $80,000\n\nKey Points:\n   • Retained earnings increase when the company earns profit (Net Income)\n   • Retained earnings decrease when dividends are paid to shareholders\n   • This represents the cumulative earnings kept in the business\n   • Only declared and paid dividends reduce retained earnings",
+    learnContent: {
+      concept: 'Retained Earnings are updated by adding net income and subtracting dividends paid during the year.',
+      formula: 'Ending Retained Earnings = Beginning Balance + Net Income - Dividends',
+      example: '$100,000 start + $20,000 income - $5,000 dividends = $115,000'
+    }
+  },
+  {
+    id: 'acc-medium-105',
+    track: 'accounting',
+    difficulty: 'medium', 
+    title: 'Retained Earnings with Stock Dividend',
+    description: 'A firm begins the year with $120,000 in Retained Earnings. During the year:\n\n- It earns $60,000 in Net Income\n- Pays $20,000 in cash dividends\n- Issues 5,000 shares as a 10% stock dividend when the stock is trading at $15/share\n\nWhat is the year-end Retained Earnings balance?',
+    answer: 85000,
+    unit: '$',
+    hint: 'Stock dividends reduce Retained Earnings by market value. Also subtract cash dividends, and add net income.',
+    explanation: "Calculation: $120,000 + $60,000 - $20,000 - $75,000 = $85,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Beginning Retained Earnings\n   - Starting balance: $120,000\n\n2. Net Income Addition\n   - Current year earnings: +$60,000\n   - Increases retained earnings\n\n3. Cash Dividends\n   - Cash paid to shareholders: -$20,000\n   - Direct reduction of retained earnings\n\n4. Stock Dividend Impact\n   - Shares issued: 5,000\n   - Market value per share: $15\n   - Stock dividend value: 5,000 × $15 = $75,000\n   - Reduces retained earnings by full market value\n\n5. Final Calculation\n   - Beginning: $120,000\n   - Plus net income: +$60,000\n   - Less cash dividends: -$20,000\n   - Less stock dividend: -$75,000\n   - Ending balance: $85,000\n\nKey Points:\n   • Stock dividends transfer value from retained earnings to common stock\n   • Stock dividends valued at market price, not par value\n   • Both cash and stock dividends reduce retained earnings\n   • Net income always increases retained earnings",
+    learnContent: {
+      concept: 'Both cash and stock dividends reduce Retained Earnings. Stock dividends use market value.',
+      formula: 'Ending RE = Beginning + Net Income - Cash Dividends - Stock Dividend (at Market Value)',
+      example: '$50,000 + $20,000 - $5,000 - $10,000 = $55,000'
+    }
+  },
+  {
+    id: 'acc-hard-76',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Complex Retained Earnings with Prior Period Adjustment',
+    description: 'A company has the following activity during the year:\n\n- Beginning Retained Earnings = $300,000\n- Net Income = $100,000\n- Declares 20% stock dividend on 50,000 shares (stock price = $10)\n- Pays $30,000 in dividends\n- Restates prior year error, reducing RE by $25,000\n\nWhat is the year-end Retained Earnings?',
+    answer: 245000,
+    unit: '$',
+    hint: 'Reduce RE for cash dividends, stock dividends (at market), and prior period restatements. Add net income.',
+    explanation: "Calculation: $300,000 + $100,000 - $30,000 - $100,000 - $25,000 = $245,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Beginning Retained Earnings\n   - Starting balance: $300,000\n   - Before any adjustments\n\n2. Current Year Net Income\n   - Earnings added: +$100,000\n   - Increases retained earnings\n\n3. Stock Dividend Calculation\n   - Outstanding shares: 50,000\n   - Stock dividend rate: 20%\n   - Shares issued: 50,000 × 20% = 10,000 shares\n   - Market price: $10 per share\n   - Stock dividend value: 10,000 × $10 = $100,000\n   - Reduces retained earnings by market value\n\n4. Cash Dividends\n   - Cash paid to shareholders: -$30,000\n   - Direct reduction of retained earnings\n\n5. Prior Period Adjustment\n   - Error correction: -$25,000\n   - Reduces retained earnings for prior year restatement\n\n6. Final Retained Earnings\n   - Beginning: $300,000\n   - Plus net income: +$100,000\n   - Less cash dividends: -$30,000\n   - Less stock dividend: -$100,000\n   - Less prior adjustment: -$25,000\n   - Ending balance: $245,000\n\nKey Points:\n   • Prior period adjustments directly impact retained earnings\n   • Stock dividends calculated on pre-dividend outstanding shares\n   • Multiple transactions can significantly impact retained earnings\n   • Error corrections bypass current income statement",
+    learnContent: {
+      concept: 'Retained Earnings are impacted by net income, dividends, stock dividends, and accounting corrections.',
+      formula: 'Ending RE = Beginning + Net Income - Cash Dividends - Stock Dividend - Prior Period Adjustment',
+      example: '$400,000 + $50,000 - $10,000 - $60,000 - $20,000 = $360,000'
+    }
+  },
+
+  // Topic 42: AOCI / OCI
+  {
+    id: 'acc-easy-148',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Basic AOCI Calculation',
+    description: 'A company has an AOCI balance of $5,000 at the start of the year. During the year, it records:\n\n- $2,000 unrealized gain on AFS securities\n- $1,000 FX translation gain\n\nWhat is AOCI at year-end?',
+    answer: 8000,
+    unit: '$',
+    hint: 'Add gains to beginning balance.',
+    explanation: "Calculation: $5,000 + $2,000 + $1,000 = $8,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Beginning AOCI Balance\n   - Starting balance: $5,000\n   - Represents cumulative other comprehensive income from prior periods\n\n2. Unrealized Gain on Securities\n   - Available-for-sale securities gain: +$2,000\n   - Increases AOCI as this bypasses net income\n\n3. Foreign Exchange Translation Gain\n   - FX translation adjustment: +$1,000\n   - Increases AOCI from foreign subsidiary translation\n\n4. Ending AOCI Balance\n   - Beginning balance: $5,000\n   - Plus securities gain: +$2,000\n   - Plus FX gain: +$1,000\n   - Ending balance: $8,000\n\nKey Points:\n   • AOCI includes unrealized gains/losses not shown in Net Income\n   • Securities gains/losses go to AOCI until realized\n   • Foreign exchange translation adjustments accumulate in AOCI\n   • These items bypass the income statement but affect equity",
+    learnContent: {
+      concept: 'AOCI includes unrealized gains/losses not shown in Net Income.',
+      formula: 'Ending AOCI = Beginning + Unrealized Gains + FX Adjustments',
+      example: '$10,000 + $3,000 - $1,000 = $12,000'
+    }
+  },
+  {
+    id: 'acc-medium-106',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'AOCI with Mixed Gains and Losses',
+    description: 'Beginning AOCI is $12,000. During the year:\n\n- $4,000 unrealized loss on securities\n- $3,000 pension gain\n- $1,000 FX loss\n\nWhat is AOCI at year-end?',
+    answer: 10000,
+    unit: '$',
+    hint: 'Losses reduce AOCI; gains increase it.',
+    explanation: "Calculation: $12,000 - $4,000 + $3,000 - $1,000 = $10,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Beginning AOCI Balance\n   - Starting balance: $12,000\n   - Cumulative other comprehensive income from prior years\n\n2. Unrealized Securities Loss\n   - Securities decline in value: -$4,000\n   - Decreases AOCI as unrealized loss\n\n3. Pension Gain\n   - Pension plan adjustment: +$3,000\n   - Increases AOCI from actuarial gains or plan amendments\n\n4. Foreign Exchange Loss\n   - FX translation loss: -$1,000\n   - Decreases AOCI from foreign subsidiary translation\n\n5. Net AOCI Change\n   - Securities loss: -$4,000\n   - Pension gain: +$3,000\n   - FX loss: -$1,000\n   - Net change: -$2,000\n\n6. Ending AOCI Balance\n   - Beginning: $12,000\n   - Net change: -$2,000\n   - Ending balance: $10,000\n\nKey Points:\n   • AOCI can include various types of comprehensive income items\n   • Pension adjustments from actuarial gains/losses accumulate in AOCI\n   • Multiple OCI components can offset each other\n   • AOCI represents cumulative unrealized items that bypass Net Income",
+    learnContent: {
+      concept: 'AOCI tracks cumulative unrealized items that bypass Net Income.',
+      formula: 'Ending AOCI = Beginning + Gains - Losses',
+      example: '$20,000 - $5,000 + $2,000 = $17,000'
+    }
+  },
+  {
+    id: 'acc-hard-77',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Complex AOCI with Reclassifications',
+    description: 'Start of year AOCI = $30,000. During the year:\n\n- $6,000 unrealized loss\n- $5,000 pension liability loss\n- $3,000 FX gain\n- $2,000 cash flow hedge gain\n- $4,000 loss reclassified into Net Income\n\nWhat is year-end AOCI?',
+    answer: 20000,
+    unit: '$',
+    hint: 'Reclassifications to Net Income reduce AOCI.',
+    explanation: "Calculation: $30,000 - $6,000 - $5,000 + $3,000 + $2,000 - $4,000 = $20,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Beginning AOCI Balance\n   - Starting balance: $30,000\n   - Cumulative other comprehensive income\n\n2. Current Year OCI Items\n   a) Unrealized loss: -$6,000\n      - Securities or other unrealized decline\n   \n   b) Pension liability loss: -$5,000\n      - Actuarial loss or plan amendment\n   \n   c) Foreign exchange gain: +$3,000\n      - Translation adjustment from foreign operations\n   \n   d) Cash flow hedge gain: +$2,000\n      - Effective portion of hedge gains\n\n3. Reclassification Adjustment\n   - Loss reclassified to Net Income: -$4,000\n   - Previously in AOCI, now recognized in earnings\n   - Reduces AOCI to avoid double counting\n\n4. Net AOCI Impact\n   - Total new OCI: -$6,000 - $5,000 + $3,000 + $2,000 = -$6,000\n   - Less reclassification: -$4,000\n   - Net AOCI change: -$10,000\n\n5. Ending AOCI Balance\n   - Beginning: $30,000\n   - Current OCI items: -$6,000\n   - Reclassification: -$4,000\n   - Ending balance: $20,000\n\nKey Points:\n   • Reclassifications prevent double-counting in equity\n   • When OCI items are realized, they move from AOCI to Net Income\n   • Multiple OCI components tracked simultaneously\n   • Cash flow hedges have specific reclassification rules",
+    learnContent: {
+      concept: 'AOCI includes unrealized gains/losses and is reduced by reclassifications.',
+      formula: 'Ending AOCI = Start + Gains - Losses - Reclassifications',
+      example: '$50,000 - $10,000 + $5,000 - $3,000 = $42,000'
+    }
+  },
+
+  // Topic 43: Total Shareholders' Equity
+  {
+    id: 'acc-easy-149',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Basic Shareholders Equity Calculation',
+    description: 'A company has:\n\n- Common Stock = $2,000\n- APIC = $28,000\n- Retained Earnings = $40,000\n- AOCI = $5,000\n- Treasury Stock = $10,000\n\nWhat is Total Shareholders Equity?',
+    answer: 65000,
+    unit: '$',
+    hint: 'Add all equity components, subtract Treasury Stock.',
+    explanation: "Calculation: $2,000 + $28,000 + $40,000 + $5,000 - $10,000 = $65,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Contributed Capital Components\n   - Common Stock: $2,000\n   - Additional Paid-in Capital: $28,000\n   - Total contributed capital: $30,000\n\n2. Earned Capital\n   - Retained Earnings: $40,000\n   - Accumulated comprehensive income from operations\n\n3. Other Comprehensive Income\n   - AOCI: $5,000\n   - Unrealized gains/losses accumulated over time\n\n4. Treasury Stock Reduction\n   - Treasury Stock: $10,000\n   - Contra-equity account that reduces total equity\n\n5. Total Shareholders Equity\n   - Common Stock: $2,000\n   - APIC: $28,000\n   - Retained Earnings: $40,000\n   - AOCI: $5,000\n   - Less Treasury Stock: -$10,000\n   - Total: $65,000\n\nKey Points:\n   • Shareholders equity includes contributed capital, retained earnings, and AOCI\n   • Treasury stock is a contra-equity account that reduces total equity\n   • AOCI can be positive or negative depending on unrealized gains/losses\n   • All components represent shareholders claims on company assets",
+    learnContent: {
+      concept: 'Shareholders Equity includes contributed capital, retained earnings, and AOCI, less treasury stock.',
+      formula: 'Total Equity = Common Stock + APIC + Retained Earnings + AOCI - Treasury Stock',
+      example: '$5,000 + $15,000 + $20,000 - $3,000 = $37,000'
+    }
+  },
+  {
+    id: 'acc-medium-107',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Shareholders Equity with New Share Issuance',
+    description: 'A company has:\n\n- Common Stock = $5,000\n- APIC = $45,000\n- Retained Earnings = $60,000\n- AOCI = $7,000\n- Treasury Stock = $18,000\n\nIt issues 10,000 new shares at $6/share ($1 par).\n\nWhat is Total Shareholders Equity at year-end?',
+    answer: 159000,
+    unit: '$',
+    hint: 'Update Common Stock and APIC for new shares, then recalculate.',
+    explanation: "Calculation: $15,000 + $95,000 + $60,000 + $7,000 - $18,000 = $159,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Original Equity Components\n   - Common Stock: $5,000\n   - APIC: $45,000\n   - Retained Earnings: $60,000\n   - AOCI: $7,000\n   - Treasury Stock: $18,000\n   - Original total: $99,000\n\n2. New Share Issuance\n   - Shares issued: 10,000\n   - Issue price: $6 per share\n   - Par value: $1 per share\n   - Total proceeds: 10,000 × $6 = $60,000\n\n3. Allocation of Proceeds\n   - To Common Stock: 10,000 × $1 = $10,000\n   - To APIC: 10,000 × ($6 - $1) = $50,000\n\n4. Updated Equity Components\n   - New Common Stock: $5,000 + $10,000 = $15,000\n   - New APIC: $45,000 + $50,000 = $95,000\n   - Retained Earnings: $60,000 (unchanged)\n   - AOCI: $7,000 (unchanged)\n   - Treasury Stock: $18,000 (unchanged)\n\n5. Total Shareholders Equity\n   - Common Stock: $15,000\n   - APIC: $95,000\n   - Retained Earnings: $60,000\n   - AOCI: $7,000\n   - Less Treasury Stock: -$18,000\n   - Total: $159,000\n\nKey Points:\n   • New share issuances increase both Common Stock and APIC\n   • Share proceeds allocated between par value and premium\n   • Other equity components remain unchanged by share issuance\n   • Total equity increases by full amount of proceeds received",
+    learnContent: {
+      concept: 'Share issuance increases both Common Stock and APIC.',
+      formula: 'Equity = Common + APIC + RE + AOCI - Treasury',
+      example: '$10k + $50k + $60k + $4k - $5k = $119k'
+    }
+  },
+  {
+    id: 'acc-hard-78',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Complex Shareholders Equity with Multiple Transactions',
+    description: 'A company has:\n\n- Common Stock = $10,000\n- APIC = $90,000\n- Retained Earnings = $100,000\n- AOCI = -$8,000\n- Treasury Stock = $35,000\n\nDuring the year:\n- Repurchases 10,000 shares at $12 = $120,000\n- Declares $20,000 in dividends (unpaid)\n- Reports $60,000 Net Income\n\nWhat is Total Shareholders Equity at year-end?',
+    answer: 77000,
+    unit: '$',
+    hint: 'Update Treasury Stock and Retained Earnings before recomputing equity.',
+    explanation: "Calculation: $10,000 + $90,000 + $140,000 - $8,000 - $155,000 = $77,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Beginning Equity Components\n   - Common Stock: $10,000\n   - APIC: $90,000\n   - Retained Earnings: $100,000\n   - AOCI: -$8,000 (negative balance)\n   - Treasury Stock: $35,000\n   - Beginning total: $157,000\n\n2. Share Repurchase Transaction\n   - Shares repurchased: 10,000\n   - Cost per share: $12\n   - Total cost: $120,000\n   - New Treasury Stock: $35,000 + $120,000 = $155,000\n\n3. Retained Earnings Changes\n   - Beginning Retained Earnings: $100,000\n   - Plus Net Income: +$60,000\n   - Less Dividends declared: -$20,000\n   - Ending Retained Earnings: $140,000\n\n4. Unchanged Components\n   - Common Stock: $10,000 (no new issuances)\n   - APIC: $90,000 (no impact from treasury purchase)\n   - AOCI: -$8,000 (no OCI transactions)\n\n5. Ending Shareholders Equity\n   - Common Stock: $10,000\n   - APIC: $90,000\n   - Retained Earnings: $140,000\n   - AOCI: -$8,000\n   - Less Treasury Stock: -$155,000\n   - Total: $77,000\n\n6. Net Change Analysis\n   - Beginning equity: $157,000\n   - Ending equity: $77,000\n   - Net decrease: $80,000\n   - Driven by: $120,000 treasury purchase - $60,000 net income + $20,000 dividends = $80,000 decrease\n\nKey Points:\n   • Treasury stock purchases reduce total equity dollar-for-dollar\n   • Dividends declared reduce retained earnings even if unpaid\n   • Net income increases retained earnings and total equity\n   • Multiple transactions can significantly impact equity balances",
+    learnContent: {
+      concept: 'Buybacks increase Treasury Stock and reduce equity. Dividends reduce RE.',
+      formula: 'Equity = Common + APIC + (RE + NI - Div) + AOCI - Treasury',
+      example: '$25k + $110k + $150k - $5k - $60k = $220k'
+    }
+  },
+
+  // Topic 44: Non-controlling Interest
+  {
+    id: 'acc-easy-150',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Basic Non-controlling Interest Income',
+    description: 'Parent owns 80% of a subsidiary that earns $50,000.\n\nWhat is the NCIs share of Net Income?',
+    answer: 10000,
+    unit: '$',
+    hint: 'NCI owns 20%, so multiply by $50,000.',
+    explanation: "Calculation: $50,000 × 20% = $10,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Ownership Structure\n   - Parent company ownership: 80%\n   - Non-controlling interest: 100% - 80% = 20%\n   - NCI represents minority shareholders in subsidiary\n\n2. Subsidiary Net Income\n   - Total subsidiary earnings: $50,000\n   - This income belongs to all shareholders proportionally\n\n3. NCI Share Calculation\n   - NCI ownership percentage: 20%\n   - Subsidiary net income: $50,000\n   - NCI share: $50,000 × 20% = $10,000\n\n4. Consolidated Impact\n   - Parent's share: $50,000 × 80% = $40,000\n   - NCI share: $10,000\n   - Total subsidiary income: $50,000 (confirmed)\n\nKey Points:\n   • NCI reflects minority ownership in subsidiaries\n   • NCI gets proportional share of subsidiary earnings\n   • In consolidation, full subsidiary income included with NCI portion separated\n   • Parent and NCI shares must total 100% of subsidiary income",
+    learnContent: {
+      concept: 'NCI reflects minority ownership in subsidiaries.',
+      formula: 'NCI Share = Sub Net Income × (1 - Parent %)',
+      example: '25% NCI × $40,000 = $10,000'
+    }
+  },
+  {
+    id: 'acc-medium-108',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'NCI with Dividends Impact',
+    description: 'Parent owns 70% of a sub. Sub earns $80,000 and pays $20,000 in dividends.\n\nWhat is the change in NCI?',
+    answer: 18000,
+    unit: '$',
+    hint: 'NCI = (1 - 70%) × ($80,000 - $20,000)',
+    explanation: "Calculation: 30% × ($80,000 - $20,000) = 30% × $60,000 = $18,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Ownership Structure\n   - Parent ownership: 70%\n   - Non-controlling interest: 100% - 70% = 30%\n\n2. Subsidiary Financial Activity\n   - Net income earned: $80,000\n   - Dividends paid: $20,000\n   - Net retained by subsidiary: $80,000 - $20,000 = $60,000\n\n3. NCI Share of Income\n   - NCI ownership: 30%\n   - Share of net income: $80,000 × 30% = $24,000\n   - This increases NCI balance\n\n4. NCI Share of Dividends\n   - Dividends paid by subsidiary: $20,000\n   - NCI share of dividends: $20,000 × 30% = $6,000\n   - This decreases NCI balance (cash to NCI shareholders)\n\n5. Net Change in NCI\n   - Income effect: +$24,000\n   - Dividend effect: -$6,000\n   - Net change: $24,000 - $6,000 = $18,000\n   - Alternative: 30% × ($80,000 - $20,000) = $18,000\n\nKey Points:\n   • NCI increases from subsidiaries retained earnings (income minus dividends)\n   • Dividends paid reduce NCI as cash flows to minority shareholders\n   • Net change reflects NCIs share of subsidiary retained earnings\n   • Parent and NCI are affected proportionally by subsidiary activities",
+    learnContent: {
+      concept: 'NCI increases from income, decreases from dividends.',
+      formula: 'ΔNCI = (1 - Parent%) × (NI - Dividends)',
+      example: '20% NCI × ($100k - $10k) = $18k'
+    }
+  },
+  {
+    id: 'acc-hard-79',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Complex NCI with Ownership Change',
+    description: 'Parent owns 85% of sub. Sub earns $100,000 and pays $30,000 dividends.\n\nMidyear, sub issues $40,000 equity to outsiders, dropping parent stake to 75%.\n\nWhat is total change in NCI?',
+    answer: 54000,
+    unit: '$',
+    hint: 'Time-split income and dividends by ownership %, then add new equity to outsiders.',
+    explanation: "Calculation: $5,250 + $8,750 + $40,000 = $54,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Ownership Structure Changes\n   - Initial parent ownership: 85% (NCI: 15%)\n   - After equity issuance: 75% (NCI: 25%)\n   - Ownership change occurs midyear\n\n2. Time-Based Income/Dividend Allocation\n   - Assume equal distribution: 6 months each period\n   - First half income: $100,000 ÷ 2 = $50,000\n   - First half dividends: $30,000 ÷ 2 = $15,000\n   - Second half income: $50,000\n   - Second half dividends: $15,000\n\n3. First Half NCI Impact (15% ownership)\n   - NCI share of income: $50,000 × 15% = $7,500\n   - NCI share of dividends: $15,000 × 15% = $2,250\n   - Net NCI change: $7,500 - $2,250 = $5,250\n\n4. Equity Issuance Impact\n   - New equity issued to outsiders: $40,000\n   - This directly increases NCI balance\n   - Dilutes parent ownership from 85% to 75%\n\n5. Second Half NCI Impact (25% ownership)\n   - NCI share of income: $50,000 × 25% = $12,500\n   - NCI share of dividends: $15,000 × 25% = $3,750\n   - Net NCI change: $12,500 - $3,750 = $8,750\n\n6. Total NCI Change\n   - First half retained earnings: $5,250\n   - New equity from outsiders: $40,000\n   - Second half retained earnings: $8,750\n   - Total change: $5,250 + $40,000 + $8,750 = $54,000\n\nKey Points:\n   • Ownership percentage changes require time-weighted calculations\n   • New equity issuances to outsiders directly increase NCI\n   • Timing of ownership changes affects income/dividend allocation\n   • Parent dilution benefits NCI holders through increased ownership percentage",
+    learnContent: {
+      concept: 'NCI is affected by ownership %, income, dividends, and equity issuances.',
+      formula: 'ΔNCI = NCI Share (Income - Dividends) + Equity raised to outsiders',
+      example: '20% × ($60k - $10k) + $20k = $22k'
+    }
   }
 ];
