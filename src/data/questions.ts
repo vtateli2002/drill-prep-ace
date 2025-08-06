@@ -6374,5 +6374,345 @@ Key Points:
       formula: 'CFO = NI + Increase in Accrued Liabilities',
       example: '💼 Paystack NI = 60K, new accrual ↑ 20K → CFO = 80K\n🧮 Ledgerly NI = 100K, paid old accrual = 30K, new = 40K → CFO = 140K\n🏦 Fundora NI = 75K, accrual ↑ 25K → CFO = 100K'
     }
+  },
+
+  // EBITDA QUESTIONS
+  {
+    id: 'acc-easy-92',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Calculating EBITDA from Multiple Line Items',
+    description: 'Riverside Sporting had $440,000 revenue, $180,000 COGS, $65,000 SG&A, $20,000 depreciation, and $5,000 amortization. What is EBITDA?',
+    answer: 195000,
+    unit: '$',
+    hint: 'EBITDA = Revenue – COGS – SG&A',
+    explanation: 'EBITDA ignores D&A, so:\n$440,000 – $180,000 – $65,000 = $195,000\n\nLogic: EBITDA focuses just on core operating profitability before factoring in non-cash costs.',
+    learnContent: {
+      concept: 'EBITDA stands for Earnings Before Interest, Taxes, Depreciation & Amortization.',
+      formula: 'EBITDA = Revenue – COGS – SG&A',
+      example: 'Rev $500K, COGS $200K, SG&A $100K = EBITDA $200K'
+    }
+  },
+  {
+    id: 'acc-easy-93',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Adjusted EBITDA with Non-Recurring Charges',
+    description: 'Vista Tech reported $300,000 operating income, plus $25,000 depreciation, $15,000 amortization, and $10,000 one-time legal expense. What is normalized EBITDA?',
+    answer: 340000,
+    unit: '$',
+    hint: 'EBITDA excludes D&A and should remove non-recurring expenses.',
+    explanation: 'Operating income (already after one-time legal): $300,000\nEBITDA = $300,000 + $25,000 + $15,000 = $340,000 (legal is included in the operating line, so it\'s not added back).\n\nLogic: EBITDA adds back non-cash D&A, not one-offs unless they are included in operating income.',
+    learnContent: {
+      concept: 'Standard EBITDA adds back D&A, sometimes normalized for one-offs.',
+      formula: 'EBITDA = Operating Income + Depreciation + Amortization',
+      example: 'Op Income $200K + Dep $30K + Amort $10K = EBITDA $240K'
+    }
+  },
+
+  // INTEREST INCOME QUESTIONS
+  {
+    id: 'acc-easy-94',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Net Interest Income from Investments and Debt',
+    description: 'Global Energy earns $7,000 in interest from investments and pays $2,000 in loan interest. What is net interest income?',
+    answer: 5000,
+    unit: '$',
+    hint: 'Subtract interest paid from interest earned.',
+    explanation: '$7,000 – $2,000 = $5,000\n\nLogic: Net interest presents the true impact of interest cash flows.',
+    learnContent: {
+      concept: 'Net interest is interest revenue minus interest paid.',
+      formula: 'Interest Income – Interest Expense',
+      example: 'Earned $10K, paid $3K = net $7K'
+    }
+  },
+  {
+    id: 'acc-easy-95',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Interest Income Calculation after Changing Balances',
+    description: 'A company had $50,000 in marketable securities at the start of the year earning 4% interest. After selling $10,000 in June, what is total interest income for the year (no reinvestment)?',
+    answer: 1800,
+    unit: '$',
+    hint: 'Calculate income on initial, subtract for money withdrawn midyear.',
+    explanation: 'First 6 months: $50,000 × 0.04 × 0.5 = $1,000\nLast 6 months: $40,000 × 0.04 × 0.5 = $800\nTotal = $1,000 + $800 = $1,800\n\nLogic: Changing balances must be tracked over time.',
+    learnContent: {
+      concept: 'Interest income = average balance × interest rate × time held.',
+      formula: 'Principal × Rate × Time',
+      example: '$100K at 3% for 6 months = $100K × 0.03 × 0.5 = $1.5K'
+    }
+  },
+
+  // INTEREST EXPENSE QUESTIONS
+  {
+    id: 'acc-easy-96',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Total Interest Expense from Multiple Debts',
+    description: 'A company holds $120,000 at 7% and $180,000 at 6%. What is annual interest expense?',
+    answer: 19200,
+    unit: '$',
+    hint: 'Sum interest on each loan.',
+    explanation: '$120,000 × 7% = $8,400\n$180,000 × 6% = $10,800\nTotal = $8,400 + $10,800 = $19,200\n\nLogic: Each debt portion incurs its own cost.',
+    learnContent: {
+      concept: 'Total expense = sum of all loans\' interest.',
+      formula: 'Σ(principal × rate)',
+      example: 'Loan 1: $50K × 5% = $2.5K, Loan 2: $30K × 4% = $1.2K = Total $3.7K'
+    }
+  },
+  {
+    id: 'acc-easy-97',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Net Income Impact of Interest Expense',
+    description: 'If operating income is $210,000 and interest expense is $30,000, with a 30% tax rate, what is net income?',
+    answer: 126000,
+    unit: '$',
+    hint: 'Subtract interest for EBT, apply tax.',
+    explanation: '$210,000 – $30,000 = $180,000 × 0.7 = $126,000\n\nLogic: Interest expense lowers taxable income before tax.',
+    learnContent: {
+      concept: 'Interest is a deductible expense that lowers net income.',
+      formula: '(Operating Income - Interest) × (1 - Tax Rate)',
+      example: '($100K - $10K) × (1 - 0.25) = $67.5K'
+    }
+  },
+
+  // TAX EXPENSE QUESTIONS
+  {
+    id: 'acc-easy-98',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Calculating Tax Expense on Pre-Tax Income',
+    description: 'Walter Co. had pre-tax income of $120,000 and a 28% tax rate. What is tax expense?',
+    answer: 33600,
+    unit: '$',
+    hint: 'Tax expense = pre-tax income × tax rate.',
+    explanation: '$120,000 × 0.28 = $33,600\n\nLogic: Corporate taxes reduce earnings available to shareholders.',
+    learnContent: {
+      concept: 'Tax expense is deducted after all other costs.',
+      formula: 'Pre-tax Income × Tax Rate',
+      example: '$200K × 25% = $50K tax expense'
+    }
+  },
+  {
+    id: 'acc-easy-99',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Deferred Tax Liability from Depreciation',
+    description: 'Book depreciation was $10,000, tax depreciation $15,000. Tax rate is 20%. What is DTL for the year?',
+    answer: 1000,
+    unit: '$',
+    hint: 'DTL = (Tax dep – Book dep) × tax rate (if tax>book).',
+    explanation: '$15,000 – $10,000 = $5,000; $5,000 × 0.2 = $1,000\n\nLogic: Lower taxes paid now create a future liability.',
+    learnContent: {
+      concept: 'Timing differences in book/tax create deferred taxes.',
+      formula: '(Tax Depreciation - Book Depreciation) × Tax Rate',
+      example: 'Tax $20K, Book $15K, Rate 25% = ($20K-$15K) × 0.25 = $1.25K DTL'
+    }
+  },
+
+  // NET INCOME QUESTIONS
+  {
+    id: 'acc-easy-100',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Net Income from Multistep Statement',
+    description: 'Company has $500,000 revenue, $250,000 COGS, $75,000 SG&A, $25,000 depreciation, $10,000 interest, 24% tax rate. What is net income?',
+    answer: 106400,
+    unit: '$',
+    hint: 'Gross profit – SG&A – dep – interest → EBT × (1–tax).',
+    explanation: 'Gross profit = $500,000 - $250,000 = $250,000\n– SG&A = $250,000 - $75,000 = $175,000\n– Dep = $175,000 - $25,000 = $150,000\n– Interest = $150,000 - $10,000 = $140,000\nTaxes: $140,000 × 0.24 = $33,600\nNet income: $140,000 – $33,600 = $106,400\n\nLogic: Subtract all operating/interest/tax for net income.',
+    learnContent: {
+      concept: 'Net income is "bottom line" after all expenses.',
+      formula: '(Revenue - All Expenses - Interest) × (1 - Tax Rate)',
+      example: 'Rev $100K, Exp $60K, Int $5K, Tax 20% = ($35K) × 0.8 = $28K'
+    }
+  },
+  {
+    id: 'acc-easy-101',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Net Income and Retained Earnings',
+    description: 'If net income is $66,000 and $8,000 in dividends are paid, how much goes to retained earnings?',
+    answer: 58000,
+    unit: '$',
+    hint: 'Net income minus dividends.',
+    explanation: '$66,000 – $8,000 = $58,000\n\nLogic: Only profits not paid as dividends add to retained earnings.',
+    learnContent: {
+      concept: 'Dividends reduce amount reinvested in company.',
+      formula: 'Net Income - Dividends Paid',
+      example: 'NI $100K, dividends $20K = $80K to retained earnings'
+    }
+  },
+
+  // EARNINGS PER SHARE QUESTIONS
+  {
+    id: 'acc-easy-102',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Stock Split and Basic EPS',
+    description: 'Net income is $90,000 and shares outstanding go from 30,000 to 60,000 after a 2-for-1 split. What is EPS?',
+    answer: 2,
+    unit: '$',
+    hint: 'EPS = Net income / new shares.',
+    explanation: 'After 2-for-1 split, weighted average shares = 45,000\n$90,000 / 45,000 = $2\n\nLogic: Stock splits require weighted average calculation.',
+    learnContent: {
+      concept: 'Splits increase shares, lower EPS directly.',
+      formula: 'Net Income / Weighted Average Shares',
+      example: 'NI $100K, 50K shares = $2 EPS'
+    }
+  },
+  {
+    id: 'acc-easy-103',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'EPS after Share Issuance',
+    description: 'Net income is $250,000. Company had 50,000 shares, issued 10,000 new ones at year end (assume 55,000 weighted average shares). What is EPS?',
+    answer: 5,
+    unit: '$',
+    hint: 'EPS = Net income / average shares.',
+    explanation: '$250,000 / 55,000 = $4.54 → rounded to 5.\n\nLogic: Issuing shares dilutes EPS unless earning rises more than proportionally.',
+    learnContent: {
+      concept: 'EPS shows profit per share.',
+      formula: 'Net Income / Weighted Average Shares Outstanding',
+      example: 'NI $180K, 40K avg shares = $4.50 EPS'
+    }
+  },
+
+  // DIVIDENDS QUESTIONS
+  {
+    id: 'acc-easy-104',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Dividend Per Share Calculation',
+    description: 'VegaCo paid $21,000 in dividends with 3,000 shares out. What was the dividend per share?',
+    answer: 7,
+    unit: '$',
+    hint: 'Total dividends / shares.',
+    explanation: '$21,000 / 3,000 = 7\n\nLogic: Shows payout per unit of ownership.',
+    learnContent: {
+      concept: 'Dividend per share = what each owner gets.',
+      formula: 'Total Dividends / Shares Outstanding',
+      example: '$50K dividends / 10K shares = $5 per share'
+    }
+  },
+  {
+    id: 'acc-easy-105',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Dividend Payout Ratio',
+    description: 'Net income is $40,000; $8,000 dividends paid. What is payout ratio (whole %)?',
+    answer: 20,
+    unit: '%',
+    hint: 'Dividends / Net income × 100.',
+    explanation: '$8,000 / $40,000 × 100 = 20%\n\nLogic: Percent of earnings paid out.',
+    learnContent: {
+      concept: 'Standard measure for dividend policy.',
+      formula: '(Dividends Paid / Net Income) × 100',
+      example: '$30K dividends / $150K NI = 20% payout ratio'
+    }
+  },
+
+  // CASH & CASH EQUIVALENTS QUESTIONS
+  {
+    id: 'acc-easy-106',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Ending Cash Calculation',
+    description: 'Opening cash $25,000, stock issued $10,000, loan repaid $12,000, sales collected $18,000, inventory bought $6,000. What is ending cash?',
+    answer: 35000,
+    unit: '$',
+    hint: 'Add inflows, subtract outflows.',
+    explanation: '$25,000 + $10,000 + $18,000 – $12,000 – $6,000 = $35,000\n\nLogic: Tracks all cash movements for period.',
+    learnContent: {
+      concept: 'Ending cash is true company liquidity.',
+      formula: 'Beginning Cash + Inflows - Outflows',
+      example: 'Start $10K + collect $50K - pay $30K = end $30K'
+    }
+  },
+  {
+    id: 'acc-easy-107',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Excess Cash over Minimum',
+    description: 'Firm holds $30,000 cash, needs $22,000 minimum. How much excess cash?',
+    answer: 8000,
+    unit: '$',
+    hint: 'Subtract minimum from total.',
+    explanation: '$30,000 – $22,000 = $8,000\n\nLogic: Excess can be distributed/invested.',
+    learnContent: {
+      concept: 'Minimum cash = operational liquidity constraint.',
+      formula: 'Total Cash - Minimum Required Cash',
+      example: 'Hold $100K, need $80K = $20K excess'
+    }
+  },
+
+  // MARKETABLE SECURITIES QUESTIONS
+  {
+    id: 'acc-easy-108',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Liquidation of Marketable Securities',
+    description: '$60,000 in marketable securities, $10,000 sold to fund capex. What\'s ending balance?',
+    answer: 50000,
+    unit: '$',
+    hint: 'Subtract those sold.',
+    explanation: '$60,000 – $10,000 = $50,000\n\nLogic: Spending securities reduces asset balance.',
+    learnContent: {
+      concept: 'Converting investments to cash.',
+      formula: 'Beginning Balance - Amount Sold',
+      example: 'Start $200K, sell $50K = end $150K'
+    }
+  },
+  {
+    id: 'acc-easy-109',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Marketable Securities and Quick Ratio',
+    description: '$12,000 cash, $5,000 marketable securities, $3,000 receivables, $10,000 payables. What is quick ratio (nearest whole number)?',
+    answer: 2,
+    unit: '',
+    hint: 'Quick ratio = (cash + securities + receivables) / payables.',
+    explanation: '$12,000 + $5,000 + $3,000 = $20,000\n$20,000 / $10,000 = 2\n\nLogic: Quick ratio tests immediate-liquid asset coverage.',
+    learnContent: {
+      concept: 'Higher quick ratio = greater short-term solvency.',
+      formula: '(Cash + Marketable Securities + A/R) / Current Liabilities',
+      example: '($50K + $20K + $30K) / $40K = 2.5x quick ratio'
+    }
+  },
+
+  // ACCOUNTS RECEIVABLE QUESTIONS
+  {
+    id: 'acc-easy-110',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Calculating Collections on A/R',
+    description: 'Start of year A/R $5,000, $17,000 in credit sales, end A/R $3,000. How much cash was collected?',
+    answer: 19000,
+    unit: '$',
+    hint: 'Collections = Start + Sales – End',
+    explanation: '$5,000 + $17,000 – $3,000 = $19,000\n\nLogic: Difference between invoicing and payment timing.',
+    learnContent: {
+      concept: 'A/R flows affect liquidity management.',
+      formula: 'Beginning A/R + Credit Sales - Ending A/R',
+      example: 'Start $10K + sales $80K - end $15K = $75K collected'
+    }
+  },
+  {
+    id: 'acc-easy-111',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Receivables Days Outstanding',
+    description: 'Average A/R $4,500; annual credit sales $54,000. What are average collection days (rounded whole days)?',
+    answer: 30,
+    unit: 'days',
+    hint: '(A/R / Sales) × 365',
+    explanation: '$4,500 / $54,000 × 365 ≈ 30\n\nLogic: Lower number = faster collections.',
+    learnContent: {
+      concept: 'Receivable "days" show payment speed for cash flow planning.',
+      formula: '(Average A/R / Annual Credit Sales) × 365',
+      example: '($20K / $200K) × 365 = 36.5 days'
+    }
   }
 ];
