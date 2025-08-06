@@ -6386,7 +6386,7 @@ Key Points:
     answer: 195000,
     unit: '$',
     hint: 'EBITDA = Revenue – COGS – SG&A',
-    explanation: 'EBITDA ignores D&A, so:\n$440,000 – $180,000 – $65,000 = $195,000\n\nLogic: EBITDA focuses just on core operating profitability before factoring in non-cash costs.',
+    explanation: "**Calculation:** EBITDA = $195,000\n\n• • •\n\n**Step-by-step breakdown:**\n\n1. **Start with Revenue**\n   - Total Revenue: $440,000\n\n2. **Subtract Cost of Goods Sold**\n   - COGS: $180,000\n   - Remaining: $440,000 - $180,000 = $260,000\n\n3. **Subtract SG&A Expenses**\n   - SG&A: $65,000\n   - EBITDA: $260,000 - $65,000 = $195,000\n\n4. **Ignore Depreciation & Amortization**\n   - Depreciation: $20,000 (not subtracted)\n   - Amortization: $5,000 (not subtracted)\n   - These are non-cash expenses excluded from EBITDA\n\n**Key Points:**\n   • EBITDA measures core operating performance\n   • Excludes financing, tax, and non-cash expenses\n   • Useful for comparing operational efficiency across companies\n   • Higher EBITDA indicates stronger core profitability",
     learnContent: {
       concept: 'EBITDA stands for Earnings Before Interest, Taxes, Depreciation & Amortization.',
       formula: 'EBITDA = Revenue – COGS – SG&A',
@@ -6402,7 +6402,7 @@ Key Points:
     answer: 340000,
     unit: '$',
     hint: 'EBITDA excludes D&A and should remove non-recurring expenses.',
-    explanation: 'Operating income (already after one-time legal): $300,000\nEBITDA = $300,000 + $25,000 + $15,000 = $340,000 (legal is included in the operating line, so it\'s not added back).\n\nLogic: EBITDA adds back non-cash D&A, not one-offs unless they are included in operating income.',
+    explanation: "**Calculation:** Normalized EBITDA = $340,000\n\n• • •\n\n**Step-by-step breakdown:**\n\n1. **Start with Operating Income**\n   - Operating Income: $300,000\n   - (Already includes the $10,000 one-time legal expense)\n\n2. **Add Back Depreciation**\n   - Depreciation: $25,000\n   - Running total: $300,000 + $25,000 = $325,000\n\n3. **Add Back Amortization**\n   - Amortization: $15,000\n   - EBITDA: $325,000 + $15,000 = $340,000\n\n4. **One-Time Legal Expense Analysis**\n   - Legal expense: $10,000 (already deducted in operating income)\n   - Not added back since it\'s included in the operating line\n\n**Key Points:**\n   • EBITDA adds back non-cash D&A expenses\n   • One-time items may be normalized depending on reporting\n   • Operating income is the starting point when D&A is separate\n   • Normalized EBITDA helps compare core performance",
     learnContent: {
       concept: 'Standard EBITDA adds back D&A, sometimes normalized for one-offs.',
       formula: 'EBITDA = Operating Income + Depreciation + Amortization',
@@ -6420,7 +6420,7 @@ Key Points:
     answer: 5000,
     unit: '$',
     hint: 'Subtract interest paid from interest earned.',
-    explanation: '$7,000 – $2,000 = $5,000\n\nLogic: Net interest presents the true impact of interest cash flows.',
+    explanation: "**Calculation:** Net Interest Income = $5,000\n\n• • •\n\n**Step-by-step breakdown:**\n\n1. **Interest Earned from Investments**\n   - Investment Interest Income: $7,000\n\n2. **Interest Paid on Debt**\n   - Loan Interest Expense: $2,000\n\n3. **Calculate Net Interest**\n   - Net Interest Income: $7,000 - $2,000 = $5,000\n\n**Business Implications:**\n   • Company is a net lender (earns more than it pays)\n   • Positive net interest improves overall profitability\n   • Investment portfolio generates sufficient returns\n\n**Key Points:**\n   • Net interest shows true financing impact\n   • Positive = more earned than paid\n   • Important for cash flow and profitability analysis\n   • Reflects company\'s financing strategy effectiveness",
     learnContent: {
       concept: 'Net interest is interest revenue minus interest paid.',
       formula: 'Interest Income – Interest Expense',
@@ -6436,7 +6436,7 @@ Key Points:
     answer: 1800,
     unit: '$',
     hint: 'Calculate income on initial, subtract for money withdrawn midyear.',
-    explanation: 'First 6 months: $50,000 × 0.04 × 0.5 = $1,000\nLast 6 months: $40,000 × 0.04 × 0.5 = $800\nTotal = $1,000 + $800 = $1,800\n\nLogic: Changing balances must be tracked over time.',
+    explanation: "**Calculation:** Total Interest Income = $1,800\n\n• • •\n\n**Step-by-step breakdown:**\n\n1. **First Half of Year (January-June)**\n   - Securities Balance: $50,000\n   - Time Period: 6 months (0.5 years)\n   - Interest: $50,000 × 4% × 0.5 = $1,000\n\n2. **Securities Sale in June**\n   - Amount Sold: $10,000\n   - Remaining Balance: $50,000 - $10,000 = $40,000\n\n3. **Second Half of Year (July-December)**\n   - Securities Balance: $40,000\n   - Time Period: 6 months (0.5 years)\n   - Interest: $40,000 × 4% × 0.5 = $800\n\n4. **Total Annual Interest Income**\n   - First Half: $1,000\n   - Second Half: $800\n   - Total: $1,000 + $800 = $1,800\n\n**Key Points:**\n   • Interest calculated on actual balances held during each period\n   • Balance changes affect income proportionally\n   • Time-weighted calculation ensures accuracy\n   • Cash flow timing impacts total returns",
     learnContent: {
       concept: 'Interest income = average balance × interest rate × time held.',
       formula: 'Principal × Rate × Time',
@@ -6454,7 +6454,7 @@ Key Points:
     answer: 19200,
     unit: '$',
     hint: 'Sum interest on each loan.',
-    explanation: '$120,000 × 7% = $8,400\n$180,000 × 6% = $10,800\nTotal = $8,400 + $10,800 = $19,200\n\nLogic: Each debt portion incurs its own cost.',
+    explanation: "**Calculation:** Total Interest Expense = $19,200\n\n• • •\n\n**Step-by-step breakdown:**\n\n1. **First Debt Calculation**\n   - Principal Amount: $120,000\n   - Interest Rate: 7%\n   - Annual Interest: $120,000 × 7% = $8,400\n\n2. **Second Debt Calculation**\n   - Principal Amount: $180,000\n   - Interest Rate: 6%\n   - Annual Interest: $180,000 × 6% = $10,800\n\n3. **Total Interest Expense**\n   - First Debt: $8,400\n   - Second Debt: $10,800\n   - Combined Total: $8,400 + $10,800 = $19,200\n\n**Business Implications:**\n   • Higher rate debt ($120k at 7%) costs more per dollar\n   • Lower rate debt ($180k at 6%) is more cost-effective\n   • Total debt service affects cash flow and profitability\n\n**Key Points:**\n   • Each debt instrument has independent interest calculation\n   • Blended average rate = $19,200 ÷ $300,000 = 6.4%\n   • Interest expense reduces taxable income\n   • Debt management impacts overall cost of capital",
     learnContent: {
       concept: 'Total expense = sum of all loans\' interest.',
       formula: 'Σ(principal × rate)',
@@ -6470,7 +6470,7 @@ Key Points:
     answer: 126000,
     unit: '$',
     hint: 'Subtract interest for EBT, apply tax.',
-    explanation: '$210,000 – $30,000 = $180,000 × 0.7 = $126,000\n\nLogic: Interest expense lowers taxable income before tax.',
+    explanation: "**Calculation:** Net Income = $126,000\n\n• • •\n\n**Step-by-step breakdown:**\n\n1. **Start with Operating Income**\n   - Operating Income: $210,000\n\n2. **Subtract Interest Expense**\n   - Interest Expense: $30,000\n   - Earnings Before Tax (EBT): $210,000 - $30,000 = $180,000\n\n3. **Calculate Tax Expense**\n   - Tax Rate: 30%\n   - Tax Expense: $180,000 × 30% = $54,000\n\n4. **Calculate Net Income**\n   - EBT: $180,000\n   - Less: Tax Expense: $54,000\n   - Net Income: $180,000 - $54,000 = $126,000\n\n**Key Points:**\n   • Interest expense is tax-deductible\n   • Reduces taxable income, creating tax shield\n   • Tax shield value = $30,000 × 30% = $9,000\n   • Interest affects both EBT and after-tax income",
     learnContent: {
       concept: 'Interest is a deductible expense that lowers net income.',
       formula: '(Operating Income - Interest) × (1 - Tax Rate)',
@@ -6488,7 +6488,7 @@ Key Points:
     answer: 33600,
     unit: '$',
     hint: 'Tax expense = pre-tax income × tax rate.',
-    explanation: '$120,000 × 0.28 = $33,600\n\nLogic: Corporate taxes reduce earnings available to shareholders.',
+    explanation: "**Calculation:** Tax Expense = $33,600\n\n• • •\n\n**Step-by-step breakdown:**\n\n1. **Pre-Tax Income**\n   - Earnings Before Tax: $120,000\n\n2. **Apply Corporate Tax Rate**\n   - Tax Rate: 28%\n   - Tax Calculation: $120,000 × 28% = $33,600\n\n3. **Resulting Net Income**\n   - Pre-Tax Income: $120,000\n   - Less: Tax Expense: $33,600\n   - Net Income: $120,000 - $33,600 = $86,400\n\n**Business Implications:**\n   • 28% of pre-tax earnings go to government\n   • 72% remains for shareholders ($86,400)\n   • Tax efficiency affects shareholder value\n\n**Key Points:**\n   • Tax expense reduces funds available to equity holders\n   • Effective tax planning can optimize after-tax returns\n   • Tax rate varies by jurisdiction and company structure\n   • Deductible expenses lower taxable income base",
     learnContent: {
       concept: 'Tax expense is deducted after all other costs.',
       formula: 'Pre-tax Income × Tax Rate',
@@ -6504,7 +6504,7 @@ Key Points:
     answer: 1000,
     unit: '$',
     hint: 'DTL = (Tax dep – Book dep) × tax rate (if tax>book).',
-    explanation: '$15,000 – $10,000 = $5,000; $5,000 × 0.2 = $1,000\n\nLogic: Lower taxes paid now create a future liability.',
+    explanation: "**Calculation:** Deferred Tax Liability = $1,000\n\n• • •\n\n**Step-by-step breakdown:**\n\n1. **Book vs Tax Depreciation Difference**\n   - Tax Depreciation: $15,000\n   - Book Depreciation: $10,000\n   - Temporary Difference: $15,000 - $10,000 = $5,000\n\n2. **DTL Calculation**\n   - Temporary Difference: $5,000\n   - Tax Rate: 20%\n   - DTL Created: $5,000 × 20% = $1,000\n\n3. **Cash Flow Impact**\n   - Tax Savings This Year: $5,000 × 20% = $1,000\n   - Future Tax Owed: $1,000 (when book catches up)\n\n**Business Implications:**\n   • Accelerated tax depreciation creates timing benefit\n   • Company pays $1,000 less in current taxes\n   • Will pay $1,000 more in future years\n   • Creates temporary cash flow advantage\n\n**Key Points:**\n   • DTL represents future tax obligations\n   • Timing differences eventually reverse\n   • Tax planning can optimize cash flows\n   • Balance sheet liability reflects future payment",
     learnContent: {
       concept: 'Timing differences in book/tax create deferred taxes.',
       formula: '(Tax Depreciation - Book Depreciation) × Tax Rate',
@@ -6522,7 +6522,7 @@ Key Points:
     answer: 106400,
     unit: '$',
     hint: 'Gross profit – SG&A – dep – interest → EBT × (1–tax).',
-    explanation: 'Gross profit = $500,000 - $250,000 = $250,000\n– SG&A = $250,000 - $75,000 = $175,000\n– Dep = $175,000 - $25,000 = $150,000\n– Interest = $150,000 - $10,000 = $140,000\nTaxes: $140,000 × 0.24 = $33,600\nNet income: $140,000 – $33,600 = $106,400\n\nLogic: Subtract all operating/interest/tax for net income.',
+    explanation: "**Calculation:** Net Income = $106,400\n\n• • •\n\n**Step-by-step breakdown:**\n\n1. **Calculate Gross Profit**\n   - Revenue: $500,000\n   - COGS: $250,000\n   - Gross Profit: $500,000 - $250,000 = $250,000\n\n2. **Subtract Operating Expenses**\n   - SG&A: $75,000\n   - Depreciation: $25,000\n   - Operating Income: $250,000 - $75,000 - $25,000 = $150,000\n\n3. **Subtract Interest Expense**\n   - Interest Expense: $10,000\n   - Earnings Before Tax: $150,000 - $10,000 = $140,000\n\n4. **Calculate and Subtract Taxes**\n   - Tax Rate: 24%\n   - Tax Expense: $140,000 × 24% = $33,600\n   - Net Income: $140,000 - $33,600 = $106,400\n\n**Income Statement Flow:**\n   • Revenue → Gross Profit → Operating Income → EBT → Net Income\n   • Each step subtracts relevant expenses\n   • Net income is \"bottom line\" available to shareholders\n\n**Key Points:**\n   • Multi-step income statement shows profit progression\n   • Interest expense creates tax shield of $2,400\n   • Net margin = $106,400 ÷ $500,000 = 21.3%\n   • Final earnings available for dividends or reinvestment",
     learnContent: {
       concept: 'Net income is "bottom line" after all expenses.',
       formula: '(Revenue - All Expenses - Interest) × (1 - Tax Rate)',
@@ -6538,7 +6538,7 @@ Key Points:
     answer: 58000,
     unit: '$',
     hint: 'Net income minus dividends.',
-    explanation: '$66,000 – $8,000 = $58,000\n\nLogic: Only profits not paid as dividends add to retained earnings.',
+    explanation: "**Calculation:** Addition to Retained Earnings = $58,000\n\n• • •\n\n**Step-by-step breakdown:**\n\n1. **Net Income Earned**\n   - Net Income: $66,000\n   - Available for shareholders\n\n2. **Dividends Declared and Paid**\n   - Cash Dividends: $8,000\n   - Distributed to shareholders\n\n3. **Retained Earnings Increase**\n   - Net Income: $66,000\n   - Less: Dividends Paid: $8,000\n   - Addition to RE: $66,000 - $8,000 = $58,000\n\n**Dividend Analysis:**\n   • Payout Ratio: $8,000 ÷ $66,000 = 12.1%\n   • Retention Ratio: $58,000 ÷ $66,000 = 87.9%\n   • Company retains most earnings for growth\n\n**Key Points:**\n   • Retained earnings represent reinvested profits\n   • Higher retention supports future growth\n   • Balance between dividends and reinvestment\n   • Retained earnings increase shareholders\' equity",
     learnContent: {
       concept: 'Dividends reduce amount reinvested in company.',
       formula: 'Net Income - Dividends Paid',
@@ -6556,7 +6556,7 @@ Key Points:
     answer: 2,
     unit: '$',
     hint: 'EPS = Net income / new shares.',
-    explanation: 'After 2-for-1 split, weighted average shares = 45,000\n$90,000 / 45,000 = $2\n\nLogic: Stock splits require weighted average calculation.',
+    explanation: "**Calculation:** Basic EPS = $2.00\n\n• • •\n\n**Step-by-step breakdown:**\n\n1. **Pre-Split Share Structure**\n   - Starting Shares: 30,000\n   - Net Income: $90,000\n\n2. **2-for-1 Stock Split Impact**\n   - Post-Split Shares: 30,000 × 2 = 60,000\n   - Split treated as if occurred at beginning of year\n   - Weighted Average Shares: 45,000 (assumes mid-year split)\n\n3. **EPS Calculation**\n   - Net Income: $90,000\n   - Weighted Average Shares: 45,000\n   - Basic EPS: $90,000 ÷ 45,000 = $2.00\n\n**Stock Split Analysis:**\n   • Splits increase share count proportionally\n   • No change in total value, just per-share amounts\n   • EPS decreases due to higher share count\n   • Makes shares more accessible to investors\n\n**Key Points:**\n   • Stock splits are retroactively applied for EPS\n   • Weighted average considers timing of split\n   • Lower EPS doesn\'t mean lower company value\n   • Improves share liquidity and affordability",
     learnContent: {
       concept: 'Splits increase shares, lower EPS directly.',
       formula: 'Net Income / Weighted Average Shares',
@@ -6572,7 +6572,7 @@ Key Points:
     answer: 5,
     unit: '$',
     hint: 'EPS = Net income / average shares.',
-    explanation: '$250,000 / 55,000 = $4.54 → rounded to 5.\n\nLogic: Issuing shares dilutes EPS unless earning rises more than proportionally.',
+    explanation: "**Calculation:** Basic EPS = $4.55 (rounded to $5)\n\n• • •\n\n**Step-by-step breakdown:**\n\n1. **Share Structure Analysis**\n   - Beginning Shares: 50,000\n   - New Shares Issued: 10,000 (at year-end)\n   - Weighted Average Shares: 55,000\n\n2. **EPS Calculation**\n   - Net Income: $250,000\n   - Weighted Average Shares: 55,000\n   - Basic EPS: $250,000 ÷ 55,000 = $4.55\n\n3. **Dilution Analysis**\n   - Pre-Issuance EPS: $250,000 ÷ 50,000 = $5.00\n   - Post-Issuance EPS: $4.55\n   - Dilution: $5.00 - $4.55 = $0.45 per share\n\n**Business Implications:**\n   • Share issuance dilutes existing shareholders\n   • 20% increase in shares with same earnings\n   • Dilution of 9% in per-share earnings\n   • New capital can fund growth to offset dilution\n\n**Key Points:**\n   • Weighted average accounts for timing of issuance\n   • Dilution occurs unless earnings grow proportionally\n   • New capital should generate returns to benefit all shareholders\n   • Timing of issuance affects weighted average calculation",
     learnContent: {
       concept: 'EPS shows profit per share.',
       formula: 'Net Income / Weighted Average Shares Outstanding',
@@ -6590,7 +6590,7 @@ Key Points:
     answer: 7,
     unit: '$',
     hint: 'Total dividends / shares.',
-    explanation: '$21,000 / 3,000 = 7\n\nLogic: Shows payout per unit of ownership.',
+    explanation: "**Calculation:** Dividend Per Share = $7.00\n\n• • •\n\n**Step-by-step breakdown:**\n\n1. **Dividend Information**\n   - Total Dividends Paid: $21,000\n   - Shares Outstanding: 3,000\n\n2. **Calculate Dividend Per Share**\n   - Formula: Total Dividends ÷ Shares Outstanding\n   - DPS: $21,000 ÷ 3,000 = $7.00\n\n3. **Shareholder Impact**\n   - Each share receives $7.00 in dividends\n   - Total distribution represents return to shareholders\n\n**Dividend Analysis:**\n   • DPS shows direct cash return per share owned\n   • Higher DPS indicates strong cash generation\n   • Consistent DPS demonstrates reliable returns\n\n**Key Points:**\n   • Dividend per share measures direct shareholder payout\n   • Total return = DPS + capital appreciation\n   • Companies balance dividends with growth investment\n   • DPS sustainability depends on earnings and cash flow",
     learnContent: {
       concept: 'Dividend per share = what each owner gets.',
       formula: 'Total Dividends / Shares Outstanding',
@@ -6606,7 +6606,7 @@ Key Points:
     answer: 20,
     unit: '%',
     hint: 'Dividends / Net income × 100.',
-    explanation: '$8,000 / $40,000 × 100 = 20%\n\nLogic: Percent of earnings paid out.',
+    explanation: "**Calculation:** Dividend Payout Ratio = 20%\n\n• • •\n\n**Step-by-step breakdown:**\n\n1. **Dividend and Earnings Data**\n   - Dividends Paid: $8,000\n   - Net Income: $40,000\n\n2. **Calculate Payout Ratio**\n   - Formula: (Dividends Paid ÷ Net Income) × 100\n   - Payout Ratio: ($8,000 ÷ $40,000) × 100 = 20%\n\n3. **Retention Ratio**\n   - Retained Earnings: $40,000 - $8,000 = $32,000\n   - Retention Ratio: ($32,000 ÷ $40,000) × 100 = 80%\n\n**Dividend Policy Analysis:**\n   • Company pays out 20% of earnings as dividends\n   • Retains 80% for reinvestment and growth\n   • Conservative payout suggests growth focus\n   • Sustainable dividend coverage\n\n**Key Points:**\n   • Payout ratio indicates dividend sustainability\n   • Lower ratios suggest growth-oriented strategy\n   • Higher ratios indicate income-focused approach\n   • Balance between current income and future growth",
     learnContent: {
       concept: 'Standard measure for dividend policy.',
       formula: '(Dividends Paid / Net Income) × 100',
@@ -6624,7 +6624,7 @@ Key Points:
     answer: 35000,
     unit: '$',
     hint: 'Add inflows, subtract outflows.',
-    explanation: '$25,000 + $10,000 + $18,000 – $12,000 – $6,000 = $35,000\n\nLogic: Tracks all cash movements for period.',
+    explanation: "**Calculation:** Ending Cash = $35,000\n\n• • •\n\n**Step-by-step breakdown:**\n\n1. **Starting Cash Position**\n   - Opening Cash Balance: $25,000\n\n2. **Cash Inflows**\n   - Stock Issued: $10,000\n   - Sales Collected: $18,000\n   - Total Inflows: $10,000 + $18,000 = $28,000\n\n3. **Cash Outflows**\n   - Loan Repaid: $12,000\n   - Inventory Purchased: $6,000\n   - Total Outflows: $12,000 + $6,000 = $18,000\n\n4. **Ending Cash Calculation**\n   - Opening Cash: $25,000\n   - Plus: Total Inflows: $28,000\n   - Less: Total Outflows: $18,000\n   - Ending Cash: $25,000 + $28,000 - $18,000 = $35,000\n\n**Cash Flow Analysis:**\n   • Net cash increase of $10,000 during period\n   • Positive operating cash flow from collections\n   • Financing activities: +$10K equity, -$12K debt repayment\n   • Investment in inventory reduces liquidity\n\n**Key Points:**\n   • Cash flow management critical for operations\n   • Multiple activities affect cash position\n   • Ending cash represents available liquidity\n   • Track all sources and uses of cash",
     learnContent: {
       concept: 'Ending cash is true company liquidity.',
       formula: 'Beginning Cash + Inflows - Outflows',
@@ -6640,7 +6640,7 @@ Key Points:
     answer: 8000,
     unit: '$',
     hint: 'Subtract minimum from total.',
-    explanation: '$30,000 – $22,000 = $8,000\n\nLogic: Excess can be distributed/invested.',
+    explanation: "**Calculation:** Excess Cash = $8,000\n\n• • •\n\n**Step-by-step breakdown:**\n\n1. **Cash Position Analysis**\n   - Total Cash Held: $30,000\n   - Minimum Cash Required: $22,000\n\n2. **Excess Cash Calculation**\n   - Excess Cash: $30,000 - $22,000 = $8,000\n   - Available for discretionary use\n\n3. **Minimum Cash Requirements**\n   - Operating cash needs: $22,000\n   - Safety buffer for operations\n   - Working capital requirements\n\n**Treasury Management Options:**\n   • Invest excess in marketable securities\n   • Pay down debt to reduce interest expense\n   • Distribute to shareholders via dividends\n   • Fund growth initiatives or capex\n\n**Key Points:**\n   • Excess cash represents investment opportunity\n   • Minimum cash ensures operational liquidity\n   • Optimal cash management maximizes returns\n   • Balance liquidity needs with investment returns",
     learnContent: {
       concept: 'Minimum cash = operational liquidity constraint.',
       formula: 'Total Cash - Minimum Required Cash',
@@ -6658,7 +6658,7 @@ Key Points:
     answer: 50000,
     unit: '$',
     hint: 'Subtract those sold.',
-    explanation: '$60,000 – $10,000 = $50,000\n\nLogic: Spending securities reduces asset balance.',
+    explanation: "**Calculation:** Ending Marketable Securities = $50,000\n\n• • •\n\n**Step-by-step breakdown:**\n\n1. **Beginning Securities Balance**\n   - Starting Marketable Securities: $60,000\n\n2. **Securities Liquidation**\n   - Amount Sold for Capex: $10,000\n   - Purpose: Fund capital expenditures\n\n3. **Ending Balance Calculation**\n   - Beginning Balance: $60,000\n   - Less: Securities Sold: $10,000\n   - Ending Balance: $60,000 - $10,000 = $50,000\n\n**Investment Portfolio Analysis:**\n   • 16.7% of securities liquidated ($10K ÷ $60K)\n   • Cash generated to fund growth investments\n   • Remaining $50K provides liquidity buffer\n\n**Key Points:**\n   • Marketable securities provide flexible liquidity\n   • Can be converted to cash for strategic needs\n   • Balance between liquidity and investment returns\n   • Portfolio management supports capital allocation",
     learnContent: {
       concept: 'Converting investments to cash.',
       formula: 'Beginning Balance - Amount Sold',
@@ -6674,7 +6674,7 @@ Key Points:
     answer: 2,
     unit: '',
     hint: 'Quick ratio = (cash + securities + receivables) / payables.',
-    explanation: '$12,000 + $5,000 + $3,000 = $20,000\n$20,000 / $10,000 = 2\n\nLogic: Quick ratio tests immediate-liquid asset coverage.',
+    explanation: "**Calculation:** Quick Ratio = 2.0\n\n• • •\n\n**Step-by-step breakdown:**\n\n1. **Liquid Assets Calculation**\n   - Cash: $12,000\n   - Marketable Securities: $5,000\n   - Accounts Receivable: $3,000\n   - Total Quick Assets: $12,000 + $5,000 + $3,000 = $20,000\n\n2. **Current Liabilities**\n   - Accounts Payable: $10,000\n\n3. **Quick Ratio Calculation**\n   - Quick Ratio: $20,000 ÷ $10,000 = 2.0\n\n**Liquidity Analysis:**\n   • Company has $2 of liquid assets for every $1 of current liabilities\n   • Strong short-term liquidity position\n   • Can easily meet immediate obligations\n   • Quick ratio > 1.0 indicates good liquidity\n\n**Key Points:**\n   • Quick ratio excludes inventory (less liquid)\n   • Measures ability to pay short-term debts immediately\n   • Higher ratios indicate stronger liquidity\n   • Benchmark: >1.0 is generally healthy",
     learnContent: {
       concept: 'Higher quick ratio = greater short-term solvency.',
       formula: '(Cash + Marketable Securities + A/R) / Current Liabilities',
@@ -6692,7 +6692,7 @@ Key Points:
     answer: 19000,
     unit: '$',
     hint: 'Collections = Start + Sales – End',
-    explanation: '$5,000 + $17,000 – $3,000 = $19,000\n\nLogic: Difference between invoicing and payment timing.',
+    explanation: "**Calculation:** Cash Collected = $19,000\n\n• • •\n\n**Step-by-step breakdown:**\n\n1. **Beginning A/R Balance**\n   - Start of Year A/R: $5,000\n   - Outstanding customer invoices\n\n2. **Credit Sales During Year**\n   - Credit Sales: $17,000\n   - New invoices issued to customers\n\n3. **Ending A/R Balance**\n   - End of Year A/R: $3,000\n   - Remaining uncollected invoices\n\n4. **Cash Collections Calculation**\n   - Formula: Beginning A/R + Credit Sales - Ending A/R\n   - Collections: $5,000 + $17,000 - $3,000 = $19,000\n\n**A/R Management Analysis:**\n   • Total invoiced: $5,000 + $17,000 = $22,000\n   • Collection rate: $19,000 ÷ $22,000 = 86.4%\n   • A/R decreased by $2,000 (improvement in collections)\n\n**Key Points:**\n   • Cash collections exceed credit sales by $2,000\n   • Strong collection performance reduces A/R\n   • Improved working capital management\n   • Faster collections improve cash flow",
     learnContent: {
       concept: 'A/R flows affect liquidity management.',
       formula: 'Beginning A/R + Credit Sales - Ending A/R',
@@ -6708,7 +6708,7 @@ Key Points:
     answer: 30,
     unit: 'days',
     hint: '(A/R / Sales) × 365',
-    explanation: '$4,500 / $54,000 × 365 ≈ 30\n\nLogic: Lower number = faster collections.',
+    explanation: "**Calculation:** Average Collection Days = 30 days\n\n• • •\n\n**Step-by-step breakdown:**\n\n1. **A/R and Sales Data**\n   - Average A/R: $4,500\n   - Annual Credit Sales: $54,000\n\n2. **Calculate Daily Sales**\n   - Daily Credit Sales: $54,000 ÷ 365 = $148\n\n3. **Days Sales Outstanding (DSO)**\n   - Formula: (Average A/R ÷ Annual Credit Sales) × 365\n   - DSO: ($4,500 ÷ $54,000) × 365 = 30.4 ≈ 30 days\n\n**Collection Performance Analysis:**\n   • Customers pay within 30 days on average\n   • Strong collection efficiency\n   • Good working capital management\n   • Industry benchmark comparison needed\n\n**Key Points:**\n   • Lower DSO indicates faster collections\n   • Impacts cash flow and working capital\n   • Monitor trends for collection effectiveness\n   • Balance collection speed with customer relationships",
     learnContent: {
       concept: 'Receivable "days" show payment speed for cash flow planning.',
       formula: '(Average A/R / Annual Credit Sales) × 365',
