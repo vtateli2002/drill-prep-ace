@@ -1966,5 +1966,165 @@ How much revenue is recognized by the end of April?`,
       formula: 'Dividend Impact = Cash Outflow = Reduction in Retained Earnings',
       example: '$5K dividend → Cash –$5K, RE –$5K\n$20K → Same impacts\n$0.50/share × 10K shares → $5K outflow'
     }
+  },
+  {
+    id: 'acc-medium-87',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Accretion of Bond Discount',
+    description: 'A company issues bonds with a face value of $100,000 for $94,000. The bonds mature in 5 years, and the annual accretion of the discount is straight-line. What is the annual non-cash interest expense from the bond discount accretion?',
+    answer: 1200,
+    unit: '$',
+    hint: 'Bond discount = Face Value – Issue Price, then divide by term.',
+    explanation: 'Discount = $100,000 – $94,000 = $6,000 → Annual accretion = $6,000 ÷ 5 = $1,200',
+    learnContent: {
+      concept: 'A bond issued at a discount creates a non-cash interest expense over time via accretion.',
+      formula: 'Accretion = (Face – Issue Price) ÷ Term',
+      example: '$500K issued at $480K, 10 years → $2K/year\n$10K discount over 5 years → $2K/year\n$50K issued at $47.5K → $2.5K ÷ 10 = $250/year'
+    }
+  },
+  {
+    id: 'acc-medium-88',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Expense Classification in EBITDA',
+    description: 'A company reports the following for the year: Revenue: $250,000, COGS: $100,000, Depreciation: $15,000, SG&A: $40,000, Interest Expense: $12,000. What is the company\'s EBITDA?',
+    answer: 110000,
+    unit: '$',
+    hint: 'EBITDA = Revenue – COGS – SG&A',
+    explanation: 'EBITDA = $250K – $100K – $40K = $110K → Excludes depreciation and interest',
+    learnContent: {
+      concept: 'EBITDA (Earnings Before Interest, Taxes, Depreciation, Amortization) is a proxy for operating performance.',
+      formula: 'EBITDA = Revenue – COGS – OpEx (excl. D&A)',
+      example: 'Rev $500K, COGS $200K, OpEx $100K → EBITDA = $200K\nAdd back $20K D&A to EBIT of $80K → $100K EBITDA\nRev $100K, COGS $30K, SG&A $20K → $50K EBITDA'
+    }
+  },
+  {
+    id: 'acc-medium-89',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Asset Revaluation and Depreciation',
+    description: 'A company revalues a factory from $900,000 to $1,200,000. The remaining useful life is 6 years. If straight-line depreciation is applied, how much additional depreciation will be recorded per year due to the revaluation?',
+    answer: 50000,
+    unit: '$',
+    hint: 'Use the revaluation increase and divide by useful life.',
+    explanation: '$1.2M – $900K = $300K → $300K ÷ 6 = $50K additional annual depreciation',
+    learnContent: {
+      concept: 'Revaluation increases the asset\'s book value, resulting in higher depreciation going forward.',
+      formula: 'Additional Depreciation = Revaluation Increase ÷ Remaining Life',
+      example: 'Revalue +$100K, 5 years → $20K/year\nRevalue +$60K, 3 years → $20K/year\nRevalue +$240K, 8 years → $30K/year'
+    }
+  },
+  {
+    id: 'acc-medium-90',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Operating Lease vs. Finance Lease',
+    description: 'A company signs a 5-year lease for office space, paying $10,000 annually. The lease is classified as an operating lease. What is the initial impact on the company\'s income statement and balance sheet in Year 1?',
+    answer: 10000,
+    unit: '$',
+    hint: 'Capitalize full lease on BS, expense rent annually on IS.',
+    explanation: 'Expense = $10K annually (straight-line). Asset and liability = $10K × 5 = $50K each.',
+    learnContent: {
+      concept: 'Operating leases must be capitalized on the balance sheet under new accounting rules, with rent expensed straight-line.',
+      formula: 'Lease Asset & Liability = Annual Rent × Lease Term',
+      example: '$12K/year, 3 years → $36K ROU asset & liability\n$8K/year, 4 years → $32K\n$20K/year, 2 years → $40K on BS, $20K on IS'
+    }
+  },
+  {
+    id: 'acc-medium-91',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Change in PP&E Rollforward',
+    description: 'A company begins the year with $800,000 in PP&E. During the year, it records $90,000 in depreciation, spends $200,000 in CapEx, and sells equipment worth $50,000 with a book value of $40,000. What is the year-end PP&E?',
+    answer: 870000,
+    unit: '$',
+    hint: 'PP&E = Beginning + CapEx – Depreciation – NBV of disposals',
+    explanation: 'PP&E = $800K + $200K – $90K – $40K = $870K',
+    learnContent: {
+      concept: 'PP&E increases through CapEx and decreases via depreciation or asset sales.',
+      formula: 'Ending PP&E = Beginning + CapEx – Depreciation – NBV of Assets Sold',
+      example: 'Begin $100K, CapEx $30K, Deprec $10K → End = $120K\nAdd $50K CapEx, sell $20K NBV → End = Begin + $50K – $20K'
+    }
+  },
+  {
+    id: 'acc-medium-92',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'DTL Creation from Accelerated Depreciation',
+    description: 'A company has a $30,000 difference between tax and book depreciation. The tax rate is 25%. What Deferred Tax Liability (DTL) is created?',
+    answer: 7500,
+    unit: '$',
+    hint: 'DTL = (Tax Depreciation – Book Depreciation) × Tax Rate',
+    explanation: 'DTL = $30K × 25% = $7,500',
+    learnContent: {
+      concept: 'DTL arises when tax depreciation > book depreciation, deferring tax payments.',
+      formula: 'DTL = Difference × Tax Rate',
+      example: '$10K difference, 40% tax → $4K DTL\n$50K diff, 20% → $10K\n$80K, 30% → $24K DTL'
+    }
+  },
+  {
+    id: 'acc-medium-93',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Days Payable Outstanding (DPO)',
+    description: 'If a company has COGS of $600,000 and average accounts payable of $50,000, what is the Days Payable Outstanding (DPO)?',
+    answer: 30.4,
+    unit: 'days',
+    hint: 'DPO = (Avg AP ÷ COGS) × 365',
+    explanation: 'DPO = ($50K ÷ $600K) × 365 ≈ 30.4 days',
+    learnContent: {
+      concept: 'DPO shows how long a company takes to pay suppliers.',
+      formula: 'DPO = (Average AP ÷ COGS) × 365',
+      example: '$40K AP, $500K COGS → 29.2 days\n$20K AP, $200K COGS → 36.5 days\n$60K AP, $600K COGS → 36.5 days'
+    }
+  },
+  {
+    id: 'acc-medium-94',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Deferred Rent Accounting',
+    description: 'Under the old lease model, a company pays escalating rent: $8K in Year 1, $10K in Year 2, $12K in Year 3. What is the straight-line rent expense per year?',
+    answer: 10000,
+    unit: '$',
+    hint: 'Average the total lease payments over the term.',
+    explanation: 'Total = $8K + $10K + $12K = $30K → $30K ÷ 3 = $10K/year',
+    learnContent: {
+      concept: 'Deferred rent smooths escalating lease payments into even IS expense.',
+      formula: 'Straight-line Rent = Total Lease Payments ÷ Years',
+      example: '$6K, $8K, $10K → $24K ÷ 3 = $8K\n$9K, $9K, $12K → $10K avg\n$5K, $10K → $7.5K/year'
+    }
+  },
+  {
+    id: 'acc-medium-95',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Goodwill Calculation After Acquisition',
+    description: 'A company acquires a target for $500,000. The fair value of identifiable assets is $450,000, and liabilities assumed are $100,000. What is the goodwill created?',
+    answer: 150000,
+    unit: '$',
+    hint: 'Goodwill = Purchase Price – (Assets – Liabilities)',
+    explanation: 'Net Assets = $450K – $100K = $350K → Goodwill = $500K – $350K = $150K',
+    learnContent: {
+      concept: 'Goodwill is the premium paid over the fair value of net assets in an acquisition.',
+      formula: 'Goodwill = Purchase Price – (Assets – Liabilities)',
+      example: 'Buy for $1M, Assets $800K, Liab $300K → GW = $1M – $500K = $500K\nPay $200K for $180K net assets → GW = $20K'
+    }
+  },
+  {
+    id: 'acc-medium-96',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Non-Controlling Interest (NCI) on Income Statement',
+    description: 'A company owns 80% of a subsidiary that earns $100,000 in net income. What portion of the income is attributable to non-controlling interest?',
+    answer: 20000,
+    unit: '$',
+    hint: 'NCI = Net Income × Ownership % not owned',
+    explanation: 'NCI = $100K × 20% = $20,000',
+    learnContent: {
+      concept: 'NCI represents income allocated to minority shareholders in consolidated subsidiaries.',
+      formula: 'NCI = Net Income × (1 – Ownership %)',
+      example: '$60K NI, 75% owned → NCI = $15K\n$500K, 60% owned → NCI = $200K\n$80K, 90% owned → $8K NCI'
+    }
   }
 ];
