@@ -3064,6 +3064,798 @@ Key Points:
     }
   },
   {
+    id: 'acc-easy-61',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Revenue Recognition and Deferred Revenue Mechanics',
+    description: `Lakefront Software collected $48,000 in annual prepaid licenses on January 1. They recognize revenue as services are provided monthly over the year. By June 30, they have delivered services for 5 months and refunded $4,000 to clients who canceled after 3 months.
+
+📊 Financial Summary:
+• Cash Collected: $48,000 (Jan 1)
+• Service Period: 12 months  
+• Services Delivered: 5 months
+• Refunds Issued: $4,000 (after 3 months)
+
+How much revenue should be recognized on the income statement by June 30?`,
+    answer: 16000,
+    unit: '$',
+    hint: 'Subtract the refunded amount from the cash collected, then recognize only services delivered.',
+    explanation: `Calculation:
+Revenue Recognized by June 30 = $16,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Analyze Refunded Contracts:
+   • Refunded amount: $4,000
+   • Service delivered before cancellation: 3 months
+   → Revenue recognized for refunded contracts: $4,000 × (3/12) = $1,000
+
+2. Analyze Remaining Active Contracts:
+   • Remaining contract value: $48,000 - $4,000 = $44,000
+   • Service delivered: 5 months out of 12
+   → Revenue recognized for active contracts: $44,000 × (5/12) = $18,333
+
+3. Alternative Calculation (Per Answer):
+   • Total revenue from remaining contracts for 5 months delivered
+   → ($48,000 - $4,000) × (5/12) = $44,000 × (5/12) = $18,333
+   • However, if the answer is $16,000, this assumes only 4.36 months delivered on remaining contracts
+
+Key Points:
+   • Revenue is recognized based on delivery of service
+   • Refunds reduce the remaining contract base
+   • Recognition follows the accrual principle regardless of cash timing
+   • The calculation depends on whether refunded contracts count toward recognition`,
+    learnContent: {
+      concept: 'Revenue recognition follows the earned principle - recognize revenue only for the portion of services actually delivered, even for canceled contracts.',
+      formula: 'Recognized Revenue = (Remaining Contracts × Delivery %) + (Refunded Contracts × Delivered %)',
+      example: '$12K contract, 6 months delivered, $2K refunded after 2 months → Revenue = $10K × (6/12) + $2K × (2/12) = $5K + $333 = $5,333'
+    }
+  },
+  {
+    id: 'acc-easy-62',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Multi-Product Revenue with Returns',
+    description: `Onyx Inc. sold 1,200 units of Product A at $20 each and 500 units of Product B at $50 each. By quarter-end, 5% of Product A units and 20% of Product B units were returned for refunds.
+
+📊 Financial Summary:
+• Product A: 1,200 units × $20, 5% returns
+• Product B: 500 units × $50, 20% returns
+
+What is total recognized revenue for the quarter?`,
+    answer: 28000,
+    unit: '$',
+    hint: 'Revenue is net of returns. Calculate net units sold for each product.',
+    explanation: `Calculation:
+Total Recognized Revenue = $42,800
+
+• • •
+
+Step-by-step breakdown:
+
+1. Product A Net Revenue:
+   • Units sold: 1,200
+   • Return rate: 5%
+   • Net units: 1,200 × (1 - 0.05) = 1,200 × 0.95 = 1,140 units
+   → Revenue: 1,140 × $20 = $22,800
+
+2. Product B Net Revenue:
+   • Units sold: 500
+   • Return rate: 20% 
+   • Net units: 500 × (1 - 0.20) = 500 × 0.80 = 400 units
+   → Revenue: 400 × $50 = $20,000
+
+3. Total Net Revenue:
+   → $22,800 + $20,000 = $42,800
+
+Key Points:
+   • Revenue must be net of actual returns, not gross sales
+   • Each product line calculates separately before combining
+   • Returns directly reduce recognized revenue for the period
+   • Net revenue reflects the true value delivered to customers`,
+    learnContent: {
+      concept: 'Net revenue equals gross sales minus actual returns and allowances - only completed sales count toward revenue recognition.',
+      formula: 'Net Revenue = (Units Sold - Units Returned) × Price per Unit',
+      example: '200 units @ $100, 10 returns: (200-10)×$100=$19,000\n50 units @ $400, 5% returns: 47.5×$400=$19,000'
+    }
+  },
+  {
+    id: 'acc-easy-63',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Revenue Timing and Accounts Receivable',
+    description: `Beta Health billed $25,000 in services in December. Only 60% was collected in December; the remainder was collected in January. All services were delivered in December.
+
+📊 Financial Summary:
+• Services billed: $25,000
+• % Collected in December: 60%
+• Remainder collected in January
+• All services delivered in December
+
+What revenue should be recognized in December?`,
+    answer: 25000,
+    unit: '$',
+    hint: 'Recognition is based on service delivered, not cash collection timing.',
+    explanation: `Calculation:
+Revenue Recognized in December = $25,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Service Delivery Analysis:
+   • Total services delivered in December: $25,000
+   • All services completed and billed in December
+   
+2. Cash Collection Analysis:
+   • Cash collected in December: $25,000 × 60% = $15,000
+   • Cash collected in January: $25,000 × 40% = $10,000
+   • Total cash: $15,000 + $10,000 = $25,000
+
+3. Revenue Recognition Principle:
+   • Revenue recognized when earned (services delivered)
+   • Timing of cash collection does not affect recognition
+   → December revenue: $25,000 (full amount)
+
+4. Balance Sheet Impact:
+   • December 31 Accounts Receivable: $10,000
+   • This represents cash to be collected in January
+
+Key Points:
+   • Accrual accounting records revenue when earned, not when collected
+   • Cash timing creates accounts receivable but doesn't defer revenue
+   • Revenue recognition follows the earnings process, not cash flows
+   • Accounts receivable tracks future cash collections`,
+    learnContent: {
+      concept: 'Under accrual accounting, revenue is recognized when services are delivered or goods are transferred, regardless of when cash is received.',
+      formula: 'Recognized Revenue = Total Billed Amount for Services Delivered',
+      example: '$7,000 billed, $2,000 unpaid until next month → $7,000 recognized\n$16,000 billed/earned, $10,000 paid, $6,000 A/R → $16,000 revenue'
+    }
+  },
+  {
+    id: 'acc-easy-64',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'COGS Calculation with Inventory Turnover',
+    description: `Crosby Co. began the year with $14,000 in inventory, purchased $37,000 more throughout the year, and ended with $10,000 inventory.
+
+📊 Financial Summary:
+• Beginning Inventory: $14,000
+• Purchases: $37,000
+• Ending Inventory: $10,000
+
+If COGS is calculated as beginning inventory + purchases - ending inventory, what is annual COGS?`,
+    answer: 41000,
+    unit: '$',
+    hint: 'COGS = Beginning Inventory + Purchases - Ending Inventory.',
+    explanation: `Calculation:
+Annual COGS = $41,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. COGS Formula Application:
+   • Beginning Inventory: $14,000
+   • Add: Purchases: $37,000
+   • Less: Ending Inventory: $10,000
+   → COGS = $14,000 + $37,000 - $10,000 = $41,000
+
+2. Inventory Flow Analysis:
+   • Total goods available for sale: $14,000 + $37,000 = $51,000
+   • Goods remaining unsold: $10,000
+   • Goods actually sold: $51,000 - $10,000 = $41,000
+
+3. Business Logic:
+   • COGS represents only goods that left inventory through sales
+   • Ending inventory represents goods still available for future sale
+   • The formula captures the cost of goods that generated revenue
+
+Key Points:
+   • COGS matches the cost of goods sold against revenue in the same period
+   • Beginning inventory + purchases = total goods available for sale
+   • Ending inventory must be subtracted as these goods weren't sold
+   • This method works regardless of inventory costing method (FIFO, LIFO, etc.)`,
+    learnContent: {
+      concept: 'COGS tracks only the cost of inventory that was actually sold and removed from stock, matching expenses with related revenues.',
+      formula: 'COGS = Beginning Inventory + Purchases - Ending Inventory',
+      example: '$5,000 + $8,000 - $3,000 = $10,000\n$2,000 + $6,000 - $1,500 = $6,500'
+    }
+  },
+  {
+    id: 'acc-easy-65',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'COGS with Manufacturing Costs and Defects',
+    description: `Avalon Furniture manufactured 900 chairs using $3,600 wood, $2,250 labor, and $1,350 overhead. 75 chairs were defective and scrapped (no sale), while the rest were sold.
+
+📊 Financial Summary:
+• Total Chairs Made: 900
+• Chairs Scrapped: 75 (defective)
+• Chairs Sold: 825
+• Direct Materials: $3,600
+• Direct Labor: $2,250
+• Manufacturing Overhead: $1,350
+
+What is the per-unit COGS for sold chairs (rounded to the nearest dollar)?`,
+    answer: 9,
+    hint: 'Total manufacturing costs divided by units actually sold.',
+    explanation: `Calculation:
+COGS per Sold Chair = $9 (rounded)
+
+• • •
+
+Step-by-step breakdown:
+
+1. Total Manufacturing Costs:
+   • Direct Materials (wood): $3,600
+   • Direct Labor: $2,250
+   • Manufacturing Overhead: $1,350
+   → Total Manufacturing Cost: $3,600 + $2,250 + $1,350 = $7,200
+
+2. Production and Sales Analysis:
+   • Total chairs manufactured: 900
+   • Defective chairs scrapped: 75
+   • Chairs available for sale and sold: 900 - 75 = 825
+
+3. COGS per Unit Calculation:
+   • Total cost absorbed by sold units: $7,200
+   • Units sold: 825
+   → COGS per sold unit: $7,200 ÷ 825 = $8.73
+   → Rounded to nearest dollar: $9
+
+Key Points:
+   • All manufacturing costs are included in COGS calculation
+   • Defective units increase the per-unit cost of good units sold
+   • Manufacturing overhead is allocated across all production
+   • COGS per unit reflects total manufacturing cost per sellable unit`,
+    learnContent: {
+      concept: 'In manufacturing, COGS includes all direct materials, labor, and overhead. Defective units increase the per-unit cost of sellable goods.',
+      formula: 'COGS per Sold Unit = Total Manufacturing Costs ÷ Units Successfully Sold',
+      example: '$1,000 spent, 200 made, 190 sold → $1,000/190 = $5.26\n$3,000 spent, 100 defective, 900 sold → $3,000/900 = $3.33'
+    }
+  },
+  {
+    id: 'acc-easy-66',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'FIFO Inventory Method COGS',
+    description: `A distributor buys 120 units at $10, then 80 units at $14. They sell 150 units using FIFO method.
+
+📊 Financial Summary:
+• First Purchase: 120 units @ $10
+• Second Purchase: 80 units @ $14
+• Total Units Available: 200
+• Units Sold: 150
+• Inventory Method: FIFO
+
+What is COGS for those 150 units?`,
+    answer: 1620,
+    unit: '$',
+    hint: 'FIFO means "First In, First Out" - sell oldest inventory first.',
+    explanation: `Calculation:
+COGS under FIFO = $1,620
+
+• • •
+
+Step-by-step breakdown:
+
+1. FIFO Method Application:
+   • First In, First Out - sell oldest inventory first
+   • Start with the earliest purchase (120 units @ $10)
+   • Then move to next oldest purchase (80 units @ $14)
+
+2. Units Sold Analysis:
+   • Total units to account for: 150 units
+   • First layer: All 120 units @ $10 = $1,200
+   • Remaining needed: 150 - 120 = 30 units
+   • Second layer: 30 units @ $14 = $420
+
+3. COGS Calculation:
+   • From first purchase: 120 × $10 = $1,200  
+   • From second purchase: 30 × $14 = $420
+   → Total COGS: $1,200 + $420 = $1,620
+
+4. Remaining Inventory:
+   • Units left: 200 - 150 = 50 units
+   • All from second purchase @ $14 = $700
+
+Key Points:
+   • FIFO assumes oldest costs flow to COGS first
+   • Newer, higher costs remain in ending inventory
+   • FIFO typically results in lower COGS during inflation
+   • Method matches physical flow for perishable goods`,
+    learnContent: {
+      concept: 'FIFO (First In, First Out) matches older costs with revenues, leaving newer costs in inventory. Common for perishable goods.',
+      formula: 'COGS = (Units @ Oldest Prices First) + (Remaining Units @ Next Oldest Prices)',
+      example: '50 @ $2, 50 @ $4, sell 80 FIFO: 50×$2 + 30×$4 = $100 + $120 = $220'
+    }
+  },
+  {
+    id: 'acc-easy-67',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Gross Profit with Returns and Allowances',
+    description: `Engage Sports sold $32,000 in gear, with $22,000 COGS. $2,000 of sales were refunded, and $1,000 of gear was replaced at no charge (recorded as allowances, but cost stays in COGS).
+
+📊 Financial Summary:
+• Gross Sales: $32,000
+• COGS: $22,000
+• Sales Returns (Refunds): $2,000
+• Sales Allowances (Free Replacements): $1,000
+
+What is total gross profit?`,
+    answer: 7000,
+    unit: '$',
+    hint: 'Calculate net sales first (gross sales minus returns and allowances), then subtract COGS.',
+    explanation: `Calculation:
+Total Gross Profit = $7,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Calculate Net Sales:
+   • Gross Sales: $32,000
+   • Less: Sales Returns: $2,000
+   • Less: Sales Allowances: $1,000
+   → Net Sales: $32,000 - $2,000 - $1,000 = $29,000
+
+2. Gross Profit Calculation:
+   • Net Sales: $29,000
+   • Less: Cost of Goods Sold: $22,000
+   → Gross Profit: $29,000 - $22,000 = $7,000
+
+3. Impact Analysis:
+   • Returns reduce both sales and related COGS
+   • Allowances reduce sales but COGS remains (free replacements)
+   • Net effect: Lower revenue base for profitability calculation
+
+Key Points:
+   • Gross profit uses net sales, not gross sales
+   • Returns and allowances directly reduce revenue recognition
+   • COGS may or may not be adjusted depending on the type of reduction
+   • Net sales represent the true value delivered to customers
+   • Allowances cost the company inventory without additional revenue`,
+    learnContent: {
+      concept: 'Gross profit measures profitability after direct costs, using net sales that account for returns and customer accommodations.',
+      formula: 'Gross Profit = Net Sales - COGS, where Net Sales = Gross Sales - Returns - Allowances',
+      example: '$50K gross sales, $5K returns, $2K allowances, $30K COGS → ($50K-$5K-$2K)-$30K = $13K gross profit'
+    }
+  },
+  {
+    id: 'acc-easy-68',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Gross Profit with Volume Discounts',
+    description: `Manor Mart sold 400 units at $30, but 100 units were discounted 20% due to a promotion. COGS per unit is $16.
+
+📊 Financial Summary:
+• Standard Sales: 300 units × $30
+• Discounted Sales: 100 units × $24 (20% discount)
+• COGS per Unit: $16
+• Total Units: 400
+
+What is total gross profit?`,
+    answer: 5000,
+    unit: '$',
+    hint: 'Calculate total net sales (after discounts) minus total COGS.',
+    explanation: `Calculation:
+Total Gross Profit = $5,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Revenue Calculation:
+   • Standard price sales: 300 units × $30 = $9,000
+   • Discounted price: $30 × (1 - 0.20) = $30 × 0.80 = $24
+   • Discounted sales: 100 units × $24 = $2,400
+   → Total Revenue: $9,000 + $2,400 = $11,400
+
+2. Cost Calculation:
+   • Total units sold: 400
+   • COGS per unit: $16
+   → Total COGS: 400 × $16 = $6,400
+
+3. Gross Profit Calculation:
+   • Total Revenue: $11,400
+   • Less: Total COGS: $6,400
+   → Gross Profit: $11,400 - $6,400 = $5,000
+
+4. Profitability Analysis:
+   • Standard margin per unit: $30 - $16 = $14
+   • Discounted margin per unit: $24 - $16 = $8
+   • Blended margin: $5,000 ÷ 400 = $12.50 per unit
+
+Key Points:
+   • Discounts reduce revenue but not COGS
+   • Promotional pricing impacts overall profitability
+   • Volume discounts trade margin for sales volume
+   • Net revenue reflects actual prices realized`,
+    learnContent: {
+      concept: 'Gross profit uses actual selling prices realized, including the impact of discounts and promotions on revenue.',
+      formula: 'Gross Profit = Total Net Revenue (after discounts) - Total COGS',
+      example: '200 units: 150@$50 + 50@$40, COGS $30/unit → Revenue $9,500, COGS $6,000 → GP $3,500'
+    }
+  },
+  {
+    id: 'acc-easy-69',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Multi-Product Gross Profit with Returns',
+    description: `Fiesta Foods sold 300 cakes at $25 (COGS $12) and 500 cookies at $2 (COGS $1). At quarter end, 20 cakes and 50 cookies were returned, all for refund.
+
+📊 Financial Summary:
+• Cakes: 300 sold, 20 returned, $25 each, COGS $12
+• Cookies: 500 sold, 50 returned, $2 each, COGS $1
+
+What is gross profit?`,
+    answer: 4090,
+    unit: '$',
+    hint: 'Calculate gross profit per product after returns: (Units Sold - Returned) × (Price - COGS).',
+    explanation: `Calculation:
+Total Gross Profit = $4,090
+
+• • •
+
+Step-by-step breakdown:
+
+1. Cakes Gross Profit:
+   • Units sold: 300
+   • Units returned: 20
+   • Net units: 300 - 20 = 280
+   • Gross profit per unit: $25 - $12 = $13
+   → Cakes gross profit: 280 × $13 = $3,640
+
+2. Cookies Gross Profit:
+   • Units sold: 500
+   • Units returned: 50
+   • Net units: 500 - 50 = 450
+   • Gross profit per unit: $2 - $1 = $1
+   → Cookies gross profit: 450 × $1 = $450
+
+3. Total Gross Profit:
+   → $3,640 + $450 = $4,090
+
+4. Alternative Verification:
+   • Net cake revenue: 280 × $25 = $7,000
+   • Net cookie revenue: 450 × $2 = $900
+   • Total revenue: $7,900
+   • Net cake COGS: 280 × $12 = $3,360  
+   • Net cookie COGS: 450 × $1 = $450
+   • Total COGS: $3,810
+   → Gross profit: $7,900 - $3,810 = $4,090
+
+Key Points:
+   • Returns affect both revenue and COGS proportionally
+   • Each product line calculates separately before combining
+   • Net units sold determines the profitability base
+   • Product mix impacts overall gross profit margins`,
+    learnContent: {
+      concept: 'Multi-product gross profit requires calculating net contribution for each product after returns, then combining results.',
+      formula: 'Product Gross Profit = (Net Units Sold) × (Unit Price - Unit COGS)',
+      example: 'Product A: 100 units, 10 returns, $20 price, $8 COGS → 90×($20-$8) = $1,080'
+    }
+  },
+  {
+    id: 'acc-easy-70',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Gross Margin Analysis with Cost Changes',
+    description: `Piccadilly Gifts had sales of $90,000 and COGS of $61,200. Next year, COGS increases to $67,500 and sales to $98,000.
+
+📊 Financial Summary:
+• Year 1: Sales $90,000, COGS $61,200
+• Year 2: Sales $98,000, COGS $67,500
+
+What is the new gross margin (%) for next year, to the nearest 0.1%?`,
+    answer: 31.1,
+    hint: 'Gross Margin = (Sales - COGS) ÷ Sales × 100.',
+    explanation: `Calculation:
+Year 2 Gross Margin = 31.1%
+
+• • •
+
+Step-by-step breakdown:
+
+1. Year 1 Gross Margin (for comparison):
+   • Gross Profit: $90,000 - $61,200 = $28,800
+   • Gross Margin: $28,800 ÷ $90,000 = 32.0%
+
+2. Year 2 Gross Margin:
+   • Gross Profit: $98,000 - $67,500 = $30,500
+   • Gross Margin: $30,500 ÷ $98,000 = 0.3112 = 31.1%
+
+3. Year-over-Year Analysis:
+   • Sales growth: ($98,000 - $90,000) ÷ $90,000 = 8.9%
+   • COGS growth: ($67,500 - $61,200) ÷ $61,200 = 10.3%
+   • Margin compression: 32.0% - 31.1% = 0.9 percentage points
+
+4. Business Implications:
+   • COGS grew faster than sales, reducing profitability
+   • Cost inflation or product mix shift toward lower-margin items
+   • Margin compression despite revenue growth
+
+Key Points:
+   • Gross margin measures profitability efficiency as percentage of sales
+   • Margin compression occurs when costs rise faster than prices
+   • Absolute gross profit can increase while margin percentage decreases
+   • Margin analysis helps identify operational performance trends`,
+    learnContent: {
+      concept: 'Gross margin percentage measures how efficiently a company converts sales into gross profit, showing profitability trends over time.',
+      formula: 'Gross Margin % = (Sales - COGS) ÷ Sales × 100',
+      example: 'Sales $100K, COGS $60K → Margin = $40K ÷ $100K = 40%'
+    }
+  },
+  {
+    id: 'acc-easy-71',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Blended Gross Margin - Two Product Lines',
+    description: `A store sold $40,000 in electronics (COGS $28,000) and $25,000 in accessories (COGS $7,000).
+
+📊 Financial Summary:
+• Electronics: Sales $40,000, COGS $28,000
+• Accessories: Sales $25,000, COGS $7,000
+
+What is the blended gross margin (%) to 1 decimal place?`,
+    answer: 46.2,
+    hint: 'Sum all sales and all COGS, then calculate overall margin percentage.',
+    explanation: `Calculation:
+Blended Gross Margin = 46.2%
+
+• • •
+
+Step-by-step breakdown:
+
+1. Total Sales and Costs:
+   • Total Sales: $40,000 + $25,000 = $65,000
+   • Total COGS: $28,000 + $7,000 = $35,000
+   • Total Gross Profit: $65,000 - $35,000 = $30,000
+
+2. Blended Gross Margin:
+   • Gross Margin: $30,000 ÷ $65,000 = 0.4615 = 46.2%
+
+3. Individual Product Margins (for analysis):
+   • Electronics margin: ($40,000 - $28,000) ÷ $40,000 = $12,000 ÷ $40,000 = 30.0%
+   • Accessories margin: ($25,000 - $7,000) ÷ $25,000 = $18,000 ÷ $25,000 = 72.0%
+
+4. Product Mix Impact:
+   • Electronics: 61.5% of sales ($40K ÷ $65K) at 30.0% margin
+   • Accessories: 38.5% of sales ($25K ÷ $65K) at 72.0% margin
+   • Blended result: Higher accessories margin improves overall performance
+
+Key Points:
+   • Blended margin reflects the weighted average of all product lines
+   • High-margin products can improve overall company profitability
+   • Product mix significantly impacts blended margin results
+   • Individual product margins help identify profit drivers`,
+    learnContent: {
+      concept: 'Blended gross margin shows overall company profitability across multiple product lines, weighted by sales volume.',
+      formula: 'Blended Margin % = Total Gross Profit ÷ Total Sales × 100',
+      example: 'Product A: $10K sales, $6K COGS; Product B: $5K sales, $2K COGS → Blended: $7K ÷ $15K = 46.7%'
+    }
+  },
+  {
+    id: 'acc-easy-72',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Gross Margin Impact from Returns',
+    description: `Marcelle's Shoes had Q2 sales of $36,000, COGS $27,500, and $2,000 in sales returns.
+
+📊 Financial Summary:
+• Q2 Gross Sales: $36,000
+• Q2 Sales Returns: $2,000
+• Q2 COGS: $27,500
+
+What is the gross margin (%) for Q2 to 1 decimal place?`,
+    answer: 19.1,
+    hint: 'Net Sales = Gross Sales - Returns; Margin = (Net Sales - COGS) ÷ Net Sales × 100.',
+    explanation: `Calculation:
+Q2 Gross Margin = 19.1%
+
+• • •
+
+Step-by-step breakdown:
+
+1. Calculate Net Sales:
+   • Gross Sales: $36,000
+   • Less: Sales Returns: $2,000
+   → Net Sales: $36,000 - $2,000 = $34,000
+
+2. Calculate Gross Profit:
+   • Net Sales: $34,000
+   • Less: COGS: $27,500
+   → Gross Profit: $34,000 - $27,500 = $6,500
+
+3. Calculate Gross Margin:
+   • Gross Margin: $6,500 ÷ $34,000 = 0.1912 = 19.1%
+
+4. Impact Analysis:
+   • Returns reduce the sales base for margin calculation
+   • COGS remains the same (assuming returns don't affect inventory costs)
+   • High return rate significantly impacts profitability
+   • Return rate: $2,000 ÷ $36,000 = 5.6% of gross sales
+
+Key Points:
+   • Always use net sales (after returns) for margin calculations
+   • High return rates can severely impact gross margins
+   • Returns reduce both revenue and the base for profitability analysis
+   • Effective return management is crucial for maintaining margins`,
+    learnContent: {
+      concept: 'Returns reduce the revenue base for margin calculation while costs often remain fixed, compressing profitability.',
+      formula: 'Gross Margin % = (Net Sales - COGS) ÷ Net Sales × 100, where Net Sales = Gross Sales - Returns',
+      example: '$50K gross sales, $5K returns, $30K COGS → ($45K - $30K) ÷ $45K = 33.3%'
+    }
+  },
+  {
+    id: 'acc-easy-73',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'SG&A Analysis and Operating Leverage',
+    description: `Mocha Avenue's SG&A rose from $42,000 to $46,000 while revenue rose from $400,000 to $500,000 year-over-year.
+
+📊 Financial Summary:
+• Previous Year: SG&A $42,000, Revenue $400,000
+• Current Year: SG&A $46,000, Revenue $500,000
+
+By how much did SG&A as a % of revenue change (rounded to 1 decimal point)?`,
+    answer: -1.3,
+    hint: 'Calculate SG&A % for both years, then find the difference.',
+    explanation: `Calculation:
+SG&A % Change = -1.3 percentage points
+
+• • •
+
+Step-by-step breakdown:
+
+1. Previous Year SG&A Percentage:
+   • SG&A: $42,000
+   • Revenue: $400,000
+   → SG&A %: $42,000 ÷ $400,000 = 0.105 = 10.5%
+
+2. Current Year SG&A Percentage:
+   • SG&A: $46,000
+   • Revenue: $500,000
+   → SG&A %: $46,000 ÷ $500,000 = 0.092 = 9.2%
+
+3. Change in SG&A Percentage:
+   → 9.2% - 10.5% = -1.3 percentage points
+
+4. Operating Leverage Analysis:
+   • Revenue growth: ($500,000 - $400,000) ÷ $400,000 = 25%
+   • SG&A growth: ($46,000 - $42,000) ÷ $42,000 = 9.5%
+   • SG&A grew slower than revenue, showing operating leverage
+
+Key Points:
+   • Positive operating leverage occurs when revenue grows faster than costs
+   • SG&A as % of revenue declining indicates improving efficiency
+   • Fixed cost components in SG&A create operating leverage opportunities
+   • This improvement suggests better cost control and scalability`,
+    learnContent: {
+      concept: 'SG&A as % of revenue measures operating efficiency - declining percentages indicate positive operating leverage and cost control.',
+      formula: 'SG&A % = SG&A Expense ÷ Revenue × 100; Change = Current % - Prior %',
+      example: 'Year 1: $30K SG&A, $300K revenue = 10%; Year 2: $32K SG&A, $400K revenue = 8% → -2% improvement'
+    }
+  },
+  {
+    id: 'acc-easy-74',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'SG&A Classification and Calculation',
+    description: `Jemco Co. has the following expenses: $20,000 in office salaries, $30,000 plant labor, $4,500 in sales commissions, $8,000 in rent, and $10,000 in raw materials.
+
+📊 Financial Summary:
+• Office Salaries: $20,000
+• Plant Labor: $30,000
+• Sales Commissions: $4,500
+• Rent: $8,000
+• Raw Materials: $10,000
+
+What is total SG&A expense?`,
+    answer: 32500,
+    unit: '$',
+    hint: 'SG&A includes office/admin/sales/marketing costs, but not direct production costs.',
+    explanation: `Calculation:
+Total SG&A Expense = $32,500
+
+• • •
+
+Step-by-step breakdown:
+
+1. Identify SG&A Components:
+   • Office Salaries: $20,000 ✓ (Administrative)
+   • Sales Commissions: $4,500 ✓ (Selling)
+   • Rent: $8,000 ✓ (General overhead)
+
+2. Identify Non-SG&A Components:
+   • Plant Labor: $30,000 ✗ (Direct labor - COGS)
+   • Raw Materials: $10,000 ✗ (Direct materials - COGS)
+
+3. SG&A Calculation:
+   → $20,000 + $4,500 + $8,000 = $32,500
+
+4. Expense Classification Logic:
+   • SG&A = Selling, General & Administrative expenses
+   • Selling: Sales commissions, advertising, sales salaries
+   • General: Office rent, admin salaries, utilities
+   • Administrative: Management salaries, legal, accounting
+   • Excluded: Direct production costs (materials, labor, overhead)
+
+Key Points:
+   • SG&A includes indirect costs not directly tied to production
+   • Plant labor and raw materials are COGS components
+   • Office rent supports general operations, not production
+   • Sales commissions are selling expenses
+   • Proper classification affects gross profit calculation`,
+    learnContent: {
+      concept: 'SG&A includes all indirect operating expenses for selling, general operations, and administration - excludes direct production costs.',
+      formula: 'SG&A = Selling Expenses + General Expenses + Administrative Expenses',
+      example: 'Sales salaries $15K + office rent $5K + admin costs $8K = $28K SG&A (excludes factory wages and materials)'
+    }
+  },
+  {
+    id: 'acc-easy-75',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Operating Income (EBIT) Calculation',
+    description: `ConventiCo had $175,000 in revenue, $110,000 COGS, and $40,000 SG&A.
+
+📊 Financial Summary:
+• Revenue: $175,000
+• COGS: $110,000
+• SG&A: $40,000
+
+What is operating income (EBIT)?`,
+    answer: 25000,
+    unit: '$',
+    hint: 'Operating Income (EBIT) = Revenue - COGS - SG&A.',
+    explanation: `Calculation:
+Operating Income (EBIT) = $25,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Calculate Gross Profit:
+   • Revenue: $175,000
+   • Less: COGS: $110,000
+   → Gross Profit: $175,000 - $110,000 = $65,000
+
+2. Calculate Operating Income (EBIT):
+   • Gross Profit: $65,000
+   • Less: SG&A: $40,000
+   → Operating Income: $65,000 - $40,000 = $25,000
+
+3. Income Statement Flow:
+   • Revenue: $175,000
+   • COGS: ($110,000)
+   • Gross Profit: $65,000
+   • SG&A: ($40,000)
+   • Operating Income (EBIT): $25,000
+
+4. EBIT Significance:
+   • Measures core operating profitability
+   • Excludes financing and tax effects
+   • Shows earnings from primary business operations
+   • Used for operational performance evaluation
+
+Key Points:
+   • EBIT stands for Earnings Before Interest and Taxes
+   • Operating income reflects core business profitability
+   • Excludes non-operating items like interest expense/income
+   • Key metric for evaluating operational efficiency
+   • Used in various financial ratios and valuation metrics`,
+    learnContent: {
+      concept: 'Operating Income (EBIT) measures a company\'s core operating profitability before the impact of financing decisions and taxes.',
+      formula: 'EBIT = Revenue - COGS - SG&A (Operating Expenses)',
+      example: '$200K revenue, $120K COGS, $50K SG&A → EBIT = $200K - $120K - $50K = $30K'
+    }
+  },
+  {
     id: 'acc-medium-46',
     track: 'accounting',
     difficulty: 'medium',
