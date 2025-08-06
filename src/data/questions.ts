@@ -1,6 +1,126 @@
 import { Question, Track, Difficulty } from '@/types/drill';
 
 export const QUESTIONS: Question[] = [
+  // Statement of Comprehensive Income
+  {
+    id: 'acc-easy-143',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Statement of Comprehensive Income – Basics',
+    description: 'A company reports Net Income of $80,000. It also has:\n• $5,000 unrealized gain on available-for-sale securities\n• $2,000 FX translation loss\n\nWhat is Comprehensive Income for the period?',
+    answer: 83000,
+    unit: '$',
+    hint: 'Comprehensive Income = Net Income + Other Comprehensive Income (OCI) items.',
+    explanation: `Calculation:
+Comprehensive Income = $80,000 + $3,000 = $83,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Calculate Other Comprehensive Income (OCI):
+   • Unrealized gain on AFS securities: +$5,000
+   • FX translation loss: -$2,000
+   → Net OCI = $5,000 - $2,000 = $3,000
+
+2. Total Comprehensive Income:
+   • Net Income: $80,000
+   • Add OCI: +$3,000
+   → Comprehensive Income = $83,000
+
+Key Points:
+• Comprehensive Income includes both Net Income and OCI items
+• OCI captures unrealized gains/losses that bypass the income statement
+• AFS securities and FX translation adjustments are common OCI components`,
+    learnContent: {
+      concept: 'Comprehensive Income equals Net Income plus Other Comprehensive Income (OCI), which includes unrealized gains/losses like AFS securities and foreign exchange translation adjustments.',
+      formula: 'Comprehensive Income = Net Income + Unrealized Gains − Unrealized Losses',
+      example: '$100K NI + $4K OCI gain − $1K FX loss = $103K\n$75K NI + $2K pension gain = $77K\n$90K NI − $3K AFS loss + $1K FX gain = $88K'
+    }
+  },
+  {
+    id: 'acc-medium-49',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Statement of Comprehensive Income – Adjustments',
+    description: 'A firm has:\n• Net Income = $120,000\n• $10,000 AFS gain, $4,000 FX loss, and $3,000 cash flow hedge loss\n• $5,000 of prior year unrealized loss reclassified to Net Income this year\n\nWhat is Comprehensive Income this year?',
+    answer: 123000,
+    unit: '$',
+    hint: 'Only current-year OCI items count toward comprehensive income. Reclassification has already entered Net Income.',
+    explanation: `Calculation:
+Comprehensive Income = $120,000 + $3,000 = $123,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Calculate Current-Year OCI:
+   • AFS gain: +$10,000
+   • FX loss: -$4,000
+   • Cash flow hedge loss: -$3,000
+   → Net current OCI = $10,000 - $4,000 - $3,000 = $3,000
+
+2. Reclassification Analysis:
+   • Prior year OCI reclassified: $5,000
+   → This amount already included in Net Income, do not double-count
+
+3. Total Comprehensive Income:
+   • Net Income: $120,000
+   • Add current OCI: +$3,000
+   → Comprehensive Income = $123,000
+
+Key Points:
+• Only current-period OCI items affect current comprehensive income
+• Reclassified amounts from prior OCI are already in Net Income
+• Avoid double-counting reclassifications in comprehensive income calculation`,
+    learnContent: {
+      concept: 'Comprehensive Income only includes current-year OCI items that have not yet been reclassified to Net Income. Reclassified items are already captured in Net Income.',
+      formula: 'Comprehensive Income = Net Income + Net OCI Adjustments (excluding reclassified)',
+      example: '$90K NI + $8K OCI − $1K FX loss = $97K\n$110K + $2K pension + $1K FX = $113K\n$85K NI + $5K current OCI (ignore $2K reclassified) = $90K'
+    }
+  },
+  {
+    id: 'acc-hard-25',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Statement of Comprehensive Income – Complex Walk',
+    description: 'A company has:\n• Net Income = $140,000\n• $6,000 AFS gain, $3,000 FX loss, $4,000 pension gain\n• $7,000 OCI loss from prior year reclassified into Net Income this year\n\nWhat is total Comprehensive Income this year?',
+    answer: 147000,
+    unit: '$',
+    hint: 'Only new unrealized OCI items affect current Comprehensive Income. Reclassified items already appear in Net Income.',
+    explanation: `Calculation:
+Comprehensive Income = $140,000 + $7,000 = $147,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Analyze Current-Year OCI Components:
+   • AFS gain: +$6,000
+   • FX loss: -$3,000
+   • Pension gain: +$4,000
+   → Net current OCI = $6,000 - $3,000 + $4,000 = $7,000
+
+2. Reclassification Treatment:
+   • Prior year OCI loss reclassified: $7,000
+   → This $7,000 loss is now part of the $140,000 Net Income
+   → Do not adjust comprehensive income for reclassifications
+
+3. Total Comprehensive Income:
+   • Net Income (includes reclassified items): $140,000
+   • Add current-year OCI: +$7,000
+   → Comprehensive Income = $147,000
+
+Key Points:
+• Current comprehensive income includes Net Income plus new OCI items
+• Reclassified OCI from prior years is already embedded in current Net Income
+• Separate current-year unrealized items from reclassification adjustments`,
+    learnContent: {
+      concept: 'Comprehensive Income equals Net Income plus current OCI changes (unrealized items), excluding reclassified items that are already captured in Net Income.',
+      formula: 'Comprehensive Income = Net Income + OCI (excluding reclassifications)',
+      example: '$120K + $5K FX − $2K AFS loss = $123K\n$100K + $2K OCI − $0 = $102K\n$95K NI + $8K current OCI (ignore $3K reclassified) = $103K'
+    }
+  },
   {
     id: 'acc-gm-3',
     track: 'accounting',
