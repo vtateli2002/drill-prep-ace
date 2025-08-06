@@ -3262,5 +3262,291 @@ How much revenue is recognized by the end of April?`,
       formula: 'NCI = Sub equity × (1 – % owned)',
       example: '20% minority, $500K equity → $100K NCI\n10% minority, $900K equity → $90K NCI'
     }
+  },
+  {
+    id: 'acc-hard-173',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Step-Up Allocation and DTL Creation',
+    description: `HavenSteel – Asset Allocation from Acquisition
+
+HavenSteel acquired Keystone Metals for $800,000.
+
+The fair value of net assets acquired was $600,000, consisting of:
+
+Cash: $50,000
+
+Inventory: $150,000
+
+Intangibles: $100,000
+
+The remaining portion was allocated to PP&E
+
+The tax basis of PP&E was $200,000, and the tax rate is 25%.
+
+📊 Financial Summary:
+
+Purchase Price: $800,000
+
+Fair Value of Net Assets: $600,000
+
+Cash: $50,000
+
+Inventory: $150,000
+
+Intangibles: $100,000
+
+Tax Basis of PP&E: $200,000
+
+Tax Rate: 25%
+
+What deferred tax liability is created from the basis difference in PP&E?`,
+    answer: 25000,
+    unit: '$',
+    hint: 'You must first compute the fair value of PP&E.',
+    explanation: `Total net assets = $600,000
+
+Cash + Inventory + Intangibles = 50K + 150K + 100K = 300K
+
+Therefore, PP&E fair value = 600K – 300K = 300K
+
+Book Basis = 300K; Tax Basis = 200K → Step-up = 100K
+
+DTL = 100K × 25% = 25,000`,
+    learnContent: {
+      concept: 'Step-ups arise in acquisitions when fair value exceeds tax basis. PP&E fair value must often be backed into by subtracting other known assets. Deferred Tax Liabilities arise when book depreciation > tax depreciation.',
+      formula: 'DTL = (Fair Value – Tax Basis) × Tax Rate\nFair Value of PP&E = FV of Net Assets – Other FV Assets',
+      example: '🏭 SteelCore buys net assets at 900K, known assets = 400K, PP&E tax = 350K → PP&E FV = 500K → DTL = 37.5K\n⚙️ Toolr buys for 1M, net assets = 700K, known assets = 400K, PP&E tax = 250K → PP&E FV = 300K → DTL = 12.5K\n🧱 BrikTech net assets = 500K, other assets = 250K, PP&E tax = 150K → FV = 250K → DTL = 25K'
+    }
+  },
+  {
+    id: 'acc-hard-174',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Multi-Line CFO Walk from WC Changes',
+    description: `FerroNova – Working Capital and Depreciation Timing
+
+FerroNova reported $100,000 in Net Income.
+
+During the year:
+
+Accounts Receivable increased by $40,000 due to delayed customer payments
+
+Inventory decreased by $25,000 as the company ran down safety stock
+
+Prepaid expenses increased by $30,000
+
+Accounts Payable decreased by $10,000
+
+Accrued expenses increased by $15,000
+
+📊 Financial Summary:
+
+Net Income: $100,000
+
+AR ↑ $40,000
+
+Inventory ↓ $25,000
+
+Prepaid ↑ $30,000
+
+A/P ↓ $10,000
+
+Accrued ↑ $15,000
+
+What is cash flow from operations?`,
+    answer: 60000,
+    unit: '$',
+    hint: 'Think about which WC changes are sources vs. uses of cash.',
+    explanation: `Start from NI = 100K
+
+AR ↑ = –40K
+
+Inventory ↓ = +25K
+
+Prepaid ↑ = –30K
+
+A/P ↓ = –10K
+
+Accrued ↑ = +15K
+
+CFO = 100 – 40 + 25 – 30 – 10 + 15 = 60,000`,
+    learnContent: {
+      concept: 'AR increase = use of cash. Inventory decrease = source of cash. Prepaids increase = use of cash. Accounts payable decrease = use of cash. Accrued increase = source of cash.',
+      formula: 'CFO = Net Income ± ∆WC',
+      example: '🛠️ FixrTech NI = 80K, AR ↑ 20K, Inventory ↓ 10K, A/P ↓ 5K → CFO = 65K\n🔋 VoltEdge NI = 120K, Prepaid ↑ 30K, A/P ↑ 10K, Accrued ↑ 10K → CFO = 110K\n🧾 Statix NI = 70K, AR ↑ 25K, Accrued ↓ 5K, Inventory ↓ 10K → CFO = 50K'
+    }
+  },
+  {
+    id: 'acc-hard-175',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Cash Flow Impact of Lease Reclassification',
+    description: `Strathmore – Lease Transition Effects
+
+Strathmore previously had a long-term lease treated as operating, with annual rent payments of $80,000.
+
+Due to ASC 842, the lease was reclassified as a finance lease, and the company recorded:
+
+Depreciation expense of $60,000
+
+Interest expense of $20,000
+
+Assume the company's Net Income for the year was $100,000.
+
+📊 Financial Summary:
+
+Rent Expense (prior method): $80,000
+
+Depreciation: $60,000
+
+Interest Expense: $20,000
+
+Net Income: $100,000
+
+What is the cash flow from operations after lease reclassification?`,
+    answer: 160000,
+    unit: '$',
+    hint: 'Interest is already included in Net Income. Add back depreciation.',
+    explanation: `Start with Net Income = 100K
+
+Depreciation (non-cash) = +60K
+
+Interest is already included in Net Income
+
+CFO = 100 + 60 = 160,000`,
+    learnContent: {
+      concept: 'Finance leases increase depreciation and interest. Depreciation is non-cash → added back. CFO rises under finance lease since rent was fully operating before.',
+      formula: 'CFO = Net Income + Depreciation',
+      example: '🏢 LeaseMax switches to finance lease: NI = 90K, Dep = 50K → CFO = 140K\n🧾 EquipFlow NI = 70K, Dep = 40K → CFO = 110K\n📊 OfficeBase NI = 120K, Dep = 60K → CFO = 180K'
+    }
+  },
+  {
+    id: 'acc-hard-176',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Asset Impairment and Restructuring Charges',
+    description: `Rexa Systems – Non-Cash Charges and Adjustments
+
+Rexa reported $75,000 in Net Income.
+
+During the year, it incurred:
+
+A non-cash impairment charge of $30,000
+
+Restructuring charges of $20,000, of which $15,000 was paid in cash
+
+A gain on sale of equipment of $10,000
+
+📊 Financial Summary:
+
+Net Income: $75,000
+
+Impairment: $30,000
+
+Restructuring: $20,000 (15K cash)
+
+Gain on Sale: $10,000
+
+What is cash flow from operations?`,
+    answer: 120000,
+    unit: '$',
+    hint: 'Add back non-cash charges, subtract gain on sale.',
+    explanation: `NI = 75K
+
+Impairment = +30K (non-cash)
+
+Restructuring = 5K add-back (20K – 15K paid)
+
+Gain on sale = –10K
+
+CFO = 75 + 30 + 5 – 10 = 120,000`,
+    learnContent: {
+      concept: 'Impairments are non-cash → added back. Partial cash restructuring → only unpaid portion added back. Gains on sale → subtracted from CFO (non-operating).',
+      formula: 'CFO = NI + Non-cash Expenses – Non-operating Gains',
+      example: '🧨 DeltaPipe NI = 50K, impairment = 20K, gain = 5K → CFO = 65K\n🧼 CleanForge NI = 40K, restructuring 25K (5K unpaid) → add 5K\n🏭 ForgeMark NI = 80K, impairment 40K, cash restructure 10K/25K → CFO = 135K'
+    }
+  },
+  {
+    id: 'acc-hard-177',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Inventory Prepayment and FX Loss Impact',
+    description: `Graviton Corp – Operating vs. Non-Cash Flow Impacts
+
+Graviton paid $200,000 upfront for inventory.
+
+Only $150,000 of it was sold and recorded in COGS.
+
+Separately, Graviton recorded a $10,000 FX loss from revaluing a foreign subsidiary.
+
+Net Income was $90,000.
+
+📊 Financial Summary:
+
+Net Income: $90,000
+
+Inventory Paid: $200,000
+
+Inventory Used (COGS): $150,000
+
+FX Loss: $10,000
+
+What is cash flow from operations?`,
+    answer: 50000,
+    unit: '$',
+    hint: 'Unutilized inventory increases working capital. FX loss is non-cash.',
+    explanation: `Inventory increase = 200K – 150K = 50K use of cash
+
+FX loss = +10K (non-cash add-back)
+
+CFO = 90 - 50 + 10 = 50,000`,
+    learnContent: {
+      concept: 'Inventory builds are cash uses. FX losses are non-cash - added back. COGS does not match payment timing in CFO.',
+      formula: 'CFO = NI - Delta Inventory + Non-cash Losses',
+      example: '🌎 Intellia NI = 80K, inv ↑ 30K, FX loss = 5K → CFO = 55K\n🔄 Orbitronics NI = 100K, inv ↑ 70K, FX loss = 10K → CFO = 40K\n📦 GlobalPack NI = 120K, inv ↑ 100K, FX loss = 0 → CFO = 20K'
+    }
+  },
+  {
+    id: 'acc-hard-178',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Accrued Bonus Reversal and Payable Timing',
+    description: `NovaLend – WC and Accrual Reversal
+
+At the start of the year, NovaLend had $50,000 in accrued bonuses from the prior year.
+
+During the year:
+
+It paid out the full $50,000
+
+It also accrued a new $70,000 for year-end bonuses
+
+Net Income was $90,000
+
+📊 Financial Summary:
+
+Beginning Accrual: $50,000
+
+Accrual Paid: $50,000
+
+New Accrual: $70,000
+
+Net Income: $90,000
+
+What is NovaLend's cash flow from operations?`,
+    answer: 160000,
+    unit: '$',
+    hint: 'Beginning accrual paid → no impact. New accrual unpaid → CFO increase.',
+    explanation: `Payment of prior year bonus = no CFO effect
+
+New accrual (not paid) = +70K
+
+CFO = 90 + 70 = 160,000`,
+    learnContent: {
+      concept: 'Accruals paid = no impact (already expensed). New unpaid accruals = source of cash. Cash flow ignores timing of expense recognition vs. payment.',
+      formula: 'CFO = NI + Increase in Accrued Liabilities',
+      example: '💼 Paystack NI = 60K, new accrual ↑ 20K → CFO = 80K\n🧮 Ledgerly NI = 100K, paid old accrual = 30K, new = 40K → CFO = 140K\n🏦 Fundora NI = 75K, accrual ↑ 25K → CFO = 100K'
+    }
   }
 ];
