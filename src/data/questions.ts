@@ -1171,7 +1171,26 @@ What is the company's total current liabilities?`,
     answer: 30000,
     unit: '$',
     hint: 'Add up only the short-term obligations due within 12 months.',
-    explanation: 'Current liabilities include Accounts Payable, Accrued Expenses, and Short-Term Debt. Long-Term Debt and Deferred Tax Liabilities are excluded because they are not due in the current year. $12,000 + $8,000 + $10,000 = $30,000',
+    explanation: `Current liabilities include Accounts Payable, Accrued Expenses, and Short-Term Debt. Long-Term Debt and Deferred Tax Liabilities are excluded because they are not due in the current year. $12,000 + $8,000 + $10,000 = $30,000
+
+**Understanding Current Liabilities Classification**
+
+This company's liability structure demonstrates the fundamental distinction between current and non-current obligations, which is critical for working capital management and liquidity assessment.
+
+**Current Liability Components:**
+• **Accounts Payable ($12,000)** - Trade creditors for goods/services received
+• **Accrued Expenses ($8,000)** - Expenses incurred but not yet paid (wages, utilities, interest)
+• **Short-Term Debt ($10,000)** - Borrowings due within 12 months
+
+**Non-Current Exclusions:**
+• **Long-Term Debt ($40,000)** - Excluded as maturity exceeds one year
+• **Deferred Tax Liability ($5,000)** - Excluded as timing differences typically reverse over multiple periods
+
+**Professional Analysis:**
+The current liability total of $30,000 represents the company's immediate liquidity obligations. This figure is essential for calculating working capital, current ratio, and quick ratio - key metrics that creditors and investors use to evaluate short-term financial health.
+
+**Calculation:**
+$12,000 (A/P) + $8,000 (Accrued) + $10,000 (Short-Term Debt) = **$30,000**`,
     learnContent: {
       concept: 'Current liabilities represent a company\'s obligations that are expected to be settled within one year. Understanding what qualifies as a short-term liability is essential for liquidity analysis.',
       formula: 'Current Liabilities = A/P + Accrued Expenses + Short-Term Debt',
