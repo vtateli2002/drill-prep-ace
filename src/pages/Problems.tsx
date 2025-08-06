@@ -57,12 +57,6 @@ const Problems = () => {
         label: 'Hard',
         gradient: 'from-orange-500 to-orange-600'
       },
-      'interview_ready': { 
-        color: 'bg-red-500 text-white border-red-400', 
-        icon: Crown, 
-        label: 'Interview Ready',
-        gradient: 'from-red-500 to-red-600'
-      }
     };
     return configs[difficulty];
   };
@@ -73,7 +67,7 @@ const Problems = () => {
 
   // Use all questions directly without pre-filtering
   const tracks: Track[] = ['accounting', 'valuation', 'ma', 'lbo'];
-  const difficulties: Difficulty[] = ['easy', 'medium', 'hard', 'interview_ready'];
+  const difficulties: Difficulty[] = ['easy', 'medium', 'hard'];
 
   const allQuestions = QUESTIONS;
 

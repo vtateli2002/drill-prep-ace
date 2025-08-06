@@ -89,67 +89,42 @@ export const useDailyChallenge = (): UseDailyChallengeReturn => {
         challenge.question_ids.forEach((qId: string) => recentQuestionIds.add(qId));
       });
 
-      // Define required tracks and difficulties for daily challenge
-      const requiredTracks = ['accounting', 'valuation', 'lbo', 'ma'];
-      const requiredDifficulties = ['easy', 'medium', 'hard', 'interview_ready'];
+      // Define required difficulties for daily challenge: 2 easy, 1 medium, 1 hard
+      const requiredQuestionCounts = [
+        { difficulty: 'easy', count: 2 },
+        { difficulty: 'medium', count: 1 },
+        { difficulty: 'hard', count: 1 }
+      ];
 
-      // Get questions by track and difficulty
-      const questionsByTrack: { [key: string]: any[] } = {};
+      // Get questions by difficulty and track
       const questionsByDifficulty: { [key: string]: any[] } = {};
       
       questions.forEach(question => {
-        if (!questionsByTrack[question.track]) {
-          questionsByTrack[question.track] = [];
-        }
         if (!questionsByDifficulty[question.difficulty]) {
           questionsByDifficulty[question.difficulty] = [];
         }
-        questionsByTrack[question.track].push(question);
         questionsByDifficulty[question.difficulty].push(question);
       });
 
       const selectedQuestions: string[] = [];
       const usedQuestions = new Set<string>();
 
-      // First, select one question from each track
-      for (const track of requiredTracks) {
-        const trackQuestions = questionsByTrack[track] || [];
-        const availableQuestions = trackQuestions.filter(q => 
+      // Select questions according to the required difficulty distribution
+      for (const requirement of requiredQuestionCounts) {
+        const difficultyQuestions = questionsByDifficulty[requirement.difficulty] || [];
+        const availableQuestions = difficultyQuestions.filter(q => 
           !recentQuestionIds.has(q.id) && !usedQuestions.has(q.id)
         );
         
-        if (availableQuestions.length > 0) {
-          const randomQuestion = availableQuestions[Math.floor(Math.random() * availableQuestions.length)];
-          selectedQuestions.push(randomQuestion.id);
-          usedQuestions.add(randomQuestion.id);
+        // Select the required number of questions for this difficulty
+        for (let i = 0; i < requirement.count && availableQuestions.length > 0; i++) {
+          const randomIndex = Math.floor(Math.random() * availableQuestions.length);
+          const selectedQuestion = availableQuestions.splice(randomIndex, 1)[0];
+          selectedQuestions.push(selectedQuestion.id);
+          usedQuestions.add(selectedQuestion.id);
         }
       }
 
-      // Then ensure we have one of each difficulty, replacing if needed
-      for (const difficulty of requiredDifficulties) {
-        const hasThisDifficulty = selectedQuestions.some(qId => {
-          const question = questions.find(q => q.id === qId);
-          return question?.difficulty === difficulty;
-        });
-
-        if (!hasThisDifficulty) {
-          const difficultyQuestions = questionsByDifficulty[difficulty] || [];
-          const availableQuestions = difficultyQuestions.filter(q => 
-            !recentQuestionIds.has(q.id) && !usedQuestions.has(q.id)
-          );
-          
-          if (availableQuestions.length > 0) {
-            const randomQuestion = availableQuestions[Math.floor(Math.random() * availableQuestions.length)];
-            // Replace a question if we already have 4, otherwise add
-            if (selectedQuestions.length >= 4) {
-              selectedQuestions[Math.floor(Math.random() * selectedQuestions.length)] = randomQuestion.id;
-            } else {
-              selectedQuestions.push(randomQuestion.id);
-            }
-            usedQuestions.add(randomQuestion.id);
-          }
-        }
-      }
 
       // Ensure we have exactly 4 questions
       if (selectedQuestions.length !== 4) {

@@ -154,9 +154,9 @@ const Profile = () => {
                 {/* XP by Difficulty */}
                 <div className="space-y-4">
                   <h3 className="font-semibold text-foreground">XP by Difficulty</h3>
-                  {['easy', 'medium', 'hard', 'interview_ready'].map((difficulty) => {
+                  {['easy', 'medium', 'hard'].map((difficulty) => {
                     const xp = difficultyXP[difficulty as keyof typeof difficultyXP] || 0;
-                    const displayName = difficulty === 'interview_ready' ? 'Interview Ready' : difficulty.charAt(0).toUpperCase() + difficulty.slice(1);
+                    const displayName = difficulty.charAt(0).toUpperCase() + difficulty.slice(1);
                     return (
                       <div key={difficulty} className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
                         <span className="text-foreground">{displayName}</span>

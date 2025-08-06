@@ -49,19 +49,18 @@ const DailyChallengeStandalone = () => {
       case 'easy': return 'bg-green-100 text-green-800 border-green-200';
       case 'medium': return 'bg-yellow-100 text-yellow-800 border-yellow-200';
       case 'hard': return 'bg-orange-100 text-orange-800 border-orange-200';
-      case 'interview_ready': return 'bg-red-100 text-red-800 border-red-200';
+      
       default: return 'bg-gray-100 text-gray-800 border-gray-200';
     }
   };
 
   const formatDifficulty = (difficulty: string) => {
-    return difficulty === 'interview_ready' ? 'Interview Ready' : 
-           difficulty.charAt(0).toUpperCase() + difficulty.slice(1);
+    return difficulty.charAt(0).toUpperCase() + difficulty.slice(1);
   };
 
   const calculateTotalXP = () => {
     if (!todaysChallenge) return 0;
-    const baseXP = { easy: 10, medium: 20, hard: 30, interview_ready: 50 };
+    const baseXP = { easy: 10, medium: 20, hard: 30 };
     return todaysChallenge.reduce((total, q) => {
       return total + (baseXP[q.difficulty as keyof typeof baseXP] || 0) * 2; // 2x multiplier
     }, 0);
@@ -92,7 +91,7 @@ const DailyChallengeStandalone = () => {
             <h1 className="text-3xl font-bold text-foreground">Daily Challenge</h1>
           </div>
           <p className="text-muted-foreground text-lg">
-            Complete 4 questions from different tracks and difficulties for 2x XP bonus
+            Complete 4 questions (2 easy, 1 medium, 1 hard) for 2x XP bonus
           </p>
         </div>
 
@@ -134,7 +133,7 @@ const DailyChallengeStandalone = () => {
                 <Target className="h-16 w-16 text-muted-foreground mx-auto mb-6" />
                 <h2 className="text-2xl font-bold text-foreground mb-4">Ready for Today's Challenge?</h2>
                 <p className="text-muted-foreground mb-6">
-                  Generate 4 unique questions from different tracks and earn double XP!
+                  Generate 4 questions (2 easy, 1 medium, 1 hard) and earn double XP!
                 </p>
                 <Button onClick={handleGenerateChallenge} size="lg" className="w-full">
                   <Zap className="mr-2 h-5 w-5" />

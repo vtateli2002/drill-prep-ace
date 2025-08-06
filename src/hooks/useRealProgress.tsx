@@ -14,7 +14,6 @@ export interface DifficultyStats {
   easy: number;
   medium: number;
   hard: number;
-  interview_ready: number;
 }
 
 export const useRealProgress = () => {
@@ -29,8 +28,7 @@ export const useRealProgress = () => {
   const [difficultyXP, setDifficultyXP] = useState<DifficultyStats>({
     easy: 0,
     medium: 0,
-    hard: 0,
-    interview_ready: 0
+    hard: 0
   });
 
   useEffect(() => {
@@ -58,8 +56,7 @@ export const useRealProgress = () => {
     const newDifficultyXP: DifficultyStats = {
       easy: 0,
       medium: 0,
-      hard: 0,
-      interview_ready: 0
+      hard: 0
     };
 
     correctlySolved.forEach(question => {

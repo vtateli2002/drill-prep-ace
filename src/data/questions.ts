@@ -1303,23 +1303,6 @@ Key Points:
     }
   },
 
-  // ACCOUNTING - Interview Ready - BETA QUESTIONS
-  {
-    id: 'acc-interview-1',
-    track: 'accounting',
-    difficulty: 'interview_ready',
-    title: 'Beta - Advanced CFO Calculation',
-    description: 'Adjust Net Income = $200 to Cash Flow from Operations given: D&A = $40, Change in Working Capital = -$25, Taxes Paid (vs. Tax Expense) difference = $15',
-    answer: 250,
-    unit: '$',
-    hint: 'Add back D&A, adjust for WC change, and consider the cash vs. accrual tax difference',
-    explanation: 'CFO = $200 + $40 + $25 - $15 = $250 (negative WC change adds cash, tax timing difference reduces cash)',
-    learnContent: {
-      concept: 'Advanced CFO considers timing differences between accrual accounting and cash flows.',
-      formula: 'CFO = NI + D&A + WC Changes + Tax Timing Adjustments',
-      example: 'Complex CFO calculations require careful attention to cash vs. accrual timing differences'
-    }
-  },
 
   // VALUATION - Easy - BETA QUESTIONS
   {
@@ -1375,23 +1358,6 @@ Key Points:
     }
   },
 
-  // VALUATION - Interview Ready - BETA QUESTIONS
-  {
-    id: 'val-interview-1',
-    track: 'valuation',
-    difficulty: 'interview_ready',
-    title: 'Beta - Implied Share Price Calculation',
-    description: 'Calculate implied share price: Enterprise Value = $1000, Total Debt = $200, Cash = $50, Shares Outstanding = 10',
-    answer: 85,
-    unit: '$',
-    hint: 'First calculate Equity Value (EV - Debt + Cash), then divide by shares',
-    explanation: 'Equity Value = $1000 - $200 + $50 = $850. Price per Share = $850 / 10 = $85',
-    learnContent: {
-      concept: 'Share price is derived by converting Enterprise Value to Equity Value and dividing by shares.',
-      formula: 'Share Price = (EV - Net Debt) / Shares Outstanding',
-      example: 'EV $2B, net debt $500M, 100M shares → Price = ($2B - $500M) / 100M = $15/share'
-    }
-  },
 
   // LBO - Easy - BETA QUESTIONS
   {
@@ -1447,23 +1413,6 @@ Key Points:
     }
   },
 
-  // LBO - Interview Ready - BETA QUESTIONS
-  {
-    id: 'lbo-interview-1',
-    track: 'lbo',
-    difficulty: 'interview_ready',
-    title: 'Beta - LBO IRR Calculation',
-    description: 'Calculate IRR: Entry Investment = $800, Exit Value = $1400, Hold Period = 4 years, No interim cash flows',
-    answer: 15.09,
-    unit: '%',
-    hint: 'IRR formula: (Exit Value / Entry Value)^(1/years) - 1',
-    explanation: 'IRR = ($1400 / $800)^(1/4) - 1 = (1.75)^0.25 - 1 = 0.1509 = 15.09%',
-    learnContent: {
-      concept: 'IRR measures the annualized return rate that makes NPV equal to zero.',
-      formula: 'IRR = (Exit Value / Entry Value)^(1/n) - 1',
-      example: '$100M investment → $300M exit in 5 years = (3.0)^0.2 - 1 = 24.6% IRR'
-    }
-  },
 
   // M&A - Easy - BETA QUESTIONS
   {
@@ -1519,23 +1468,6 @@ Key Points:
     }
   },
 
-  // M&A - Interview Ready - BETA QUESTIONS
-  {
-    id: 'ma-interview-1',
-    track: 'ma',
-    difficulty: 'interview_ready',
-    title: 'Beta - Pro Forma EPS with Synergies',
-    description: 'Calculate Pro Forma EPS: Combined Earnings = $300, Synergies = $50, Interest Savings = $10, Combined Shares = 100',
-    answer: 3.6,
-    unit: '$',
-    hint: 'Pro Forma EPS = (Combined Earnings + Synergies + Interest Savings) / Combined Shares',
-    explanation: 'Pro Forma EPS = ($300 + $50 + $10) / 100 = $360 / 100 = $3.60',
-    learnContent: {
-      concept: 'Pro forma analysis includes synergies and financing benefits from the transaction.',
-      formula: 'Pro Forma EPS = (Combined Earnings + Synergies + Financing Benefits) / Pro Forma Shares',
-      example: 'Including $100M cost synergies and $20M interest savings can significantly improve deal economics'
-    }
-  },
   {
     id: 'acc-easy-21',
     track: 'accounting',
