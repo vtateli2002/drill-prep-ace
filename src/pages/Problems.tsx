@@ -72,6 +72,10 @@ const Problems = () => {
   const allQuestions = QUESTIONS;
 
   // Apply filters
+  console.log('=== FILTERING DEBUG ===');
+  console.log('Selected difficulty:', selectedDifficulty);
+  console.log('Total questions:', allQuestions.length);
+  
   const filteredQuestions = allQuestions.filter(question => {
     const trackMatches = selectedTrack === 'all' || question.track === selectedTrack;
     const difficultyMatches = selectedDifficulty === 'all' || question.difficulty === selectedDifficulty;
@@ -83,8 +87,16 @@ const Problems = () => {
       (completionFilter === 'completed' && isSolved) ||
       (completionFilter === 'incomplete' && !isSolved);
     
+    // Log first few questions for debugging
+    if (allQuestions.indexOf(question) < 5) {
+      console.log(`Question ${question.id}: difficulty="${question.difficulty}", difficultyMatches=${difficultyMatches}, trackMatches=${trackMatches}, completionMatches=${completionMatches}`);
+    }
+    
     return trackMatches && difficultyMatches && completionMatches;
   });
+  
+  console.log('Filtered questions count:', filteredQuestions.length);
+  console.log('======================');
 
   // Debug logging - let's see what tracks actually exist in the data
   const uniqueTracks = [...new Set(allQuestions.map(q => q.track))];
