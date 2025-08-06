@@ -10164,5 +10164,289 @@ What is the **combined ending balance** of Treasury Stock and APIC at YE 2024?`,
       formula: 'Repurchase = Price × Qty; Excess = Price − Issue; Reissuance = Sale − Cost',
       example: 'Reissue 10k @ $20, bought @ $30 = $100k APIC loss\nBuyback 5k @ $40, issued @ $15 = $125k APIC hit\n$800k APIC - $300k excess = $500k'
     }
+  },
+
+  // Topic 62: Share Issuance Proceeds
+  {
+    id: 'acc-easy-62',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Basic Share Issuance and APIC Accounting',
+    description: `A company issues 50,000 new shares at $15 per share. The par value is $1 per share.
+
+What is the total impact on Common Stock and APIC, and what is the combined total value recorded on the balance sheet?`,
+    answer: '$750,000',
+    hint: 'Split the proceeds between par value (to Common Stock) and the remainder (to APIC).',
+    explanation: `1. Total proceeds = 50,000 × $15 = $750,000
+2. Common Stock = 50,000 × $1 = $50,000
+3. APIC = $750,000 − $50,000 = $700,000
+4. Total value recorded = $50,000 + $700,000 = $750,000`,
+    learnContent: {
+      concept: 'Share issuances are split between Common Stock (par) and APIC (excess).',
+      formula: 'Common Stock = Shares × Par; APIC = (Issue Price − Par) × Shares',
+      example: '10,000 shares @ $12, par $1 → CS = $10,000, APIC = $110,000\n5,000 shares @ $25, par $1 → CS = $5,000, APIC = $120,000\n20,000 shares @ $8, par $1 → CS = $20,000, APIC = $140,000'
+    }
+  },
+  {
+    id: 'acc-medium-62',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'APIC Impact with Multiple Issuance Tranches and Expenses',
+    description: `A company issues two tranches of stock:
+1. 40,000 shares at $20/share
+2. 30,000 shares at $25/share
+Par value = $1/share
+Issuance fees total $50,000 (paid in cash)
+
+What is the total **combined ending balance** of Common Stock and APIC recorded on the balance sheet?`,
+    answer: '$1,500,000',
+    hint: 'Compute par and APIC for both tranches, subtract issuance fees from APIC.',
+    explanation: `1. Tranche 1: Proceeds = 40,000 × $20 = $800,000
+   - Common Stock = 40,000 × $1 = $40,000
+   - APIC = $800,000 − $40,000 = $760,000
+2. Tranche 2: Proceeds = 30,000 × $25 = $750,000
+   - Common Stock = 30,000 × $1 = $30,000
+   - APIC = $750,000 − $30,000 = $720,000
+3. Combined Common Stock = $40,000 + $30,000 = $70,000
+4. Combined APIC = $760,000 + $720,000 − $50,000 (fees) = $1,430,000
+5. Combined total = $70,000 + $1,430,000 = $1,500,000`,
+    learnContent: {
+      concept: 'Fees reduce APIC, not Common Stock. Issuance proceeds split by tranche.',
+      formula: 'CS = Shares × Par; APIC = Net Proceeds − CS − Fees',
+      example: '$1M proceeds, $100k par, $50k fees → APIC = $850k\nSplit: $600k + $400k proceeds, par $1 → calculate separately then total\n$2M issue, $150k fees → APIC = $2M - CS - $150k'
+    }
+  },
+  {
+    id: 'acc-hard-62',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Issuance with Warrant Allocation and Deferred Offering Costs',
+    description: `Company raises $3M by issuing:
+- 100,000 shares at $30 each (par = $1)
+- The fair value of detachable warrants issued simultaneously = $500,000
+- $100,000 in offering expenses are paid and capitalized initially
+- These costs are amortized straight-line over 5 years (1st year only)
+
+What is the total **combined Common Stock and APIC balance** added to the balance sheet from this transaction in Year 1?`,
+    answer: '$2,480,000',
+    hint: 'Allocate warrant value out of total raised, subtract it from APIC. Subtract amortized fees for the year.',
+    explanation: `1. Gross proceeds = 100,000 × $30 = $3,000,000
+2. Warrants (equity portion) = $500,000 → allocated to APIC separately (not part of CS)
+3. Common Stock = 100,000 × $1 = $100,000
+4. APIC from shares = $3,000,000 − $100,000 (par) − $500,000 (warrants) = $2,400,000
+5. Offering costs amortized in Year 1 = $100,000 ÷ 5 = $20,000 → reduce APIC
+6. Final APIC = $2,400,000 − $20,000 = $2,380,000
+7. Total equity impact = $100,000 (CS) + $2,380,000 (APIC) = $2,480,000`,
+    learnContent: {
+      concept: 'Warrants reduce proceeds allocated to shares. Fees reduce APIC when amortized.',
+      formula: 'Gross − Par − Warrants − Fees (amortized)',
+      example: '$2M issuance + $300k warrants → $1.7M equity\nCapex fees of $50k over 5 years = $10k/year hit to APIC\n$1.5M + $200k warrants + $80k fees = net $1.22M'
+    }
+  },
+
+  // Topic 63: Debt Issued (Cash Inflow)
+  {
+    id: 'acc-easy-63',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Basic Debt Issuance and Net Cash Flow',
+    description: `A company issues $1,000,000 in bonds at face value. Issuance fees total $40,000 and are paid in cash upfront.
+
+What is the net cash inflow reported on the cash flow statement?`,
+    answer: '$960,000',
+    hint: 'Face value minus cash fees = net inflow.',
+    explanation: `1. Gross proceeds = $1,000,000
+2. Fees paid = $40,000
+3. Net cash inflow = $1,000,000 − $40,000 = $960,000`,
+    learnContent: {
+      concept: 'Debt proceeds on CFS = gross inflow less cash paid fees',
+      formula: 'Net Inflow = Face Value − Issuance Fees',
+      example: '$500k bond, $20k fees → $480k net\n$2M loan, no fees → $2M cash inflow\n$750k debt, $35k fees → $715k net'
+    }
+  },
+  {
+    id: 'acc-medium-63',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Premium Debt Issuance with Deferred Financing Costs',
+    description: `A company issues $5M in bonds at 102 (i.e., 2% premium). It pays $150,000 in fees which are capitalized.
+
+What is the total **net cash inflow from financing activities**?`,
+    answer: '$5,100,000',
+    hint: 'Premium increases proceeds. Capitalized fees do not reduce cash flow.',
+    explanation: `1. Issuance at 102 = 102% × $5M = $5.1M
+2. Capitalized fees = no impact to CFS
+3. Total cash inflow = $5,100,000`,
+    learnContent: {
+      concept: 'Premium debt issuance increases cash. Capitalized fees are non-cash.',
+      formula: 'Cash Inflow = Face × (1 + Premium %)',
+      example: '$3M @ 101 → $3.03M cash\n$1M @ 98 → $980k cash\n$2M @ 105 → $2.1M inflow'
+    }
+  },
+  {
+    id: 'acc-hard-63',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Multi-Tranche Issuance: Discounts, Fees, and Hybrid Cash Impact',
+    description: `Company issues two tranches of debt:
+1. $3M at par (100)
+2. $2M at 97 (3% discount)
+- $120,000 of fees are paid in cash
+- Another $80,000 in fees are capitalized
+
+What is the total **net cash inflow from debt issuance**?`,
+    answer: '$4,820,000',
+    hint: 'Cash inflow = proceeds from both tranches − cash-paid fees (not deferred).',
+    explanation: `1. Tranche 1: $3M at 100 = $3,000,000
+2. Tranche 2: $2M at 97 = $1,940,000
+   - 3% discount = $60,000
+3. Cash fees = $120,000 → subtract from cash
+4. Deferred fees = $80,000 → capitalized (no CFS impact)
+5. Net cash = $3,000,000 + $1,940,000 − $120,000 = $4,820,000`,
+    learnContent: {
+      concept: 'Discounts and cash fees affect CFS; capitalized fees do not.',
+      formula: 'Net Cash = Issuance Proceeds − Cash Fees Paid',
+      example: '$5M @ 98 = $4.9M; $50k fees paid → $4.85M inflow\nTwo bond tranches → compute and total\n$1M @ 95 + $500k @ 103 = $950k + $515k = $1.465M'
+    }
+  },
+
+  // Topic 64: Debt Repaid (Cash Outflow)
+  {
+    id: 'acc-easy-64',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Basic Debt Repayment (Principal Only)',
+    description: `A company repays $400,000 in loan principal at year-end. No interest is included in the payment.
+
+What is the amount recorded as a cash outflow in the financing section of the cash flow statement?`,
+    answer: '$400,000',
+    hint: 'Only principal repayments show up in the financing section. Interest is operating.',
+    explanation: `1. Debt principal repaid = $400,000
+2. No interest → entire amount is financing outflow
+3. Cash flow from financing = $400,000`,
+    learnContent: {
+      concept: 'Principal repayments reduce financing cash flow. Interest is operating.',
+      formula: 'Cash Outflow = Principal Repaid',
+      example: '$1M loan, repay $200k → CFF = $200k outflow\n$500k principal, $50k interest → only $500k goes in financing\n$300k repayment → $300k CFF outflow'
+    }
+  },
+  {
+    id: 'acc-medium-64',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Debt Repayment with Accrued Interest Split',
+    description: `A company has $2M in term debt at 8% annual interest.
+- On June 30, it repays $500,000 principal and all accrued interest to date.
+- Interest is paid in cash and there are no fees or penalties.
+
+What is the total cash outflow for this repayment, and how much is reported in the financing section?`,
+    answer: '$580,000',
+    hint: 'Split the payment into interest (operating) and principal (financing).',
+    explanation: `1. Interest = $2,000,000 × 8% × 6/12 = $80,000 (half year)
+2. Principal = $500,000
+3. Total cash = $580,000
+4. CFF = $500,000; CFO = $80,000`,
+    learnContent: {
+      concept: 'Cash flow classification depends on type: principal is financing, interest is operating.',
+      formula: 'Interest = Principal × Rate × Time',
+      example: '$1M loan, 5% interest, 6 months = $25k interest\nRepay $100k + $25k interest → $100k CFF, $25k CFO\n$3M debt, 6%, 9 months = $135k interest'
+    }
+  },
+  {
+    id: 'acc-hard-64',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Staggered Debt Repayment with Prepayment and Exit Fee',
+    description: `A firm holds $3.5M in senior term debt:
+- Scheduled repayment: $1.5M at year-end
+- Mid-year, prepays $500,000 toward next year's installment
+- Pays $100,000 early termination fee
+
+What is the total **financing cash outflow**, and how much does this reduce debt on the balance sheet?`,
+    answer: '$2,100,000',
+    hint: 'Sum the actual cash flows in financing. Only principal reduces balance sheet debt.',
+    explanation: `1. Year-end repayment = $1.5M
+2. Prepayment = $500,000
+3. Exit fee = $100,000 (cash, financing section)
+4. Total CFF outflow = $1.5M + $500k + $100k = $2.1M
+5. Balance sheet debt reduces by $2.0M (principal only)`,
+    learnContent: {
+      concept: 'Prepayments + fees affect cash flow. Only principal reduces debt liability.',
+      formula: 'Cash Outflow = Principal + Prepayment + Fees',
+      example: 'Loan: $1M repaid + $50k prepay + $20k fee → $1.07M CFF\nDebt down only by $1.05M (principal)\n$800k + $200k + $40k = $1.04M CFF'
+    }
+  },
+
+  // Topic 65: Capitalized Financing Fees
+  {
+    id: 'acc-easy-65',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Straight-Line Amortization of Financing Fees',
+    description: `A company incurs $100,000 in financing fees when issuing a 5-year term loan. The fees are capitalized and amortized straight-line over the loan term.
+
+What is the amortization expense for Year 1, and how is it reflected in the cash flow statement?`,
+    answer: '$20,000',
+    hint: 'Divide total fees evenly over loan term; amortization is non-cash.',
+    explanation: `1. Amortization = $100,000 ÷ 5 years = $20,000
+2. Income Statement → $20,000 financing fee amortization (non-cash)
+3. Cash Flow Statement:
+   - CFO: add back $20,000 as non-cash charge
+   - No impact to CFF unless paid`,
+    learnContent: {
+      concept: 'Capitalized fees are amortized; amortization is non-cash and added back to CFO.',
+      formula: 'Amort = Fees / Term',
+      example: '$50k fees, 10-year loan → $5k/year amort\n$200k over 4 years = $50k annual add-back\n$75k fees, 3 years → $25k/year'
+    }
+  },
+  {
+    id: 'acc-medium-65',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Financing Fees on Mid-Year Loan with Amortization Split',
+    description: `Company raises a $6M term loan on July 1 with $180,000 in financing fees, amortized straight-line over 6 years.
+
+What is the financing fee amortization in Year 1, and how does it affect Net Income, the Balance Sheet, and CFS?`,
+    answer: '$15,000',
+    hint: 'Only half-year amortization in Year 1 due to July issuance. Split into IS, BS, and CFO effects.',
+    explanation: `1. Annual amortization = $180,000 ÷ 6 = $30,000
+2. Year 1 is half-year → $30,000 × 0.5 = $15,000
+3. Net Income: ↓ by $15,000 expense
+4. Balance Sheet: asset value ↓ by $15,000
+5. CFS:
+   - CFO: add back $15,000
+   - CFF: $180,000 outflow when paid`,
+    learnContent: {
+      concept: 'Mid-year fee amortization recognized proportionally. Non-cash portion affects NI and CFO.',
+      formula: 'Amort = Total / Years × Fraction of Year',
+      example: '$120k fees, 10-yr loan in Oct = $3k in Y1\nQ2 issuance → 75% of annual expense\n$90k fees, 3-yr term, Sep start = $10k Y1'
+    }
+  },
+  {
+    id: 'acc-hard-65',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Financing Fee Rollforward with Early Repayment and Accelerated Amortization',
+    description: `Company begins Year 2 with $140,000 in unamortized financing fees (4-year original term).
+- Amortized straight-line
+- In Year 2, repays the loan in full after 9 months
+
+What is the **total amortization expense** recorded in Year 2, and how does it flow through the 3 statements?`,
+    answer: '$105,000',
+    hint: 'Accelerate amortization on early repayment. Expense all remaining unamortized fees at time of extinguishment.',
+    explanation: `1. Annual amortization = $140,000 ÷ 4 = $35,000
+2. After 9 months: recognize 9/12 × $35,000 = $26,250
+3. Loan repaid → write off remaining: $140,000 − $26,250 = $113,750
+4. Total Y2 amort = $26,250 + $113,750 = $140,000
+5. Income Statement: ↓ by $140,000
+6. Balance Sheet: fees reduced to $0
+7. CFS:
+   - CFO: add back entire $140,000 as non-cash amortization
+   - CFF: any actual fee payments excluded unless new loan`,
+    learnContent: {
+      concept: 'Early repayment accelerates amortization of unamortized fees.',
+      formula: 'Total Amort = Pro-rata + Accelerated Write-off',
+      example: '$80k unamortized, paid after 1 year of 5 → $16k + $64k = $80k total\n$200k, repaid at 75% mark → recognize full balance\n$60k fees, 3-yr term, repaid Y2 → write off remainder'
+    }
   }
 ];
