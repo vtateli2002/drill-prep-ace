@@ -2446,5 +2446,165 @@ How much revenue is recognized by the end of April?`,
       formula: 'CFO = Net Income + D&A – ∆Working Capital',
       example: '$60K + $10K – $5K = $65K\n$100K + $25K + $5K = $130K'
     }
+  },
+  {
+    id: 'acc-medium-117',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Non-Controlling Interest Income Attribution',
+    description: 'A consolidated company has $100,000 of net income. 80% of the subsidiary is owned by the parent, while 20% is owned by minority shareholders. What portion of net income is attributable to non-controlling interest?',
+    answer: 20000,
+    unit: '$',
+    hint: 'Non-Controlling Income = Net Income × % Minority Ownership',
+    explanation: '$100,000 × 20% = $20,000',
+    learnContent: {
+      concept: 'Non-controlling interest represents income owed to minority shareholders in consolidated subsidiaries.',
+      formula: 'Non-Controlling Income = Total Net Income × (1 – Ownership %)',
+      example: '$80K × 30% = $24K\n$120K × 10% = $12K\n$200K × 25% = $50K'
+    }
+  },
+  {
+    id: 'acc-medium-118',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Cash Collection from Revenue and AR Movement',
+    description: 'A company reports $120,000 in revenue. Its accounts receivable increased by $10,000 over the same period. How much cash did it collect from customers?',
+    answer: 110000,
+    unit: '$',
+    hint: 'Cash = Revenue – Increase in AR',
+    explanation: 'If AR increases, some sales were not collected in cash. $120K – $10K = $110K',
+    learnContent: {
+      concept: 'Cash collections are revenue minus unpaid invoices (AR increase).',
+      formula: 'Cash Collected = Revenue – ΔAR',
+      example: '$90K – $5K = $85K\n$100K – ($15K decrease) = $115K\n$130K – $20K = $110K'
+    }
+  },
+  {
+    id: 'acc-medium-119',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Enterprise Value from Equity and Debt Values',
+    description: 'A company has a market cap of $300M, $80M in debt, $10M in preferred stock, and $30M in cash. What is the Enterprise Value?',
+    answer: 360000000,
+    unit: '$',
+    hint: 'EV = Equity + Debt + Preferred – Cash',
+    explanation: '$300M + $80M + $10M – $30M = $360M',
+    learnContent: {
+      concept: 'EV measures total firm value regardless of capital structure.',
+      formula: 'EV = Equity + Debt + Preferred + Minority Interest – Cash',
+      example: '$500M + $100M – $50M = $550M\n$200M + $50M – $20M = $230M'
+    }
+  },
+  {
+    id: 'acc-medium-120',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Tax Impact of Stock-Based Compensation (SBC)',
+    description: 'A company reports $5,000 in stock-based compensation. Its tax rate is 30%. What is the tax shield from SBC?',
+    answer: 1500,
+    unit: '$',
+    hint: 'Tax Shield = SBC × Tax Rate',
+    explanation: '$5,000 × 30% = $1,500',
+    learnContent: {
+      concept: 'SBC reduces taxable income, creating a tax shield.',
+      formula: 'Tax Shield = Expense × Tax Rate',
+      example: '$10K × 25% = $2.5K\n$8K × 20% = $1.6K\n$6K × 35% = $2.1K'
+    }
+  },
+  {
+    id: 'acc-medium-121',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Asset Impairment Adjustment',
+    description: 'An asset with book value of $60,000 is impaired and now worth $40,000. What is the impairment loss recorded?',
+    answer: 20000,
+    unit: '$',
+    hint: 'Impairment = Book Value – Fair Value',
+    explanation: '$60K – $40K = $20K',
+    learnContent: {
+      concept: 'Impairment occurs when book value > fair market value.',
+      formula: 'Loss = Carrying Value – Recoverable Amount',
+      example: '$100K – $70K = $30K\n$50K – $45K = $5K'
+    }
+  },
+  {
+    id: 'acc-medium-122',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Tangible Book Value per Share (TBVPS)',
+    description: 'A company has $1M in assets, $300K in liabilities, and $100K in goodwill. There are 100,000 shares outstanding. What is tangible book value per share?',
+    answer: 6,
+    unit: '$',
+    hint: 'TBV = (Assets – Liabilities – Goodwill) ÷ Shares',
+    explanation: '($1M – $300K – $100K) ÷ 100K = $6',
+    learnContent: {
+      concept: 'Tangible book value removes intangible assets from equity.',
+      formula: 'TBVPS = (Assets – Liabilities – Intangibles) / Shares',
+      example: '($500K – $200K – $50K)/50K = $5\n($900K – $400K – $100K)/100K = $4'
+    }
+  },
+  {
+    id: 'acc-medium-123',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Debt Service Coverage Ratio (DSCR)',
+    description: 'EBITDA: $200,000, Interest Expense: $40,000, Principal Repayment: $60,000. What is the DSCR?',
+    answer: 2,
+    unit: '×',
+    hint: 'DSCR = EBITDA / (Interest + Principal)',
+    explanation: '$200K ÷ ($40K + $60K) = 2.0x',
+    learnContent: {
+      concept: 'DSCR measures ability to service debt obligations.',
+      formula: 'DSCR = EBITDA / Total Debt Service',
+      example: '$300K ÷ $100K = 3.0x\n$180K ÷ $90K = 2.0x\n$250K ÷ $125K = 2.0x'
+    }
+  },
+  {
+    id: 'acc-medium-124',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Interest Coverage Ratio',
+    description: 'EBIT = $150,000, Interest Expense = $50,000. What is the interest coverage ratio?',
+    answer: 3,
+    unit: '×',
+    hint: 'Coverage = EBIT / Interest',
+    explanation: '$150K ÷ $50K = 3.0x',
+    learnContent: {
+      concept: 'This shows how many times a company can cover its interest payments.',
+      formula: 'Interest Coverage = EBIT / Interest',
+      example: '$120K ÷ $40K = 3.0x\n$90K ÷ $30K = 3.0x\n$160K ÷ $40K = 4.0x'
+    }
+  },
+  {
+    id: 'acc-medium-125',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Dividend Payout Ratio Calculation',
+    description: 'Net Income: $100,000, Dividends Paid: $40,000. What is the dividend payout ratio?',
+    answer: 40,
+    unit: '%',
+    hint: 'Payout Ratio = Dividends / Net Income × 100',
+    explanation: '$40K ÷ $100K = 40%',
+    learnContent: {
+      concept: 'Shows how much of net income is returned to shareholders.',
+      formula: 'Dividend Payout = (Dividends ÷ NI) × 100',
+      example: '$20K ÷ $80K = 25%\n$60K ÷ $120K = 50%'
+    }
+  },
+  {
+    id: 'acc-medium-126',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Asset Retirement Obligation (ARO) Impact',
+    description: 'A company records a $50,000 ARO liability and increases PP&E by the same amount. PP&E depreciates over 10 years. What is the annual impact to depreciation from the ARO?',
+    answer: 5000,
+    unit: '$',
+    hint: 'ARO adds to PP&E → Depreciated over time',
+    explanation: '$50,000 ÷ 10 = $5,000 per year',
+    learnContent: {
+      concept: 'ARO inflates PP&E and increases depreciation expense.',
+      formula: 'Depreciation = ARO ÷ Useful Life',
+      example: '$60K ÷ 15 = $4K\n$100K ÷ 20 = $5K'
+    }
   }
 ];
