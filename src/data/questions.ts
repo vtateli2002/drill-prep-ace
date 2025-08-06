@@ -359,7 +359,87 @@ export const QUESTIONS: Question[] = [
     }
   },
 
-  // ACCOUNTING - Hard - BETA QUESTIONS
+  // ACCOUNTING - Hard
+  {
+    id: 'acc-hard-148',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Amortization & Deferred Revenue Walk',
+    description: 'Thorne Systems – Year-End CFO Adjustments\n\nThorne Systems recognized $50,000 in Net Income this year.\nDuring the year, it recorded $100,000 of amortization on acquired customer contracts, amortized over 5 years.\nIt also collected $120,000 in cash upfront for 12-month service contracts, but only recognized $80,000 as revenue on the income statement.\nAssume a 25% tax rate.\n\nWhat is the adjustment to CFO from these items?',
+    answer: 60000,
+    unit: '$',
+    hint: 'Add back amortization and include the increase in deferred revenue.',
+    explanation: 'Amortization = 100,000 ÷ 5 = 20,000 → non-cash → add back\nDeferred revenue increase = 120,000 – 80,000 = 40,000 → add to CFO\nCFO adjustment = 20,000 + 40,000 = 60,000',
+    learnContent: {
+      concept: 'Amortization is non-cash and added back to CFO. Deferred revenue means cash was collected but revenue not yet recognized. Both create positive CFO adjustments under the indirect method.',
+      formula: 'CFO Adjustment = Amortization + (Cash Collected – Revenue Recognized)',
+      example: 'MedSys amortizes $50K and defers $50K in SaaS contracts → CFO = 10K + 50K = 60K\nBoxPeak amortizes $80K, recognizes $90K of $120K collected → CFO = 16K + 30K = 46K\nNetDash amortizes $40K, defers $25K unearned revenue → CFO = 8K + 25K = 33K'
+    }
+  },
+  {
+    id: 'acc-hard-149',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Working Capital & Depreciation Roll-Forward',
+    description: 'Gravix Lighting – Year-End Working Capital Walk\n\nGravix Lighting earned $70,000 in Net Income this year.\nIn Q4, Accounts Receivable increased by $25,000, and Inventory fell by $10,000 as older SKUs were cleared.\nThe company prepaid $5,000 in annual software licenses.\nAccounts Payable increased by $20,000, and it also paid down $8,000 of accrued employee bonuses.\nDepreciation was $15,000.\n\nWhat is Cash Flow from Operations?',
+    answer: 77000,
+    unit: '$',
+    hint: 'Start from NI, add back non-cash D&A, and adjust for working capital.',
+    explanation: 'CFO = 70,000 + 15,000 – 25,000 + 10,000 – 5,000 + 20,000 – 8,000 = 77,000',
+    learnContent: {
+      concept: 'Depreciation is non-cash. AR increase = delayed customer payment → cash out. Inventory decrease = product sold → cash in. Prepaids increase = future services paid now → cash out. AP increase = vendor payment delayed → cash in. Accruals decrease = bonuses paid → cash out.',
+      formula: 'CFO = NI + D&A – ∆AR + ∆Inventory – ∆Prepaids + ∆AP – ∆Accruals',
+      example: 'Toolshed earns $60K, AR up $15K, AP up $25K, Dep $10K → CFO = 80K\nShopWise earns $90K, Inventory down $20K, Accruals down $10K → CFO = 100K\nBrightGrid earns $100K, Prepaids up $5K, Dep $25K → CFO = 120K'
+    }
+  },
+  {
+    id: 'acc-hard-150',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Capex + Depreciation + Gain on Sale',
+    description: 'StrikeCore – Equipment Transaction and Depreciation\n\nStrikeCore purchased $300,000 of new equipment, depreciated straight-line over 10 years.\nIt also sold an old asset with a book value of $40,000 for $70,000, recognizing a gain.\nAssume a 25% tax rate.\n\nWhat is the net CFO adjustment from these items?',
+    answer: 22500,
+    unit: '$',
+    hint: 'Depreciation is added back. Gains inflate NI → subtract them in CFO.',
+    explanation: 'Depreciation = 300,000 ÷ 10 = 30,000\nGain = 70,000 – 40,000 = 30,000 → subtract from CFO\nCFO adjustment = +30,000 (Dep) – 30,000 (Gain) = 0\nBut Net Income increased by 30,000 pre-tax → tax = 7,500\nSo CFO = +7,500 (tax) + 0 = 22,500',
+    learnContent: {
+      concept: 'Depreciation is added back. Gain on Sale is non-operating and must be subtracted from CFO. Capex goes in investing section, not CFO. Gains affect Net Income, so tax must be adjusted.',
+      formula: 'CFO = –Gain + Depreciation + Tax Impact on Gain',
+      example: 'FabWorks sells equipment for $80K (book = $50K) and books $100K Dep → CFO = 52.5K\nFleetMax gains $20K on truck sale, Dep $60K → CFO = 45K\nBrickline gains $10K, depreciation = $30K → CFO = 27.5K'
+    }
+  },
+  {
+    id: 'acc-hard-151',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Deferred Revenue + Accrued Expense + Depreciation',
+    description: 'Fresca Foods – Operating Cash Flow Drivers\n\nFresca Foods reported $40,000 in Net Income.\nThey collected $100,000 in prepaid revenue for annual catering contracts, but recognized only $60,000 of it in revenue.\nThe company incurred $50,000 in SG&A, of which $10,000 was unpaid at year-end.\nDepreciation totaled $30,000.\n\nWhat is Cash Flow from Operations?',
+    answer: 80000,
+    unit: '$',
+    hint: 'Deferred revenue and unpaid SG&A increase CFO. Add back depreciation.',
+    explanation: 'Deferred Revenue ↑ = 100K – 60K = 40K\nUnpaid SG&A = +10K\nDepreciation = +30K\nCFO = 40,000 (NI) + 40K + 10K + 30K = 80,000',
+    learnContent: {
+      concept: 'Deferred Revenue = cash received before revenue earned → add to CFO. Accrued Expenses = costs incurred but unpaid → add to CFO. Depreciation = non-cash → add to CFO.',
+      formula: 'CFO = NI + Depreciation + Deferred Revenue Increase + Accrued Expenses Increase',
+      example: 'Mealhouse defers $50K of $90K collected, accrues $15K → CFO boost = 75K\nTutorPro collects $200K, earns $150K, accrues $5K SG&A → CFO = 85K\nSmoothix earns $60K, defers $30K, Dep $20K → CFO = 110K'
+    }
+  },
+  {
+    id: 'acc-hard-152',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Goodwill Impairment + Amortization CFO Adjustments',
+    description: 'Endura Tools – Impairment and Intangible Write-downs\n\nEndura Tools amortized $100,000 of customer relationships acquired in a prior deal, using straight-line over 5 years.\nIn Year 2, they recorded an $80,000 goodwill impairment related to that acquisition.\nAssume a 25% tax rate.\n\nWhat is the CFO adjustment from these two items?',
+    answer: 100000,
+    unit: '$',
+    hint: 'Impairment is non-cash. Amortization is non-cash with a tax impact.',
+    explanation: 'Amortization = 100,000 ÷ 5 = 20,000\nGoodwill impairment = 80,000\nBoth reduce Net Income\nCFO adjustment = 20,000 (amort) + 80,000 (impairment) = 100,000',
+    learnContent: {
+      concept: 'Amortization = non-cash → add back. Goodwill Impairment = non-cash → fully add back. Tax impact from amort is already reflected in Net Income.',
+      formula: 'CFO Adjustment = Amortization + Impairment',
+      example: 'WaveTek amortizes $50K and takes $100K goodwill hit → CFO = 150K\nBioNex amortizes $60K, impairment of $40K → CFO = 100K\nClinicPro amortizes $20K, impairment of $70K → CFO = 90K'
+    }
+  },
   {
     id: 'acc-hard-1',
     track: 'accounting',
