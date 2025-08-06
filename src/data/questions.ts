@@ -4962,22 +4962,6 @@ Key Points:
     id: 'acc-medium-136',
     track: 'accounting',
     difficulty: 'medium',
-    title: 'Cash Flow Classification for Asset Sale',
-    description: 'A company sells equipment for $80,000. It had a book value of $70,000. Where and how much is reported in the cash flow statement?',
-    answer: 80000,
-    unit: '$ under investing',
-    hint: 'Focus on cash received.',
-    explanation: "**Calculation:** Sale proceeds = **$80,000 under investing activities**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Asset Sale Details**\n   - Sale price received: $80,000\n   - Book value of equipment: $70,000\n   - Gain on sale: $80,000 - $70,000 = $10,000\n\n2. **Cash Flow Statement Treatment**\n   - Investing activities (cash inflow): +$80,000\n   - This represents the actual cash received\n\n3. **Income Statement Treatment**\n   - The $10,000 gain appears on the income statement\n   - In operating cash flow, this gain is subtracted (indirect method)\n   - Prevents double-counting the cash impact\n\n**Key Points:**\n   • Cash received goes to investing activities at full amount\n   • Gains/losses appear in income but are adjusted in operating section\n   • Focus on cash received, not book value or gain\n   • Asset sales are investing activities, not operating",
-    learnContent: {
-      concept: 'Cash from asset sales is investing activity.',
-      formula: 'Sale price → Investing inflow',
-      example: 'Sell asset for $50K → Investing inflow $50K\nSell land for $100K → Investing inflow $100K'
-    }
-  },
-  {
-    id: 'acc-medium-137',
-    track: 'accounting',
-    difficulty: 'medium',
     title: 'Inventory Write-Down Impact',
     description: 'A company originally held $50,000 in inventory. Due to obsolescence, 20% of this inventory became unsellable. What is the non-cash expense recorded on the income statement?',
     answer: 10000,
@@ -4991,7 +4975,7 @@ Key Points:
     }
   },
   {
-    id: 'acc-medium-138',
+    id: 'acc-medium-137',
     track: 'accounting',
     difficulty: 'medium',
     title: 'Impairment of Intangible Assets',
@@ -5007,7 +4991,7 @@ Key Points:
     }
   },
   {
-    id: 'acc-medium-139',
+    id: 'acc-medium-138',
     track: 'accounting',
     difficulty: 'medium',
     title: 'Gain on Sale of Investment',
@@ -5023,7 +5007,7 @@ Key Points:
     }
   },
   {
-    id: 'acc-medium-140',
+    id: 'acc-medium-139',
     track: 'accounting',
     difficulty: 'medium',
     title: 'Amortization of Intangibles',
@@ -5039,7 +5023,7 @@ Key Points:
     }
   },
   {
-    id: 'acc-medium-141',
+    id: 'acc-medium-140',
     track: 'accounting',
     difficulty: 'medium',
     title: 'Minority Interest Accounting',
@@ -5055,7 +5039,7 @@ Key Points:
     }
   },
   {
-    id: 'acc-medium-142',
+    id: 'acc-medium-141',
     track: 'accounting',
     difficulty: 'medium',
     title: 'Equity Investment Accounting',
@@ -5071,7 +5055,7 @@ Key Points:
     }
   },
   {
-    id: 'acc-medium-143',
+    id: 'acc-medium-142',
     track: 'accounting',
     difficulty: 'medium',
     title: 'Deferred Tax Asset Recognition',
@@ -5087,7 +5071,7 @@ Key Points:
     }
   },
   {
-    id: 'acc-medium-144',
+    id: 'acc-medium-143',
     track: 'accounting',
     difficulty: 'medium',
     title: 'DTL from Depreciation Timing',
@@ -5103,7 +5087,7 @@ Key Points:
     }
   },
   {
-    id: 'acc-medium-145',
+    id: 'acc-medium-144',
     track: 'accounting',
     difficulty: 'medium',
     title: 'Purchase Accounting Adjustment',
@@ -5119,7 +5103,7 @@ Key Points:
     }
   },
   {
-    id: 'acc-medium-146',
+    id: 'acc-medium-145',
     track: 'accounting',
     difficulty: 'medium',
     title: 'Non-Controlling Interest on Balance Sheet',
