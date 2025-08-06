@@ -445,19 +445,27 @@ Key Points:
     answer: 5000,
     unit: '$',
     hint: 'Operating Income = Revenue - COGS - SG&A - R&D',
-    explanation: `Operating Income = Revenue - Operating Expenses
+    explanation: `Calculation:
+Operating Income = $18,000 - $13,000 = $5,000
 
-Revenue: $18,000
-Less: COGS: $7,000
-Less: SG&A: $4,000
-Less: R&D: $2,000
-Operating Income: $5,000
+• • •
 
-Operating expense categories:
-• COGS - direct costs of producing goods sold
-• SG&A - selling, general & administrative expenses  
-• R&D - research and development costs
-• Operating Income - profit from core business before interest/taxes`,
+Step-by-step breakdown:
+
+1. Starting Revenue:
+   → Total Revenue: $18,000
+
+2. Operating Expenses:
+   • COGS: $7,000
+   • SG&A: $4,000
+   • R&D: $2,000
+   → Total Operating Expenses: $13,000
+
+Key Points:
+   • COGS represents direct costs of producing goods sold
+   • SG&A covers selling, general & administrative expenses
+   • R&D includes research and development costs
+   • Operating Income shows profit from core business before interest/taxes`,
     learnContent: {
       concept: 'Operating income (OpInc) is the company\'s profit from core operations before interest and taxes.',
       formula: 'Operating Income = Revenue - COGS - SG&A - R&D',
@@ -473,18 +481,26 @@ Operating expense categories:
     answer: -1400,
     unit: '$',
     hint: 'Net Income Impact = -Depreciation × (1 - Tax Rate)',
-    explanation: `Net Income Impact = -Depreciation × (1 - Tax Rate)
+    explanation: `Calculation:
+Net Income Impact = -$2,000 + $600 = -$1,400
 
-Depreciation expense: $2,000
-Tax rate: 30%
-Tax shield benefit: $2,000 × 30% = $600
-Net income impact: -$2,000 + $600 = -$1,400
+• • •
 
-Tax impact analysis:
-• Depreciation - non-cash expense reducing taxable income
-• Tax shield - tax savings from deductible depreciation
-• Net impact - depreciation cost minus tax savings
-• Higher tax rates provide greater depreciation benefits`,
+Step-by-step breakdown:
+
+1. Depreciation Expense:
+   → Depreciation: $2,000
+
+2. Tax Impact:
+   • Tax rate: 30%
+   • Tax shield benefit: $2,000 × 30% = $600
+   → Net income impact: -$2,000 + $600 = -$1,400
+
+Key Points:
+   • Depreciation is a non-cash expense that reduces taxable income
+   • Tax shield represents tax savings from deductible depreciation
+   • Net impact equals depreciation cost minus tax savings
+   • Higher tax rates provide greater depreciation benefits`,
     learnContent: {
       concept: 'Depreciation lowers taxable income and therefore reduces taxes, but it also reduces net income.',
       formula: 'Net Income Impact = -Depreciation × (1 - Tax Rate)',
@@ -532,7 +548,27 @@ Working capital dynamics:
     answer: 12000,
     unit: '$',
     hint: 'CFO = Net Income + Depreciation - Increase in A/R + Increase in A/P',
-    explanation: 'CFO = $12,000 + $2,000 - $3,000 + $1,000 = $12,000',
+    explanation: `Calculation:
+CFO = $12,000 + $2,000 - $3,000 + $1,000 = $12,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Starting Point:
+   → Net Income: $12,000
+
+2. Adjustments:
+   • Add back Depreciation: +$2,000 (non-cash expense)
+   • Accounts Receivable increase: -$3,000 (cash tied up)
+   • Accounts Payable increase: +$1,000 (cash retained)
+   → Cash Flow from Operations: $12,000
+
+Key Points:
+   • CFO adjusts net income for non-cash expenses and working capital changes
+   • Depreciation is added back as it's a non-cash expense
+   • A/R increases use cash as customers haven't paid yet
+   • A/P increases preserve cash by delaying vendor payments`,
     learnContent: {
       concept: 'Cash Flow from Operations (CFO) adjusts net income for non-cash expenses and working capital changes.',
       formula: 'CFO = Net Income + Depreciation - Increase in A/R + Increase in A/P',
@@ -548,7 +584,28 @@ Working capital dynamics:
     answer: 1.0,
     unit: 'x',
     hint: 'Debt / Equity = (Short-term + Long-term Debt) / (Common Stock + Retained Earnings)',
-    explanation: 'Total Debt = $5,000 + $15,000 = $20,000. Total Equity = $10,000 + $10,000 = $20,000. D/E = $20,000 ÷ $20,000 = 1.0x',
+    explanation: `Calculation:
+D/E = $20,000 ÷ $20,000 = 1.0x
+
+• • •
+
+Step-by-step breakdown:
+
+1. Total Debt:
+   • Short-term Debt: $5,000
+   • Long-term Debt: $15,000
+   → Total Debt: $20,000
+
+2. Total Equity:
+   • Common Stock: $10,000
+   • Retained Earnings: $10,000
+   → Total Equity: $20,000
+
+Key Points:
+   • The ratio shows proportion of funding from debt vs. shareholder equity
+   • 1.0x means equal amounts of debt and equity financing
+   • Total Debt includes all short-term and long-term obligations
+   • Total Equity represents shareholder ownership value`,
     learnContent: {
       concept: 'The Debt-to-Equity ratio shows the proportion of a company\'s funding from debt vs. shareholder equity.',
       formula: 'Debt / Equity = (Short-term + Long-term Debt) / (Common Stock + Retained Earnings)',
@@ -564,7 +621,25 @@ Working capital dynamics:
     answer: 38000,
     unit: '$',
     hint: 'Net PPE = Gross PPE - Accumulated Depreciation',
-    explanation: 'Net PPE = $50,000 - $12,000 = $38,000',
+    explanation: `Calculation:
+Net PPE = $50,000 - $12,000 = $38,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Initial Equipment Value:
+   → Gross PPE: $50,000
+
+2. Accumulated Depreciation:
+   • Depreciation over 3 years: $12,000
+   → Net PPE: $50,000 - $12,000 = $38,000
+
+Key Points:
+   • Net PPE represents the book value of fixed assets
+   • Accumulated depreciation is the total depreciation taken over time
+   • This shows the remaining value of assets on the balance sheet
+   • Net PPE decreases as assets age and depreciate`,
     learnContent: {
       concept: 'Net PPE is the book value of fixed assets after subtracting depreciation.',
       formula: 'Net PPE = Gross PPE - Accumulated Depreciation',
@@ -580,7 +655,26 @@ Working capital dynamics:
     answer: 24000,
     unit: '$',
     hint: 'Ending RE = Beginning RE + Net Income - Dividends',
-    explanation: 'Ending RE = $20,000 + $5,000 - $1,000 = $24,000',
+    explanation: `Calculation:
+Ending RE = $20,000 + $5,000 - $1,000 = $24,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Starting Position:
+   → Beginning Retained Earnings: $20,000
+
+2. Changes During Year:
+   • Add: Net Income: +$5,000
+   • Less: Dividends Paid: -$1,000
+   → Ending Retained Earnings: $24,000
+
+Key Points:
+   • Retained earnings accumulate profits over time
+   • Net income increases retained earnings
+   • Dividend payments reduce retained earnings
+   • This represents profits reinvested in the business`,
     learnContent: {
       concept: 'Retained earnings grow with profits and shrink with dividend payments.',
       formula: 'Ending RE = Beginning RE + Net Income - Dividends',
@@ -596,7 +690,26 @@ Working capital dynamics:
     answer: 28,
     unit: '%',
     hint: 'Gross Margin % = (Revenue - COGS) / Revenue × 100',
-    explanation: 'Gross Margin % = ($25,000 - $18,000) ÷ $25,000 × 100 = $7,000 ÷ $25,000 × 100 = 28%',
+    explanation: `Calculation:
+Gross Margin % = $7,000 ÷ $25,000 × 100 = 28%
+
+• • •
+
+Step-by-step breakdown:
+
+1. Revenue and COGS:
+   • Revenue: $25,000
+   • COGS: $18,000
+   → Gross Profit: $25,000 - $18,000 = $7,000
+
+2. Margin Calculation:
+   → Gross Margin %: $7,000 ÷ $25,000 × 100 = 28%
+
+Key Points:
+   • Gross margin shows efficiency of production relative to sales
+   • Higher margins indicate better cost control
+   • COGS includes direct production costs only
+   • This excludes operating expenses like marketing and admin costs`,
     learnContent: {
       concept: 'Gross margin percentage reflects how efficiently a company produces goods compared to what it earns.',
       formula: 'Gross Margin % = (Revenue - COGS) / Revenue × 100',
@@ -614,7 +727,23 @@ Working capital dynamics:
     answer: 200,
     unit: '$',
     hint: 'Net Income = Revenue - COGS (ignoring other expenses for this basic example)',
-    explanation: 'Net Income = $500 - $300 = $200',
+    explanation: `Calculation:
+Net Income = $500 - $300 = $200
+
+• • •
+
+Step-by-step breakdown:
+
+1. Revenue and Costs:
+   • Revenue: $500
+   • COGS: $300
+   → Net Income: $200
+
+Key Points:
+   • This is a simplified calculation ignoring other expenses
+   • Net Income represents profit after all expenses
+   • COGS represents direct production costs
+   • In real scenarios, other expenses like SG&A and taxes would apply`,
     learnContent: {
       concept: 'Net Income is the bottom line of the income statement, representing profit after all expenses.',
       formula: 'Net Income = Revenue - Total Expenses',
@@ -632,7 +761,29 @@ Working capital dynamics:
     answer: 120,
     unit: '$',
     hint: 'First calculate EBIT (Revenue - COGS - SG&A), then apply tax rate',
-    explanation: 'EBIT = $500 - $300 - $50 = $150. After Tax = $150 × (1 - 0.20) = $120',
+    explanation: `Calculation:
+After-Tax Net Income = $150 × (1 - 0.20) = $120
+
+• • •
+
+Step-by-step breakdown:
+
+1. EBIT Calculation:
+   • Revenue: $500
+   • Less: COGS: $300
+   • Less: SG&A: $50
+   → EBIT: $150
+
+2. Tax Application:
+   • EBIT: $150
+   • Tax Rate: 20%
+   → Net Income: $150 × (1 - 0.20) = $120
+
+Key Points:
+   • EBIT represents earnings before interest and taxes
+   • Net Income includes the impact of corporate taxes
+   • Tax rate reduces the final profit available to shareholders
+   • This calculation assumes no interest expense`,
     learnContent: {
       concept: 'Net Income calculation includes all operating expenses and taxes.',
       formula: 'Net Income = (Revenue - COGS - Operating Expenses) × (1 - Tax Rate)',
@@ -1985,7 +2136,28 @@ What were the Capital Expenditures during the year?`,
     answer: 100000,
     unit: '$',
     hint: 'CapEx = Ending PP&E - Beginning PP&E + Depreciation',
-    explanation: '$560,000 - $500,000 + $40,000 = $100,000',
+    explanation: `Calculation:
+CapEx = $60,000 + $40,000 = $100,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. PP&E Analysis:
+   • Beginning PP&E: $500,000
+   • Ending PP&E: $560,000
+   • Net PP&E Increase: $60,000
+
+2. CapEx Calculation:
+   • Net PP&E Increase: $60,000
+   • Add: Depreciation: $40,000
+   → Total CapEx: $100,000
+
+Key Points:
+   • CapEx represents cash spent on maintaining and growing assets
+   • Depreciation is added back as it reduced PP&E without cash outflow
+   • Net PP&E increase shows the asset base expansion
+   • This calculation captures all capital investments during the period`,
     learnContent: {
       concept: 'To maintain and grow assets, companies invest via CapEx, shown in changes to PP&E.',
       formula: 'CapEx = Ending PP&E - Beginning PP&E + Depreciation',
@@ -2008,7 +2180,25 @@ What is the average shareholders' equity used for ROE calculation?`,
     answer: 450000,
     unit: '$',
     hint: 'Average Equity = (Beginning Equity + Ending Equity) ÷ 2',
-    explanation: '($400,000 + $500,000) ÷ 2 = $450,000',
+    explanation: `Calculation:
+Average Equity = ($400,000 + $500,000) ÷ 2 = $450,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Equity Values:
+   • Beginning Equity: $400,000
+   • Ending Equity: $500,000
+
+2. Average Calculation:
+   → Average Equity: ($400,000 + $500,000) ÷ 2 = $450,000
+
+Key Points:
+   • Average equity is used for return-based metrics like ROE
+   • This smooths out fluctuations during the period
+   • Beginning and ending values capture the equity range
+   • More accurate than using just one point-in-time value`,
     learnContent: {
       concept: 'Average equity is used when calculating return-based metrics like ROE.',
       formula: 'Average Shareholders\' Equity = (Beginning + Ending Equity) ÷ 2',
@@ -2031,7 +2221,28 @@ Interest Expense: $25,000
 What is the interest coverage ratio (EBIT / Interest Expense)?`,
     answer: 10,
     hint: 'EBIT = Revenue - COGS - Opex - Depreciation\nThen: EBIT ÷ Interest',
-    explanation: 'EBIT = $1,000,000 - $400,000 - $300,000 - $50,000 = $250,000. $250,000 ÷ $25,000 = 10',
+    explanation: `Calculation:
+Interest Coverage = $250,000 ÷ $25,000 = 10
+
+• • •
+
+Step-by-step breakdown:
+
+1. EBIT Calculation:
+   • Revenue: $1,000,000
+   • Less: COGS: $400,000
+   • Less: Operating Expenses: $300,000
+   • Less: Depreciation: $50,000
+   → EBIT: $250,000
+
+2. Coverage Ratio:
+   → Interest Coverage: $250,000 ÷ $25,000 = 10
+
+Key Points:
+   • Interest coverage shows ability to pay interest on debt
+   • Higher ratios indicate stronger ability to service debt
+   • EBIT represents earnings available to cover interest
+   • A ratio of 10 means earnings can cover interest 10 times over`,
     learnContent: {
       concept: 'Interest coverage shows how easily a firm can pay interest on its debt.',
       formula: 'Interest Coverage = EBIT ÷ Interest Expense',
@@ -2053,7 +2264,28 @@ Current Liabilities: $90,000
 What is the quick ratio?`,
     answer: 1.22,
     hint: 'Quick Ratio = (Cash + AR) ÷ Current Liabilities',
-    explanation: '($50,000 + $60,000) ÷ $90,000 = 1.22',
+    explanation: `Calculation:
+Quick Ratio = ($50,000 + $60,000) ÷ $90,000 = 1.22
+
+• • •
+
+Step-by-step breakdown:
+
+1. Quick Assets:
+   • Cash: $50,000
+   • Accounts Receivable: $60,000
+   → Total Quick Assets: $110,000
+
+2. Quick Ratio:
+   • Quick Assets: $110,000
+   • Current Liabilities: $90,000
+   → Quick Ratio: $110,000 ÷ $90,000 = 1.22
+
+Key Points:
+   • Quick ratio measures liquidity excluding inventory
+   • Inventory is excluded as it's harder to convert to cash quickly
+   • Ratio above 1.0 indicates good short-term liquidity
+   • More conservative measure than current ratio`,
     learnContent: {
       concept: 'The quick ratio measures short-term liquidity excluding inventory.',
       formula: 'Quick Ratio = (Cash + Accounts Receivable) ÷ Current Liabilities',
@@ -2075,7 +2307,27 @@ What is the net cash flow from financing activities?`,
     answer: 40000,
     unit: '$',
     hint: 'Add inflows, subtract outflows.',
-    explanation: '$100,000 - $40,000 - $20,000 = $40,000',
+    explanation: `Calculation:
+Cash Flow from Financing = $100,000 - $40,000 - $20,000 = $40,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Financing Inflows:
+   • Issued Common Stock: +$100,000
+   → Total Inflows: $100,000
+
+2. Financing Outflows:
+   • Repaid Long-term Debt: -$40,000
+   • Paid Dividends: -$20,000
+   → Total Outflows: $60,000
+
+Key Points:
+   • Financing activities involve capital structure decisions
+   • Stock issuance brings cash into the company
+   • Debt repayment and dividends use company cash
+   • Net positive indicates more capital raised than returned`,
     learnContent: {
       concept: 'Cash from financing shows inflows/outflows from capital structure decisions.',
       formula: 'Cash Flow from Financing = Stock Issuance - Debt Repayment - Dividends Paid',
