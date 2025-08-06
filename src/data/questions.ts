@@ -11,7 +11,20 @@ export const QUESTIONS: Question[] = [
     answer: 24000,
     unit: '$',
     hint: 'Net Income = Revenue - COGS - OpEx - Interest - Taxes',
-    explanation: 'Net Income = $100,000 - $40,000 - $25,000 - $5,000 - $6,000 = $24,000',
+    explanation: `Net Income = Revenue - Total Expenses
+
+Revenue: $100,000
+Less: COGS: $40,000
+Less: Operating Expenses: $25,000  
+Less: Interest: $5,000
+Less: Taxes: $6,000
+Net Income: $24,000
+
+Key components:
+• COGS - direct costs of producing goods sold
+• Operating Expenses - overhead costs like salaries, rent, utilities
+• Interest - cost of borrowed money
+• Taxes - corporate income tax on profits`,
     learnContent: {
       concept: 'Net Income is the final profit after subtracting all expenses from revenue — including operating, interest, and taxes. It\'s the "bottom line" of the income statement.',
       formula: 'Net Income = Revenue − COGS − OpEx − Interest − Taxes',
@@ -27,7 +40,19 @@ export const QUESTIONS: Question[] = [
     answer: 8000,
     unit: '$',
     hint: 'Prepaid = Total - (Months Used × Monthly Expense)',
-    explanation: 'Monthly expense = $12,000 ÷ 12 = $1,000. From March 1 to June 30 = 4 months used. Prepaid = $12,000 - (4 × $1,000) = $8,000',
+    explanation: `Prepaid Expense = Total Payment - Used Portion
+
+Total payment: $12,000 (12 months)
+Monthly expense: $12,000 ÷ 12 = $1,000
+Months used (March 1 to June 30): 4 months
+Used portion: 4 × $1,000 = $4,000
+Prepaid remaining: $12,000 - $4,000 = $8,000
+
+Key concepts:
+• Prepaid Expenses - payments made in advance for future benefits
+• Monthly allocation - total cost divided by months covered
+• Used portion - expenses recognized on income statement
+• Remaining prepaid - asset on balance sheet for future periods`,
     learnContent: {
       concept: 'Prepaid expenses represent future costs already paid. As time passes, the expense is "used up" and moved to the income statement.',
       formula: 'Prepaid = Total − (Months Used × Monthly Expense)\nMonthly Expense = Total ÷ 12',
@@ -43,7 +68,23 @@ export const QUESTIONS: Question[] = [
     answer: 3500,
     unit: '$',
     hint: 'Change in WC = ΔA/R + ΔInventory − ΔA/P',
-    explanation: 'Change in WC = $3,000 + $2,000 - $1,500 = $3,500',
+    explanation: `Change in Working Capital = Changes in Current Assets - Changes in Current Liabilities
+
+Current Asset increases (cash outflow):
+• Accounts Receivable: +$3,000
+• Inventory: +$2,000
+Total: +$5,000
+
+Current Liability increases (cash inflow):
+• Accounts Payable: +$1,500
+Total: +$1,500
+
+Net change in Working Capital: $5,000 - $1,500 = $3,500
+
+Key impacts:
+• A/R increase - customers haven't paid yet, cash tied up
+• Inventory increase - cash spent on additional stock
+• A/P increase - delayed vendor payments, cash retained`,
     learnContent: {
       concept: 'Working capital is the difference between current assets and current liabilities. Increases in current assets use cash; increases in current liabilities free up cash.',
       formula: 'Change in WC = ΔA/R + ΔInventory − ΔA/P',
@@ -59,7 +100,21 @@ export const QUESTIONS: Question[] = [
     answer: 9000,
     unit: '$',
     hint: 'A/P Increase = Value of goods received on credit',
-    explanation: 'When goods are received on credit, the full value ($9,000) is added to Accounts Payable until payment is made.',
+    explanation: `Accounts Payable Recognition = Value of Goods/Services Received on Credit
+
+Inventory received: $9,000
+Payment terms: 60 days (credit purchase)
+Accounts Payable increase: $9,000
+
+Transaction impact:
+• Inventory (asset) increases by $9,000
+• Accounts Payable (liability) increases by $9,000
+• No immediate cash impact until payment due
+
+Key concepts:
+• Credit purchases - goods received before payment
+• Accounts Payable - short-term liabilities to suppliers
+• Payment terms - agreed timeframe for settling obligations`,
     learnContent: {
       concept: 'Accounts Payable increases when goods or services are received but not yet paid for. This is a liability until payment is made.',
       formula: 'A/P Increase = Value of goods received on credit',
@@ -75,7 +130,19 @@ export const QUESTIONS: Question[] = [
     answer: 4,
     unit: 'x',
     hint: 'Inventory Turnover = COGS ÷ Avg Inventory',
-    explanation: 'Avg Inventory = ($40,000 + $20,000) ÷ 2 = $30,000. Inventory Turnover = $120,000 ÷ $30,000 = 4.0x',
+    explanation: `Inventory Turnover = COGS ÷ Average Inventory
+
+COGS: $120,000
+Beginning Inventory: $40,000
+Ending Inventory: $20,000
+Average Inventory: ($40,000 + $20,000) ÷ 2 = $30,000
+Inventory Turnover: $120,000 ÷ $30,000 = 4.0x
+
+Key insights:
+• COGS - cost of goods actually sold during the period
+• Average Inventory - typical inventory level throughout year
+• Higher turnover - more efficient inventory management
+• 4.0x means inventory converted to sales 4 times annually`,
     learnContent: {
       concept: 'This ratio shows how efficiently a company turns inventory into sales. Use average inventory in the denominator.',
       formula: 'Inventory Turnover = COGS ÷ Avg Inventory\nAvg Inventory = (Beg + End) ÷ 2',
@@ -91,7 +158,19 @@ export const QUESTIONS: Question[] = [
     answer: 3.6,
     unit: 'x',
     hint: 'Asset Turnover = Revenue ÷ Avg Total Assets',
-    explanation: 'Avg Assets = ($60,000 + $40,000) ÷ 2 = $50,000. Asset Turnover = $180,000 ÷ $50,000 = 3.6x',
+    explanation: `Asset Turnover = Revenue ÷ Average Total Assets
+
+Revenue: $180,000
+Assets at Start: $60,000
+Assets at End: $40,000
+Average Assets: ($60,000 + $40,000) ÷ 2 = $50,000
+Asset Turnover: $180,000 ÷ $50,000 = 3.6x
+
+Key insights:
+• Revenue - total sales generated during the period
+• Average Assets - typical asset base used to generate sales
+• Higher ratio - more efficient use of assets to generate revenue
+• 3.6x means each dollar of assets generated $3.60 in sales`,
     learnContent: {
       concept: 'Asset Turnover tells how efficiently a business generates revenue from assets. Use average total assets across the year.',
       formula: 'Asset Turnover = Revenue ÷ Avg Total Assets\nAvg Assets = (Start + End) ÷ 2',
@@ -107,7 +186,18 @@ export const QUESTIONS: Question[] = [
     answer: 37.5,
     unit: '%',
     hint: 'Gross Margin % = (Revenue − COGS) ÷ Revenue × 100',
-    explanation: 'Revenue = 500 × $120 = $60,000. COGS = 500 × $75 = $37,500. Gross Margin % = ($60,000 - $37,500) ÷ $60,000 × 100 = 37.5%',
+    explanation: `Gross Margin % = (Revenue - COGS) ÷ Revenue × 100
+
+Revenue: 500 units × $120 = $60,000
+COGS: 500 units × $75 = $37,500
+Gross Profit: $60,000 - $37,500 = $22,500
+Gross Margin %: $22,500 ÷ $60,000 × 100 = 37.5%
+
+Key components:
+• Revenue - total sales value at selling price
+• COGS - direct production costs per unit
+• Gross Profit - profit before operating expenses
+• Gross Margin % - percentage of revenue retained after production costs`,
     learnContent: {
       concept: 'Gross Margin shows what % of revenue is left after paying for production. It\'s a core measure of product profitability.',
       formula: 'Gross Margin % = (Revenue − COGS) ÷ Revenue × 100',
@@ -123,7 +213,25 @@ export const QUESTIONS: Question[] = [
     answer: 2,
     unit: 'x',
     hint: 'D/E = Total Liabilities ÷ Total Equity',
-    explanation: 'Total Liabilities = $10,000 + $50,000 = $60,000. Total Equity = $20,000 + $10,000 = $30,000. D/E = $60,000 ÷ $30,000 = 2.0x',
+    explanation: `Debt-to-Equity = Total Liabilities ÷ Total Equity
+
+Total Liabilities:
+• Short-Term Liabilities: $10,000
+• Long-Term Debt: $50,000
+Total: $60,000
+
+Total Equity:
+• Common Equity: $20,000
+• Preferred Equity: $10,000  
+Total: $30,000
+
+Debt-to-Equity Ratio: $60,000 ÷ $30,000 = 2.0x
+
+Key insights:
+• Total Liabilities - all money owed to creditors
+• Total Equity - shareholder ownership value
+• 2.0x ratio means $2 of debt for every $1 of equity
+• Higher ratios indicate more financial leverage`,
     learnContent: {
       concept: 'D/E shows how much debt is used to finance the business compared to equity. Higher = more leverage.',
       formula: 'D/E = Total Liabilities ÷ Total Equity\nLiabilities = Short + Long-Term\nEquity = Common + Preferred',
@@ -139,7 +247,26 @@ export const QUESTIONS: Question[] = [
     answer: 1.5,
     unit: 'x',
     hint: 'Current Ratio = Current Assets ÷ Current Liabilities',
-    explanation: 'Current Assets = $5,000 + $10,000 + $15,000 = $30,000. Current Liabilities = $8,000 + $12,000 = $20,000. Current Ratio = $30,000 ÷ $20,000 = 1.5x',
+    explanation: `Current Ratio = Current Assets ÷ Current Liabilities
+
+Current Assets:
+• Cash: $5,000
+• Accounts Receivable: $10,000
+• Inventory: $15,000
+Total: $30,000
+
+Current Liabilities:
+• Accounts Payable: $8,000
+• Short-Term Loan: $12,000
+Total: $20,000
+
+Current Ratio: $30,000 ÷ $20,000 = 1.5x
+
+Key insights:
+• Current Assets - resources convertible to cash within one year
+• Current Liabilities - obligations due within one year
+• 1.5x ratio means $1.50 of current assets for every $1.00 of current liabilities
+• Higher ratios indicate better short-term liquidity`,
     learnContent: {
       concept: 'Current Ratio measures short-term liquidity — how easily a company can cover short-term liabilities with short-term assets.',
       formula: 'Current Ratio = Current Assets ÷ Current Liabilities\nAssets = Cash + A/R + Inv\nLiabilities = A/P + Short-Term Debt',
@@ -155,7 +282,19 @@ export const QUESTIONS: Question[] = [
     answer: 30,
     unit: '%',
     hint: 'Operating Margin = (Revenue − COGS − OpEx) ÷ Revenue × 100',
-    explanation: 'Operating Income = $250,000 - $100,000 - $75,000 = $75,000. Operating Margin = $75,000 ÷ $250,000 × 100 = 30%',
+    explanation: `Operating Margin = Operating Income ÷ Revenue × 100
+
+Revenue: $250,000
+Less: COGS: $100,000
+Less: Operating Expenses: $75,000
+Operating Income: $75,000
+Operating Margin: $75,000 ÷ $250,000 × 100 = 30%
+
+Key components:
+• Revenue - total sales for the period
+• COGS - direct costs of goods sold
+• Operating Expenses - overhead costs like salaries, rent, marketing
+• Operating Income - profit from core business operations before interest/taxes`,
     learnContent: {
       concept: 'Operating Margin shows what % of revenue turns into profit from core operations. It excludes interest and taxes.',
       formula: 'Operating Margin = (Revenue − COGS − OpEx) ÷ Revenue × 100',
@@ -171,7 +310,18 @@ export const QUESTIONS: Question[] = [
     answer: 3500,
     unit: '$',
     hint: 'Ending Inventory = Beginning Inventory + Purchases - COGS',
-    explanation: 'Ending Inventory = $5,000 + $12,000 - $13,500 = $3,500',
+    explanation: `Ending Inventory = Beginning Inventory + Purchases - COGS
+
+Beginning Inventory: $5,000
+Add: Purchases: $12,000
+Less: COGS (goods sold): $13,500
+Ending Inventory: $3,500
+
+Inventory flow:
+• Beginning Inventory - goods available at start of period
+• Purchases - additional inventory acquired during period
+• COGS - cost of goods actually sold to customers
+• Ending Inventory - goods remaining available for future sales`,
     learnContent: {
       concept: 'Ending inventory is the unsold portion of inventory after accounting for purchases and goods sold.',
       formula: 'Ending Inventory = Beginning Inventory + Purchases - COGS',
@@ -187,7 +337,26 @@ export const QUESTIONS: Question[] = [
     answer: 50000,
     unit: '$',
     hint: 'Equity = Total Assets - Total Liabilities',
-    explanation: 'Total Assets = $10,000 + $20,000 + $70,000 = $100,000. Total Liabilities = $15,000 + $30,000 + $5,000 = $50,000. Equity = $100,000 - $50,000 = $50,000',
+    explanation: `Shareholders' Equity = Total Assets - Total Liabilities
+
+Total Assets:
+• Cash: $10,000
+• Inventory: $20,000  
+• Equipment: $70,000
+Total: $100,000
+
+Total Liabilities:
+• Accounts Payable: $15,000
+• Notes Payable: $30,000
+• Accrued Expenses: $5,000
+Total: $50,000
+
+Shareholders' Equity: $100,000 - $50,000 = $50,000
+
+Key concepts:
+• Total Assets - all resources owned by the company
+• Total Liabilities - all debts and obligations owed
+• Shareholders' Equity - residual ownership value after paying debts`,
     learnContent: {
       concept: 'Shareholders\' equity is what\'s left after subtracting liabilities from assets.',
       formula: 'Equity = Total Assets - Total Liabilities\n= (Cash + Inventory + Equipment) - (Accounts Payable + Notes Payable + Accrued Expenses)',
@@ -203,7 +372,19 @@ export const QUESTIONS: Question[] = [
     answer: 5000,
     unit: '$',
     hint: 'Operating Income = Revenue - COGS - SG&A - R&D',
-    explanation: 'Operating Income = $18,000 - $7,000 - $4,000 - $2,000 = $5,000',
+    explanation: `Operating Income = Revenue - Operating Expenses
+
+Revenue: $18,000
+Less: COGS: $7,000
+Less: SG&A: $4,000
+Less: R&D: $2,000
+Operating Income: $5,000
+
+Operating expense categories:
+• COGS - direct costs of producing goods sold
+• SG&A - selling, general & administrative expenses  
+• R&D - research and development costs
+• Operating Income - profit from core business before interest/taxes`,
     learnContent: {
       concept: 'Operating income (OpInc) is the company\'s profit from core operations before interest and taxes.',
       formula: 'Operating Income = Revenue - COGS - SG&A - R&D',
@@ -219,7 +400,18 @@ export const QUESTIONS: Question[] = [
     answer: -1400,
     unit: '$',
     hint: 'Net Income Impact = -Depreciation × (1 - Tax Rate)',
-    explanation: 'Net Income Impact = -$2,000 × (1 - 0.30) = -$2,000 × 0.70 = -$1,400',
+    explanation: `Net Income Impact = -Depreciation × (1 - Tax Rate)
+
+Depreciation expense: $2,000
+Tax rate: 30%
+Tax shield benefit: $2,000 × 30% = $600
+Net income impact: -$2,000 + $600 = -$1,400
+
+Tax impact analysis:
+• Depreciation - non-cash expense reducing taxable income
+• Tax shield - tax savings from deductible depreciation
+• Net impact - depreciation cost minus tax savings
+• Higher tax rates provide greater depreciation benefits`,
     learnContent: {
       concept: 'Depreciation lowers taxable income and therefore reduces taxes, but it also reduces net income.',
       formula: 'Net Income Impact = -Depreciation × (1 - Tax Rate)',
@@ -235,7 +427,23 @@ export const QUESTIONS: Question[] = [
     answer: 3500,
     unit: '$',
     hint: 'Change in WC = ΔA/R + ΔInventory - ΔA/P',
-    explanation: 'Change in WC = $3,000 + $2,000 - $1,500 = $3,500',
+    explanation: `Change in Working Capital = Changes in Current Assets - Changes in Current Liabilities
+
+Current Asset changes (cash impact):
+• Accounts Receivable: +$3,000 (cash outflow)
+• Inventory: +$2,000 (cash outflow)
+Subtotal: +$5,000
+
+Current Liability changes (cash impact):
+• Accounts Payable: +$1,500 (cash inflow)
+Subtotal: +$1,500
+
+Net change in Working Capital: $5,000 - $1,500 = $3,500
+
+Working capital dynamics:
+• A/R increase - sales made but cash not yet collected
+• Inventory increase - cash spent on additional stock
+• A/P increase - vendor payments delayed, preserving cash`,
     learnContent: {
       concept: 'Changes in working capital affect cash flow. Increases in A/R and Inventory use cash; increases in A/P free up cash.',
       formula: 'Change in WC = ΔA/R + ΔInventory - ΔA/P',
