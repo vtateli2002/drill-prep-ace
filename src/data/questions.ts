@@ -3926,7 +3926,7 @@ Key Points:
     }
   },
   {
-    id: 'acc-easy-67',
+    id: 'acc-easy-150',
     track: 'accounting',
     difficulty: 'easy',
     title: 'Gross Profit with Returns and Allowances',
@@ -3972,7 +3972,7 @@ Key Points:
     }
   },
   {
-    id: 'acc-easy-68',
+    id: 'acc-easy-151',
     track: 'accounting',
     difficulty: 'easy',
     title: 'Gross Profit with Volume Discounts',
@@ -4022,7 +4022,7 @@ Key Points:
     }
   },
   {
-    id: 'acc-easy-69',
+    id: 'acc-easy-152',
     track: 'accounting',
     difficulty: 'easy',
     title: 'Multi-Product Gross Profit with Returns',
@@ -4077,7 +4077,7 @@ Key Points:
     }
   },
   {
-    id: 'acc-easy-70',
+    id: 'acc-easy-153',
     track: 'accounting',
     difficulty: 'easy',
     title: 'Gross Margin Analysis with Cost Changes',
@@ -4123,7 +4123,7 @@ Key Points:
     }
   },
   {
-    id: 'acc-easy-71',
+    id: 'acc-easy-154',
     track: 'accounting',
     difficulty: 'easy',
     title: 'Blended Gross Margin - Two Product Lines',
@@ -4168,7 +4168,7 @@ Key Points:
     }
   },
   {
-    id: 'acc-easy-72',
+    id: 'acc-easy-155',
     track: 'accounting',
     difficulty: 'easy',
     title: 'Gross Margin Impact from Returns',
@@ -4215,7 +4215,7 @@ Key Points:
     }
   },
   {
-    id: 'acc-easy-73',
+    id: 'acc-easy-156',
     track: 'accounting',
     difficulty: 'easy',
     title: 'SG&A Analysis and Operating Leverage',
@@ -4261,7 +4261,7 @@ Key Points:
     }
   },
   {
-    id: 'acc-easy-74',
+    id: 'acc-easy-157',
     track: 'accounting',
     difficulty: 'easy',
     title: 'SG&A Classification and Calculation',
@@ -4310,7 +4310,7 @@ Key Points:
     }
   },
   {
-    id: 'acc-easy-75',
+    id: 'acc-easy-158',
     track: 'accounting',
     difficulty: 'easy',
     title: 'Operating Income (EBIT) Calculation',
@@ -10063,7 +10063,7 @@ Key Points:
 
   // Topic 61: Share Buybacks (Effects on EPS, Equity) - Corrected
   {
-    id: 'acc-easy-67',
+    id: 'acc-easy-159',
     track: 'accounting',
     difficulty: 'easy',
     title: 'Buybacks – Treasury Stock and APIC Impact with Issuance History',
