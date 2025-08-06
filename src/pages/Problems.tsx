@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
@@ -19,6 +19,11 @@ const Problems = () => {
   // Filter state
   const [selectedTrack, setSelectedTrack] = useState<Track | 'all'>('all');
   const [selectedDifficulty, setSelectedDifficulty] = useState<Difficulty | 'all'>('all');
+
+  // Debug filter changes
+  useEffect(() => {
+    console.log('Filter state changed:', { selectedTrack, selectedDifficulty });
+  }, [selectedTrack, selectedDifficulty]);
 
   if (loading) {
     return (
@@ -75,6 +80,15 @@ const Problems = () => {
   const filteredQuestions = allQuestions.filter(question => {
     const trackMatches = selectedTrack === 'all' || question.track === selectedTrack;
     const difficultyMatches = selectedDifficulty === 'all' || question.difficulty === selectedDifficulty;
+    
+    // Debug individual filter matches
+    if (selectedTrack !== 'all' && !trackMatches) {
+      console.log(`Track filter mismatch: ${question.track} vs ${selectedTrack} for question ${question.id}: ${question.title}`);
+    }
+    if (selectedDifficulty !== 'all' && !difficultyMatches) {
+      console.log(`Difficulty filter mismatch: ${question.difficulty} vs ${selectedDifficulty} for question ${question.id}: ${question.title}`);
+    }
+    
     return trackMatches && difficultyMatches;
   });
 
@@ -180,7 +194,10 @@ const Problems = () => {
                         key={track}
                         variant={selectedTrack === track ? 'default' : 'outline'}
                         size="sm"
-                        onClick={() => setSelectedTrack(track)}
+                        onClick={() => {
+                          console.log(`Clicked track filter: ${track}`);
+                          setSelectedTrack(track);
+                        }}
                         className={`font-medium ${selectedTrack === track ? config.color : ''}`}
                       >
                         <span className="mr-2">{config.icon}</span>
@@ -209,7 +226,10 @@ const Problems = () => {
                         key={difficulty}
                         variant={selectedDifficulty === difficulty ? 'default' : 'outline'}
                         size="sm"
-                        onClick={() => setSelectedDifficulty(difficulty)}
+                        onClick={() => {
+                          console.log(`Clicked difficulty filter: ${difficulty}`);
+                          setSelectedDifficulty(difficulty);
+                        }}
                         className={`font-medium ${selectedDifficulty === difficulty ? config.color.replace('bg-', 'bg-').replace('text-white', '') : ''}`}
                       >
                         <DifficultyIcon className="h-4 w-4 mr-2" />
