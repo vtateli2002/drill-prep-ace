@@ -4,7 +4,8 @@ import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
-import { CheckCircle, Loader2, Trophy, Zap, Target, Star, Crown } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { CheckCircle, Loader2, Trophy, Zap, Target, Star, Crown, Filter, X } from 'lucide-react';
 import { Track, Difficulty, TRACK_NAMES, XP_VALUES } from '@/types/drill';
 import { QUESTIONS } from '@/data/questions';
 import { useQuestions } from '@/hooks/useQuestions';
@@ -14,6 +15,10 @@ const Problems = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
   const { isQuestionSolved, getQuestionXP, loading } = useQuestions();
+
+  // Filter state
+  const [selectedTrack, setSelectedTrack] = useState<Track | 'all'>('all');
+  const [selectedDifficulty, setSelectedDifficulty] = useState<Difficulty | 'all'>('all');
 
   if (loading) {
     return (
@@ -64,11 +69,35 @@ const Problems = () => {
   const tracks: Track[] = ['accounting', 'valuation', 'ma', 'lbo'];
   const difficulties: Difficulty[] = ['easy', 'medium', 'hard', 'interview_ready'];
 
-  const orderedQuestions = tracks.flatMap(track => 
+  const allQuestions = tracks.flatMap(track => 
     difficulties.flatMap(difficulty => 
       QUESTIONS.filter(q => q.track === track && q.difficulty === difficulty)
     )
   );
+
+  // Apply filters
+  const filteredQuestions = allQuestions.filter(question => {
+    const trackMatches = selectedTrack === 'all' || question.track === selectedTrack;
+    const difficultyMatches = selectedDifficulty === 'all' || question.difficulty === selectedDifficulty;
+    return trackMatches && difficultyMatches;
+  });
+
+  const getTrackConfig = (track: Track) => {
+    const configs = {
+      'accounting': { label: 'Accounting', color: 'bg-blue-500 hover:bg-blue-600', icon: '📊' },
+      'valuation': { label: 'Valuation', color: 'bg-purple-500 hover:bg-purple-600', icon: '💰' },
+      'ma': { label: 'M&A', color: 'bg-green-500 hover:bg-green-600', icon: '🤝' },
+      'lbo': { label: 'LBO', color: 'bg-orange-500 hover:bg-orange-600', icon: '⚡' }
+    };
+    return configs[track];
+  };
+
+  const clearFilters = () => {
+    setSelectedTrack('all');
+    setSelectedDifficulty('all');
+  };
+
+  const hasActiveFilters = selectedTrack !== 'all' || selectedDifficulty !== 'all';
 
   return (
     <div className="min-h-screen bg-background">
@@ -84,14 +113,117 @@ const Problems = () => {
             <div className="flex items-center space-x-2 bg-card border border-border rounded-lg px-4 py-2">
               <CheckCircle className="h-4 w-4 text-success" />
               <span className="text-sm font-medium text-foreground">
-                {orderedQuestions.filter(q => isQuestionSolved(q.id)).length} / {orderedQuestions.length} solved
+                {filteredQuestions.filter(q => isQuestionSolved(q.id)).length} / {filteredQuestions.length} solved
               </span>
             </div>
           </div>
+
+          {/* Filter Section */}
+          <Card className="p-6 bg-gradient-to-r from-primary/5 to-secondary/5 border-primary/10">
+            <div className="flex items-center gap-3 mb-4">
+              <Filter className="h-5 w-5 text-primary" />
+              <h2 className="text-lg font-semibold text-foreground">Filter Problems</h2>
+              {hasActiveFilters && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={clearFilters}
+                  className="ml-auto text-muted-foreground hover:text-foreground"
+                >
+                  <X className="h-4 w-4 mr-1" />
+                  Clear All
+                </Button>
+              )}
+            </div>
+            
+            <Tabs defaultValue="track" className="w-full">
+              <TabsList className="grid w-full grid-cols-2 mb-4">
+                <TabsTrigger value="track">By Track</TabsTrigger>
+                <TabsTrigger value="difficulty">By Difficulty</TabsTrigger>
+              </TabsList>
+              
+              <TabsContent value="track" className="space-y-3">
+                <div className="flex flex-wrap gap-2">
+                  <Button
+                    variant={selectedTrack === 'all' ? 'default' : 'outline'}
+                    size="sm"
+                    onClick={() => setSelectedTrack('all')}
+                    className="font-medium"
+                  >
+                    All Tracks
+                  </Button>
+                  {tracks.map((track) => {
+                    const config = getTrackConfig(track);
+                    return (
+                      <Button
+                        key={track}
+                        variant={selectedTrack === track ? 'default' : 'outline'}
+                        size="sm"
+                        onClick={() => setSelectedTrack(track)}
+                        className={`font-medium ${selectedTrack === track ? config.color : ''}`}
+                      >
+                        <span className="mr-2">{config.icon}</span>
+                        {config.label}
+                      </Button>
+                    );
+                  })}
+                </div>
+              </TabsContent>
+              
+              <TabsContent value="difficulty" className="space-y-3">
+                <div className="flex flex-wrap gap-2">
+                  <Button
+                    variant={selectedDifficulty === 'all' ? 'default' : 'outline'}
+                    size="sm"
+                    onClick={() => setSelectedDifficulty('all')}
+                    className="font-medium"
+                  >
+                    All Difficulties
+                  </Button>
+                  {difficulties.map((difficulty) => {
+                    const config = getDifficultyConfig(difficulty);
+                    const DifficultyIcon = config.icon;
+                    return (
+                      <Button
+                        key={difficulty}
+                        variant={selectedDifficulty === difficulty ? 'default' : 'outline'}
+                        size="sm"
+                        onClick={() => setSelectedDifficulty(difficulty)}
+                        className={`font-medium ${selectedDifficulty === difficulty ? config.color.replace('bg-', 'bg-').replace('text-white', '') : ''}`}
+                      >
+                        <DifficultyIcon className="h-4 w-4 mr-2" />
+                        {config.label}
+                      </Button>
+                    );
+                  })}
+                </div>
+              </TabsContent>
+            </Tabs>
+
+            {/* Active Filter Summary */}
+            {hasActiveFilters && (
+              <div className="mt-4 p-3 bg-muted/50 rounded-lg border border-border">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <span>Showing:</span>
+                  {selectedTrack !== 'all' && (
+                    <Badge variant="secondary" className="text-xs">
+                      {getTrackConfig(selectedTrack).label}
+                    </Badge>
+                  )}
+                  {selectedDifficulty !== 'all' && (
+                    <Badge variant="secondary" className="text-xs">
+                      {getDifficultyConfig(selectedDifficulty).label}
+                    </Badge>
+                  )}
+                  <span>({filteredQuestions.length} problems)</span>
+                </div>
+              </div>
+            )}
+          </Card>
           
           {/* Problems List - Modern Gamified Style */}
           <div className="space-y-3">
-            {orderedQuestions.map((question, index) => {
+            {filteredQuestions.map((question, index) => {
               const isSolved = isQuestionSolved(question.id);
               const earnedXP = getQuestionXP(question.id);
               const difficultyConfig = getDifficultyConfig(question.difficulty);
@@ -162,9 +294,16 @@ const Problems = () => {
             })}
           </div>
 
-          {orderedQuestions.length === 0 && (
+          {filteredQuestions.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-muted-foreground">No problems available yet.</p>
+              <p className="text-muted-foreground">
+                {hasActiveFilters ? 'No problems match your current filters.' : 'No problems available yet.'}
+              </p>
+              {hasActiveFilters && (
+                <Button variant="outline" className="mt-4" onClick={clearFilters}>
+                  Clear Filters
+                </Button>
+              )}
             </div>
           )}
         </div>
