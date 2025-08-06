@@ -8510,5 +8510,568 @@ Key Points:
       formula: 'ΔNCI = NCI Share (Income - Dividends) + Equity raised to outsiders',
       example: '20% × ($60k - $10k) + $20k = $22k'
     }
+  },
+
+  // Topic 51: Structure of Statement of Cash Flows
+  {
+    id: 'acc-easy-59',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Cash Flow Statement Structure – Basics',
+    description: `A company reports the following:
+- Net Income: $80,000
+- Depreciation: $10,000
+- Increase in Inventory: $5,000
+- CapEx: $15,000
+
+What is Net Cash from Operating Activities?`,
+    answer: 85000,
+    unit: '$',
+    hint: 'Start with Net Income. Add back depreciation. Subtract increase in inventory.',
+    explanation: `Calculation:
+Operating CF = $80,000 + $10,000 − $5,000 = $85,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Start with Net Income:
+   • Net Income: $80,000
+   → This is the baseline operating result
+
+2. Add Non-Cash Items:
+   • Depreciation: $10,000
+   → Added back because it reduced NI but didn't use cash
+
+3. Adjust for Working Capital:
+   • Increase in Inventory: $5,000
+   → Subtracted because cash was used to build inventory
+
+4. Operating Cash Flow:
+   → Operating CF = $80,000 + $10,000 − $5,000 = $85,000
+   
+Note: CapEx is an investing activity, not operating.
+
+Key Points:
+   • Operating CF starts with Net Income from operations
+   • Non-cash expenses like depreciation are added back
+   • Working capital increases use cash, decreases provide cash
+   • CapEx belongs in investing activities, not operating`,
+    learnContent: {
+      concept: 'Cash Flow from Operations begins with Net Income and adjusts for non-cash items and changes in working capital.',
+      formula: 'Operating CF = Net Income + Depreciation − Increase in Inventory',
+      example: '$50k + $5k − $2k = $53k\n$100k + $20k − $10k = $110k\n$75k + $8k − $3k = $80k'
+    }
+  },
+  {
+    id: 'acc-medium-37',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Cash Flow Statement – Indirect Method',
+    description: `A company reports:
+- Net Income: $120,000
+- Depreciation: $25,000
+- Amortization: $10,000
+- Increase in Accounts Receivable: $30,000
+- Decrease in Accounts Payable: $15,000
+- Increase in Deferred Revenue: $20,000
+
+What is Cash Flow from Operations?`,
+    answer: 130000,
+    unit: '$',
+    hint: 'Add back non-cash charges and adjust for working capital changes.',
+    explanation: `Calculation:
+CFO = $120,000 + $25,000 + $10,000 − $30,000 − $15,000 + $20,000 = $130,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Start with Net Income:
+   • Net Income: $120,000
+   → Base operating performance
+
+2. Add Back Non-Cash Items:
+   • Depreciation: $25,000
+   • Amortization: $10,000
+   → Total non-cash add-backs: $35,000
+
+3. Working Capital Adjustments:
+   • Increase in AR: ($30,000)
+     → Cash tied up in receivables
+   • Decrease in AP: ($15,000)
+     → Cash used to pay down payables
+   • Increase in Deferred Revenue: $20,000
+     → Cash received for future services
+
+4. Net Working Capital Impact:
+   → ($30,000) + ($15,000) + $20,000 = ($25,000)
+
+5. Total Operating Cash Flow:
+   → $120,000 + $35,000 − $25,000 = $130,000
+
+Key Points:
+   • Indirect method reconciles Net Income to cash
+   • All non-cash expenses are added back
+   • Asset increases use cash, liability increases provide cash
+   • Deferred revenue represents cash received upfront`,
+    learnContent: {
+      concept: 'The indirect method starts with Net Income and adjusts for non-cash expenses and working capital movement.',
+      formula: 'CFO = NI + D&A − ∆AR − ∆AP + ∆Deferred Revenue',
+      example: '$80k + $10k − $5k − $2k = $83k\n$150k + $15k − $10k + $5k = $160k\n$100k + $12k − $8k + $3k = $107k'
+    }
+  },
+  {
+    id: 'acc-hard-28',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Cash Flow Statement – Multi-Line Analysis',
+    description: `A company has:
+- Net Income: $200,000
+- Depreciation: $40,000
+- Amortization: $20,000
+- Stock-Based Compensation: $15,000
+- Increase in AR: $30,000
+- Decrease in Inventory: $10,000
+- Decrease in AP: $25,000
+- Increase in Accrued Expenses: $12,000
+- Deferred Revenue increase: $18,000
+
+What is total Operating Cash Flow?`,
+    answer: 260000,
+    unit: '$',
+    hint: 'Start with Net Income, add non-cash items, adjust for WC changes line by line.',
+    explanation: `Calculation:
+Operating CF = $200,000 + $40,000 + $20,000 + $15,000 − $30,000 + $10,000 − $25,000 + $12,000 + $18,000 = $260,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Starting Point:
+   • Net Income: $200,000
+   → Core operating profitability
+
+2. Non-Cash Additions:
+   • Depreciation: $40,000
+   • Amortization: $20,000
+   • Stock-Based Compensation: $15,000
+   → Total non-cash add-backs: $75,000
+
+3. Working Capital Analysis:
+   
+   Asset Changes (use cash when increase):
+   • Increase in AR: ($30,000)
+     → More credit sales, less cash collected
+   • Decrease in Inventory: $10,000
+     → Inventory sold, converted to cash
+   
+   Liability Changes (provide cash when increase):
+   • Decrease in AP: ($25,000)
+     → Paid down suppliers, used cash
+   • Increase in Accrued Expenses: $12,000
+     → Expenses incurred but not yet paid
+   • Increase in Deferred Revenue: $18,000
+     → Cash received for future delivery
+
+4. Net Working Capital Impact:
+   → ($30,000) + $10,000 + ($25,000) + $12,000 + $18,000 = ($15,000)
+
+5. Total Operating Cash Flow:
+   → $200,000 + $75,000 + ($15,000) = $260,000
+
+Key Points:
+   • Stock-based compensation is a non-cash expense like D&A
+   • Each working capital component must be analyzed individually
+   • Asset decreases and liability increases both provide cash
+   • Complex companies require detailed line-by-line analysis`,
+    learnContent: {
+      concept: 'Detailed CFO calculation requires precise tracking of each non-cash and working capital adjustment.',
+      formula: 'CFO = NI + D&A + SBC − ∆AR + ∆Inventory − ∆AP + ∆Accrued + ∆Deferred Rev',
+      example: '$100k + $20k − $15k + $5k + $10k = $120k\n$300k + $30k − $25k − $10k + $15k = $310k\n$150k + $18k − $12k + $8k = $164k'
+    }
+  },
+
+  // Topic 52: Net Income as CFO Start
+  {
+    id: 'acc-easy-60',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Net Income – CFO Starting Point',
+    description: `Why is Net Income used as the starting point in the indirect method of the Cash Flow Statement?`,
+    answer: 'Because it reflects accrual-based profit and needs to be adjusted to reflect actual cash flow',
+    hint: 'Think about what net income includes that may not be cash.',
+    explanation: `Answer: Because it reflects accrual-based profit and needs to be adjusted to reflect actual cash flow.
+
+• • •
+
+Detailed explanation:
+
+1. Accrual vs. Cash Basis:
+   • Net Income follows accrual accounting principles
+   • It includes revenues earned and expenses incurred
+   • But not all revenues/expenses involve immediate cash flow
+
+2. Non-Cash Items in Net Income:
+   • Depreciation and amortization reduce NI but don't use cash
+   • Stock-based compensation is an expense but not cash outflow
+   • Impairment charges reduce NI without cash impact
+
+3. Timing Differences:
+   • Revenue may be recorded before cash is collected (AR)
+   • Expenses may be recorded before cash is paid (AP)
+   • Working capital changes create timing mismatches
+
+4. Why Start with Net Income:
+   • It captures all operating activities in one number
+   • Provides a comprehensive starting point for adjustments
+   • Easier to adjust than starting from zero
+
+5. The Reconciliation Process:
+   • Add back non-cash expenses
+   • Adjust for working capital timing differences
+   • Results in actual cash generated from operations
+
+Key Points:
+   • Net Income is accrual-based, CFO is cash-based
+   • Starting with NI and adjusting is more efficient than direct method
+   • The indirect method shows how profit translates to cash
+   • Essential for understanding cash generation vs. accounting profit`,
+    learnContent: {
+      concept: 'The indirect CFO method begins with Net Income because it captures all operating results, but needs adjustment for non-cash and timing effects.',
+      formula: 'Operating CF = Net Income + Non-cash Adjustments ± Changes in Working Capital',
+      example: 'Net Income = $100k; add $20k depreciation = $120k cash\nNI = $50k; subtract $10k AR increase = $40k cash\nNI = $80k; add $15k D&A, subtract $5k WC = $90k'
+    }
+  },
+  {
+    id: 'acc-medium-38',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Net Income – Adjustments Needed',
+    description: `A company has Net Income of $90,000. It adds back $15,000 depreciation and subtracts $20,000 increase in AR, $5,000 decrease in AP, and adds $10,000 in deferred revenue increase.
+
+What is Operating Cash Flow?`,
+    answer: 90000,
+    unit: '$',
+    hint: 'Follow the indirect method: NI + non-cash + working capital changes.',
+    explanation: `Calculation:
+OCF = $90,000 + $15,000 − $20,000 − $5,000 + $10,000 = $90,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Starting Point:
+   • Net Income: $90,000
+   → Accrual-based operating profit
+
+2. Non-Cash Adjustments:
+   • Add back Depreciation: $15,000
+   → This reduced NI but didn't use cash
+
+3. Working Capital Adjustments:
+   
+   Assets (use cash when increase):
+   • Increase in AR: ($20,000)
+     → Credit sales not yet collected
+   
+   Liabilities (use cash when decrease):
+   • Decrease in AP: ($5,000)
+     → Paid down supplier balances
+   • Increase in Deferred Revenue: $10,000
+     → Received cash for future services
+
+4. Net Working Capital Impact:
+   → ($20,000) + ($5,000) + $10,000 = ($15,000)
+
+5. Total Operating Cash Flow:
+   → $90,000 + $15,000 + ($15,000) = $90,000
+
+Interesting Note:
+   • Despite $90,000 in profit, cash flow is also exactly $90,000
+   • The non-cash depreciation exactly offset working capital drain
+   • This shows how adjustments can net to zero
+
+Key Points:
+   • Net Income must be reconciled to actual cash flow
+   • Non-cash items always get added back to NI
+   • Working capital changes reflect timing differences
+   • Final OCF can be higher, lower, or equal to Net Income`,
+    learnContent: {
+      concept: 'Net Income must be adjusted to reconcile accrual profit with cash reality.',
+      formula: 'OCF = NI + Depreciation − ∆AR − ∆AP + ∆Deferred Rev',
+      example: '$100k + $10k − $5k − $5k + $5k = $105k\n$80k + $8k − $3k = $85k\n$120k + $15k − $10k + $5k = $130k'
+    }
+  },
+  {
+    id: 'acc-hard-29',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Net Income Reconciliation – Multi-Factor',
+    description: `Net Income = $150,000. Adjustments include:
+- Depreciation = $30,000
+- SBC = $20,000
+- Increase in AR = $40,000
+- Decrease in AP = $15,000
+- Increase in Accrued = $18,000
+- Decrease in Inventory = $10,000
+- Deferred Revenue = $12,000
+
+What is total Operating Cash Flow?`,
+    answer: 185000,
+    unit: '$',
+    hint: 'Tally each component line-by-line. Positive = adds to cash; negative = uses cash.',
+    explanation: `Calculation:
+OCF = $150,000 + $30,000 + $20,000 − $40,000 − $15,000 + $18,000 + $10,000 + $12,000 = $185,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Starting Point:
+   • Net Income: $150,000
+   → Base accrual-based profit
+
+2. Non-Cash Add-Backs:
+   • Depreciation: $30,000
+     → Asset write-down, no cash impact
+   • Stock-Based Compensation: $20,000
+     → Employee expense paid with equity, not cash
+   → Total non-cash additions: $50,000
+
+3. Working Capital Component Analysis:
+   
+   Asset Changes (Cash impact when they change):
+   • Increase in AR: ($40,000)
+     → Sales made on credit, cash not collected
+   • Decrease in Inventory: $10,000
+     → Inventory converted to sales, freed up cash
+   
+   Liability Changes (Cash impact when they change):
+   • Decrease in AP: ($15,000)
+     → Paid suppliers, used cash
+   • Increase in Accrued: $18,000
+     → Expenses recorded but not yet paid
+   • Increase in Deferred Revenue: $12,000
+     → Cash received for future delivery
+
+4. Net Working Capital Summary:
+   → ($40,000) + $10,000 + ($15,000) + $18,000 + $12,000 = ($15,000)
+
+5. Total Operating Cash Flow:
+   → $150,000 + $50,000 + ($15,000) = $185,000
+
+Cash Flow Quality Analysis:
+   • OCF ($185k) > Net Income ($150k) by $35k
+   • Strong cash conversion driven by non-cash charges
+   • Working capital was a small drag on cash
+   • Overall healthy operating cash generation
+
+Key Points:
+   • Each adjustment must be classified as cash/non-cash properly
+   • Asset increases use cash, decreases provide cash
+   • Liability increases provide cash, decreases use cash
+   • The net result shows true cash-generating ability`,
+    learnContent: {
+      concept: 'Reconciling Net Income into CFO requires summing non-cash and working capital drivers.',
+      formula: 'OCF = NI + Non-cash + ∆WC',
+      example: '$200k + $50k − $20k − $10k + $5k = $225k\n$120k + $10k − $15k + $10k = $125k\n$90k + $18k − $8k = $100k'
+    }
+  },
+
+  // Topic 53: Depreciation & Amortization Add-back
+  {
+    id: 'acc-easy-61',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'D&A Add-Back – Basic Concept',
+    description: `A company reports: Net Income = $75,000 and Depreciation = $10,000.
+
+Why is Depreciation added back on the Cash Flow Statement?`,
+    answer: 'Because it is a non-cash expense',
+    hint: 'Think about what cash is actually spent.',
+    explanation: `Answer: Because it is a non-cash expense.
+
+• • •
+
+Detailed explanation:
+
+1. What is Depreciation:
+   • Systematic allocation of asset cost over useful life
+   • Accounting method to match expense with revenue
+   • Required under accrual accounting principles
+
+2. Impact on Net Income:
+   • Depreciation expense reduces reported Net Income
+   • But no actual cash was spent during the period
+   • The cash was spent when the asset was originally purchased
+
+3. Cash Flow Statement Logic:
+   • We start with Net Income ($75,000)
+   • NI was reduced by $10,000 depreciation
+   • But this $10,000 didn't represent a cash outflow
+   • So we add it back to show true cash generation
+
+4. The Add-Back Process:
+   • Net Income: $75,000 (includes $10k depreciation expense)
+   • Add back Depreciation: $10,000
+   • Operating Cash Flow: $85,000
+   → This shows actual cash generated from operations
+
+5. Timing Difference:
+   • Cash outflow: When asset was purchased (past)
+   • Depreciation expense: Spread over asset life (present)
+   • CFO add-back: Removes non-cash impact (present)
+
+Real Example:
+   • Buy $100k machine in 2020 → $100k cash outflow in 2020
+   • $20k annual depreciation 2021-2025 → No cash impact
+   • Add back $20k each year to CFO → Shows true cash generation
+
+Key Points:
+   • Depreciation is an allocation, not a cash transaction
+   • It artificially reduces Net Income for cash flow purposes
+   • Adding it back reveals actual operating cash generation
+   • This principle applies to all non-cash expenses`,
+    learnContent: {
+      concept: 'Depreciation is non-cash and should be added back when calculating Operating Cash Flow.',
+      formula: 'Operating CF = Net Income + Depreciation + Other non-cash items',
+      example: '$50k NI + $5k depreciation = $55k OCF\n$100k NI + $20k D&A = $120k OCF\n$80k NI + $12k depreciation = $92k OCF'
+    }
+  },
+  {
+    id: 'acc-medium-39',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'D&A Add-Back – Asset Schedule',
+    description: `A firm has $300,000 in Net PP&E and uses straight-line depreciation over 10 years. It reports Net Income of $200,000.
+
+What is the depreciation add-back and the resulting Operating Cash Flow (no other adjustments)?`,
+    answer: 230000,
+    unit: '$',
+    hint: 'Depreciation = PP&E ÷ Useful life. Add to Net Income.',
+    explanation: `Calculation:
+Annual depreciation = $300,000 ÷ 10 = $30,000
+OCF = $200,000 + $30,000 = $230,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Straight-Line Depreciation Method:
+   • Takes asset cost and spreads evenly over useful life
+   • Formula: Annual Depreciation = Asset Cost ÷ Useful Life
+   • Consistent expense each year
+
+2. Calculate Annual Depreciation:
+   • Net PP&E: $300,000
+   • Useful Life: 10 years
+   → Annual Depreciation = $300,000 ÷ 10 = $30,000
+
+3. Impact on Financial Statements:
+   
+   Income Statement:
+   • Depreciation reduces Net Income by $30,000
+   • Reported Net Income: $200,000 (after depreciation)
+   
+   Cash Flow Statement:
+   • Start with Net Income: $200,000
+   • Add back non-cash depreciation: $30,000
+   • Operating Cash Flow: $230,000
+
+4. The Cash Flow Logic:
+   • The $30,000 depreciation didn't use any cash this year
+   • Cash was spent when asset was originally purchased
+   • Adding back shows true cash generation: $230,000
+
+5. Year-over-Year Consistency:
+   • This $30,000 add-back will occur each year for 10 years
+   • Total depreciation over life: $300,000
+   • Matches original asset cost
+
+Key Points:
+   • Straight-line creates consistent annual depreciation
+   • Higher asset base = higher annual depreciation add-back
+   • OCF will consistently exceed NI by depreciation amount
+   • This is why asset-heavy companies often show strong cash flow`,
+    learnContent: {
+      concept: 'Straight-line depreciation evenly spreads cost across years. It\'s added back to calculate CFO.',
+      formula: 'Depreciation = Asset Cost ÷ Useful Life; OCF = NI + D&A',
+      example: '$100k asset, 5 years = $20k D&A per year\n$250k PP&E, 10 years = $25k/year\n$120k equipment, 6 years = $20k/year'
+    }
+  },
+  {
+    id: 'acc-hard-30',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'D&A Rollforward – Multi-Asset Example',
+    description: `Company has:
+- Equipment A: $100,000, 5-year life
+- Equipment B: $50,000, 2-year life (purchased mid-year)
+- Software C: $30,000, 3-year life
+
+What is total D&A expense and the add-back for this year?`,
+    answer: 42500,
+    unit: '$',
+    hint: 'Account for half-year depreciation on mid-year purchase. Sum individual items.',
+    explanation: `Calculation:
+A: $100,000 ÷ 5 = $20,000
+B: $50,000 ÷ 2 = $25,000/year, but half-year = $12,500
+C: $30,000 ÷ 3 = $10,000
+Total = $20,000 + $12,500 + $10,000 = $42,500
+
+• • •
+
+Step-by-step breakdown:
+
+1. Equipment A - Full Year:
+   • Cost: $100,000
+   • Useful Life: 5 years
+   • Purchase Timing: Beginning of year (full year depreciation)
+   → Annual Depreciation = $100,000 ÷ 5 = $20,000
+
+2. Equipment B - Mid-Year Purchase:
+   • Cost: $50,000
+   • Useful Life: 2 years
+   • Purchase Timing: Mid-year (6 months)
+   • Full Year Depreciation = $50,000 ÷ 2 = $25,000
+   → This Year Depreciation = $25,000 × 6/12 = $12,500
+
+3. Software C - Full Year:
+   • Cost: $30,000
+   • Useful Life: 3 years
+   • Purchase Timing: Beginning of year (full year)
+   → Annual Amortization = $30,000 ÷ 3 = $10,000
+
+4. Total D&A Calculation:
+   • Equipment A: $20,000
+   • Equipment B: $12,500
+   • Software C: $10,000
+   → Total D&A Expense = $42,500
+
+5. Cash Flow Impact:
+   • This $42,500 reduces Net Income
+   • But represents no cash outflow in current year
+   • Must be added back to CFO calculation
+   → Operating CF Add-back = $42,500
+
+6. Future Years Preview:
+   
+   Next Year D&A:
+   • Equipment A: $20,000 (continues)
+   • Equipment B: $25,000 (full year)
+   • Software C: $10,000 (continues)
+   • Total: $55,000
+
+Key Points:
+   • Each asset depreciates independently based on its life
+   • Mid-year purchases get prorated depreciation
+   • Software amortization follows same principles as equipment depreciation
+   • Total D&A becomes the CFO add-back amount`,
+    learnContent: {
+      concept: 'Each asset\'s depreciation depends on timing, cost, and useful life. Mid-year purchases only count partial.',
+      formula: 'D&A = Σ (Cost ÷ Useful Life × Time Held)',
+      example: '$60k asset, 3 years = $20k/year\n$40k asset, 2-year life bought mid-year = $10k D&A\n$90k asset, 5 years, 9 months held = $13.5k D&A'
+    }
   }
 ];
