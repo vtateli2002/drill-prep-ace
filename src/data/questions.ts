@@ -325,8 +325,11 @@ Step-by-step breakdown:
 
 Key Points:
 • Current Assets represent resources convertible to cash within one year
+
 • Current Liabilities are obligations due within one year
+
 • A 1.5x ratio means the company has $1.50 of current assets for every $1.00 of current liabilities
+
 • This indicates healthy short-term liquidity and ability to meet immediate obligations`,
     learnContent: {
       concept: 'Current Ratio measures short-term liquidity — how easily a company can cover short-term liabilities with short-term assets.',
