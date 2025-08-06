@@ -537,6 +537,11 @@ const QuestionView = () => {
                     step="0.01"
                     value={userAnswer}
                     onChange={(e) => setUserAnswer(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        handleSubmit();
+                      }
+                    }}
                     placeholder="Enter your answer"
                     className="flex-1"
                     disabled={isSubmitted}
