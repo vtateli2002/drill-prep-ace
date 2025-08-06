@@ -247,10 +247,10 @@ Key insights:
     answer: 1.5,
     unit: 'x',
     hint: 'Current Ratio = Current Assets ÷ Current Liabilities',
-    explanation: `**Calculation:**
+    explanation: `Calculation:
 Current Ratio = $30,000 ÷ $20,000 = 1.5x
 
-**Step-by-step breakdown:**
+Step-by-step breakdown:
 
 Current Assets:
 • Cash: $5,000
@@ -263,11 +263,11 @@ Current Liabilities:
 • Short-Term Loan: $12,000
 Total Current Liabilities: $20,000
 
-**Key insights:**
-• Current Assets - resources convertible to cash within one year
-• Current Liabilities - obligations due within one year
-• 1.5x ratio means $1.50 of current assets for every $1.00 of current liabilities
-• Higher ratios indicate better short-term liquidity`,
+Analysis:
+• Current Assets represent resources convertible to cash within one year
+• Current Liabilities are obligations due within one year
+• A 1.5x ratio means the company has $1.50 of current assets for every $1.00 of current liabilities
+• This indicates healthy short-term liquidity and ability to meet immediate obligations`,
     learnContent: {
       concept: 'Current Ratio measures short-term liquidity — how easily a company can cover short-term liabilities with short-term assets.',
       formula: 'Current Ratio = Current Assets ÷ Current Liabilities\nAssets = Cash + A/R + Inv\nLiabilities = A/P + Short-Term Debt',
