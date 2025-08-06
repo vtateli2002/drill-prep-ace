@@ -398,14 +398,14 @@ export const QUESTIONS: Question[] = [
     difficulty: 'hard',
     title: 'Cash Flow from Operations Calculation',
     description: 'ABC Company reported net income of $15,000 for the year. During the year, they had the following activities:\n\n• Purchased new equipment for $300,000 with a 10-year useful life (straight-line depreciation)\n• Sold old equipment with a book value of $40,000 for $70,000\n• Company tax rate is 25%\n\nWhat is the company\'s cash flow from operations for the year?',
-    answer: 22500,
+    answer: 15000,
     unit: '$',
-    hint: 'Start with net income, then add back non-cash expenses and remove non-operating gains. Consider tax effects.',
-    explanation: 'Starting with Net Income: $15,000\n\nAdd back Depreciation (non-cash expense): Equipment cost $300,000 ÷ 10 years = $30,000\n\nSubtract Gain on Sale (non-operating item): Sale price $70,000 - Book value $40,000 = $30,000 gain to remove\n\nAdd back Tax Shield from Gain: The $30,000 gain increases taxes by $30,000 × 25% = $7,500\n\nCash Flow from Operations = $15,000 + $30,000 - $30,000 + $7,500 = $22,500',
+    hint: 'Start with net income, then add back non-cash expenses and remove non-operating gains. Net income already includes tax effects.',
+    explanation: 'Using the indirect method for Cash Flow from Operations:\n\n**Step 1: Start with Net Income**\nNet Income = $15,000 (this already includes all tax effects)\n\n**Step 2: Add Back Non-Cash Expenses**\nDepreciation on new equipment = $300,000 ÷ 10 years = $30,000\n(Depreciation reduces net income but doesn\'t affect cash)\n\n**Step 3: Remove Non-Operating Gains**\nGain on sale of equipment = $70,000 - $40,000 = $30,000\n(This gain is non-operating and should be excluded from CFO)\n\n**Final Calculation:**\nCFO = $15,000 + $30,000 - $30,000 = $15,000\n\n*Note: We do not separately adjust for taxes on the gain because net income already reflects the after-tax impact of all transactions.*',
     learnContent: {
-      concept: 'CFO starts with net income, adds back non-cash expenses (depreciation), subtracts non-operating gains, and adjusts for tax effects.',
-      formula: 'CFO = Net Income + Depreciation - Gains + Tax Shield on Gains',
-      example: 'FabWorks sells equipment for $80K (book = $50K) and books $100K Dep → CFO = 52.5K\nFleetMax gains $20K on truck sale, Dep $60K → CFO = 45K\nBrickline gains $10K, depreciation = $30K → CFO = 27.5K'
+      concept: 'CFO using the indirect method starts with net income, adds back non-cash expenses (like depreciation), and subtracts non-operating items (like gains on asset sales). Tax effects are already included in net income.',
+      formula: 'CFO = Net Income + Non-Cash Expenses - Non-Operating Gains',
+      example: 'Company with $50K NI, $20K depreciation, $10K gain → CFO = $50K + $20K - $10K = $60K'
     }
   },
   {
