@@ -1959,17 +1959,28 @@ What is the company's total current liabilities?`,
     answer: 30000,
     unit: '$',
     hint: 'Add up only the short-term obligations due within 12 months.',
-    explanation: `Total Current Liabilities = short-term obligations due within 12 months
+    explanation: `Calculation:
+Total Current Liabilities = $12,000 + $8,000 + $10,000 = $30,000
 
-Current Liabilities: $12,000 + $8,000 + $10,000 = $30,000
-Excluded: Long-Term Debt ($40,000) and Deferred Tax Liability ($5,000)
+• • •
 
-Key components:
-• Accounts Payable - amounts owed to suppliers for goods/services
-• Accrued Expenses - incurred costs not yet paid (wages, utilities, interest)
-• Short-Term Debt - borrowings due within 12 months
-• Long-Term Debt - excluded as due beyond one year
-• Deferred Tax Liability - excluded as timing differences reverse over multiple periods`,
+Step-by-step breakdown:
+
+1. Current Liabilities (due within 12 months):
+   • Accounts Payable: $12,000
+   • Accrued Expenses: $8,000
+   • Short-Term Debt: $10,000
+   → Total Current Liabilities: $30,000
+
+2. Excluded Items (not current):
+   • Long-Term Debt: $40,000 (due beyond one year)
+   • Deferred Tax Liability: $5,000 (timing differences)
+
+Key Points:
+   • Current liabilities are obligations due within one year
+   • Accounts Payable represents amounts owed to suppliers
+   • Accrued Expenses are costs incurred but not yet paid
+   • Short-Term Debt includes borrowings due within 12 months`,
     learnContent: {
       concept: 'Current liabilities represent a company\'s obligations that are expected to be settled within one year. Understanding what qualifies as a short-term liability is essential for liquidity analysis.',
       formula: 'Current Liabilities = A/P + Accrued Expenses + Short-Term Debt',
@@ -3464,7 +3475,29 @@ Key Points:
     answer: 4000,
     unit: '$',
     hint: 'Subtract used portions of the DTA from the beginning balance year-by-year.',
-    explanation: 'Year 1 usage = $3,000\nYear 2 usage = $5,000\nTotal used = $8,000\nRemaining DTA = $12,000 − $8,000 = $4,000',
+    explanation: `Calculation:
+Remaining DTA = $12,000 - $8,000 = $4,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Initial DTA Balance:
+   → DTA for NOLs: $12,000
+
+2. DTA Usage by Year:
+   • Year 1: $3,000
+   • Year 2: $5,000
+   → Total used through Year 2: $8,000
+
+3. End of Year 2 Balance:
+   → Remaining DTA: $12,000 - $8,000 = $4,000
+
+Key Points:
+   • DTAs are reduced as tax benefits are utilized
+   • Remaining $4,000 will be used in Year 3
+   • NOLs provide valuable tax offsets against future profits
+   • DTA balance decreases as tax benefits are realized`,
     learnContent: {
       concept: 'Deferred Tax Assets (DTAs) arise when a company overpays taxes or records losses that can be used to reduce future taxable income.',
       formula: 'Remaining DTA = Initial DTA − ∑ Annual DTA usage',
@@ -3480,7 +3513,30 @@ Key Points:
     answer: 20000,
     unit: '$',
     hint: 'Compare the Year 1 depreciation charges.',
-    explanation: 'Straight-line depreciation in Y1 = $30,000\nAccelerated depreciation in Y1 = $50,000\nHigher depreciation = Lower pre-tax income\nDifference = $50,000 − $30,000 = $20,000',
+    explanation: `Calculation:
+Income Difference = $50,000 - $30,000 = $20,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Straight-Line Method:
+   • Equipment cost: $90,000
+   • Useful life: 3 years
+   → Year 1 depreciation: $30,000
+
+2. Accelerated Method:
+   → Year 1 depreciation: $50,000
+
+3. Pre-Tax Income Impact:
+   • Higher depreciation reduces pre-tax income
+   → Difference: $50,000 - $30,000 = $20,000
+
+Key Points:
+   • Accelerated depreciation front-loads expenses
+   • Pre-tax income is $20,000 lower with accelerated method
+   • Future years will reverse this pattern
+   • Total depreciation over asset life remains the same`,
     learnContent: {
       concept: 'Accelerated depreciation lowers net income earlier, while straight-line smooths the impact.',
       formula: 'Δ Pre-Tax Income = SL Depreciation − Accelerated Depreciation',
@@ -3746,7 +3802,25 @@ Key Points:
     answer: 3000,
     unit: '$',
     hint: 'Use formula: ∆AR + ∆Inventory – ∆AP',
-    explanation: 'Net Change = +8,000 (AR up) –5,000 (Inventory down) → net = +$3,000 increase',
+    explanation: `Calculation:
+Net Working Capital Change = $8,000 - $5,000 = $3,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Working Capital Components:
+   • Accounts Receivable: +$8,000 (increase)
+   • Inventory: -$5,000 (decrease)
+
+2. Net Change:
+   → Net Change = +$8,000 - $5,000 = +$3,000
+
+Key Points:
+   • AR increase represents cash tied up in customer receivables
+   • Inventory decrease freed up cash from reduced stock levels
+   • Net result is $3,000 increase in working capital investment
+   • Higher working capital typically reduces operating cash flow`,
     learnContent: {
       concept: 'Working capital changes reflect operational efficiency and impact cash flow.',
       formula: '∆WC = ∆AR + ∆Inventory – ∆AP',
@@ -3762,7 +3836,30 @@ Key Points:
     answer: 5000,
     unit: '$',
     hint: 'Annual interest prorated for 6 months.',
-    explanation: 'Interest = $100,000 × 10% × 6/12 = $5,000',
+    explanation: `Calculation:
+Interest Expense = $100,000 × 10% × (6/12) = $5,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Debt Terms:
+   • Principal: $100,000
+   • Annual interest rate: 10%
+   • Issue date: July 1 (mid-year)
+
+2. Time Period:
+   • July 1 to December 31: 6 months
+   → Time fraction: 6/12 = 0.5
+
+3. Interest Expense:
+   → Interest: $100,000 × 10% × 0.5 = $5,000
+
+Key Points:
+   • Interest is accrued based on time elapsed
+   • Annual rate must be prorated for partial periods
+   • Expense is recorded even if payment is due later
+   • This creates an accrued interest liability if unpaid`,
     learnContent: {
       concept: 'Interest is accrued over time. Even if unpaid, it\'s expensed based on the period owed.',
       formula: 'Interest = Principal × Rate × Time',
