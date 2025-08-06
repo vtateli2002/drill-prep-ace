@@ -19,11 +19,12 @@ const Problems = () => {
   // Filter state
   const [selectedTrack, setSelectedTrack] = useState<Track | 'all'>('all');
   const [selectedDifficulty, setSelectedDifficulty] = useState<Difficulty | 'all'>('all');
+  const [completionFilter, setCompletionFilter] = useState<'all' | 'completed' | 'incomplete'>('all');
 
   // Debug filter changes
   useEffect(() => {
-    console.log('Filter state changed:', { selectedTrack, selectedDifficulty });
-  }, [selectedTrack, selectedDifficulty]);
+    console.log('Filter state changed:', { selectedTrack, selectedDifficulty, completionFilter });
+  }, [selectedTrack, selectedDifficulty, completionFilter]);
 
   if (loading) {
     return (
@@ -81,7 +82,14 @@ const Problems = () => {
     const trackMatches = selectedTrack === 'all' || question.track === selectedTrack;
     const difficultyMatches = selectedDifficulty === 'all' || question.difficulty === selectedDifficulty;
     
-    return trackMatches && difficultyMatches;
+    // Completion filter
+    const isSolved = isQuestionSolved(question.id);
+    const completionMatches = 
+      completionFilter === 'all' || 
+      (completionFilter === 'completed' && isSolved) ||
+      (completionFilter === 'incomplete' && !isSolved);
+    
+    return trackMatches && difficultyMatches && completionMatches;
   });
 
   // Debug logging - let's see what tracks actually exist in the data
@@ -120,9 +128,10 @@ const Problems = () => {
   const clearFilters = () => {
     setSelectedTrack('all');
     setSelectedDifficulty('all');
+    setCompletionFilter('all');
   };
 
-  const hasActiveFilters = selectedTrack !== 'all' || selectedDifficulty !== 'all';
+  const hasActiveFilters = selectedTrack !== 'all' || selectedDifficulty !== 'all' || completionFilter !== 'all';
 
   return (
     <div className="min-h-screen bg-background">
@@ -159,6 +168,52 @@ const Problems = () => {
                   Clear All
                 </Button>
               )}
+            </div>
+            
+            {/* Completion Status Filter - Professional Segmented Control */}
+            <div className="mb-6">
+              <h3 className="text-sm font-medium text-muted-foreground mb-3">Progress Status</h3>
+              <div className="inline-flex p-1 bg-muted rounded-lg border">
+                <button
+                  onClick={() => setCompletionFilter('all')}
+                  className={`relative px-4 py-2 text-sm font-medium transition-all duration-200 rounded-md ${
+                    completionFilter === 'all'
+                      ? 'bg-background text-foreground shadow-sm border border-border'
+                      : 'text-muted-foreground hover:text-foreground'
+                  }`}
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                    All Problems
+                  </div>
+                </button>
+                <button
+                  onClick={() => setCompletionFilter('completed')}
+                  className={`relative px-4 py-2 text-sm font-medium transition-all duration-200 rounded-md ${
+                    completionFilter === 'completed'
+                      ? 'bg-background text-foreground shadow-sm border border-border'
+                      : 'text-muted-foreground hover:text-foreground'
+                  }`}
+                >
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-success" />
+                    Completed
+                  </div>
+                </button>
+                <button
+                  onClick={() => setCompletionFilter('incomplete')}
+                  className={`relative px-4 py-2 text-sm font-medium transition-all duration-200 rounded-md ${
+                    completionFilter === 'incomplete'
+                      ? 'bg-background text-foreground shadow-sm border border-border'
+                      : 'text-muted-foreground hover:text-foreground'
+                  }`}
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="w-4 h-4 rounded-full border-2 border-muted-foreground"></div>
+                    Incomplete
+                  </div>
+                </button>
+              </div>
             </div>
             
             <Tabs defaultValue="track" className="w-full">
@@ -246,7 +301,12 @@ const Problems = () => {
                       {getDifficultyConfig(selectedDifficulty).label}
                     </Badge>
                   )}
-                  <span>({filteredQuestions.length} problems)</span>
+                   {completionFilter !== 'all' && (
+                     <Badge variant="secondary" className="text-xs">
+                       {completionFilter === 'completed' ? 'Completed' : 'Incomplete'}
+                     </Badge>
+                   )}
+                   <span>({filteredQuestions.length} problems)</span>
                 </div>
               </div>
             )}
