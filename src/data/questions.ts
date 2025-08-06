@@ -2126,5 +2126,165 @@ How much revenue is recognized by the end of April?`,
       formula: 'NCI = Net Income × (1 – Ownership %)',
       example: '$60K NI, 75% owned → NCI = $15K\n$500K, 60% owned → NCI = $200K\n$80K, 90% owned → $8K NCI'
     }
+  },
+  {
+    id: 'acc-medium-97',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Revenue Recognition Timing',
+    description: 'A software company signs a 12-month contract for $120,000 on January 1st and receives full payment upfront. By March 31st, how much revenue should the company recognize under accrual accounting?',
+    answer: 30000,
+    unit: '$',
+    hint: 'Recognize revenue based on the portion of service delivered.',
+    explanation: '3 months out of 12 = 25% → $120,000 × 25% = $30,000',
+    learnContent: {
+      concept: 'Accrual accounting recognizes revenue when earned, not when received.',
+      formula: 'Recognized Revenue = Total Contract × (Months Passed ÷ Total Months)',
+      example: '$60K over 6 months → 2 months passed = $20K\n$240K, 4 months passed of 12 → $80K\n$90K contract, 1 month of 9 → $10K'
+    }
+  },
+  {
+    id: 'acc-medium-98',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Debt Amortization and Interest Expense',
+    description: 'A company takes out a $100,000 loan at 6% interest, with $20,000 of principal due annually. What is the interest expense in Year 2?',
+    answer: 4800,
+    unit: '$',
+    hint: 'Interest = Remaining Principal × Interest Rate',
+    explanation: 'After Year 1 payment: $100K – $20K = $80K → Year 2 Interest = $80K × 6% = $4,800',
+    learnContent: {
+      concept: 'Interest expense declines as the principal decreases over time.',
+      formula: 'Interest Expense = Beginning Principal × Interest Rate',
+      example: '$50K @ 10% → $5K\n$40K remaining @ 5% → $2K\n$100K loan, $20K paid → Year 2: $80K × rate'
+    }
+  },
+  {
+    id: 'acc-medium-99',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Cash Tax Calculation with D&A',
+    description: 'A company has $120,000 in pretax income, $25,000 in depreciation, and a 30% tax rate. What is the cash tax paid?',
+    answer: 28500,
+    unit: '$',
+    hint: 'Taxable Income = Pretax Income – D&A',
+    explanation: 'Taxable Income = $120K – $25K = $95K → $95K × 30% = $28,500',
+    learnContent: {
+      concept: 'Depreciation lowers taxable income, reducing actual taxes paid.',
+      formula: 'Cash Taxes = (Pretax – D&A) × Tax Rate',
+      example: '$200K – $30K, 25% → $42.5K\n$150K – $50K, 30% → $30K\n$300K – $100K, 20% → $40K'
+    }
+  },
+  {
+    id: 'acc-medium-100',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Capital Lease Depreciation and Interest',
+    description: 'A company enters a 5-year capital lease for $50,000. It depreciates the asset straight-line and pays 5% interest on the lease liability. What is the depreciation expense and Year 1 interest?',
+    answer: 10000,
+    unit: '$',
+    hint: 'Split asset value over useful life; interest = liability × rate',
+    explanation: 'Depreciation = $50K ÷ 5 = $10K\nInterest = $50K × 5% = $2,500',
+    learnContent: {
+      concept: 'Capital leases create both depreciation and interest expenses.',
+      formula: 'Depreciation = Asset ÷ Years\nInterest = Lease Liability × Rate',
+      example: '$60K lease, 6 years → $10K/year\n$40K, 4 years → $10K/year + interest on balance'
+    }
+  },
+  {
+    id: 'acc-medium-101',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Non-Cash Expense Identification',
+    description: 'A company\'s income statement includes: Net Income: $60,000, Depreciation: $15,000, Amortization: $5,000, Interest: $10,000, Taxes: $20,000. What are the total non-cash expenses?',
+    answer: 20000,
+    unit: '$',
+    hint: 'Non-cash = Depreciation + Amortization',
+    explanation: 'Only depreciation and amortization are non-cash → $15K + $5K = $20K',
+    learnContent: {
+      concept: 'Non-cash expenses lower net income without affecting cash.',
+      formula: 'Non-Cash Expenses = D&A',
+      example: 'D: $10K, A: $5K → $15K\nD: $30K, A: $0 → $30K\nD: $25K, A: $10K → $35K'
+    }
+  },
+  {
+    id: 'acc-medium-102',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Interest Coverage Ratio',
+    description: 'A firm has EBIT of $120,000 and interest expense of $15,000. What is its interest coverage ratio?',
+    answer: 8,
+    unit: '×',
+    hint: 'ICR = EBIT ÷ Interest',
+    explanation: '$120K ÷ $15K = 8×',
+    learnContent: {
+      concept: 'Interest coverage shows how easily a company can meet interest obligations.',
+      formula: 'ICR = EBIT ÷ Interest Expense',
+      example: '$100K EBIT, $20K interest → 5×\n$240K EBIT, $30K interest → 8×\n$50K EBIT, $10K → 5×'
+    }
+  },
+  {
+    id: 'acc-medium-103',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Changes in Accrued Expenses',
+    description: 'A company begins with $12,000 in accrued expenses. During the year, it records $40,000 in operating expenses and pays out $38,000 in cash. What is the ending accrued expenses balance?',
+    answer: 14000,
+    unit: '$',
+    hint: 'Ending = Beginning + Incurred – Paid',
+    explanation: '$12K + $40K – $38K = $14K',
+    learnContent: {
+      concept: 'Accrued expenses increase when expenses are incurred but not yet paid.',
+      formula: 'Ending Accrual = Beginning + Expense Incurred – Cash Paid',
+      example: 'Begin $10K, incur $30K, pay $25K → $15K\nBegin $0, incur $20K, pay $18K → $2K'
+    }
+  },
+  {
+    id: 'acc-medium-104',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Unlevered Free Cash Flow (UFCF)',
+    description: 'A company has: EBIT: $200,000, Taxes: 25%, Depreciation: $30,000, CapEx: $40,000, Change in NWC: $10,000. Calculate UFCF.',
+    answer: 130000,
+    unit: '$',
+    hint: 'UFCF = EBIT(1 – Tax) + D&A – CapEx – ΔNWC',
+    explanation: 'EBIT(1 – 0.25) = $150K → +$30K – $40K – $10K = $130K',
+    learnContent: {
+      concept: 'UFCF shows cash available to all stakeholders before debt.',
+      formula: 'UFCF = EBIT(1–T) + D&A – CapEx – ΔNWC',
+      example: '$100K EBIT, 20% tax, $20K D&A, $30K CapEx → $70K\n$300K EBIT, 30% tax, $50K D&A, $60K CapEx, $10K NWC → $140K'
+    }
+  },
+  {
+    id: 'acc-medium-105',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Net Operating Loss (NOL) Utilization',
+    description: 'A company has a $50,000 NOL carryforward. This year it earns $40,000 in pretax income and has a 25% tax rate. How much tax will it pay?',
+    answer: 0,
+    unit: '$',
+    hint: 'NOL offsets taxable income until used up.',
+    explanation: '$40K income fully offset → no taxable income → $0 tax',
+    learnContent: {
+      concept: 'NOLs reduce future taxable income, lowering tax payments.',
+      formula: 'Taxable Income = Pretax – NOL Used',
+      example: '$20K income, $30K NOL → $0 tax\n$100K income, $40K NOL → Tax on $60K'
+    }
+  },
+  {
+    id: 'acc-medium-106',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Inventory Capitalization',
+    description: 'A manufacturing firm incurs $40,000 in raw materials, $25,000 in direct labor, and $15,000 in overhead. All inventory produced is unsold. How much is capitalized to inventory on the balance sheet?',
+    answer: 80000,
+    unit: '$',
+    hint: 'Capitalize raw materials + labor + overhead',
+    explanation: '$40K + $25K + $15K = $80K',
+    learnContent: {
+      concept: 'Inventory includes all costs to get goods ready for sale.',
+      formula: 'Capitalized Inventory = Raw Materials + Direct Labor + Overhead',
+      example: '$10K + $5K + $2K → $17K\n$25K + $20K + $10K → $55K\n$30K + $15K + $10K → $55K'
+    }
   }
 ];
