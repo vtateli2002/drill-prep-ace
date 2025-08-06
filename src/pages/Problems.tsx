@@ -81,14 +81,6 @@ const Problems = () => {
     const trackMatches = selectedTrack === 'all' || question.track === selectedTrack;
     const difficultyMatches = selectedDifficulty === 'all' || question.difficulty === selectedDifficulty;
     
-    // Debug individual filter matches
-    if (selectedTrack !== 'all' && !trackMatches) {
-      console.log(`Track filter mismatch: ${question.track} vs ${selectedTrack} for question ${question.id}: ${question.title}`);
-    }
-    if (selectedDifficulty !== 'all' && !difficultyMatches) {
-      console.log(`Difficulty filter mismatch: ${question.difficulty} vs ${selectedDifficulty} for question ${question.id}: ${question.title}`);
-    }
-    
     return trackMatches && difficultyMatches;
   });
 
@@ -105,8 +97,6 @@ const Problems = () => {
     selectedDifficulty,
     totalQuestions: allQuestions.length,
     filteredQuestions: filteredQuestions.length,
-    trackFilter: selectedTrack !== 'all' ? filteredQuestions.filter(q => q.track === selectedTrack).length : 'N/A',
-    difficultyFilter: selectedDifficulty !== 'all' ? filteredQuestions.filter(q => q.difficulty === selectedDifficulty).length : 'N/A',
     sampleQuestions: filteredQuestions.slice(0, 3).map(q => ({ id: q.id, title: q.title, track: q.track, difficulty: q.difficulty }))
   });
 
