@@ -3492,32 +3492,33 @@ Key Points:
     track: 'accounting',
     difficulty: 'medium',
     title: 'Capital Lease Liability Calculation',
-    description: `A company signs a capital lease requiring $5,000 annual payments over 4 years. The lease uses a 6% discount rate. Using the present value formula, calculate the initial lease liability recorded on the balance sheet at lease inception.`,
-    answer: 17237,
+    description: `A company signs a capital lease requiring $6,000 annual payments over 3 years. The lease uses a 10% discount rate. Calculate the initial lease liability recorded on the balance sheet at lease inception.
+
+Given: PV annuity factor for 3 years at 10% = 2.4869`,
+    answer: 14921,
     unit: '$',
-    hint: 'Use the PV of annuity formula for lease payments.',
+    hint: 'Multiply the annual payment by the PV annuity factor provided.',
     explanation: `Calculation:
-Present Value = $5,000 × 3.4447 = $17,237
+Present Value = $6,000 × 2.4869 = $14,921
 
 • • •
 
 Step-by-step breakdown:
 
 1. Lease Terms:
-   • Annual payment: $5,000
-   • Lease term: 4 years
-   • Discount rate: 6%
+   • Annual payment: $6,000
+   • Lease term: 3 years
+   • Discount rate: 10%
+   • PV annuity factor: 2.4869
 
-2. Present Value Factor:
-   • PV annuity factor: [(1 - (1.06)^-4) / 0.06] = 3.4447
-
-3. Initial Lease Liability:
-   → PV: $5,000 × 3.4447 = $17,237
+2. Initial Lease Liability:
+   → PV: $6,000 × 2.4869 = $14,921
 
 Key Points:
    • Capital leases create both an asset and liability at lease inception
    • Liability equals present value of future lease payments
    • Discount rate reflects the company's incremental borrowing rate
+   • PV annuity factor formula: [(1 - (1 + r)^-n) / r]
    • This liability will be reduced as lease payments are made`,
     learnContent: {
       concept: 'Capital leases create a liability equal to the present value of lease payments.',
