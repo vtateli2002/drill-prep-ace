@@ -17,6 +17,7 @@ import { useAuth } from '@/hooks/useAuth';
 import NotesUtility from '@/components/NotesUtility';
 import DrawingCanvas from '@/components/DrawingCanvas';
 import Calculator from '@/components/Calculator';
+import { FinancialSummary } from '@/components/FinancialSummary';
 
 const QuestionView = () => {
   const { questionId } = useParams<{ questionId: string }>();
@@ -55,6 +56,85 @@ const QuestionView = () => {
       setCurrentQuestion(question || null);
     }
   }, [questionId]);
+
+  // Extract financial summary data for hard accounting questions
+  const getFinancialSummary = (question: Question) => {
+    if (question.track !== 'accounting' || question.difficulty !== 'hard') return null;
+    
+    // Financial summary data for each hard accounting question
+    const financialData: Record<string, Record<string, string | number>> = {
+      'acc-hard-148': {
+        'Net Income': '$50,000',
+        'Amortization': '$100,000',
+        'Amortization Period': '5 years',
+        'Cash Collected (Deferred Revenue)': '$120,000',
+        'Revenue Recognized': '$80,000',
+        'Tax Rate': '25%'
+      },
+      'acc-hard-149': {
+        'Net Income': '$70,000',
+        'Accounts Receivable': '+$25,000',
+        'Inventory': '–$10,000',
+        'Prepaids': '+$5,000',
+        'Accounts Payable': '+$20,000',
+        'Accrued Liabilities': '–$8,000',
+        'Depreciation': '$15,000'
+      },
+      'acc-hard-150': {
+        'Capex': '$300,000',
+        'Depreciation Period': '10 years',
+        'Old Asset Book Value': '$40,000',
+        'Sale Price': '$70,000',
+        'Tax Rate': '25%'
+      },
+      'acc-hard-151': {
+        'Net Income': '$40,000',
+        'Prepaid Revenue Collected': '$100,000',
+        'Revenue Recognized': '$60,000',
+        'SG&A Incurred': '$50,000',
+        'SG&A Unpaid': '$10,000',
+        'Depreciation': '$30,000'
+      },
+      'acc-hard-152': {
+        'Amortizable Intangibles': '$100,000',
+        'Amortization Period': '5 years',
+        'Goodwill Impairment': '$80,000',
+        'Tax Rate': '25%'
+      },
+      'acc-hard-153': {
+        'Sale Price': '$120,000',
+        'Book Value': '$90,000',
+        'Tax Basis': '$80,000',
+        'Tax Rate': '30%'
+      },
+      'acc-hard-154': {
+        'Amortization': '$40,000',
+        'DTA Write-down': '$25,000',
+        'Tax Rate': '25%'
+      },
+      'acc-hard-155': {
+        'Net Income': '$90,000',
+        'Prepaid Expense': '+$15,000',
+        'Depreciation': '$40,000',
+        'Accrued Liabilities': '+$25,000'
+      },
+      'acc-hard-156': {
+        'Net Income': '$60,000',
+        'Goodwill Impairment': '$50,000',
+        'Gain on Sale': '$20,000',
+        'Depreciation': '$25,000',
+        'Tax Rate': '30%'
+      },
+      'acc-hard-157': {
+        'R&D Capitalized for Tax': '$200,000',
+        'Book Treatment': 'Fully expensed',
+        'Tax Amortization Year 1': '10%',
+        'Tax Rate': '21%'
+      }
+    };
+    
+    return financialData[question.id] || null;
+  };
 
   const calculateXP = (baseXP: number, attempts: number, usedHint: boolean) => {
     let xp = baseXP;
@@ -264,8 +344,15 @@ const QuestionView = () => {
                               .replace(/\n/g, '<br />')
                           }}
                         />
-                      </div>
-                    </div>
+                       </div>
+                     </div>
+                     
+                     {/* Financial Summary for hard accounting questions */}
+                     {(() => {
+                       const financialData = getFinancialSummary(currentQuestion);
+                       return financialData ? <FinancialSummary data={financialData} /> : null;
+                     })()}
+                     
                     
                     {showHint && currentQuestion.hint && (
                       <Card className="border-warning/50 bg-gradient-to-br from-warning/10 to-warning/5 shadow-lg">

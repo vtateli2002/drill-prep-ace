@@ -425,6 +425,102 @@ export const QUESTIONS: Question[] = [
     }
   },
   {
+    id: 'acc-hard-153',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Deferred Tax Liability & Asset Sale',
+    description: 'Drivon Motors – Tax Timing Differences\n\nDrivon Motors sold a piece of equipment for $120,000, which had a book value of $90,000 and a tax basis of $80,000.\nThe company is taxed at 30%, and the gain was recorded above-the-line on the income statement.\n\nWhat is the deferred tax liability created from this transaction?',
+    answer: 3000,
+    unit: '$',
+    hint: 'Taxable gain > book gain → DTL is created.',
+    explanation: 'Book Gain = 120,000 – 90,000 = 30,000\nTaxable Gain = 120,000 – 80,000 = 40,000\nDifference = 10,000 more taxable income than book\nDTL = 10,000 × 30% = 3,000',
+    learnContent: {
+      concept: 'DTL arises when taxable income > book income. Common in asset sales when tax basis differs from book basis. DTL is a balance sheet liability, reversed over time.',
+      formula: 'DTL = (Taxable Gain – Book Gain) × Tax Rate',
+      example: 'EquipCo sells an asset for $150K (book = $110K, tax = $100K) → DTL = (50K–40K) × 25% = 2.5K\nTowerComm sells for $500K (book = $300K, tax = $250K) → DTL = (200K–150K) × 30% = 15K\nBoltWorks sells machinery: sale = $80K, book = $60K, tax = $50K → DTL = 10K × 35% = 3.5K'
+    }
+  },
+  {
+    id: 'acc-hard-154',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'DTA Write-Down + Tax Shield',
+    description: 'Elevate Logistics – Reversing a Tax Asset\n\nElevate Logistics recorded a $40,000 non-cash amortization of intangibles this year.\nSeparately, it wrote down a $25,000 Deferred Tax Asset that it determined would no longer be realizable.\nThe corporate tax rate is 25%.\n\nWhat is the total CFO adjustment from these items?',
+    answer: 65000,
+    unit: '$',
+    hint: 'DTA write-down reduces NI but doesn\'t use cash. Amortization is non-cash too.',
+    explanation: 'Amortization = +40,000 (non-cash add-back)\nDTA write-down = increases tax expense → lowers NI\nSince it\'s non-cash, add back full 25,000\nCFO adjustment = 40,000 + 25,000 = 65,000',
+    learnContent: {
+      concept: 'Amortization reduces net income, added back to CFO. DTA write-down increases tax expense (non-cash), also added back. DTA reversals typically lower book earnings, but not cash.',
+      formula: 'CFO Adjustment = Amortization + DTA Write-down',
+      example: 'BrandCo amortizes $60K, writes off $30K DTA → CFO = 90K\nVoltPower amortizes $80K, DTA write-down of $20K → CFO = 100K\nMechra amortizes $100K, DTA impairment of $40K → CFO = 140K'
+    }
+  },
+  {
+    id: 'acc-hard-155',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Prepaid Expenses, Depreciation, & Accrued Liabilities',
+    description: 'Solaron Tech – Indirect CFO Adjustments\n\nSolaron Tech had $90,000 in Net Income.\nPrepaid insurance increased by $15,000, and Depreciation totaled $40,000.\nThe company also accrued $25,000 in unpaid wages by year-end.\n\nWhat is the cash flow from operations?',
+    answer: 140000,
+    unit: '$',
+    hint: 'Prepaids use cash. Accruals and depreciation increase CFO.',
+    explanation: 'CFO = 90,000 – 15,000 + 40,000 + 25,000 = 140,000',
+    learnContent: {
+      concept: 'Prepaid expenses are cash out → decrease CFO. Accrued liabilities = unpaid costs → cash held → increase CFO. Depreciation = non-cash → added back.',
+      formula: 'CFO = NI – ∆Prepaids + Depreciation + ∆Accrued Liabilities',
+      example: 'AmpTech NI = $100K, prepaids ↑ $10K, accruals ↑ $30K, dep = $20K → CFO = 140K\nCrateBuild NI = $80K, prepaids ↑ $5K, dep = $35K, accruals ↑ $10K → CFO = 120K\nPrintzy NI = $95K, accruals ↑ $20K, prepaids ↑ $15K, dep = $30K → CFO = 130K'
+    }
+  },
+  {
+    id: 'acc-hard-156',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Goodwill Impairment + Gain on Sale Adjustment',
+    description: 'Brixon Retail – Non-Cash Gain & Impairment\n\nBrixon Retail reported $60,000 in Net Income, which included a $50,000 goodwill impairment and a $20,000 gain on sale of real estate.\nDepreciation for the year was $25,000.\nAssume a 30% tax rate.\n\nWhat is the adjustment to CFO from these non-cash items?',
+    answer: 55000,
+    unit: '$',
+    hint: 'Add back impairment and depreciation. Subtract gain on sale.',
+    explanation: '+50,000 (impairment)\n+25,000 (depreciation)\n–20,000 (gain is non-operating)\nCFO adjustment = 55,000',
+    learnContent: {
+      concept: 'Impairments reduce net income but are non-cash. Gains on sale are non-core and subtracted from CFO. Depreciation is always added back.',
+      formula: 'CFO = Depreciation + Impairment – Gain on Sale',
+      example: 'StoreGrid has $30K impairment, $10K gain, $20K depreciation → CFO = 40K\nCleanWell has $80K impairment, no gains, $10K dep → CFO = 90K\nFixPro has $60K dep, $25K impairment, $5K gain → CFO = 80K'
+    }
+  },
+  {
+    id: 'acc-hard-157',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Capitalized R&D + DTL Creation',
+    description: 'Synovia Biotech – R&D Capitalization Impact\n\nSynovia capitalized $200,000 of R&D expenses under new tax rules.\nFor book purposes, the company expensed the full amount.\nAmortization for tax purposes begins over 5 years, starting with 10% in Year 1.\nAssume a 21% tax rate.\n\nWhat is the deferred tax liability created from this treatment?',
+    answer: 18900,
+    unit: '$',
+    hint: 'Book income is lower than taxable income → DTL created.',
+    explanation: 'Book Expense = 200,000\nTax Deduction = 200,000 × 10% = 20,000\nTaxable Income = higher by 180,000\nDTL = 180,000 × 21% = 18,900',
+    learnContent: {
+      concept: 'Capitalized R&D lowers tax deduction in early years. Full expensing for book reduces book income. Tax timing difference → DTL created.',
+      formula: 'DTL = (Book Expense – Tax Deduction) × Tax Rate',
+      example: 'GeneX expensed $150K, tax amort = $15K → DTL = 28,350\nBioNova expensed $100K, tax amort = $10K → DTL = 18,900\nLabCore expensed $300K, tax amort = $30K → DTL = 56,700'
+    }
+  },
+  {
+    id: 'acc-hard-1',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Beta - Cash Flow from Operations',
+    description: 'Calculate Cash from Operations: Net Income = $100, Change in Working Capital = -$20, Depreciation & Amortization = $30',
+    answer: 150,
+    unit: '$',
+    hint: 'CFO = Net Income + D&A - Change in Working Capital (negative change means WC decreased, adding cash)',
+    explanation: 'CFO = $100 + $30 - (-$20) = $100 + $30 + $20 = $150',
+    learnContent: {
+      concept: 'Net Income calculation includes all operating expenses and taxes.',
+      formula: 'Net Income = (Revenue - COGS - Operating Expenses) × (1 - Tax Rate)',
+      example: 'Revenue $1M, COGS $600K, OpEx $200K, Tax 25% → NI = ($1M - $600K - $200K) × 0.75 = $150K'
+    }
+  },
+  {
     id: 'acc-hard-152',
     track: 'accounting',
     difficulty: 'hard',
