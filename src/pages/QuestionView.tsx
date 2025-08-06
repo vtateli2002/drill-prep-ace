@@ -130,6 +130,36 @@ const QuestionView = () => {
         'Book Treatment': 'Fully expensed',
         'Tax Amortization Year 1': '10%',
         'Tax Rate': '21%'
+      },
+      'acc-hard-158': {
+        'Net Income': '$90,000',
+        'Inventory Write-down': '$25,000',
+        'Accrued Liabilities': '+$18,000',
+        'Deferred Revenue': 'Collected $60,000, Recognized $45,000'
+      },
+      'acc-hard-159': {
+        'Capitalized Interest': '$500,000',
+        'Book Depreciation (Year 1)': '$25,000',
+        'Tax Expense': 'Full $500,000',
+        'Tax Rate': '25%'
+      },
+      'acc-hard-160': {
+        'Revenue': '$180,000',
+        'AR (Unpaid Revenue)': '$140,000',
+        'COGS': '$100,000',
+        'Inventory Shipped': '$80,000',
+        'Accruals': '+$20,000'
+      },
+      'acc-hard-161': {
+        'Previous Rent Expense': '$50,000',
+        'New Depreciation': '$300,000 ÷ 6 = $50,000',
+        'Deferred Rent Change': '–$10,000'
+      },
+      'acc-hard-162': {
+        'Bad Debt Expense': '$60,000',
+        'AR Write-off (Book)': '$40,000',
+        'AR Write-off (Tax)': '$20,000',
+        'Tax Rate': '25%'
       }
     };
     

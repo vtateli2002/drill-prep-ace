@@ -505,6 +505,86 @@ export const QUESTIONS: Question[] = [
     }
   },
   {
+    id: 'acc-hard-158',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Inventory Write-Down + Accrued Liabilities + Deferred Revenue',
+    description: 'Roventa Apparel – Year-End Adjustments\n\nRoventa Apparel ended the year with $90,000 in Net Income.\nThey recorded a $25,000 inventory write-down due to obsolete fashion items.\nThe company accrued $18,000 in unpaid advertising costs, and collected $60,000 for future shipments, only recognizing $45,000 as revenue.\n\nWhat is the cash flow from operations?',
+    answer: 128000,
+    unit: '$',
+    hint: 'Inventory write-down is non-cash. Accrued liabilities and deferred revenue increase CFO.',
+    explanation: '+25,000 (write-down added back)\n+18,000 (accrued expenses → unpaid cash held)\n+15,000 (deferred revenue ↑ = 60K – 45K)\nCFO = 90,000 + 25K + 18K + 15K = 128,000',
+    learnContent: {
+      concept: 'Inventory write-down → non-cash, increases CFO. Accrued liabilities → expenses unpaid, boosts CFO. Deferred revenue → cash in, not yet earned, increases CFO.',
+      formula: 'CFO = Net Income + Write-down + ∆Accruals + ∆Deferred Revenue',
+      example: 'RunnerCo reports $100K net income, books a $20K write-down, accrues $15K marketing cost, and defers $10K revenue → CFO = 100 + 20 + 15 + 10 = 145K\nVantaLux earns $80K, accrues $10K for shipping, and defers $30K of customer deposits → CFO = 80 + 10 + 30 = 120K\nModana earns $95K, writes down $10K of excess fabric, accrues $5K wages, and defers $5K gift card redemptions → CFO = 95 + 10 + 5 + 5 = 115K'
+    }
+  },
+  {
+    id: 'acc-hard-159',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Capitalized Interest + Depreciation + Deferred Tax Liability',
+    description: 'SolarRidge – Long-Term Asset Timing Differences\n\nSolarRidge capitalized $500,000 of construction interest, depreciated over 20 years.\nFor tax purposes, the interest was fully expensed in Year 1.\nAssume a 25% tax rate.\n\nWhat deferred tax asset or liability is created in Year 1?',
+    answer: 118750,
+    unit: '$ DTA',
+    hint: 'Taxable income is lower than book → DTA created.',
+    explanation: 'Book Expense = $25,000\nTax Expense = $500,000\nDifference = $475,000\nDTA = 475,000 × 25% = 118,750',
+    learnContent: {
+      concept: 'Capitalized interest → delays expense for book, immediate for tax. Timing mismatch → DTA created. Reverses as book depreciation catches up over time.',
+      formula: 'DTA = (Tax Expense – Book Expense) × Tax Rate',
+      example: 'VoltGrid capitalizes $600K, depreciates $30K, tax fully expensed → DTA = (600 – 30) × 25% = 142.5K\nGridCore books $20K depreciation, tax deducts $400K → DTA = (400 – 20) × 25% = 95K\nPowerCells depreciates $40K, tax deducts full $800K → DTA = (800 – 40) × 25% = 190K'
+    }
+  },
+  {
+    id: 'acc-hard-160',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Revenue Recognition + COGS Timing Mismatch + Accruals',
+    description: 'BrightFields – Revenue vs. Expense Timing\n\nBrightFields recognized $180,000 in revenue, with $140,000 of it billed but not yet paid.\nCOGS totaled $100,000, but only $80,000 in inventory was actually shipped.\nThey also accrued $20,000 in unpaid vendor costs.\n\nWhat is the CFO adjustment from these working capital items?',
+    answer: -140000,
+    unit: '$',
+    hint: 'AR up = cash out. COGS vs. inventory creates WC increase.',
+    explanation: 'AR ↑ = +140K unpaid → cash out\nCOGS booked > inventory movement → implies +20K inventory (use of cash)\nAccruals ↑ = +20K → source of cash\nNet = –140K – 20K + 20K = –140K',
+    learnContent: {
+      concept: 'AR increase = customer hasn\'t paid → reduces CFO. COGS mismatch → more cost booked than inventory moved → inventory ↑ → cash out. Accruals = unpaid expenses → cash retained.',
+      formula: 'CFO Adjustment = –∆AR – ∆Inventory + ∆Accruals',
+      example: 'BeamCo bills $200K, collects $60K, ships $160K COGS, accruals +$15K → CFO = –140 + 15 = –125K\nPackIt sells $250K, AR ↑ $200K, inventory ↑ $20K, accruals ↑ $10K → CFO = –200 – 20 + 10 = –210K\nFlexMods sees AR ↑ $100K, inventory ↑ $25K, accruals ↑ $15K → CFO = –100 – 25 + 15 = –110K'
+    }
+  },
+  {
+    id: 'acc-hard-161',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Operating Lease Transition + Depreciation + Deferred Rent',
+    description: 'TagLine Studios – ASC 842 Lease Reclassification\n\nTagLine previously recorded $50,000 in straight-line rent expense under an operating lease.\nUnder ASC 842, they capitalized the lease as a $300,000 ROU asset, depreciated over 6 years.\nDeferred rent was $10,000 lower at year-end due to reclassification.\n\nWhat is the CFO adjustment under ASC 842?',
+    answer: 10000,
+    unit: '$',
+    hint: 'Deferred rent used to boost CFO, now removed.',
+    explanation: 'Rent replaced by depreciation → no net effect\nDeferred rent ↓ by $10K → previously added back, now lost\nCFO appears higher by +10K compared to old method',
+    learnContent: {
+      concept: 'ASC 842 = operating leases now capitalized → D&A replaces rent. Deferred rent disappears → no longer a CFO add-back. Change in lease treatment impacts comparability.',
+      formula: 'CFO Impact = +Depreciation – ∆Deferred Rent',
+      example: 'FrameBox replaces $60K rent with depreciation, deferred rent down $15K → CFO = +15K\nInvoiceLabs shifts $90K rent to $90K dep, deferred rent ↓ $10K → CFO = +10K\nRetailCore moves $75K rent, deferred rent ↓ $20K → CFO = +20K'
+    }
+  },
+  {
+    id: 'acc-hard-162',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Bad Debt Expense + AR Write-Off + Deferred Tax',
+    description: 'StoneForge – AR Impairment and Tax Adjustments\n\nStoneForge recorded a $60,000 bad debt expense, and directly wrote off $40,000 of AR.\nFor tax purposes, only $20,000 of the AR was allowed to be written off in Year 1.\nThe tax rate is 25%.\n\nWhat deferred tax asset is created from this difference?',
+    answer: 5000,
+    unit: '$',
+    hint: 'Book expense > tax deduction → DTA created.',
+    explanation: 'Difference = 40K (book) – 20K (tax) = 20K\nDTA = 20K × 25% = 5,000',
+    learnContent: {
+      concept: 'Bad debt expense recorded for book when expected. Tax rules only allow actual write-offs. Creates a DTA since tax catches up later.',
+      formula: 'DTA = (Book Deducted – Tax Deducted) × Tax Rate',
+      example: 'CollectMax books $80K bad debt, tax allows $50K → DTA = (80–50) × 25% = 7.5K\nLearnPro books $20K, tax deduction = $10K → DTA = 2.5K\nToolFlex books $100K, tax only allows $70K → DTA = 7.5K'
+    }
+  },
+  {
     id: 'acc-hard-1',
     track: 'accounting',
     difficulty: 'hard',
