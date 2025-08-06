@@ -6714,5 +6714,505 @@ Key Points:
       formula: '(Average A/R / Annual Credit Sales) × 365',
       example: '($20K / $200K) × 365 = 36.5 days'
     }
+  },
+
+  // ALLOWANCE FOR DOUBTFUL ACCOUNTS QUESTIONS
+  {
+    id: 'acc-easy-112',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Calculating Bad Debt and Net A/R',
+    description: 'McRae Electronics had $180,000 in sales, all on credit. They estimated 2% of credit sales will be uncollectible and recorded an allowance. By year-end, customers failed to pay $3,000 they owed, which was written off. What is the year-end Allowance for Doubtful Accounts balance?',
+    answer: 600,
+    unit: '$',
+    hint: 'Start with initial allowance (sales × % uncollectible). Subtract any write-offs that actually occurred.',
+    explanation: "Calculation: ($180,000 × 2%) - $3,000 = $3,600 - $3,000 = $600\n\n• • •\n\nStep-by-step breakdown:\n\n1. Initial Allowance Calculation\n   - Credit Sales: $180,000\n   - Estimated Uncollectible Rate: 2%\n   - Initial Allowance: $180,000 × 2% = $3,600\n\n2. Write-offs During Year\n   - Actual write-offs: $3,000\n   - These reduce the allowance balance\n\n3. Ending Allowance Balance\n   - Beginning allowance: $3,600\n   - Less: Write-offs: $3,000\n   - Ending balance: $3,600 - $3,000 = $600\n\nKey Points:\n   • Allowance is an estimate; write-offs use up allowance but uncollected funds remove specific balances\n   • The allowance account is a contra-asset reducing accounts receivable\n   • Write-offs don't affect the income statement if properly estimated",
+    learnContent: {
+      concept: 'The Allowance for Doubtful Accounts is a contra-asset reducing accounts receivable to net realizable value.',
+      formula: 'Allowance Ending = Opening Allowance + Provision Expense – Write-Offs',
+      example: 'Project $2,500 as bad debt on $100k of sales; $600 is written off. Ending: $2,500 – $600 = $1,900'
+    }
+  },
+  {
+    id: 'acc-easy-113',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Net Accounts Receivable on the Balance Sheet',
+    description: 'Ling\'s Distributors reports $72,000 in gross accounts receivable and a $2,000 allowance for doubtful accounts. What is the net accounts receivable on the balance sheet?',
+    answer: 70000,
+    unit: '$',
+    hint: 'Subtract allowance from gross A/R.',
+    explanation: "Calculation: $72,000 - $2,000 = $70,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Gross Accounts Receivable\n   - Total amount owed by customers: $72,000\n\n2. Allowance for Doubtful Accounts\n   - Estimated uncollectible amount: $2,000\n   - This is a contra-asset account\n\n3. Net Accounts Receivable\n   - Net A/R = Gross A/R - Allowance\n   - Net A/R = $72,000 - $2,000 = $70,000\n\nKey Points:\n   • Net A/R reflects the expected ultimately collectible cash\n   • Allowance anticipates nonpayment risks\n   • Balance sheet presents realistic asset values\n   • Net amount represents expected cash inflow",
+    learnContent: {
+      concept: 'Net A/R ensures the balance sheet does not overstate incoming cash. The allowance anticipates nonpayment risks.',
+      formula: 'Net A/R = Gross A/R – Allowance',
+      example: '$35,000 A/R, $1,000 allowance = $34,000'
+    }
+  },
+  {
+    id: 'acc-easy-114',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Bad Debt Adjustment after Write-Offs',
+    description: 'GemCo starts the year with a $1,500 allowance. During the year, $700 debts are written off, and a review at year-end calls for a $1,100 ending balance. What is the bad debt expense recognized for the year?',
+    answer: 300,
+    unit: '$',
+    hint: 'Think: Ending Allowance = Opening – Write-Offs + Bad Debt Expense.',
+    explanation: "Calculation: $1,100 - ($1,500 - $700) = $1,100 - $800 = $300\n\n• • •\n\nStep-by-step breakdown:\n\n1. Beginning Allowance Balance\n   - Starting allowance: $1,500\n\n2. Write-offs During Year\n   - Debts written off: $700\n   - Allowance after write-offs: $1,500 - $700 = $800\n\n3. Required Ending Balance\n   - Year-end review requirement: $1,100\n\n4. Bad Debt Expense Calculation\n   - Required increase: $1,100 - $800 = $300\n   - Bad debt expense for the year: $300\n\nKey Points:\n   • Expense closes the gap between opening allowance, write-offs, and the reviewed need for closing allowance\n   • Bad debt expense ensures income statement matches revenue with expected costs\n   • Formula: Ending Allowance = Beginning + Expense – Write-Offs",
+    learnContent: {
+      concept: 'Bad debt expense ensures income statement matches revenue with expected costs from uncollected amounts.',
+      formula: 'Ending Allowance = Beginning + Expense – Write-Offs',
+      example: 'Begin $500, write off $200, want end $400 → $400–$300=$100'
+    }
+  },
+
+  // INVENTORY QUESTIONS
+  {
+    id: 'acc-easy-115',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Inventory Change and Cash Flow Impact',
+    description: 'A company starts with $6,000 of inventory, buys $10,000 more, ends with $8,500. How much cash was spent on inventory purchases not expensed as COGS?',
+    answer: 2500,
+    unit: '$',
+    hint: 'Change in inventory = Ending – Beginning. Additional cash tied up in inventory.',
+    explanation: "Calculation: $8,500 - $6,000 = $2,500\n\n• • •\n\nStep-by-step breakdown:\n\n1. Beginning Inventory\n   - Starting inventory: $6,000\n\n2. Inventory Purchases\n   - Cash spent on purchases: $10,000\n\n3. Ending Inventory\n   - Year-end inventory: $8,500\n\n4. Cash Not Yet Expensed\n   - Inventory increase: $8,500 - $6,000 = $2,500\n   - This represents cash spent but not yet recognized as COGS\n\nKey Points:\n   • Increase to inventory is a use of cash, but not a COGS expense yet\n   • Each dollar added to inventory increases cash investment\n   • Affects working capital and signals future COGS\n   • Higher inventory levels tie up more operating cash",
+    learnContent: {
+      concept: 'Each dollar added to inventory increases cash investment, affects working capital, and signals future COGS.',
+      formula: 'Inventory Increase = New Purchases Not Yet Expensed = Ending – Beginning',
+      example: 'Start $5k, end $7k: $2k cash spent, not expensed'
+    }
+  },
+  {
+    id: 'acc-easy-116',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'COGS Calculation Using FIFO',
+    description: 'A retailer starts with 90 units at $12/each, buys 100 units at $15/each, then sells 150 units using FIFO. What is total COGS for the period?',
+    answer: 1980,
+    unit: '$',
+    hint: 'FIFO uses oldest inventory first.',
+    explanation: "Calculation: (90 × $12) + (60 × $15) = $1,080 + $900 = $1,980\n\n• • •\n\nStep-by-step breakdown:\n\n1. Beginning Inventory\n   - 90 units at $12 each = $1,080 total\n\n2. Purchases During Period\n   - 100 units at $15 each = $1,500 total\n   - Total available: 190 units\n\n3. FIFO Cost Flow (First In, First Out)\n   - Sell 150 units total\n   - First 90 units from beginning inventory: 90 × $12 = $1,080\n   - Next 60 units from purchases: 60 × $15 = $900\n\n4. Total COGS\n   - COGS = $1,080 + $900 = $1,980\n\nKey Points:\n   • FIFO uses oldest costs first\n   • In inflation, FIFO results in lower COGS and higher profits\n   • Remaining inventory is valued at most recent costs\n   • Method choice impacts both COGS and ending inventory values",
+    learnContent: {
+      concept: 'FIFO matches oldest costs first, meaning in inflation profit is higher, inventory higher.',
+      formula: 'FIFO COGS = (Old Units × Old Cost) + (New Units × New Cost)',
+      example: '60 @ $10, 40 @ $15, sold 75 FIFO: 60×$10=600, 15×$15=225; Total=$825'
+    }
+  },
+  {
+    id: 'acc-easy-117',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Inventory Days Outstanding Calculation',
+    description: 'Thorn Coffee averages $8,500 inventory and had $60,000 COGS. What are average inventory days outstanding? (Nearest whole day.)',
+    answer: 52,
+    unit: 'days',
+    hint: 'Inventory Days = (Inventory/COGS) × 365',
+    explanation: "Calculation: ($8,500 ÷ $60,000) × 365 = 0.1417 × 365 = 51.7 ≈ 52 days\n\n• • •\n\nStep-by-step breakdown:\n\n1. Inventory and COGS Data\n   - Average inventory: $8,500\n   - Annual COGS: $60,000\n\n2. Daily COGS Calculation\n   - Daily COGS: $60,000 ÷ 365 = $164.38\n\n3. Inventory Days Outstanding\n   - Formula: (Average Inventory ÷ COGS) × 365\n   - Days = ($8,500 ÷ $60,000) × 365 = 51.7 days\n   - Rounded: 52 days\n\nKey Points:\n   • The lower the number, the faster inventory turns\n   • Higher days indicates risk for obsolescence\n   • Inventory turnover measures efficiency\n   • More turns signal less money tied up in goods",
+    learnContent: {
+      concept: 'Inventory turnover measures efficiency; more turns signal less $ tied up in goods.',
+      formula: 'Days = (Avg Inventory / COGS) × 365',
+      example: '$10,000/$73,000×365=50'
+    }
+  },
+
+  // PREPAID EXPENSES QUESTIONS
+  {
+    id: 'acc-easy-118',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Adjusting Prepaid Insurance on the Balance Sheet',
+    description: 'A company paid $12,000 for a full-year insurance policy on Oct 1. By Dec 31 (year end), what\'s the prepaid expense balance?',
+    answer: 9000,
+    unit: '$',
+    hint: '10 months remain unused.',
+    explanation: "Calculation: $12,000 - ($12,000 × 3/12) = $12,000 - $3,000 = $9,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Insurance Policy Details\n   - Total cost: $12,000\n   - Coverage period: 12 months (full year)\n   - Start date: October 1\n\n2. Insurance Used by Year-End\n   - Months used: October, November, December = 3 months\n   - Amount used: $12,000 × (3/12) = $3,000\n\n3. Prepaid Balance Remaining\n   - Unexpired portion: $12,000 - $3,000 = $9,000\n   - Months remaining: 9 months (Jan-Sep next year)\n\nKey Points:\n   • Prepaid assets decrease as service is consumed over time\n   • Only used portion flows to expense\n   • Unexpired coverage remains as asset on balance sheet\n   • Prepaid expenses represent future economic benefits",
+    learnContent: {
+      concept: 'Prepaids are paid ahead; reflected as assets until usage.',
+      formula: 'Prepaid End = Prepaid Paid – Amount Used',
+      example: '$6,000 annual, 5 months used: $6,000×(7/12)=$3,500 left'
+    }
+  },
+  {
+    id: 'acc-easy-119',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Expense Recognition for Prepaids',
+    description: 'Valence paid $7,200 for rent covering a 12-month lease starting March 1. What rent expense is recognized in the year ended December 31?',
+    answer: 6000,
+    unit: '$',
+    hint: 'Recognize expense for occupied months in the year.',
+    explanation: "Calculation: $7,200 × (10/12) = $6,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Lease Payment Details\n   - Total prepaid rent: $7,200\n   - Lease period: 12 months\n   - Start date: March 1\n\n2. Months Covered in Current Year\n   - March through December = 10 months\n   - Remaining months (Jan-Feb next year) = 2 months\n\n3. Rent Expense Recognition\n   - Expense for current year: $7,200 × (10/12) = $6,000\n   - Prepaid remaining: $7,200 × (2/12) = $1,200\n\nKey Points:\n   • Only months covered/used in the reporting period flow to expense\n   • Expense moves from asset (prepaid) to income statement as used\n   • Matching principle ensures expenses align with benefits received\n   • Prepaid rent becomes rent expense over time",
+    learnContent: {
+      concept: 'Expense moves from asset (prepaid) to income statement as used.',
+      formula: 'Expense = Total Prepaid × (Months Used/Total Months)',
+      example: '$12,000, Jan–Jun: $12,000×(6/12)=$6,000'
+    }
+  },
+  {
+    id: 'acc-easy-120',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Prepaid vs. Accrued Expense Timing',
+    description: 'A company pays $2,400 for a 1-year insurance policy on May 1. What is the prepaid balance at October 31?',
+    answer: 1200,
+    unit: '$',
+    hint: 'First, count months elapsed and remaining.',
+    explanation: "Calculation: $2,400 × (6/12) = $1,200\n\n• • •\n\nStep-by-step breakdown:\n\n1. Insurance Policy Terms\n   - Total cost: $2,400\n   - Coverage period: 12 months\n   - Start date: May 1\n\n2. Time Analysis as of October 31\n   - Months elapsed: May, June, July, August, September, October = 6 months\n   - Months remaining: November through April = 6 months\n\n3. Prepaid Balance Calculation\n   - Monthly insurance cost: $2,400 ÷ 12 = $200\n   - Amount used (6 months): $200 × 6 = $1,200\n   - Prepaid remaining: $2,400 - $1,200 = $1,200\n   - Alternative: $2,400 × (6/12) = $1,200\n\nKey Points:\n   • Unexpired portion remains on assets as prepaid\n   • Prepaids flip to expense as service is used\n   • Equal monthly amortization for uniform benefits\n   • Balance sheet shows future economic value",
+    learnContent: {
+      concept: 'Prepaids flip to expense as service used.',
+      formula: 'Prepaid Ending = Prepaid – (Prepaid × Months Used / Total)',
+      example: '$1,200/yr, after 9 months: $1,200–$900=$300'
+    }
+  },
+
+  // OTHER CURRENT ASSETS QUESTIONS
+  {
+    id: 'acc-easy-121',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Understanding the Effect of an Increase in Other Current Assets',
+    description: 'If other current assets increase by $12,000, all else being equal, what is the effect on cash flow from operations?',
+    answer: -12000,
+    unit: '$',
+    hint: 'Asset increases use cash under indirect CFS.',
+    explanation: "Calculation: Increase in Current Assets = -$12,000 to CFO\n\n• • •\n\nStep-by-step breakdown:\n\n1. Cash Flow Impact of Asset Changes\n   - Asset increases = use of cash (negative to CFO)\n   - Asset decreases = source of cash (positive to CFO)\n\n2. Other Current Assets Increase\n   - Change: +$12,000\n   - Cash flow effect: -$12,000\n\n3. Operating Cash Flow Adjustment\n   - Under indirect method, asset increases are subtracted\n   - Operating cash flow decreases by $12,000\n\nKey Points:\n   • Purchasing/reclassing an asset reduces available cash\n   • Cash flow from operations adjusts for changes in current assets/liabilities\n   • Asset increases tie up cash in working capital\n   • Higher current assets reduce operational liquidity",
+    learnContent: {
+      concept: 'Cash flow from operations adjusts for changes in current assets/liabilities.',
+      formula: '∆Other Assets (↑) → CFS (–)',
+      example: '+$6,000 other asset: –$6,000 to CFO'
+    }
+  },
+  {
+    id: 'acc-easy-122',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'How a Security Deposit Impacts Current Assets',
+    description: 'Company pays $2,500 for a lease security deposit (refundable in 1 year). What line does this appear on the balance sheet?',
+    answer: 2500,
+    unit: '$',
+    hint: 'Deposits held <12 months = current.',
+    explanation: "Classification: Other Current Assets\n\n• • •\n\nStep-by-step breakdown:\n\n1. Security Deposit Characteristics\n   - Amount: $2,500\n   - Purpose: Lease security deposit\n   - Refundable timeline: 1 year\n\n2. Current vs. Non-Current Classification\n   - Current assets: Expected to be realized within 12 months\n   - Deposit is refundable in 1 year = current\n\n3. Balance Sheet Presentation\n   - Appears under: Other Current Assets\n   - Represents a short-term asset\n   - Expected cash recovery within operating cycle\n\nKey Points:\n   • A refundable deposit due in under 12 months is a current asset\n   • Deposit is expected to be returned (liquid asset) in short term\n   • Security deposits, advances, and similar items are other current if less than 1-year\n   • Classification affects liquidity analysis",
+    learnContent: {
+      concept: 'Security deposits, advances, and similar items are other current if less than 1-year.',
+      formula: 'Time to Recovery < 12 months = Current Asset',
+      example: '$4,000 refundable utility deposit, due next year: other current'
+    }
+  },
+  {
+    id: 'acc-easy-123',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Other Current Asset Write-offs',
+    description: 'A company recognizes its $3,000 other current asset as unrecoverable. What happens to net income?',
+    answer: -3000,
+    unit: '$',
+    hint: 'Full write-off flows to the income statement as expense.',
+    explanation: "Calculation: Net Income Impact = -$3,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Asset Write-off\n   - Other current asset: $3,000\n   - Determination: Unrecoverable\n\n2. Accounting Treatment\n   - Remove asset from balance sheet\n   - Record expense on income statement\n   - Amount: $3,000\n\n3. Net Income Impact\n   - Write-off expense: $3,000\n   - Net income reduction: $3,000\n   - After-tax impact depends on tax rate\n\nKey Points:\n   • Full write-off flows to the income statement as expense\n   • Write-offs for unrecoverable current assets directly hurt earnings\n   • When a short-term asset is unrecoverable, it\'s expensed immediately\n   • Reduces both assets and net income",
+    learnContent: {
+      concept: 'When a short-term asset is unrecoverable, it\'s expensed and reduces profitability.',
+      formula: 'Write-off Amount = Expense = Reduction in Net Income',
+      example: '$1,200 receivable, written off as bad debt: expense $1,200'
+    }
+  },
+
+  // NET PP&E QUESTIONS
+  {
+    id: 'acc-easy-124',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Calculating Net PP&E after Purchase and Depreciation',
+    description: 'Start with $150,000 net PP&E. The company buys $20,000 new equipment and records $15,000 depreciation during the year. What is net PP&E at year-end?',
+    answer: 155000,
+    unit: '$',
+    hint: 'Net PP&E = Starting + Additions – Depreciation',
+    explanation: "Calculation: $150,000 + $20,000 - $15,000 = $155,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Beginning Net PP&E\n   - Starting balance: $150,000\n\n2. Capital Additions\n   - New equipment purchased: $20,000\n   - Increases net PP&E balance\n\n3. Depreciation Expense\n   - Annual depreciation: $15,000\n   - Reduces net PP&E balance\n\n4. Ending Net PP&E Calculation\n   - Beginning: $150,000\n   - Plus: Additions: $20,000\n   - Less: Depreciation: $15,000\n   - Ending: $155,000\n\nKey Points:\n   • Net PP&E is the balance after adding new fixed assets and taking out depreciation\n   • Accumulated depreciation shrinks net value; capex increases it\n   • Depreciation reflects wear and tear on existing assets\n   • New purchases expand productive capacity",
+    learnContent: {
+      concept: 'Net PP&E is the balance after adding new fixed assets and taking out depreciation for wear/tear.',
+      formula: 'Beginning Net PP&E + Capex – Depreciation',
+      example: '$40,000 start, $10,000 add, $5,000 dep = $45,000 net'
+    }
+  },
+  {
+    id: 'acc-easy-125',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Net PP&E with Asset Disposal',
+    description: 'A company has $85,000 net PP&E at year start, sells equipment with a book value of $5,000 during the year, and records $8,000 in depreciation. No additions. What is year-end net PP&E?',
+    answer: 72000,
+    unit: '$',
+    hint: 'Subtract both depreciation and the book value of disposed asset.',
+    explanation: "Calculation: $85,000 - $5,000 - $8,000 = $72,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Beginning Net PP&E\n   - Starting balance: $85,000\n\n2. Asset Disposal\n   - Equipment sold (book value): $5,000\n   - Reduces net PP&E by book value\n   - Sale price doesn\'t affect PP&E calculation\n\n3. Depreciation Expense\n   - Annual depreciation on remaining assets: $8,000\n   - Further reduces net PP&E\n\n4. Ending Net PP&E Calculation\n   - Beginning: $85,000\n   - Less: Asset disposal: $5,000\n   - Less: Depreciation: $8,000\n   - Ending: $72,000\n\nKey Points:\n   • Disposals reduce net balance; only book value matters for PP&E, not sale proceeds\n   • Net PP&E must account for disposal of assets as well as use/wear\n   • Gain/loss on sale appears on income statement separately\n   • Both disposal and depreciation reduce the asset base",
+    learnContent: {
+      concept: 'Net PP&E must account for disposal of assets as well as use/wear.',
+      formula: 'Beginning - Disposals (at book value) - Depreciation + Additions',
+      example: '$50,000 opening, $5,000 disposal, $10,000 dep: $35,000'
+    }
+  },
+  {
+    id: 'acc-easy-126',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Net PP&E after Revaluation and Impairment',
+    description: 'SuperMart opens year with $220,000 net PP&E, records $22,000 depreciation, buys $14,000 equipment. Due to fire, $16,000 is written off (impaired, no insurance recovery). What is year-end net PP&E?',
+    answer: 196000,
+    unit: '$',
+    hint: 'Opening – Depreciation – Impairment + Additions',
+    explanation: "Calculation: $220,000 - $22,000 - $16,000 + $14,000 = $196,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Beginning Net PP&E\n   - Starting balance: $220,000\n\n2. Regular Depreciation\n   - Annual depreciation: $22,000\n   - Normal wear and tear expense\n\n3. Impairment Loss\n   - Fire damage write-off: $16,000\n   - No insurance recovery\n   - Additional reduction beyond normal depreciation\n\n4. Capital Additions\n   - Equipment purchased: $14,000\n   - Increases asset base\n\n5. Ending Net PP&E Calculation\n   - Beginning: $220,000\n   - Less: Depreciation: $22,000\n   - Less: Impairment: $16,000\n   - Plus: Additions: $14,000\n   - Ending: $196,000\n\nKey Points:\n   • Impairment and depreciation reduce net asset, capex increases it\n   • Net PP&E after impairments is lower; companies must reassess book vs. fair value\n   • Fire losses without insurance reduce asset base permanently\n   • Multiple factors can affect PP&E in a single period",
+    learnContent: {
+      concept: 'Net PP&E after impairments is lower; companies must reassess book vs. fair value.',
+      formula: 'Beginning - Depreciation - Impairment + Additions',
+      example: '$100,000 – $10,000 dep – $5,000 impair + $2,500 capex = $87,500'
+    }
+  },
+
+  // ACCUMULATED DEPRECIATION QUESTIONS
+  {
+    id: 'acc-easy-127',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Accumulated Depreciation Calculation',
+    description: 'Asset cost is $25,000; annual depreciation is $3,000. After 4 years, what\'s accumulated depreciation?',
+    answer: 12000,
+    unit: '$',
+    hint: 'Multiply annual depreciation by number of years.',
+    explanation: "Calculation: $3,000 × 4 = $12,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Annual Depreciation\n   - Yearly depreciation expense: $3,000\n\n2. Time Period\n   - Number of years: 4 years\n\n3. Accumulated Depreciation\n   - Total accumulated: $3,000 × 4 = $12,000\n   - Represents cumulative depreciation to date\n\n4. Asset Analysis\n   - Original cost: $25,000\n   - Accumulated depreciation: $12,000\n   - Net book value: $25,000 - $12,000 = $13,000\n\nKey Points:\n   • Accumulated depreciation tracks total value expensed against an asset over time\n   • Each year adds to the cumulative total\n   • Contra-asset account that reduces gross asset value\n   • Shows total wear and tear recognized to date",
+    learnContent: {
+      concept: 'Accumulated depreciation tracks total value expensed against an asset over time.',
+      formula: 'Accumulated = Annual Dep × Years',
+      example: '$5,000/year, 3 years: $15,000'
+    }
+  },
+  {
+    id: 'acc-easy-128',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Accumulated Depreciation with Asset Disposal',
+    description: 'Machinery cost $80,000; after 5 years, $30,000 has been depreciated. Equipment is sold and $30,000 in accumulated depreciation is removed. What is remaining accumulated depreciation for assets not sold?',
+    answer: 0,
+    unit: '$',
+    hint: 'If all equipment is disposed, accumulated dep goes to zero.',
+    explanation: "Calculation: $30,000 - $30,000 = $0\n\n• • •\n\nStep-by-step breakdown:\n\n1. Pre-Disposal Status\n   - Machinery cost: $80,000\n   - Accumulated depreciation: $30,000\n   - Net book value: $50,000\n\n2. Asset Disposal\n   - Equipment sold with $30,000 accumulated depreciation\n   - Both asset and accumulated depreciation are removed\n\n3. Remaining Accumulated Depreciation\n   - All accumulated depreciation transferred out\n   - Remaining balance: $0\n\nKey Points:\n   • All accumulated depreciation transferred out on full disposal\n   • Asset sales remove corresponding accumulated depreciation from accounts\n   • Disposals reduce both asset and contra-asset accounts\n   • Clean slate for remaining assets after disposal",
+    learnContent: {
+      concept: 'Disposals reduce both asset and contra-asset (accumulated) accounts.',
+      formula: 'Remaining Accumulated Dep = Total - Amount Disposed',
+      example: 'Asset $10,000; whole asset sold, accumulated $6,000; post-sale = $0'
+    }
+  },
+  {
+    id: 'acc-easy-129',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Net PP&E from Asset and Accum Depreciation',
+    description: 'Precise Industries records $70,000 gross PP&E, $28,000 accumulated depreciation. What is net PP&E on the balance sheet?',
+    answer: 42000,
+    unit: '$',
+    hint: 'Subtract accum. depreciation from gross asset cost.',
+    explanation: "Calculation: $70,000 - $28,000 = $42,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Gross PP&E\n   - Original cost of assets: $70,000\n   - Historical cost basis\n\n2. Accumulated Depreciation\n   - Total depreciation to date: $28,000\n   - Contra-asset account\n\n3. Net PP&E Calculation\n   - Net PP&E = Gross Cost - Accumulated Depreciation\n   - Net PP&E = $70,000 - $28,000 = $42,000\n\n4. Balance Sheet Presentation\n   - Shows undepreciated book value\n   - Represents remaining asset value\n\nKey Points:\n   • Net PP&E reflects undepreciated book value\n   • Balance sheet reports both gross asset and net amounts\n   • Accumulated depreciation is a contra-asset\n   • Net amount shows current carrying value",
+    learnContent: {
+      concept: 'Balance sheet reports both gross asset and net (less accum dep).',
+      formula: 'Net PP&E = Gross Cost – Accum Dep',
+      example: '$90,000, $35,000 dep: $55,000'
+    }
+  },
+
+  // GOODWILL QUESTIONS  
+  {
+    id: 'acc-easy-130',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Goodwill Calculation in an Acquisition',
+    description: 'Alpha buys Beta for $800,000. Beta\'s net assets at fair market value are $730,000. What is goodwill created?',
+    answer: 70000,
+    unit: '$',
+    hint: 'Goodwill = Purchase Price – Net Identifiable Assets',
+    explanation: "Calculation: $800,000 - $730,000 = $70,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Acquisition Details\n   - Purchase price paid: $800,000\n   - Fair value of net assets: $730,000\n\n2. Goodwill Calculation\n   - Formula: Purchase Price - Fair Value of Net Assets\n   - Goodwill = $800,000 - $730,000 = $70,000\n\n3. Economic Interpretation\n   - Premium paid above asset value: $70,000\n   - Represents intangible value of business\n\n4. Goodwill Characteristics\n   - Reflects value for reputation, relationships, synergies\n   - Only created through acquisition\n   - Not amortized but tested for impairment\n\nKey Points:\n   • Goodwill reflects value for reputation, relationships, synergies over book/market value of assets\n   • Only created by acquisition, not ordinary asset revaluations\n   • Represents premium paid for business beyond identifiable assets\n   • Subject to annual impairment testing",
+    learnContent: {
+      concept: 'Goodwill is only created by acquisition, not ordinary asset revaluations.',
+      formula: 'Goodwill = Purchase Price – Fair Net Assets',
+      example: '$1,100,000 buy, $1,000,000 net assets: $100,000'
+    }
+  },
+  {
+    id: 'acc-easy-131',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Goodwill Impairment Impact',
+    description: 'Three years after acquiring Delta for $200,000 premium, Delta\'s value is reassessed, and $45,000 goodwill is impaired. What is the adjustment to net income from impairment?',
+    answer: -45000,
+    unit: '$',
+    hint: 'Impairment loss reduces net income in full.',
+    explanation: "Calculation: Net Income Impact = -$45,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Goodwill Impairment\n   - Original goodwill premium: $200,000\n   - Impairment amount: $45,000\n   - Indicates value decline\n\n2. Accounting Treatment\n   - Impairment recorded as expense\n   - Non-cash charge to income statement\n   - Reduces goodwill asset on balance sheet\n\n3. Net Income Impact\n   - Impairment expense: $45,000\n   - Net income reduction: $45,000\n   - Dollar-for-dollar impact on earnings\n\nKey Points:\n   • Impairments are non-cash but hit the income statement, reducing reported net income\n   • Shows the buyer overpaid or value eroded post-deal; reduces future book value\n   • Impairment signals asset overpayment, market change, or business underperformance\n   • Cannot reverse impairment losses under US GAAP",
+    learnContent: {
+      concept: 'Impairment signals asset overpayment, market change, or business underperformance.',
+      formula: 'Impairment loss = Write-down amount',
+      example: '$50k impairment: NI –$50k'
+    }
+  },
+  {
+    id: 'acc-easy-132',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Goodwill after Partial Asset Sale',
+    description: 'If a subsidiary is sold for $600,000, and on acquisition $100,000 in goodwill was created, but only 60% of the business is sold, what is remaining goodwill?',
+    answer: 40000,
+    unit: '$',
+    hint: 'Proportionate goodwill remains.',
+    explanation: "Calculation: $100,000 × (100% - 60%) = $100,000 × 40% = $40,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Original Goodwill\n   - Total goodwill created: $100,000\n   - Represents premium for entire business\n\n2. Partial Divestiture\n   - Percentage sold: 60%\n   - Percentage retained: 40%\n\n3. Goodwill Allocation\n   - Goodwill sold: $100,000 × 60% = $60,000\n   - Goodwill remaining: $100,000 × 40% = $40,000\n\n4. Business Logic\n   - Goodwill follows ownership proportion\n   - Partial sales reduce goodwill proportionally\n\nKey Points:\n   • Proportionate goodwill remains after partial divestiture\n   • Partial sales reduce goodwill but not all unless the whole business is sold\n   • Goodwill matches remaining ownership proportion\n   • Sale proceeds may result in gain/loss separate from goodwill",
+    learnContent: {
+      concept: 'Goodwill matches remaining ownership proportion after divestiture.',
+      formula: 'Remaining Goodwill = Original × Percentage Retained',
+      example: '$50k goodwill, 50% sold: $25k left'
+    }
+  },
+
+  // OTHER INTANGIBLE ASSETS QUESTIONS
+  {
+    id: 'acc-easy-133',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Amortization of Customer List',
+    description: 'X-Corp acquired a customer list for $30,000, to be amortized over 6 years. What is year 3 amortization expense?',
+    answer: 5000,
+    unit: '$',
+    hint: 'Divide value by useful life.',
+    explanation: "Calculation: $30,000 ÷ 6 = $5,000 per year\n\n• • •\n\nStep-by-step breakdown:\n\n1. Intangible Asset Details\n   - Customer list cost: $30,000\n   - Useful life: 6 years\n   - Amortization method: Straight-line\n\n2. Annual Amortization\n   - Annual expense: $30,000 ÷ 6 = $5,000\n   - Same amount each year over useful life\n\n3. Year 3 Amortization\n   - Year 3 expense: $5,000\n   - Consistent with all other years\n\n4. Cumulative Impact\n   - Total amortized by end of Year 3: $5,000 × 3 = $15,000\n   - Remaining book value: $30,000 - $15,000 = $15,000\n\nKey Points:\n   • Only intangible assets with a definable life are amortized\n   • Finite-life intangibles are amortized like tangible assets\n   • Annual amortization is consistent over useful life\n   • Reduces both asset value and net income",
+    learnContent: {
+      concept: 'Only intangible assets with a definable life are amortized.',
+      formula: 'Annual Amort = Cost / Useful Life',
+      example: '$18,000, 6 yrs: $3,000/yr'
+    }
+  },
+  {
+    id: 'acc-easy-134',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Net Value of Intangibles after Amortization',
+    description: 'MediaCo paid $40,000 for a trademark with a 10-year life, 3 years ago. What\'s net intangible value now?',
+    answer: 28000,
+    unit: '$',
+    hint: 'Amortization × years; subtract from original value.',
+    explanation: "Calculation: $40,000 - ($40,000 ÷ 10 × 3) = $40,000 - $12,000 = $28,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Trademark Details\n   - Original cost: $40,000\n   - Useful life: 10 years\n   - Time elapsed: 3 years\n\n2. Annual Amortization\n   - Annual expense: $40,000 ÷ 10 = $4,000 per year\n\n3. Cumulative Amortization\n   - 3 years of amortization: $4,000 × 3 = $12,000\n   - Total amortized to date\n\n4. Net Book Value\n   - Original cost: $40,000\n   - Less: Accumulated amortization: $12,000\n   - Net intangible value: $28,000\n\nKey Points:\n   • Book value decreases as amortization expense accumulates\n   • Net value represents remaining unamortized cost\n   • Similar to depreciation for tangible assets\n   • Balance sheet shows net carrying amount",
+    learnContent: {
+      concept: 'Book value decreases as amortization expense accumulates.',
+      formula: 'Net Intangible = Cost – (Years × Annual Amort)',
+      example: '$24k, 4 yrs in on 8-yr asset: $12k'
+    }
+  },
+  {
+    id: 'acc-easy-135',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Intangible Asset Amortization and Tax Shield',
+    description: 'A company amortizes $25,000 of a patent yearly, tax rate 20%. What\'s tax shield from the amortization each year?',
+    answer: 5000,
+    unit: '$',
+    hint: 'Tax shield = Amortization × tax rate.',
+    explanation: "Calculation: $25,000 × 20% = $5,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Amortization Expense\n   - Annual patent amortization: $25,000\n   - Tax-deductible expense\n\n2. Tax Rate\n   - Corporate tax rate: 20%\n   - Applied to deductible expenses\n\n3. Tax Shield Calculation\n   - Tax shield = Amortization × Tax rate\n   - Tax shield = $25,000 × 20% = $5,000\n\n4. Cash Flow Benefit\n   - Reduces taxable income by $25,000\n   - Saves $5,000 in cash taxes annually\n   - Non-cash expense creates real cash savings\n\nKey Points:\n   • Amortization, while non-cash, reduces taxable income\n   • Tax shield increases free cash flow; lowers tax paid\n   • Creates value through reduced tax obligations\n   • Important component of investment analysis",
+    learnContent: {
+      concept: 'Tax shield increases free cash flow; lowers tax paid.',
+      formula: 'Shield = Amort × Tax Rate',
+      example: '$12k amort, 25% tax: $3,000'
+    }
+  },
+
+  // ACCOUNTS PAYABLE QUESTIONS
+  {
+    id: 'acc-easy-136',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Change in Payables and Cash Flow',
+    description: 'If accounts payable rises from $14,000 to $18,000 over the year, what is the impact on cash flow from operations?',
+    answer: 4000,
+    unit: '$',
+    hint: 'Liability increase is a source of cash.',
+    explanation: "Calculation: $18,000 - $14,000 = $4,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Accounts Payable Change\n   - Beginning balance: $14,000\n   - Ending balance: $18,000\n   - Increase: $4,000\n\n2. Cash Flow Impact\n   - Liability increases = source of cash\n   - Company delayed $4,000 in payments\n   - Cash retained longer in business\n\n3. Operating Cash Flow Effect\n   - Positive impact: +$4,000\n   - Improves cash flow from operations\n\nKey Points:\n   • Delaying payments frees up company cash\n   • Payables increases are cash inflows; company stretches payment terms\n   • Working capital management affects cash flow\n   • Higher payables provide financing from suppliers",
+    learnContent: {
+      concept: 'Payables increases are cash inflows; company stretches payment terms.',
+      formula: 'CFO increase = ∆ Payables',
+      example: '$5k up, +$5k cash'
+    }
+  },
+  {
+    id: 'acc-easy-137',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'A/P Turnover Days Calculation',
+    description: 'Payables average $10,000; annual purchases on credit are $80,000. What is average accounts payable days outstanding? (Nearest whole day.)',
+    answer: 46,
+    unit: 'days',
+    hint: '(Avg A/P / Purchases) × 365',
+    explanation: "Calculation: ($10,000 ÷ $80,000) × 365 = 0.125 × 365 = 45.6 ≈ 46 days\n\n• • •\n\nStep-by-step breakdown:\n\n1. Payables and Purchase Data\n   - Average accounts payable: $10,000\n   - Annual credit purchases: $80,000\n\n2. Daily Purchases\n   - Daily purchases: $80,000 ÷ 365 = $219.18\n\n3. Days Payable Outstanding\n   - Formula: (Average A/P ÷ Annual Purchases) × 365\n   - DPO: ($10,000 ÷ $80,000) × 365 = 45.6 days\n   - Rounded: 46 days\n\nKey Points:\n   • Shows average time to pay suppliers\n   • Longer payable days boost liquidity, but too high may damage supplier relationships\n   • Industry comparison helps assess payment practices\n   • Balance between cash flow and supplier relations",
+    learnContent: {
+      concept: 'Longer payable days boost liquidity, but too high may damage supplier relationships.',
+      formula: 'Days = (A/P / Purchases) × 365',
+      example: '$25k/$200k×365=46'
+    }
+  },
+  {
+    id: 'acc-easy-138',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Expense Recognized When Payables Settle',
+    description: 'Last month\'s A/P was $8,000; the company paid $6,500 to suppliers during the month. Current month\'s balance is $9,200. What were total expense purchases this month?',
+    answer: 7700,
+    unit: '$',
+    hint: 'Expense = Payments + increase in A/P.',
+    explanation: "Calculation: $6,500 + ($9,200 - $8,000) = $6,500 + $1,200 = $7,700\n\n• • •\n\nStep-by-step breakdown:\n\n1. Accounts Payable Activity\n   - Beginning A/P: $8,000\n   - Ending A/P: $9,200\n   - Change in A/P: +$1,200\n\n2. Cash Payments\n   - Payments to suppliers: $6,500\n   - Reduces payables balance\n\n3. Total Expense Recognition\n   - Cash paid: $6,500\n   - Plus: Increase in payables: $1,200\n   - Total expenses: $7,700\n\nKey Points:\n   • Expense is what is both paid and accrued, not just cash paid\n   • Total expense = payments made plus liabilities accrued for the period\n   • Captures full cost regardless of payment timing\n   • Accrual accounting matches expenses to period incurred",
+    learnContent: {
+      concept: 'Expense = payments made plus liabilities accrued for the period.',
+      formula: 'Total Expense = Payments + (A/P End – A/P Start)',
+      example: 'Paid $5,000, A/P up $800: $5,800 expense'
+    }
+  },
+
+  // ACCRUED EXPENSES QUESTIONS
+  {
+    id: 'acc-easy-139',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Accrued Expense Increase and Cash Flow',
+    description: 'Accrued expenses increase by $2,400 during the period. What is the effect on cash flow from operations?',
+    answer: 2400,
+    unit: '$',
+    hint: 'Liability increase adds to cash flow.',
+    explanation: "Calculation: Accrued Expense Increase = +$2,400 to CFO\n\n• • •\n\nStep-by-step breakdown:\n\n1. Accrued Expense Change\n   - Increase in accrued expenses: $2,400\n   - Represents expenses incurred but not yet paid\n\n2. Cash Flow Impact\n   - Liability increases = source of cash\n   - Company has delayed $2,400 in payments\n   - Cash retained in business longer\n\n3. Operating Cash Flow Effect\n   - Positive impact: +$2,400\n   - Improves cash flow from operations\n   - Non-cash working capital benefit\n\nKey Points:\n   • Accruals arose for expenses not yet paid, cash held longer\n   • Matching principle—expense on IS, cash not yet disbursed\n   • Accrued expense increases are inflow for CFO, reduce period\'s net cash outflows\n   • Working capital management affects liquidity",
+    learnContent: {
+      concept: 'Accrued expense increases are inflow for CFO, reduce period\'s net cash outflows.',
+      formula: 'CFO Impact = Increase in Accrued Expenses',
+      example: '+$1,000 accrued: +$1,000 CFO'
+    }
+  },
+  {
+    id: 'acc-easy-140',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Accrued Expenses Settled',
+    description: 'A company\'s accrued expenses fell from $9,500 to $7,000. If it recognized $20,000 in the income statement, how much cash did it pay for these expenses during the period?',
+    answer: 22500,
+    unit: '$',
+    hint: 'Cash paid = Expense recognized + decrease in accrued balance.',
+    explanation: "Calculation: $20,000 + ($9,500 - $7,000) = $20,000 + $2,500 = $22,500\n\n• • •\n\nStep-by-step breakdown:\n\n1. Expense Recognition\n   - Income statement expense: $20,000\n   - Amount expensed during period\n\n2. Accrued Expense Change\n   - Beginning accrued: $9,500\n   - Ending accrued: $7,000\n   - Decrease: $2,500\n\n3. Cash Payment Calculation\n   - Current period expense: $20,000\n   - Plus: Decrease in accrued (prior period settlements): $2,500\n   - Total cash paid: $22,500\n\nKey Points:\n   • Cash paid = Expense recognized + decrease in accrued balance\n   • Settling old accruals increases cash outflows versus recognized expenses\n   • Bigger decrease in accrued means more was paid out than expensed in the period\n   • Timing differences between expense recognition and payment",
+    learnContent: {
+      concept: 'Bigger decrease in accrued means more was paid out than expensed in the period.',
+      formula: 'Cash Paid = Current Expense + Decrease in Accrued',
+      example: 'Expense $5k, accrued falls $2k: $7k paid'
+    }
+  },
+  {
+    id: 'acc-easy-141',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Recognizing Expense Timing',
+    description: 'A firm records $5,000 expense for employee bonuses which were not yet paid, and an additional $3,000 for rent incurred but to be paid next period. What is total increase in accrued expenses?',
+    answer: 8000,
+    unit: '$',
+    hint: 'All incurred but unpaid expenses increase accrued.',
+    explanation: "Calculation: $5,000 + $3,000 = $8,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Employee Bonus Expense\n   - Amount: $5,000\n   - Status: Incurred but not paid\n   - Increases accrued expenses\n\n2. Rent Expense\n   - Amount: $3,000\n   - Status: Incurred but payment due next period\n   - Also increases accrued expenses\n\n3. Total Accrued Expense Increase\n   - Employee bonuses: $5,000\n   - Rent: $3,000\n   - Total increase: $8,000\n\nKey Points:\n   • All incurred but unpaid expenses increase accrued\n   • IS captures expense when incurred, not paid—difference goes to accrued\n   • Accruals ensure correct matching of costs for each reporting period\n   • Timing differences create accrued liabilities",
+    learnContent: {
+      concept: 'Accruals ensure correct matching of costs for each reporting period.',
+      formula: 'Accrued Increase = Sum of Unpaid Expenses Incurred',
+      example: '$1,500 salary expense, unpaid: +$1,500 accrued'
+    }
   }
 ];
