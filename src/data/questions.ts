@@ -7214,5 +7214,213 @@ Key Points:
       formula: 'Accrued Increase = Sum of Unpaid Expenses Incurred',
       example: '$1,500 salary expense, unpaid: +$1,500 accrued'
     }
+  },
+
+  // 32. Current Portion of Long-Term Debt
+  {
+    id: 'acc-easy-142',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Identifying Current Portion at Year-End',
+    description: 'A $32,000 loan is repaid in four equal $8,000 annual installments, paid each December 31.\n\nWhat is the current portion of long-term debt to be reported at year-end?',
+    answer: 8000,
+    unit: '$',
+    hint: 'Current portion is the principal due in the next 12 months.',
+    explanation: "Calculation: Current portion = $8,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Loan Structure:\n   - Total loan: $32,000\n   - Payment schedule: Four equal annual installments\n   - Payment amount: $8,000 per year\n   - Payment date: December 31st\n\n2. Current Portion Definition:\n   - Principal amount due within next 12 months\n   - Only the next scheduled payment qualifies\n\n3. Current Portion Calculation:\n   - Next payment due: $8,000\n   - Therefore current portion = $8,000\n\nKey Points:\n   • Only the next scheduled principal payment ($8,000) is \"current\"\n   • Remaining principal ($24,000) stays in long-term debt\n   • Current portion appears in current liabilities section",
+    learnContent: {
+      concept: 'Current portion of long-term debt represents principal payments due within the next 12 months.',
+      formula: 'Current Portion = Principal Due in Next 12 Months',
+      example: '$50,000 loan, $10,000 annual payments → Current portion = $10,000'
+    }
+  },
+
+  {
+    id: 'acc-medium-146',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Current Portion after Early Prepayment',
+    description: 'A firm\'s $24,000 bank loan is paid back as $6,000 principal per year. This December, they prepay $2,000 toward next year\'s installment.\n\nWhat is the current portion of long-term debt at December 31?',
+    answer: 4000,
+    unit: '$',
+    hint: 'Next year\'s scheduled principal payment minus prepayment.',
+    explanation: "Calculation: $6,000 - $2,000 = $4,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Original Payment Schedule:\n   - Total loan: $24,000\n   - Annual principal payment: $6,000\n   - Next year's scheduled payment: $6,000\n\n2. Prepayment Impact:\n   - Prepayment made in December: $2,000\n   - Applied toward next year's installment\n   - Reduces amount still due next year\n\n3. Current Portion Calculation:\n   - Originally due next year: $6,000\n   - Less: Prepayment already made: $2,000\n   - Current portion remaining: $4,000\n\nKey Points:\n   • Scheduled payment: $6,000; $2,000 prepaid leaves $4,000 due in next 12 months (current portion)\n   • Prepayments reduce the current portion obligation\n   • The $2,000 prepayment reduces both cash and the current liability",
+    learnContent: {
+      concept: 'Prepayments reduce the current portion of long-term debt by the amount paid ahead of schedule.',
+      formula: 'Current Portion = Scheduled Payment - Prepayments Made',
+      example: '$10,000 due next year, $3,000 prepaid → Current portion = $7,000'
+    }
+  },
+
+  {
+    id: 'acc-hard-179',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Rescheduled Amortization with Deferral and Prepayment',
+    description: 'A five-year $60,000 loan is paid in annual principal installments of $12,000 each Dec 31. In Year 2, the company prepays $4,000 toward next year and negotiates to defer half ($6,000) of next year\'s payment to Year 5.\n\nWhat is the current portion of long-term debt at Year 2 year-end?',
+    answer: 2000,
+    unit: '$',
+    hint: 'Scheduled for next year: $12,000. Half deferred to Year 5, so $6,000 due. Prepaid $4,000 ahead.',
+    explanation: "Calculation: $12,000 - $6,000 - $4,000 = $2,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Original Loan Structure:\n   - Total loan: $60,000\n   - Term: 5 years\n   - Annual payment: $12,000\n   - Year 3 scheduled payment: $12,000\n\n2. Loan Modification Effects:\n   a) Deferral:\n      - Half of Year 3 payment deferred: $6,000\n      - Deferred amount moved to Year 5\n      - Year 3 payment reduced to: $6,000\n   \n   b) Prepayment:\n      - Prepaid toward Year 3: $4,000\n      - Further reduces Year 3 obligation\n\n3. Current Portion Calculation:\n   - Original Year 3 payment: $12,000\n   - Less: Deferred to Year 5: ($6,000)\n   - Less: Prepaid in Year 2: ($4,000)\n   - Current portion at Year 2 end: $2,000\n\nKey Points:\n   • $12,000 (scheduled) – $6,000 (deferral) – $4,000 (prepay) = $2,000\n   • Complex loan modifications require careful tracking\n   • Deferrals move obligations to future periods\n   • Prepayments reduce current obligations",
+    learnContent: {
+      concept: 'Complex loan modifications involving deferrals and prepayments require careful calculation of the remaining current portion.',
+      formula: 'Current Portion = Scheduled Payment - Deferrals - Prepayments',
+      example: '$15,000 due, $5,000 deferred, $3,000 prepaid → Current portion = $7,000'
+    }
+  },
+
+  // 33. Long-Term Debt
+  {
+    id: 'acc-easy-143',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Long-Term Debt after Single Repayment',
+    description: 'A company starts with $75,000 in long-term notes and makes a $20,000 repayment by year-end.\n\nWhat is its ending long-term debt?',
+    answer: 55000,
+    unit: '$',
+    hint: 'Subtract repayment from the start-of-year balance.',
+    explanation: "Calculation: $75,000 - $20,000 = $55,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Beginning Balance:\n   - Long-term debt at start: $75,000\n   - This represents the outstanding principal\n\n2. Repayment During Year:\n   - Principal repayment made: $20,000\n   - This reduces the outstanding debt balance\n   - (Note: Interest payments don't reduce principal)\n\n3. Ending Balance Calculation:\n   - Beginning balance: $75,000\n   - Less: Principal repayment: $20,000\n   - Ending long-term debt: $55,000\n\nKey Points:\n   • Only principal payments reduce debt balance\n   • Interest payments are expensed, not debt reduction\n   • Long-term debt decreases with each principal payment\n   • Simple calculation: Beginning balance minus repayments",
+    learnContent: {
+      concept: 'Long-term debt balance decreases only when principal payments are made, not interest payments.',
+      formula: 'Ending Debt = Beginning Debt - Principal Repayments',
+      example: '$100,000 debt, $15,000 principal payment → $85,000 ending debt'
+    }
+  },
+
+  {
+    id: 'acc-medium-147',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Net Long-Term Debt Including New Borrowing',
+    description: 'A company starts the year with $48,000 in long-term debt, issues $36,000 new debt, and repays $20,000 principal.\n\nWhat is ending long-term debt?',
+    answer: 64000,
+    unit: '$',
+    hint: 'Add new borrowings, subtract repayments.',
+    explanation: "Calculation: $48,000 + $36,000 - $20,000 = $64,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Beginning Position:\n   - Long-term debt at start: $48,000\n   - Base amount from previous periods\n\n2. New Borrowing:\n   - Additional debt issued: $36,000\n   - Increases total debt outstanding\n   - Provides cash inflow to company\n\n3. Principal Repayment:\n   - Principal paid during year: $20,000\n   - Reduces outstanding debt balance\n   - Represents cash outflow\n\n4. Ending Balance Calculation:\n   - Beginning debt: $48,000\n   - Add: New borrowing: $36,000\n   - Less: Principal repayment: ($20,000)\n   - Ending long-term debt: $64,000\n\nKey Points:\n   • New borrowings increase debt balance\n   • Principal repayments decrease debt balance\n   • Net effect: $48,000 + $36,000 - $20,000 = $64,000\n   • Track all debt activity during the period",
+    learnContent: {
+      concept: 'Long-term debt changes reflect both new borrowings (increases) and principal repayments (decreases).',
+      formula: 'Ending Debt = Beginning + New Borrowings - Principal Repayments',
+      example: '$30,000 start + $15,000 new - $8,000 repay = $37,000 end'
+    }
+  },
+
+  {
+    id: 'acc-hard-180',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Multi-Year Note and Current Portion',
+    description: 'A $100,000 term loan is paid in five annual principal installments of $20,000. In Year 1, company pays the scheduled $20,000 and prepays $10,000 against Year 2\'s installment.\n\nWhat is the current portion of long-term debt to be reported at the end of Year 1?',
+    answer: 10000,
+    unit: '$',
+    hint: 'For next year: scheduled principal $20,000 minus any paid early.',
+    explanation: "Calculation: $20,000 - $10,000 = $10,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Original Loan Structure:\n   - Total loan: $100,000\n   - Payment schedule: 5 annual installments\n   - Annual principal payment: $20,000\n   - Year 2 scheduled payment: $20,000\n\n2. Year 1 Payment Activity:\n   a) Scheduled Payment:\n      - Year 1 payment made: $20,000\n      - Reduces total debt to $80,000\n   \n   b) Prepayment:\n      - Additional payment toward Year 2: $10,000\n      - Applied against future obligation\n      - Total Year 1 payments: $30,000\n\n3. Current Portion at Year 1 End:\n   - Year 2 originally scheduled: $20,000\n   - Less: Prepayment already made: $10,000\n   - Current portion remaining: $10,000\n\n4. Debt Classification:\n   - Current portion (due in Year 2): $10,000\n   - Long-term portion (Years 3-5): $60,000\n   - Total remaining debt: $70,000\n\nKey Points:\n   • Next year's portion: $20,000 – $10,000 (prepaid) = $10,000\n   • Prepayments reduce future current portion obligations\n   • Total debt reduced by all payments: $100,000 - $30,000 = $70,000\n   • Proper classification between current and long-term portions",
+    learnContent: {
+      concept: 'Prepayments against future installments reduce the current portion of long-term debt for the applicable period.',
+      formula: 'Current Portion = Next Period Scheduled Payment - Prepayments Against That Period',
+      example: '$25,000 due next year, $8,000 prepaid → Current portion = $17,000'
+    }
+  },
+
+  // 34. Notes Payable
+  {
+    id: 'acc-easy-144',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'New Note Payable as a Current Liability',
+    description: 'The company issues a 10-month, $6,000 note payable in April.\n\nWhat is the balance in notes payable immediately after issue?',
+    answer: 6000,
+    unit: '$',
+    hint: 'Show the full principal.',
+    explanation: "Calculation: Notes payable = $6,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Note Issuance:\n   - Principal amount: $6,000\n   - Term: 10 months\n   - Issue date: April\n   - Maturity: February (next year)\n\n2. Initial Recording:\n   - Debit: Cash $6,000\n   - Credit: Notes Payable $6,000\n   - Full principal amount recorded as liability\n\n3. Classification:\n   - Since term is 10 months (less than 12 months)\n   - Classified as current liability\n   - Will appear in current liabilities section\n\nKey Points:\n   • Notes payable initially recorded at full principal amount\n   • Interest accrues over time but doesn't affect initial principal\n   • 10-month term makes this a current liability\n   • No immediate impact on interest payable account",
+    learnContent: {
+      concept: 'Notes payable are initially recorded at the full principal amount borrowed.',
+      formula: 'Initial Notes Payable = Principal Amount Borrowed',
+      example: '$15,000 note issued → Notes Payable = $15,000'
+    }
+  },
+
+  {
+    id: 'acc-medium-148',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Notes Payable and Accrued Interest at Year-End',
+    description: 'On March 1, firm borrows $15,000 via a 12-month note at 8% (interest paid at maturity).\n\nWhat is the total notes payable plus accrued interest on December 31?',
+    answer: 16000,
+    unit: '$',
+    hint: 'Find accrued 10 months of interest, add to principal.',
+    explanation: "Calculation: $15,000 + $1,000 = $16,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Note Details:\n   - Principal: $15,000\n   - Interest rate: 8% annual\n   - Issue date: March 1\n   - Maturity: March 1 (next year)\n   - Interest payment: At maturity\n\n2. Time Period Calculation:\n   - From March 1 to December 31\n   - Months elapsed: 10 months\n   - Interest accrual period: 10/12 of year\n\n3. Interest Calculation:\n   - Annual interest: $15,000 × 8% = $1,200\n   - Accrued interest: $1,200 × (10/12) = $1,000\n   - Formula: Principal × Rate × Time\n\n4. Total Liability:\n   - Notes payable (principal): $15,000\n   - Plus: Accrued interest: $1,000\n   - Total liability: $16,000\n\nKey Points:\n   • Interest: $15,000 × 8% × (10/12) = $1,000\n   • Principal remains: $15,000\n   • Total = $15,000 + $1,000 = $16,000\n   • Interest accrues even when paid at maturity",
+    learnContent: {
+      concept: 'Accrued interest must be recorded even when interest is paid at maturity, following the matching principle.',
+      formula: 'Total Liability = Principal + (Principal × Rate × Time Elapsed)',
+      example: '$20,000 note at 6% for 8 months → $20,000 + ($20,000 × 6% × 8/12) = $20,800'
+    }
+  },
+
+  {
+    id: 'acc-hard-181',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Multiple Notes Schedule, Repaid and Accrued',
+    description: 'A company starts with a $10,000 note at 6% (repaid in full, including interest, after 4 months). In May, it issues a $12,000, 8% 12-month note. In October, $4,000 principal is repaid on the second note.\n\nBy Dec 31, what is notes payable plus accrued interest (round to nearest $100)?',
+    answer: 8600,
+    unit: '$',
+    hint: 'Second note: principal left = $12,000 – $4,000 = $8,000. Interest: $12,000 × 8% × (8/12) = $640 (May to December, 8 months). Total = $8,000 + $640 ≈ $8,600 (rounded to nearest hundred)',
+    explanation: "Calculation: $8,000 + $640 = $8,640 ≈ $8,600\n\n• • •\n\nStep-by-step breakdown:\n\n1. First Note (Fully Repaid):\n   - Principal: $10,000 at 6%\n   - Repaid in full after 4 months\n   - No balance remaining at Dec 31\n   - Interest paid with principal\n\n2. Second Note Analysis:\n   a) Original Terms:\n      - Principal: $12,000\n      - Rate: 8% annual\n      - Issue date: May 1\n      - Term: 12 months\n   \n   b) Principal Repayment:\n      - October payment: $4,000\n      - Remaining principal: $12,000 - $4,000 = $8,000\n\n3. Interest Calculation (Second Note):\n   - Time period: May 1 to Dec 31 = 8 months\n   - Interest base: Full $12,000 (for May-September)\n   - Then $8,000 (for October-December)\n   - Simplified calculation: $12,000 × 8% × (8/12) = $640\n\n4. Year-End Balance:\n   - Remaining principal: $8,000\n   - Accrued interest: $640\n   - Total: $8,640\n   - Rounded to nearest $100: $8,600\n\nKey Points:\n   • Only remaining principal and accrued interest on unpaid balance\n   • First note completely eliminated from books\n   • Interest calculation considers full original principal for period\n   • Rounding requirement applies to final answer",
+    learnContent: {
+      concept: 'Multiple notes require tracking each note separately, including partial repayments and varying interest rates.',
+      formula: 'Total = Remaining Principal + Accrued Interest on Outstanding Balance',
+      example: 'Two notes: $5,000 at 5% + $8,000 at 7% (both 6 months) = Total principal + respective interest'
+    }
+  },
+
+  // 35. Deferred Revenue
+  {
+    id: 'acc-easy-145',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Deferred Revenue Remaining After Partial Fulfillment',
+    description: 'A firm collects $24,000 upfront for a 12-month subscription on March 1.\n\nWhat is deferred revenue on December 31?',
+    answer: 4000,
+    unit: '$',
+    hint: 'Service not yet delivered (Jan–Feb next year): 2/12 of contract.',
+    explanation: "Calculation: $24,000 × (2/12) = $4,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Contract Details:\n   - Total subscription: $24,000\n   - Term: 12 months\n   - Start date: March 1\n   - End date: February 28 (next year)\n\n2. Service Period Analysis:\n   - Total months: 12\n   - Months served by Dec 31: March through December = 10 months\n   - Months remaining: January and February = 2 months\n\n3. Revenue Recognition:\n   - Monthly revenue: $24,000 ÷ 12 = $2,000\n   - Revenue recognized (10 months): $2,000 × 10 = $20,000\n   - Revenue deferred (2 months): $2,000 × 2 = $4,000\n\n4. Deferred Revenue Calculation:\n   - Alternative method: $24,000 × (2/12) = $4,000\n   - Represents unearned portion\n   - Will be recognized in next year\n\nKey Points:\n   • Service not yet delivered (Jan–Feb next year): 2/12 of contract\n   • Deferred revenue represents future service obligation\n   • Recognition follows straight-line method over contract term\n   • Balance sheet liability until service delivered",
+    learnContent: {
+      concept: 'Deferred revenue represents the unearned portion of cash received in advance for future services.',
+      formula: 'Deferred Revenue = Total Contract × (Months Remaining / Total Months)',
+      example: '$36,000 annual contract, 3 months left → $36,000 × 3/12 = $9,000 deferred'
+    }
+  },
+
+  {
+    id: 'acc-medium-149',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Deferred Revenue Rollforward—Recognized Amount',
+    description: 'Start deferred revenue: $8,000. During year: new prepayments collected $28,000. End deferred revenue: $6,000.\n\nHow much revenue recognized this year?',
+    answer: 30000,
+    unit: '$',
+    hint: 'Revenue recognized = opening + new collections – end.',
+    explanation: "Calculation: $8,000 + $28,000 - $6,000 = $30,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Deferred Revenue Activity Analysis:\n   - Beginning balance: $8,000 (from prior period)\n   - New cash collections: $28,000 (new customer payments)\n   - Ending balance: $6,000 (unearned at year-end)\n\n2. Revenue Recognition Logic:\n   - Beginning deferred represents prior cash, now earned\n   - New collections may be partially earned this year\n   - Ending deferred represents cash not yet earned\n\n3. Revenue Calculation Method:\n   - Total cash available for earning: $8,000 + $28,000 = $36,000\n   - Less: Still deferred (unearned): $6,000\n   - Therefore earned this year: $36,000 - $6,000 = $30,000\n\n4. Alternative Verification:\n   - Beginning deferred earned: $8,000\n   - New collections earned: $28,000 - ($6,000 ending)\n   - Total revenue recognized: $30,000\n\nKey Points:\n   • Revenue recognized = opening + new collections – end\n   • Formula tracks the flow from cash to earnings\n   • Ending balance represents future revenue potential\n   • Method works regardless of contract complexity",
+    learnContent: {
+      concept: 'Revenue recognition can be calculated by analyzing the flow of deferred revenue balances and new collections.',
+      formula: 'Revenue Recognized = Beginning Deferred + New Collections - Ending Deferred',
+      example: '$5,000 start + $20,000 new - $3,000 end = $22,000 recognized'
+    }
+  },
+
+  {
+    id: 'acc-hard-182',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Multi-Year Deferred Revenue, Cohort Tracking',
+    description: 'A business collects $36,000 in advance every Jan 1 for annual contracts. Revenue is recognized evenly through the year.\n\nWhat is deferred revenue at the end of March Year 2 (after 15 months total; all contracts have same start date each year)?',
+    answer: 27000,
+    unit: '$',
+    hint: 'Year 2 contract: $36,000, after 3/12 months, 9/12 left = $27,000 still deferred.',
+    explanation: "Calculation: $36,000 × (9/12) = $27,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Contract Structure:\n   - Annual collection: $36,000 every January 1\n   - Service period: 12 months (Jan 1 - Dec 31)\n   - Revenue recognition: Straight-line monthly\n   - Monthly revenue: $36,000 ÷ 12 = $3,000\n\n2. Timeline Analysis:\n   - Year 1: Contract started Jan 1 Year 1\n   - Year 2: New contract started Jan 1 Year 2\n   - Analysis date: March 31 Year 2 (15 months from start)\n\n3. Year 1 Contract Status (at March 31 Year 2):\n   - Contract period: Jan 1 Year 1 - Dec 31 Year 1\n   - Status at March 31 Year 2: Fully completed\n   - Deferred revenue: $0 (all recognized)\n\n4. Year 2 Contract Status (at March 31 Year 2):\n   - Contract period: Jan 1 Year 2 - Dec 31 Year 2\n   - Time elapsed: Jan, Feb, March = 3 months\n   - Revenue recognized: $3,000 × 3 = $9,000\n   - Remaining service: 9 months (April - December)\n   - Deferred revenue: $3,000 × 9 = $27,000\n\n5. Total Deferred Revenue:\n   - Year 1 contract: $0\n   - Year 2 contract: $27,000\n   - Total: $27,000\n\nKey Points:\n   • After 3 months of Year 2, only next 9 months of Year 2's $36,000 contract are unearned\n   • Year 1 contract completely fulfilled by its December 31 end\n   • $36,000 × 9/12 = $27,000\n   • Each annual cohort tracked separately",
+    learnContent: {
+      concept: 'Multi-year deferred revenue tracking requires analyzing each contract cohort separately based on their individual service periods.',
+      formula: 'Deferred Revenue = Contract Value × (Months Remaining in Contract / Total Contract Months)',
+      example: 'Annual $48,000 contract, 7 months left → $48,000 × 7/12 = $28,000 deferred'
+    }
   }
 ];
