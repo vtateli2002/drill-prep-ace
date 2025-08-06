@@ -313,6 +313,18 @@ const QuestionView = () => {
     return nextInTrack;
   };
 
+  const getPreviousQuestion = () => {
+    if (!currentQuestion) return null;
+    const currentIndex = QUESTIONS.findIndex(q => q.id === currentQuestion.id);
+    // Find the previous question in the same track
+    for (let i = currentIndex - 1; i >= 0; i--) {
+      if (QUESTIONS[i].track === currentQuestion.track) {
+        return QUESTIONS[i];
+      }
+    }
+    return null;
+  };
+
   const handleNextQuestion = () => {
     const nextQuestion = getNextQuestion();
     if (nextQuestion) {
@@ -332,6 +344,28 @@ const QuestionView = () => {
         title: "🎉 Track Completed!",
         description: `Congratulations! You've completed all ${TRACK_NAMES[currentQuestion.track]} questions!`,
         className: "border-success",
+      });
+    }
+  };
+
+  const handlePreviousQuestion = () => {
+    const previousQuestion = getPreviousQuestion();
+    if (previousQuestion) {
+      navigate(`/question/${previousQuestion.id}`);
+      // Reset state for new question
+      setUserAnswer('');
+      setIsSubmitted(false);
+      setIsCorrect(null);
+      setShowHint(false);
+      setAttemptCount(0);
+      setHintUsed(false);
+      setFinalXP(0);
+      setMaxAttemptsReached(false);
+    } else {
+      toast({
+        title: "No previous question",
+        description: "This is the first question in this track.",
+        variant: "default",
       });
     }
   };
@@ -599,13 +633,7 @@ const QuestionView = () => {
                   <div className="flex space-x-3">
                     <Button 
                       variant="outline" 
-                      onClick={() => {
-                        // Navigate to previous question logic here
-                        toast({
-                          title: "Previous question",
-                          description: "Previous question functionality to be implemented",
-                        });
-                      }}
+                      onClick={handlePreviousQuestion}
                       className="flex-1 border-primary/20 hover:bg-primary/5 hover:border-primary/40"
                     >
                       Previous Question
