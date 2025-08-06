@@ -584,18 +584,26 @@ const QuestionView = () => {
                              Try Again
                            </Button>
                          )}
-                         <Button onClick={() => {
-                           if (returnToModal) {
-                             navigate('/dashboard');
-                           } else {
-                             handleNextQuestion();
-                           }
-                         }}>
-                           {returnToModal ? 'Back to Challenge' : 'Next Question'}
-                         </Button>
                        </div>
                     </>
                   )}
+                </div>
+                
+                {/* Always visible Next Question button */}
+                <div className="pt-3 border-t">
+                  <Button 
+                    variant="secondary" 
+                    onClick={() => {
+                      if (returnToModal) {
+                        navigate('/dashboard');
+                      } else {
+                        handleNextQuestion();
+                      }
+                    }}
+                    className="w-full"
+                  >
+                    {returnToModal ? 'Back to Challenge' : 'Next Question'}
+                  </Button>
                 </div>
               </CardContent>
             </Card>
