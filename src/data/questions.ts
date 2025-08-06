@@ -1534,7 +1534,29 @@ What is its interest coverage ratio?`,
     answer: 4,
     unit: 'x',
     hint: 'First find operating income, then divide by interest expense.',
-    explanation: 'Operating Income = Revenue - COGS - Operating Expenses = $35,000 - $20,000 - $3,000 = $12,000. Interest Coverage = Operating Income ÷ Interest Expense = $12,000 ÷ $3,000 = 4.0x',
+    explanation: `Calculation:
+Interest Coverage = $12,000 ÷ $3,000 = 4.0x
+
+• • •
+
+Step-by-step breakdown:
+
+1. Operating Income Calculation:
+   • Revenue: $35,000
+   • Less: COGS: $20,000
+   • Less: Operating Expenses: $3,000
+   → Operating Income: $12,000
+
+2. Interest Coverage Ratio:
+   • Operating Income: $12,000
+   • Interest Expense: $3,000
+   → Interest Coverage: $12,000 ÷ $3,000 = 4.0x
+
+Key Points:
+   • Interest coverage measures ability to meet interest obligations
+   • Operating income represents earnings available to cover interest
+   • Higher ratios indicate stronger ability to service debt
+   • A 4.0x ratio means earnings can cover interest 4 times over`,
     learnContent: {
       concept: 'The interest coverage ratio measures how well a company can meet its interest obligations using its operating profit. A higher number means stronger ability to pay.',
       formula: 'Interest Coverage = Operating Income ÷ Interest Expense',
@@ -1558,7 +1580,34 @@ Shares Outstanding: 5,000
 What is its earnings per share?`,
     answer: 2.25,
     hint: 'Calculate Net Income using tax rate, then divide by shares.',
-    explanation: 'OpInc = $60K - $30K - $10K = $20K. Pre-tax = $20K - $5K = $15K. Net Income = $15K × (1 - 0.25) = $11.25K. EPS = $11,250 ÷ 5,000 = 2.25',
+    explanation: `Calculation:
+EPS = $11,250 ÷ 5,000 = $2.25
+
+• • •
+
+Step-by-step breakdown:
+
+1. Operating Income:
+   • Revenue: $60,000
+   • Less: COGS: $30,000
+   • Less: Operating Expenses: $10,000
+   → Operating Income: $20,000
+
+2. Net Income Calculation:
+   • Operating Income: $20,000
+   • Less: Interest Expense: $5,000
+   → Pre-tax Income: $15,000
+   • Tax (25%): $15,000 × 0.25 = $3,750
+   → Net Income: $11,250
+
+3. Earnings Per Share:
+   → EPS: $11,250 ÷ 5,000 shares = $2.25
+
+Key Points:
+   • EPS shows profit available to each common share
+   • Net income must account for all expenses including taxes
+   • Higher EPS generally indicates better profitability per share
+   • This is a key metric for equity valuation`,
     learnContent: {
       concept: 'EPS shows how much profit is available to each common share. It\'s a key profitability metric in financial analysis.',
       formula: 'EPS = Net Income ÷ Shares Outstanding',
@@ -1580,7 +1629,26 @@ What is the total net change in cash for the period?`,
     answer: 5000,
     unit: '$',
     hint: 'Add CFO, CFI, and CFF to find the cash change.',
-    explanation: 'Net Cash = $8,000 - $2,000 - $1,000 = $5,000',
+    explanation: `Calculation:
+Net Change in Cash = $8,000 + (-$2,000) + (-$1,000) = $5,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Cash Flow Components:
+   • Cash Flow from Operating Activities: +$8,000
+   • Cash Flow from Investing Activities: -$2,000
+   • Cash Flow from Financing Activities: -$1,000
+
+2. Net Change Calculation:
+   → Net Change in Cash: $8,000 - $2,000 - $1,000 = $5,000
+
+Key Points:
+   • Net change reflects total cash gained or lost during the period
+   • Operating activities generated positive cash flow
+   • Investing and financing activities used cash
+   • Positive net change means the company increased its cash position`,
     learnContent: {
       concept: 'Net change in cash reflects how much cash a company gained or lost during a period from all three cash flow segments.',
       formula: 'Net Cash Change = CFO + CFI + CFF',
@@ -1602,7 +1670,28 @@ What is its inventory turnover ratio?`,
     answer: 8,
     unit: 'x',
     hint: 'Use average inventory between beginning and end, then divide COGS by it.',
-    explanation: 'Average Inventory = ($5,000 + $7,000) ÷ 2 = $6,000. Turnover = $48,000 ÷ $6,000 = 8.0x',
+    explanation: `Calculation:
+Inventory Turnover = $48,000 ÷ $6,000 = 8.0x
+
+• • •
+
+Step-by-step breakdown:
+
+1. Average Inventory Calculation:
+   • Beginning Inventory: $5,000
+   • Ending Inventory: $7,000
+   → Average Inventory: ($5,000 + $7,000) ÷ 2 = $6,000
+
+2. Turnover Ratio:
+   • COGS: $48,000
+   • Average Inventory: $6,000
+   → Inventory Turnover: $48,000 ÷ $6,000 = 8.0x
+
+Key Points:
+   • Inventory turnover shows how often inventory is sold and replaced
+   • Higher turnover typically indicates strong sales and efficient inventory management
+   • 8.0x means inventory was converted to sales 8 times during the period
+   • Average inventory provides a more accurate base than point-in-time values`,
     learnContent: {
       concept: 'Inventory turnover tells how often a company sells and replaces inventory. A high turnover can indicate strong sales.',
       formula: 'Turnover = COGS ÷ Average Inventory',
@@ -1627,7 +1716,33 @@ What is the company's book value of equity?`,
     answer: 20000,
     unit: '$',
     hint: 'Assets minus liabilities gives equity.',
-    explanation: 'Total Assets = $10K + $15K + $30K = $55K. Total Liabilities = $5K + $10K + $20K = $35K. Equity = $55K - $35K = $20K',
+    explanation: `Calculation:
+Equity = $55,000 - $35,000 = $20,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Total Assets:
+   • Cash: $10,000
+   • Accounts Receivable: $15,000
+   • Equipment: $30,000
+   → Total Assets: $55,000
+
+2. Total Liabilities:
+   • Accounts Payable: $5,000
+   • Short-term Debt: $10,000
+   • Long-term Debt: $20,000
+   → Total Liabilities: $35,000
+
+3. Book Value of Equity:
+   → Equity: $55,000 - $35,000 = $20,000
+
+Key Points:
+   • Equity represents what remains for shareholders after paying liabilities
+   • Calculated from the fundamental accounting equation: Assets = Liabilities + Equity
+   • Book value reflects historical cost, not market value
+   • This is the shareholders' residual claim on company assets`,
     learnContent: {
       concept: 'Equity is what remains for shareholders after paying off liabilities. It\'s calculated from the balance sheet.',
       formula: 'Equity = Assets - Liabilities',
@@ -1648,7 +1763,26 @@ What is the value of the depreciation tax shield?`,
     answer: 1500,
     unit: '$',
     hint: 'Multiply depreciation expense by tax rate.',
-    explanation: 'Tax Shield = $6,000 × 0.25 = $1,500',
+    explanation: `Calculation:
+Tax Shield = $6,000 × 0.25 = $1,500
+
+• • •
+
+Step-by-step breakdown:
+
+1. Depreciation Impact:
+   → Depreciation Expense: $6,000
+
+2. Tax Shield Calculation:
+   • Depreciation: $6,000
+   • Tax Rate: 25%
+   → Tax Shield: $6,000 × 0.25 = $1,500
+
+Key Points:
+   • Depreciation reduces taxable income, creating tax savings
+   • Tax shield represents the cash flow benefit from depreciation
+   • Higher depreciation or tax rates create larger tax shields
+   • This non-cash expense provides real cash flow benefits`,
     learnContent: {
       concept: 'Depreciation reduces taxable income, creating a "shield" that lowers taxes. This tax savings improves cash flow.',
       formula: 'Depreciation Tax Shield = Depreciation × Tax Rate',
@@ -1664,7 +1798,28 @@ What is the value of the depreciation tax shield?`,
     answer: 1.5,
     unit: 'x',
     hint: 'Use average total assets, then divide revenue by that number.',
-    explanation: 'Avg Assets = ($60K + $100K) ÷ 2 = $80K. Turnover = $120K ÷ $80K = 1.5x',
+    explanation: `Calculation:
+Asset Turnover = $120,000 ÷ $80,000 = 1.5x
+
+• • •
+
+Step-by-step breakdown:
+
+1. Average Assets Calculation:
+   • Beginning Assets: $60,000
+   • Ending Assets: $100,000
+   → Average Assets: ($60,000 + $100,000) ÷ 2 = $80,000
+
+2. Asset Turnover Ratio:
+   • Revenue: $120,000
+   • Average Assets: $80,000
+   → Asset Turnover: $120,000 ÷ $80,000 = 1.5x
+
+Key Points:
+   • Asset turnover measures efficiency of asset utilization to generate revenue
+   • Higher ratios indicate more efficient use of assets
+   • 1.5x means each dollar of assets generated $1.50 in revenue
+   • Average assets provide more accurate measurement than point-in-time values`,
     learnContent: {
       concept: 'Asset turnover measures how efficiently a company uses assets to generate revenue.',
       formula: 'Asset Turnover = Revenue ÷ Average Total Assets',
@@ -1680,7 +1835,27 @@ What is the value of the depreciation tax shield?`,
     answer: 8000,
     unit: '$',
     hint: 'Cash received - revenue recognized = deferred revenue.',
-    explanation: 'Deferred Revenue = $12K - $4K = $8K',
+    explanation: `Calculation:
+Deferred Revenue = $12,000 - $4,000 = $8,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Cash Collection:
+   → Cash received from customers: $12,000
+
+2. Service Delivery:
+   → Services provided in Q1: $4,000
+
+3. Deferred Revenue:
+   → Deferred Revenue: $12,000 - $4,000 = $8,000
+
+Key Points:
+   • Deferred revenue is a liability representing unearned income
+   • Cash was collected before services were delivered
+   • Company owes $8,000 worth of future services to customers
+   • This creates positive cash flow impact in the current period`,
     learnContent: {
       concept: 'Deferred revenue is a liability created when a company receives payment for goods/services it hasn\'t yet delivered.',
       formula: 'Change in Deferred Revenue = Cash Collected - Revenue Recognized',
@@ -1695,7 +1870,25 @@ What is the value of the depreciation tax shield?`,
     description: `A company reported net income of $40,000 this year and paid $8,000 in dividends. What is the dividend payout ratio?`,
     answer: 0.2,
     hint: 'Divide dividends by net income.',
-    explanation: 'Payout = $8K ÷ $40K = 0.2 or 20%',
+    explanation: `Calculation:
+Dividend Payout Ratio = $8,000 ÷ $40,000 = 0.2 (20%)
+
+• • •
+
+Step-by-step breakdown:
+
+1. Financial Results:
+   • Net Income: $40,000
+   • Dividends Paid: $8,000
+
+2. Payout Ratio:
+   → Payout Ratio: $8,000 ÷ $40,000 = 0.2 or 20%
+
+Key Points:
+   • Payout ratio shows proportion of earnings returned to shareholders
+   • 20% payout means 80% of earnings were retained for growth
+   • Lower ratios suggest focus on reinvestment and growth
+   • Higher ratios indicate more income-focused shareholder returns`,
     learnContent: {
       concept: 'This ratio shows the proportion of earnings a company returns to shareholders as dividends.',
       formula: 'Payout Ratio = Dividends ÷ Net Income',
@@ -2489,7 +2682,29 @@ What is the net change in working capital?`,
     answer: 2000,
     unit: '$',
     hint: 'Change in WC = Increase in AR + Decrease in Inventory - Increase in AP',
-    explanation: '$10,000 (↑AR) - $5,000 (↓Inventory) - $3,000 (↑AP) = $2,000',
+    explanation: `Calculation:
+Change in Working Capital = $10,000 - $5,000 - $3,000 = $2,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Current Asset Changes:
+   • Accounts Receivable increase: +$10,000 (cash tied up)
+   • Inventory decrease: -$5,000 (inventory converted to cash)
+   → Net Current Asset change: +$5,000
+
+2. Current Liability Changes:
+   • Accounts Payable increase: +$3,000 (cash retained)
+
+3. Working Capital Impact:
+   → Net Change: $10,000 - $5,000 - $3,000 = $2,000
+
+Key Points:
+   • A/R increases use cash as customers haven't paid yet
+   • Inventory decreases generate cash from product sales
+   • A/P increases preserve cash by delaying vendor payments
+   • Positive working capital change indicates net cash usage`,
     learnContent: {
       concept: 'Working capital change impacts cash in indirect method cash flow statements.',
       formula: 'Change in WC = ΔAR + ΔInventory - ΔAP',
