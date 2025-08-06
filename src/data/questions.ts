@@ -1182,13 +1182,16 @@ What is the company's total current liabilities?`,
     answer: 30000,
     unit: '$',
     hint: 'Add up only the short-term obligations due within 12 months.',
-    explanation: `Current liabilities include Accounts Payable, Accrued Expenses, and Short-Term Debt. Long-Term Debt and Deferred Tax Liabilities are excluded because they are not due in the current year. $12,000 + $8,000 + $10,000 = $30,000
+    explanation: `Total Current Liabilities = short-term obligations due within 12 months
 
-Current liability components:
-• Accounts Payable - amounts owed to suppliers for goods/services received
-• Accrued Expenses - expenses incurred but not yet paid (wages, utilities, interest)
+Current Liabilities: $12,000 + $8,000 + $10,000 = $30,000
+Excluded: Long-Term Debt ($40,000) and Deferred Tax Liability ($5,000)
+
+Key components:
+• Accounts Payable - amounts owed to suppliers for goods/services
+• Accrued Expenses - incurred costs not yet paid (wages, utilities, interest)
 • Short-Term Debt - borrowings due within 12 months
-• Long-Term Debt - excluded as it's due beyond one year
+• Long-Term Debt - excluded as due beyond one year
 • Deferred Tax Liability - excluded as timing differences reverse over multiple periods`,
     learnContent: {
       concept: 'Current liabilities represent a company\'s obligations that are expected to be settled within one year. Understanding what qualifies as a short-term liability is essential for liquidity analysis.',
