@@ -529,7 +529,7 @@ export const QUESTIONS: Question[] = [
     answer: 118750,
     unit: '$ DTA',
     hint: 'Taxable income is lower than book → DTA created.',
-    explanation: 'DTA = (Tax Expense - Book Expense) × Tax Rate\nDTA = ($500,000 - $25,000) × 25% = $118,750\n\nBook treatment capitalizes and depreciates over 20 years.\nTax rules allow full expense deduction in Year 1.\nDTA arises because tax income is lower than book income.',
+    explanation: '**Context & Analysis:**\n\nA deferred tax asset is created in Year 1. This results from a temporary difference: for accounting purposes, the $500,000 of construction interest is capitalized and depreciated over 20 years, but for tax purposes, the entire $500,000 is expensed immediately.\n\n**Book vs. Tax Treatment:**\n• For accounting: Only $25,000 ($500,000 ÷ 20) is deducted each year\n• For tax: The full $500,000 is deducted in Year 1\n\n**Calculation:**\nThis creates a deductible temporary difference of $475,000 ($500,000 – $25,000) in Year 1 that will reverse over the next 19 years.\n\nAt a 25% tax rate:\nDeferred Tax Asset = $475,000 × 25% = **$118,750**\n\n**Summary:**\nSolarRidge will recognize a $118,750 deferred tax asset in Year 1 due to the temporary difference between the book and tax treatment of the interest.',
     learnContent: {
       concept: 'Capitalized interest → delays expense for book, immediate for tax. Timing mismatch → DTA created. Reverses as book depreciation catches up over time.',
       formula: 'DTA = (Tax Expense – Book Expense) × Tax Rate',
