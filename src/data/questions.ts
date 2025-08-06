@@ -10313,5 +10313,34 @@ Key Points:
       formula: 'Treasury Stock = Repurchase Price × Shares; APIC reduced by difference from original issuance',
       example: '10k shares at $25 (original $15) → $250k TS, $100k APIC hit\n20k × $30 vs. $10 → $600k TS, $400k APIC hit\n5k × $18 vs. $12 → $90k TS, $30k APIC reduction'
     }
+  },
+
+  // Topic 61: Share Buybacks (Effects on EPS, Equity) - Corrected
+  {
+    id: 'acc-easy-67',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Buybacks – Treasury Stock and APIC Impact with Issuance History',
+    description: `At the start of the year, a firm has:
+- Treasury Stock: $200,000
+- APIC: $500,000
+
+During the year:
+- Company repurchases 10,000 shares at $25/share
+- These shares were originally issued at $12/share
+
+What is the **combined ending balance** of Treasury Stock and APIC, assuming excess repurchase cost reduces APIC first?`,
+    answer: '$820,000',
+    hint: 'Repurchase = Shares × Buyback Price. Excess over issue price reduces APIC.',
+    explanation: `1. Repurchase = 10,000 × $25 = $250,000
+2. Treasury Stock after = $200,000 + $250,000 = $450,000
+3. Excess = ($25 − $12) × 10,000 = $130,000
+4. APIC reduced: $500,000 − $130,000 = $370,000
+5. Combined = $450,000 + $370,000 = $820,000`,
+    learnContent: {
+      concept: 'Buybacks reduce equity. Excess over issuance is taken from APIC before RE.',
+      formula: 'TS = Prior TS + (Shares × Repurchase Price); APIC = Start − Excess Paid',
+      example: 'Repurchase 5k @ $20, issued @ $10 → Excess = $50k → APIC hit\n$150k buyback + $100k prior TS = $250k TS; APIC = $400k − excess\n$300k APIC - $50k excess = $250k APIC'
+    }
   }
 ];
