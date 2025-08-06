@@ -3754,7 +3754,25 @@ Key Points:
     answer: 12000,
     unit: '$',
     hint: 'Multiply non-cash expense by tax rate.',
-    explanation: 'Stock comp = $40K; tax shield = $40K × 30% = $12,000',
+    explanation: `Calculation:
+Tax Shield = $40,000 × 30% = $12,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Stock-Based Compensation:
+   • Non-cash expense: $40,000
+   • Tax rate: 30%
+
+2. Tax Shield Calculation:
+   → Tax shield = $40,000 × 30% = $12,000
+
+Key Points:
+   • Stock compensation is a non-cash expense reducing taxable income
+   • Tax shield represents actual cash savings from lower taxes
+   • Creates deferred tax asset if timing differences exist
+   • Benefits company cash flow despite being non-cash expense`,
     learnContent: {
       concept: 'Non-cash expenses like stock-based compensation reduce taxable income and generate a tax benefit without reducing cash.',
       formula: 'Tax Shield = Expense × Tax Rate',
@@ -3875,7 +3893,30 @@ Key Points:
     answer: 8000,
     unit: '$',
     hint: 'Compare selling price to net book value.',
-    explanation: 'Net book value = $50K – $30K = $20K → Gain = $28K – $20K = $8K',
+    explanation: `Calculation:
+Gain on Sale = $28,000 - $20,000 = $8,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Equipment Details:
+   • Original cost: $50,000
+   • Accumulated depreciation: $30,000
+   → Net book value: $20,000
+
+2. Sale Transaction:
+   • Sale price: $28,000
+   • Net book value: $20,000
+
+3. Gain Calculation:
+   → Gain = $28,000 - $20,000 = $8,000
+
+Key Points:
+   • Gain occurs when sale price exceeds net book value
+   • Gain is reported on the income statement
+   • Both the asset and accumulated depreciation are removed from books
+   • Cash received exceeds the carrying value of the asset`,
     learnContent: {
       concept: 'Gain/loss = Sale price – Book value. Affects income statement directly.',
       formula: 'Gain/Loss = Sale Price – (Original Cost – Accumulated Depreciation)',
@@ -3923,7 +3964,31 @@ Key Points:
     answer: 110000,
     unit: '$',
     hint: 'EBITDA = Revenue – COGS – SG&A',
-    explanation: 'EBITDA = $250K – $100K – $40K = $110K → Excludes depreciation and interest',
+    explanation: `Calculation:
+EBITDA = $250,000 - $100,000 - $40,000 = $110,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Revenue and Operating Costs:
+   • Revenue: $250,000
+   • Less: COGS: $100,000
+   • Less: SG&A: $40,000
+   → Operating Income before D&A: $110,000
+
+2. Excluded Items:
+   • Depreciation: $15,000 (excluded from EBITDA)
+   • Interest Expense: $12,000 (excluded from EBITDA)
+
+3. EBITDA Result:
+   → EBITDA = $110,000
+
+Key Points:
+   • EBITDA focuses on core operating performance
+   • Excludes capital structure effects (interest)
+   • Excludes accounting method effects (depreciation)
+   • Useful for comparing companies with different structures`,
     learnContent: {
       concept: 'EBITDA (Earnings Before Interest, Taxes, Depreciation, Amortization) is a proxy for operating performance.',
       formula: 'EBITDA = Revenue – COGS – OpEx (excl. D&A)',
@@ -3939,7 +4004,29 @@ Key Points:
     answer: 50000,
     unit: '$',
     hint: 'Use the revaluation increase and divide by useful life.',
-    explanation: '$1.2M – $900K = $300K → $300K ÷ 6 = $50K additional annual depreciation',
+    explanation: `Calculation:
+Additional Annual Depreciation = $300,000 ÷ 6 years = $50,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Asset Revaluation:
+   • Original book value: $900,000
+   • Revalued amount: $1,200,000
+   → Revaluation increase: $300,000
+
+2. Remaining Useful Life:
+   → 6 years remaining
+
+3. Additional Depreciation:
+   → Annual increase: $300,000 ÷ 6 = $50,000
+
+Key Points:
+   • Revaluation increases asset's carrying value
+   • Higher book value leads to higher annual depreciation
+   • Revaluation surplus typically goes to other comprehensive income
+   • Total depreciation over asset life increases by revaluation amount`,
     learnContent: {
       concept: 'Revaluation increases the asset\'s book value, resulting in higher depreciation going forward.',
       formula: 'Additional Depreciation = Revaluation Increase ÷ Remaining Life',
@@ -3955,7 +4042,31 @@ Key Points:
     answer: 10000,
     unit: '$',
     hint: 'Capitalize full lease on BS, expense rent annually on IS.',
-    explanation: 'Expense = $10K annually (straight-line). Asset and liability = $10K × 5 = $50K each.',
+    explanation: `Calculation:
+Year 1 Lease Expense = $10,000 (straight-line)
+
+• • •
+
+Step-by-step breakdown:
+
+1. Operating Lease Treatment:
+   • Annual payment: $10,000
+   • Lease term: 5 years
+   • Classification: Operating lease
+
+2. Income Statement Impact:
+   → Annual lease expense: $10,000 (straight-line)
+
+3. Balance Sheet Impact:
+   • Right-of-use asset: $50,000 (present value of payments)
+   • Lease liability: $50,000 (same amount)
+   → Net impact on equity: $0 initially
+
+Key Points:
+   • Operating leases create both an asset and liability
+   • Lease expense is recognized evenly over the term
+   • Total payments equal total expense over lease life
+   • ROU asset and liability start equal but amortize differently`,
     learnContent: {
       concept: 'Operating leases must be capitalized on the balance sheet under new accounting rules, with rent expensed straight-line.',
       formula: 'Lease Asset & Liability = Annual Rent × Lease Term',
@@ -3987,7 +4098,25 @@ Key Points:
     answer: 7500,
     unit: '$',
     hint: 'DTL = (Tax Depreciation – Book Depreciation) × Tax Rate',
-    explanation: 'DTL = $30K × 25% = $7,500',
+    explanation: `Calculation:
+DTL = $30,000 × 25% = $7,500
+
+• • •
+
+Step-by-step breakdown:
+
+1. Depreciation Difference:
+   • Tax depreciation exceeds book depreciation by: $30,000
+   • Tax rate: 25%
+
+2. DTL Calculation:
+   → DTL = $30,000 × 25% = $7,500
+
+Key Points:
+   • DTL arises when tax depreciation exceeds book depreciation
+   • Company pays less tax now but owes more in future
+   • Accelerated tax depreciation creates timing differences
+   • DTL will reverse as book depreciation catches up over time`,
     learnContent: {
       concept: 'DTL arises when tax depreciation > book depreciation, deferring tax payments.',
       formula: 'DTL = Difference × Tax Rate',
@@ -4035,7 +4164,29 @@ Key Points:
     answer: 150000,
     unit: '$',
     hint: 'Goodwill = Purchase Price – (Assets – Liabilities)',
-    explanation: 'Net Assets = $450K – $100K = $350K → Goodwill = $500K – $350K = $150K',
+    explanation: `Calculation:
+Goodwill = $500,000 - $350,000 = $150,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Acquisition Details:
+   • Purchase price paid: $500,000
+   • Fair value of identifiable assets: $450,000
+   • Liabilities assumed: $100,000
+
+2. Net Assets Acquired:
+   → Net Assets = $450,000 - $100,000 = $350,000
+
+3. Goodwill Calculation:
+   → Goodwill = $500,000 - $350,000 = $150,000
+
+Key Points:
+   • Goodwill represents the premium paid over net assets
+   • Reflects intangible value like brand, customer relationships, synergies
+   • Goodwill is tested annually for impairment
+   • Cannot be amortized under current accounting standards`,
     learnContent: {
       concept: 'Goodwill is the premium paid over the fair value of net assets in an acquisition.',
       formula: 'Goodwill = Purchase Price – (Assets – Liabilities)',
@@ -4115,7 +4266,28 @@ Key Points:
     answer: 10000,
     unit: '$',
     hint: 'Split asset value over useful life; interest = liability × rate',
-    explanation: 'Depreciation = $50K ÷ 5 = $10K\nInterest = $50K × 5% = $2,500',
+    explanation: `Calculation:
+Annual Depreciation = $50,000 ÷ 5 years = $10,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Capital Lease Asset:
+   • Lease value: $50,000
+   • Useful life: 5 years
+   → Annual depreciation: $10,000
+
+2. Year 1 Interest Expense:
+   • Initial lease liability: $50,000
+   • Interest rate: 5%
+   → Year 1 interest: $50,000 × 5% = $2,500
+
+Key Points:
+   • Capital leases create both depreciation and interest expense
+   • Asset is depreciated like owned equipment
+   • Interest is calculated on the outstanding lease liability
+   • Total expense = depreciation + interest`,
     learnContent: {
       concept: 'Capital leases create both depreciation and interest expenses.',
       formula: 'Depreciation = Asset ÷ Years\nInterest = Lease Liability × Rate',
@@ -4195,7 +4367,31 @@ Key Points:
     answer: 0,
     unit: '$',
     hint: 'NOL offsets taxable income until used up.',
-    explanation: '$40K income fully offset → no taxable income → $0 tax',
+    explanation: `Calculation:
+Tax Owed = $0 (fully offset by NOL)
+
+• • •
+
+Step-by-step breakdown:
+
+1. Income and NOL Details:
+   • Current year pretax income: $40,000
+   • NOL carryforward available: $50,000
+   • Tax rate: 25%
+
+2. NOL Utilization:
+   • NOL used: $40,000 (to offset current income)
+   → Remaining NOL: $50,000 - $40,000 = $10,000
+
+3. Tax Calculation:
+   • Taxable income after NOL: $40,000 - $40,000 = $0
+   → Tax owed: $0 × 25% = $0
+
+Key Points:
+   • NOLs offset taxable income dollar-for-dollar
+   • Company pays no tax when NOL fully covers income
+   • Remaining $10,000 NOL carries forward to future years
+   • This creates significant cash flow benefits`,
     learnContent: {
       concept: 'NOLs reduce future taxable income, lowering tax payments.',
       formula: 'Taxable Income = Pretax – NOL Used',
@@ -4275,7 +4471,27 @@ Key Points:
     answer: -10000,
     unit: '$',
     hint: 'Cash Flow from Financing = Inflows – Outflows',
-    explanation: '$20K – $30K = –$10K',
+    explanation: `Calculation:
+Net CFF = $20,000 - $30,000 = -$10,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Financing Inflows:
+   • New share issuance: +$20,000
+
+2. Financing Outflows:
+   • Long-term debt repayment: -$30,000
+
+3. Net Cash Flow from Financing:
+   → Net CFF = $20,000 - $30,000 = -$10,000
+
+Key Points:
+   • Financing activities involve equity and debt transactions
+   • Share issuances provide cash inflows
+   • Debt repayments create cash outflows
+   • Net outflow indicates more cash was used than generated`,
     learnContent: {
       concept: 'CFF includes inflows from equity/debt issuance and outflows from repayments/dividends.',
       formula: 'CFF = Equity Issued + Debt Raised – Debt Repaid – Dividends',
@@ -4355,7 +4571,31 @@ Key Points:
     answer: 97000,
     unit: '$',
     hint: 'Carrying Value = Issue Price + Accretion',
-    explanation: '$95K + $2K = $97K',
+    explanation: `Calculation:
+Bond Carrying Value = $95,000 + $2,000 = $97,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Bond Issuance Details:
+   • Face value: $100,000
+   • Discount: $5,000
+   → Issue price: $95,000
+
+2. Annual Discount Amortization:
+   • Year 1: $1,000
+   • Year 2: $1,000
+   → Total amortized: $2,000
+
+3. Carrying Value After 2 Years:
+   → Carrying value = $95,000 + $2,000 = $97,000
+
+Key Points:
+   • Bond discount amortization increases carrying value over time
+   • Amortization creates non-cash interest expense
+   • Carrying value approaches face value at maturity
+   • Remaining discount: $5,000 - $2,000 = $3,000`,
     learnContent: {
       concept: 'Discounts increase carrying value over time via accretion.',
       formula: 'Carrying Value = Issue Price + (Years × Annual Accretion)',
@@ -4435,7 +4675,25 @@ Key Points:
     answer: 1500,
     unit: '$',
     hint: 'Tax Shield = SBC × Tax Rate',
-    explanation: '$5,000 × 30% = $1,500',
+    explanation: `Calculation:
+Tax Shield = $5,000 × 30% = $1,500
+
+• • •
+
+Step-by-step breakdown:
+
+1. Stock-Based Compensation:
+   • SBC expense: $5,000
+   • Tax rate: 30%
+
+2. Tax Shield Calculation:
+   → Tax shield = $5,000 × 30% = $1,500
+
+Key Points:
+   • SBC is a non-cash expense that reduces taxable income
+   • Tax shield represents actual cash savings from lower taxes
+   • Company benefits from tax reduction despite non-cash nature
+   • Creates timing difference if book and tax treatment differ`,
     learnContent: {
       concept: 'SBC reduces taxable income, creating a tax shield.',
       formula: 'Tax Shield = Expense × Tax Rate',
@@ -4515,7 +4773,25 @@ Key Points:
     answer: 40,
     unit: '%',
     hint: 'Payout Ratio = Dividends / Net Income × 100',
-    explanation: '$40K ÷ $100K = 40%',
+    explanation: `Calculation:
+Dividend Payout Ratio = ($40,000 ÷ $100,000) × 100% = 40%
+
+• • •
+
+Step-by-step breakdown:
+
+1. Financial Results:
+   • Net Income: $100,000
+   • Dividends Paid: $40,000
+
+2. Payout Ratio Calculation:
+   → Ratio = $40,000 ÷ $100,000 = 0.40 or 40%
+
+Key Points:
+   • Payout ratio shows proportion of earnings returned to shareholders
+   • 40% payout means 60% of earnings were retained
+   • Lower ratios suggest focus on growth and reinvestment
+   • Higher ratios indicate income-focused shareholder returns`,
     learnContent: {
       concept: 'Shows how much of net income is returned to shareholders.',
       formula: 'Dividend Payout = (Dividends ÷ NI) × 100',
