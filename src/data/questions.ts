@@ -11,20 +11,28 @@ export const QUESTIONS: Question[] = [
     answer: 24000,
     unit: '$',
     hint: 'Net Income = Revenue - COGS - OpEx - Interest - Taxes',
-    explanation: `Net Income = Revenue - Total Expenses
+    explanation: `Calculation:
+Net Income = $100,000 - $75,000 = $24,000
 
-Revenue: $100,000
-Less: COGS: $40,000
-Less: Operating Expenses: $25,000  
-Less: Interest: $5,000
-Less: Taxes: $6,000
-Net Income: $24,000
+• • •
 
-Key components:
-• COGS - direct costs of producing goods sold
-• Operating Expenses - overhead costs like salaries, rent, utilities
-• Interest - cost of borrowed money
-• Taxes - corporate income tax on profits`,
+Step-by-step breakdown:
+
+1. Starting Revenue:
+   → Total Revenue: $100,000
+
+2. Total Expenses:
+   • COGS: $40,000
+   • Operating Expenses: $25,000
+   • Interest: $5,000
+   • Taxes: $6,000
+   → Total Expenses: $75,000
+
+Key Points:
+• COGS represents direct costs of producing goods sold
+• Operating Expenses include overhead costs like salaries, rent, utilities
+• Interest expense reflects the cost of borrowed money
+• Net Income is the final profit after all expenses are deducted`,
     learnContent: {
       concept: 'Net Income is the final profit after subtracting all expenses from revenue — including operating, interest, and taxes. It\'s the "bottom line" of the income statement.',
       formula: 'Net Income = Revenue − COGS − OpEx − Interest − Taxes',
@@ -40,19 +48,27 @@ Key components:
     answer: 8000,
     unit: '$',
     hint: 'Prepaid = Total - (Months Used × Monthly Expense)',
-    explanation: `Prepaid Expense = Total Payment - Used Portion
+    explanation: `Calculation:
+Prepaid Expense = $12,000 - $4,000 = $8,000
 
-Total payment: $12,000 (12 months)
-Monthly expense: $12,000 ÷ 12 = $1,000
-Months used (March 1 to June 30): 4 months
-Used portion: 4 × $1,000 = $4,000
-Prepaid remaining: $12,000 - $4,000 = $8,000
+• • •
 
-Key concepts:
-• Prepaid Expenses - payments made in advance for future benefits
-• Monthly allocation - total cost divided by months covered
-• Used portion - expenses recognized on income statement
-• Remaining prepaid - asset on balance sheet for future periods`,
+Step-by-step breakdown:
+
+1. Total Payment Analysis:
+   • Total payment: $12,000 (12 months)
+   • Monthly expense: $12,000 ÷ 12 = $1,000
+
+2. Usage Calculation:
+   • Months used (March 1 to June 30): 4 months
+   • Used portion: 4 × $1,000 = $4,000
+   → Prepaid remaining: $12,000 - $4,000 = $8,000
+
+Key Points:
+• Prepaid Expenses represent payments made in advance for future benefits
+• Monthly allocation divides total cost by months covered
+• Used portion becomes expense on income statement
+• Remaining prepaid stays as asset on balance sheet for future periods`,
     learnContent: {
       concept: 'Prepaid expenses represent future costs already paid. As time passes, the expense is "used up" and moved to the income statement.',
       formula: 'Prepaid = Total − (Months Used × Monthly Expense)\nMonthly Expense = Total ÷ 12',
@@ -68,23 +84,27 @@ Key concepts:
     answer: 3500,
     unit: '$',
     hint: 'Change in WC = ΔA/R + ΔInventory − ΔA/P',
-    explanation: `Change in Working Capital = Changes in Current Assets - Changes in Current Liabilities
+    explanation: `Calculation:
+Change in Working Capital = $5,000 - $1,500 = $3,500
 
-Current Asset increases (cash outflow):
-• Accounts Receivable: +$3,000
-• Inventory: +$2,000
-Total: +$5,000
+• • •
 
-Current Liability increases (cash inflow):
-• Accounts Payable: +$1,500
-Total: +$1,500
+Step-by-step breakdown:
 
-Net change in Working Capital: $5,000 - $1,500 = $3,500
+1. Current Asset Changes (cash outflow):
+   • Accounts Receivable: +$3,000
+   • Inventory: +$2,000
+   → Total Current Asset increase: +$5,000
 
-Key impacts:
-• A/R increase - customers haven't paid yet, cash tied up
-• Inventory increase - cash spent on additional stock
-• A/P increase - delayed vendor payments, cash retained`,
+2. Current Liability Changes (cash inflow):
+   • Accounts Payable: +$1,500
+   → Total Current Liability increase: +$1,500
+
+Key Points:
+• A/R increase means customers haven't paid yet, tying up cash
+• Inventory increase represents cash spent on additional stock
+• A/P increase means delayed vendor payments, retaining cash
+• Net positive working capital change indicates cash usage of $3,500`,
     learnContent: {
       concept: 'Working capital is the difference between current assets and current liabilities. Increases in current assets use cash; increases in current liabilities free up cash.',
       formula: 'Change in WC = ΔA/R + ΔInventory − ΔA/P',
@@ -100,21 +120,28 @@ Key impacts:
     answer: 9000,
     unit: '$',
     hint: 'A/P Increase = Value of goods received on credit',
-    explanation: `Accounts Payable Recognition = Value of Goods/Services Received on Credit
+    explanation: `Calculation:
+Accounts Payable = $9,000
 
-Inventory received: $9,000
-Payment terms: 60 days (credit purchase)
-Accounts Payable increase: $9,000
+• • •
 
-Transaction impact:
-• Inventory (asset) increases by $9,000
-• Accounts Payable (liability) increases by $9,000
-• No immediate cash impact until payment due
+Step-by-step breakdown:
 
-Key concepts:
-• Credit purchases - goods received before payment
-• Accounts Payable - short-term liabilities to suppliers
-• Payment terms - agreed timeframe for settling obligations`,
+1. Transaction Analysis:
+   • Inventory received: $9,000
+   • Payment terms: 60 days (credit purchase)
+   → Accounts Payable increase: $9,000
+
+2. Balance Sheet Impact:
+   • Inventory (asset) increases by $9,000
+   • Accounts Payable (liability) increases by $9,000
+   → No immediate cash impact until payment due
+
+Key Points:
+• Credit purchases involve receiving goods before payment
+• Accounts Payable represents short-term liabilities to suppliers
+• Payment terms define the agreed timeframe for settling obligations
+• This creates a liability that must be paid within the specified period`,
     learnContent: {
       concept: 'Accounts Payable increases when goods or services are received but not yet paid for. This is a liability until payment is made.',
       formula: 'A/P Increase = Value of goods received on credit',
@@ -130,19 +157,28 @@ Key concepts:
     answer: 4,
     unit: 'x',
     hint: 'Inventory Turnover = COGS ÷ Avg Inventory',
-    explanation: `Inventory Turnover = COGS ÷ Average Inventory
+    explanation: `Calculation:
+Inventory Turnover = $120,000 ÷ $30,000 = 4.0x
 
-COGS: $120,000
-Beginning Inventory: $40,000
-Ending Inventory: $20,000
-Average Inventory: ($40,000 + $20,000) ÷ 2 = $30,000
-Inventory Turnover: $120,000 ÷ $30,000 = 4.0x
+• • •
 
-Key insights:
-• COGS - cost of goods actually sold during the period
-• Average Inventory - typical inventory level throughout year
-• Higher turnover - more efficient inventory management
-• 4.0x means inventory converted to sales 4 times annually`,
+Step-by-step breakdown:
+
+1. Average Inventory Calculation:
+   • Beginning Inventory: $40,000
+   • Ending Inventory: $20,000
+   → Average Inventory: ($40,000 + $20,000) ÷ 2 = $30,000
+
+2. Turnover Calculation:
+   • COGS: $120,000
+   • Average Inventory: $30,000
+   → Inventory Turnover: $120,000 ÷ $30,000 = 4.0x
+
+Key Points:
+• COGS represents the cost of goods actually sold during the period
+• Average Inventory shows typical inventory level throughout the year
+• Higher turnover indicates more efficient inventory management
+• 4.0x means inventory was converted to sales 4 times annually`,
     learnContent: {
       concept: 'This ratio shows how efficiently a company turns inventory into sales. Use average inventory in the denominator.',
       formula: 'Inventory Turnover = COGS ÷ Avg Inventory\nAvg Inventory = (Beg + End) ÷ 2',
@@ -158,18 +194,27 @@ Key insights:
     answer: 3.6,
     unit: 'x',
     hint: 'Asset Turnover = Revenue ÷ Avg Total Assets',
-    explanation: `Asset Turnover = Revenue ÷ Average Total Assets
+    explanation: `Calculation:
+Asset Turnover = $180,000 ÷ $50,000 = 3.6x
 
-Revenue: $180,000
-Assets at Start: $60,000
-Assets at End: $40,000
-Average Assets: ($60,000 + $40,000) ÷ 2 = $50,000
-Asset Turnover: $180,000 ÷ $50,000 = 3.6x
+• • •
 
-Key insights:
-• Revenue - total sales generated during the period
-• Average Assets - typical asset base used to generate sales
-• Higher ratio - more efficient use of assets to generate revenue
+Step-by-step breakdown:
+
+1. Average Assets Calculation:
+   • Assets at Start: $60,000
+   • Assets at End: $40,000
+   → Average Assets: ($60,000 + $40,000) ÷ 2 = $50,000
+
+2. Turnover Calculation:
+   • Revenue: $180,000
+   • Average Assets: $50,000
+   → Asset Turnover: $180,000 ÷ $50,000 = 3.6x
+
+Key Points:
+• Revenue represents total sales generated during the period
+• Average Assets shows typical asset base used to generate sales
+• Higher ratio indicates more efficient use of assets to generate revenue
 • 3.6x means each dollar of assets generated $3.60 in sales`,
     learnContent: {
       concept: 'Asset Turnover tells how efficiently a business generates revenue from assets. Use average total assets across the year.',
@@ -186,18 +231,28 @@ Key insights:
     answer: 37.5,
     unit: '%',
     hint: 'Gross Margin % = (Revenue − COGS) ÷ Revenue × 100',
-    explanation: `Gross Margin % = (Revenue - COGS) ÷ Revenue × 100
+    explanation: `Calculation:
+Gross Margin % = $22,500 ÷ $60,000 × 100 = 37.5%
 
-Revenue: 500 units × $120 = $60,000
-COGS: 500 units × $75 = $37,500
-Gross Profit: $60,000 - $37,500 = $22,500
-Gross Margin %: $22,500 ÷ $60,000 × 100 = 37.5%
+• • •
 
-Key components:
-• Revenue - total sales value at selling price
-• COGS - direct production costs per unit
-• Gross Profit - profit before operating expenses
-• Gross Margin % - percentage of revenue retained after production costs`,
+Step-by-step breakdown:
+
+1. Revenue Calculation:
+   • Units sold: 500 units
+   • Price per unit: $120
+   → Total Revenue: 500 × $120 = $60,000
+
+2. COGS and Gross Profit:
+   • COGS per unit: $75
+   → Total COGS: 500 × $75 = $37,500
+   → Gross Profit: $60,000 - $37,500 = $22,500
+
+Key Points:
+• Revenue represents total sales value at selling price
+• COGS covers direct production costs per unit
+• Gross Profit shows profit before operating expenses
+• Gross Margin % indicates percentage of revenue retained after production costs`,
     learnContent: {
       concept: 'Gross Margin shows what % of revenue is left after paying for production. It\'s a core measure of product profitability.',
       formula: 'Gross Margin % = (Revenue − COGS) ÷ Revenue × 100',
@@ -213,25 +268,28 @@ Key components:
     answer: 2,
     unit: 'x',
     hint: 'D/E = Total Liabilities ÷ Total Equity',
-    explanation: `Debt-to-Equity = Total Liabilities ÷ Total Equity
+    explanation: `Calculation:
+Debt-to-Equity = $60,000 ÷ $30,000 = 2.0x
 
-Total Liabilities:
-• Short-Term Liabilities: $10,000
-• Long-Term Debt: $50,000
-Total: $60,000
+• • •
 
-Total Equity:
-• Common Equity: $20,000
-• Preferred Equity: $10,000  
-Total: $30,000
+Step-by-step breakdown:
 
-Debt-to-Equity Ratio: $60,000 ÷ $30,000 = 2.0x
+1. Total Liabilities:
+   • Short-Term Liabilities: $10,000
+   • Long-Term Debt: $50,000
+   → Total Liabilities: $60,000
 
-Key insights:
-• Total Liabilities - all money owed to creditors
-• Total Equity - shareholder ownership value
+2. Total Equity:
+   • Common Equity: $20,000
+   • Preferred Equity: $10,000
+   → Total Equity: $30,000
+
+Key Points:
+• Total Liabilities represent all money owed to creditors
+• Total Equity shows shareholder ownership value
 • 2.0x ratio means $2 of debt for every $1 of equity
-• Higher ratios indicate more financial leverage`,
+• Higher ratios indicate more financial leverage and risk`,
     learnContent: {
       concept: 'D/E shows how much debt is used to finance the business compared to equity. Higher = more leverage.',
       formula: 'D/E = Total Liabilities ÷ Total Equity\nLiabilities = Short + Long-Term\nEquity = Common + Preferred',
@@ -285,19 +343,27 @@ Key Points:
     answer: 30,
     unit: '%',
     hint: 'Operating Margin = (Revenue − COGS − OpEx) ÷ Revenue × 100',
-    explanation: `Operating Margin = Operating Income ÷ Revenue × 100
+    explanation: `Calculation:
+Operating Margin = $75,000 ÷ $250,000 × 100 = 30%
 
-Revenue: $250,000
-Less: COGS: $100,000
-Less: Operating Expenses: $75,000
-Operating Income: $75,000
-Operating Margin: $75,000 ÷ $250,000 × 100 = 30%
+• • •
 
-Key components:
-• Revenue - total sales for the period
-• COGS - direct costs of goods sold
-• Operating Expenses - overhead costs like salaries, rent, marketing
-• Operating Income - profit from core business operations before interest/taxes`,
+Step-by-step breakdown:
+
+1. Operating Income Calculation:
+   • Revenue: $250,000
+   • Less: COGS: $100,000
+   • Less: Operating Expenses: $75,000
+   → Operating Income: $75,000
+
+2. Margin Calculation:
+   → Operating Margin: $75,000 ÷ $250,000 × 100 = 30%
+
+Key Points:
+• Revenue represents total sales for the period
+• COGS covers direct costs of goods sold
+• Operating Expenses include overhead costs like salaries, rent, marketing
+• Operating Income shows profit from core business operations before interest/taxes`,
     learnContent: {
       concept: 'Operating Margin shows what % of revenue turns into profit from core operations. It excludes interest and taxes.',
       formula: 'Operating Margin = (Revenue − COGS − OpEx) ÷ Revenue × 100',
@@ -340,26 +406,30 @@ Inventory flow:
     answer: 50000,
     unit: '$',
     hint: 'Equity = Total Assets - Total Liabilities',
-    explanation: `Shareholders' Equity = Total Assets - Total Liabilities
+    explanation: `Calculation:
+Shareholders' Equity = $100,000 - $50,000 = $50,000
 
-Total Assets:
-• Cash: $10,000
-• Inventory: $20,000  
-• Equipment: $70,000
-Total: $100,000
+• • •
 
-Total Liabilities:
-• Accounts Payable: $15,000
-• Notes Payable: $30,000
-• Accrued Expenses: $5,000
-Total: $50,000
+Step-by-step breakdown:
 
-Shareholders' Equity: $100,000 - $50,000 = $50,000
+1. Total Assets:
+   • Cash: $10,000
+   • Inventory: $20,000
+   • Equipment: $70,000
+   → Total Assets: $100,000
 
-Key concepts:
-• Total Assets - all resources owned by the company
-• Total Liabilities - all debts and obligations owed
-• Shareholders' Equity - residual ownership value after paying debts`,
+2. Total Liabilities:
+   • Accounts Payable: $15,000
+   • Notes Payable: $30,000
+   • Accrued Expenses: $5,000
+   → Total Liabilities: $50,000
+
+Key Points:
+• Total Assets represent all resources owned by the company
+• Total Liabilities are all debts and obligations owed
+• Shareholders' Equity shows residual ownership value after paying debts
+• This represents what shareholders would receive if the company were liquidated`,
     learnContent: {
       concept: 'Shareholders\' equity is what\'s left after subtracting liabilities from assets.',
       formula: 'Equity = Total Assets - Total Liabilities\n= (Cash + Inventory + Equipment) - (Accounts Payable + Notes Payable + Accrued Expenses)',
