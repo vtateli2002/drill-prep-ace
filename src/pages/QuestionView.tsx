@@ -595,6 +595,19 @@ const QuestionView = () => {
                     <Button 
                       variant="outline" 
                       onClick={() => {
+                        // Navigate to previous question logic here
+                        toast({
+                          title: "Previous question",
+                          description: "Previous question functionality to be implemented",
+                        });
+                      }}
+                      className="flex-1 border-primary/20 hover:bg-primary/5 hover:border-primary/40"
+                    >
+                      Previous Question
+                    </Button>
+                    <Button 
+                      variant="outline" 
+                      onClick={() => {
                         if (returnToModal) {
                           navigate('/dashboard');
                         } else {
