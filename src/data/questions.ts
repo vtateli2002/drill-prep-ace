@@ -537,7 +537,7 @@ export const QUESTIONS: Question[] = [
     }
   },
   {
-    id: 'acc-hard-1',
+    id: 'acc-hard-1-beta',
     track: 'accounting',
     difficulty: 'hard',
     title: 'Beta - Cash Flow from Operations',
@@ -1871,7 +1871,7 @@ How much revenue is recognized by the end of April?`,
     }
   },
   {
-    id: 'acc-medium-70',
+    id: 'acc-medium-70-alt',
     track: 'accounting',
     difficulty: 'medium',
     title: 'Warranty Liability Accrual',
@@ -1887,7 +1887,7 @@ How much revenue is recognized by the end of April?`,
     }
   },
   {
-    id: 'acc-medium-71',
+    id: 'acc-medium-71-alt',
     track: 'accounting',
     difficulty: 'medium',
     title: 'Impairment Loss Calculation',
