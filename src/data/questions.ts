@@ -801,7 +801,29 @@ Key Points:
     answer: 110000,
     unit: '$',
     hint: 'Start with net income, add back non-cash amortization, and include the cash collected for deferred revenue.',
-    explanation: 'Thorne Systems generated positive cash flow from operations despite complex revenue timing differences. The company collected $120,000 in cash upfront for service contracts but only recognized $80,000 as revenue under accounting standards, creating a $40,000 deferred revenue increase.\n\n• Net income: $50,000 (starting point)\n• Amortization: $20,000 (non-cash expense, added back)\n• Deferred revenue increase: $40,000 (cash collected exceeding revenue recognized)\n\nThe amortization of customer contracts is a non-cash expense that reduced net income but didn\'t impact actual cash flows. The deferred revenue represents cash collected upfront that hasn\'t been earned yet, creating a positive cash flow impact.\n\nCFO = $50,000 + $20,000 + $40,000 = $110,000\n\nIn summary, Thorne Systems generated $110,000 in operating cash flow by collecting cash upfront for future services while adding back non-cash amortization expenses.',
+    explanation: `Calculation:
+CFO = $50,000 + $20,000 + $40,000 = $110,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Starting Point:
+   → Net Income: $50,000 (base earnings)
+
+2. Non-Cash Adjustments:
+   • Amortization: +$20,000 (non-cash expense, added back)
+   → Subtotal after non-cash: $70,000
+
+3. Working Capital Changes:
+   • Deferred revenue increase: +$40,000 ($120,000 collected - $80,000 recognized)
+   → Cash Flow from Operations: $110,000
+
+Key Points:
+   • Amortization of customer contracts is non-cash and added back to CFO
+   • Deferred revenue represents cash collected before services are delivered
+   • Cash collected upfront exceeding revenue recognized creates positive CFO impact
+   • This demonstrates revenue timing differences under the indirect method`,
     learnContent: {
       concept: 'Amortization is non-cash and added back to CFO. Deferred revenue means cash was collected but revenue not yet recognized. Both create positive CFO adjustments under the indirect method.',
       formula: 'CFO Adjustment = Amortization + (Cash Collected – Revenue Recognized)',
@@ -817,7 +839,34 @@ Key Points:
     answer: 77000,
     unit: '$',
     hint: 'Start from NI, add back non-cash D&A, and adjust for working capital.',
-    explanation: 'Gravix Lighting\'s cash flow from operations reflects multiple working capital changes and non-cash adjustments. The company faced typical business challenges including increased receivables from slower customer payments and various operational timing differences.\n\n• Net income: $70,000 (base earnings)\n• Accounts receivable increase: -$25,000 (customers haven\'t paid yet)\n• Inventory decrease: +$10,000 (products sold, converted to cash)\n• Prepaid expenses increase: -$5,000 (software licenses paid in advance)\n• Accounts payable increase: +$20,000 (delayed vendor payments)\n• Accrued liabilities decrease: -$8,000 (employee bonuses paid)\n• Depreciation: +$15,000 (non-cash expense)\n\nThe depreciation expense reduced net income but involved no actual cash outflow. Working capital changes show the timing differences between when transactions are recorded versus when cash changes hands.\n\nCFO = $70,000 + $15,000 - $25,000 + $10,000 - $5,000 + $20,000 - $8,000 = $77,000\n\nIn summary, despite earning $70,000 in net income, Gravix Lighting generated $77,000 in operating cash flow through effective working capital management.',
+    explanation: `Calculation:
+CFO = $70,000 + $15,000 - $25,000 + $10,000 - $5,000 + $20,000 - $8,000 = $77,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Starting Point:
+   → Net Income: $70,000 (base earnings)
+
+2. Non-Cash Adjustments:
+   • Add back Depreciation: +$15,000 (non-cash expense)
+   → Subtotal after non-cash: $85,000
+
+3. Working Capital Changes:
+   • Accounts Receivable increase: -$25,000 (customers haven't paid yet)
+   • Inventory decrease: +$10,000 (products sold, converted to cash)
+   • Prepaid expenses increase: -$5,000 (software licenses paid in advance)
+   • Accounts Payable increase: +$20,000 (delayed vendor payments)
+   • Accrued liabilities decrease: -$8,000 (employee bonuses paid)
+   → Net working capital impact: -$8,000
+
+Key Points:
+   • Depreciation is non-cash and added back to operating cash flow
+   • Working capital changes show timing differences between recording and cash flow
+   • A/R increases use cash as customers delay payments
+   • Inventory decreases generate cash from product sales
+   • Effective working capital management can boost cash generation`,
     learnContent: {
       concept: 'Depreciation is non-cash. AR increase = delayed customer payment → cash out. Inventory decrease = product sold → cash in. Prepaids increase = future services paid now → cash out. AP increase = vendor payment delayed → cash in. Accruals decrease = bonuses paid → cash out.',
       formula: 'CFO = NI + D&A – ∆AR + ∆Inventory – ∆Prepaids + ∆AP – ∆Accruals',
@@ -833,7 +882,29 @@ Key Points:
     answer: 15000,
     unit: '$',
     hint: 'Start with net income, then add back non-cash expenses and remove non-operating gains. Net income already includes tax effects.',
-    explanation: 'ABC Company\'s cash flow from operations demonstrates how asset transactions and depreciation affect operating cash flows. The company made significant capital investments while also divesting older equipment, creating both cash and non-cash impacts.\n\n• Net income: $15,000 (includes all income statement effects)\n• Equipment depreciation: +$30,000 ($300,000 ÷ 10 years, non-cash expense)\n• Gain on equipment sale: -$30,000 ($70,000 sale price - $40,000 book value, non-operating item)\n\nThe new equipment purchase generates annual depreciation that reduces net income but doesn\'t use operating cash. The equipment sale created a $30,000 gain that increased net income, but this gain represents an investing activity rather than core operations.\n\nUnder the indirect method, we add back non-cash expenses like depreciation and remove non-operating gains to arrive at true operating cash flow.\n\nCFO = $15,000 + $30,000 - $30,000 = $15,000\n\nIn summary, ABC Company\'s operating cash flow equals its net income at $15,000, as the depreciation add-back is exactly offset by removing the non-operating equipment sale gain.',
+    explanation: `Calculation:
+CFO = $15,000 + $30,000 - $30,000 = $15,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Starting Point:
+   → Net Income: $15,000 (includes all income statement effects)
+
+2. Non-Cash Adjustments:
+   • Equipment depreciation: +$30,000 ($300,000 ÷ 10 years, non-cash expense)
+   → Subtotal after non-cash: $45,000
+
+3. Non-Operating Adjustments:
+   • Gain on equipment sale: -$30,000 ($70,000 sale price - $40,000 book value)
+   → Cash Flow from Operations: $15,000
+
+Key Points:
+   • New equipment purchase generates annual depreciation without cash impact
+   • Equipment sale gain represents investing activity, not core operations
+   • Depreciation is added back as it's a non-cash expense
+   • Non-operating gains must be removed to arrive at true operating cash flow`,
     learnContent: {
       concept: 'CFO using the indirect method starts with net income, adds back non-cash expenses (like depreciation), and subtracts non-operating items (like gains on asset sales). Tax effects are already included in net income.',
       formula: 'CFO = Net Income + Non-Cash Expenses - Non-Operating Gains',
@@ -849,7 +920,30 @@ Key Points:
     answer: 80000,
     unit: '$',
     hint: 'Deferred revenue and unpaid SG&A increase CFO. Add back depreciation.',
-    explanation: 'Fresca Foods demonstrates how revenue timing differences and expense accruals impact cash flow from operations. The company collected significant cash upfront for annual catering contracts while managing unpaid operational expenses.\n\n• Net income: $40,000 (base earnings after all expenses)\n• Deferred revenue increase: +$40,000 ($100,000 collected - $60,000 recognized)\n• Accrued SG&A expenses: +$10,000 ($50,000 incurred - $40,000 paid)\n• Depreciation: +$30,000 (non-cash expense)\n\nThe company collected $100,000 in cash for annual catering contracts but only recognized $60,000 as revenue this period, creating a $40,000 deferred revenue liability. This represents cash received before services are delivered. The $10,000 in unpaid SG&A costs means expenses were incurred but cash was retained.\n\nAll these items create positive adjustments to operating cash flow because they represent cash benefits not reflected in net income.\n\nCFO = $40,000 + $30,000 + $40,000 + $10,000 = $120,000\n\nIn summary, Fresca Foods generated $120,000 in operating cash flow, significantly exceeding net income due to upfront customer payments and effective expense management.',
+    explanation: `Calculation:
+CFO = $40,000 + $30,000 + $40,000 + $10,000 = $120,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Starting Point:
+   → Net Income: $40,000 (base earnings after all expenses)
+
+2. Non-Cash Adjustments:
+   • Depreciation: +$30,000 (non-cash expense)
+   → Subtotal after non-cash: $70,000
+
+3. Working Capital Benefits:
+   • Deferred revenue increase: +$40,000 ($100,000 collected - $60,000 recognized)
+   • Accrued SG&A expenses: +$10,000 ($50,000 incurred - $40,000 paid)
+   → Cash Flow from Operations: $120,000
+
+Key Points:
+   • Deferred revenue represents cash received before services are delivered
+   • Accrued expenses mean costs were incurred but cash was retained
+   • Upfront customer payments create significant positive cash flow impact
+   • Effective expense management preserves cash while maintaining operations`,
     learnContent: {
       concept: 'Deferred Revenue = cash received before revenue earned → add to CFO. Accrued Expenses = costs incurred but unpaid → add to CFO. Depreciation = non-cash → add to CFO.',
       formula: 'CFO = NI + Depreciation + Deferred Revenue Increase + Accrued Expenses Increase',
@@ -1105,7 +1199,30 @@ Key Points:
     answer: 150,
     unit: '$',
     hint: 'CFO = Net Income + D&A - Change in Working Capital (negative change means WC decreased, adding cash)',
-    explanation: 'CFO = Net Income + Depreciation & Amortization - Change in Working Capital\nCFO = $100 + $30 - (-$20) = $150\n\nNegative change in working capital means working capital decreased.\nDecreased working capital releases cash, increasing CFO.\nDepreciation & amortization are non-cash expenses added back.',
+    explanation: `Calculation:
+CFO = $100 + $30 - (-$20) = $150
+
+• • •
+
+Step-by-step breakdown:
+
+1. Starting Point:
+   → Net Income: $100
+
+2. Non-Cash Adjustments:
+   • Depreciation & Amortization: +$30 (non-cash expenses)
+   → Subtotal after non-cash: $130
+
+3. Working Capital Impact:
+   • Change in Working Capital: -$20 (negative means WC decreased)
+   • Decreased working capital releases cash: +$20
+   → Cash Flow from Operations: $150
+
+Key Points:
+   • Negative change in working capital means working capital decreased
+   • Decreased working capital releases cash, increasing CFO
+   • Depreciation & amortization are non-cash expenses added back
+   • CFO reflects actual cash generated from core operations`,
     learnContent: {
       concept: 'Net Income calculation includes all operating expenses and taxes.',
       formula: 'Net Income = (Revenue - COGS - Operating Expenses) × (1 - Tax Rate)',
@@ -1137,7 +1254,30 @@ Key Points:
     answer: 150,
     unit: '$',
     hint: 'CFO = Net Income + D&A - Change in Working Capital (negative change means WC decreased, adding cash)',
-    explanation: 'CFO = $100 + $30 - (-$20) = $100 + $30 + $20 = $150',
+    explanation: `Calculation:
+CFO = $100 + $30 + $20 = $150
+
+• • •
+
+Step-by-step breakdown:
+
+1. Starting Point:
+   → Net Income: $100
+
+2. Non-Cash Adjustments:
+   • Depreciation & Amortization: +$30 (non-cash expenses)
+   → Subtotal after non-cash: $130
+
+3. Working Capital Impact:
+   • Working Capital decreased by $20
+   • Decrease in Working Capital: +$20 (releases cash)
+   → Cash Flow from Operations: $150
+
+Key Points:
+   • CFO adjusts Net Income for non-cash items and working capital changes
+   • When working capital decreases, it releases cash for operations
+   • D&A expenses reduce net income but don't use actual cash
+   • This indirect method reconciles accrual earnings to cash flow`,
     learnContent: {
       concept: 'Cash Flow from Operations adjusts Net Income for non-cash items and working capital changes.',
       formula: 'CFO = Net Income + D&A + Decrease in Working Capital',
