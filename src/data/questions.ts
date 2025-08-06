@@ -250,7 +250,6 @@ Key insights:
     explanation: `Calculation:
 Current Ratio = $30,000 ÷ $20,000 = 1.5x
 
-────────────────────────────────────────
 
 Step-by-step breakdown:
 
