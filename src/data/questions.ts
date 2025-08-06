@@ -1983,7 +1983,7 @@ How much revenue is recognized by the end of April?`,
     }
   },
   {
-    id: 'acc-medium-70',
+    id: 'acc-medium-70-v2',
     track: 'accounting',
     difficulty: 'medium',
     title: 'DTA Reversal Timing',
@@ -1999,7 +1999,7 @@ How much revenue is recognized by the end of April?`,
     }
   },
   {
-    id: 'acc-medium-71',
+    id: 'acc-medium-71-v2',
     track: 'accounting',
     difficulty: 'medium',
     title: 'Depreciation Method Impact on Earnings',
@@ -2063,7 +2063,7 @@ How much revenue is recognized by the end of April?`,
     }
   },
   {
-    id: 'acc-medium-72',
+    id: 'acc-medium-73-v2',
     track: 'accounting',
     difficulty: 'medium',
     title: 'Treasury Stock Repurchase Impact',

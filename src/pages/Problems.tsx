@@ -91,6 +91,13 @@ const Problems = () => {
     count: allQuestions.filter(q => q.track === track).length
   }));
   
+  // Check for duplicate IDs and log them
+  const questionIds = allQuestions.map(q => q.id);
+  const duplicateIds = questionIds.filter((id, index) => questionIds.indexOf(id) !== index);
+  if (duplicateIds.length > 0) {
+    console.error('❌ DUPLICATE QUESTION IDs FOUND:', [...new Set(duplicateIds)]);
+  }
+
   console.log('Available tracks in data:', trackCounts);
   console.log('Filter Debug:', {
     selectedTrack,
