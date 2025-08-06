@@ -2606,5 +2606,165 @@ How much revenue is recognized by the end of April?`,
       formula: 'Depreciation = ARO ÷ Useful Life',
       example: '$60K ÷ 15 = $4K\n$100K ÷ 20 = $5K'
     }
+  },
+  {
+    id: 'acc-medium-127',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Revenue Recognition Timing',
+    description: 'A software company signs a $60,000 annual subscription deal on October 1st. The client pays upfront. As of December 31st, how much revenue should be recognized on the income statement?',
+    answer: 15000,
+    unit: '$',
+    hint: 'Think about the portion of the service delivered.',
+    explanation: 'Revenue is recognized based on time elapsed, not when cash is received. Only 3 months of service were delivered by year-end.',
+    learnContent: {
+      concept: 'Accrual accounting recognizes revenue when earned.',
+      formula: 'Annual contract value × (Months elapsed ÷ 12)',
+      example: '$24,000 contract signed July 1st: recognize $12,000 by December 31st\n$12,000 contract signed January 1st: recognize full $12,000 by year-end'
+    }
+  },
+  {
+    id: 'acc-medium-128',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Bad Debt Allowance Adjustment',
+    description: 'A company with $100,000 in A/R expects 3% to go unpaid. Later, it adjusts the estimate to 5%. What is the increase to bad debt expense?',
+    answer: 2000,
+    unit: '$',
+    hint: 'Find the change in the allowance.',
+    explanation: 'The original allowance was 3% of A/R, now it is 5%. The difference affects bad debt expense.',
+    learnContent: {
+      concept: 'Bad debt expense reflects changes in expected credit losses.',
+      formula: 'New allowance – Old allowance = Increase in expense',
+      example: 'A/R $50,000, estimate from 1% to 4% → $1,500 increase\nA/R $200,000, estimate from 5% to 7% → $4,000 increase'
+    }
+  },
+  {
+    id: 'acc-medium-129',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Unearned Revenue Adjustment',
+    description: 'A tutoring company collects $18,000 upfront for a 6-month package on September 1st. By December 31st, how much unearned revenue remains?',
+    answer: 6000,
+    unit: '$',
+    hint: 'Calculate how much service has been delivered.',
+    explanation: 'Unearned revenue decreases as services are performed.',
+    learnContent: {
+      concept: 'Unearned revenue is a liability until earned.',
+      formula: 'Unearned Revenue = Total – Earned = Total – (Monthly × Months elapsed)',
+      example: '$12,000 for 6 months starting July → $0 unearned by year-end\n$24,000 for 12 months starting Oct → $16,000 unearned by year-end'
+    }
+  },
+  {
+    id: 'acc-medium-130',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Depreciation and Asset Disposal',
+    description: 'An asset purchased for $80,000 depreciates $8,000 annually. After 3 years, it\'s sold for $62,000. What is the gain/loss on sale?',
+    answer: 6000,
+    unit: '$ gain',
+    hint: 'First calculate net book value.',
+    explanation: 'Net book value = cost – accumulated depreciation. Compare to sale price.',
+    learnContent: {
+      concept: 'Disposals affect income via gain/loss.',
+      formula: 'Sale price – Net Book Value',
+      example: '$50,000 asset, $5,000/year, sold year 4 for $30,000 → $10,000 gain\n$100,000 asset, $10,000/year, sold year 5 for $45,000 → $5,000 loss'
+    }
+  },
+  {
+    id: 'acc-medium-131',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Interest Capitalization During Construction',
+    description: 'A company borrows $500,000 at 6% interest to fund a construction project lasting 6 months. How much interest should be capitalized?',
+    answer: 15000,
+    unit: '$',
+    hint: 'Only capitalize interest during construction.',
+    explanation: 'Capitalized interest becomes part of the asset\'s cost.',
+    learnContent: {
+      concept: 'Interest during construction is not expensed immediately.',
+      formula: 'Loan × Rate × (Construction months ÷ 12)',
+      example: '$200,000 loan at 5% for 4 months → $3,333\n$600,000 loan at 4% for 12 months → $24,000'
+    }
+  },
+  {
+    id: 'acc-medium-132',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Accrued Expense Recognition',
+    description: 'A company receives $10,000 of consulting services in December but won\'t pay until January. What is the impact on the December financials?',
+    answer: 10000,
+    unit: '$ increase liabilities',
+    hint: 'Expense must be matched to the period it\'s incurred.',
+    explanation: 'Record as an accrued liability.',
+    learnContent: {
+      concept: 'Accrual accounting recognizes expenses when incurred.',
+      formula: 'Recognize expense → Increase accrued liabilities',
+      example: 'Dec services, Jan payment → record expense in Dec\nBonus earned in Dec, paid in Jan → accrue in Dec'
+    }
+  },
+  {
+    id: 'acc-medium-133',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Dividend Declaration Impact',
+    description: 'A company declares but doesn\'t yet pay a $2/share dividend on 50,000 shares. What\'s the impact on the balance sheet?',
+    answer: 100000,
+    unit: '$ increase liabilities',
+    hint: 'Dividends become a liability when declared.',
+    explanation: 'Declaration reduces retained earnings and creates a payable.',
+    learnContent: {
+      concept: 'Dividends reduce equity when declared, not when paid.',
+      formula: 'Dividend Payable = Dividend × Shares Outstanding',
+      example: '$1/share on 20,000 shares → $20,000 liability\n$0.50/share on 80,000 shares → $40,000'
+    }
+  },
+  {
+    id: 'acc-medium-134',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Convertible Debt Dilution Calculation',
+    description: 'A company has 1,000,000 shares and $5M in convertible debt convertible into 200,000 shares. What is the diluted share count?',
+    answer: 1200000,
+    unit: 'shares',
+    hint: 'Add convertible shares if in-the-money.',
+    explanation: 'If converted, additional shares dilute ownership.',
+    learnContent: {
+      concept: 'Convertible securities affect diluted EPS.',
+      formula: 'Basic shares + Converted shares',
+      example: '500,000 shares, 100,000 convertible → 600,000 diluted\n2M shares, 500,000 convertible → 2.5M diluted'
+    }
+  },
+  {
+    id: 'acc-medium-135',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Deferred Revenue to Revenue Flow',
+    description: 'A company begins with $40,000 in deferred revenue. It earns $25,000 during the period and collects $15,000 in new cash. What is the ending balance of deferred revenue?',
+    answer: 30000,
+    unit: '$',
+    hint: 'Beginning + Additions – Recognized',
+    explanation: 'Deferred revenue decreases as service is delivered.',
+    learnContent: {
+      concept: 'Ending deferred revenue reflects liabilities for unearned income.',
+      formula: 'Ending = Beginning + Cash collected – Revenue recognized',
+      example: 'Start: $10K, earn: $6K, collect: $5K → End: $9K\nStart: $5K, earn $5K, collect $20K → End: $20K'
+    }
+  },
+  {
+    id: 'acc-medium-136',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Cash Flow Classification for Asset Sale',
+    description: 'A company sells equipment for $80,000. It had a book value of $70,000. Where and how much is reported in the cash flow statement?',
+    answer: 80000,
+    unit: '$ under investing',
+    hint: 'Focus on cash received.',
+    explanation: 'Sale proceeds go to investing section; gain goes to income.',
+    learnContent: {
+      concept: 'Cash from asset sales is investing activity.',
+      formula: 'Sale price → Investing inflow',
+      example: 'Sell asset for $50K → Investing inflow $50K\nSell land for $100K → Investing inflow $100K'
+    }
   }
 ];
