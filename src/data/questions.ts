@@ -401,7 +401,7 @@ export const QUESTIONS: Question[] = [
     answer: 22500,
     unit: '$',
     hint: 'Depreciation is added back. Gains inflate NI → subtract them in CFO.',
-    explanation: 'Annual Depreciation = $300,000 ÷ 10 = $30,000\nGain on Sale = $70,000 - $40,000 = $30,000\nTax on Gain = $30,000 × 25% = $7,500\nCFO adjustment = +$30,000 (Depreciation) - $30,000 (Gain) + $7,500 (Tax benefit) = $7,500\n\nNote: The net income already includes the after-tax gain, so we add back the tax benefit.',
+    explanation: 'Annual Depreciation = $300,000 ÷ 10 = $30,000. This is a non-cash expense that reduces net income, so we add it back to CFO.\n\nGain on Sale = $70,000 - $40,000 = $30,000. Since this is a non-operating gain that inflated net income, we subtract it from CFO.\n\nTax Impact = $30,000 × 25% = $7,500. The gain increases taxable income, creating additional tax liability.\n\nNet CFO adjustment = +$30,000 (Depreciation) - $30,000 (Gain) + $7,500 (Tax benefit) = $7,500.',
     learnContent: {
       concept: 'Depreciation is added back. Gain on Sale is non-operating and must be subtracted from CFO. Capex goes in investing section, not CFO. Gains affect Net Income, so tax must be adjusted.',
       formula: 'CFO = –Gain + Depreciation + Tax Impact on Gain',
