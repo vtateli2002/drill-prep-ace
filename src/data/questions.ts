@@ -1912,18 +1912,30 @@ What is the company's net working capital?`,
     answer: 12000,
     unit: '$',
     hint: 'Use formula: (AR + Inventory + Prepaid) - (AP + Accrued)',
-    explanation: `Net Working Capital = Current Assets - Current Liabilities
+    explanation: `Calculation:
+Net Working Capital = $32,000 - $20,000 = $12,000
 
-Current Assets: $12,000 + $18,000 + $2,000 = $32,000
-Current Liabilities: $15,000 + $5,000 = $20,000
-Net Working Capital: $32,000 - $20,000 = $12,000
+• • •
 
-Key components:
-• Accounts Receivable - customer payments due for credit sales
-• Inventory - goods available for sale  
-• Prepaid Expenses - advance payments for future services
-• Accounts Payable - amounts owed to suppliers
-• Accrued Expenses - incurred costs not yet paid`,
+Step-by-step breakdown:
+
+1. Current Assets:
+   • Accounts Receivable: $12,000
+   • Inventory: $18,000
+   • Prepaid Expenses: $2,000
+   → Total Current Assets: $32,000
+
+2. Current Liabilities:
+   • Accounts Payable: $15,000
+   • Accrued Expenses: $5,000
+   → Total Current Liabilities: $20,000
+
+Key Points:
+   • Working capital measures short-term liquidity
+   • Accounts Receivable represents customer payments due for credit sales
+   • Inventory represents goods available for sale
+   • Prepaid Expenses are advance payments for future services
+   • Current liabilities are obligations due within one year`,
     learnContent: {
       concept: 'Working capital measures a company\'s short-term liquidity. It represents assets available to pay current liabilities.',
       formula: 'Net Working Capital = Current Assets - Current Liabilities',
@@ -1975,7 +1987,27 @@ What is the ending inventory?`,
     answer: 10000,
     unit: '$',
     hint: 'Use the inventory flow formula.',
-    explanation: 'Ending Inventory = Beginning Inventory + Purchases - COGS = $15,000 + $40,000 - $45,000 = $10,000',
+    explanation: `Calculation:
+Ending Inventory = $15,000 + $40,000 - $45,000 = $10,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Inventory Flow:
+   • Beginning Inventory: $15,000
+   • Add: Purchases: $40,000
+   → Goods Available: $55,000
+
+2. Cost of Goods Sold:
+   • Less: COGS: $45,000
+   → Ending Inventory: $10,000
+
+Key Points:
+   • Ending inventory reflects the value of unsold goods
+   • Inventory flow follows: Beginning + Purchases - COGS = Ending
+   • This directly impacts both balance sheet and income statement
+   • Accurate inventory tracking is essential for cost management`,
     learnContent: {
       concept: 'Ending inventory reflects the value of unsold goods. It directly impacts both the balance sheet and cost reporting.',
       formula: 'Ending Inventory = Beginning Inventory + Purchases - COGS',
@@ -1996,7 +2028,28 @@ Total Assets: $100,000
 What is the company's Debt-to-Assets ratio?`,
     answer: 0.5,
     hint: 'Divide total debt by total assets.',
-    explanation: 'Debt = Short-Term + Long-Term = $10,000 + $40,000 = $50,000. Debt-to-Assets = $50,000 ÷ $100,000 = 0.5',
+    explanation: `Calculation:
+Debt-to-Assets = $50,000 ÷ $100,000 = 0.5
+
+• • •
+
+Step-by-step breakdown:
+
+1. Total Debt:
+   • Short-Term Debt: $10,000
+   • Long-Term Debt: $40,000
+   → Total Debt: $50,000
+
+2. Debt-to-Assets Ratio:
+   • Total Debt: $50,000
+   • Total Assets: $100,000
+   → Debt-to-Assets: $50,000 ÷ $100,000 = 0.5
+
+Key Points:
+   • Debt-to-Assets measures financial leverage
+   • 0.5 ratio means 50% of assets are financed by debt
+   • Higher ratios indicate more financial risk
+   • This ratio shows proportion of assets funded by creditors vs. owners`,
     learnContent: {
       concept: 'The Debt-to-Assets ratio measures financial leverage, showing what portion of a company\'s assets are financed by debt.',
       formula: 'Debt-to-Assets = (Short-Term + Long-Term Debt) ÷ Total Assets',
@@ -2012,7 +2065,30 @@ What is the company's Debt-to-Assets ratio?`,
     answer: 18000,
     unit: '$',
     hint: 'Recognize only the portion of service already provided.',
-    explanation: '$24,000 ÷ 12 months = $2,000/month. By end of Q1 (3 months): $2,000 × 3 = $6,000 recognized. Deferred = $24,000 - $6,000 = $18,000',
+    explanation: `Calculation:
+Deferred Revenue = $24,000 - $6,000 = $18,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Monthly Service Value:
+   • Total contract: $24,000
+   • Contract duration: 12 months
+   → Monthly value: $24,000 ÷ 12 = $2,000
+
+2. Services Provided (Q1):
+   • Months completed: 3 months
+   → Revenue recognized: 3 × $2,000 = $6,000
+
+3. Remaining Deferred Revenue:
+   → Deferred Revenue: $24,000 - $6,000 = $18,000
+
+Key Points:
+   • Deferred revenue is a liability representing unearned income
+   • Revenue is recognized as services are provided over time
+   • $18,000 represents future service obligations to the customer
+   • This creates positive cash flow impact upfront`,
     learnContent: {
       concept: 'Deferred revenue represents money received for goods or services not yet delivered. It\'s a liability until earned.',
       formula: 'Deferred Revenue = Total Cash Received - Earned Revenue',
@@ -2033,7 +2109,29 @@ Operating Expenses: $30,000
 What is the company's operating margin?`,
     answer: 0.3,
     hint: 'Use Operating Income ÷ Revenue.',
-    explanation: 'Operating Income = $100,000 - $40,000 - $30,000 = $30,000. Operating Margin = $30,000 ÷ $100,000 = 0.3',
+    explanation: `Calculation:
+Operating Margin = $30,000 ÷ $100,000 = 0.3 (30%)
+
+• • •
+
+Step-by-step breakdown:
+
+1. Operating Income Calculation:
+   • Revenue: $100,000
+   • Less: COGS: $40,000
+   • Less: Operating Expenses: $30,000
+   → Operating Income: $30,000
+
+2. Operating Margin:
+   • Operating Income: $30,000
+   • Revenue: $100,000
+   → Operating Margin: $30,000 ÷ $100,000 = 0.3 or 30%
+
+Key Points:
+   • Operating margin measures operating efficiency excluding interest and taxes
+   • 30% margin means $0.30 of every revenue dollar becomes operating profit
+   • Higher margins indicate better cost control and operational efficiency
+   • This metric focuses on core business profitability`,
     learnContent: {
       concept: 'Operating margin measures operating efficiency, excluding interest and tax effects.',
       formula: 'Operating Margin = Operating Income ÷ Revenue\nWhere: Operating Income = Revenue - COGS - Operating Expenses',
@@ -2058,7 +2156,31 @@ What is the net working capital, excluding cash and prepaid expenses?`,
     answer: 7000,
     unit: '$',
     hint: 'Adjusted NWC = (AR + Inventory) - (AP + Accrued)',
-    explanation: 'Assets (AR + Inventory) = $12,000 + $8,000 = $20,000. Liabilities (AP + Accrued) = $10,000 + $3,000 = $13,000. NWC = $20,000 - $13,000 = $7,000',
+    explanation: `Calculation:
+Net Working Capital = $20,000 - $13,000 = $7,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Operating Current Assets:
+   • Accounts Receivable: $12,000
+   • Inventory: $8,000
+   → Total Operating Assets: $20,000
+
+2. Operating Current Liabilities:
+   • Accounts Payable: $10,000
+   • Accrued Expenses: $3,000
+   → Total Operating Liabilities: $13,000
+
+3. Adjusted Net Working Capital:
+   → NWC: $20,000 - $13,000 = $7,000
+
+Key Points:
+   • Cash and prepaid expenses are excluded from operational NWC
+   • This focuses on core operating assets and liabilities
+   • Adjusted NWC measures liquidity needed for day-to-day operations
+   • This metric is commonly used in DCF valuation`,
     learnContent: {
       concept: 'Net Working Capital (NWC) measures operational liquidity. Analysts often exclude non-operating items like cash and prepaids.',
       formula: 'NWC = (Operating Current Assets - Operating Current Liabilities)',
@@ -2079,7 +2201,31 @@ What is the total gross profit?`,
     answer: 76000,
     unit: '$',
     hint: 'Gross Profit = (Revenue × Margin%) summed across products',
-    explanation: 'GP A = $80K × 50% = $40K. GP B = $120K × 30% = $36K. Total = $76K',
+    explanation: `Calculation:
+Total Gross Profit = $40,000 + $36,000 = $76,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Product A Gross Profit:
+   • Revenue: $80,000
+   • Margin: 50%
+   → Gross Profit A: $80,000 × 50% = $40,000
+
+2. Product B Gross Profit:
+   • Revenue: $120,000
+   • Margin: 30%
+   → Gross Profit B: $120,000 × 30% = $36,000
+
+3. Total Gross Profit:
+   → Total: $40,000 + $36,000 = $76,000
+
+Key Points:
+   • Each product line contributes differently to gross profit
+   • Product margins vary based on cost structure and pricing
+   • Total gross profit aggregates across all product lines
+   • This analysis helps identify the most profitable product segments`,
     learnContent: {
       concept: 'Gross Profit is calculated for each product line, based on its margin. Total GP aggregates those values.',
       formula: 'Gross Profit = Σ (Revenue_i × Margin_i)',
@@ -2099,7 +2245,28 @@ What is the ending retained earnings?`,
     answer: 175000,
     unit: '$',
     hint: 'Ending RE = Beginning RE + Net Income - Dividends',
-    explanation: '$200,000 - $20,000 - $5,000 = $175,000',
+    explanation: `Calculation:
+Ending RE = $200,000 + (-$20,000) - $5,000 = $175,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Starting Position:
+   → Beginning Retained Earnings: $200,000
+
+2. Year's Performance:
+   • Net Income: -$20,000 (net loss)
+   • Dividends Paid: $5,000
+
+3. Ending Retained Earnings:
+   → Ending RE: $200,000 - $20,000 - $5,000 = $175,000
+
+Key Points:
+   • Net losses reduce retained earnings just like gains increase them
+   • Dividends further reduce the retained earnings balance
+   • Companies may still pay dividends even during loss years
+   • The formula remains consistent regardless of profit or loss`,
     learnContent: {
       concept: 'Net losses reduce retained earnings, as do dividends. The formula is still consistent even with negative income.',
       formula: 'Ending RE = Beginning RE + Net Income - Dividends',
@@ -2122,7 +2289,29 @@ What is the net book value of PPE?`,
     answer: 230000,
     unit: '$',
     hint: 'NBV = Sum of assets - Accumulated Depreciation',
-    explanation: 'Total Gross PPE = $200K + $100K + $50K = $350K. NBV = $350K - $120K = $230K',
+    explanation: `Calculation:
+Net PPE = $350,000 - $120,000 = $230,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Gross PPE Total:
+   • Buildings: $200,000
+   • Equipment: $100,000
+   • Furniture: $50,000
+   → Total Gross PPE: $350,000
+
+2. Net Book Value:
+   • Gross PPE: $350,000
+   • Less: Accumulated Depreciation: $120,000
+   → Net PPE: $230,000
+
+Key Points:
+   • Net PPE represents the book value of fixed assets
+   • Accumulated depreciation reduces the original cost
+   • This shows remaining asset value on the balance sheet
+   • Net PPE decreases over time as assets age and depreciate`,
     learnContent: {
       concept: 'Net PPE is derived by summing gross PPE assets and subtracting the total accumulated depreciation.',
       formula: 'NBV = (Buildings + Equipment + Furniture + ...) - Depreciation',
@@ -2140,7 +2329,28 @@ What is the cash flow benefit from depreciation in Year 1?`,
     answer: 5000,
     unit: '$',
     hint: 'Annual Dep = Equipment / Life. Tax shield = Dep × Tax rate.',
-    explanation: 'Dep = $100,000 ÷ 5 = $20,000. Tax shield = $20,000 × 25% = $5,000',
+    explanation: `Calculation:
+Tax Shield = $20,000 × 25% = $5,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Annual Depreciation:
+   • Equipment Cost: $100,000
+   • Useful Life: 5 years
+   → Annual Depreciation: $100,000 ÷ 5 = $20,000
+
+2. Tax Shield Calculation:
+   • Annual Depreciation: $20,000
+   • Tax Rate: 25%
+   → Tax Shield: $20,000 × 25% = $5,000
+
+Key Points:
+   • Depreciation creates tax savings by reducing taxable income
+   • Tax shield represents the cash flow benefit from depreciation
+   • This $5,000 annual benefit continues for the asset's useful life
+   • Higher depreciation or tax rates create larger tax benefits`,
     learnContent: {
       concept: 'Depreciation saves cash by lowering taxes. The tax shield = depreciation × tax rate.',
       formula: 'Tax Shield = Depreciation × Tax Rate',
@@ -2163,7 +2373,31 @@ What is the company's Free Cash Flow (FCF)?`,
     answer: 70000,
     unit: '$',
     hint: 'FCF = Net Income + Depreciation - CapEx - Change in NWC',
-    explanation: '$90,000 + $10,000 - $25,000 - $5,000 = $70,000',
+    explanation: `Calculation:
+FCF = $90,000 + $10,000 - $25,000 - $5,000 = $70,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Cash Generation:
+   • Net Income: $90,000
+   • Add: Depreciation: $10,000 (non-cash expense)
+   → Operating Cash Generation: $100,000
+
+2. Cash Uses:
+   • Capital Expenditures: $25,000 (reinvestment in assets)
+   • Change in Net Working Capital: $5,000 (cash tied up)
+   → Total Cash Uses: $30,000
+
+3. Free Cash Flow:
+   → FCF: $100,000 - $30,000 = $70,000
+
+Key Points:
+   • FCF represents cash available after maintaining and growing operations
+   • Positive FCF indicates the business generates more cash than it uses
+   • This metric is crucial for DCF valuation and investment decisions
+   • FCF can be used for dividends, debt repayment, or acquisitions`,
     learnContent: {
       concept: 'Free Cash Flow represents the cash available after reinvesting to maintain or expand operations. It\'s used in DCF analysis.',
       formula: 'FCF = Net Income + Depreciation - CapEx - Change in NWC',
@@ -2185,7 +2419,27 @@ What is the ending inventory balance?`,
     answer: 30000,
     unit: '$',
     hint: 'Ending Inventory = Beginning Inventory + Purchases - COGS',
-    explanation: '$40,000 + $100,000 - $110,000 = $30,000',
+    explanation: `Calculation:
+Ending Inventory = $40,000 + $100,000 - $110,000 = $30,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Inventory Available:
+   • Beginning Inventory: $40,000
+   • Add: Purchases: $100,000
+   → Total Available: $140,000
+
+2. Goods Sold:
+   • Cost of Goods Sold: $110,000
+   → Remaining Inventory: $140,000 - $110,000 = $30,000
+
+Key Points:
+   • Ending inventory represents unsold goods available for future sales
+   • Inventory flow follows: Beginning + Purchases - COGS = Ending
+   • Lower ending inventory may indicate strong sales or inventory management
+   • This balance appears on both the balance sheet and affects COGS calculation`,
     learnContent: {
       concept: 'Ending Inventory reflects what hasn\'t been sold. COGS reduces it, while purchases increase it.',
       formula: 'Ending Inventory = Beginning Inventory + Purchases - COGS',
