@@ -65,15 +65,11 @@ const Problems = () => {
     navigate(`/question/${questionId}`);
   };
 
-  // Create flat list of questions in the desired order
+  // Use all questions directly without pre-filtering
   const tracks: Track[] = ['accounting', 'valuation', 'ma', 'lbo'];
   const difficulties: Difficulty[] = ['easy', 'medium', 'hard', 'interview_ready'];
 
-  const allQuestions = tracks.flatMap(track => 
-    difficulties.flatMap(difficulty => 
-      QUESTIONS.filter(q => q.track === track && q.difficulty === difficulty)
-    )
-  );
+  const allQuestions = QUESTIONS;
 
   // Apply filters
   const filteredQuestions = allQuestions.filter(question => {
@@ -82,7 +78,14 @@ const Problems = () => {
     return trackMatches && difficultyMatches;
   });
 
-  // Debug logging
+  // Debug logging - let's see what tracks actually exist in the data
+  const uniqueTracks = [...new Set(allQuestions.map(q => q.track))];
+  const trackCounts = uniqueTracks.map(track => ({
+    track,
+    count: allQuestions.filter(q => q.track === track).length
+  }));
+  
+  console.log('Available tracks in data:', trackCounts);
   console.log('Filter Debug:', {
     selectedTrack,
     selectedDifficulty,
