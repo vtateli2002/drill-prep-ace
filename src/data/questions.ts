@@ -4082,7 +4082,7 @@ Key Points:
     answer: 870000,
     unit: '$',
     hint: 'PP&E = Beginning + CapEx – Depreciation – NBV of disposals',
-    explanation: 'PP&E = $800K + $200K – $90K – $40K = $870K',
+    explanation: "**Calculation:** $800,000 + $200,000 - $90,000 - $40,000 = **$870,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Beginning PP&E Balance**\n   - Starting amount: $800,000\n\n2. **Add Capital Expenditures**\n   - CapEx during year: +$200,000\n   - Running total: $1,000,000\n\n3. **Subtract Depreciation**\n   - Annual depreciation: -$90,000\n   - Running total: $910,000\n\n4. **Subtract Asset Disposals**\n   - Book value of equipment sold: -$40,000\n   - Final PP&E balance: $870,000\n\n**Key Points:**\n   • CapEx increases PP&E by the full purchase amount\n   • Depreciation reduces PP&E each period\n   • Asset sales reduce PP&E by net book value, not sale price",
     learnContent: {
       concept: 'PP&E increases through CapEx and decreases via depreciation or asset sales.',
       formula: 'Ending PP&E = Beginning + CapEx – Depreciation – NBV of Assets Sold',
@@ -4132,7 +4132,7 @@ Key Points:
     answer: 30.4,
     unit: 'days',
     hint: 'DPO = (Avg AP ÷ COGS) × 365',
-    explanation: 'DPO = ($50K ÷ $600K) × 365 ≈ 30.4 days',
+    explanation: "**Calculation:** ($50,000 ÷ $600,000) × 365 = **30.4 days**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Gather Key Metrics**\n   - Average accounts payable: $50,000\n   - Annual cost of goods sold: $600,000\n\n2. **Calculate Payable Turnover**\n   - Payable turnover ratio: $600,000 ÷ $50,000 = 12 times\n   - Daily COGS: $600,000 ÷ 365 = $1,644\n\n3. **Calculate Days Payable Outstanding**\n   - DPO = $50,000 ÷ $1,644 = 30.4 days\n   - Alternative: (Average AP ÷ COGS) × 365\n\n**Key Points:**\n   • DPO measures how long company takes to pay suppliers\n   • Higher DPO indicates longer payment period (better cash flow)\n   • Industry comparison helps assess payment strategy effectiveness",
     learnContent: {
       concept: 'DPO shows how long a company takes to pay suppliers.',
       formula: 'DPO = (Average AP ÷ COGS) × 365',
@@ -4148,7 +4148,7 @@ Key Points:
     answer: 10000,
     unit: '$',
     hint: 'Average the total lease payments over the term.',
-    explanation: 'Total = $8K + $10K + $12K = $30K → $30K ÷ 3 = $10K/year',
+    explanation: "**Calculation:** ($8,000 + $10,000 + $12,000) ÷ 3 = **$10,000 per year**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Total Lease Payments**\n   - Year 1: $8,000\n   - Year 2: $10,000\n   - Year 3: $12,000\n   - Total payments: $30,000\n\n2. **Calculate Straight-Line Expense**\n   - Average annual expense: $30,000 ÷ 3 years = $10,000\n\n3. **Deferred Rent Impact**\n   - Year 1: $10,000 expense vs $8,000 paid = $2,000 deferred rent liability\n   - Year 2: $10,000 expense vs $10,000 paid = No change\n   - Year 3: $10,000 expense vs $12,000 paid = $2,000 deferred rent reversal\n\n**Key Points:**\n   • Straight-line method smooths escalating payments\n   • Deferred rent liability tracks timing differences\n   • Total expense equals total payments over lease term",
     learnContent: {
       concept: 'Deferred rent smooths escalating lease payments into even IS expense.',
       formula: 'Straight-line Rent = Total Lease Payments ÷ Years',
@@ -4202,7 +4202,7 @@ Key Points:
     answer: 20000,
     unit: '$',
     hint: 'NCI = Net Income × Ownership % not owned',
-    explanation: 'NCI = $100K × 20% = $20,000',
+    explanation: "**Calculation:** $100,000 × 20% = **$20,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Ownership Structure**\n   - Parent company ownership: 80%\n   - Non-controlling interest: 100% - 80% = 20%\n   - Subsidiary net income: $100,000\n\n2. **Income Allocation**\n   - Parent company share: $100,000 × 80% = $80,000\n   - Non-controlling interest share: $100,000 × 20% = $20,000\n\n3. **Consolidated Income Statement Impact**\n   - Total subsidiary income: $100,000 (included in consolidated revenue)\n   - Less: NCI portion: ($20,000)\n   - Net income attributable to parent: $80,000\n\n**Key Points:**\n   • NCI represents minority shareholders' interest in subsidiary earnings\n   • Consolidated statements include 100% of subsidiary results\n   • NCI is deducted to show parent company's share of income",
     learnContent: {
       concept: 'NCI represents income allocated to minority shareholders in consolidated subsidiaries.',
       formula: 'NCI = Net Income × (1 – Ownership %)',
@@ -4218,7 +4218,7 @@ Key Points:
     answer: 30000,
     unit: '$',
     hint: 'Recognize revenue based on the portion of service delivered.',
-    explanation: '3 months out of 12 = 25% → $120,000 × 25% = $30,000',
+    explanation: "**Calculation:** $120,000 × (3 ÷ 12) = **$30,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Contract Terms**\n   - Total contract value: $120,000\n   - Contract period: 12 months (January 1 - December 31)\n   - Payment received: $120,000 upfront\n\n2. **Revenue Recognition Progress**\n   - Service period completed: January 1 - March 31 = 3 months\n   - Percentage of service delivered: 3 ÷ 12 = 25%\n\n3. **Revenue Recognition Calculation**\n   - Revenue earned through March 31: $120,000 × 25% = $30,000\n   - Remaining deferred revenue: $120,000 - $30,000 = $90,000\n\n**Key Points:**\n   • Revenue is recognized as services are performed, not when cash is received\n   • Unearned revenue remains as a liability until services are delivered\n   • Monthly recognition would be $10,000 per month",
     learnContent: {
       concept: 'Accrual accounting recognizes revenue when earned, not when received.',
       formula: 'Recognized Revenue = Total Contract × (Months Passed ÷ Total Months)',
@@ -4234,7 +4234,7 @@ Key Points:
     answer: 4800,
     unit: '$',
     hint: 'Interest = Remaining Principal × Interest Rate',
-    explanation: 'After Year 1 payment: $100K – $20K = $80K → Year 2 Interest = $80K × 6% = $4,800',
+    explanation: "**Calculation:** $80,000 × 6% = **$4,800**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Initial Loan Terms**\n   - Original loan amount: $100,000\n   - Annual interest rate: 6%\n   - Annual principal payment: $20,000\n\n2. **Year 1 Payment Impact**\n   - Beginning balance: $100,000\n   - Principal payment: $20,000\n   - Interest expense Year 1: $100,000 × 6% = $6,000\n   - Ending balance: $100,000 - $20,000 = $80,000\n\n3. **Year 2 Interest Calculation**\n   - Beginning balance Year 2: $80,000\n   - Interest expense Year 2: $80,000 × 6% = $4,800\n\n**Key Points:**\n   • Interest is calculated on the outstanding principal balance\n   • As principal decreases, interest expense decreases each year\n   • Total payment in Year 2 = $20,000 principal + $4,800 interest = $24,800",
     learnContent: {
       concept: 'Interest expense declines as the principal decreases over time.',
       formula: 'Interest Expense = Beginning Principal × Interest Rate',
