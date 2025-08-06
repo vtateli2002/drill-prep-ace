@@ -7422,5 +7422,255 @@ Key Points:
       formula: 'Deferred Revenue = Contract Value × (Months Remaining in Contract / Total Contract Months)',
       example: 'Annual $48,000 contract, 7 months left → $48,000 × 7/12 = $28,000 deferred'
     }
+  },
+
+  // Topic 36: Other Current Liabilities
+  {
+    id: 'acc-easy-142',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Other Current Liabilities Year-End Balance',
+    description: 'A company starts the year with $6,000 in accrued bonuses and $3,000 in warranty liabilities. During the year, it incurs an additional $4,000 in warranty obligations and pays $5,000 in total liabilities. At year-end, it identifies $2,000 in new customer refund liabilities.\n\nWhat is the total Other Current Liabilities balance at year-end?',
+    answer: 10000,
+    unit: '$',
+    hint: 'Start with opening balance, add new obligations, subtract payments.',
+    explanation: "Calculation: $9,000 + $4,000 + $2,000 - $5,000 = $10,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Opening Balance\n   - Accrued bonuses: $6,000\n   - Warranty liabilities: $3,000\n   - Total opening: $9,000\n\n2. New Obligations During Year\n   - Additional warranty obligations: $4,000\n   - Customer refund liabilities: $2,000\n   - Total new: $6,000\n\n3. Payments Made\n   - Total liabilities paid: $5,000\n\n4. Year-End Balance\n   - Opening + New - Payments: $9,000 + $6,000 - $5,000 = $10,000\n\nKey Points:\n   • Other current liabilities include various short-term obligations\n   • New accruals increase the balance\n   • Payments reduce the liability balance\n   • Track all components separately for accurate reporting",
+    learnContent: {
+      concept: 'Other current liabilities include various short-term obligations beyond standard payables and accruals.',
+      formula: 'Ending Balance = Opening + New Accruals - Payments',
+      example: 'Start $5k, add $3k warranty, pay $2k → $6k ending'
+    }
+  },
+  {
+    id: 'acc-medium-100',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Multiple Current Liabilities Tracking',
+    description: 'A firm has the following Other Current Liabilities at the start of the year:\n\n- Accrued payroll: $8,000\n- Customer deposits: $5,000\n- Sales tax payable: $2,000\n\nDuring the year:\n- It pays $6,000 in payroll\n- Receives $3,000 more in customer deposits\n- Pays $1,500 in sales tax\n- Recognizes $2,000 in contingent legal liabilities expected to settle within 12 months\n\nAt year-end, it reclassifies $2,000 of customer deposits as long-term due to extended service timelines.\n\nWhat is the total Other Current Liabilities balance at year-end?',
+    answer: 10500,
+    unit: '$',
+    hint: 'Track each liability type separately, then sum the ending balances.',
+    explanation: "Calculation: $2,000 + $6,000 + $500 + $2,000 = $10,500\n\n• • •\n\nStep-by-step breakdown:\n\n1. Accrued Payroll\n   - Opening: $8,000\n   - Payments: $6,000\n   - Ending: $8,000 - $6,000 = $2,000\n\n2. Customer Deposits\n   - Opening: $5,000\n   - New deposits: $3,000\n   - Reclassified to long-term: $2,000\n   - Ending: $5,000 + $3,000 - $2,000 = $6,000\n\n3. Sales Tax Payable\n   - Opening: $2,000\n   - Payments: $1,500\n   - Ending: $2,000 - $1,500 = $500\n\n4. Legal Liabilities\n   - New contingent liabilities: $2,000\n\n5. Total Year-End Balance\n   - Sum of all components: $2,000 + $6,000 + $500 + $2,000 = $10,500\n\nKey Points:\n   • Track each liability component separately\n   • Reclassifications affect current vs. long-term split\n   • New contingent liabilities add to current if settling within 12 months\n   • Payments reduce specific liability balances",
+    learnContent: {
+      concept: 'Other current liabilities require separate tracking of each component with different payment timing and classification rules.',
+      formula: 'Component Balance = Opening + New Accruals - Payments ± Reclassifications',
+      example: 'Payroll $5k - $3k paid = $2k; Deposits $4k + $1k new = $5k'
+    }
+  },
+  {
+    id: 'acc-hard-71',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Complex Current Liabilities with Tax Calculations',
+    description: 'A company begins the year with:\n- $12,000 accrued warranty liabilities\n- $3,000 accrued payroll\n- $5,000 sales tax payable\n\nDuring the year:\n- $4,000 of warranty work is completed\n- Sales increase by $100,000 with a 6% sales tax rate; 90% of tax is still unpaid at year-end\n- $3,000 new payroll accrual is recorded, but $4,000 is paid\n\nAt year-end, $2,000 in legal liabilities are recognized, with 60% classified as long-term.\n\nWhat is the total Other Current Liabilities balance at year-end?',
+    answer: 16200,
+    unit: '$',
+    hint: 'Calculate each component separately, including the sales tax calculation and legal liability split.',
+    explanation: "Calculation: $8,000 + $5,400 + $2,000 + $800 = $16,200\n\n• • •\n\nStep-by-step breakdown:\n\n1. Warranty Liabilities\n   - Opening: $12,000\n   - Work completed: $4,000\n   - Ending: $12,000 - $4,000 = $8,000\n\n2. Sales Tax Calculation\n   - New sales: $100,000\n   - Tax rate: 6%\n   - Total tax: $100,000 × 6% = $6,000\n   - Unpaid portion: $6,000 × 90% = $5,400\n   (Note: This appears to be new tax accrued, not added to opening balance)\n\n3. Accrued Payroll\n   - Opening: $3,000\n   - New accrual: $3,000\n   - Payments: $4,000\n   - Ending: $3,000 + $3,000 - $4,000 = $2,000\n\n4. Legal Liabilities (Current Portion)\n   - Total legal liabilities: $2,000\n   - Long-term portion: 60%\n   - Current portion: $2,000 × 40% = $800\n\n5. Total Current Liabilities\n   - Sum: $8,000 + $5,400 + $2,000 + $800 = $16,200\n\nKey Points:\n   • Sales tax accruals based on percentage of sales\n   • Legal liabilities split between current and long-term\n   • Warranty work completion reduces liability\n   • Net payroll calculation includes new accruals and payments",
+    learnContent: {
+      concept: 'Complex current liabilities involve calculations, classifications, and timing differences that affect multiple balance sheet lines.',
+      formula: 'Sales Tax Accrual = Sales × Tax Rate × Unpaid %',
+      example: '$50k sales, 8% tax, 70% unpaid = $2,800 accrual'
+    }
+  },
+
+  // Topic 37: Common Stock
+  {
+    id: 'acc-easy-143',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Common Stock After Stock Split and New Issue',
+    description: 'A company issues 400,000 shares at $10 per share with a $0.01 par value. Mid-year, it executes a 2-for-1 stock split. Then it issues another 100,000 shares at $15.\n\nWhat is the Common Stock balance at year-end?',
+    answer: 9000,
+    unit: '$',
+    hint: 'Par value remains the same after split; calculate total shares outstanding.',
+    explanation: "Calculation: Post-split shares + new shares = (800,000 + 100,000) × $0.01 = $9,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Initial Issue\n   - Shares issued: 400,000\n   - Par value per share: $0.01\n   - Common stock: 400,000 × $0.01 = $4,000\n\n2. Stock Split (2-for-1)\n   - Pre-split shares: 400,000\n   - Post-split shares: 400,000 × 2 = 800,000\n   - Par value remains: $0.01 per share\n   - Common stock after split: 800,000 × $0.01 = $8,000\n\n3. New Share Issue\n   - Additional shares: 100,000\n   - Par value: $0.01\n   - Additional common stock: 100,000 × $0.01 = $1,000\n\n4. Total Common Stock\n   - Post-split: $8,000\n   - New issue: $1,000\n   - Total: $8,000 + $1,000 = $9,000\n\nKey Points:\n   • Stock splits increase share count but don't change total common stock value\n   • Par value per share remains constant through splits\n   • New issues add to common stock at par value\n   • Issue price above par goes to Additional Paid-in Capital",
+    learnContent: {
+      concept: 'Common stock represents the par value of all outstanding shares, unaffected by stock splits but increased by new issuances.',
+      formula: 'Common Stock = Outstanding Shares × Par Value per Share',
+      example: '500k shares × $0.01 par = $5,000 common stock'
+    }
+  },
+  {
+    id: 'acc-medium-101',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Common Stock with Share Retirement and Split',
+    description: 'A firm has 1,000,000 authorized shares, $0.01 par. It issues 300,000 shares at $12. Later, it buys back and retires 50,000 shares. At year-end, it does a 3-for-2 stock split.\n\nWhat is the Common Stock balance at year-end?',
+    answer: 3750,
+    unit: '$',
+    hint: 'Retired shares reduce the count; stock split increases remaining shares proportionally.',
+    explanation: "Calculation: (300,000 - 50,000) × 3/2 × $0.01 = 375,000 × $0.01 = $3,750\n\n• • •\n\nStep-by-step breakdown:\n\n1. Initial Share Issue\n   - Shares issued: 300,000\n   - Par value: $0.01\n   - Initial common stock: 300,000 × $0.01 = $3,000\n\n2. Share Retirement\n   - Shares retired: 50,000\n   - Remaining shares: 300,000 - 50,000 = 250,000\n   - Common stock after retirement: 250,000 × $0.01 = $2,500\n\n3. Stock Split (3-for-2)\n   - Pre-split shares: 250,000\n   - Split ratio: 3-for-2 (each share becomes 1.5 shares)\n   - Post-split shares: 250,000 × 3/2 = 375,000\n   - Par value remains: $0.01\n\n4. Final Common Stock Balance\n   - Outstanding shares: 375,000\n   - Par value: $0.01\n   - Common stock: 375,000 × $0.01 = $3,750\n\nKey Points:\n   • Share retirements permanently reduce outstanding shares\n   • Stock splits proportionally increase share count\n   • Par value per share remains constant\n   • Retired shares cannot be reissued (unlike treasury stock)",
+    learnContent: {
+      concept: 'Share retirements permanently reduce outstanding shares, while stock splits proportionally increase the remaining shares.',
+      formula: 'Post-Split Shares = (Issued - Retired) × Split Ratio',
+      example: '(400k - 100k) × 2-for-1 = 600k shares'
+    }
+  },
+  {
+    id: 'acc-hard-72',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Complex Stock Transactions with Reverse Split and Dividend',
+    description: 'A company starts with 2,000,000 authorized shares, $0.01 par, and 600,000 issued shares. It issues 200,000 new shares at $10, then does a 1-for-5 reverse split. It then grants a 5% stock dividend on post-split shares. Finally, it issues another 10,000 shares at $15.\n\nWhat is the Common Stock balance at year-end?',
+    answer: 1780,
+    unit: '$',
+    hint: 'Work through each transaction sequentially: new issue, reverse split, stock dividend, final issue.',
+    explanation: "Calculation: (160,000 + 8,000 + 10,000) × $0.01 = 178,000 × $0.01 = $1,780\n\n• • •\n\nStep-by-step breakdown:\n\n1. Initial Position\n   - Outstanding shares: 600,000\n   - Par value: $0.01\n\n2. New Share Issue\n   - Additional shares: 200,000\n   - Total shares: 600,000 + 200,000 = 800,000\n\n3. Reverse Split (1-for-5)\n   - Pre-split shares: 800,000\n   - Post-split shares: 800,000 ÷ 5 = 160,000\n   - Par value remains: $0.01\n\n4. Stock Dividend (5%)\n   - Base shares: 160,000\n   - Dividend shares: 160,000 × 5% = 8,000\n   - Total after dividend: 160,000 + 8,000 = 168,000\n\n5. Final Share Issue\n   - Additional shares: 10,000\n   - Final total shares: 168,000 + 10,000 = 178,000\n\n6. Common Stock Balance\n   - Total shares: 178,000\n   - Par value: $0.01\n   - Common stock: 178,000 × $0.01 = $1,780\n\nKey Points:\n   • Reverse splits reduce share count proportionally\n   • Stock dividends increase share count based on existing shares\n   • All transactions affect the share count for common stock calculation\n   • Par value remains constant throughout all transactions",
+    learnContent: {
+      concept: 'Multiple stock transactions must be processed sequentially, with each affecting the base for subsequent calculations.',
+      formula: 'Final Shares = ((Initial + Issues) ÷ Reverse Split + Stock Dividend) + Final Issues',
+      example: '((100k + 50k) ÷ 3 + 10%) + 5k = 58.3k shares'
+    }
+  },
+
+  // Topic 38: Preferred Stock
+  {
+    id: 'acc-easy-144',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Cumulative Preferred Dividend Payment',
+    description: 'A company issues 5,000 preferred shares at $100 par, 7% cumulative. It skips dividends in Year 1, pays all arrears in Year 2, and then redeems 2,000 shares at par in Year 3.\n\nWhat is the total preferred dividend paid in Year 2?',
+    answer: 70000,
+    unit: '$',
+    hint: 'Calculate annual dividend, then multiply by years of arrears.',
+    explanation: "Calculation: 5,000 × $100 × 7% × 2 years = $35,000 × 2 = $70,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Annual Dividend Calculation\n   - Outstanding shares: 5,000\n   - Par value per share: $100\n   - Dividend rate: 7%\n   - Annual dividend: 5,000 × $100 × 7% = $35,000\n\n2. Dividend Arrears\n   - Year 1: Skipped (dividends in arrears)\n   - Year 1 unpaid: $35,000\n\n3. Year 2 Payment\n   - Year 1 arrears: $35,000\n   - Year 2 current: $35,000\n   - Total paid in Year 2: $35,000 + $35,000 = $70,000\n\n4. Year 3 Note\n   - Share redemption occurs after Year 2 payment\n   - Does not affect Year 2 calculation\n\nKey Points:\n   • Cumulative preferred dividends accumulate when skipped\n   • All arrears must be paid before common dividends\n   • Dividends calculated on outstanding shares at time of declaration\n   • Redemptions affect future dividend calculations, not past payments",
+    learnContent: {
+      concept: 'Cumulative preferred dividends accumulate in arrears when skipped and must be paid in full before any common dividends.',
+      formula: 'Preferred Dividend = Shares × Par Value × Dividend Rate',
+      example: '1,000 shares × $50 par × 6% = $3,000 annual dividend'
+    }
+  },
+  {
+    id: 'acc-medium-102',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Preferred Dividends with Mid-Year Redemption',
+    description: 'A firm has 4,000 cumulative preferred shares, $50 par, 6% dividend. Dividends were missed in Years 1 and 2. In Year 3, 1,000 shares are redeemed mid-year. It declares full dividends for all outstanding preferred shares in Year 3 and pays all arrears.\n\nWhat is the total preferred dividend payout in Year 3?',
+    answer: 36000,
+    unit: '$',
+    hint: 'Calculate arrears on all shares, then prorate Year 3 dividend based on outstanding periods.',
+    explanation: "Calculation: $24,000 (arrears) + $9,000 (full year) + $3,000 (half year) = $36,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Annual Dividend Rate\n   - Total shares: 4,000\n   - Par value: $50\n   - Rate: 6%\n   - Annual dividend: 4,000 × $50 × 6% = $12,000\n\n2. Dividend Arrears (Years 1 & 2)\n   - Year 1 missed: $12,000\n   - Year 2 missed: $12,000\n   - Total arrears: $24,000\n\n3. Year 3 Dividend Calculation\n   - Shares outstanding full year: 4,000 - 1,000 = 3,000\n   - Full-year dividend: 3,000 × $50 × 6% = $9,000\n   \n   - Redeemed shares (half-year): 1,000\n   - Half-year dividend: 1,000 × $50 × 6% × 0.5 = $1,500\n   \n   Wait, let me recalculate:\n   - 3,000 shares full year: $9,000\n   - 1,000 shares half year: $3,000\n   - Total Year 3: $12,000\n\n4. Total Payment in Year 3\n   - Arrears: $24,000\n   - Year 3 current: $12,000\n   - Total: $36,000\n\nKey Points:\n   • Arrears calculated on original share count\n   • Current year dividends prorated for redemptions\n   • Mid-year redemptions receive partial year dividends\n   • All arrears paid regardless of current outstanding shares",
+    learnContent: {
+      concept: 'Preferred dividend calculations must account for timing of share changes and prorate dividends accordingly.',
+      formula: 'Prorated Dividend = Shares × Par × Rate × (Months Outstanding ÷ 12)',
+      example: '500 shares × $100 × 5% × (8÷12) = $1,667 for 8 months'
+    }
+  },
+  {
+    id: 'acc-hard-73',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Complex Preferred Dividend with Multiple Changes',
+    description: 'A firm has 6,000 preferred shares, $100 par, 8% cumulative.\n\n- Dividends were skipped in Year 1 and partially paid in Year 2 ($24,000 paid).\n- In Year 3, it redeems 2,000 shares mid-year and issues 1,000 new preferred shares mid-year (same terms).\n- It pays all remaining arrears and declares full dividends for Year 3.\n\nWhat is the total preferred dividend paid in Year 3?',
+    answer: 116000,
+    unit: '$',
+    hint: 'Track arrears separately, then calculate Year 3 dividends with mid-year changes.',
+    explanation: "Calculation: $48,000 (Year 1) + $24,000 (Year 2 balance) + $44,000 (Year 3) = $116,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Annual Dividend Rate\n   - Original shares: 6,000\n   - Par value: $100\n   - Rate: 8%\n   - Annual dividend: 6,000 × $100 × 8% = $48,000\n\n2. Dividend Arrears\n   - Year 1 skipped: $48,000\n   - Year 2 due: $48,000, paid: $24,000\n   - Year 2 arrears: $48,000 - $24,000 = $24,000\n   - Total arrears: $48,000 + $24,000 = $72,000\n\n3. Year 3 Dividend Calculation\n   a) First half (6,000 shares): 6,000 × $100 × 8% × 0.5 = $24,000\n   b) Second half after changes:\n      - Remaining shares: 6,000 - 2,000 = 4,000\n      - New shares: 1,000\n      - Total second half: 5,000 shares\n      - Second half dividend: 5,000 × $100 × 8% × 0.5 = $20,000\n   c) Total Year 3: $24,000 + $20,000 = $44,000\n\n4. Total Payment in Year 3\n   - Year 1 arrears: $48,000\n   - Year 2 arrears: $24,000\n   - Year 3 current: $44,000\n   - Total: $116,000\n\nKey Points:\n   • Complex preferred dividend calculations require careful tracking of arrears\n   • Mid-year changes affect current year calculations\n   • All arrears must be cleared before common dividends\n   • Partial payments create additional arrears to track",
+    learnContent: {
+      concept: 'Complex preferred dividend scenarios require systematic tracking of arrears and careful calculation of prorated amounts for share changes.',
+      formula: 'Total Payment = All Arrears + Current Year Prorated Dividends',
+      example: 'Arrears $10k + Current (500×$100×6%×0.75) = $10k + $2.25k = $12.25k'
+    }
+  },
+
+  // Topic 39: Additional Paid-In Capital (APIC)
+  {
+    id: 'acc-easy-145',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'APIC from Stock Issuance and Options',
+    description: 'A company issues 50,000 shares at $20/share, $0.01 par. Then it grants stock options to employees worth $500,000.\n\nWhat is the total APIC increase for the year?',
+    answer: 1499500,
+    unit: '$',
+    hint: 'APIC includes premium above par value plus stock-based compensation.',
+    explanation: "Calculation: ($20 - $0.01) × 50,000 + $500,000 = $999,500 + $500,000 = $1,499,500\n\n• • •\n\nStep-by-step breakdown:\n\n1. Stock Issuance APIC\n   - Shares issued: 50,000\n   - Issue price: $20\n   - Par value: $0.01\n   - Premium per share: $20 - $0.01 = $19.99\n   - APIC from issuance: 50,000 × $19.99 = $999,500\n\n2. Stock-Based Compensation\n   - Employee stock options value: $500,000\n   - This increases APIC when recognized\n\n3. Total APIC Increase\n   - Stock issuance premium: $999,500\n   - Stock-based compensation: $500,000\n   - Total increase: $1,499,500\n\nKey Points:\n   • APIC captures amount received above par value\n   • Stock-based compensation increases APIC\n   • Par value goes to Common Stock account\n   • Both cash and non-cash transactions can increase APIC",
+    learnContent: {
+      concept: 'Additional Paid-In Capital represents amounts received above par value from stock issuances and stock-based compensation.',
+      formula: 'APIC = (Issue Price - Par Value) × Shares + Stock-Based Comp',
+      example: '($15 - $0.01) × 10k shares + $100k options = $149.9k + $100k = $249.9k'
+    }
+  },
+  {
+    id: 'acc-medium-103',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'APIC with Treasury Stock Transactions',
+    description: 'A firm issues 100,000 shares at $18, par $1. Later it repurchases 30,000 at $20. It reissues 10,000 at $22 and 10,000 at $16. The rest are held in Treasury.\n\nWhat is the ending APIC balance from all equity transactions?',
+    answer: 1680000,
+    unit: '$',
+    hint: 'Calculate initial APIC from issuance, then add/subtract gains/losses from treasury reissuances.',
+    explanation: "Calculation: $1,700,000 + $20,000 - $40,000 = $1,680,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Initial Stock Issuance\n   - Shares: 100,000\n   - Issue price: $18\n   - Par value: $1\n   - APIC from issuance: (18 - 1) × 100,000 = $1,700,000\n\n2. Treasury Stock Repurchase\n   - Shares repurchased: 30,000 at $20\n   - No APIC impact on repurchase\n\n3. Treasury Stock Reissuances\n   a) First reissuance: 10,000 at $22\n      - Original cost: $20\n      - Reissue price: $22\n      - Gain: ($22 - $20) × 10,000 = $20,000\n      - Increases APIC\n   \n   b) Second reissuance: 10,000 at $16\n      - Original cost: $20\n      - Reissue price: $16\n      - Loss: ($16 - $20) × 10,000 = -$40,000\n      - Decreases APIC\n\n4. Final APIC Balance\n   - Initial APIC: $1,700,000\n   - Treasury gains: $20,000\n   - Treasury losses: -$40,000\n   - Final APIC: $1,680,000\n\nKey Points:\n   • Treasury stock gains/losses affect APIC\n   • Gains from treasury reissuances increase APIC\n   • Losses from treasury reissuances decrease APIC\n   • Treasury repurchases don't directly affect APIC",
+    learnContent: {
+      concept: 'Treasury stock transactions create gains or losses that adjust APIC based on the difference between reissue price and original cost.',
+      formula: 'Treasury Gain/Loss = (Reissue Price - Original Cost) × Shares',
+      example: 'Bought at $15, reissued at $18: ($18-$15) × 1k = $3k gain to APIC'
+    }
+  },
+  {
+    id: 'acc-hard-74',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Complex APIC with Multiple Treasury Transactions',
+    description: 'A company starts with $0 APIC.\n\n- Issues 200,000 shares at $25, $0.01 par\n- Repurchases 60,000 at $30\n- Reissues 30,000 at $28, 15,000 at $20, 15,000 at $32\n\nLosses/gains are booked to APIC.\n\nWhat is the final APIC balance after all transactions?',
+    answer: 4818000,
+    unit: '$',
+    hint: 'Start with issuance APIC, then calculate each treasury transaction gain/loss separately.',
+    explanation: "Calculation: $4,998,000 + $30,000 - $60,000 - $150,000 = $4,818,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Initial Stock Issuance APIC\n   - Shares: 200,000\n   - Issue price: $25\n   - Par value: $0.01\n   - APIC: ($25 - $0.01) × 200,000 = $4,998,000\n\n2. Treasury Stock Repurchase\n   - Shares: 60,000 at $30 each\n   - No immediate APIC impact\n   - Treasury cost basis: $30 per share\n\n3. Treasury Stock Reissuances\n   a) 30,000 shares at $28\n      - Loss: ($28 - $30) × 30,000 = -$60,000\n      - Decreases APIC by $60,000\n   \n   b) 15,000 shares at $20\n      - Loss: ($20 - $30) × 15,000 = -$150,000\n      - Decreases APIC by $150,000\n   \n   c) 15,000 shares at $32\n      - Gain: ($32 - $30) × 15,000 = $30,000\n      - Increases APIC by $30,000\n\n4. Final APIC Calculation\n   - Initial APIC: $4,998,000\n   - Treasury loss (28): -$60,000\n   - Treasury loss (20): -$150,000\n   - Treasury gain (32): +$30,000\n   - Final APIC: $4,818,000\n\nKey Points:\n   • Multiple treasury transactions each affect APIC separately\n   • Treasury losses can reduce APIC below original issuance amount\n   • All treasury gains/losses use the same cost basis ($30)\n   • Net effect of treasury transactions: -$180,000",
+    learnContent: {
+      concept: 'Complex APIC calculations require tracking each treasury transaction separately, with all gains and losses affecting the APIC balance.',
+      formula: 'Final APIC = Initial APIC + Sum of All Treasury Gains/Losses',
+      example: 'Initial $100k + $5k gain - $8k loss + $2k gain = $99k final APIC'
+    }
+  },
+
+  // Topic 40: Treasury Stock
+  {
+    id: 'acc-easy-146',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Treasury Stock Balance After Reissuances',
+    description: 'A firm buys back 50,000 shares at $10. Later, it reissues 20,000 at $15 and 15,000 at $7.\n\nWhat is the remaining Treasury Stock balance at year-end?',
+    answer: 150000,
+    unit: '$',
+    hint: 'Treasury stock is valued at cost; calculate remaining shares times original cost.',
+    explanation: "Calculation: (50,000 - 20,000 - 15,000) × $10 = 15,000 × $10 = $150,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Treasury Stock Repurchase\n   - Shares repurchased: 50,000\n   - Cost per share: $10\n   - Total treasury stock: 50,000 × $10 = $500,000\n\n2. Treasury Stock Reissuances\n   - First reissuance: 20,000 shares at $15\n     (Reissue price doesn't affect treasury balance)\n   - Second reissuance: 15,000 shares at $7\n     (Reissue price doesn't affect treasury balance)\n   - Total shares reissued: 20,000 + 15,000 = 35,000\n\n3. Remaining Treasury Stock\n   - Original shares: 50,000\n   - Shares reissued: 35,000\n   - Shares still held: 50,000 - 35,000 = 15,000\n   - Treasury stock balance: 15,000 × $10 = $150,000\n\nKey Points:\n   • Treasury stock is always carried at original cost\n   • Reissue prices don't affect treasury stock balance\n   • Only remaining shares count toward treasury balance\n   • Gains/losses on reissuance affect APIC, not treasury stock",
+    learnContent: {
+      concept: 'Treasury stock represents shares repurchased by the company and held at original cost until reissued or retired.',
+      formula: 'Treasury Stock Balance = Remaining Shares × Original Cost per Share',
+      example: 'Bought 10k at $8, reissued 3k → (10k-3k) × $8 = $56k treasury stock'
+    }
+  },
+  {
+    id: 'acc-medium-104',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Treasury Stock with Multiple Reissuances',
+    description: 'A company repurchases 80,000 shares at $12. It reissues:\n\n- 30,000 at $14\n- 20,000 at $10\n- 10,000 at $12\n\nThe rest are still held.\n\nWhat is the total Treasury Stock balance at year-end?',
+    answer: 240000,
+    unit: '$',
+    hint: 'Count total shares reissued, subtract from original repurchase, multiply by cost.',
+    explanation: "Calculation: (80,000 - 60,000) × $12 = 20,000 × $12 = $240,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Initial Treasury Stock Purchase\n   - Shares repurchased: 80,000\n   - Cost per share: $12\n   - Total treasury cost: 80,000 × $12 = $960,000\n\n2. Treasury Stock Reissuances\n   - First reissuance: 30,000 shares at $14\n   - Second reissuance: 20,000 shares at $10\n   - Third reissuance: 10,000 shares at $12\n   - Total shares reissued: 30,000 + 20,000 + 10,000 = 60,000\n\n3. Remaining Treasury Shares\n   - Original repurchase: 80,000 shares\n   - Total reissued: 60,000 shares\n   - Still held in treasury: 80,000 - 60,000 = 20,000 shares\n\n4. Treasury Stock Balance\n   - Remaining shares: 20,000\n   - Original cost: $12 per share\n   - Treasury stock balance: 20,000 × $12 = $240,000\n\nKey Points:\n   • Treasury stock balance only includes shares still held\n   • All treasury shares valued at original repurchase cost\n   • Reissue prices create APIC gains/losses but don't affect treasury balance\n   • Multiple reissuances reduce treasury stock proportionally",
+    learnContent: {
+      concept: 'Treasury stock balance represents only the shares still held by the company, valued at their original repurchase cost.',
+      formula: 'Remaining Treasury = (Original Shares - Total Reissued) × Cost',
+      example: '(50k - 30k reissued) × $15 cost = $300k treasury stock'
+    }
+  },
+  {
+    id: 'acc-hard-75',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Complex Treasury Stock with Large Reissuance Program',
+    description: 'A firm repurchases 150,000 shares at $18 = $2.7M.\n\nReissues:\n- 60,000 at $20\n- 30,000 at $12\n- 30,000 at $18\n\nRemaining shares are held.\n\nWhat is the Treasury Stock balance at year-end?',
+    answer: 540000,
+    unit: '$',
+    hint: 'Calculate total shares reissued, then find remaining balance at original cost.',
+    explanation: "Calculation: (150,000 - 120,000) × $18 = 30,000 × $18 = $540,000\n\n• • •\n\nStep-by-step breakdown:\n\n1. Initial Treasury Stock Purchase\n   - Shares repurchased: 150,000\n   - Cost per share: $18\n   - Total treasury cost: $2,700,000 (confirmed: 150,000 × $18)\n\n2. Treasury Stock Reissuances\n   - First reissuance: 60,000 shares at $20\n     • Gain per share: $20 - $18 = $2\n     • Total gain to APIC: $120,000\n   \n   - Second reissuance: 30,000 shares at $12\n     • Loss per share: $12 - $18 = -$6\n     • Total loss from APIC: $180,000\n   \n   - Third reissuance: 30,000 shares at $18\n     • No gain/loss (reissued at cost)\n   \n   - Total shares reissued: 60,000 + 30,000 + 30,000 = 120,000\n\n3. Remaining Treasury Stock\n   - Original shares: 150,000\n   - Shares reissued: 120,000\n   - Shares still held: 150,000 - 120,000 = 30,000\n\n4. Treasury Stock Balance\n   - Remaining shares: 30,000\n   - Original cost per share: $18\n   - Treasury stock balance: 30,000 × $18 = $540,000\n\nKey Points:\n   • Large reissuance programs can significantly reduce treasury holdings\n   • All reissuances valued at original cost for treasury calculation\n   • Net APIC impact: $120,000 gain - $180,000 loss = -$60,000\n   • Treasury stock represents 20% of original repurchase (30k/150k)",
+    learnContent: {
+      concept: 'Large treasury stock programs require careful tracking of reissuances to determine the remaining treasury balance.',
+      formula: 'Treasury Balance = (Total Bought - All Reissued) × Original Cost',
+      example: '(200k bought - 170k reissued) × $25 = 30k × $25 = $750k treasury'
+    }
   }
 ];
