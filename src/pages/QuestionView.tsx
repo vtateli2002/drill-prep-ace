@@ -589,21 +589,37 @@ const QuestionView = () => {
                   )}
                 </div>
                 
-                {/* Always visible Next Question button */}
+                {/* Always visible action buttons */}
                 <div className="pt-3 border-t">
-                  <Button 
-                    variant="secondary" 
-                    onClick={() => {
-                      if (returnToModal) {
-                        navigate('/dashboard');
-                      } else {
-                        handleNextQuestion();
-                      }
-                    }}
-                    className="w-full"
-                  >
-                    {returnToModal ? 'Back to Challenge' : 'Next Question'}
-                  </Button>
+                  <div className="flex space-x-3">
+                    <Button 
+                      variant="outline" 
+                      onClick={() => {
+                        if (returnToModal) {
+                          navigate('/dashboard');
+                        } else {
+                          handleNextQuestion();
+                        }
+                      }}
+                      className="flex-1 border-primary/20 hover:bg-primary/5 hover:border-primary/40"
+                    >
+                      {returnToModal ? 'Back to Challenge' : 'Next Question'}
+                    </Button>
+                    <Button 
+                      variant="outline"
+                      onClick={() => {
+                        setIsSubmitted(true);
+                        toast({
+                          title: "Explanation revealed",
+                          description: "Check the explanation section above!",
+                          className: "border-success",
+                        });
+                      }}
+                      className="flex-1 border-success/20 hover:bg-success/5 hover:border-success/40"
+                    >
+                      Show Explanation
+                    </Button>
+                  </div>
                 </div>
               </CardContent>
             </Card>
