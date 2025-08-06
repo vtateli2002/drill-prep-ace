@@ -4250,7 +4250,7 @@ Key Points:
     answer: 28500,
     unit: '$',
     hint: 'Taxable Income = Pretax Income – D&A',
-    explanation: 'Taxable Income = $120K – $25K = $95K → $95K × 30% = $28,500',
+    explanation: "**Calculation:** ($120,000 - $25,000) × 30% = **$28,500**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Calculate Taxable Income**\n   - Pretax income (book): $120,000\n   - Less: Depreciation tax deduction: $25,000\n   - Taxable income: $120,000 - $25,000 = $95,000\n\n2. **Calculate Cash Taxes**\n   - Taxable income: $95,000\n   - Tax rate: 30%\n   - Cash taxes paid: $95,000 × 30% = $28,500\n\n3. **Key Difference from Book Taxes**\n   - Book tax expense (on income statement): $120,000 × 30% = $36,000\n   - Cash taxes paid: $28,500\n   - Difference: $7,500 (creates deferred tax liability)\n\n**Key Points:**\n   • Depreciation reduces taxable income below book income\n   • Cash taxes are lower than book tax expense\n   • This creates timing differences between book and tax",
     learnContent: {
       concept: 'Depreciation lowers taxable income, reducing actual taxes paid.',
       formula: 'Cash Taxes = (Pretax – D&A) × Tax Rate',
@@ -4303,7 +4303,7 @@ Key Points:
     answer: 20000,
     unit: '$',
     hint: 'Non-cash = Depreciation + Amortization',
-    explanation: 'Only depreciation and amortization are non-cash → $15K + $5K = $20K',
+    explanation: "**Calculation:** $15,000 + $5,000 = **$20,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Identify Non-Cash Items**\n   - Depreciation: $15,000 ✓ (non-cash)\n   - Amortization: $5,000 ✓ (non-cash)\n   - Interest: $10,000 ✗ (cash outflow)\n   - Taxes: $20,000 ✗ (cash outflow)\n\n2. **Total Non-Cash Expenses**\n   - Depreciation + Amortization: $15,000 + $5,000 = $20,000\n\n3. **Cash Flow Impact**\n   - These $20,000 in expenses reduced net income\n   - But didn't require actual cash payments\n   - Should be added back when calculating operating cash flow\n\n**Key Points:**\n   • Only depreciation and amortization are non-cash\n   • Interest and taxes require actual cash payments\n   • Non-cash expenses reduce net income but not cash",
     learnContent: {
       concept: 'Non-cash expenses lower net income without affecting cash.',
       formula: 'Non-Cash Expenses = D&A',
@@ -4319,7 +4319,7 @@ Key Points:
     answer: 8,
     unit: '×',
     hint: 'ICR = EBIT ÷ Interest',
-    explanation: '$120K ÷ $15K = 8×',
+    explanation: "**Calculation:** $120,000 ÷ $15,000 = **8.0×**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Gather Required Metrics**\n   - Earnings before interest and taxes (EBIT): $120,000\n   - Interest expense: $15,000\n\n2. **Apply Interest Coverage Formula**\n   - Interest coverage ratio = EBIT ÷ Interest expense\n   - ICR = $120,000 ÷ $15,000 = 8.0×\n\n3. **Interpretation**\n   - Company earns 8× its interest obligations\n   - Strong ability to service debt\n   - Generally considered a healthy coverage ratio\n\n**Key Points:**\n   • Higher ratios indicate better debt servicing ability\n   • Lenders prefer ratios above 2.5×\n   • EBIT excludes interest, so it measures pre-debt earnings\n   • Consistent coverage over time is important",
     learnContent: {
       concept: 'Interest coverage shows how easily a company can meet interest obligations.',
       formula: 'ICR = EBIT ÷ Interest Expense',
@@ -4335,7 +4335,7 @@ Key Points:
     answer: 14000,
     unit: '$',
     hint: 'Ending = Beginning + Incurred – Paid',
-    explanation: '$12K + $40K – $38K = $14K',
+    explanation: "**Calculation:** $12,000 + $40,000 - $38,000 = **$14,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Beginning Balance**\n   - Starting accrued expenses: $12,000\n\n2. **Expenses Incurred During Year**\n   - Operating expenses recognized: $40,000\n   - These increase the accrued expenses balance\n   - Running total: $12,000 + $40,000 = $52,000\n\n3. **Cash Payments Made**\n   - Cash paid for expenses: $38,000\n   - These reduce the accrued expenses balance\n   - Ending balance: $52,000 - $38,000 = $14,000\n\n**Key Points:**\n   • Accrued expenses represent amounts owed but not yet paid\n   • New expenses increase the liability\n   • Cash payments reduce the liability\n   • The $2,000 net increase reflects expenses incurred but not yet paid",
     learnContent: {
       concept: 'Accrued expenses increase when expenses are incurred but not yet paid.',
       formula: 'Ending Accrual = Beginning + Expense Incurred – Cash Paid',
@@ -4351,7 +4351,7 @@ Key Points:
     answer: 130000,
     unit: '$',
     hint: 'UFCF = EBIT(1 – Tax) + D&A – CapEx – ΔNWC',
-    explanation: 'EBIT(1 – 0.25) = $150K → +$30K – $40K – $10K = $130K',
+    explanation: "**Calculation:** [$200,000 × (1 - 0.25)] + $30,000 - $40,000 - $10,000 = **$130,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Calculate After-Tax EBIT**\n   - EBIT: $200,000\n   - Tax rate: 25%\n   - EBIT(1-T): $200,000 × (1 - 0.25) = $150,000\n\n2. **Add Back Non-Cash Expenses**\n   - After-tax EBIT: $150,000\n   - Plus: Depreciation & Amortization: $30,000\n   - Subtotal: $180,000\n\n3. **Subtract Cash Investments**\n   - Less: Capital expenditures: $40,000\n   - Less: Change in net working capital: $10,000\n   - Unlevered free cash flow: $180,000 - $40,000 - $10,000 = $130,000\n\n**Key Points:**\n   • UFCF measures cash available to all capital providers\n   • Uses after-tax EBIT to exclude financing effects\n   • Subtracts reinvestment needs (CapEx and working capital)\n   • Key metric for valuation and financial health",
     learnContent: {
       concept: 'UFCF shows cash available to all stakeholders before debt.',
       formula: 'UFCF = EBIT(1–T) + D&A – CapEx – ΔNWC',
@@ -4407,7 +4407,7 @@ Key Points:
     answer: 80000,
     unit: '$',
     hint: 'Capitalize raw materials + labor + overhead',
-    explanation: '$40K + $25K + $15K = $80K',
+    explanation: "**Calculation:** $40,000 + $25,000 + $15,000 = **$80,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Inventory Cost Components**\n   - Raw materials: $40,000\n   - Direct labor: $25,000\n   - Manufacturing overhead: $15,000\n   - Total manufacturing cost: $80,000\n\n2. **Capitalization vs. Expensing**\n   - Since inventory is unsold, all costs are capitalized\n   - Appears on balance sheet as inventory asset\n   - Will become COGS when inventory is sold\n\n3. **Balance Sheet Impact**\n   - Inventory asset: +$80,000\n   - Cash/payables: -$80,000 (for costs incurred)\n   - No immediate income statement impact\n\n**Key Points:**\n   • All production costs are capitalized until goods are sold\n   • Includes direct materials, labor, and allocated overhead\n   • Inventory is an asset until sale occurs\n   • Capitalization follows the matching principle",
     learnContent: {
       concept: 'Inventory includes all costs to get goods ready for sale.',
       formula: 'Capitalized Inventory = Raw Materials + Direct Labor + Overhead',
@@ -4423,7 +4423,7 @@ Key Points:
     answer: 100000,
     unit: '$',
     hint: 'Goodwill = Purchase Price – Net Identifiable Assets',
-    explanation: '$500K – $400K = $100K goodwill',
+    explanation: "**Calculation:** $500,000 - $400,000 = **$100,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Acquisition Details**\n   - Total purchase price paid: $500,000\n   - Fair value of net identifiable assets: $400,000\n   - Premium paid over net assets: $100,000\n\n2. **Purchase Price Allocation**\n   - Step 1: Allocate to identifiable assets at fair value: $400,000\n   - Step 2: Remaining amount allocated to goodwill: $100,000\n\n3. **Goodwill Characteristics**\n   - Represents intangible value (brand, customer relationships, synergies)\n   - Not amortized under current accounting standards\n   - Subject to annual impairment testing\n\n**Key Points:**\n   • Goodwill is the excess of purchase price over fair value of net assets\n   • Reflects premium paid for intangible benefits\n   • Must be tested annually for impairment\n   • Cannot be amortized like other intangible assets",
     learnContent: {
       concept: 'Goodwill arises when purchase price exceeds fair value of net assets.',
       formula: 'Goodwill = Purchase Price – (Assets – Liabilities)',
@@ -4439,7 +4439,7 @@ Key Points:
     answer: 15000,
     unit: '$',
     hint: 'Cash Tax = (Taxable Income – DTA Used) × Tax Rate',
-    explanation: '$80K – $20K = $60K → $60K × 25% = $15K',
+    explanation: "**Calculation:** ($80,000 - $20,000) × 25% = **$15,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Tax Calculation Before DTA**\n   - Taxable income: $80,000\n   - Tax rate: 25%\n   - Tax before DTA: $80,000 × 25% = $20,000\n\n2. **DTA Utilization**\n   - DTA used to offset taxable income: $20,000\n   - Adjusted taxable income: $80,000 - $20,000 = $60,000\n\n3. **Actual Cash Tax Payment**\n   - Tax on adjusted income: $60,000 × 25% = $15,000\n   - DTA benefit: $20,000 - $15,000 = $5,000 cash savings\n\n**Key Points:**\n   • DTAs reduce actual cash taxes paid\n   • Company benefits from timing differences reversing favorably\n   • $5,000 in cash savings from using the DTA\n   • DTA balance decreases by the amount used",
     learnContent: {
       concept: 'DTAs reduce taxable income, lowering cash taxes.',
       formula: 'Cash Taxes = (Pretax – DTA Used) × Tax Rate',
@@ -4455,7 +4455,7 @@ Key Points:
     answer: 50000,
     unit: '$',
     hint: 'CapEx = Ending PP&E – Beginning + Depreciation',
-    explanation: '$230K – $200K + $20K = $50K',
+    explanation: "**Calculation:** ($230,000 - $200,000) + $20,000 = **$50,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **PP&E Movement Analysis**\n   - Beginning PP&E: $200,000\n   - Ending PP&E: $230,000\n   - Net increase: $230,000 - $200,000 = $30,000\n\n2. **Depreciation Impact**\n   - Annual depreciation: $20,000 (reduces PP&E)\n   - This amount was subtracted from PP&E during the year\n\n3. **Capital Expenditures Calculation**\n   - Net increase + Depreciation = CapEx\n   - CapEx = $30,000 + $20,000 = $50,000\n\n**Key Points:**\n   • CapEx increases PP&E by the purchase amount\n   • Depreciation decreases PP&E each period\n   • Net change = CapEx - Depreciation\n   • CapEx represents actual cash investment in fixed assets",
     learnContent: {
       concept: 'CapEx is the cash spent to maintain or grow PP&E.',
       formula: 'CapEx = Ending – Beginning + Depreciation',
@@ -4507,7 +4507,7 @@ Key Points:
     answer: 75000,
     unit: '$',
     hint: 'Ending = Beginning + Cash Collected – Revenue Recognized',
-    explanation: '$50K + $60K – $35K = $75K',
+    explanation: "**Calculation:** $50,000 + $60,000 - $35,000 = **$75,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Beginning Deferred Revenue**\n   - Starting balance: $50,000\n   - Represents cash received for undelivered services\n\n2. **New Cash Prepayments**\n   - Additional prepayments received: $60,000\n   - Increases deferred revenue liability\n   - Running balance: $50,000 + $60,000 = $110,000\n\n3. **Revenue Recognition**\n   - Services delivered/revenue earned: $35,000\n   - Reduces deferred revenue liability\n   - Ending deferred revenue: $110,000 - $35,000 = $75,000\n\n**Key Points:**\n   • Deferred revenue is a liability for undelivered services\n   • Cash prepayments increase the liability\n   • Earning revenue decreases the liability\n   • Ending balance represents future service obligations",
     learnContent: {
       concept: 'Deferred revenue grows with prepayments and shrinks as it\'s earned.',
       formula: 'End Deferred Revenue = Begin + Prepaid – Recognized',
@@ -4523,7 +4523,7 @@ Key Points:
     answer: 150000,
     unit: '$',
     hint: 'EBITDA = Revenue – COGS – OpEx',
-    explanation: '$500K – $200K – $150K = $150K (D&A excluded from OpEx)',
+    explanation: "**Calculation:** $500,000 - $200,000 - $150,000 = **$150,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Start with Revenue**\n   - Total revenue: $500,000\n\n2. **Subtract Operating Costs**\n   - Less: Cost of goods sold: $200,000\n   - Less: Operating expenses: $150,000\n   - Operating income before D&A: $150,000\n\n3. **EBITDA Calculation**\n   - EBITDA excludes interest, taxes, D&A\n   - Since D&A ($25,000) is already excluded from operating expenses\n   - EBITDA = $500,000 - $200,000 - $150,000 = $150,000\n\n**Key Points:**\n   • EBITDA measures cash earnings from core operations\n   • Excludes financing (interest) and non-cash (D&A) items\n   • Useful for comparing operational efficiency across companies\n   • Note: D&A was properly excluded from operating expenses",
     learnContent: {
       concept: 'EBITDA is earnings before interest, taxes, depreciation, and amortization.',
       formula: 'EBITDA = Revenue – COGS – OpEx',
@@ -4539,7 +4539,7 @@ Key Points:
     answer: 10000,
     unit: '$',
     hint: 'Amortization = Cost ÷ Useful Life',
-    explanation: '$100K ÷ 10 = $10K/year',
+    explanation: "**Calculation:** $100,000 ÷ 10 years = **$10,000 per year**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Intangible Asset Details**\n   - Brand acquisition cost: $100,000\n   - Useful life: 10 years\n   - Amortization method: Straight-line (assumed)\n\n2. **Annual Amortization Calculation**\n   - Annual amortization = Cost ÷ Useful life\n   - Annual amortization = $100,000 ÷ 10 = $10,000\n\n3. **Accounting Treatment**\n   - Debit: Amortization expense $10,000\n   - Credit: Accumulated amortization $10,000\n   - Reduces net book value of the brand each year\n\n**Key Points:**\n   • Intangible assets with finite lives are amortized\n   • Straight-line method allocates cost evenly over useful life\n   • Amortization expense reduces net income but is non-cash\n   • Indefinite-life intangibles (like goodwill) are not amortized",
     learnContent: {
       concept: 'Intangible assets are amortized over useful life unless indefinite.',
       formula: 'Amortization = Purchase Cost ÷ Useful Life',
@@ -4555,7 +4555,7 @@ Key Points:
     answer: 110000,
     unit: '$',
     hint: 'Ending = Beginning + Net Income – Dividends',
-    explanation: '$80K + $40K – $10K = $110K',
+    explanation: "**Calculation:** $80,000 + $40,000 - $10,000 = **$110,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Beginning Retained Earnings**\n   - Starting balance: $80,000\n   - Cumulative earnings retained from prior periods\n\n2. **Add Current Period Net Income**\n   - Net income for the period: $40,000\n   - Increases retained earnings\n   - Running total: $80,000 + $40,000 = $120,000\n\n3. **Subtract Dividends Paid**\n   - Dividends paid to shareholders: $10,000\n   - Reduces retained earnings\n   - Ending retained earnings: $120,000 - $10,000 = $110,000\n\n**Key Points:**\n   • Retained earnings represent cumulative undistributed profits\n   • Net income increases retained earnings\n   • Dividends and losses decrease retained earnings\n   • Retained earnings is a key component of shareholders' equity",
     learnContent: {
       concept: 'Retained earnings grow with profits and shrink with dividends.',
       formula: 'Ending RE = Beginning + Net Income – Dividends',
@@ -4611,7 +4611,7 @@ Key Points:
     answer: 80000,
     unit: '$',
     hint: 'CFO = NI + Non-Cash + Working Capital Adjustments',
-    explanation: '$70K + $15K – $5K = $80K',
+    explanation: "**Calculation:** $70,000 + $15,000 - $5,000 = **$80,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Start with Net Income**\n   - Net income: $70,000\n   - Base for operating cash flow calculation\n\n2. **Add Back Non-Cash Expenses**\n   - Depreciation: $15,000\n   - Non-cash expense that reduced net income\n   - Running total: $70,000 + $15,000 = $85,000\n\n3. **Adjust for Working Capital Changes**\n   - Accounts receivable increase: $5,000\n   - Represents sales made but cash not yet collected\n   - Reduces operating cash flow: $85,000 - $5,000 = $80,000\n\n**Key Points:**\n   • Operating cash flow measures actual cash from operations\n   • Non-cash expenses are added back to net income\n   • Working capital increases reduce operating cash flow\n   • A/R increases mean less cash was collected than sales reported",
     learnContent: {
       concept: 'Operating cash flow adjusts net income for non-cash and timing changes.',
       formula: 'CFO = Net Income + D&A – ∆Working Capital',
@@ -4627,7 +4627,7 @@ Key Points:
     answer: 20000,
     unit: '$',
     hint: 'Non-Controlling Income = Net Income × % Minority Ownership',
-    explanation: '$100,000 × 20% = $20,000',
+    explanation: "**Calculation:** $100,000 × 20% = **$20,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Consolidation Structure**\n   - Total subsidiary net income: $100,000\n   - Parent company ownership: 80%\n   - Non-controlling (minority) ownership: 20%\n\n2. **Income Attribution**\n   - Parent company's share: $100,000 × 80% = $80,000\n   - Non-controlling interest share: $100,000 × 20% = $20,000\n\n3. **Consolidated Income Statement Impact**\n   - Total consolidated net income includes: $100,000\n   - Less: Non-controlling interest: ($20,000)\n   - Net income attributable to parent: $80,000\n\n**Key Points:**\n   • Consolidated statements include 100% of subsidiary results\n   • Non-controlling interest represents minority shareholders' portion\n   • Parent reports only its proportionate share of subsidiary earnings\n   • NCI appears as a deduction on the consolidated income statement",
     learnContent: {
       concept: 'Non-controlling interest represents income owed to minority shareholders in consolidated subsidiaries.',
       formula: 'Non-Controlling Income = Total Net Income × (1 – Ownership %)',
@@ -4643,7 +4643,7 @@ Key Points:
     answer: 110000,
     unit: '$',
     hint: 'Cash = Revenue – Increase in AR',
-    explanation: 'If AR increases, some sales were not collected in cash. $120K – $10K = $110K',
+    explanation: "**Calculation:** $120,000 - $10,000 = **$110,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Revenue Recognition**\n   - Total revenue reported: $120,000\n   - This includes both cash and credit sales\n\n2. **Accounts Receivable Change**\n   - A/R increase during period: $10,000\n   - Represents sales made on credit (not yet collected)\n\n3. **Cash Collection Calculation**\n   - Cash collected = Revenue - A/R increase\n   - Cash collected = $120,000 - $10,000 = $110,000\n   - The $10,000 A/R increase represents uncollected sales\n\n**Key Points:**\n   • Revenue includes both cash and credit sales\n   • A/R increases represent sales not yet collected in cash\n   • Cash collections are always less than revenue when A/R increases\n   • This analysis is crucial for cash flow management",
     learnContent: {
       concept: 'Cash collections are revenue minus unpaid invoices (AR increase).',
       formula: 'Cash Collected = Revenue – ΔAR',
@@ -4659,7 +4659,7 @@ Key Points:
     answer: 360000000,
     unit: '$',
     hint: 'EV = Equity + Debt + Preferred – Cash',
-    explanation: '$300M + $80M + $10M – $30M = $360M',
+    explanation: "**Calculation:** $300M + $80M + $10M - $30M = **$360M**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Equity Value Components**\n   - Market capitalization: $300M\n   - This represents value to equity holders\n\n2. **Add Debt-Like Items**\n   - Total debt: +$80M\n   - Preferred stock: +$10M\n   - These represent claims on the enterprise\n   - Subtotal: $300M + $80M + $10M = $390M\n\n3. **Subtract Cash**\n   - Cash and equivalents: -$30M\n   - Cash reduces net debt\n   - Enterprise value: $390M - $30M = $360M\n\n**Key Points:**\n   • Enterprise value measures total firm value\n   • Includes all capital providers (debt and equity)\n   • Cash is subtracted as it could pay down debt\n   • EV is capital structure neutral for valuation comparisons",
     learnContent: {
       concept: 'EV measures total firm value regardless of capital structure.',
       formula: 'EV = Equity + Debt + Preferred + Minority Interest – Cash',
@@ -4709,7 +4709,7 @@ Key Points:
     answer: 20000,
     unit: '$',
     hint: 'Impairment = Book Value – Fair Value',
-    explanation: '$60K – $40K = $20K',
+    explanation: "**Calculation:** $60,000 - $40,000 = **$20,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Asset Carrying Value**\n   - Book value (carrying value): $60,000\n   - This is the asset's recorded value on the balance sheet\n\n2. **Fair Value Assessment**\n   - Current fair value: $40,000\n   - Market or recoverable value of the asset\n\n3. **Impairment Loss Calculation**\n   - Impairment loss = Carrying value - Fair value\n   - Impairment loss = $60,000 - $40,000 = $20,000\n\n4. **Accounting Treatment**\n   - Debit: Impairment loss (expense) $20,000\n   - Credit: Asset (or accumulated impairment) $20,000\n\n**Key Points:**\n   • Impairment occurs when carrying value exceeds recoverable amount\n   • Loss is recognized immediately in the period identified\n   • Reduces asset value on balance sheet\n   • Generally not reversible under US GAAP",
     learnContent: {
       concept: 'Impairment occurs when book value > fair market value.',
       formula: 'Loss = Carrying Value – Recoverable Amount',
@@ -4725,7 +4725,7 @@ Key Points:
     answer: 6,
     unit: '$',
     hint: 'TBV = (Assets – Liabilities – Goodwill) ÷ Shares',
-    explanation: '($1M – $300K – $100K) ÷ 100K = $6',
+    explanation: "**Calculation:** ($1,000,000 - $300,000 - $100,000) ÷ 100,000 = **$6.00**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Calculate Total Equity**\n   - Total assets: $1,000,000\n   - Total liabilities: $300,000\n   - Book value of equity: $1,000,000 - $300,000 = $700,000\n\n2. **Adjust for Intangible Assets**\n   - Book value of equity: $700,000\n   - Less: Goodwill (intangible): $100,000\n   - Tangible book value: $700,000 - $100,000 = $600,000\n\n3. **Calculate Per Share Value**\n   - Tangible book value: $600,000\n   - Shares outstanding: 100,000\n   - TBVPS: $600,000 ÷ 100,000 = $6.00\n\n**Key Points:**\n   • TBVPS excludes intangible assets from book value\n   • More conservative measure than regular book value\n   • Useful for asset-heavy businesses\n   • Shows tangible value backing each share",
     learnContent: {
       concept: 'Tangible book value removes intangible assets from equity.',
       formula: 'TBVPS = (Assets – Liabilities – Intangibles) / Shares',
@@ -4741,7 +4741,7 @@ Key Points:
     answer: 2,
     unit: '×',
     hint: 'DSCR = EBITDA / (Interest + Principal)',
-    explanation: '$200K ÷ ($40K + $60K) = 2.0x',
+    explanation: "**Calculation:** $200,000 ÷ ($40,000 + $60,000) = **2.0×**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Cash Available for Debt Service**\n   - EBITDA (cash earnings): $200,000\n   - This represents cash available to service debt\n\n2. **Total Debt Service Requirements**\n   - Interest expense: $40,000\n   - Principal repayment: $60,000\n   - Total debt service: $40,000 + $60,000 = $100,000\n\n3. **DSCR Calculation**\n   - DSCR = EBITDA ÷ Total debt service\n   - DSCR = $200,000 ÷ $100,000 = 2.0×\n\n**Key Points:**\n   • DSCR measures ability to service all debt obligations\n   • Ratio above 1.0× indicates adequate coverage\n   • Lenders prefer ratios above 1.25×\n   • Higher ratios indicate stronger debt capacity",
     learnContent: {
       concept: 'DSCR measures ability to service debt obligations.',
       formula: 'DSCR = EBITDA / Total Debt Service',
@@ -4757,7 +4757,7 @@ Key Points:
     answer: 3,
     unit: '×',
     hint: 'Coverage = EBIT / Interest',
-    explanation: '$150K ÷ $50K = 3.0x',
+    explanation: "**Calculation:** $150,000 ÷ $50,000 = **3.0×**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Earnings Available for Interest**\n   - EBIT (earnings before interest and taxes): $150,000\n   - This represents pre-interest earnings\n\n2. **Interest Obligation**\n   - Annual interest expense: $50,000\n   - Required cash payment for debt service\n\n3. **Coverage Ratio Calculation**\n   - Interest coverage = EBIT ÷ Interest expense\n   - Coverage ratio = $150,000 ÷ $50,000 = 3.0×\n\n**Key Points:**\n   • Shows how many times company can cover interest payments\n   • Higher ratios indicate stronger ability to service debt\n   • Ratios below 2.5× may indicate financial stress\n   • Key metric for lenders assessing credit risk",
     learnContent: {
       concept: 'This shows how many times a company can cover its interest payments.',
       formula: 'Interest Coverage = EBIT / Interest',
@@ -4807,7 +4807,7 @@ Key Points:
     answer: 5000,
     unit: '$',
     hint: 'ARO adds to PP&E → Depreciated over time',
-    explanation: '$50,000 ÷ 10 = $5,000 per year',
+    explanation: "**Calculation:** $50,000 ÷ 10 years = **$5,000 per year**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Asset Retirement Obligation Setup**\n   - ARO liability recorded: $50,000\n   - Corresponding increase to PP&E: $50,000\n   - This represents estimated future cleanup costs\n\n2. **Depreciation of ARO Component**\n   - ARO amount added to PP&E: $50,000\n   - Asset useful life: 10 years\n   - Annual depreciation = $50,000 ÷ 10 = $5,000\n\n3. **Overall Impact**\n   - Additional annual depreciation expense: $5,000\n   - This continues over the 10-year asset life\n   - Total depreciation impact: $50,000\n\n**Key Points:**\n   • ARO increases both assets and liabilities initially\n   • ARO component is depreciated over asset's useful life\n   • Creates additional annual depreciation expense\n   • ARO liability is accreted over time with interest",
     learnContent: {
       concept: 'ARO inflates PP&E and increases depreciation expense.',
       formula: 'Depreciation = ARO ÷ Useful Life',
@@ -4823,7 +4823,7 @@ Key Points:
     answer: 15000,
     unit: '$',
     hint: 'Think about the portion of the service delivered.',
-    explanation: 'Revenue is recognized based on time elapsed, not when cash is received. Only 3 months of service were delivered by year-end.',
+    explanation: "**Calculation:** $60,000 × (3 ÷ 12) = **$15,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Contract Details**\n   - Annual subscription value: $60,000\n   - Contract signed: October 1st\n   - Full payment received upfront\n\n2. **Service Period Analysis**\n   - Contract period: October 1 - September 30 (12 months)\n   - Service delivered by December 31: October, November, December = 3 months\n   - Percentage of service delivered: 3 ÷ 12 = 25%\n\n3. **Revenue Recognition**\n   - Revenue earned through December 31: $60,000 × 25% = $15,000\n   - Remaining deferred revenue: $60,000 - $15,000 = $45,000\n\n**Key Points:**\n   • Revenue is recognized as services are performed, not when cash is received\n   • Unearned portion remains as deferred revenue liability\n   • Timing of cash receipt doesn't affect revenue recognition\n   • Monthly revenue recognition would be $5,000 per month",
     learnContent: {
       concept: 'Accrual accounting recognizes revenue when earned.',
       formula: 'Annual contract value × (Months elapsed ÷ 12)',
@@ -4839,7 +4839,7 @@ Key Points:
     answer: 2000,
     unit: '$',
     hint: 'Find the change in the allowance.',
-    explanation: 'The original allowance was 3% of A/R, now it is 5%. The difference affects bad debt expense.',
+    explanation: "**Calculation:** ($100,000 × 5%) - ($100,000 × 3%) = **$2,000**\n\n• • •\n\n**Step-by-Step Analysis:**\n\n1. **Original Allowance**\n   - Accounts receivable: $100,000\n   - Original bad debt estimate: 3%\n   - Original allowance: $100,000 × 3% = $3,000\n\n2. **Revised Allowance**\n   - Accounts receivable: $100,000\n   - Revised bad debt estimate: 5%\n   - Required allowance: $100,000 × 5% = $5,000\n\n3. **Additional Bad Debt Expense**\n   - Increase needed: $5,000 - $3,000 = $2,000\n   - Journal entry: Debit Bad Debt Expense $2,000, Credit Allowance $2,000\n\n**Key Points:**\n   • Bad debt expense adjusts allowance to required level\n   • Estimate changes affect current period expense\n   • Higher estimates create additional expense\n   • Allowance represents expected uncollectible amounts",
     learnContent: {
       concept: 'Bad debt expense reflects changes in expected credit losses.',
       formula: 'New allowance – Old allowance = Increase in expense',
