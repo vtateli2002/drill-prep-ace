@@ -3740,7 +3740,7 @@ Key Points:
     }
   },
   {
-    id: 'acc-easy-63',
+    id: 'acc-easy-67',
     track: 'accounting',
     difficulty: 'easy',
     title: 'Revenue Timing and Accounts Receivable',
@@ -3787,7 +3787,7 @@ Key Points:
     }
   },
   {
-    id: 'acc-easy-64',
+    id: 'acc-easy-68',
     track: 'accounting',
     difficulty: 'easy',
     title: 'COGS Calculation with Inventory Turnover',
@@ -3832,7 +3832,7 @@ Key Points:
     }
   },
   {
-    id: 'acc-easy-65',
+    id: 'acc-easy-69',
     track: 'accounting',
     difficulty: 'easy',
     title: 'COGS with Manufacturing Costs and Defects',
@@ -9368,7 +9368,7 @@ Key Points:
 
   // Topic 57: Acquisitions/Divestitures
   {
-    id: 'acc-easy-63',
+    id: 'acc-easy-70',
     track: 'accounting',
     difficulty: 'easy',
     title: 'Acquisition – Cash Flow Classification',
@@ -9582,7 +9582,7 @@ Key Points:
 
   // Topic 58: Investment in Securities
   {
-    id: 'acc-easy-64',
+    id: 'acc-easy-71',
     track: 'accounting',
     difficulty: 'easy',
     title: 'Securities Investment – Cash Flow Classification',
@@ -9808,7 +9808,7 @@ Key Points:
 
   // Topic 59: Dividends Paid
   {
-    id: 'acc-easy-65',
+    id: 'acc-easy-72',
     track: 'accounting',
     difficulty: 'easy',
     title: 'Dividends Paid – Basic Effect',
