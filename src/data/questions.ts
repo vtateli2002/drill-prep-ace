@@ -10342,5 +10342,81 @@ What is the **combined ending balance** of Treasury Stock and APIC, assuming exc
       formula: 'TS = Prior TS + (Shares × Repurchase Price); APIC = Start − Excess Paid',
       example: 'Repurchase 5k @ $20, issued @ $10 → Excess = $50k → APIC hit\n$150k buyback + $100k prior TS = $250k TS; APIC = $400k − excess\n$300k APIC - $50k excess = $250k APIC'
     }
+  },
+  {
+    id: 'acc-medium-61',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Buybacks with Historical Layers, Partial Reissuance, and APIC Drain',
+    description: `A company begins the year with:
+- 120,000 shares outstanding, par value = $1/share
+- APIC: $900,000
+- Treasury Stock: $0
+
+During the year:
+1. Buys back 30,000 shares at $28/share
+2. 10,000 of those shares were originally issued at $18/share; the rest at $12/share
+3. Reissues 5,000 treasury shares at $20/share mid-year
+
+What is the **combined ending balance of Treasury Stock and APIC** assuming the company uses FIFO to assign original issuance price and all excess repurchase reduces APIC?`,
+    answer: '$1,185,000',
+    hint: 'Break buyback into layers. Track impact of repurchase + reissuance on TS and APIC separately.',
+    explanation: `1. Buyback cost = 30,000 × $28 = $840,000
+2. Shares originally issued at $18: 10,000 × $18 = $180,000 issuance cost
+3. Shares originally issued at $12: 20,000 × $12 = $240,000
+4. Total issuance value = $180,000 + $240,000 = $420,000
+5. Excess over issuance = $840,000 − $420,000 = $420,000 → APIC reduction
+6. New APIC = $900,000 − $420,000 = $480,000
+7. Treasury stock after buyback = $840,000
+8. Reissuance of 5,000 shares at $20:
+   - Cost in treasury = FIFO: first 5,000 were issued at $18, repurchased at $28
+   - Reissuance price = $20 → $8 loss/share × 5,000 = $40,000 APIC further reduced
+9. New APIC = $480,000 − $40,000 = $440,000
+10. Treasury Stock after removing 5,000 shares = $840,000 − ($28 × 5,000) = $700,000
+11. Final combined balance = $700,000 + $485,000 = $1,185,000`,
+    learnContent: {
+      concept: 'Track buybacks and reissuance layer-by-layer, impact flows through TS and APIC.',
+      formula: 'Excess = Buyback − Issuance Value; Reissuance = Price − Cost (APIC hit or gain)',
+      example: 'Buyback 10k @ $30, originally issued @ $15 → Excess = $150k → APIC down\nReissue 5k @ $25, cost = $35 → $10/share APIC hit\n$500k APIC - $200k excess = $300k APIC'
+    }
+  },
+  {
+    id: 'acc-hard-61',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Comprehensive Equity Rollforward with Multi-Year Treasury, Layered Buybacks, and Issuance',
+    description: `At YE 2023, a company reports:
+- APIC: $1,000,000
+- Treasury Stock: $300,000
+- Outstanding shares: 95,000 (par $1, originally issued evenly between $10 and $20 per share)
+
+During 2024:
+1. Repurchases 20,000 shares at $35/share
+   - 8,000 of these shares were originally issued at $20
+   - 12,000 were issued at $10
+2. Reissues 6,000 treasury shares at $25/share, drawn from the latest (2024) purchases
+3. Has $50,000 in prior APIC from treasury share gains
+
+What is the **combined ending balance** of Treasury Stock and APIC at YE 2024?`,
+    answer: '$1,360,000',
+    hint: 'Start with 2023 balances. Break down the repurchase by issue layer, compute excess drain on APIC, then factor in reissuance.',
+    explanation: `1. Total repurchase = 20,000 × $35 = $700,000
+2. Issuance value:
+   - 8,000 × $20 = $160,000
+   - 12,000 × $10 = $120,000
+   - Total = $280,000 → Excess = $420,000 (APIC reduced)
+3. APIC = $1,000,000 − $420,000 = $580,000
+4. Add $50,000 historical APIC from prior treasury → New APIC = $580,000 + $50,000 = $630,000
+5. Treasury Stock = Prior $300,000 + New $700,000 = $1,000,000
+6. Reissuance of 6,000 at $25:
+   - Original cost = $35 (2024 layer FIFO) → $10/share loss × 6,000 = $60,000
+   - APIC = $630,000 − $60,000 = $570,000
+   - TS = $1,000,000 − (6,000 × $35) = $790,000
+7. Final Combined = $790,000 + $570,000 = $1,360,000`,
+    learnContent: {
+      concept: 'Track cumulative equity changes from multi-year buybacks and reissuance layers with FIFO and APIC loss logic.',
+      formula: 'Repurchase = Price × Qty; Excess = Price − Issue; Reissuance = Sale − Cost',
+      example: 'Reissue 10k @ $20, bought @ $30 = $100k APIC loss\nBuyback 5k @ $40, issued @ $15 = $125k APIC hit\n$800k APIC - $300k excess = $500k'
+    }
   }
 ];
