@@ -39,6 +39,7 @@ const QuestionView = () => {
   const [attemptCount, setAttemptCount] = useState(0);
   const [hintUsed, setHintUsed] = useState(false);
   const [finalXP, setFinalXP] = useState(0);
+  const [maxAttemptsReached, setMaxAttemptsReached] = useState(false);
 
   // Check if question is already solved (but allow daily challenge questions to be attempted)
   useEffect(() => {
@@ -225,6 +226,19 @@ const QuestionView = () => {
     setIsCorrect(correct);
     
     if (correct) {
+      // Don't award XP if max attempts were already reached previously
+      if (maxAttemptsReached) {
+        setFinalXP(0);
+        setIsSubmitted(true);
+        
+        toast({
+          title: "Correct! 🎉",
+          description: "You got it right, but no XP earned after max attempts.",
+          className: "border-success",
+        });
+        return;
+      }
+      
       const baseXP = XP_VALUES[currentQuestion.difficulty];
       let earnedXP = calculateXP(baseXP, attemptCount, hintUsed);
       
@@ -252,6 +266,7 @@ const QuestionView = () => {
     } else {
       if (newAttemptCount >= 4) {
         setIsSubmitted(true);
+        setMaxAttemptsReached(true);
         setFinalXP(0);
         
         // Submit failed attempt to backend
@@ -286,6 +301,7 @@ const QuestionView = () => {
     setAttemptCount(0);
     setHintUsed(false);
     setFinalXP(0);
+    // Don't reset maxAttemptsReached - this prevents XP farming
   };
 
   const getNextQuestion = () => {
@@ -309,6 +325,7 @@ const QuestionView = () => {
       setAttemptCount(0);
       setHintUsed(false);
       setFinalXP(0);
+      setMaxAttemptsReached(false);
     } else {
       // Show completion modal
       toast({
