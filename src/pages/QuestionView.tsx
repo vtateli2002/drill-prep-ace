@@ -561,7 +561,12 @@ const QuestionView = () => {
                           {isCorrect ? 'Correct!' : `Correct answer: ${currentQuestion.answer}${currentQuestion.unit || ''}`}
                         </span>
                       </div>
-                       {isCorrect ? (
+                       <div className="flex space-x-2">
+                         {!isCorrect && (
+                           <Button variant="outline" onClick={handleReset}>
+                             Try Again
+                           </Button>
+                         )}
                          <Button onClick={() => {
                            if (returnToModal) {
                              navigate('/dashboard');
@@ -571,11 +576,7 @@ const QuestionView = () => {
                          }}>
                            {returnToModal ? 'Back to Challenge' : 'Next Question'}
                          </Button>
-                       ) : (
-                         <Button variant="outline" onClick={handleReset}>
-                           Try Again
-                         </Button>
-                       )}
+                       </div>
                     </>
                   )}
                 </div>
