@@ -3070,12 +3070,6 @@ Key Points:
     title: 'Revenue Recognition and Deferred Revenue Mechanics',
     description: `Lakefront Software collected $48,000 in annual prepaid licenses on January 1. They recognize revenue as services are provided monthly over the year. By June 30, they have delivered services for 5 months and refunded $4,000 to clients who canceled after 3 months.
 
-📊 Financial Summary:
-• Cash Collected: $48,000 (Jan 1)
-• Service Period: 12 months  
-• Services Delivered: 5 months
-• Refunds Issued: $4,000 (after 3 months)
-
 How much revenue should be recognized on the income statement by June 30?`,
     answer: 16000,
     unit: '$',
@@ -3120,10 +3114,6 @@ Key Points:
     title: 'Multi-Product Revenue with Returns',
     description: `Onyx Inc. sold 1,200 units of Product A at $20 each and 500 units of Product B at $50 each. By quarter-end, 5% of Product A units and 20% of Product B units were returned for refunds.
 
-📊 Financial Summary:
-• Product A: 1,200 units × $20, 5% returns
-• Product B: 500 units × $50, 20% returns
-
 What is total recognized revenue for the quarter?`,
     answer: 28000,
     unit: '$',
@@ -3167,12 +3157,6 @@ Key Points:
     difficulty: 'easy',
     title: 'Revenue Timing and Accounts Receivable',
     description: `Beta Health billed $25,000 in services in December. Only 60% was collected in December; the remainder was collected in January. All services were delivered in December.
-
-📊 Financial Summary:
-• Services billed: $25,000
-• % Collected in December: 60%
-• Remainder collected in January
-• All services delivered in December
 
 What revenue should be recognized in December?`,
     answer: 25000,
@@ -3221,11 +3205,6 @@ Key Points:
     title: 'COGS Calculation with Inventory Turnover',
     description: `Crosby Co. began the year with $14,000 in inventory, purchased $37,000 more throughout the year, and ended with $10,000 inventory.
 
-📊 Financial Summary:
-• Beginning Inventory: $14,000
-• Purchases: $37,000
-• Ending Inventory: $10,000
-
 If COGS is calculated as beginning inventory + purchases - ending inventory, what is annual COGS?`,
     answer: 41000,
     unit: '$',
@@ -3271,14 +3250,6 @@ Key Points:
     title: 'COGS with Manufacturing Costs and Defects',
     description: `Avalon Furniture manufactured 900 chairs using $3,600 wood, $2,250 labor, and $1,350 overhead. 75 chairs were defective and scrapped (no sale), while the rest were sold.
 
-📊 Financial Summary:
-• Total Chairs Made: 900
-• Chairs Scrapped: 75 (defective)
-• Chairs Sold: 825
-• Direct Materials: $3,600
-• Direct Labor: $2,250
-• Manufacturing Overhead: $1,350
-
 What is the per-unit COGS for sold chairs (rounded to the nearest dollar)?`,
     answer: 9,
     hint: 'Total manufacturing costs divided by units actually sold.',
@@ -3323,13 +3294,6 @@ Key Points:
     difficulty: 'easy',
     title: 'FIFO Inventory Method COGS',
     description: `A distributor buys 120 units at $10, then 80 units at $14. They sell 150 units using FIFO method.
-
-📊 Financial Summary:
-• First Purchase: 120 units @ $10
-• Second Purchase: 80 units @ $14
-• Total Units Available: 200
-• Units Sold: 150
-• Inventory Method: FIFO
 
 What is COGS for those 150 units?`,
     answer: 1620,
@@ -3380,12 +3344,6 @@ Key Points:
     title: 'Gross Profit with Returns and Allowances',
     description: `Engage Sports sold $32,000 in gear, with $22,000 COGS. $2,000 of sales were refunded, and $1,000 of gear was replaced at no charge (recorded as allowances, but cost stays in COGS).
 
-📊 Financial Summary:
-• Gross Sales: $32,000
-• COGS: $22,000
-• Sales Returns (Refunds): $2,000
-• Sales Allowances (Free Replacements): $1,000
-
 What is total gross profit?`,
     answer: 7000,
     unit: '$',
@@ -3431,12 +3389,6 @@ Key Points:
     difficulty: 'easy',
     title: 'Gross Profit with Volume Discounts',
     description: `Manor Mart sold 400 units at $30, but 100 units were discounted 20% due to a promotion. COGS per unit is $16.
-
-📊 Financial Summary:
-• Standard Sales: 300 units × $30
-• Discounted Sales: 100 units × $24 (20% discount)
-• COGS per Unit: $16
-• Total Units: 400
 
 What is total gross profit?`,
     answer: 5000,
@@ -3487,10 +3439,6 @@ Key Points:
     difficulty: 'easy',
     title: 'Multi-Product Gross Profit with Returns',
     description: `Fiesta Foods sold 300 cakes at $25 (COGS $12) and 500 cookies at $2 (COGS $1). At quarter end, 20 cakes and 50 cookies were returned, all for refund.
-
-📊 Financial Summary:
-• Cakes: 300 sold, 20 returned, $25 each, COGS $12
-• Cookies: 500 sold, 50 returned, $2 each, COGS $1
 
 What is gross profit?`,
     answer: 4090,
@@ -3547,10 +3495,6 @@ Key Points:
     title: 'Gross Margin Analysis with Cost Changes',
     description: `Piccadilly Gifts had sales of $90,000 and COGS of $61,200. Next year, COGS increases to $67,500 and sales to $98,000.
 
-📊 Financial Summary:
-• Year 1: Sales $90,000, COGS $61,200
-• Year 2: Sales $98,000, COGS $67,500
-
 What is the new gross margin (%) for next year, to the nearest 0.1%?`,
     answer: 31.1,
     hint: 'Gross Margin = (Sales - COGS) ÷ Sales × 100.',
@@ -3597,10 +3541,6 @@ Key Points:
     title: 'Blended Gross Margin - Two Product Lines',
     description: `A store sold $40,000 in electronics (COGS $28,000) and $25,000 in accessories (COGS $7,000).
 
-📊 Financial Summary:
-• Electronics: Sales $40,000, COGS $28,000
-• Accessories: Sales $25,000, COGS $7,000
-
 What is the blended gross margin (%) to 1 decimal place?`,
     answer: 46.2,
     hint: 'Sum all sales and all COGS, then calculate overall margin percentage.',
@@ -3645,11 +3585,6 @@ Key Points:
     difficulty: 'easy',
     title: 'Gross Margin Impact from Returns',
     description: `Marcelle's Shoes had Q2 sales of $36,000, COGS $27,500, and $2,000 in sales returns.
-
-📊 Financial Summary:
-• Q2 Gross Sales: $36,000
-• Q2 Sales Returns: $2,000
-• Q2 COGS: $27,500
 
 What is the gross margin (%) for Q2 to 1 decimal place?`,
     answer: 19.1,
@@ -3698,10 +3633,6 @@ Key Points:
     title: 'SG&A Analysis and Operating Leverage',
     description: `Mocha Avenue's SG&A rose from $42,000 to $46,000 while revenue rose from $400,000 to $500,000 year-over-year.
 
-📊 Financial Summary:
-• Previous Year: SG&A $42,000, Revenue $400,000
-• Current Year: SG&A $46,000, Revenue $500,000
-
 By how much did SG&A as a % of revenue change (rounded to 1 decimal point)?`,
     answer: -1.3,
     hint: 'Calculate SG&A % for both years, then find the difference.',
@@ -3747,13 +3678,6 @@ Key Points:
     difficulty: 'easy',
     title: 'SG&A Classification and Calculation',
     description: `Jemco Co. has the following expenses: $20,000 in office salaries, $30,000 plant labor, $4,500 in sales commissions, $8,000 in rent, and $10,000 in raw materials.
-
-📊 Financial Summary:
-• Office Salaries: $20,000
-• Plant Labor: $30,000
-• Sales Commissions: $4,500
-• Rent: $8,000
-• Raw Materials: $10,000
 
 What is total SG&A expense?`,
     answer: 32500,
@@ -3803,11 +3727,6 @@ Key Points:
     difficulty: 'easy',
     title: 'Operating Income (EBIT) Calculation',
     description: `ConventiCo had $175,000 in revenue, $110,000 COGS, and $40,000 SG&A.
-
-📊 Financial Summary:
-• Revenue: $175,000
-• COGS: $110,000
-• SG&A: $40,000
 
 What is operating income (EBIT)?`,
     answer: 25000,
