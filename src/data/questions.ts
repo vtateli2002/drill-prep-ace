@@ -3492,12 +3492,12 @@ Key Points:
     track: 'accounting',
     difficulty: 'medium',
     title: 'Capital Lease Liability Calculation',
-    description: `A company signs a capital lease requiring $5,000 annual payments over 4 years. The lease uses a 6% discount rate. Using the present value formula, calculate the initial lease liability recorded on the balance sheet at lease inception.`,
-    answer: 17237,
+    description: `A company signs a capital lease requiring $5,000 annual payments over 4 years. The lease uses a discount rate that results in a PV annuity factor of 4.0. Calculate the initial lease liability recorded on the balance sheet at lease inception.`,
+    answer: 20000,
     unit: '$',
     hint: 'Use the PV of annuity formula for lease payments.',
     explanation: `Calculation:
-Present Value = $5,000 × 3.4447 = $17,237
+Present Value = $5,000 × 4.0 = $20,000
 
 • • •
 
