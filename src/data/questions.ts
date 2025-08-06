@@ -3909,7 +3909,7 @@ Key Points:
     }
   },
   {
-    id: 'acc-gm-3',
+    id: 'acc-easy-91',
     track: 'accounting',
     difficulty: 'easy',
     title: 'Margin Calculation after Returns',
