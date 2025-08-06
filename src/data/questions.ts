@@ -2286,5 +2286,165 @@ How much revenue is recognized by the end of April?`,
       formula: 'Capitalized Inventory = Raw Materials + Direct Labor + Overhead',
       example: '$10K + $5K + $2K → $17K\n$25K + $20K + $10K → $55K\n$30K + $15K + $10K → $55K'
     }
+  },
+  {
+    id: 'acc-medium-107',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Purchase Price Allocation Basics',
+    description: 'A company acquires another firm for $500,000. The net identifiable assets of the acquired company total $400,000. What amount is allocated to goodwill?',
+    answer: 100000,
+    unit: '$',
+    hint: 'Goodwill = Purchase Price – Net Identifiable Assets',
+    explanation: '$500K – $400K = $100K goodwill',
+    learnContent: {
+      concept: 'Goodwill arises when purchase price exceeds fair value of net assets.',
+      formula: 'Goodwill = Purchase Price – (Assets – Liabilities)',
+      example: '$600K – $450K = $150K\n$200K – $180K = $20K\n$1M – $750K = $250K'
+    }
+  },
+  {
+    id: 'acc-medium-108',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'DTA Reversal Impact on Cash Taxes',
+    description: 'A company uses $20,000 of deferred tax assets to offset its $80,000 taxable income. Tax rate is 25%. What is the actual tax paid in cash?',
+    answer: 15000,
+    unit: '$',
+    hint: 'Cash Tax = (Taxable Income – DTA Used) × Tax Rate',
+    explanation: '$80K – $20K = $60K → $60K × 25% = $15K',
+    learnContent: {
+      concept: 'DTAs reduce taxable income, lowering cash taxes.',
+      formula: 'Cash Taxes = (Pretax – DTA Used) × Tax Rate',
+      example: '$100K – $30K × 20% = $14K\n$60K – $10K × 30% = $15K\n$75K – $25K × 25% = $12.5K'
+    }
+  },
+  {
+    id: 'acc-medium-109',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'PP&E CapEx vs. Depreciation Movement',
+    description: 'Beginning PP&E: $200,000, Depreciation: $20,000, Ending PP&E: $230,000. What is the amount of capital expenditures?',
+    answer: 50000,
+    unit: '$',
+    hint: 'CapEx = Ending PP&E – Beginning + Depreciation',
+    explanation: '$230K – $200K + $20K = $50K',
+    learnContent: {
+      concept: 'CapEx is the cash spent to maintain or grow PP&E.',
+      formula: 'CapEx = Ending – Beginning + Depreciation',
+      example: '250K – 240K + 10K = $20K\n300K – 280K + 15K = $35K\n180K – 160K + 20K = $40K'
+    }
+  },
+  {
+    id: 'acc-medium-110',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Cash Flow Statement: CFF Movement',
+    description: 'A company repaid $30,000 of long-term debt and issued $20,000 of new shares. What is the net cash flow from financing activities?',
+    answer: -10000,
+    unit: '$',
+    hint: 'Cash Flow from Financing = Inflows – Outflows',
+    explanation: '$20K – $30K = –$10K',
+    learnContent: {
+      concept: 'CFF includes inflows from equity/debt issuance and outflows from repayments/dividends.',
+      formula: 'CFF = Equity Issued + Debt Raised – Debt Repaid – Dividends',
+      example: '$0 – $15K = –$15K\n$50K – $40K = $10K\n$10K equity – $5K dividends = $5K'
+    }
+  },
+  {
+    id: 'acc-medium-111',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Deferred Revenue Adjustment',
+    description: 'Deferred revenue begins at $50,000. During the year, the company earns $35,000 of it and collects $60,000 in new cash prepayments. What is ending deferred revenue?',
+    answer: 75000,
+    unit: '$',
+    hint: 'Ending = Beginning + Cash Collected – Revenue Recognized',
+    explanation: '$50K + $60K – $35K = $75K',
+    learnContent: {
+      concept: 'Deferred revenue grows with prepayments and shrinks as it\'s earned.',
+      formula: 'End Deferred Revenue = Begin + Prepaid – Recognized',
+      example: '10K + 20K – 5K = $25K\n40K + 30K – 20K = $50K\n25K + 15K – 10K = $30K'
+    }
+  },
+  {
+    id: 'acc-medium-112',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'EBITDA Calculation from IS Line Items',
+    description: 'Revenue: $500,000, COGS: $200,000, Operating Expenses: $150,000, D&A: $25,000. What is EBITDA?',
+    answer: 150000,
+    unit: '$',
+    hint: 'EBITDA = Revenue – COGS – OpEx',
+    explanation: '$500K – $200K – $150K = $150K (D&A excluded from OpEx)',
+    learnContent: {
+      concept: 'EBITDA is earnings before interest, taxes, depreciation, and amortization.',
+      formula: 'EBITDA = Revenue – COGS – OpEx',
+      example: '$300K – $120K – $100K = $80K\n$400K – $180K – $120K = $100K'
+    }
+  },
+  {
+    id: 'acc-medium-113',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Amortization of Intangible Assets',
+    description: 'Company acquires a brand for $100,000 with a 10-year useful life. What is the annual amortization expense?',
+    answer: 10000,
+    unit: '$',
+    hint: 'Amortization = Cost ÷ Useful Life',
+    explanation: '$100K ÷ 10 = $10K/year',
+    learnContent: {
+      concept: 'Intangible assets are amortized over useful life unless indefinite.',
+      formula: 'Amortization = Purchase Cost ÷ Useful Life',
+      example: '$50K ÷ 5 = $10K\n$75K ÷ 15 = $5K\n$120K ÷ 6 = $20K'
+    }
+  },
+  {
+    id: 'acc-medium-114',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Calculating Ending Retained Earnings',
+    description: 'Beginning retained earnings = $80,000, Net income = $40,000, Dividends paid = $10,000. What is ending retained earnings?',
+    answer: 110000,
+    unit: '$',
+    hint: 'Ending = Beginning + Net Income – Dividends',
+    explanation: '$80K + $40K – $10K = $110K',
+    learnContent: {
+      concept: 'Retained earnings grow with profits and shrink with dividends.',
+      formula: 'Ending RE = Beginning + Net Income – Dividends',
+      example: '$50K + $30K – $5K = $75K\n$100K + $20K – $20K = $100K'
+    }
+  },
+  {
+    id: 'acc-medium-115',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Accretion from Bond Discount',
+    description: 'A company issues $100,000 in bonds at a $5,000 discount. Each year, it amortizes $1,000 of the discount. After 2 years, what is the bond\'s carrying value?',
+    answer: 97000,
+    unit: '$',
+    hint: 'Carrying Value = Issue Price + Accretion',
+    explanation: '$95K + $2K = $97K',
+    learnContent: {
+      concept: 'Discounts increase carrying value over time via accretion.',
+      formula: 'Carrying Value = Issue Price + (Years × Annual Accretion)',
+      example: '$90K + $3K = $93K\n$95K + $4K = $99K'
+    }
+  },
+  {
+    id: 'acc-medium-116',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Link Between NI and CFO',
+    description: 'A company reports $70,000 in net income, with $15,000 in depreciation and a $5,000 increase in accounts receivable. What is its operating cash flow?',
+    answer: 80000,
+    unit: '$',
+    hint: 'CFO = NI + Non-Cash + Working Capital Adjustments',
+    explanation: '$70K + $15K – $5K = $80K',
+    learnContent: {
+      concept: 'Operating cash flow adjusts net income for non-cash and timing changes.',
+      formula: 'CFO = Net Income + D&A – ∆Working Capital',
+      example: '$60K + $10K – $5K = $65K\n$100K + $25K + $5K = $130K'
+    }
   }
 ];
