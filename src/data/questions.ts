@@ -1983,7 +1983,7 @@ How much revenue is recognized by the end of April?`,
     }
   },
   {
-    id: 'acc-medium-67',
+    id: 'acc-medium-70',
     track: 'accounting',
     difficulty: 'medium',
     title: 'DTA Reversal Timing',
@@ -1999,7 +1999,7 @@ How much revenue is recognized by the end of April?`,
     }
   },
   {
-    id: 'acc-medium-68',
+    id: 'acc-medium-71',
     track: 'accounting',
     difficulty: 'medium',
     title: 'Depreciation Method Impact on Earnings',
@@ -2015,7 +2015,7 @@ How much revenue is recognized by the end of April?`,
     }
   },
   {
-    id: 'acc-medium-69',
+    id: 'acc-medium-72',
     track: 'accounting',
     difficulty: 'medium',
     title: 'Capital Lease Liability Calculation',

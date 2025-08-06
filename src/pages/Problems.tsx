@@ -100,13 +100,6 @@ const Problems = () => {
     sampleQuestions: filteredQuestions.slice(0, 3).map(q => ({ id: q.id, title: q.title, track: q.track, difficulty: q.difficulty }))
   });
 
-  // Check if there are duplicate IDs
-  const questionIds = allQuestions.map(q => q.id);
-  const duplicateIds = questionIds.filter((id, index) => questionIds.indexOf(id) !== index);
-  if (duplicateIds.length > 0) {
-    console.error('Duplicate question IDs found:', [...new Set(duplicateIds)]);
-  }
-
   const getTrackConfig = (track: Track) => {
     const configs = {
       'accounting': { label: 'Accounting', color: 'bg-blue-500 hover:bg-blue-600', icon: '📊' },
