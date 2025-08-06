@@ -9073,5 +9073,1245 @@ Key Points:
       formula: 'D&A = Σ (Cost ÷ Useful Life × Time Held)',
       example: '$60k asset, 3 years = $20k/year\n$40k asset, 2-year life bought mid-year = $10k D&A\n$90k asset, 5 years, 9 months held = $13.5k D&A'
     }
+  },
+
+  // Topic 55: Capital Expenditures
+  {
+    id: 'acc-medium-40',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'CapEx Identification – Mixed Use Case',
+    description: `A company has the following expenditures:
+- $40,000 to buy new equipment
+- $15,000 in routine repairs
+- $25,000 to install software that enhances production for 5+ years
+
+What is the total amount classified as Capital Expenditures?`,
+    answer: 65000,
+    unit: '$',
+    hint: 'Capitalize items with long-term benefits. Expense maintenance and routine repairs.',
+    explanation: `Calculation:
+CapEx = $40,000 (equipment) + $25,000 (long-term software) = $65,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Equipment Purchase:
+   • New equipment: $40,000
+   → Capitalized (long-term productive asset)
+
+2. Routine Repairs:
+   • Routine repairs: $15,000
+   → Expensed (maintenance, not improvement)
+
+3. Software Installation:
+   • Production software: $25,000
+   • Useful life: 5+ years
+   → Capitalized (enhances long-term productivity)
+
+4. CapEx Classification:
+   • Capitalize: Equipment + Software = $40,000 + $25,000 = $65,000
+   • Expense: Repairs = $15,000
+
+Key Points:
+   • CapEx must provide benefits beyond one year
+   • Routine maintenance is expensed immediately
+   • Software enhancing production qualifies as CapEx
+   • Total CapEx affects investing cash flows`,
+    learnContent: {
+      concept: 'CapEx includes expenditures that improve or extend asset life.',
+      formula: 'CapEx = Sum of long-term, value-adding purchases',
+      example: '$60k for building + $10k new software = $70k CapEx\n$20k repairs = expensed, not CapEx\n$30k equipment + $5k installation = $35k CapEx'
+    }
+  },
+  {
+    id: 'acc-hard-31',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'CapEx Calculation from Financials',
+    description: `Company reports:
+- Beginning PP&E (Net): $300,000
+- Ending PP&E (Net): $360,000
+- Depreciation Expense: $40,000
+
+No asset disposals occurred. What was the Capital Expenditure this year?`,
+    answer: 100000,
+    unit: '$',
+    hint: 'Reverse out depreciation to isolate new purchases.',
+    explanation: `Calculation:
+CapEx = Ending PP&E − Beginning PP&E + Depreciation = $360,000 − $300,000 + $40,000 = $100,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. PP&E Rollforward Logic:
+   • Beginning PP&E (Net): $300,000
+   • Add: CapEx purchases (unknown)
+   • Less: Depreciation expense: ($40,000)
+   • Equals: Ending PP&E (Net): $360,000
+
+2. Set Up the Equation:
+   $300,000 + CapEx − $40,000 = $360,000
+
+3. Solve for CapEx:
+   CapEx = $360,000 − $300,000 + $40,000 = $100,000
+
+4. Verification:
+   • Starting balance: $300,000
+   • Add CapEx: $100,000
+   • Less depreciation: ($40,000)
+   • Ending balance: $360,000 ✓
+
+5. Cash Flow Impact:
+   • Operating CF: Add back $40,000 depreciation
+   • Investing CF: Subtract $100,000 CapEx
+
+Alternative Formula Approach:
+   Net PP&E Change = $360,000 − $300,000 = $60,000
+   CapEx = Net Change + Depreciation = $60,000 + $40,000 = $100,000
+
+Key Points:
+   • Net PP&E obscures gross CapEx due to depreciation
+   • Must add back depreciation to find actual purchases
+   • No disposals simplifies the calculation
+   • CapEx represents actual cash invested in long-term assets`,
+    learnContent: {
+      concept: 'CapEx = Net PP&E increase + Depreciation when no disposals occur.',
+      formula: 'CapEx = Ending PP&E − Beginning PP&E + Depreciation',
+      example: 'Beg PP&E = $200k, End = $250k, Dep = $30k → CapEx = $80k\n$500k − $480k + $40k = $60k\n$120k − $100k + $15k = $35k'
+    }
+  },
+
+  // Topic 56: Asset Purchase/Sales
+  {
+    id: 'acc-easy-62',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Asset Sale Proceeds',
+    description: `A company sells a machine for $15,000. The book value of the machine is $12,000.
+
+What is the gain recorded on the Income Statement?`,
+    answer: 3000,
+    unit: '$',
+    hint: 'Gain = Sale Price − Book Value',
+    explanation: `Calculation:
+Gain on Sale = $15,000 − $12,000 = $3,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Asset Sale Components:
+   • Sale proceeds: $15,000
+   • Book value: $12,000
+   → Difference determines gain/loss
+
+2. Gain/Loss Calculation:
+   • Sale Price > Book Value = Gain
+   • Sale Price < Book Value = Loss
+   • $15,000 > $12,000 → Gain
+
+3. Gain Amount:
+   → Gain = $15,000 − $12,000 = $3,000
+
+4. Financial Statement Impact:
+   
+   Income Statement:
+   • Gain on Asset Sale: $3,000 (increases income)
+   
+   Cash Flow Statement:
+   • Investing Activities: $15,000 cash inflow
+   • Operating Activities: Subtract $3,000 gain (indirect method)
+
+Key Points:
+   • Gains increase Net Income but must be removed from operating CF
+   • Full sale proceeds appear in investing cash flows
+   • Book value represents net carrying amount on balance sheet
+   • Timing: gain recognized when sale is completed`,
+    learnContent: {
+      concept: 'Gains/losses from asset sales are the difference between sale proceeds and book value.',
+      formula: 'Gain = Proceeds − Book Value',
+      example: '$20k sale, $15k book = $5k gain\n$8k sale, $10k book = $2k loss\n$50k sale, $50k book = $0 gain/loss'
+    }
+  },
+  {
+    id: 'acc-medium-41',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Asset Sale and Cash Flow Impact',
+    description: `A firm sells equipment for $25,000. The original cost was $50,000 with $30,000 accumulated depreciation.
+
+What is the gain or loss on sale, and how does it affect the Income Statement and Cash Flow Statement?`,
+    answer: '$5,000 gain; $25,000 inflow under Investing Activities',
+    hint: 'Net book value = Cost − Accumulated Depreciation. Compare to sale price.',
+    explanation: `Calculation:
+Net Book Value = $50,000 − $30,000 = $20,000
+Gain on Sale = $25,000 − $20,000 = $5,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Determine Net Book Value:
+   • Original cost: $50,000
+   • Accumulated depreciation: $30,000
+   → Net book value = $50,000 − $30,000 = $20,000
+
+2. Calculate Gain/Loss:
+   • Sale proceeds: $25,000
+   • Net book value: $20,000
+   → Gain = $25,000 − $20,000 = $5,000
+
+3. Income Statement Impact:
+   • Gain on Asset Sale: $5,000
+   → Increases Net Income by $5,000
+
+4. Cash Flow Statement Impact:
+   
+   Operating Activities (Indirect Method):
+   • Start with Net Income (includes $5,000 gain)
+   • Subtract gain: ($5,000)
+   → Removes non-operating gain from operating CF
+   
+   Investing Activities:
+   • Cash from asset sale: $25,000
+   → Full proceeds classified as investing inflow
+
+5. Net Cash Effect:
+   • Total cash received: $25,000
+   • Operating CF adjustment: ($5,000)
+   • Investing CF: $25,000
+   → Net cash impact: $25,000
+
+Key Points:
+   • Book value is cost minus accumulated depreciation
+   • Gain appears in both IS and CF but in different sections
+   • Operating CF removes gains to avoid double-counting
+   • Full sale proceeds always go to investing activities`,
+    learnContent: {
+      concept: 'Asset sales affect both the IS (gain/loss) and CFS (full cash proceeds).',
+      formula: 'Gain = Sale − (Cost − Acc. Dep); CFS = Proceeds in Investing',
+      example: '$60k sale, $45k book → $15k gain, $60k CFS inflow\n$15k sale, $18k book → $3k loss, $15k CFS inflow\n$30k sale, $25k book → $5k gain, $30k investing'
+    }
+  },
+  {
+    id: 'acc-hard-32',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Multiple Asset Sale Reconciliation',
+    description: `A company reports the following asset sales during the year:
+- Asset A: Original Cost = $100,000; Accum. Depreciation = $70,000; Sold for $35,000
+- Asset B: Original Cost = $60,000; Accum. Depreciation = $20,000; Sold for $30,000
+
+What is the total gain or loss on these sales, and what is the total investing cash inflow?`,
+    answer: '$5,000 net loss; $65,000 investing inflow',
+    hint: 'Net Book Value = Cost − Accumulated Dep. Compare each to sale price, then sum gains and proceeds.',
+    explanation: `Calculation:
+Asset A: Book = $100,000 − $70,000 = $30,000; Gain = $35,000 − $30,000 = $5,000
+Asset B: Book = $60,000 − $20,000 = $40,000; Loss = $30,000 − $40,000 = ($10,000)
+Total gain/loss = $5,000 − $10,000 = ($5,000) Net Loss
+Cash inflow = $35,000 + $30,000 = $65,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Asset A Analysis:
+   • Original cost: $100,000
+   • Accumulated depreciation: $70,000
+   • Net book value: $100,000 − $70,000 = $30,000
+   • Sale proceeds: $35,000
+   → Gain = $35,000 − $30,000 = $5,000
+
+2. Asset B Analysis:
+   • Original cost: $60,000
+   • Accumulated depreciation: $20,000
+   • Net book value: $60,000 − $20,000 = $40,000
+   • Sale proceeds: $30,000
+   → Loss = $30,000 − $40,000 = ($10,000)
+
+3. Combined Results:
+   
+   Total Gain/Loss:
+   • Asset A gain: $5,000
+   • Asset B loss: ($10,000)
+   → Net loss: $5,000 − $10,000 = ($5,000)
+   
+   Total Cash Proceeds:
+   • Asset A: $35,000
+   • Asset B: $30,000
+   → Total investing inflow: $65,000
+
+4. Financial Statement Impact:
+   
+   Income Statement:
+   • Loss on Asset Sales: ($5,000)
+   → Reduces Net Income
+   
+   Cash Flow Statement:
+   • Operating Activities: Add back $5,000 loss (indirect method)
+   • Investing Activities: $65,000 cash inflow
+
+Key Points:
+   • Each asset must be analyzed separately
+   • Gains and losses can offset each other
+   • Cash flows reflect actual proceeds regardless of gains/losses
+   • Net loss increases operating CF in indirect method`,
+    learnContent: {
+      concept: 'Analyze each asset separately: compute book value, compare to sale, and aggregate cash inflows.',
+      formula: 'Total Gain/Loss = Σ (Proceeds − Book Value); Cash Inflow = Σ Proceeds',
+      example: '$20k gain + $5k loss = $15k gain; Proceeds = $100k\n$10k gain + $12k loss = $2k loss; Proceeds = $90k\n$8k gain + $3k loss = $5k net gain; $150k proceeds'
+    }
+  },
+
+  // Topic 57: Acquisitions/Divestitures
+  {
+    id: 'acc-easy-63',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Acquisition – Cash Flow Classification',
+    description: `A company acquires another business and pays $500,000 in cash.
+
+Where is this shown on the Cash Flow Statement?`,
+    answer: 'Investing Activities (Cash Outflow)',
+    hint: 'Think about long-term investment in another business.',
+    explanation: `Answer: Investing Activities (Cash Outflow)
+
+• • •
+
+Detailed explanation:
+
+1. Nature of Acquisition:
+   • Purchase of another business entity
+   • Long-term strategic investment
+   • Acquiring assets and operations for future benefits
+
+2. Cash Flow Classification Logic:
+   
+   Operating Activities:
+   • Day-to-day business operations
+   • Revenue and expense transactions
+   • Working capital changes
+   
+   Investing Activities:
+   • Purchase/sale of long-term assets
+   • Acquisitions and divestitures
+   • Capital expenditures
+   • Securities investments
+   
+   Financing Activities:
+   • Debt and equity transactions
+   • Dividends and buybacks
+   • Changes in capital structure
+
+3. Why Investing Activities:
+   • Acquisition represents purchase of long-term assets
+   • Similar to buying PP&E or other investments
+   • Provides future economic benefits
+   • Not part of regular operating cycle
+
+4. Cash Flow Impact:
+   • Investing Activities: ($500,000)
+   • Represents cash outflow for the acquisition
+   • Reduces total cash available
+
+5. Balance Sheet Impact:
+   • Assets acquired are recorded
+   • Goodwill may be created
+   • Cash decreases by $500,000
+
+Key Points:
+   • All business acquisitions are investing activities
+   • Cash outflows reduce investing cash flow
+   • Acquisition costs also go to investing section
+   • Method of payment affects the classification`,
+    learnContent: {
+      concept: 'Acquisition payments are cash outflows and reported under investing activities.',
+      formula: 'Cash Flow from Investing = −Purchase Price (if paid in cash)',
+      example: '$200k acquisition → ($200k) CFS outflow\n$1M deal = ($1M) Investing Cash Flow\n$750k business purchase = ($750k) investing'
+    }
+  },
+  {
+    id: 'acc-medium-42',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Acquisition Impact on Balance Sheet',
+    description: `Company acquires a target for $600,000. Target has:
+- $300,000 in assets
+- $100,000 in liabilities
+
+What is the Goodwill created?`,
+    answer: 400000,
+    unit: '$',
+    hint: 'Goodwill = Purchase Price − Net Identifiable Assets',
+    explanation: `Calculation:
+Net Assets = $300,000 − $100,000 = $200,000
+Goodwill = $600,000 − $200,000 = $400,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Determine Net Identifiable Assets:
+   • Target's assets: $300,000
+   • Target's liabilities: $100,000
+   → Net assets = $300,000 − $100,000 = $200,000
+
+2. Calculate Goodwill:
+   • Purchase price: $600,000
+   • Net identifiable assets: $200,000
+   → Goodwill = $600,000 − $200,000 = $400,000
+
+3. Economic Interpretation:
+   • Acquirer paid $600,000
+   • Received net assets worth $200,000
+   • Premium of $400,000 represents goodwill
+
+4. What Goodwill Represents:
+   • Intangible value not separately identifiable
+   • Brand recognition, customer relationships
+   • Synergies and strategic value
+   • Management expertise and market position
+
+5. Balance Sheet Impact (Acquirer):
+   
+   Assets:
+   • Acquired assets: $300,000
+   • Goodwill: $400,000
+   • Cash: ($600,000)
+   → Net change: $100,000 increase in assets
+   
+   Liabilities:
+   • Assumed liabilities: $100,000
+
+6. Purchase Price Allocation:
+   • Step 1: Record identifiable assets at fair value
+   • Step 2: Record assumed liabilities at fair value
+   • Step 3: Remaining purchase price = Goodwill
+
+Key Points:
+   • Goodwill represents excess of price over net assets
+   • Must be tested annually for impairment
+   • Cannot be amortized under current GAAP
+   • Reflects intangible value and synergies`,
+    learnContent: {
+      concept: 'Goodwill represents the excess of purchase price over net identifiable assets acquired.',
+      formula: 'Goodwill = Purchase Price − (Assets − Liabilities)',
+      example: '$1M price, $600k assets, $200k liabilities → $1M − $400k = $600k Goodwill\n$500k deal, $300k net assets → $200k Goodwill\n$800k price, $700k net assets → $100k Goodwill'
+    }
+  },
+  {
+    id: 'acc-hard-33',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Acquisition + PPA + Deferred Tax',
+    description: `Firm acquires another company for $1.2M. Net assets acquired (fair value) = $900k.
+
+Among these, $300k is allocated to intangible assets (amortizable). Tax basis of intangibles = $0. Tax rate = 25%.
+
+What are: (1) Goodwill created and (2) Deferred Tax Liability from PPA?`,
+    answer: 'Goodwill = $300,000; DTL = $75,000',
+    hint: 'Goodwill = Price − Net Assets. DTL = Difference in book vs. tax basis × Tax Rate.',
+    explanation: `Calculation:
+Goodwill = $1,200,000 − $900,000 = $300,000
+DTL from intangibles = ($300,000 − $0) × 25% = $75,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Goodwill Calculation:
+   • Purchase price: $1,200,000
+   • Net assets acquired (fair value): $900,000
+   → Goodwill = $1,200,000 − $900,000 = $300,000
+
+2. Deferred Tax Analysis:
+   
+   Book vs. Tax Basis Difference:
+   • Book basis of intangibles: $300,000 (fair value)
+   • Tax basis of intangibles: $0 (not deductible)
+   → Temporary difference: $300,000
+
+3. DTL Calculation:
+   • Temporary difference: $300,000
+   • Tax rate: 25%
+   → DTL = $300,000 × 25% = $75,000
+
+4. Why DTL is Created:
+   • Book depreciation will exceed tax depreciation
+   • Future amortization of $300k creates book expense
+   • No corresponding tax deduction available
+   • Results in higher future taxable income
+
+5. Purchase Price Allocation Summary:
+   • Total price: $1,200,000
+   • Net identifiable assets: $900,000
+     - Includes $300,000 intangibles
+   • DTL created: ($75,000)
+   • Goodwill (residual): $300,000
+
+6. Balance Sheet Impact (Acquirer):
+   
+   Assets:
+   • Acquired assets: $900,000
+   • Goodwill: $300,000
+   • Cash: ($1,200,000)
+   
+   Liabilities:
+   • Assumed liabilities: (included in net assets)
+   • DTL created: $75,000
+
+7. Future Impact:
+   • Intangible amortization will create book expense
+   • No tax deduction for amortization
+   • DTL will reverse as temporary difference unwinds
+
+Key Points:
+   • PPA creates temporary differences between book and tax
+   • DTLs arise when book basis > tax basis
+   • Goodwill is calculated after considering all adjustments
+   • Tax effects must be considered in acquisition accounting`,
+    learnContent: {
+      concept: 'DTLs arise when book basis > tax basis. Goodwill = excess over net assets.',
+      formula: 'DTL = (Book − Tax) × Rate; Goodwill = Price − Net Assets',
+      example: '$800k paid, $500k net assets, $200k intangible → $300k Goodwill, $50k DTL\n$1.5M deal, $1.1M assets incl. $400k intangibles, $0 tax → $100k DTL\n$600k price, $450k assets, $150k intangible difference → $37.5k DTL'
+    }
+  },
+
+  // Topic 58: Investment in Securities
+  {
+    id: 'acc-easy-64',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Securities Investment – Cash Flow Classification',
+    description: `A company purchases $100,000 of marketable securities (held for trading).
+
+How is this recorded on the Cash Flow Statement?`,
+    answer: 'Cash Outflow under Investing Activities',
+    hint: 'Securities purchases are considered investments.',
+    explanation: `Answer: Cash Outflow under Investing Activities
+
+• • •
+
+Detailed explanation:
+
+1. Nature of Securities Purchase:
+   • Marketable securities are financial investments
+   • Held for trading or investment purposes
+   • Not part of regular operating activities
+
+2. Cash Flow Classification Framework:
+   
+   Operating Activities:
+   • Core business operations
+   • Revenue and expense transactions
+   • Working capital changes
+   
+   Investing Activities:
+   • Purchase/sale of investments
+   • Capital expenditures
+   • Acquisitions and divestitures
+   
+   Financing Activities:
+   • Debt and equity transactions
+   • Dividends and buybacks
+
+3. Why Investing Activities:
+   • Securities represent investments in other entities
+   • Similar to other long-term investments
+   • Not cash equivalents (>3 month maturity)
+   • Purpose is investment return, not operations
+
+4. Cash Flow Impact:
+   • Investing Activities: ($100,000)
+   • Represents cash used for investment
+   • Reduces available cash
+
+5. Exception - Cash Equivalents:
+   • Very short-term, highly liquid investments
+   • Maturity ≤ 3 months when purchased
+   • These are NOT classified as investing activities
+   • Considered equivalent to cash
+
+6. Balance Sheet Impact:
+   • Investment securities: $100,000
+   • Cash: ($100,000)
+   → Net assets unchanged, composition changed
+
+Key Points:
+   • Securities purchases are investing activities unless cash equivalents
+   • Trading vs. AFS classification doesn't affect cash flow treatment
+   • Sales of securities also go to investing activities
+   • Income from securities goes to operating activities`,
+    learnContent: {
+      concept: 'Buying securities is an investing activity unless held as cash equivalents.',
+      formula: 'Cash Flow from Investing = −Purchase Amount',
+      example: '$50k securities purchase = ($50k) cash flow\n$200k bond purchase = ($200k) Investing outflow\n$75k stock purchase = ($75k) investing'
+    }
+  },
+  {
+    id: 'acc-medium-43',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Available-for-Sale vs. Trading Securities',
+    description: `A company buys $80,000 of Available-for-Sale (AFS) securities. By year-end, their fair value increases by $5,000.
+
+Where is this unrealized gain reported?`,
+    answer: 'Other Comprehensive Income (OCI)',
+    hint: 'AFS securities affect OCI, not the Income Statement.',
+    explanation: `Answer: Other Comprehensive Income (OCI)
+
+• • •
+
+Detailed explanation:
+
+1. Securities Classification Impact:
+   
+   Trading Securities:
+   • Held for short-term profit
+   • Unrealized gains/losses → Income Statement
+   • Fair value changes affect Net Income immediately
+   
+   Available-for-Sale (AFS):
+   • Held for indefinite period
+   • Unrealized gains/losses → Other Comprehensive Income
+   • Fair value changes bypass Net Income
+
+2. AFS Accounting Treatment:
+   
+   Initial Purchase:
+   • AFS Securities: $80,000
+   • Cash: ($80,000)
+   
+   Year-End Fair Value Adjustment:
+   • AFS Securities: $5,000 (increase to $85,000)
+   • AOCI (Accumulated OCI): $5,000
+
+3. Financial Statement Impact:
+   
+   Income Statement:
+   • No impact from unrealized gain
+   • Net Income unaffected
+   
+   Other Comprehensive Income:
+   • Unrealized gain on AFS securities: $5,000
+   • Increases total comprehensive income
+   
+   Balance Sheet:
+   • AFS securities at fair value: $85,000
+   • AOCI (part of equity): $5,000
+
+4. Why OCI vs. Income Statement:
+   • AFS securities not held for trading
+   • Gains/losses are temporary and unrealized
+   • Volatility should not affect current earnings
+   • Provides more stable income reporting
+
+5. When Gains Hit Income Statement:
+   • Upon sale of AFS securities
+   • Reclassification from AOCI to earnings
+   • Called "reclassification adjustment"
+
+6. Comprehensive Income Components:
+   • Net Income: $X
+   • OCI: $5,000 (AFS gain)
+   • Total Comprehensive Income: $X + $5,000
+
+Key Points:
+   • AFS unrealized gains bypass the income statement
+   • OCI provides temporary holding place for unrealized items
+   • Upon sale, gains/losses reclassify to earnings
+   • AOCI accumulates on balance sheet until realized`,
+    learnContent: {
+      concept: 'AFS gains/losses affect OCI until realized.',
+      formula: 'OCI Adjustment = Change in Fair Value of AFS Securities',
+      example: '$10k AFS gain → $10k OCI\n$15k loss = ($15k) OCI impact\n$8k appreciation → $8k AOCI increase'
+    }
+  },
+  {
+    id: 'acc-hard-34',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Equity Method Investment Accounting',
+    description: `A company owns 30% of another firm and uses the equity method. That investee reports $200,000 Net Income and pays $50,000 in dividends.
+
+What is the impact on the investor's Income Statement and Cash Flow Statement?`,
+    answer: '$60,000 income (IS); $15,000 cash inflow (CFS from Investing)',
+    hint: 'Equity income = 30% × Net Income. Dividends = return of capital, not income.',
+    explanation: `Calculation:
+Equity Income = 30% × $200,000 = $60,000 (Income Statement)
+Dividend Cash = 30% × $50,000 = $15,000 (Cash Flow Statement - Investing)
+
+• • •
+
+Step-by-step breakdown:
+
+1. Equity Method Criteria:
+   • Ownership: 30% (significant influence threshold: 20-50%)
+   • Investor can influence investee's decisions
+   • Not consolidated due to <50% ownership
+
+2. Income Statement Impact:
+   
+   Equity Income Recognition:
+   • Investor's share of investee's earnings
+   • 30% × $200,000 = $60,000
+   • Reported as "Equity in Earnings of Investee"
+   • Increases investor's Net Income
+
+3. Balance Sheet Impact:
+   
+   Investment Account Changes:
+   • Increase for equity income: $60,000
+   • Decrease for dividends received: $15,000
+   • Net increase: $45,000
+
+4. Cash Flow Statement Impact:
+   
+   Operating Activities:
+   • Equity income is non-cash ($60,000)
+   • Must be subtracted in indirect method
+   • Shows that income didn't generate cash
+   
+   Investing Activities:
+   • Dividends received: $15,000 cash inflow
+   • Represents actual cash from investment
+
+5. Journal Entries (Investor):
+   
+   Record Equity Income:
+   • Dr. Investment in Investee: $60,000
+   • Cr. Equity Income: $60,000
+   
+   Record Dividend Received:
+   • Dr. Cash: $15,000
+   • Cr. Investment in Investee: $15,000
+
+6. Reconciliation Logic:
+   • Investee earned $200,000 → Investor records $60,000 income
+   • Investee paid $50,000 dividends → Investor receives $15,000 cash
+   • Investment account increases by net: $60,000 - $15,000 = $45,000
+
+Key Points:
+   • Equity method records investor's share of investee's performance
+   • Income is recognized when earned, not when cash received
+   • Dividends reduce investment account (return of capital)
+   • Cash flow reflects only actual dividends received`,
+    learnContent: {
+      concept: 'Equity method: record pro-rata income; dividends reduce investment and are investing cash flow.',
+      formula: 'IS = Ownership % × Net Income; CFS = Ownership % × Dividends',
+      example: '20% of $100k NI → $20k income; 20% × $40k dividend = $8k CFS\n25% stake, $300k NI, $60k dividend = $75k income, $15k cash\n40% × $150k NI, $30k dividend = $60k income, $12k cash'
+    }
+  },
+
+  // Topic 59: Dividends Paid
+  {
+    id: 'acc-easy-65',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Dividends Paid – Basic Effect',
+    description: `A firm declares and pays $10,000 in dividends.
+
+How is this reflected on the statements?`,
+    answer: 'Financing Cash Flow outflow; no income statement impact',
+    hint: 'Dividends affect cash and retained earnings, not net income.',
+    explanation: `Answer: Financing Cash Flow outflow; no income statement impact
+
+• • •
+
+Detailed explanation:
+
+1. Nature of Dividends:
+   • Distribution of earnings to shareholders
+   • Return of value to equity holders
+   • Not an expense of doing business
+
+2. Financial Statement Impact:
+   
+   Income Statement:
+   • NO impact on revenues or expenses
+   • NO impact on Net Income
+   • Dividends are distributions, not expenses
+   
+   Balance Sheet:
+   • Cash decreases: ($10,000)
+   • Retained Earnings decreases: ($10,000)
+   • Total equity decreases: ($10,000)
+   
+   Cash Flow Statement:
+   • Financing Activities: ($10,000)
+   • Represents cash returned to shareholders
+
+3. Why Financing Activities:
+   • Dividends are capital structure transactions
+   • Similar to stock buybacks or debt repayments
+   • Involves returning cash to providers of capital
+   • Not related to operating or investing activities
+
+4. Timing Considerations:
+   
+   Declaration Date:
+   • Board declares dividend
+   • Creates liability (Dividends Payable)
+   • Reduces Retained Earnings
+   
+   Payment Date:
+   • Cash is actually paid
+   • Eliminates Dividends Payable
+   • Cash flow impact occurs here
+
+5. Journal Entries:
+   
+   Declaration:
+   • Dr. Retained Earnings: $10,000
+   • Cr. Dividends Payable: $10,000
+   
+   Payment:
+   • Dr. Dividends Payable: $10,000
+   • Cr. Cash: $10,000
+
+6. Cash Flow vs. Income Statement:
+   • Income Statement: Shows earning capacity
+   • Cash Flow: Shows actual cash movements
+   • Dividends affect cash but not earnings
+
+Key Points:
+   • Dividends are not expenses - they don't reduce Net Income
+   • Cash impact classified as financing activity
+   • Reduces both cash and retained earnings
+   • Timing matters: declaration vs. payment dates`,
+    learnContent: {
+      concept: 'Dividends paid are financing outflows and reduce retained earnings.',
+      formula: 'CFS Financing Outflow = Declared Dividends Paid',
+      example: '$5k dividend = ($5k) financing outflow\n$20k payout → ($20k) CFS\n$15k quarterly dividend = ($15k) financing'
+    }
+  },
+  {
+    id: 'acc-medium-44',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Dividends and Statement Impact',
+    description: `A firm earns $200,000 Net Income, pays $50,000 in dividends, and repurchases $30,000 of stock.
+
+What is the effect on Retained Earnings and total Financing Cash Flow?`,
+    answer: 'Retained Earnings increases by $150,000; Financing Cash Flow = ($80,000)',
+    hint: 'Dividends reduce retained earnings. Both dividends and buybacks are financing outflows.',
+    explanation: `Calculation:
+Retained Earnings = Net Income − Dividends = $200,000 − $50,000 = $150,000 increase
+Financing Cash Flow = −$50,000 (dividends) − $30,000 (buybacks) = ($80,000)
+
+• • •
+
+Step-by-step breakdown:
+
+1. Retained Earnings Analysis:
+   
+   Beginning Retained Earnings: $X
+   Add: Net Income: $200,000
+   Less: Dividends Paid: ($50,000)
+   Ending Retained Earnings: $X + $150,000
+   
+   → Net increase in RE: $150,000
+
+2. Share Repurchase Impact:
+   • Stock buybacks do NOT affect Retained Earnings
+   • They reduce Treasury Stock (or increase if contra-equity)
+   • Dividends are the only item affecting RE in this problem
+
+3. Cash Flow Statement Impact:
+   
+   Financing Activities:
+   • Dividends paid: ($50,000)
+   • Stock repurchases: ($30,000)
+   → Total financing outflow: ($80,000)
+
+4. Balance Sheet Changes:
+   
+   Assets:
+   • Cash decreases: ($80,000)
+   
+   Equity:
+   • Retained Earnings: +$150,000 (NI - dividends)
+   • Treasury Stock: +$30,000 (or reduces other equity)
+   • Net equity change: +$120,000
+
+5. Why Both are Financing Activities:
+   • Dividends: Direct cash distribution to shareholders
+   • Buybacks: Indirect return of cash (reduces share count)
+   • Both represent capital returned to equity holders
+
+6. Income Statement Impact:
+   • Net Income: $200,000 (given)
+   • NO impact from dividends or buybacks
+   • These are capital transactions, not operating
+
+7. Alternative Scenarios:
+   • If buyback was $200,000: RE still +$150,000, CF = ($250,000)
+   • If no dividends: RE +$200,000, CF = ($30,000)
+
+Key Points:
+   • Only dividends affect Retained Earnings, not buybacks
+   • Both dividends and buybacks are financing cash outflows
+   • Net Income flows through to RE unless distributed as dividends
+   • Stock transactions affect paid-in capital accounts`,
+    learnContent: {
+      concept: 'Dividends reduce RE and are recorded as financing cash outflows along with stock buybacks.',
+      formula: 'RE = NI − Dividends; CFS Financing = −Dividends − Buybacks',
+      example: '$100k NI, $20k dividends → RE = $80k; ($20k) CFS\n$50k NI, $30k dividend, $10k buyback = RE = $20k; CFS = ($40k)\n$80k NI, $15k dividend, $25k buyback = RE = $65k; CFS = ($40k)'
+    }
+  },
+  {
+    id: 'acc-hard-35',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Dividend Policy Reconciliation',
+    description: `A firm begins with $500,000 Retained Earnings. During the year:
+- Net Income = $120,000
+- Declares $40,000 dividend (paid next year)
+- Pays $30,000 from prior year's dividend
+
+What is year-end Retained Earnings, and what is the Cash Flow impact?`,
+    answer: 'RE = $580,000; CFS = ($30,000) Financing Outflow',
+    hint: 'Only declared dividends reduce RE. Only paid dividends affect CFS.',
+    explanation: `Calculation:
+Retained Earnings = $500,000 + $120,000 − $40,000 = $580,000
+Cash Flow Impact = ($30,000) financing outflow (only cash actually paid)
+
+• • •
+
+Step-by-step breakdown:
+
+1. Retained Earnings Rollforward:
+   
+   Beginning RE: $500,000
+   Add: Net Income: $120,000
+   Less: Dividends declared this year: ($40,000)
+   Ending RE: $580,000
+
+2. Key Distinction - Declaration vs. Payment:
+   
+   Dividends Declared This Year ($40,000):
+   • Reduces Retained Earnings when declared
+   • Creates Dividends Payable liability
+   • Will affect cash flow when paid next year
+   
+   Dividends Paid This Year ($30,000):
+   • From prior year declaration
+   • No RE impact (already reduced last year)
+   • Affects cash flow statement this year
+
+3. Cash Flow Statement Impact:
+   
+   Financing Activities:
+   • Dividends paid: ($30,000)
+   • This is the only cash flow impact
+   • Declared but unpaid dividends don't affect CFS
+
+4. Balance Sheet Changes:
+   
+   Current Year Journal Entries:
+   
+   For Net Income:
+   • Dr. Various accounts: $120,000
+   • Cr. Retained Earnings: $120,000
+   
+   For Dividend Declaration:
+   • Dr. Retained Earnings: $40,000
+   • Cr. Dividends Payable: $40,000
+   
+   For Prior Year Dividend Payment:
+   • Dr. Dividends Payable: $30,000
+   • Cr. Cash: $30,000
+
+5. Year-End Balance Sheet Positions:
+   • Retained Earnings: $580,000
+   • Dividends Payable: $40,000 (new liability)
+   • Cash: Reduced by $30,000 from payments
+
+6. Next Year Impact:
+   • When $40,000 is paid: No RE impact
+   • Cash flow: ($40,000) financing outflow
+   • Eliminates Dividends Payable
+
+7. Timing Summary:
+   
+   This Year:
+   • RE impact: $120,000 income - $40,000 declared = $80,000 net
+   • Cash impact: ($30,000) paid
+   
+   Next Year:
+   • RE impact: $0 (already recorded)
+   • Cash impact: ($40,000) when paid
+
+Key Points:
+   • Dividend declarations immediately reduce Retained Earnings
+   • Cash flow reflects only actual cash payments
+   • Timing differences create Dividends Payable liability
+   • Each period affects RE and CFS differently`,
+    learnContent: {
+      concept: 'Declared dividends reduce RE when declared. CFS reflects only dividends actually paid.',
+      formula: 'RE = Prior RE + NI − Declared Dividends; CFS = Dividends Paid',
+      example: '$300k start + $100k NI − $20k declared = $380k RE\n$40k prior-year dividend paid = ($40k) CFS\n$250k + $80k NI - $15k declared = $315k RE'
+    }
+  },
+
+  // Topic 60: Share Buybacks
+  {
+    id: 'acc-easy-66',
+    track: 'accounting',
+    difficulty: 'easy',
+    title: 'Share Buyback – Classification',
+    description: `Company repurchases $100,000 of its own shares.
+
+How is this reported on the Cash Flow Statement?`,
+    answer: 'Cash Flow from Financing: ($100,000)',
+    hint: 'Share repurchases are part of capital structure changes.',
+    explanation: `Answer: Cash Flow from Financing: ($100,000)
+
+• • •
+
+Detailed explanation:
+
+1. Nature of Share Buybacks:
+   • Company purchasing its own outstanding shares
+   • Reduces shares outstanding
+   • Returns capital to shareholders
+   • Opposite of issuing new shares
+
+2. Cash Flow Classification Framework:
+   
+   Operating Activities:
+   • Core business operations
+   • Revenue and expense transactions
+   • Working capital changes
+   
+   Investing Activities:
+   • Purchase/sale of long-term assets
+   • Business acquisitions
+   • Investment securities
+   
+   Financing Activities:
+   • Changes in debt and equity structure
+   • Dividends and share repurchases
+   • Issuance/retirement of stock and bonds
+
+3. Why Financing Activities:
+   • Share buybacks are capital structure transactions
+   • Return cash to equity providers
+   • Reduce outstanding equity
+   • Similar in nature to dividend payments
+
+4. Cash Flow Impact:
+   • Financing Activities: ($100,000)
+   • Negative cash flow (cash outflow)
+   • Reduces total cash available
+
+5. Balance Sheet Impact:
+   
+   Assets:
+   • Cash: ($100,000)
+   
+   Equity (typical treatment):
+   • Treasury Stock: $100,000 (contra-equity)
+   OR
+   • Reduction in Common Stock and APIC
+
+6. Compare to Other Transactions:
+   • Issuing shares: +Financing cash flow
+   • Buying back shares: -Financing cash flow
+   • Paying dividends: -Financing cash flow
+   • Borrowing money: +Financing cash flow
+
+7. Alternative Accounting Methods:
+   
+   Cost Method (most common):
+   • Dr. Treasury Stock: $100,000
+   • Cr. Cash: $100,000
+   
+   Retirement Method:
+   • Dr. Common Stock & APIC: $100,000
+   • Cr. Cash: $100,000
+
+Key Points:
+   • All share repurchases are financing activities
+   • Represents cash outflow reducing financing CF
+   • Treatment is consistent regardless of accounting method
+   • Similar to dividend payments in cash flow classification`,
+    learnContent: {
+      concept: 'Buying back shares returns capital to shareholders, reducing cash and equity.',
+      formula: 'CFS Financing = −Buyback Amount',
+      example: '$50k repurchase = ($50k) financing\n$200k buyback = ($200k) CFS\n$75k share buyback = ($75k) financing outflow'
+    }
+  },
+  {
+    id: 'acc-medium-45',
+    track: 'accounting',
+    difficulty: 'medium',
+    title: 'Buybacks and EPS Impact',
+    description: `Company earns Net Income of $500,000 with 100,000 shares outstanding. It repurchases 10,000 shares mid-year.
+
+What is the approximate effect on Basic EPS, assuming no other changes?`,
+    answer: 'EPS increases from $5.00 to $5.26',
+    hint: 'Weighted average shares will be ~95,000 for the year due to mid-year repurchase.',
+    explanation: `Calculation:
+Before Buyback: EPS = $500,000 ÷ 100,000 = $5.00
+After Buyback: Weighted average shares ≈ 95,000 → EPS = $500,000 ÷ 95,000 ≈ $5.26
+
+• • •
+
+Step-by-step breakdown:
+
+1. Initial EPS Calculation:
+   • Net Income: $500,000
+   • Shares outstanding: 100,000
+   → Basic EPS = $500,000 ÷ 100,000 = $5.00
+
+2. Mid-Year Buyback Impact:
+   • Repurchased: 10,000 shares
+   • Timing: Mid-year (6 months)
+   • Remaining shares after buyback: 90,000
+
+3. Weighted Average Share Calculation:
+   
+   First Half (6 months):
+   • Outstanding shares: 100,000
+   • Time weight: 6/12 = 0.5
+   • Weighted shares: 100,000 × 0.5 = 50,000
+   
+   Second Half (6 months):
+   • Outstanding shares: 90,000 (after buyback)
+   • Time weight: 6/12 = 0.5
+   • Weighted shares: 90,000 × 0.5 = 45,000
+   
+   Total Weighted Average: 50,000 + 45,000 = 95,000
+
+4. New EPS Calculation:
+   • Net Income: $500,000 (unchanged)
+   • Weighted average shares: 95,000
+   → New EPS = $500,000 ÷ 95,000 = $5.26
+
+5. EPS Improvement Analysis:
+   • Original EPS: $5.00
+   • New EPS: $5.26
+   • Improvement: $5.26 - $5.00 = $0.26 per share
+   • Percentage increase: ($0.26 ÷ $5.00) × 100% = 5.2%
+
+6. Why EPS Increases:
+   • Same Net Income spread over fewer shares
+   • Each remaining share gets larger portion of earnings
+   • Buybacks are often done to boost EPS
+
+7. Cash Flow vs. EPS Trade-off:
+   • Buyback uses cash: ($100,000) financing outflow
+   • But improves EPS for remaining shareholders
+   • Management must balance cash preservation vs. EPS enhancement
+
+8. Alternative Scenarios:
+   • If buyback at year-end: Weighted avg = 100,000, no EPS impact
+   • If buyback at year-start: Weighted avg = 90,000, EPS = $5.56
+
+Key Points:
+   • Timing of buybacks affects weighted average calculation
+   • Mid-year transactions require time-weighting
+   • Buybacks mechanically boost EPS by reducing denominator
+   • Must consider cash opportunity cost`,
+    learnContent: {
+      concept: 'Buybacks reduce shares outstanding, boosting EPS even if Net Income stays constant.',
+      formula: 'EPS = Net Income ÷ Weighted Avg Shares Outstanding',
+      example: '$100k NI, 50k shares = $2.00 EPS; Buyback → 45k → $2.22\n$200k NI, 80k shares = $2.50; buy back 10% → 72k → $2.78\n$300k NI, 120k shares = $2.50; mid-year buyback 20k → 110k avg → $2.73'
+    }
+  },
+  {
+    id: 'acc-hard-36',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Share Buybacks and Treasury Stock Accounting',
+    description: `Company repurchases 15,000 shares at $20 per share. The original issue price was $10.
+
+What is the impact on Treasury Stock and Additional Paid-in Capital (APIC)?`,
+    answer: 'Treasury Stock increases by $300,000; APIC reduced by $150,000',
+    hint: 'Repurchase above issue price reduces APIC if treasury stock method is used.',
+    explanation: `Calculation:
+Treasury Stock = 15,000 × $20 = $300,000
+Original APIC per share = $10
+Excess repurchase cost = ($20 - $10) × 15,000 = $150,000 → reduces APIC
+
+• • •
+
+Step-by-step breakdown:
+
+1. Share Repurchase Details:
+   • Shares repurchased: 15,000
+   • Repurchase price: $20 per share
+   • Original issue price: $10 per share
+   • Total cash outlay: 15,000 × $20 = $300,000
+
+2. Treasury Stock Method (Cost Method):
+   
+   Journal Entry:
+   • Dr. Treasury Stock: $300,000
+   • Cr. Cash: $300,000
+   
+   → Treasury Stock increases by full repurchase cost
+
+3. APIC Impact Analysis:
+   
+   Price Comparison:
+   • Repurchase price: $20 per share
+   • Original issue price: $10 per share
+   • Excess paid: $20 - $10 = $10 per share
+   
+   Total APIC Reduction:
+   • Excess per share: $10
+   • Shares repurchased: 15,000
+   → APIC reduction: $10 × 15,000 = $150,000
+
+4. Alternative Accounting (Retirement Method):
+   
+   If shares were immediately retired:
+   
+   • Dr. Common Stock: [Par value × 15,000]
+   • Dr. APIC: $150,000 (original APIC on these shares)
+   • Dr. Retained Earnings: $150,000 (excess over original issue)
+   • Cr. Cash: $300,000
+
+5. Balance Sheet Impact (Cost Method):
+   
+   Assets:
+   • Cash: ($300,000)
+   
+   Equity:
+   • Treasury Stock: $300,000 (contra-equity)
+   • APIC: ($150,000) if using retirement-like logic
+   • Net equity decrease: ($300,000)
+
+6. Economic Interpretation:
+   • Company paid premium over original issue price
+   • $150,000 represents "loss" on buyback
+   • This excess typically reduces APIC or Retained Earnings
+
+7. Future Reissuance Impact:
+   
+   If later reissued at $25:
+   • Dr. Cash: $375,000 (15,000 × $25)
+   • Cr. Treasury Stock: $300,000
+   • Cr. APIC: $75,000 (gain on reissuance)
+
+8. Cash Flow Statement:
+   • Financing Activities: ($300,000)
+   • Same regardless of accounting method chosen
+
+Key Points:
+   • Treasury stock recorded at cost under cost method
+   • Excess over original issue price reduces equity accounts
+   • APIC typically absorbs the excess before hitting Retained Earnings
+   • Method choice affects balance sheet presentation but not cash flow`,
+    learnContent: {
+      concept: 'When buyback price exceeds issuance price, the excess reduces APIC under the cost method.',
+      formula: 'Treasury Stock = Repurchase Price × Shares; APIC reduced by difference from original issuance',
+      example: '10k shares at $25 (original $15) → $250k TS, $100k APIC hit\n20k × $30 vs. $10 → $600k TS, $400k APIC hit\n5k × $18 vs. $12 → $90k TS, $30k APIC reduction'
+    }
   }
 ];
