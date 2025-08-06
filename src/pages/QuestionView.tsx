@@ -160,6 +160,36 @@ const QuestionView = () => {
         'AR Write-off (Book)': '$40,000',
         'AR Write-off (Tax)': '$20,000',
         'Tax Rate': '25%'
+      },
+      'acc-hard-163': {
+        'Net Income': '$120,000',
+        'Accrued Revenue (AR)': '+$30,000',
+        'AR Write-Off': '–$12,000',
+        'Prepaid Expenses': '+$20,000'
+      },
+      'acc-hard-164': {
+        'Net Income': '$95,000',
+        'Gain on Sale': '$40,000',
+        'Goodwill Impairment': '$60,000',
+        'Depreciation': '$25,000',
+        'Tax Rate': '20%'
+      },
+      'acc-hard-165': {
+        'Ownership %': '30%',
+        'BrightWave NI': '$200,000',
+        'Dividends Received': '$60,000'
+      },
+      'acc-hard-166': {
+        'Capitalized R&D': '$150,000',
+        'Book Expense': '$150,000',
+        'Tax Deduction': '10% × $150K = $15,000',
+        'Tax Rate': '21%'
+      },
+      'acc-hard-167': {
+        'Net Income': '$70,000',
+        'Unrealized Loss (OCI)': '$40,000',
+        'A/P Increase': '$25,000',
+        'Tax Rate': '25%'
       }
     };
     

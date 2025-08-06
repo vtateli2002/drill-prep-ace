@@ -585,6 +585,86 @@ export const QUESTIONS: Question[] = [
     }
   },
   {
+    id: 'acc-hard-163',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Accrued Revenue + Bad Debt Write-Off + Prepaid Expense Increase',
+    description: 'VistaLume – Year-End CFO Adjustments\n\nVistaLume reported $120,000 in Net Income.\nIt recognized $30,000 in accrued but unpaid revenue, and wrote off $12,000 of AR due to bad debt.\nAdditionally, prepaid software licenses increased by $20,000.\n\nWhat is the CFO from these adjustments?',
+    answer: 118000,
+    unit: '$',
+    hint: 'AR increase reduces cash. Write-offs don\'t affect CFO. Prepaids use cash.',
+    explanation: 'AR ↑ by 30K = use of cash (–30K)\nWrite-off is already accounted in NI → no adjustment\nPrepaid ↑ 20K → cash used\nCFO = 120 – 30 – 20 = 118,000',
+    learnContent: {
+      concept: 'Accrued revenue (AR increase) = customer hasn\'t paid. AR write-offs are non-cash but reflected in NI. Prepaids = cash paid up front, reduce CFO.',
+      formula: 'CFO = Net Income – ∆AR – ∆Prepaids',
+      example: 'BytePeak earns $100K, AR ↑ $40K, prepaids ↑ $10K → CFO = 100 – 40 – 10 = 50K\nInkLabs earns $90K, AR ↑ $30K, write-off $15K, prepaids ↑ $5K → CFO = 90 – 30 – 5 = 55K\nDataVista earns $110K, AR ↑ $20K, prepaids ↑ $15K → CFO = 75K'
+    }
+  },
+  {
+    id: 'acc-hard-164',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Gain on Sale + Goodwill Impairment + Tax Shield',
+    description: 'MetroHelix – CFO Adjustments from Extraordinary Items\n\nMetroHelix reported $95,000 in Net Income.\nThe company had a $40,000 gain on sale of equipment, a $60,000 goodwill impairment, and $25,000 of depreciation.\nAssume a 20% tax rate.\n\nWhat is the total CFO adjustment from these items?',
+    answer: 45000,
+    unit: '$',
+    hint: 'Gains are subtracted, impairments and depreciation are added back.',
+    explanation: '–40,000 (Gain on sale)\n+60,000 (Goodwill impairment)\n+25,000 (Depreciation)\n→ CFO = –40 + 60 + 25 = 45,000',
+    learnContent: {
+      concept: 'Gain on sale is non-operating, subtracted. Impairment is non-cash, added back. Depreciation = non-cash, always added back.',
+      formula: 'CFO = Net Income – Gain + Impairment + Depreciation',
+      example: 'ToolGrid NI = $80K, gain = $30K, impairment = $50K, dep = $20K → CFO Adj = 40K\nBrightBase NI = $70K, gain = $10K, impairment = $40K, dep = $30K → CFO Adj = 60K\nPropertyLink NI = $100K, gain = $25K, impairment = $0, dep = $25K → CFO Adj = 0'
+    }
+  },
+  {
+    id: 'acc-hard-165',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Equity Method Income + Dividends Received',
+    description: 'IronSpark – Equity Pickup Mechanics\n\nIronSpark owns 30% of BrightWave under the equity method.\nDuring the year, BrightWave earned $200,000 in Net Income, and distributed $60,000 in dividends to IronSpark.\n\nWhat amount is recorded in IronSpark\'s income statement from this investment?',
+    answer: 60000,
+    unit: '$',
+    hint: 'Equity income = % of NI. Dividends are balance sheet-only.',
+    explanation: 'Equity income = 200K × 30% = 60K → IS pickup\nDividends = reduction in investment on B/S, no IS impact',
+    learnContent: {
+      concept: 'Equity method = income recognized proportionally. Dividends reduce the investment on B/S, not P&L. Useful for modeling long-term strategic holdings.',
+      formula: 'Equity Income = Ownership % × Associate\'s NI',
+      example: 'VoltEdge owns 40% of AmpDrive → NI = $500K → Equity Income = 200K\nRetailStack owns 25% of BizCo → NI = $100K → Income = 25K\nBuildArk owns 20% of SiteBase → NI = $300K → Income = 60K'
+    }
+  },
+  {
+    id: 'acc-hard-166',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Capitalized R&D + Book vs. Tax Deduction',
+    description: 'GeneCor – R&D Tax Timing Difference\n\nGeneCor capitalized $150,000 of R&D for tax purposes (5-year amortization).\nFor book, the full amount was expensed in Year 1.\nAmortization in Year 1 for tax was 10%.\nTax rate is 21%.\n\nWhat deferred tax asset is created in Year 1?',
+    answer: 28350,
+    unit: '$',
+    hint: 'Tax deduction is lower → DTA created',
+    explanation: 'Book = 150K\nTax = 15K\nDifference = 135K\nDTA = 135 × 21% = 28,350',
+    learnContent: {
+      concept: 'Capitalized R&D → mismatch between book and tax. Creates DTA when book deducts more upfront. Reverses as tax deductions increase over time.',
+      formula: 'DTA = (Book – Tax) × Tax Rate',
+      example: 'BioNow books $200K, tax amort = $20K → DTA = 37,800\nLabEdge books $100K, tax = $10K → DTA = 18,900\nGeneWave books $300K, tax = $30K → DTA = 56,700'
+    }
+  },
+  {
+    id: 'acc-hard-167',
+    track: 'accounting',
+    difficulty: 'hard',
+    title: 'Unrealized Loss + Deferred Tax Asset + Working Capital',
+    description: 'Clipworx – Investment Loss & Balance Sheet Impact\n\nClipworx posted $70,000 in Net Income.\nIt recorded a $40,000 unrealized loss on investments, recognized in OCI (not NI), and increased accounts payable by $25,000.\nThe tax rate is 25%.\n\nWhat is the CFO, and what is the DTA created?',
+    answer: 95000,
+    unit: '$ CFO, $10,000 DTA',
+    hint: 'Unrealized loss doesn\'t affect NI, but creates DTA.',
+    explanation: 'Unrealized loss → OCI, not CFO\nA/P ↑ = cash held → boosts CFO by +25K\nDTA from OCI loss = 40K × 25% = 10K\nCFO = 70,000 + 25,000 = 95,000',
+    learnContent: {
+      concept: 'OCI items don\'t impact NI/CFO, but affect tax assets. DTA from OCI increases balance sheet, not CFO. Payables increase = CFO boost.',
+      formula: 'CFO = NI + ∆Payables; DTA = OCI Loss × Tax Rate',
+      example: 'BondLink NI = $60K, A/P ↑ $30K, OCI Loss = $20K → CFO = 90K, DTA = 5K\nFinDigi NI = $80K, A/P ↑ $10K, OCI loss = $60K → CFO = 90K, DTA = 15K\nDataQuant NI = $50K, A/P ↑ $20K, OCI loss = $40K → CFO = 70K, DTA = 10K'
+    }
+  },
+  {
     id: 'acc-hard-1',
     track: 'accounting',
     difficulty: 'hard',
