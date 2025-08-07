@@ -10974,7 +10974,54 @@ Final Answer: 1.85`,
     }
   },
 
-  // Topic 6: Treasury Stock Method & Diluted Shares
+  // Topic 6: Enterprise Value with Treasury Stock Method
+  {
+    id: "val_ev_tsm_easy",
+    track: "valuation",
+    difficulty: "easy",
+    title: "Enterprise Value with TSM - Convertible Bonds",
+    description: "A company has:\n\n100 million shares\n\nShare price: $20\n\nNet debt: $200 million\n\n$100 million of in-the-money convertible bonds, convertible into 5 million shares at a $10 strike price\n\nWhat is the company's Enterprise Value, using the Treasury Stock Method?",
+    answer: "2250000000",
+    explanation: "Basic equity value = 100M × $20 = $2.0B\n\nTSM impact:\nProceeds = 5M × $10 = $50M\nShares repurchased = $50M ÷ $20 = 2.5M\nNet new shares = 5M – 2.5M = 2.5M\n\nTotal diluted shares = 102.5M\nDiluted equity value = 102.5M × $20 = $2.05B\n\nNet debt = $200M (no change)\n\nEV = $2.05B + $200M = $2.25B → 2,250,000,000\n\nFinal Answer: 2,250,000,000",
+    hint: "Calculate diluted shares using TSM, then add net debt to diluted equity value.",
+    learnContent: {
+      concept: "Enterprise Value with Treasury Stock Method accounts for the dilutive effect of convertible securities when calculating a company's total value. TSM assumes proceeds from conversion are used to repurchase shares at current market price.",
+      formula: "Enterprise Value = Diluted Equity Value + Net Debt\n\nTSM Steps:\n1. Calculate conversion proceeds\n2. Determine shares repurchased at current price\n3. Calculate net dilution\n4. Apply to equity value calculation",
+      example: "If convertibles can be exercised for 10M shares at $15 strike with current price $30:\n• Proceeds: 10M × $15 = $150M\n• Repurchased: $150M ÷ $30 = 5M\n• Net dilution: 10M - 5M = 5M shares\n• This increases diluted share count by 5M"
+    }
+  },
+  {
+    id: "val_ev_tsm_medium",
+    track: "valuation",
+    difficulty: "medium",
+    title: "Enterprise Value with TSM - Medium Complexity",
+    description: "A company has:\n\n150 million shares\n\nShare price: $30\n\nNet debt: $400 million\n\n$300 million of in-the-money convertible bonds, convertible into 10 million shares at a $15 strike price\n\nWhat is the company's Enterprise Value, applying the Treasury Stock Method?",
+    answer: "5050000000",
+    explanation: "Basic equity value = 150M × $30 = $4.5B\n\nTSM steps:\nProceeds = 10M × $15 = $150M\nShares repurchased = $150M ÷ $30 = 5M\nNet new shares = 5M\n\nDiluted shares = 155M\nDiluted equity value = 155M × $30 = $4.65B\n\nNet debt = $400M\n\nEV = $4.65B + $400M = $5.05B → 5,050,000,000\n\nFinal Answer: 5,050,000,000",
+    hint: "Apply TSM to find diluted shares, calculate diluted equity value, then add net debt.",
+    learnContent: {
+      concept: "When convertible bonds are in-the-money, TSM assumes they will be converted. The key is determining the net dilutive effect after accounting for share repurchases from conversion proceeds.",
+      formula: "Net Dilution = Convertible Shares - (Proceeds ÷ Current Price)\n\nDiluted Equity = (Basic Shares + Net Dilution) × Share Price\n\nEnterprise Value = Diluted Equity + Net Debt",
+      example: "For convertibles into 8M shares at $20 strike, current price $40:\n• Proceeds: 8M × $20 = $160M\n• Repurchased: $160M ÷ $40 = 4M\n• Net dilution: 8M - 4M = 4M shares\n• Diluted equity increases by 4M × $40 = $160M"
+    }
+  },
+  {
+    id: "val_ev_tsm_hard",
+    track: "valuation",
+    difficulty: "hard",
+    title: "Enterprise Value with TSM - Complex Calculation",
+    description: "A company has:\n\n200 million shares\n\nShare price: $40\n\nNet debt: $600 million\n\n$500 million of in-the-money convertible debt, convertible into 25 million shares at a $20 strike price\n\nWhat is the company's Enterprise Value under the Treasury Stock Method?",
+    answer: "9100000000",
+    explanation: "Basic equity value = 200M × $40 = $8.0B\n\nTSM details:\nProceeds = 25M × $20 = $500M\nShares repurchased = $500M ÷ $40 = 12.5M\nNet dilution = 25M – 12.5M = 12.5M\n\nDiluted shares = 212.5M\nDiluted equity value = 212.5M × $40 = $8.5B\n\nNet debt = $600M\n\nEV = $8.5B + $600M = $9.1B → 9,100,000,000\n\nFinal Answer: 9,100,000,000",
+    hint: "Calculate the net dilutive impact of convertibles, apply to equity value, then add net debt for enterprise value.",
+    learnContent: {
+      concept: "Large convertible positions can significantly impact enterprise value calculations. TSM ensures we don't double-count the economic value by assuming proceeds are used efficiently to minimize dilution.",
+      formula: "TSM Enterprise Value Calculation:\n1. Net Dilution = Convertible Shares - (Strike × Shares ÷ Current Price)\n2. Diluted Shares = Basic + Net Dilution\n3. Diluted Equity = Diluted Shares × Current Price\n4. Enterprise Value = Diluted Equity + Net Debt",
+      example: "For a major convertible position:\n• Higher strike prices reduce net dilution\n• Lower current prices increase share repurchase capability\n• The net effect determines true enterprise value impact\n• Always verify in-the-money status before applying TSM"
+    }
+  },
+
+  // Topic 7: Treasury Stock Method & Diluted Shares
   {
     id: 'val_tsm_easy_1',
     track: 'valuation',
