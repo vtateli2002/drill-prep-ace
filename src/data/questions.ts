@@ -1958,31 +1958,67 @@ What is the company's Enterprise Value (EV)?`,
     answer: 720000000,
     unit: '$',
     hint: 'Enterprise Value = Equity Value + Net Debt + Preferred + NCI − Cash',
-    explanation: `EV represents total value to all capital providers. Add debt-like items, subtract cash.
+    explanation: `📌 **Question Analysis**
 
-• • •
+Enterprise Value represents the total value of a company to all capital providers. Calculate by adding debt-like obligations and subtracting cash from market capitalization.
 
-Step-by-step breakdown:
+💡 **Explanation**
 
-1. Start with Market Cap:
-   • Equity Value: $500M
+Step-by-step calculation:
 
-2. Add Debt-Like Obligations:
+1. **Start with Market Cap**: $500M (equity value)
+2. **Add Debt-Like Obligations**:
    • Total Debt: +$250M
    • Preferred Equity: +$30M
    • Noncontrolling Interest: +$20M
+3. **Subtract Cash**: -$80M
+4. **Enterprise Value**: $500M + $250M + $30M + $20M - $80M = $720M
 
-3. Subtract Cash:
-   • Cash and Cash Equivalents: -$80M
+Key takeaways:
+• EV reflects total business value across all stakeholders
+• Debt-like items increase enterprise value as they represent claims
+• Cash reduces EV as it's available to pay down debt immediately
 
-4. Enterprise Value Calculation:
-   → $500M + $250M + $30M + $20M - $80M = $720M
+🎯 **Interview Angle**
 
-Key Points:
-   • EV reflects total business value across all stakeholders
-   • Debt-like items increase enterprise value
-   • Cash reduces EV as it's available to pay down debt
-   • Preferred and NCI represent additional capital claims`,
+This is a fundamental valuation concept tested in every finance interview. Interviewers ask this to assess your understanding of:
+• How enterprise value differs from equity value
+• Which items count as "debt-like" obligations
+• Why cash is subtracted from enterprise value
+• The relationship between capital structure and valuation
+
+📘 **Core Concept**
+
+• Enterprise Value measures the total cost to acquire 100% of a company's operations
+• It's capital structure neutral - ignores how the business is financed
+• Used as the numerator in key valuation multiples like EV/EBITDA
+
+⚙️ **How It Works**
+
+In M&A transactions, buyers must pay the market cap to equity holders, assume all debt, pay off preferred shareholders, and deal with minority interests. They receive the company's cash as an offset, making the net cost equal to Enterprise Value.
+
+💥 **Why It Matters**
+
+• Foundation for all enterprise-based valuation multiples
+• Critical for comparable company analysis
+• Essential for DCF valuation (enterprise DCF approach)
+• Standard metric for M&A transaction analysis
+
+📐 **Formula**
+
+Enterprise Value = Market Cap + Total Debt + Preferred Stock + Noncontrolling Interest − Cash & Cash Equivalents
+
+📚 **Examples**
+
+1. **Tech Company**: $2B market cap, $500M debt, $100M cash → EV = $2.4B
+2. **Retail Chain**: $800M market cap, $300M debt, $50M preferred, $200M cash → EV = $950M  
+3. **Manufacturing**: $1.5B market cap, $400M debt, $20M NCI, $150M cash → EV = $1.77B
+
+❌ **Common Mistakes**
+
+1. **Forgetting preferred stock** - Preferred shares are debt-like and must be added
+2. **Adding cash instead of subtracting** - Cash reduces the acquisition cost
+3. **Ignoring noncontrolling interests** - Minority stakes represent additional claims on enterprise value`,
     learnContent: {
       concept: 'Enterprise Value reflects the total value of the business to all capital providers.',
       formula: 'EV = Equity Value + Debt + Preferred + NCI − Cash',
@@ -2010,33 +2046,69 @@ What is the firm's Enterprise Value (EV)?`,
     answer: 1620000000,
     unit: '$',
     hint: 'Add debt-like items. Subtract all non-operating, liquid assets (like LT investments).',
-    explanation: `EV includes all debt-like obligations and excludes non-operating assets. Operating leases act like debt.
+    explanation: `📌 **Question Analysis**
 
-• • •
+This tests understanding of complex EV components including operating leases and non-operating assets. Must distinguish between debt-like obligations and liquid investments.
 
-Step-by-step breakdown:
+💡 **Explanation**
 
-1. Start with Market Cap:
-   • Equity Value: $1.2B
+Step-by-step calculation:
 
-2. Add Debt-Like Obligations:
+1. **Start with Market Cap**: $1.2B
+2. **Add Debt-Like Obligations**:
    • Total Debt: +$400M
-   • Capitalized Operating Leases: +$120M (debt-equivalent)
+   • Capitalized Operating Leases: +$120M (debt-equivalent under IFRS 16)
    • Preferred Stock: +$50M
    • Noncontrolling Interest: +$30M
-
-3. Subtract Non-Operating Assets:
+3. **Subtract Non-Operating Assets**:
    • Cash: -$100M
    • Long-Term Investments: -$80M (non-core, liquid)
+4. **Enterprise Value**: $1.2B + $600M - $180M = $1.620B
 
-4. Enterprise Value Calculation:
-   → $1.2B + $400M + $120M + $50M + $30M - $100M - $80M = $1.620B
+Key takeaways:
+• Operating leases are debt-equivalent under current accounting standards
+• Long-term investments are subtracted as they're non-operating and liquid
+• EV reflects only the operating enterprise value
 
-Key Points:
-   • Operating leases are debt-equivalent under IFRS 16/ASC 842
-   • Long-term investments are subtracted as non-operating assets
-   • EV reflects only the operating enterprise value
-   • Both cash and liquid investments reduce debt capacity`,
+🎯 **Interview Angle**
+
+Advanced EV questions test your knowledge of:
+• Recent accounting changes (lease capitalization under ASC 842/IFRS 16)
+• Distinguishing between operating vs. non-operating assets
+• Understanding when to add vs. subtract various balance sheet items
+• How modern accounting standards affect valuation calculations
+
+📘 **Core Concept**
+
+• Operating leases create debt-like obligations that must be included in EV
+• Non-operating investments reduce the net cost of acquisition
+• Modern EV calculations require careful analysis of balance sheet complexity
+
+⚙️ **How It Works**
+
+Under current accounting standards, operating leases appear on the balance sheet as liabilities. In an acquisition, the buyer assumes these lease obligations just like debt. Meanwhile, liquid investments can be sold to reduce the net acquisition cost.
+
+💥 **Why It Matters**
+
+• Post-2019 lease accounting dramatically affects EV calculations for asset-heavy industries
+• Private equity buyers particularly focus on adjusted EV for lease-heavy businesses
+• Investment bankers must correctly classify all balance sheet items for accurate valuations
+
+📐 **Formula**
+
+EV = Market Cap + Debt + Capitalized Leases + Preferred + NCI − Cash − Non-Operating Investments
+
+📚 **Examples**
+
+1. **Retailer**: $500M market cap, $200M debt, $150M lease liabilities, $50M cash → EV = $800M
+2. **Tech Company**: $3B market cap, $800M debt, $100M investments, $300M cash → EV = $3.4B
+3. **Restaurant Chain**: $1B market cap, $400M debt, $300M leases, $100M cash → EV = $1.6B
+
+❌ **Common Mistakes**
+
+1. **Ignoring lease liabilities** - Operating leases are now debt-equivalent under new standards
+2. **Not subtracting marketable securities** - Liquid investments offset acquisition cost
+3. **Adding non-operating assets** - Only debt-like items should be added to market cap`,
     learnContent: {
       concept: 'EV adds all debt-like obligations and removes non-core assets to reflect operating enterprise value.',
       formula: 'EV = Equity + Net Debt + Preferred + NCI − Excess Assets',
@@ -2067,38 +2139,73 @@ What is the company's Enterprise Value (EV)?`,
     answer: 3510000000,
     unit: '$',
     hint: 'Add all debt-like items and subtract only non-operating, highly liquid assets (not core assets like held-for-sale ops).',
-    explanation: `Complex EV requires careful classification of debt-like vs. non-operating items. Core assets remain regardless of sale status.
+    explanation: `📌 **Question Analysis**
 
-• • •
+This comprehensive EV calculation tests advanced understanding of balance sheet complexity, including pension liabilities, held-for-sale assets, and passive investments.
 
-Step-by-step breakdown:
+💡 **Explanation**
 
-1. Start with Market Cap:
-   • Equity Value: $2.4B
+Step-by-step calculation:
 
-2. Add All Debt-Like Obligations:
+1. **Start with Market Cap**: $2.4B
+2. **Add All Debt-Like Obligations**:
    • Total Debt: +$1.1B
    • Finance Lease Liabilities: +$200M (debt-equivalent)
    • Unfunded Pension Liability: +$120M (debt-like obligation)
    • Preferred Stock: +$100M
    • Noncontrolling Interest: +$80M
-
-3. Subtract Non-Operating, Liquid Assets:
+3. **Subtract Non-Operating, Liquid Assets**:
    • Cash: -$250M
    • Short-Term Investments: -$150M (liquid, non-operating)
    • Equity Investments (Passive): -$90M (non-operating)
+4. **Operating Assets**: Held-for-sale assets ($50M) NOT subtracted - still core operations
+5. **Enterprise Value**: $2.4B + $1.6B - $490M = $3.510B
 
-4. Operating Assets Analysis:
-   • Assets held for sale: $50M (NOT subtracted - core operations)
+Key takeaways:
+• Unfunded pension liabilities are debt-equivalent obligations
+• Held-for-sale operational assets remain in EV (still generating operating cash flows)
+• Only non-operating, liquid investments are subtracted
 
-5. Enterprise Value Calculation:
-   → $2.4B + $1.1B + $200M + $120M + $100M + $80M - $400M - $90M = $3.510B
+🎯 **Interview Angle**
 
-Key Points:
-   • Unfunded pension liabilities are debt-equivalent obligations
-   • Held-for-sale operational assets remain in EV calculation
-   • Only non-operating, liquid investments are subtracted
-   • Finance leases treated as debt under current accounting standards`,
+This tests sophisticated EV understanding that senior analysts and associates must master:
+• Distinguishing between operating vs. non-operating assets
+• Understanding pension accounting implications for valuation
+• Recognizing when "held for sale" assets should vs. shouldn't be excluded
+• Comprehensive knowledge of modern balance sheet complexity
+
+📘 **Core Concept**
+
+• Enterprise Value must capture all claims on operating cash flows
+• Unfunded pension obligations represent real debt-like commitments
+• Asset classification (operating vs. non-operating) drives EV treatment
+
+⚙️ **How It Works**
+
+In an acquisition, the buyer assumes all debt-like obligations including pension liabilities and lease commitments. They receive liquid investments as an offset. Held-for-sale operating assets continue generating cash flows until disposition, so they remain in EV.
+
+💥 **Why It Matters**
+
+• Critical for valuing mature industrial companies with complex balance sheets
+• Pension liabilities significantly affect EV for certain sectors (airlines, manufacturing)
+• Proper asset classification determines accurate EV for M&A analysis
+• Essential for credit analysis and debt capacity calculations
+
+📐 **Formula**
+
+EV = Market Cap + Total Debt + Finance Leases + Pension Liabilities + Preferred + NCI − Cash − Short-term Investments − Non-Operating Investments
+
+📚 **Examples**
+
+1. **Industrial Company**: $5B market cap, $2B debt, $300M pensions, $500M cash → EV = $6.8B
+2. **Airline**: $3B market cap, $8B debt, $400M leases, $200M pensions, $1B cash → EV = $10.6B
+3. **Utility**: $10B market cap, $15B debt, $500M pensions, $2B cash → EV = $23.5B
+
+❌ **Common Mistakes**
+
+1. **Excluding pension liabilities** - Unfunded pensions are debt-equivalent obligations
+2. **Subtracting held-for-sale operating assets** - These still generate operating cash flows
+3. **Treating all investments equally** - Must distinguish operating vs. passive/financial investments`,
     learnContent: {
       concept: 'Enterprise Value reflects the capital structure-neutral value of a company\'s core operations.',
       formula: 'EV = Market Cap + Debt + Leases + Pensions + Preferred + NCI − Cash − Non-operating Assets',
@@ -2124,23 +2231,65 @@ What is the company's fully diluted Equity Value?`,
     answer: 1020000000,
     unit: '$',
     hint: 'Calculate fully diluted shares using the Treasury Stock Method, then multiply by share price.',
-    explanation: `Formula: Equity Value = (Basic Shares + Net Dilutive Shares) × Share Price
+    explanation: `📌 **Question Analysis**
+
+This tests the Treasury Stock Method for calculating diluted equity value. Must account for option proceeds used to repurchase shares at current market price.
+
+💡 **Explanation**
 
 Step-by-step calculation:
 
-1. Basic shares: 40 million
+1. **Basic Shares**: 40 million
+2. **Option Proceeds**: 2M options × $15 strike = $30M total proceeds
+3. **Shares Repurchased**: $30M ÷ $25 current price = 1.2M shares
+4. **Net Dilution**: 2M new shares - 1.2M repurchased = 0.8M net dilution
+5. **Total Diluted Shares**: 40M + 0.8M = 40.8M shares
+6. **Equity Value**: 40.8M shares × $25 = $1.020B
 
-2. Calculate option proceeds: 2M options × $15 strike = $30M total proceeds
+Key takeaways:
+• Treasury Stock Method reduces gross dilution by assuming share repurchases
+• Only the net dilutive effect impacts equity value
+• Cash and debt don't affect equity value calculation
 
-3. Calculate shares repurchased: $30M proceeds ÷ $25 current price = 1.2M shares
+🎯 **Interview Angle**
 
-4. Calculate net new shares from options: 2M new shares - 1.2M repurchased = 0.8M net dilution
+Essential for equity research and investment banking:
+• Understanding how employee options affect valuation
+• Proper dilution calculations for DCF models
+• Critical for comparable company analysis when companies have different option structures
 
-5. Calculate total diluted shares: 40M + 0.8M = 40.8M shares
+📘 **Core Concept**
 
-6. Calculate Equity Value: 40.8M shares × $25 = $1,020M = $1.02B
+• Treasury Stock Method assumes companies use option proceeds to buy back shares
+• This creates net dilution rather than gross dilution from option exercise
+• Used for calculating diluted earnings per share and equity values
 
-The Treasury Stock Method assumes the company uses option exercise proceeds to repurchase shares at current market price, creating net dilution of only 0.8M shares rather than the full 2M options.`,
+⚙️ **How It Works**
+
+When employees exercise options, they pay the strike price to the company. The Treasury Stock Method assumes this cash is immediately used to repurchase shares at the current market price, minimizing dilution to existing shareholders.
+
+💥 **Why It Matters**
+
+• Standard method for all public company valuations
+• Required for diluted EPS calculations under GAAP
+• Critical for accurate per-share metrics in equity research
+
+📐 **Formula**
+
+Net Dilutive Shares = Options Outstanding - (Option Proceeds ÷ Current Share Price)
+Fully Diluted Equity Value = (Basic Shares + Net Dilutive Shares) × Share Price
+
+📚 **Examples**
+
+1. **Tech Startup**: 50M shares, 5M options at $10, stock at $30 → Net dilution = 5M - 1.67M = 3.33M
+2. **Growth Company**: 100M shares, 10M options at $20, stock at $50 → Net dilution = 10M - 4M = 6M  
+3. **Mature Company**: 200M shares, 8M options at $40, stock at $80 → Net dilution = 8M - 4M = 4M
+
+❌ **Common Mistakes**
+
+1. **Using gross dilution** - Must subtract shares that can be repurchased with proceeds
+2. **Including out-of-the-money options** - Only in-the-money options are dilutive
+3. **Forgetting to multiply by share price** - Need total equity value, not just share count`,
     learnContent: {
       concept: 'Equity Value = Share Price × Fully Diluted Shares Outstanding',
       formula: 'Fully Diluted Equity Value = (Basic + Net Dilutive Shares) × Share Price',
