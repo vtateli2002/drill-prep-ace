@@ -829,35 +829,6 @@ const QuestionView = () => {
                           </div>
                         </CardContent>
                       </Card>
-
-                      {/* Common Mistakes - Olive Green */}
-                      <Card className="border-green-600/30 bg-gradient-to-br from-green-800/20 to-green-900/10 shadow-lg">
-                        <CardHeader className="pb-3">
-                          <CardTitle className="text-xl text-green-300 flex items-center gap-2">
-                            🔺 Common Mistakes
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <div className="space-y-3">
-                            <p className="flex items-start gap-2 text-base text-foreground leading-relaxed">
-                              <span className="text-green-500">•</span>
-                              <span>Using only one methodology instead of triangulating multiple approaches</span>
-                            </p>
-                            <p className="flex items-start gap-2 text-base text-foreground leading-relaxed">
-                              <span className="text-green-500">•</span>
-                              <span>Applying outdated or irrelevant precedent transaction multiples</span>
-                            </p>
-                            <p className="flex items-start gap-2 text-base text-foreground leading-relaxed">
-                              <span className="text-green-500">•</span>
-                              <span>Not considering the quality and relevance of comparable companies</span>
-                            </p>
-                            <p className="flex items-start gap-2 text-base text-foreground leading-relaxed">
-                              <span className="text-green-500">•</span>
-                              <span>Weighting methodologies inappropriately based on market conditions</span>
-                            </p>
-                          </div>
-                        </CardContent>
-                      </Card>
                     </div>
                   ) : (
                     // Original learn content for other questions
