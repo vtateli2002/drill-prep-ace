@@ -10972,5 +10972,278 @@ Final Answer: 1.85`,
       formula: 'Multiple Difference = Company A Multiple - Company B Multiple',
       example: 'Company X: 15x EV/EBITDA vs Company Y: 12x = 3x difference\nHigher multiples suggest premium valuation or growth expectations\nAnalyze differences in context of growth, margins, and risk profiles'
     }
+  },
+
+  // Topic 6: Treasury Stock Method & Diluted Shares
+  {
+    id: 'val_tsm_easy_1',
+    track: 'valuation',
+    difficulty: 'easy',
+    title: 'Treasury Stock Method - Basic Calculation',
+    description: `A company has 100 million basic shares outstanding and a share price of $20. There are 5 million in-the-money options with a $10 strike price.
+
+Using the Treasury Stock Method, what is the diluted share count?
+
+*Note: Please round your answer to the nearest tenth (1 decimal place).*`,
+    answer: 102.5,
+    unit: 'million shares',
+    hint: 'Calculate option proceeds, shares repurchased, then net new shares added.',
+    explanation: `Formula: Diluted Shares = Basic Shares + Net New Shares from Options = 100M + 2.5M = 102.5M
+
+Step-by-step calculation:
+
+1. Calculate Option Proceeds:
+   Option Proceeds = Options × Strike Price
+   Option Proceeds = 5M × $10 = $50M
+
+2. Calculate Shares Repurchased:
+   Shares Repurchased = Proceeds ÷ Current Stock Price
+   Shares Repurchased = $50M ÷ $20 = 2.5M
+
+3. Calculate Net New Shares:
+   Net New Shares = Options Exercised - Shares Repurchased
+   Net New Shares = 5M - 2.5M = 2.5M
+
+4. Calculate Diluted Share Count:
+   Diluted Shares = Basic Shares + Net New Shares
+   Diluted Shares = 100M + 2.5M = 102.5M
+
+Final Answer: 102.5 million shares`,
+    learnContent: {
+      concept: 'Treasury Stock Method calculates dilution from stock options by assuming proceeds are used to repurchase shares.',
+      formula: 'Diluted Shares = Basic Shares + (Options - Proceeds/Stock Price)',
+      example: '10M options @ $5 strike, $15 stock price → 10M - ($50M/$15) = 6.67M net dilution\n20M options @ $8 strike, $12 stock price → 20M - ($160M/$12) = 6.67M net dilution'
+    }
+  },
+  {
+    id: 'val_tsm_easy_2',
+    track: 'valuation',
+    difficulty: 'easy',
+    title: 'Treasury Stock Method - Net Dilution',
+    description: `A company has 50 million basic shares, a stock price of $25, and 2 million in-the-money options with a $15 strike.
+
+How many net new shares will be added from options under TSM?
+
+*Note: Please round your answer to the nearest tenth (1 decimal place).*`,
+    answer: 0.8,
+    unit: 'million shares',
+    hint: 'Focus on just the net dilution calculation: options minus shares repurchased.',
+    explanation: `Formula: Net New Shares = Options - (Proceeds ÷ Stock Price) = 2M - 1.2M = 0.8M
+
+Step-by-step calculation:
+
+1. Calculate Option Proceeds:
+   Option Proceeds = Options × Strike Price
+   Option Proceeds = 2M × $15 = $30M
+
+2. Calculate Shares Repurchased:
+   Shares Repurchased = Proceeds ÷ Current Stock Price
+   Shares Repurchased = $30M ÷ $25 = 1.2M
+
+3. Calculate Net New Shares:
+   Net New Shares = Options Exercised - Shares Repurchased
+   Net New Shares = 2M - 1.2M = 0.8M
+
+Final Answer: 0.8 million shares`,
+    learnContent: {
+      concept: 'Net dilution from options equals total options minus theoretical shares repurchased with proceeds.',
+      formula: 'Net Dilution = Options - (Option Proceeds ÷ Stock Price)',
+      example: '5M options @ $10, stock at $20 → 5M - ($50M/$20) = 2.5M net dilution\n3M options @ $8, stock at $16 → 3M - ($24M/$16) = 1.5M net dilution'
+    }
+  },
+  {
+    id: 'val_tsm_medium_1',
+    track: 'valuation',
+    difficulty: 'medium',
+    title: 'Treasury Stock Method with RSUs',
+    description: `A company has:
+
+• 75 million basic shares
+• Stock price: $30
+• 6 million in-the-money options @ $10 strike
+• 3 million unvested RSUs, with a performance hurdle that only 60% are expected to vest
+
+What is the total diluted share count using TSM?
+
+*Note: Please round your answer to the nearest tenth (1 decimal place).*`,
+    answer: 80.8,
+    unit: 'million shares',
+    hint: 'Calculate option dilution using TSM, then add expected RSU vesting.',
+    explanation: `Formula: Diluted Shares = Basic + Net Option Dilution + Expected RSUs = 75M + 4M + 1.8M = 80.8M
+
+Step-by-step calculation:
+
+1. Options Calculation:
+   Option Proceeds = 6M × $10 = $60M
+   Shares Repurchased = $60M ÷ $30 = 2M
+   Net New Shares from Options = 6M - 2M = 4M
+
+2. RSUs Calculation:
+   Expected RSUs to Vest = 3M × 60% = 1.8M
+
+3. Total Diluted Share Count:
+   Diluted Shares = Basic Shares + Option Dilution + RSU Dilution
+   Diluted Shares = 75M + 4M + 1.8M = 80.8M
+
+Final Answer: 80.8 million shares`,
+    learnContent: {
+      concept: 'Diluted shares include options (using TSM) plus expected RSU vesting based on performance probability.',
+      formula: 'Diluted = Basic + Net Options + (RSUs × Vesting Probability)',
+      example: 'Options: 5M @ $15, stock $25 → 2M net dilution\nRSUs: 2M @ 80% vest → 1.6M dilution\nTotal: Basic + 2M + 1.6M'
+    }
+  },
+  {
+    id: 'val_tsm_medium_2',
+    track: 'valuation',
+    difficulty: 'medium',
+    title: 'Treasury Stock Method with Share Repurchase',
+    description: `A company has:
+
+• 120 million basic shares
+• Stock price: $40
+• 10 million options @ $25 strike
+• 5 million RSUs (all vest)
+• Company announces a $200M share repurchase program (to be treated as treasury shares)
+
+Using the TSM, what is the fully diluted share count?
+
+*Note: Answer will be rounded to the nearest whole number.*`,
+    answer: 124,
+    unit: 'million shares',
+    hint: 'Calculate option and RSU dilution, then subtract share repurchase impact.',
+    explanation: `Formula: Diluted Shares = Basic + Net Options + RSUs - Repurchased = 120M + 3.75M + 5M - 5M = 123.75M ≈ 124M
+
+Step-by-step calculation:
+
+1. Options Calculation:
+   Option Proceeds = 10M × $25 = $250M
+   Shares Repurchased from Options = $250M ÷ $40 = 6.25M
+   Net Dilution from Options = 10M - 6.25M = 3.75M
+
+2. RSUs:
+   RSU Dilution = 5M shares (all vest)
+
+3. Share Repurchase Program:
+   Shares Retired = $200M ÷ $40 = 5M shares
+
+4. Net Share Change:
+   Net New Shares = 3.75M + 5M - 5M = 3.75M
+
+5. Final Diluted Share Count:
+   Diluted Shares = 120M + 3.75M = 123.75M
+   Rounded to nearest whole: 124M
+
+Final Answer: 124 million shares`,
+    learnContent: {
+      concept: 'Share repurchase programs reduce total share count, offsetting dilution from stock-based compensation.',
+      formula: 'Net Dilution = Option Dilution + RSUs - Share Repurchases',
+      example: 'Options add 2M, RSUs add 3M, repurchase 4M → net dilution = 1M\nMust account for all sources of share count changes in valuation'
+    }
+  },
+  {
+    id: 'val_tsm_hard_1',
+    track: 'valuation',
+    difficulty: 'hard',
+    title: 'Treasury Stock Method - Complex Equity Instruments',
+    description: `A company has:
+
+• 90 million basic shares
+• Share price: $35
+• 8 million options @ $20 strike
+• 4 million RSUs (75% expected to vest)
+• 2 million PSUs that vest only if share price exceeds $40
+• Company announces a $105M share repurchase plan
+
+What is the diluted share count?
+
+*Note: Answer will be rounded to the nearest whole number.*`,
+    answer: 93,
+    unit: 'million shares',
+    hint: 'PSUs do not vest at current price. Calculate all other dilutive effects.',
+    explanation: `Formula: Diluted Shares = Basic + Net Options + Expected RSUs + PSUs - Repurchased = 90M + 3.429M + 3M + 0M - 3M = 93.429M ≈ 93M
+
+Step-by-step calculation:
+
+1. Options Calculation:
+   Option Proceeds = 8M × $20 = $160M
+   Shares Repurchased from Options = $160M ÷ $35 = 4.571M
+   Net Dilution from Options = 8M - 4.571M = 3.429M
+
+2. RSUs:
+   Expected RSU Vesting = 4M × 75% = 3M shares
+
+3. PSUs (Performance Share Units):
+   Current Price = $35, Hurdle = $40
+   PSUs not included (price below hurdle)
+
+4. Share Repurchase:
+   Shares Retired = $105M ÷ $35 = 3M shares
+
+5. Net Share Increase:
+   Net Increase = 3.429M + 3M + 0M - 3M = 3.429M
+
+6. Final Diluted Share Count:
+   Diluted Shares = 90M + 3.429M = 93.429M
+   Rounded to nearest whole: 93M
+
+Final Answer: 93 million shares`,
+    learnContent: {
+      concept: 'Performance Share Units only contribute to dilution if performance conditions are currently met.',
+      formula: 'Diluted = Basic + Options + RSUs + (PSUs if hurdles met) - Repurchases',
+      example: 'PSUs with $50 hurdle, stock at $45 → exclude from dilution\nPSUs with $40 hurdle, stock at $42 → include in dilution\nOnly count contingent instruments if conditions are satisfied'
+    }
+  },
+  {
+    id: 'val_tsm_hard_2',
+    track: 'valuation',
+    difficulty: 'hard',
+    title: 'Treasury Stock Method - Full Equity Structure',
+    description: `A company has:
+
+• 110 million basic shares
+• Stock price: $50
+• 6 million options @ $30 strike
+• 3 million RSUs (all vest)
+• 1.5 million performance RSUs (50% expected to vest)
+• $200M share repurchase authorization
+
+What is the final diluted share count?
+
+*Note: Answer will be rounded to the nearest whole number.*`,
+    answer: 112,
+    unit: 'million shares',
+    hint: 'Calculate all dilutive instruments, including performance-based RSUs at expected vesting rate.',
+    explanation: `Formula: Diluted = Basic + Net Options + RSUs + Performance RSUs - Repurchased = 110M + 2.4M + 3M + 0.75M - 4M = 112.15M ≈ 112M
+
+Step-by-step calculation:
+
+1. Options Calculation:
+   Option Proceeds = 6M × $30 = $180M
+   Shares Repurchased from Options = $180M ÷ $50 = 3.6M
+   Net Dilution from Options = 6M - 3.6M = 2.4M
+
+2. Regular RSUs:
+   RSU Dilution = 3M shares (all vest)
+
+3. Performance RSUs:
+   Expected Performance RSU Vesting = 1.5M × 50% = 0.75M
+
+4. Share Repurchase Authorization:
+   Shares Retired = $200M ÷ $50 = 4M shares
+
+5. Net Dilution Calculation:
+   Total Dilution = 2.4M + 3M + 0.75M = 6.15M
+   Net After Repurchase = 6.15M - 4M = 2.15M
+
+6. Final Diluted Share Count:
+   Diluted Shares = 110M + 2.15M = 112.15M
+   Rounded to nearest whole: 112M
+
+Final Answer: 112 million shares`,
+    learnContent: {
+      concept: 'Complex equity structures require careful tracking of all dilutive instruments and their probability-weighted impact.',
+      formula: 'Total Dilution = ∑(All Equity Instruments × Vesting Probability) - Share Repurchases',
+      example: 'Options: calculate using TSM\nRSUs: add full amount if certain to vest\nPerformance RSUs: multiply by probability\nRepurchases: subtract from total count'
+    }
   }
 ];
