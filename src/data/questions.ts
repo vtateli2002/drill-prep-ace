@@ -12088,35 +12088,24 @@ Target EBITDA $110mm, Average multiple 9.33x → Implied EV = $1,026.3mm`
     track: 'valuation',
     difficulty: 'hard',
     title: 'WACC with Preferred Equity and Multi-Class Capital Structure',
-    description: `You're calculating the WACC for Axis Biotech, a company with a combination of equity, debt, and preferred shares:
+    description: `You're calculating the WACC for Axis Biotech, a company with a combination of equity, debt, and preferred shares.
 
-Equity Value: $1,200 million
+🔹 Equity Value: $1,200 million
+🔹 Debt Value: $400 million — Interest Rate: 5.00%
+🔹 Preferred Equity: $400 million — Fixed Dividend: 7.00%
 
-Debt Value: $400 million
+📌 Assumptions:
+• Risk-Free Rate: 3.00%
+• Market Risk Premium: 6.00%
+• Beta: 1.10
+• Tax Rate: 30%
 
-All senior debt carries a 5.00% interest rate
-
-Preferred Equity: $400 million
-
-Pays a fixed 7.00% dividend
-
-Assume the following:
-
-Risk-Free Rate: 3.00%
-
-Market Risk Premium: 6.00%
-
-Beta: 1.10
-
-Tax Rate: 30%
-
-Calculate the WACC, including preferred stock. Express your final result to the nearest hundredth of a percent. No rounding is needed if you do the math properly.`,
+Calculate the WACC, including preferred stock. Express your final result to the nearest hundredth of a percent.`,
     answer: 7.86,
     unit: '%',
     explanation: `WACC = (0.60 × 9.60%) + (0.20 × 3.50%) + (0.20 × 7.00%) = 5.76% + 0.70% + 1.40% = 7.86%
 
 Step-by-Step Breakdown:
-
 • Total Capital = 1,200 + 400 + 400 = 2,000
 • Equity Weight = 1,200 / 2,000 = 0.60
 • Debt Weight = 400 / 2,000 = 0.20
@@ -12127,8 +12116,8 @@ Step-by-Step Breakdown:
 • Final WACC = 5.76% + 0.70% + 1.40% = 7.86%`,
     learnContent: {
       concept: 'WACC reflects a company\'s average cost of capital across all funding sources — equity, debt, and preferred — weighted by proportion of total capital.',
-      formula: 'WACC = wₑ · rₑ + wₐ · rₐ · (1-T) + wₚ · rₚ\n\nWhere:\n• wₑ, wₐ, wₚ: weights of equity, debt, preferred\n• rₑ, rₐ, rₚ: respective costs\n• T: tax rate',
-      example: '• Equity-heavy company with no preferred stock: WACC only reflects equity and debt — simpler model.\n• Private company with preferred shareholders from past fundraising: must include fixed dividend cost.\n• LBO scenario: WACC must reflect higher debt load, leading to lower WACC but higher risk — importance of proper weighting.'
+      formula: 'WACC = (E/V × Re) + (D/V × Rd × (1-Tc)) + (P/V × Rp)\n\nWhere:\nE = Equity Value, D = Debt Value, P = Preferred Equity\nV = Total Capital (E + D + P)\nRe = Cost of Equity = Risk-Free Rate + Beta × Market Risk Premium\nRd = Cost of Debt, Tc = Tax Rate, Rp = Preferred Dividend Rate',
+      example: 'Example:\nEquity: $1,200M, Debt: $400M, Preferred: $400M\nRe = 9.6%, Rd = 5.0%, Rp = 7.0%, Tax Rate = 30%\nWACC = 7.86%'
     }
   },
   {
@@ -12136,27 +12125,19 @@ Step-by-Step Breakdown:
     track: 'valuation',
     difficulty: 'hard',
     title: 'WACC with Mixed Debt Instruments and International Risk Adjustments',
-    description: `You are calculating the WACC for Solara Grid, a global infrastructure developer. The company's capital structure consists of:
+    description: `You are calculating the WACC for Solara Grid, a global infrastructure developer. The company's capital structure includes:
 
-Equity Value: $1,300 million
+🔹 Equity Value: $1,300 million
+🔹 Debt Value: $700 million
+  • $420 million in senior secured notes @ 5.00%
+  • $280 million in convertible notes @ 6.00%
 
-Debt Value: $700 million
-
-$420 million in senior secured notes at a 5.00% interest rate
-
-$280 million in convertible notes at a 6.00% interest rate
-
-Other information:
-
-Risk-Free Rate: 4.00%
-
-Market Risk Premium: 6.00%
-
-Country Risk Premium: 2.00%
-
-Beta: 1.10
-
-Tax Rate: 25%
+📌 Assumptions:
+• Risk-Free Rate: 4.00%
+• Market Risk Premium: 6.00%
+• Country Risk Premium: 2.00%
+• Beta: 1.10
+• Tax Rate: 25%
 
 Assume convertible notes are not dilutive, and use CAPM to calculate cost of equity.
 
@@ -12164,7 +12145,7 @@ What is Solara's WACC, expressed to the nearest hundredth of a percent?`,
     answer: 9.73,
     unit: '%',
     hint: 'Calculate equity and debt weights, use CAPM for cost of equity with country risk premium, find weighted cost of debt, then apply WACC formula.',
-    explanation: `Step-by-step formula breakdown (no rounding mid-way):
+    explanation: `Step-by-step calculation (no rounding mid-way):
 
 1. Capital Weights
 • Total Capital = $1,300 + $700 = $2,000
@@ -12172,40 +12153,20 @@ What is Solara's WACC, expressed to the nearest hundredth of a percent?`,
 • Debt Weight = $700 / $2,000 = 0.35
 
 2. Cost of Equity (via CAPM)
-= 4.00% + 1.10 × (6.00% + 2.00%)
-= 4.00% + 1.10 × 8.00%
-= 4.00% + 8.80%
-= 12.80%
+= 4.00% + 1.10 × (6.00% + 2.00%) = 4.00% + 8.80% = 12.80%
 
 3. Weighted Cost of Debt
-• Senior Notes: 420 / 700 = 0.60 × 5.00% = 3.00%
-• Convertible Notes: 280 / 700 = 0.40 × 6.00% = 2.40%
-• Total Weighted Cost of Debt = 3.00% + 2.40% = 5.40%
+• Senior Notes: 420/700 = 0.60 × 5.00% = 3.00%
+• Convertible Notes: 280/700 = 0.40 × 6.00% = 2.40%
+• Total Weighted Cost of Debt = 5.40%
 
-4. After-Tax Cost of Debt
-= 5.40% × (1 – 0.25) = 5.40% × 0.75 = 4.05%
+4. After-Tax Cost of Debt = 5.40% × (1 – 0.25) = 4.05%
 
-5. Final WACC Calculation
-= 0.65 × 12.80% + 0.35 × 4.05%
-= 8.32% + 1.42%
-= 9.73%
-
-🎯 Interview Angle
-Interviewers love WACC questions that force candidates to think about:
-
-Debt composition and different interest rates
-
-After-tax impact of debt
-
-CAPM and multiple risk layers (country + market)
-
-Clean, unrounded calculations under pressure
-
-This reflects real-life modeling where assumptions must flow logically, not just be memorized.`,
+5. Final WACC = 0.65 × 12.80% + 0.35 × 4.05% = 8.32% + 1.42% = 9.73%`,
     learnContent: {
       concept: 'WACC represents the blended cost of capital a company pays for its financing (debt and equity). It\'s used as the discount rate in DCFs and benchmark for hurdle rates in capital allocation.',
-      formula: 'WACC Formula (Full):\n\nWACC = (E/V × Re) + (D/V × Rd × (1-Tc))\n\nWhere:\n• E = Equity Value\n• D = Debt Value\n• V = Total Capital = E + D\n• Re = Cost of Equity (via CAPM)\n• Rd = Pre-tax Cost of Debt\n• Tc = Tax Rate\n\nCost of Equity (CAPM):\n\nRe = Risk-Free Rate + β × (Market Risk Premium + Country Risk Premium)',
-      example: 'Example 1:\nEquity = $800M, Debt = $400M\nRisk-Free Rate = 3%, Beta = 1.2, Market Risk Premium = 5%\nInterest Rate on Debt = 6%, Tax Rate = 25%\nWACC = 8.25%\n\nExample 2:\nEquity = $1,000M, Debt = $500M\nRisk-Free Rate = 4%, Beta = 1.1, Market Risk Premium = 6%, Country Risk Premium = 2%\nInterest Rate = 5.5%, Tax Rate = 30%\nWACC = 9.07%\n\nExample 3:\nEquity = $900M, Debt = $100M\nRisk-Free Rate = 2.5%, Beta = 1.3, Market Risk Premium = 6.5%\nInterest Rate = 4.5%, Tax Rate = 28%\nWACC = 8.13%'
+      formula: 'WACC = (E/V × Re) + (D/V × Rd × (1-Tc))\n\nWhere:\nE = Equity Value, D = Debt Value\nV = Total Capital (E + D)\nRe = Cost of Equity = Risk-Free Rate + Beta × (Market Risk Premium + Country Risk Premium)\nRd = Pre-tax Cost of Debt, Tc = Tax Rate',
+      example: 'Example:\nEquity: $800M, Debt: $400M\nRisk-Free Rate = 3%, Beta = 1.2, Market Risk Premium = 5%\nInterest Rate on Debt = 6%, Tax Rate = 25%\nWACC = 8.25%'
     }
   }
 ];
