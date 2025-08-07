@@ -1164,25 +1164,27 @@ const QuestionView = () => {
                           </Card>
 
                           {/* Examples Section */}
-                          <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-md">
-                            <CardContent className="p-6">
-                              <h4 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
-                                💡 Examples
-                              </h4>
-                              <div className="space-y-2">
-                                {currentQuestion.learnContent.example.split('\n').map((example, index) => (
-                                  <div 
-                                    key={index}
-                                    className="bg-muted/30 rounded-lg p-3 border border-success/20"
-                                  >
-                                    <div className="text-base text-foreground leading-normal">
-                                      {example}
+                          {currentQuestion.learnContent.example && (
+                            <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-md">
+                              <CardContent className="p-6">
+                                <h4 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
+                                  💡 Examples
+                                </h4>
+                                <div className="space-y-2">
+                                  {currentQuestion.learnContent.example.split('\n').map((example, index) => (
+                                    <div 
+                                      key={index}
+                                      className="bg-muted/30 rounded-lg p-3 border border-success/20"
+                                    >
+                                      <div className="text-base text-foreground leading-normal">
+                                        {example}
+                                      </div>
                                     </div>
-                                  </div>
-                                ))}
-                              </div>
-                            </CardContent>
-                          </Card>
+                                  ))}
+                                </div>
+                              </CardContent>
+                            </Card>
+                          )}
                         </div>
                       </div>
                     ) : (
