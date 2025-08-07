@@ -711,7 +711,7 @@ const QuestionView = () => {
                         </CardContent>
                       </Card>
                     </div>
-                  ) : currentQuestion.id === 'val-medium-nuvia-1' ? (
+                  ) : currentQuestion.id === 'val-medium-nuvia-1' || currentQuestion.id === 'val-hard-normalize-1' ? (
                     <div className="space-y-8">
                       {/* Core Concept - Rich Forest Green */}
                       <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-lg">
@@ -720,10 +720,13 @@ const QuestionView = () => {
                             📘 Core Concept
                           </CardTitle>
                         </CardHeader>
-                        <CardContent className="space-y-4">
-                          <p className="text-base text-foreground leading-relaxed">
-                            Each valuation method reflects a different view on value. Comps reflect market sentiment, precedents capture deal premiums, and DCF shows intrinsic cash flow-based value. Blending them produces a balanced, triangulated view that synthesizes multiple market perspectives.
-                          </p>
+                         <CardContent className="space-y-4">
+                           <p className="text-base text-foreground leading-relaxed">
+                             {currentQuestion.id === 'val-medium-nuvia-1' 
+                               ? 'Each valuation method reflects a different view on value. Comps reflect market sentiment, precedents capture deal premiums, and DCF shows intrinsic cash flow-based value. Blending them produces a balanced, triangulated view that synthesizes multiple market perspectives.'
+                               : 'EV/EBITDA is a commonly used valuation multiple for comparing companies of different capital structures. However, to ensure meaningful comparisons, EBITDA must be adjusted (normalized) to reflect recurring, core business performance. Differences in accounting treatments, one-time expenses, or minority stakes must be reconciled to arrive at true comparability.'
+                             }
+                           </p>
                         </CardContent>
                       </Card>
 
@@ -735,24 +738,51 @@ const QuestionView = () => {
                           </CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-4">
-                          <div className="space-y-3 text-base text-foreground">
-                            <p className="flex items-start gap-2 leading-relaxed">
-                              <span>•</span>
-                              <span>Calculate average multiple for public comps and apply to EBITDA</span>
-                            </p>
-                            <p className="flex items-start gap-2 leading-relaxed">
-                              <span>•</span>
-                              <span>Calculate average multiple for precedent transactions and apply to EBITDA</span>
-                            </p>
-                            <p className="flex items-start gap-2 leading-relaxed">
-                              <span>•</span>
-                              <span>Include standalone DCF valuation</span>
-                            </p>
-                            <p className="flex items-start gap-2 leading-relaxed">
-                              <span>•</span>
-                              <span>Average all three methodologies with equal weighting</span>
-                            </p>
-                          </div>
+                           <div className="space-y-3 text-base text-foreground">
+                             {currentQuestion.id === 'val-medium-nuvia-1' ? (
+                               <>
+                                 <p className="flex items-start gap-2 leading-relaxed">
+                                   <span>•</span>
+                                   <span>Calculate average multiple for public comps and apply to EBITDA</span>
+                                 </p>
+                                 <p className="flex items-start gap-2 leading-relaxed">
+                                   <span>•</span>
+                                   <span>Calculate average multiple for precedent transactions and apply to EBITDA</span>
+                                 </p>
+                                 <p className="flex items-start gap-2 leading-relaxed">
+                                   <span>•</span>
+                                   <span>Include standalone DCF valuation</span>
+                                 </p>
+                                 <p className="flex items-start gap-2 leading-relaxed">
+                                   <span>•</span>
+                                   <span>Average all three methodologies with equal weighting</span>
+                                 </p>
+                               </>
+                             ) : (
+                               <>
+                                 <p className="flex items-start gap-2 leading-relaxed">
+                                   <span>•</span>
+                                   <span>Identify adjustments to EBITDA (non-recurring expenses, minority interest effects, etc.)</span>
+                                 </p>
+                                 <p className="flex items-start gap-2 leading-relaxed">
+                                   <span>•</span>
+                                   <span>Calculate normalized EBITDA for each comp</span>
+                                 </p>
+                                 <p className="flex items-start gap-2 leading-relaxed">
+                                   <span>•</span>
+                                   <span>Divide each comp's EV by its normalized EBITDA to get EV/EBITDA multiples</span>
+                                 </p>
+                                 <p className="flex items-start gap-2 leading-relaxed">
+                                   <span>•</span>
+                                   <span>Take an average or median of those multiples</span>
+                                 </p>
+                                 <p className="flex items-start gap-2 leading-relaxed">
+                                   <span>•</span>
+                                   <span>Multiply that average multiple by the target company's normalized EBITDA to estimate implied EV</span>
+                                 </p>
+                               </>
+                             )}
+                           </div>
                         </CardContent>
                       </Card>
 
@@ -763,10 +793,13 @@ const QuestionView = () => {
                             🎯 Why It Matters
                           </CardTitle>
                         </CardHeader>
-                        <CardContent>
-                          <div className="space-y-3 text-base text-foreground leading-relaxed">
-                            <p>This is foundational for pitchbook valuation, especially when negotiating or advising on a strategic process. Knowing how to defend each methodology's contribution is essential for junior bankers and critical for fairness opinion work.</p>
-                          </div>
+                         <CardContent>
+                           <div className="space-y-3 text-base text-foreground leading-relaxed">
+                             <p>{currentQuestion.id === 'val-medium-nuvia-1' 
+                               ? 'This is foundational for pitchbook valuation, especially when negotiating or advising on a strategic process. Knowing how to defend each methodology\'s contribution is essential for junior bankers and critical for fairness opinion work.'
+                               : 'Comparability is key. Directly using reported EBITDA can distort valuation conclusions if comps differ in one-time charges or accounting practices. Interview relevance: This question tests whether you truly understand how to adjust financials, not just memorize formulas. Real-world use: Practitioners almost always normalize EBITDA during comps analysis, especially for M&A, fairness opinions, or deal comps work.'
+                             }</p>
+                           </div>
                         </CardContent>
                       </Card>
 
@@ -777,12 +810,15 @@ const QuestionView = () => {
                             📊 Formula
                           </CardTitle>
                         </CardHeader>
-                        <CardContent>
-                          <div className="bg-muted/50 rounded-lg p-4 border border-success/20">
-                            <div className="text-base font-mono text-foreground leading-relaxed">
-                              Implied Valuation = (Comps Val + Precedents Val + DCF Val) / 3
-                            </div>
-                          </div>
+                         <CardContent>
+                           <div className="bg-muted/50 rounded-lg p-4 border border-success/20">
+                             <div className="text-base font-mono text-foreground leading-relaxed">
+                               {currentQuestion.id === 'val-medium-nuvia-1' 
+                                 ? 'Implied Valuation = (Comps Val + Precedents Val + DCF Val) / 3'
+                                 : 'Enterprise Value = Adjusted EBITDA × Normalized EV/EBITDA Multiple'
+                               }
+                             </div>
+                           </div>
                         </CardContent>
                       </Card>
 
@@ -793,40 +829,73 @@ const QuestionView = () => {
                             📚 Examples
                           </CardTitle>
                         </CardHeader>
-                        <CardContent className="space-y-6">
-                          <div className="p-4 border border-success/20 rounded-lg bg-success/5">
-                            <h4 className="font-semibold mb-2 text-foreground">Example 1:</h4>
-                            <p className="mb-2 text-base text-foreground leading-relaxed">EBITDA = $75M</p>
-                            <div className="ml-4 space-y-1 text-sm">
-                              <p className="text-foreground">Comps Avg = 9x → $675M</p>
-                              <p className="text-foreground">Precedents Avg = 12x → $900M</p>
-                              <p className="text-foreground">DCF = $825M</p>
-                              <p className="text-foreground font-semibold">→ Average = $800M</p>
-                            </div>
-                          </div>
-                          
-                          <div className="p-4 border border-success/20 rounded-lg bg-success/5">
-                            <h4 className="font-semibold mb-2 text-foreground">Example 2:</h4>
-                            <p className="mb-2 text-base text-foreground leading-relaxed">EBITDA = $40M</p>
-                            <div className="ml-4 space-y-1 text-sm">
-                              <p className="text-foreground">Comps Avg = 7x → $280M</p>
-                              <p className="text-foreground">Precedents Avg = 9x → $360M</p>
-                              <p className="text-foreground">DCF = $325M</p>
-                              <p className="text-foreground font-semibold">→ Average = $321.7M</p>
-                            </div>
-                          </div>
-                          
-                          <div className="p-4 border border-success/20 rounded-lg bg-success/5">
-                            <h4 className="font-semibold mb-2 text-foreground">Example 3:</h4>
-                            <p className="mb-2 text-base text-foreground leading-relaxed">EBITDA = $120M</p>
-                            <div className="ml-4 space-y-1 text-sm">
-                              <p className="text-foreground">Comps Avg = 10x → $1,200M</p>
-                              <p className="text-foreground">Precedents Avg = 12x → $1,440M</p>
-                              <p className="text-foreground">DCF = $1,350M</p>
-                              <p className="text-foreground font-semibold">→ Average = $1,330M</p>
-                            </div>
-                          </div>
-                        </CardContent>
+                         <CardContent className="space-y-6">
+                           {currentQuestion.id === 'val-medium-nuvia-1' ? (
+                             <>
+                               <div className="p-4 border border-success/20 rounded-lg bg-success/5">
+                                 <h4 className="font-semibold mb-2 text-foreground">Example 1:</h4>
+                                 <p className="mb-2 text-base text-foreground leading-relaxed">EBITDA = $75M</p>
+                                 <div className="ml-4 space-y-1 text-sm">
+                                   <p className="text-foreground">Comps Avg = 9x → $675M</p>
+                                   <p className="text-foreground">Precedents Avg = 12x → $900M</p>
+                                   <p className="text-foreground">DCF = $825M</p>
+                                   <p className="text-foreground font-semibold">→ Average = $800M</p>
+                                 </div>
+                               </div>
+                               
+                               <div className="p-4 border border-success/20 rounded-lg bg-success/5">
+                                 <h4 className="font-semibold mb-2 text-foreground">Example 2:</h4>
+                                 <p className="mb-2 text-base text-foreground leading-relaxed">EBITDA = $40M</p>
+                                 <div className="ml-4 space-y-1 text-sm">
+                                   <p className="text-foreground">Comps Avg = 7x → $280M</p>
+                                   <p className="text-foreground">Precedents Avg = 9x → $360M</p>
+                                   <p className="text-foreground">DCF = $325M</p>
+                                   <p className="text-foreground font-semibold">→ Average = $321.7M</p>
+                                 </div>
+                               </div>
+                               
+                               <div className="p-4 border border-success/20 rounded-lg bg-success/5">
+                                 <h4 className="font-semibold mb-2 text-foreground">Example 3:</h4>
+                                 <p className="mb-2 text-base text-foreground leading-relaxed">EBITDA = $120M</p>
+                                 <div className="ml-4 space-y-1 text-sm">
+                                   <p className="text-foreground">Comps Avg = 10x → $1,200M</p>
+                                   <p className="text-foreground">Precedents Avg = 12x → $1,440M</p>
+                                   <p className="text-foreground">DCF = $1,350M</p>
+                                   <p className="text-foreground font-semibold">→ Average = $1,330M</p>
+                                 </div>
+                               </div>
+                             </>
+                           ) : (
+                             <>
+                               <div className="p-4 border border-success/20 rounded-lg bg-success/5">
+                                 <h4 className="font-semibold mb-2 text-foreground">Example 1:</h4>
+                                 <p className="mb-2 text-base text-foreground leading-relaxed">A comp has an EV of $1,000mm and reported EBITDA of $90mm. However, $10mm of the EBITDA is a gain from asset sales.</p>
+                                 <div className="ml-4 space-y-1 text-sm">
+                                   <p className="text-foreground">→ Adjusted EBITDA = $80mm</p>
+                                   <p className="text-foreground font-semibold">→ EV/EBITDA = 1,000 / 80 = 12.5x</p>
+                                 </div>
+                               </div>
+                               
+                               <div className="p-4 border border-success/20 rounded-lg bg-success/5">
+                                 <h4 className="font-semibold mb-2 text-foreground">Example 2:</h4>
+                                 <p className="mb-2 text-base text-foreground leading-relaxed">Another comp includes a $15mm one-time restructuring charge. Reported EBITDA is $70mm.</p>
+                                 <div className="ml-4 space-y-1 text-sm">
+                                   <p className="text-foreground">→ Adjusted EBITDA = 70 + 15 = $85mm</p>
+                                   <p className="text-foreground font-semibold">→ EV/EBITDA = 1,000 / 85 = 11.76x</p>
+                                 </div>
+                               </div>
+                               
+                               <div className="p-4 border border-success/20 rounded-lg bg-success/5">
+                                 <h4 className="font-semibold mb-2 text-foreground">Example 3:</h4>
+                                 <p className="mb-2 text-base text-foreground leading-relaxed">A comp consolidates a 25%-owned affiliate contributing $12mm EBITDA. Reported EBITDA is $100mm.</p>
+                                 <div className="ml-4 space-y-1 text-sm">
+                                   <p className="text-foreground">→ Adjusted EBITDA = 100 - (25% × 12) = 97</p>
+                                   <p className="text-foreground font-semibold">→ EV/EBITDA = 1,100 / 97 = 11.34x</p>
+                                 </div>
+                               </div>
+                             </>
+                           )}
+                         </CardContent>
                       </Card>
                     </div>
                   ) : (

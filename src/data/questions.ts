@@ -2341,6 +2341,86 @@ DCF = $1,350M
     }
   },
   {
+    id: 'val-hard-normalize-1',
+    track: 'valuation',
+    difficulty: 'hard',
+    title: 'Normalized EV/EBITDA Across Inconsistent Comps',
+    description: `You are valuing MiraTech, a mid-sized software firm. You're given the following public comps:
+
+Company A: Enterprise Value $1,200mm, EBITDA $100mm, EBITDA Margin 25%, Clean financials
+Company B: Enterprise Value $1,500mm, EBITDA $125mm, EBITDA Margin 20%, Includes $25mm of non-recurring litigation expense in EBITDA
+Company C: Enterprise Value $1,800mm, EBITDA $160mm, EBITDA Margin 15%, Consolidates a 30%-owned subsidiary, contributing $20mm EBITDA
+
+You are also given that MiraTech's adjusted EBITDA is $110mm.
+
+You're building a football field valuation for MiraTech. Based on normalized EV/EBITDA multiples, what is MiraTech's implied Enterprise Value?`,
+    answer: 1235000000,
+    unit: '$',
+    hint: 'Normalize each comp\'s EBITDA first, then calculate multiples, then average them.',
+    explanation: `Final Answer:
+Enterprise Value = Adjusted EBITDA × Average Normalized EV/EBITDA Multiple = $1,235,000,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Normalize each comp's EBITDA and compute EV/EBITDA
+   Company A: $100mm (clean) → EV/EBITDA = 1,200 / 100 = 12.00x
+   Company B: $125mm + $25mm = $150mm → EV/EBITDA = 1,500 / 150 = 10.00x
+   Company C: $160mm - (30% × $20mm) = $154mm → EV/EBITDA = 1,800 / 154 = 11.69x
+
+2. Calculate average multiple
+   (12.00 + 10.00 + 11.69) / 3 = 11.23x
+
+3. Apply to MiraTech's EBITDA
+   11.23 × $110mm = $1,235mm
+
+🎯 Interview Angle
+This question tests whether you truly understand how to adjust financials for meaningful comparisons, not just memorize formulas. Practitioners almost always normalize EBITDA during comps analysis, especially for M&A, fairness opinions, or deal comps work.`,
+    learnContent: {
+      concept: `📘 Core Concept
+EV/EBITDA is a commonly used valuation multiple for comparing companies of different capital structures. However, to ensure meaningful comparisons, EBITDA must be adjusted (normalized) to reflect recurring, core business performance. Differences in accounting treatments, one-time expenses, or minority stakes must be reconciled to arrive at true comparability.
+
+🧠 How It Works
+• Identify adjustments to EBITDA (non-recurring expenses, minority interest effects, etc.)
+• Calculate normalized EBITDA for each comp
+• Divide each comp's EV by its normalized EBITDA to get EV/EBITDA multiples
+• Take an average or median of those multiples
+• Multiply that average multiple by the target company's normalized EBITDA to estimate implied EV
+
+🎯 Why It Matters
+Comparability is key. Directly using reported EBITDA can distort valuation conclusions if comps differ in one-time charges or accounting practices. Interview relevance: This question tests whether you truly understand how to adjust financials, not just memorize formulas. Real-world use: Practitioners almost always normalize EBITDA during comps analysis, especially for M&A, fairness opinions, or deal comps work.
+
+📊 Formula
+Enterprise Value = Adjusted EBITDA × Normalized EV/EBITDA Multiple
+
+For each comp:
+EV/EBITDA = Enterprise Value / Adjusted EBITDA
+
+To derive the final valuation:
+Average EV/EBITDA Multiple × Target's Adjusted EBITDA
+
+📚 Examples
+
+Example 1:
+A comp has an EV of $1,000mm and reported EBITDA of $90mm. However, $10mm of the EBITDA is a gain from asset sales.
+→ Adjusted EBITDA = $80mm
+→ EV/EBITDA = 1,000 / 80 = 12.5x
+
+Example 2:
+Another comp includes a $15mm one-time restructuring charge. Reported EBITDA is $70mm.
+→ Adjusted EBITDA = 70 + 15 = $85mm
+→ EV/EBITDA = 1,000 / 85 = 11.76x
+
+Example 3:
+A comp consolidates a 25%-owned affiliate contributing $12mm EBITDA. Reported EBITDA is $100mm.
+→ Adjusted EBITDA = 100 - (25% × 12) = 97
+→ EV/EBITDA = 1,100 / 97 = 11.34x`,
+      formula: 'Enterprise Value = Adjusted EBITDA × Normalized EV/EBITDA Multiple',
+      example: 'Comp A: 12.0x × $100M = $1,200M; Comp B: 10.0x × $150M = $1,500M; Comp C: 11.7x × $154M = $1,800M → Average = 11.23x\nTarget A: 11.23x × $110M = $1,235M; Target B: 11.23x × $85M = $955M; Target C: 11.23x × $200M = $2,246M\nNormalized A: 10.5x × $120M = $1,260M; Normalized B: 12.2x × $95M = $1,159M; Normalized C: 9.8x × $175M = $1,715M'
+    }
+  },
+  {
     id: 'val-easy-2',
     track: 'valuation',
     difficulty: 'easy',
