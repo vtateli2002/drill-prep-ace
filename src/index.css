@@ -76,4 +76,9 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Ensure all numbers and decimals maintain consistent white text color */
+  .text-foreground, .text-foreground * {
+    color: hsl(var(--foreground)) !important;
+  }
 }
