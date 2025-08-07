@@ -1154,7 +1154,7 @@ const QuestionView = () => {
                    )}
                  </TabsContent>
 
-              </Tabs>
+               </Tabs>
             </CardHeader>
           </Card>
 
