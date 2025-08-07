@@ -1958,7 +1958,33 @@ What is the company's Enterprise Value (EV)?`,
     answer: 720000000,
     unit: '$',
     hint: 'Enterprise Value = Equity Value + Net Debt + Preferred + NCI − Cash',
-    explanation: `📌 **Question Analysis**
+    explanation: `Enterprise Value = $500M + $250M + $30M + $20M - $80M = $720M
+
+• • •
+
+Step-by-step breakdown:
+
+1. Starting Point:
+   • Market Capitalization: $500M (equity value)
+
+2. Add Debt-Like Claims:
+   • Total Debt: +$250M
+   • Preferred Equity: +$30M (senior to common equity)
+   • Noncontrolling Interest: +$20M
+
+3. Subtract Cash Assets:
+   • Cash and Cash Equivalents: -$80M
+
+4. Enterprise Value Calculation:
+   → EV: $500M + $250M + $30M + $20M - $80M = $720M
+
+Key Points:
+   • Enterprise value reflects total business value across all stakeholders
+   • Debt-like items increase EV as they represent claims on cash flows
+   • Cash reduces EV as it's immediately available to pay down obligations
+   • EV is capital structure neutral - ignores financing methods
+
+📌 **Question Analysis**
 
 Enterprise Value represents the total value of a company to all capital providers. Calculate by adding debt-like obligations and subtracting cash from market capitalization.
 
