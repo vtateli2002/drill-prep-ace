@@ -7,7 +7,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ArrowLeft, CheckCircle, XCircle, Lightbulb, Target } from 'lucide-react';
+import { Progress } from '@/components/ui/progress';
+import { ArrowLeft, CheckCircle, XCircle, Lightbulb, Target, BookOpen, AlertTriangle } from 'lucide-react';
 import { Question, XP_VALUES, TRACK_NAMES } from '@/types/drill';
 import { QUESTIONS } from '@/data/questions';
 import { useToast } from '@/hooks/use-toast';
@@ -41,6 +42,14 @@ const QuestionView = () => {
   const [hintUsed, setHintUsed] = useState(false);
   const [finalXP, setFinalXP] = useState(0);
   const [maxAttemptsReached, setMaxAttemptsReached] = useState(false);
+  const [showExplanation, setShowExplanation] = useState(false);
+  const [activeTab, setActiveTab] = useState('question');
+  const [microQuestionAnswers, setMicroQuestionAnswers] = useState({
+    q1: null as boolean | null,
+    q2: null as string | null,
+    q3: null as string | null,
+  });
+  const [formatError, setFormatError] = useState('');
 
   // Check if question is already solved (but allow daily challenge questions to be attempted)
   useEffect(() => {
@@ -219,7 +228,22 @@ const QuestionView = () => {
   const handleSubmit = async () => {
     if (!currentQuestion || !userAnswer) return;
 
-    const correct = validateAnswer(userAnswer, currentQuestion.answer);
+    // Enhanced answer validation with flexible formatting
+    const cleanAnswer = userAnswer.replace(/[\$,]/g, '').trim();
+    const correct = validateAnswer(cleanAnswer, currentQuestion.answer);
+    
+    // Check for format issues but correct value
+    if (!correct && currentQuestion.id === 'acc-easy-146') {
+      const numericAnswer = parseFloat(cleanAnswer);
+      const expectedAnswer = typeof currentQuestion.answer === 'number' ? currentQuestion.answer : parseFloat(currentQuestion.answer as string);
+      
+      if (!isNaN(numericAnswer) && Math.abs(numericAnswer - expectedAnswer) < 0.01) {
+        setFormatError("⚠️ It looks like your answer is correct, but the format is off. Try entering it again without commas or symbols.");
+        return;
+      }
+    }
+    
+    setFormatError('');
     const newAttemptCount = attemptCount + 1;
     
     setAttemptCount(newAttemptCount);
@@ -268,6 +292,7 @@ const QuestionView = () => {
         setIsSubmitted(true);
         setMaxAttemptsReached(true);
         setFinalXP(0);
+        setShowExplanation(true);
         
         // Submit failed attempt to backend
         await submitAnswer(currentQuestion.id, false, currentQuestion.difficulty, currentQuestion.track);
@@ -301,7 +326,24 @@ const QuestionView = () => {
     setAttemptCount(0);
     setHintUsed(false);
     setFinalXP(0);
+    setShowExplanation(false);
+    setFormatError('');
     // Don't reset maxAttemptsReached - this prevents XP farming
+  };
+
+  const handleMicroAnswer = (questionKey: string, answer: any) => {
+    setMicroQuestionAnswers(prev => ({
+      ...prev,
+      [questionKey]: answer
+    }));
+  };
+
+  const getMicroQuestionFeedback = (questionKey: string, userAnswer: any, correctAnswer: any) => {
+    if (userAnswer === null) return null;
+    const isCorrect = questionKey === 'q3' 
+      ? Math.abs(parseFloat(userAnswer) - correctAnswer) < 0.01
+      : userAnswer === correctAnswer;
+    return isCorrect ? '✅' : '❌';
   };
 
   const getNextQuestion = () => {
@@ -431,6 +473,18 @@ const QuestionView = () => {
                 Daily Challenge
               </Badge>
             )}
+            {currentQuestion.id === 'acc-easy-146' && (
+              <div className="flex items-center space-x-2">
+                <BookOpen size={16} className="text-primary" />
+                <div className="text-sm">
+                  <div className="font-medium text-foreground">📘 Topic Progress: Accrual Accounting</div>
+                  <div className="flex items-center space-x-2">
+                    <Progress value={30} className="w-20 h-2" />
+                    <span className="text-xs text-muted-foreground">3 of 10 mastered</span>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
@@ -438,10 +492,11 @@ const QuestionView = () => {
           {/* Left Panel - Question & Learn Tabs */}
           <Card className="flex flex-col">
             <CardHeader>
-              <Tabs defaultValue="question" className="w-full">
-                <TabsList className="grid w-full grid-cols-2">
+              <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+                <TabsList className="grid w-full grid-cols-3">
                   <TabsTrigger value="question">📝 Question</TabsTrigger>
                   <TabsTrigger value="learn">📘 Learn</TabsTrigger>
+                  {showExplanation && <TabsTrigger value="explanation">💡 Explanation</TabsTrigger>}
                 </TabsList>
                 
                 <TabsContent value="question" className="mt-4">
@@ -552,6 +607,85 @@ const QuestionView = () => {
                             </div>
                           </CardContent>
                         </Card>
+
+                        {/* Mini-Interactions for Accrual vs. Cash Accounting question */}
+                        {currentQuestion.id === 'acc-easy-146' && (
+                          <div className="space-y-4">
+                            <h3 className="text-lg font-bold text-foreground">🧠 Quick Checks</h3>
+                            
+                            {/* Quick Check 1 */}
+                            <Card className="border-orange-200 dark:border-orange-800 bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-950/30 dark:to-amber-950/30">
+                              <CardContent className="p-4">
+                                <div className="space-y-2">
+                                  <p className="font-medium text-orange-900 dark:text-orange-100">💭 Quick Check 1 (True or False):</p>
+                                  <p className="text-orange-800 dark:text-orange-200">Accrual accounting recognizes revenue when cash is received.</p>
+                                  <div className="flex space-x-2">
+                                    <Button 
+                                      variant={microQuestionAnswers.q1 === true ? "default" : "outline"}
+                                      size="sm"
+                                      onClick={() => handleMicroAnswer('q1', true)}
+                                    >
+                                      True {getMicroQuestionFeedback('q1', microQuestionAnswers.q1, false)}
+                                    </Button>
+                                    <Button 
+                                      variant={microQuestionAnswers.q1 === false ? "default" : "outline"}
+                                      size="sm"
+                                      onClick={() => handleMicroAnswer('q1', false)}
+                                    >
+                                      False {getMicroQuestionFeedback('q1', microQuestionAnswers.q1, false)}
+                                    </Button>
+                                  </div>
+                                </div>
+                              </CardContent>
+                            </Card>
+
+                            {/* Quick Check 2 */}
+                            <Card className="border-orange-200 dark:border-orange-800 bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-950/30 dark:to-amber-950/30">
+                              <CardContent className="p-4">
+                                <div className="space-y-2">
+                                  <p className="font-medium text-orange-900 dark:text-orange-100">💭 Quick Check 2 (Multiple Choice):</p>
+                                  <p className="text-orange-800 dark:text-orange-200">Under accrual accounting, when is revenue recognized?</p>
+                                  <div className="space-y-1">
+                                    {[
+                                      { key: 'A', text: 'When cash is received' },
+                                      { key: 'B', text: 'When service is performed' },
+                                      { key: 'C', text: 'When the invoice is sent' }
+                                    ].map(option => (
+                                      <Button 
+                                        key={option.key}
+                                        variant={microQuestionAnswers.q2 === option.key ? "default" : "outline"}
+                                        size="sm"
+                                        className="w-full justify-start"
+                                        onClick={() => handleMicroAnswer('q2', option.key)}
+                                      >
+                                        {option.key}. {option.text} {getMicroQuestionFeedback('q2', microQuestionAnswers.q2, 'B')}
+                                      </Button>
+                                    ))}
+                                  </div>
+                                </div>
+                              </CardContent>
+                            </Card>
+
+                            {/* Quick Check 3 */}
+                            <Card className="border-orange-200 dark:border-orange-800 bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-950/30 dark:to-amber-950/30">
+                              <CardContent className="p-4">
+                                <div className="space-y-2">
+                                  <p className="font-medium text-orange-900 dark:text-orange-100">💭 Quick Check 3 (Fill-in-the-blank):</p>
+                                  <p className="text-orange-800 dark:text-orange-200">A company earns $8,000 in January but receives cash in February. Revenue for January under accrual accounting is: ____</p>
+                                  <div className="flex items-center space-x-2">
+                                    <Input
+                                      placeholder="Enter amount"
+                                      value={microQuestionAnswers.q3 || ''}
+                                      onChange={(e) => handleMicroAnswer('q3', e.target.value)}
+                                      className="w-32"
+                                    />
+                                    <span>{getMicroQuestionFeedback('q3', microQuestionAnswers.q3, 8000)}</span>
+                                  </div>
+                                </div>
+                              </CardContent>
+                            </Card>
+                          </div>
+                        )}
                       </div>
                     </div>
                   ) : (
@@ -560,6 +694,55 @@ const QuestionView = () => {
                     </div>
                   )}
                 </TabsContent>
+
+                {showExplanation && (
+                  <TabsContent value="explanation" className="mt-4">
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between">
+                        <h3 className="text-xl font-bold text-success flex items-center gap-2">
+                          <CheckCircle size={20} />
+                          💡 Explanation
+                        </h3>
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          onClick={() => setActiveTab('learn')}
+                          className="flex items-center gap-2"
+                        >
+                          <BookOpen size={16} />
+                          🔍 Review Concept
+                        </Button>
+                      </div>
+                      
+                      {currentQuestion.explanation && (
+                        <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5">
+                          <CardContent className="p-4">
+                            <div 
+                              className="text-base text-foreground leading-relaxed"
+                              dangerouslySetInnerHTML={{
+                                __html: currentQuestion.explanation.replace(/\n/g, '<br />')
+                              }}
+                            />
+                          </CardContent>
+                        </Card>
+                      )}
+
+                      {/* Interview Angle for Accrual vs. Cash Accounting question */}
+                      {currentQuestion.id === 'acc-easy-146' && (
+                        <Card className="border-primary/30 bg-gradient-to-br from-primary/10 to-primary/5">
+                          <CardContent className="p-4">
+                            <h4 className="font-bold text-primary mb-2">🎯 Interview Angle:</h4>
+                            <p className="text-foreground leading-relaxed">
+                              This question tests your understanding of revenue recognition under accrual vs. cash accounting. 
+                              In interviews, you may be asked to walk through timing differences in a 3-statement model, 
+                              especially when reconciling net income to cash flow. Nail this concept early—it appears frequently.
+                            </p>
+                          </CardContent>
+                        </Card>
+                      )}
+                    </div>
+                  </TabsContent>
+                )}
               </Tabs>
             </CardHeader>
           </Card>
@@ -572,25 +755,36 @@ const QuestionView = () => {
                 <CardTitle>Your Answer</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="flex items-center space-x-2">
-                  <Input
-                    type="number"
-                    step="0.01"
-                    value={userAnswer}
-                    onChange={(e) => setUserAnswer(e.target.value)}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter') {
-                        handleSubmit();
-                      }
-                    }}
-                    placeholder="Enter your answer"
-                    className="flex-1"
-                    disabled={isSubmitted}
-                  />
-                  {currentQuestion.unit && (
-                    <span className="text-muted-foreground font-medium">
-                      {currentQuestion.unit}
-                    </span>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-2">
+                    <Input
+                      type="text"
+                      value={userAnswer}
+                      onChange={(e) => {
+                        setUserAnswer(e.target.value);
+                        setFormatError('');
+                      }}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                          handleSubmit();
+                        }
+                      }}
+                      placeholder="Enter your answer"
+                      className="flex-1"
+                      disabled={isSubmitted}
+                    />
+                    {currentQuestion.unit && (
+                      <span className="text-muted-foreground font-medium">
+                        {currentQuestion.unit}
+                      </span>
+                    )}
+                  </div>
+                  
+                  {formatError && (
+                    <div className="flex items-center space-x-2 p-3 bg-warning/10 border border-warning/30 rounded-lg">
+                      <AlertTriangle size={16} className="text-warning" />
+                      <p className="text-sm text-warning">{formatError}</p>
+                    </div>
                   )}
                 </div>
                 
@@ -661,10 +855,11 @@ const QuestionView = () => {
                     <Button 
                       variant="outline"
                       onClick={() => {
-                        setIsSubmitted(true);
+                        setShowExplanation(true);
+                        setActiveTab('explanation');
                         toast({
                           title: "Explanation revealed",
-                          description: "Check the explanation section above!",
+                          description: "Check the explanation tab!",
                           className: "border-success",
                         });
                       }}
@@ -672,6 +867,17 @@ const QuestionView = () => {
                     >
                       Show Explanation
                     </Button>
+                    
+                    {/* Difficulty Toggle for future use */}
+                    {currentQuestion.id === 'acc-easy-146' && (
+                      <Button 
+                        variant="ghost" 
+                        className="flex-1 text-muted-foreground"
+                        disabled
+                      >
+                        🔓 Hard Mode (Soon)
+                      </Button>
+                    )}
                   </div>
                 </div>
               </CardContent>
