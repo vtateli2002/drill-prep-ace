@@ -571,12 +571,14 @@ const QuestionView = () => {
                           </CardTitle>
                         </CardHeader>
                         <CardContent>
-                          <p className="text-foreground leading-relaxed">
-                            {currentQuestion.id === 'acc-easy-146' ? 
-                              "This question tests your understanding of revenue recognition under accrual vs. cash accounting. In interviews, you may be asked to walk through timing differences in a 3-statement model, especially when reconciling net income to cash flow. Nail this concept early—it appears frequently." :
-                              `This ${currentQuestion.track} question tests fundamental concepts that frequently appear in finance interviews. Understanding these principles is crucial for technical rounds and case studies.`
-                            }
-                          </p>
+                           <p className="text-foreground leading-relaxed">
+                             {currentQuestion.id === 'acc-easy-146' ? 
+                               "This question tests your understanding of revenue recognition under accrual vs. cash accounting. In interviews, you may be asked to walk through timing differences in a 3-statement model, especially when reconciling net income to cash flow. Nail this concept early—it appears frequently." :
+                               currentQuestion.id === 'val-hard-normalize-1' ?
+                               "This question tests whether you truly understand how to adjust financials for meaningful comparisons, not just memorize formulas. Practitioners almost always normalize EBITDA during comps analysis, especially for M&A, fairness opinions, or deal comps work." :
+                               `This ${currentQuestion.track} question tests fundamental concepts that frequently appear in finance interviews. Understanding these principles is crucial for technical rounds and case studies.`
+                             }
+                           </p>
                         </CardContent>
                       </Card>
                     )}

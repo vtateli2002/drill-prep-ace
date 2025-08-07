@@ -2348,7 +2348,9 @@ DCF = $1,350M
     description: `You are valuing MiraTech, a mid-sized software firm. You're given the following public comps:
 
 Company A: Enterprise Value $1,200mm, EBITDA $100mm, EBITDA Margin 25%, Clean financials
+
 Company B: Enterprise Value $1,500mm, EBITDA $125mm, EBITDA Margin 20%, Includes $25mm of non-recurring litigation expense in EBITDA
+
 Company C: Enterprise Value $1,800mm, EBITDA $160mm, EBITDA Margin 15%, Consolidates a 30%-owned subsidiary, contributing $20mm EBITDA
 
 You are also given that MiraTech's adjusted EBITDA is $110mm.
