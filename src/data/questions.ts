@@ -1940,8 +1940,171 @@ Key Points:
       example: 'NI $200K, D&A $50K, WC decreased $30K → CFO = $200K + $50K + $30K = $280K'
     }
   },
+  // VALUATION QUESTIONS - Topic 1: Enterprise Value (EV) Definition
+  {
+    id: 'val-easy-1',
+    track: 'valuation',
+    difficulty: 'easy',
+    title: 'Enterprise Value (EV) Definition – Basic Calculation',
+    description: `A company has the following as of year-end:
 
+Market Capitalization: $500 million
+Cash and Cash Equivalents: $80 million
+Total Debt: $250 million
+Preferred Equity: $30 million
+Noncontrolling Interest: $20 million
 
+What is the company's Enterprise Value (EV)?`,
+    answer: 720000000,
+    unit: '$',
+    hint: 'Enterprise Value = Equity Value + Net Debt + Preferred + NCI − Cash',
+    explanation: `EV represents total value to all capital providers. Add debt-like items, subtract cash.
+
+• • •
+
+Step-by-step breakdown:
+
+1. Start with Market Cap:
+   • Equity Value: $500M
+
+2. Add Debt-Like Obligations:
+   • Total Debt: +$250M
+   • Preferred Equity: +$30M
+   • Noncontrolling Interest: +$20M
+
+3. Subtract Cash:
+   • Cash and Cash Equivalents: -$80M
+
+4. Enterprise Value Calculation:
+   → $500M + $250M + $30M + $20M - $80M = $720M
+
+Key Points:
+   • EV reflects total business value across all stakeholders
+   • Debt-like items increase enterprise value
+   • Cash reduces EV as it's available to pay down debt
+   • Preferred and NCI represent additional capital claims`,
+    learnContent: {
+      concept: 'Enterprise Value reflects the total value of the business to all capital providers.',
+      formula: 'EV = Equity Value + Debt + Preferred + NCI − Cash',
+      example: '$1B Market Cap + $200M Debt − $100M Cash = $1.1B EV\n$500M MC + $250M Debt + $20M NCI − $50M Cash = $720M EV\n$2B MC + $300M Debt + $50M Preferred − $150M Cash = $2.2B EV'
+    }
+  },
+  {
+    id: 'val-medium-1',
+    track: 'valuation',
+    difficulty: 'medium',
+    title: 'Enterprise Value (EV) Definition – Complex Components',
+    description: `As of today, a firm has:
+
+Market Cap: $1.2B
+Cash: $100M
+Debt: $400M
+Operating Leases (Capitalized): $120M
+Preferred Stock: $50M
+Noncontrolling Interest: $30M
+Long-Term Investments: $80M
+
+Operating leases are treated as debt-like. Long-term investments are non-operating and highly liquid.
+
+What is the firm's Enterprise Value (EV)?`,
+    answer: 1620000000,
+    unit: '$',
+    hint: 'Add debt-like items. Subtract all non-operating, liquid assets (like LT investments).',
+    explanation: `EV includes all debt-like obligations and excludes non-operating assets. Operating leases act like debt.
+
+• • •
+
+Step-by-step breakdown:
+
+1. Start with Market Cap:
+   • Equity Value: $1.2B
+
+2. Add Debt-Like Obligations:
+   • Total Debt: +$400M
+   • Capitalized Operating Leases: +$120M (debt-equivalent)
+   • Preferred Stock: +$50M
+   • Noncontrolling Interest: +$30M
+
+3. Subtract Non-Operating Assets:
+   • Cash: -$100M
+   • Long-Term Investments: -$80M (non-core, liquid)
+
+4. Enterprise Value Calculation:
+   → $1.2B + $400M + $120M + $50M + $30M - $100M - $80M = $1.620B
+
+Key Points:
+   • Operating leases are debt-equivalent under IFRS 16/ASC 842
+   • Long-term investments are subtracted as non-operating assets
+   • EV reflects only the operating enterprise value
+   • Both cash and liquid investments reduce debt capacity`,
+    learnContent: {
+      concept: 'EV adds all debt-like obligations and removes non-core assets to reflect operating enterprise value.',
+      formula: 'EV = Equity + Net Debt + Preferred + NCI − Excess Assets',
+      example: 'Subtracting LT securities or excess cash reduces EV\nCapitalized leases and pensions are often added as debt equivalents\n$800M MC + $200M Debt + $50M Leases − $30M Cash − $20M Investments = $1B EV'
+    }
+  },
+  {
+    id: 'val-hard-1',
+    track: 'valuation',
+    difficulty: 'hard',
+    title: 'Enterprise Value (EV) Definition – Comprehensive Analysis',
+    description: `A company has the following data:
+
+Market Cap: $2.4B
+Cash: $250M
+Short-Term Investments: $150M
+Debt: $1.1B
+Finance Lease Liabilities: $200M
+Pension Liability (Unfunded): $120M
+Preferred Stock: $100M
+NCI: $80M
+Equity Investments (Passive): $90M
+Operating Assets held for sale (core to business): $50M
+
+Cash and short-term investments are highly liquid. Equity investments are non-operating. Held-for-sale assets are core to operations and not subtracted.
+
+What is the company's Enterprise Value (EV)?`,
+    answer: 3510000000,
+    unit: '$',
+    hint: 'Add all debt-like items and subtract only non-operating, highly liquid assets (not core assets like held-for-sale ops).',
+    explanation: `Complex EV requires careful classification of debt-like vs. non-operating items. Core assets remain regardless of sale status.
+
+• • •
+
+Step-by-step breakdown:
+
+1. Start with Market Cap:
+   • Equity Value: $2.4B
+
+2. Add All Debt-Like Obligations:
+   • Total Debt: +$1.1B
+   • Finance Lease Liabilities: +$200M (debt-equivalent)
+   • Unfunded Pension Liability: +$120M (debt-like obligation)
+   • Preferred Stock: +$100M
+   • Noncontrolling Interest: +$80M
+
+3. Subtract Non-Operating, Liquid Assets:
+   • Cash: -$250M
+   • Short-Term Investments: -$150M (liquid, non-operating)
+   • Equity Investments (Passive): -$90M (non-operating)
+
+4. Operating Assets Analysis:
+   • Assets held for sale: $50M (NOT subtracted - core operations)
+
+5. Enterprise Value Calculation:
+   → $2.4B + $1.1B + $200M + $120M + $100M + $80M - $400M - $90M = $3.510B
+
+Key Points:
+   • Unfunded pension liabilities are debt-equivalent obligations
+   • Held-for-sale operational assets remain in EV calculation
+   • Only non-operating, liquid investments are subtracted
+   • Finance leases treated as debt under current accounting standards`,
+    learnContent: {
+      concept: 'Enterprise Value reflects the capital structure-neutral value of a company\'s core operations.',
+      formula: 'EV = Market Cap + Debt + Leases + Pensions + Preferred + NCI − Cash − Non-operating Assets',
+      example: 'Do not subtract "held for sale" assets if operational\nAdd unfunded pensions, leases, or legal obligations as debt-like liabilities\n$1B MC + $500M Debt + $100M Pensions − $200M Cash − $50M Investments = $1.35B EV'
+    }
+  },
 
   {
     id: 'acc-easy-21',
