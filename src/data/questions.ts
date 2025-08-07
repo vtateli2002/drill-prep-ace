@@ -12131,8 +12131,8 @@ Step-by-Step Breakdown:
 
 🔹 Equity Value: $1,300 million
 🔹 Debt Value: $700 million
-  • $420 million in senior secured notes @ 5.00%
-  • $280 million in convertible notes @ 6.00%
+• $420 million in senior secured notes @ 5.00%
+• $280 million in convertible notes @ 6.00%
 
 📌 Assumptions:
 • Risk-Free Rate: 4.00%
