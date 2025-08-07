@@ -2241,6 +2241,127 @@ Convertible bonds are valued at their conversion ratio (bond value ÷ conversion
       example: '• $150M in convertibles @ $15 = 10M shares if stock > $15\n• Strike prices below share price = dilutive under TSM'
     }
   },
+  {
+    id: 'val-easy-3',
+    track: 'valuation',
+    difficulty: 'easy',
+    title: 'EV vs. Equity Value Reconciliation',
+    description: `A company has the following:
+
+Equity Value: $900 million
+Debt: $300 million
+Preferred Stock: $50 million
+Noncontrolling Interest: $25 million
+Cash: $100 million
+
+What is the Enterprise Value?`,
+    answer: 1175000000,
+    unit: '$',
+    hint: 'EV = Equity Value + Debt + Preferred + NCI − Cash',
+    explanation: `**Formula:** EV = $900M + $300M + $50M + $25M - $100M = $1,175M
+
+**Step-by-step calculation:**
+
+Start with Equity Value: $900M
+Add Debt: $900M + $300M = $1,200M
+Add Preferred: $1,200M + $50M = $1,250M
+Add NCI: $1,250M + $25M = $1,275M
+Subtract Cash: $1,275M − $100M = $1,175M
+
+**Final Answer:** $1,175,000,000`,
+    learnContent: {
+      concept: 'To reconcile Equity Value to EV, add all capital structure-related claims and subtract non-operating assets like cash.',
+      formula: 'EV = Equity Value + Debt + Preferred + NCI − Cash',
+      example: '• $800M Equity + $200M Debt − $50M Cash = $950M EV\n• $1B Equity + $300M Debt + $50M Preferred − $100M Cash = $1.25B EV'
+    }
+  },
+  {
+    id: 'val-medium-3',
+    track: 'valuation',
+    difficulty: 'medium',
+    title: 'EV vs. Equity Value with Operating Leases',
+    description: `A company's financials report:
+
+Equity Value: $1.75 billion
+Cash: $200 million
+Debt: $600 million
+Capitalized Operating Leases: $120 million
+Pension Liability (Unfunded): $80 million
+Preferred Stock: $70 million
+Noncontrolling Interest: $40 million
+Short-Term Investments: $100 million
+
+Both capitalized leases and pensions are considered debt-like. Short-term investments are non-operating and should be subtracted in addition to cash.
+
+What is the company's Enterprise Value?`,
+    answer: 2360000000,
+    unit: '$',
+    hint: 'Start from Equity Value, add all debt-like and financing-related items, and subtract all liquid non-operating assets.',
+    explanation: `**Formula:** EV = $1.75B + $600M + $120M + $80M + $70M + $40M - $200M - $100M = $2.36B
+
+**Step-by-step calculation:**
+
+Start with Equity Value = $1.75B
+Add Debt = $1.75B + $600M = $2.35B
+Add Capitalized Leases = $2.35B + $120M = $2.47B
+Add Pension Liabilities = $2.47B + $80M = $2.55B
+Add Preferred Stock = $2.55B + $70M = $2.62B
+Add Noncontrolling Interest = $2.62B + $40M = $2.66B
+Subtract Cash = $2.66B − $200M = $2.46B
+Subtract Short-Term Investments = $2.46B − $100M = $2.36B
+
+**Final Answer:** $2,360,000,000`,
+    learnContent: {
+      concept: 'EV adds all debt-like obligations and removes non-core assets to reflect operating enterprise value.',
+      formula: 'EV = Equity + Net Debt + Preferred + NCI − Excess Assets',
+      example: '• Subtracting LT securities or excess cash reduces EV\n• Capitalized leases and pensions are often added as debt equivalents'
+    }
+  },
+  {
+    id: 'val-hard-3',
+    track: 'valuation',
+    difficulty: 'hard',
+    title: 'Complex EV Reconciliation with Multiple Assets',
+    description: `A company reports:
+
+Market Cap: $5.6B
+Cash: $500M
+Short-Term Investments: $200M
+Long-Term Debt: $1.4B
+Finance Lease Liabilities: $300M
+Preferred Stock: $150M
+Noncontrolling Interest: $100M
+Unfunded Pension Liabilities: $250M
+Operating Assets held for sale: $80M
+Equity Investments (non-core): $180M
+
+Cash, ST investments, and equity investments are all non-operating. Assets held for sale are core to the business and not subtracted.
+
+What is the company's Enterprise Value?`,
+    answer: 6920000000,
+    unit: '$',
+    hint: 'Only subtract liquid, non-operating assets. Add all debt-like and capital structure items.',
+    explanation: `**Formula:** EV = $5.6B + $1.4B + $300M + $150M + $100M + $250M - $500M - $200M - $180M = $6.92B
+
+**Step-by-step calculation:**
+
+Equity Value = $5.6B
+Long-Term Debt = $5.6B + $1.4B = $7.0B
+Finance Leases = $7.0B + $300M = $7.3B
+Preferred Stock = $7.3B + $150M = $7.45B
+Noncontrolling Interest = $7.45B + $100M = $7.55B
+Pension Liabilities = $7.55B + $250M = $7.80B
+− Cash = $7.80B − $500M = $7.30B
+− Short-Term Investments = $7.30B − $200M = $7.10B
+− Equity Investments = $7.10B − $180M = $6.92B
+
+**Final Answer:** $6,920,000,000`,
+    learnContent: {
+      concept: 'Enterprise Value reflects the capital structure-neutral value of a company\'s core operations.',
+      formula: 'EV = Market Cap + Debt + Leases + Pensions + Preferred + NCI − Cash − Non-operating Assets',
+      example: '• Do not subtract "held for sale" assets if operational\n• Add unfunded pensions, leases, or legal obligations as debt-like liabilities'
+    }
+  },
 
   {
     id: 'acc-easy-21',
