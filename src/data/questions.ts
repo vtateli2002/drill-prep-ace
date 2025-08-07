@@ -2243,9 +2243,7 @@ EV = Market Cap + Total Debt + Finance Leases + Pension Liabilities + Preferred 
     track: 'valuation',
     difficulty: 'medium',
     title: 'Triangulated Valuation – Football Field Analysis',
-    description: `📌 Question
-
-You're advising a software company called Nuvia on its upcoming strategic alternatives process. As part of your valuation analysis, you're preparing a football field to show the company's implied valuation using the three major methodologies.
+    description: `You're advising a software company called Nuvia on its upcoming strategic alternatives process. As part of your valuation analysis, you're preparing a football field to show the company's implied valuation using the three major methodologies.
 
 Nuvia's 2024 EBITDA is projected at $100 million
 
@@ -2267,9 +2265,7 @@ What is Nuvia's implied valuation if you equally weight the outputs of the publi
     answer: 1050000000,
     unit: '$',
     hint: 'Calculate average multiples first, then apply to EBITDA, then average all three valuations.',
-    explanation: `💡 Explanation
-
-Final Answer:
+    explanation: `Final Answer:
 (10.0 × $100M + 12.0 × $100M + $950M) / 3 = $1,050,000,000
 
 • • •
