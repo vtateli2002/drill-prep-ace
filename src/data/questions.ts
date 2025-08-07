@@ -12090,9 +12090,9 @@ Target EBITDA $110mm, Average multiple 9.33x → Implied EV = $1,026.3mm`
     title: 'WACC with Preferred Equity and Multi-Class Capital Structure',
     description: `You're calculating the WACC for Axis Biotech, a company with a combination of equity, debt, and preferred shares.
 
-🔹 Equity Value: $1,200 million
-🔹 Debt Value: $400 million — Interest Rate: 5.00%
-🔹 Preferred Equity: $400 million — Fixed Dividend: 7.00%
+• Equity Value: $1,200 million
+• Debt Value: $400 million — Interest Rate: 5.00%
+• Preferred Equity: $400 million — Fixed Dividend: 7.00%
 
 Assumptions:
 • Risk-Free Rate: 3.00%
@@ -12129,8 +12129,8 @@ Step-by-Step Breakdown:
     title: 'WACC with Mixed Debt Instruments and International Risk Adjustments',
     description: `You are calculating the WACC for Solara Grid, a global infrastructure developer. The company's capital structure includes:
 
-🔹 Equity Value: $1,300 million
-🔹 Debt Value: $700 million
+• Equity Value: $1,300 million
+• Debt Value: $700 million
 • $420 million in senior secured notes @ 5.00%
 • $280 million in convertible notes @ 6.00%
 
