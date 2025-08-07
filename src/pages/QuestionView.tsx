@@ -628,8 +628,8 @@ const QuestionView = () => {
                             </p>
                           </div>
                           
-                          <div className="mt-6 p-5 bg-success/30 rounded-lg border-2 border-success/50 shadow-inner">
-                            <p className="font-bold text-lg text-center text-success-foreground leading-relaxed">💡 Formula: Revenue recognized = Services performed (under accrual)</p>
+                          <div className="mt-6 p-4 bg-success/20 rounded-lg border border-success/30">
+                            <p className="font-semibold text-center text-foreground leading-relaxed">💡 Formula: Revenue recognized = Services performed (under accrual)</p>
                           </div>
                         </CardContent>
                       </Card>
