@@ -2375,10 +2375,7 @@ Step-by-step breakdown:
    (12.00 + 10.00 + 11.69) / 3 = 11.23x
 
 3. Apply to MiraTech's EBITDA
-   11.23 × $110mm = $1,235mm
-
-🎯 Interview Angle
-This question tests whether you truly understand how to adjust financials for meaningful comparisons, not just memorize formulas. Practitioners almost always normalize EBITDA during comps analysis, especially for M&A, fairness opinions, or deal comps work.`,
+   11.23 × $110mm = $1,235mm`,
     learnContent: {
       concept: `📘 Core Concept
 EV/EBITDA is a commonly used valuation multiple for comparing companies of different capital structures. However, to ensure meaningful comparisons, EBITDA must be adjusted (normalized) to reflect recurring, core business performance. Differences in accounting treatments, one-time expenses, or minority stakes must be reconciled to arrive at true comparability.
