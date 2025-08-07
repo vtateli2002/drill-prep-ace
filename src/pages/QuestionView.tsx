@@ -713,7 +713,7 @@ const QuestionView = () => {
                         </CardContent>
                       </Card>
                     </div>
-                  ) : currentQuestion.id === 'val-medium-nuvia-1' || currentQuestion.id === 'val-hard-normalize-1' ? (
+                  ) : currentQuestion.id === 'val-medium-nuvia-1' || currentQuestion.id === 'val-hard-normalize-1' || currentQuestion.id === 'val-medium-wesley-comps-1' || currentQuestion.id === 'val-easy-alto-comps-1' ? (
                     <div className="space-y-8">
                       {/* Core Concept - Rich Forest Green */}
                       <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-lg">
@@ -723,12 +723,18 @@ const QuestionView = () => {
                           </CardTitle>
                         </CardHeader>
                          <CardContent className="space-y-4">
-                           <p className="text-base text-foreground leading-relaxed">
-                             {currentQuestion.id === 'val-medium-nuvia-1' 
-                               ? 'Each valuation method reflects a different view on value. Comps reflect market sentiment, precedents capture deal premiums, and DCF shows intrinsic cash flow-based value. Blending them produces a balanced, triangulated view that synthesizes multiple market perspectives.'
-                               : 'EV/EBITDA is a commonly used valuation multiple for comparing companies of different capital structures. However, to ensure meaningful comparisons, EBITDA must be adjusted (normalized) to reflect recurring, core business performance. Differences in accounting treatments, one-time expenses, or minority stakes must be reconciled to arrive at true comparability.'
-                             }
-                           </p>
+                            <p className="text-base text-foreground leading-relaxed">
+                              {currentQuestion.id === 'val-medium-nuvia-1' 
+                                ? 'Each valuation method reflects a different view on value. Comps reflect market sentiment, precedents capture deal premiums, and DCF shows intrinsic cash flow-based value. Blending them produces a balanced, triangulated view that synthesizes multiple market perspectives.'
+                                : currentQuestion.id === 'val-hard-normalize-1'
+                                ? 'EV/EBITDA is a commonly used valuation multiple for comparing companies of different capital structures. However, to ensure meaningful comparisons, EBITDA must be adjusted (normalized) to reflect recurring, core business performance. Differences in accounting treatments, one-time expenses, or minority stakes must be reconciled to arrive at true comparability.'
+                                : currentQuestion.id === 'val-medium-wesley-comps-1'
+                                ? 'Multiples must be based on comparable, apples-to-apples financials. Normalize EBITDA before using it in valuation.'
+                                : currentQuestion.id === 'val-easy-alto-comps-1'
+                                ? 'EV/EBITDA is a core multiple. This question ensures you know how to calculate and apply it in a straightforward scenario.'
+                                : 'Valuation concepts and their practical application in finance.'
+                              }
+                            </p>
                         </CardContent>
                       </Card>
 
@@ -796,14 +802,20 @@ const QuestionView = () => {
                           </CardTitle>
                         </CardHeader>
                          <CardContent>
-                           <div className="space-y-3 text-base text-foreground leading-relaxed">
-                             <p>{currentQuestion.id === 'val-medium-nuvia-1' 
-                               ? 'This is foundational for pitchbook valuation, especially when negotiating or advising on a strategic process. Knowing how to defend each methodology\'s contribution is essential for junior bankers and critical for fairness opinion work.'
-                               : 'Comparability is key. Directly using reported EBITDA can distort valuation conclusions if comps differ in one-time charges or accounting practices. Interview relevance: This question tests whether you truly understand how to adjust financials, not just memorize formulas. Real-world use: Practitioners almost always normalize EBITDA during comps analysis, especially for M&A, fairness opinions, or deal comps work.'
-                             }</p>
-                           </div>
-                        </CardContent>
-                      </Card>
+                            <div className="space-y-3 text-base text-foreground leading-relaxed">
+                               <p>{currentQuestion.id === 'val-medium-nuvia-1' 
+                                 ? 'This is foundational for pitchbook valuation, especially when negotiating or advising on a strategic process. Knowing how to defend each methodology\'s contribution is essential for junior bankers and critical for fairness opinion work.'
+                                 : currentQuestion.id === 'val-hard-normalize-1'
+                                 ? 'Comparability is key. Directly using reported EBITDA can distort valuation conclusions if comps differ in one-time charges or accounting practices. Interview relevance: This question tests whether you truly understand how to adjust financials, not just memorize formulas. Real-world use: Practitioners almost always normalize EBITDA during comps analysis, especially for M&A, fairness opinions, or deal comps work.'
+                                 : currentQuestion.id === 'val-medium-wesley-comps-1'
+                                 ? 'Failure to normalize EBITDA inflates or deflates multiples – misleading the final valuation.'
+                                 : currentQuestion.id === 'val-easy-alto-comps-1'
+                                 ? 'Quick benchmarking is common in pitch books and client updates – a basic skill every analyst must know.'
+                                  : 'Understanding valuation principles is essential for finance professionals.'
+                                }</p>
+                              </div>
+                           </CardContent>
+                        </Card>
 
                       {/* Formula - Rich Forest Green */}
                       <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-lg">
@@ -814,12 +826,18 @@ const QuestionView = () => {
                         </CardHeader>
                          <CardContent>
                            <div className="bg-muted/50 rounded-lg p-4 border border-success/20">
-                             <div className="text-base font-mono text-foreground leading-relaxed">
-                               {currentQuestion.id === 'val-medium-nuvia-1' 
-                                 ? 'Implied Valuation = (Comps Val + Precedents Val + DCF Val) / 3'
-                                 : 'Enterprise Value = Adjusted EBITDA × Normalized EV/EBITDA Multiple'
-                               }
-                             </div>
+                              <div className="text-base font-mono text-foreground leading-relaxed">
+                                {currentQuestion.id === 'val-medium-nuvia-1' 
+                                  ? 'Implied Valuation = (Comps Val + Precedents Val + DCF Val) / 3'
+                                  : currentQuestion.id === 'val-hard-normalize-1'
+                                  ? 'Enterprise Value = Adjusted EBITDA × Normalized EV/EBITDA Multiple'
+                                  : currentQuestion.id === 'val-medium-wesley-comps-1'
+                                  ? 'EV = Adjusted EBITDA × EV/EBITDA Multiple (Adjust comps before use)'
+                                  : currentQuestion.id === 'val-easy-alto-comps-1'
+                                  ? 'EV = EBITDA × EV/EBITDA Multiple'
+                                  : currentQuestion.learnContent?.formula || 'Standard valuation formula'
+                                }
+                              </div>
                            </div>
                         </CardContent>
                       </Card>
