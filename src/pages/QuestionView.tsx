@@ -506,7 +506,7 @@ const QuestionView = () => {
                     <Card className="border-primary/30 bg-gradient-to-br from-primary/10 to-primary/5 shadow-lg">
                       <CardHeader className="pb-3">
                         <CardTitle className="text-xl text-primary flex items-center gap-2">
-                          ❓ Question
+                          Question
                         </CardTitle>
                       </CardHeader>
                       <CardContent>
@@ -546,7 +546,7 @@ const QuestionView = () => {
                         <CardHeader className="pb-3">
                           <CardTitle className="text-xl text-success flex items-center gap-2">
                             <CheckCircle size={20} />
-                            💡 Explanation
+                            Explanation
                           </CardTitle>
                         </CardHeader>
                         <CardContent>
@@ -568,7 +568,7 @@ const QuestionView = () => {
                         <CardHeader className="pb-3">
                           <CardTitle className="text-xl text-primary flex items-center gap-2">
                             <Target size={16} />
-                            🎯 Interview Angle
+                            Interview Angle
                           </CardTitle>
                         </CardHeader>
                         <CardContent>
