@@ -12094,7 +12094,7 @@ Target EBITDA $110mm, Average multiple 9.33x → Implied EV = $1,026.3mm`
 🔹 Debt Value: $400 million — Interest Rate: 5.00%
 🔹 Preferred Equity: $400 million — Fixed Dividend: 7.00%
 
-📌 Assumptions:
+Assumptions:
 • Risk-Free Rate: 3.00%
 • Market Risk Premium: 6.00%
 • Beta: 1.10
@@ -12134,7 +12134,7 @@ Step-by-Step Breakdown:
 • $420 million in senior secured notes @ 5.00%
 • $280 million in convertible notes @ 6.00%
 
-📌 Assumptions:
+Assumptions:
 • Risk-Free Rate: 4.00%
 • Market Risk Premium: 6.00%
 • Country Risk Premium: 2.00%
