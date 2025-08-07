@@ -1131,21 +1131,6 @@ const QuestionView = () => {
                         </CardContent>
                       </Card>
 
-                      {/* Examples */}
-                      <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-lg">
-                        <CardHeader className="pb-3">
-                          <CardTitle className="text-xl text-success flex items-center gap-2">
-                            💡 Examples
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <div className="bg-muted/30 rounded-lg p-3 border border-success/20">
-                            <div className="text-base text-foreground leading-normal whitespace-pre-line">
-                              {currentQuestion.learnContent?.example}
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
                     </div>
                   ) : (
                     // Original learn content for other questions
