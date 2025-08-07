@@ -1148,9 +1148,55 @@ const QuestionView = () => {
                        </Card>
                      </div>
                    ) : (
-                     <div className="text-center py-8">
-                       <p className="text-base text-muted-foreground">No learning content available for this question.</p>
-                     </div>
+                     currentQuestion.learnContent ? (
+                       <div className="space-y-6">
+                         <div className="space-y-6">
+                           {/* Concept Section */}
+                           <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-md">
+                             <CardContent className="p-6">
+                               <h4 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
+                                 📘 Concept
+                               </h4>
+                               <div className="text-base text-foreground leading-relaxed">
+                                 {currentQuestion.learnContent.concept}
+                               </div>
+                             </CardContent>
+                           </Card>
+
+                           {/* Formula Section */}
+                           <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-md">
+                             <CardContent className="p-6">
+                               <h4 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
+                                 📐 Formula
+                               </h4>
+                               <div className="bg-muted/50 rounded-lg p-4 border border-success/20">
+                                 <div className="text-base font-mono text-foreground leading-relaxed whitespace-pre-line">
+                                   {currentQuestion.learnContent.formula}
+                                 </div>
+                               </div>
+                             </CardContent>
+                           </Card>
+
+                           {/* Examples Section */}
+                           <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-md">
+                             <CardContent className="p-6">
+                               <h4 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
+                                 💡 Examples
+                               </h4>
+                               <div className="bg-muted/30 rounded-lg p-3 border border-success/20">
+                                 <div className="text-base text-foreground leading-normal whitespace-pre-line">
+                                   {currentQuestion.learnContent.example}
+                                 </div>
+                               </div>
+                             </CardContent>
+                           </Card>
+                         </div>
+                       </div>
+                     ) : (
+                       <div className="text-center py-8">
+                         <p className="text-base text-muted-foreground">No learning content available for this question.</p>
+                       </div>
+                     )
                    )}
                  </TabsContent>
 
