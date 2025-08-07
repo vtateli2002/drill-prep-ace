@@ -1024,7 +1024,7 @@ const QuestionView = () => {
                          </CardContent>
                       </Card>
                     </div>
-                  ) : currentQuestion.id === 'val-hard-wacc-solara-1' || currentQuestion.id === 'val-hard-wacc-axis-1' ? (
+                  ) : (currentQuestion.id === 'val-hard-wacc-solara-1' || currentQuestion.id === 'val-hard-wacc-axis-1' || currentQuestion.id === 'val-easy-wacc-basic-1' || currentQuestion.id === 'val-medium-wacc-tiered-1') ? (
                     // WACC questions with proper 5-section structure
                     <div className="space-y-6">
                       {/* Core Concept */}
