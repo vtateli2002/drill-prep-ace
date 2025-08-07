@@ -713,7 +713,7 @@ const QuestionView = () => {
                         </CardContent>
                       </Card>
                     </div>
-                  ) : currentQuestion.id === 'val-medium-nuvia-1' || currentQuestion.id === 'val-hard-normalize-1' || currentQuestion.id === 'val-medium-wesley-comps-1' || currentQuestion.id === 'val-easy-alto-comps-1' ? (
+                  ) : currentQuestion.id === 'val-medium-nuvia-1' || currentQuestion.id === 'val-hard-normalize-1' || currentQuestion.id === 'val-medium-wesley-comps-1' || currentQuestion.id === 'val-easy-alto-comps-1' || currentQuestion.id === 'val-hard-wacc-solara-1' ? (
                     <div className="space-y-8">
                       {/* Core Concept - Rich Forest Green */}
                       <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-lg">
@@ -732,6 +732,8 @@ const QuestionView = () => {
                                 ? 'Multiples must be based on comparable, apples-to-apples financials. Normalize EBITDA before using it in valuation.'
                                 : currentQuestion.id === 'val-easy-alto-comps-1'
                                 ? 'EV/EBITDA is a core multiple. This question ensures you know how to calculate and apply it in a straightforward scenario.'
+                                : currentQuestion.id === 'val-hard-wacc-solara-1'
+                                ? 'WACC represents the blended cost of capital a company pays for its financing (debt and equity). It\'s used as the discount rate in DCFs and benchmark for hurdle rates in capital allocation.'
                                 : 'Valuation concepts and their practical application in finance.'
                               }
                             </p>
@@ -766,30 +768,53 @@ const QuestionView = () => {
                                    <span>Average all three methodologies with equal weighting</span>
                                  </p>
                                </>
-                             ) : (
-                               <>
-                                 <p className="flex items-start gap-2 leading-relaxed">
-                                   <span>•</span>
-                                   <span>Identify adjustments to EBITDA (non-recurring expenses, minority interest effects, etc.)</span>
-                                 </p>
-                                 <p className="flex items-start gap-2 leading-relaxed">
-                                   <span>•</span>
-                                   <span>Calculate normalized EBITDA for each comp</span>
-                                 </p>
-                                 <p className="flex items-start gap-2 leading-relaxed">
-                                   <span>•</span>
-                                   <span>Divide each comp's EV by its normalized EBITDA to get EV/EBITDA multiples</span>
-                                 </p>
-                                 <p className="flex items-start gap-2 leading-relaxed">
-                                   <span>•</span>
-                                   <span>Take an average or median of those multiples</span>
-                                 </p>
-                                 <p className="flex items-start gap-2 leading-relaxed">
-                                   <span>•</span>
-                                   <span>Multiply that average multiple by the target company's normalized EBITDA to estimate implied EV</span>
-                                 </p>
-                               </>
-                             )}
+                              ) : currentQuestion.id === 'val-hard-wacc-solara-1' ? (
+                                <>
+                                  <p className="flex items-start gap-2 leading-relaxed">
+                                    <span>•</span>
+                                    <span>Calculate capital weights (equity and debt proportions)</span>
+                                  </p>
+                                  <p className="flex items-start gap-2 leading-relaxed">
+                                    <span>•</span>
+                                    <span>Determine cost of equity using CAPM with market and country risk premiums</span>
+                                  </p>
+                                  <p className="flex items-start gap-2 leading-relaxed">
+                                    <span>•</span>
+                                    <span>Calculate weighted average cost of debt across different instruments</span>
+                                  </p>
+                                  <p className="flex items-start gap-2 leading-relaxed">
+                                    <span>•</span>
+                                    <span>Apply tax shield to debt cost since interest is tax-deductible</span>
+                                  </p>
+                                  <p className="flex items-start gap-2 leading-relaxed">
+                                    <span>•</span>
+                                    <span>Combine weighted equity and debt costs for final WACC</span>
+                                  </p>
+                                </>
+                              ) : (
+                                <>
+                                  <p className="flex items-start gap-2 leading-relaxed">
+                                    <span>•</span>
+                                    <span>Identify adjustments to EBITDA (non-recurring expenses, minority interest effects, etc.)</span>
+                                  </p>
+                                  <p className="flex items-start gap-2 leading-relaxed">
+                                    <span>•</span>
+                                    <span>Calculate normalized EBITDA for each comp</span>
+                                  </p>
+                                  <p className="flex items-start gap-2 leading-relaxed">
+                                    <span>•</span>
+                                    <span>Divide each comp's EV by its normalized EBITDA to get EV/EBITDA multiples</span>
+                                  </p>
+                                  <p className="flex items-start gap-2 leading-relaxed">
+                                    <span>•</span>
+                                    <span>Take an average or median of those multiples</span>
+                                  </p>
+                                  <p className="flex items-start gap-2 leading-relaxed">
+                                    <span>•</span>
+                                    <span>Multiply that average multiple by the target company's normalized EBITDA to estimate implied EV</span>
+                                  </p>
+                                </>
+                              )}
                            </div>
                         </CardContent>
                       </Card>
@@ -809,9 +834,11 @@ const QuestionView = () => {
                                  ? 'Comparability is key. Directly using reported EBITDA can distort valuation conclusions if comps differ in one-time charges or accounting practices. Interview relevance: This question tests whether you truly understand how to adjust financials, not just memorize formulas. Real-world use: Practitioners almost always normalize EBITDA during comps analysis, especially for M&A, fairness opinions, or deal comps work.'
                                  : currentQuestion.id === 'val-medium-wesley-comps-1'
                                  ? 'Failure to normalize EBITDA inflates or deflates multiples – misleading the final valuation.'
-                                 : currentQuestion.id === 'val-easy-alto-comps-1'
-                                 ? 'Quick benchmarking is common in pitch books and client updates – a basic skill every analyst must know.'
-                                  : 'Understanding valuation principles is essential for finance professionals.'
+                                  : currentQuestion.id === 'val-easy-alto-comps-1'
+                                  ? 'Quick benchmarking is common in pitch books and client updates – a basic skill every analyst must know.'
+                                  : currentQuestion.id === 'val-hard-wacc-solara-1'
+                                  ? 'WACC is central to valuation. Underestimating it inflates company value, while overestimating it may eliminate viable investments. Banks use it in fairness opinions, PE firms in hurdle rate comparisons, and corporates in budgeting. Understanding how to calculate WACC cleanly and adjust for international exposures or unique debt structures is crucial in high-stakes finance.'
+                                   : 'Understanding valuation principles is essential for finance professionals.'
                                 }</p>
                               </div>
                            </CardContent>

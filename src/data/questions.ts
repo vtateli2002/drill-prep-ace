@@ -12082,5 +12082,104 @@ Avg multiple × 95 EBITDA = 950mm implied
 Example 3:
 Target EBITDA $110mm, Average multiple 9.33x → Implied EV = $1,026.3mm`
     }
+  },
+  {
+    id: 'val-hard-wacc-solara-1',
+    track: 'valuation',
+    difficulty: 'hard',
+    title: 'WACC with Mixed Debt Instruments and International Risk Adjustments',
+    description: `You are calculating the WACC for Solara Grid, a global infrastructure developer. The company's capital structure consists of:
+
+Equity Value: $1,300 million
+
+Debt Value: $700 million
+
+$420 million in senior secured notes at a 5.00% interest rate
+
+$280 million in convertible notes at a 6.00% interest rate
+
+Other information:
+
+Risk-Free Rate: 4.00%
+
+Market Risk Premium: 6.00%
+
+Country Risk Premium: 2.00%
+
+Beta: 1.10
+
+Tax Rate: 25%
+
+Assume convertible notes are not dilutive, and use CAPM to calculate cost of equity.
+
+What is Solara's WACC, expressed to the nearest hundredth of a percent?`,
+    answer: 9.73,
+    unit: '%',
+    hint: 'Calculate equity and debt weights, use CAPM for cost of equity with country risk premium, find weighted cost of debt, then apply WACC formula.',
+    explanation: `Step-by-step formula breakdown (no rounding mid-way):
+
+1. Capital Weights
+• Total Capital = $1,300 + $700 = $2,000
+• Equity Weight = $1,300 / $2,000 = 0.65
+• Debt Weight = $700 / $2,000 = 0.35
+
+2. Cost of Equity (via CAPM)
+= 4.00% + 1.10 × (6.00% + 2.00%)
+= 4.00% + 1.10 × 8.00%
+= 4.00% + 8.80%
+= 12.80%
+
+3. Weighted Cost of Debt
+• Senior Notes: 420 / 700 = 0.60 × 5.00% = 3.00%
+• Convertible Notes: 280 / 700 = 0.40 × 6.00% = 2.40%
+• Total Weighted Cost of Debt = 3.00% + 2.40% = 5.40%
+
+4. After-Tax Cost of Debt
+= 5.40% × (1 – 0.25) = 5.40% × 0.75 = 4.05%
+
+5. Final WACC Calculation
+= 0.65 × 12.80% + 0.35 × 4.05%
+= 8.32% + 1.42%
+= 9.73%
+
+🎯 Interview Angle
+Interviewers love WACC questions that force candidates to think about:
+
+Debt composition and different interest rates
+
+After-tax impact of debt
+
+CAPM and multiple risk layers (country + market)
+
+Clean, unrounded calculations under pressure
+
+This reflects real-life modeling where assumptions must flow logically, not just be memorized.`,
+    learnContent: {
+      concept: 'WACC represents the blended cost of capital a company pays for its financing (debt and equity). It\'s used as the discount rate in DCFs and benchmark for hurdle rates in capital allocation.',
+      formula: 'WACC = (E / V) × Re + (D / V) × Rd × (1 – Tc)\nWhere:\n• E = Equity Value\n• D = Debt Value\n• V = Total Capital = E + D\n• Re = Cost of Equity (via CAPM)\n• Rd = Pre-tax Cost of Debt\n• Tc = Tax Rate\n\nCAMP: Re = Risk-Free Rate + Beta × (Market Risk Premium + Country Risk Premium)',
+      example: `How It Works:
+WACC weights each component of the capital structure (equity and debt) by its proportion of total value and adjusts for tax savings on debt.
+
+Debt is adjusted post-tax because interest is tax-deductible. Equity cost is estimated using the Capital Asset Pricing Model (CAPM), factoring in market volatility and risk premiums.
+
+Why It Matters:
+WACC is central to valuation. Underestimating it inflates company value, while overestimating it may eliminate viable investments. Banks use it in fairness opinions, PE firms in hurdle rate comparisons, and corporates in budgeting.
+
+Understanding how to calculate WACC cleanly and adjust for international exposures or unique debt structures is crucial in high-stakes finance.
+
+Examples:
+
+Example 1:
+Company X: $600m equity, $400m debt at 6%, risk-free = 3%, MRP = 5%, beta = 1.2, tax = 30%
+→ WACC = 8.16%
+
+Example 2:
+Global Co: Uses $250m equity, $250m debt (split between bonds and notes), beta = 0.9, CRP = 3%
+→ Watch how international risk impacts CAMP
+
+Example 3:
+Startup Y: All-equity financed, beta = 1.5
+→ WACC = cost of equity = 13.5%, no debt benefits`
+    }
   }
 ];
