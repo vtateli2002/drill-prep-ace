@@ -559,20 +559,26 @@ const QuestionView = () => {
                                 .replace(/•/g, '&bull;')
                             }}
                           />
-                          
-                          {/* Interview Angle section for all questions */}
-                          <div className="mt-6 p-4 bg-primary/10 border border-primary/20 rounded-lg">
-                            <h4 className="font-bold text-primary mb-2 flex items-center gap-2">
-                              <Target size={16} />
-                              🎯 Interview Angle:
-                            </h4>
-                            <p className="text-foreground leading-relaxed">
-                              {currentQuestion.id === 'acc-easy-146' ? 
-                                "This question tests your understanding of revenue recognition under accrual vs. cash accounting. In interviews, you may be asked to walk through timing differences in a 3-statement model, especially when reconciling net income to cash flow. Nail this concept early—it appears frequently." :
-                                `This ${currentQuestion.track} question tests fundamental concepts that frequently appear in finance interviews. Understanding these principles is crucial for technical rounds and case studies.`
-                              }
-                            </p>
-                          </div>
+                        </CardContent>
+                      </Card>
+                    )}
+                    
+                    {/* Interview Angle section - separate from explanation */}
+                    {(isSubmitted || showExplanation) && (
+                      <Card className="border-primary/30 bg-gradient-to-br from-primary/10 to-primary/5 shadow-lg">
+                        <CardHeader className="pb-3">
+                          <CardTitle className="text-xl text-primary flex items-center gap-2">
+                            <Target size={16} />
+                            🎯 Interview Angle
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <p className="text-foreground leading-relaxed">
+                            {currentQuestion.id === 'acc-easy-146' ? 
+                              "This question tests your understanding of revenue recognition under accrual vs. cash accounting. In interviews, you may be asked to walk through timing differences in a 3-statement model, especially when reconciling net income to cash flow. Nail this concept early—it appears frequently." :
+                              `This ${currentQuestion.track} question tests fundamental concepts that frequently appear in finance interviews. Understanding these principles is crucial for technical rounds and case studies.`
+                            }
+                          </p>
                         </CardContent>
                       </Card>
                     )}
