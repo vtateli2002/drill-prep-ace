@@ -1048,57 +1048,11 @@ const QuestionView = () => {
                             🧠 How It Works
                           </CardTitle>
                         </CardHeader>
-                        <CardContent>
-                          <div className="space-y-3 text-base text-foreground">
-                            {currentQuestion.id === 'val-hard-wacc-solara-1' ? (
-                              <>
-                                <p className="flex items-start gap-2 leading-relaxed">
-                                  <span>•</span>
-                                  <span>Calculate capital weights (equity and debt proportions)</span>
-                                </p>
-                                <p className="flex items-start gap-2 leading-relaxed">
-                                  <span>•</span>
-                                  <span>Determine cost of equity using CAPM with market and country risk premiums</span>
-                                </p>
-                                <p className="flex items-start gap-2 leading-relaxed">
-                                  <span>•</span>
-                                  <span>Calculate weighted average cost of debt across different instruments</span>
-                                </p>
-                                <p className="flex items-start gap-2 leading-relaxed">
-                                  <span>•</span>
-                                  <span>Apply tax shield to debt cost since interest is tax-deductible</span>
-                                </p>
-                                <p className="flex items-start gap-2 leading-relaxed">
-                                  <span>•</span>
-                                  <span>Combine weighted equity and debt costs for final WACC</span>
-                                </p>
-                              </>
-                            ) : (
-                              <>
-                                <p className="flex items-start gap-2 leading-relaxed">
-                                  <span>•</span>
-                                  <span>Calculate capital weights for equity, debt, and preferred stock</span>
-                                </p>
-                                <p className="flex items-start gap-2 leading-relaxed">
-                                  <span>•</span>
-                                  <span>Determine cost of equity using CAPM</span>
-                                </p>
-                                <p className="flex items-start gap-2 leading-relaxed">
-                                  <span>•</span>
-                                  <span>Apply after-tax cost to debt (tax-deductible interest)</span>
-                                </p>
-                                <p className="flex items-start gap-2 leading-relaxed">
-                                  <span>•</span>
-                                  <span>Use fixed dividend rate as cost of preferred equity</span>
-                                </p>
-                                <p className="flex items-start gap-2 leading-relaxed">
-                                  <span>•</span>
-                                  <span>Weight each component by proportion of total capital</span>
-                                </p>
-                              </>
-                            )}
-                          </div>
-                        </CardContent>
+                         <CardContent>
+                           <div className="text-base text-foreground leading-relaxed whitespace-pre-line">
+                             {currentQuestion.learnContent?.howItWorks}
+                           </div>
+                         </CardContent>
                       </Card>
 
                       {/* Why It Matters */}
