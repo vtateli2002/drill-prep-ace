@@ -1325,21 +1325,6 @@ const QuestionView = () => {
                     >
                       {returnToModal ? 'Back to Challenge' : 'Next Question'}
                     </Button>
-                    <Button 
-                      variant="outline"
-                      onClick={() => {
-                        setShowExplanation(true);
-                        setActiveTab('explanation');
-                        toast({
-                          title: "Explanation revealed",
-                          description: "Check the explanation tab!",
-                          className: "border-success",
-                        });
-                      }}
-                      className="flex-1 border-success/20 hover:bg-success/5 hover:border-success/40"
-                    >
-                      Show Explanation
-                    </Button>
                     
                   </div>
                 </div>
