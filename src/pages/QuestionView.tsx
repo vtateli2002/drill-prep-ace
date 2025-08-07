@@ -1013,13 +1013,14 @@ const QuestionView = () => {
                                   </div>
                                 </div>
                               </>
-                             ) : (
-                               <div className="bg-muted/30 rounded-lg p-3 border border-success/20">
-                                 <div className="text-base text-foreground leading-normal whitespace-pre-line">
-                                   {currentQuestion.learnContent?.example}
-                                 </div>
-                               </div>
-                             )}
+                            ) : (
+                              <>
+                                <div className="p-4 border border-success/20 rounded-lg bg-success/5">
+                                  <h4 className="font-semibold mb-2 text-foreground">Example 1:</h4>
+                                  <p className="mb-2 text-base text-foreground leading-relaxed">Standard valuation example</p>
+                                </div>
+                              </>
+                            )}
                          </CardContent>
                       </Card>
                     </div>
@@ -1047,11 +1048,57 @@ const QuestionView = () => {
                             🧠 How It Works
                           </CardTitle>
                         </CardHeader>
-                         <CardContent>
-                           <div className="text-base text-foreground leading-relaxed whitespace-pre-line">
-                             {currentQuestion.learnContent?.howItWorks}
-                           </div>
-                         </CardContent>
+                        <CardContent>
+                          <div className="space-y-3 text-base text-foreground">
+                            {currentQuestion.id === 'val-hard-wacc-solara-1' ? (
+                              <>
+                                <p className="flex items-start gap-2 leading-relaxed">
+                                  <span>•</span>
+                                  <span>Calculate capital weights (equity and debt proportions)</span>
+                                </p>
+                                <p className="flex items-start gap-2 leading-relaxed">
+                                  <span>•</span>
+                                  <span>Determine cost of equity using CAPM with market and country risk premiums</span>
+                                </p>
+                                <p className="flex items-start gap-2 leading-relaxed">
+                                  <span>•</span>
+                                  <span>Calculate weighted average cost of debt across different instruments</span>
+                                </p>
+                                <p className="flex items-start gap-2 leading-relaxed">
+                                  <span>•</span>
+                                  <span>Apply tax shield to debt cost since interest is tax-deductible</span>
+                                </p>
+                                <p className="flex items-start gap-2 leading-relaxed">
+                                  <span>•</span>
+                                  <span>Combine weighted equity and debt costs for final WACC</span>
+                                </p>
+                              </>
+                            ) : (
+                              <>
+                                <p className="flex items-start gap-2 leading-relaxed">
+                                  <span>•</span>
+                                  <span>Calculate capital weights for equity, debt, and preferred stock</span>
+                                </p>
+                                <p className="flex items-start gap-2 leading-relaxed">
+                                  <span>•</span>
+                                  <span>Determine cost of equity using CAPM</span>
+                                </p>
+                                <p className="flex items-start gap-2 leading-relaxed">
+                                  <span>•</span>
+                                  <span>Apply after-tax cost to debt (tax-deductible interest)</span>
+                                </p>
+                                <p className="flex items-start gap-2 leading-relaxed">
+                                  <span>•</span>
+                                  <span>Use fixed dividend rate as cost of preferred equity</span>
+                                </p>
+                                <p className="flex items-start gap-2 leading-relaxed">
+                                  <span>•</span>
+                                  <span>Weight each component by proportion of total capital</span>
+                                </p>
+                              </>
+                            )}
+                          </div>
+                        </CardContent>
                       </Card>
 
                       {/* Why It Matters */}
@@ -1131,28 +1178,35 @@ const QuestionView = () => {
                             </CardContent>
                           </Card>
 
-                       {/* Examples */}
-                       <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-lg">
-                         <CardHeader className="pb-3">
-                           <CardTitle className="text-xl text-success flex items-center gap-2">
-                             💡 Examples
-                           </CardTitle>
-                         </CardHeader>
-                         <CardContent>
-                           <div className="bg-muted/30 rounded-lg p-3 border border-success/20">
-                             <div className="text-base text-foreground leading-normal whitespace-pre-line">
-                               {currentQuestion.learnContent?.example}
-                             </div>
-                           </div>
-                         </CardContent>
-                       </Card>
-                     </div>
-                   ) : (
-                     <div className="text-center py-8">
-                       <p className="text-base text-muted-foreground">No learning content available for this question.</p>
-                     </div>
-                   )}
-                 </TabsContent>
+                          {/* Examples Section */}
+                          <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-md">
+                            <CardContent className="p-6">
+                              <h4 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
+                                💡 Examples
+                              </h4>
+                              <div className="space-y-2">
+                                {currentQuestion.learnContent.example.split('\n').map((example, index) => (
+                                  <div 
+                                    key={index}
+                                    className="bg-muted/30 rounded-lg p-3 border border-success/20"
+                                  >
+                                    <div className="text-base text-foreground leading-normal">
+                                      {example}
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            </CardContent>
+                          </Card>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="text-center py-8">
+                        <p className="text-base text-muted-foreground">No learning content available for this question.</p>
+                      </div>
+                    )
+                  )}
+                </TabsContent>
 
               </Tabs>
             </CardHeader>
