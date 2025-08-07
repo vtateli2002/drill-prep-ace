@@ -587,16 +587,15 @@ const QuestionView = () => {
                 <TabsContent value="learn" className="mt-4">
                   {currentQuestion.id === 'acc-easy-146' ? (
                     <div className="space-y-8">
-                      {/* Core Concept - Dark Green matching Question tab */}
+                      {/* Core Concept */}
                       <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-lg">
                         <CardHeader className="pb-3">
                           <CardTitle className="text-xl text-success flex items-center gap-2">
-                            <BookOpen size={20} />
                             📘 Core Concept
                           </CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-4">
-                          <p className="text-base text-foreground leading-relaxed font-medium">
+                          <p className="text-base text-foreground leading-relaxed">
                             Accrual vs. Cash Accounting boils down to when revenue is recognized.
                           </p>
                           <div className="space-y-2 ml-4">
@@ -606,26 +605,25 @@ const QuestionView = () => {
                         </CardContent>
                       </Card>
 
-                      {/* How It Works - Same dark green theme */}
+                      {/* How It Works */}
                       <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-lg">
                         <CardHeader className="pb-3">
                           <CardTitle className="text-xl text-success flex items-center gap-2">
-                            <Target size={20} />
                             📊 How It Works
                           </CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-4">
                           <div className="space-y-3 text-base text-foreground">
                             <p className="flex items-start gap-2 leading-relaxed">
-                              <span className="text-success">✅</span>
+                              <span>•</span>
                               <span>If service is performed, revenue is recognized (accrual)</span>
                             </p>
                             <p className="flex items-start gap-2 leading-relaxed">
-                              <span className="text-success">⏱️</span>
+                              <span>•</span>
                               <span>Cash timing does not affect revenue recognition</span>
                             </p>
                             <p className="flex items-start gap-2 leading-relaxed">
-                              <span className="text-success">💵</span>
+                              <span>•</span>
                               <span>Cash received is recorded separately in cash flow from operations</span>
                             </p>
                           </div>
@@ -636,17 +634,10 @@ const QuestionView = () => {
                         </CardContent>
                       </Card>
 
-                      {/* Divider */}
-                      <div className="text-center text-sm text-muted-foreground py-2 flex items-center justify-center gap-2">
-                        <span>🔎</span>
-                        <span>Now let's connect this to real-world interviews and models...</span>
-                      </div>
-
-                      {/* Why It Matters - Slightly darker green */}
+                      {/* Why It Matters */}
                       <Card className="border-primary/30 bg-gradient-to-br from-primary/10 to-primary/5 shadow-lg">
                         <CardHeader className="pb-3">
                           <CardTitle className="text-xl text-primary flex items-center gap-2">
-                            <Lightbulb size={20} />
                             🧠 Why It Matters
                           </CardTitle>
                         </CardHeader>
@@ -659,26 +650,16 @@ const QuestionView = () => {
                         </CardContent>
                       </Card>
 
-                      {/* Divider */}
-                      <div className="text-center text-sm text-muted-foreground py-2 flex items-center justify-center gap-2">
-                        <span>🧪</span>
-                        <span>Let's break it down with real examples:</span>
-                      </div>
-
-                      {/* Examples - Same green theme with nested borders */}
+                      {/* Examples */}
                       <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-lg">
                         <CardHeader className="pb-3">
                           <CardTitle className="text-xl text-success flex items-center gap-2">
-                            <CheckCircle size={20} />
                             📚 Examples
                           </CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-6">
                           <div className="p-4 border border-success/40 rounded-lg bg-success/5">
-                            <h4 className="font-semibold mb-2 flex items-center gap-2 text-foreground">
-                              <span className="text-success">✅</span>
-                              <span>Example 1:</span>
-                            </h4>
+                            <h4 className="font-semibold mb-2 text-foreground">Example 1:</h4>
                             <p className="mb-2 text-base text-foreground leading-relaxed">Work completed in December, paid in January</p>
                             <div className="ml-4 space-y-1 text-sm">
                               <p className="text-foreground"><strong>Accrual:</strong> December</p>
@@ -687,10 +668,7 @@ const QuestionView = () => {
                           </div>
                           
                           <div className="p-4 border border-success/40 rounded-lg bg-success/5">
-                            <h4 className="font-semibold mb-2 flex items-center gap-2 text-foreground">
-                              <span className="text-success">✅</span>
-                              <span>Example 2:</span>
-                            </h4>
+                            <h4 className="font-semibold mb-2 text-foreground">Example 2:</h4>
                             <p className="mb-2 text-base text-foreground leading-relaxed">$5K paid in advance for a February service</p>
                             <div className="ml-4 space-y-1 text-sm">
                               <p className="text-foreground"><strong>Accrual:</strong> February</p>
@@ -699,10 +677,7 @@ const QuestionView = () => {
                           </div>
                           
                           <div className="p-4 border border-success/40 rounded-lg bg-success/5">
-                            <h4 className="font-semibold mb-2 flex items-center gap-2 text-foreground">
-                              <span className="text-success">✅</span>
-                              <span>Example 3:</span>
-                            </h4>
+                            <h4 className="font-semibold mb-2 text-foreground">Example 3:</h4>
                             <p className="mb-2 text-base text-foreground leading-relaxed">Services in March, paid in May</p>
                             <div className="ml-4 space-y-1 text-sm">
                               <p className="text-foreground"><strong>Accrual:</strong> March</p>
@@ -712,32 +687,25 @@ const QuestionView = () => {
                         </CardContent>
                       </Card>
 
-                      {/* Divider */}
-                      <div className="text-center text-sm text-muted-foreground py-2 flex items-center justify-center gap-2">
-                        <span>🚫</span>
-                        <span>Watch out for these common traps:</span>
-                      </div>
-
-                      {/* Common Mistakes - Dark maroon theme */}
-                      <Card className="border-destructive/30 bg-gradient-to-br from-destructive/10 to-destructive/5 shadow-lg">
+                      {/* Common Mistakes */}
+                      <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-lg">
                         <CardHeader className="pb-3">
-                          <CardTitle className="text-xl text-destructive flex items-center gap-2">
-                            <AlertTriangle size={20} />
+                          <CardTitle className="text-xl text-success flex items-center gap-2">
                             ⚠️ Common Mistakes
                           </CardTitle>
                         </CardHeader>
                         <CardContent>
                           <div className="space-y-3">
                             <p className="flex items-start gap-2 text-base text-foreground leading-relaxed">
-                              <span className="text-destructive">❌</span>
+                              <span className="text-destructive">•</span>
                               <span>Recognizing revenue when cash is received (accrual = wrong)</span>
                             </p>
                             <p className="flex items-start gap-2 text-base text-foreground leading-relaxed">
-                              <span className="text-destructive">❌</span>
+                              <span className="text-destructive">•</span>
                               <span>Waiting for invoice to record revenue</span>
                             </p>
                             <p className="flex items-start gap-2 text-base text-foreground leading-relaxed">
-                              <span className="text-destructive">❌</span>
+                              <span className="text-destructive">•</span>
                               <span>Forgetting that cash ≠ revenue</span>
                             </p>
                           </div>
