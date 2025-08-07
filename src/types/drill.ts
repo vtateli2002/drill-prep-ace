@@ -17,7 +17,7 @@ export interface Question {
     howItWorks?: string;
     whyItMatters?: string;
     formula: string;
-    example: string;
+    example?: string;
   };
 }
 
