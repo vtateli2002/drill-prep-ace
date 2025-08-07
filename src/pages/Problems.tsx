@@ -71,32 +71,32 @@ const Problems = () => {
 
   const allQuestions = QUESTIONS;
 
-  // Apply filters
-  console.log('=== FILTERING DEBUG ===');
-  console.log('Selected difficulty:', selectedDifficulty);
-  console.log('Total questions:', allQuestions.length);
+  // Apply filters - SIMPLIFIED FOR DEBUGGING
+  let filteredQuestions;
   
-  const filteredQuestions = allQuestions.filter(question => {
+  if (selectedDifficulty === 'easy') {
+    filteredQuestions = allQuestions.filter(q => q.difficulty === 'easy');
+    console.log('EASY FILTER: Total questions:', allQuestions.length, 'Easy questions:', filteredQuestions.length);
+    console.log('First 3 easy questions:', filteredQuestions.slice(0, 3).map(q => ({ id: q.id, title: q.title, difficulty: q.difficulty })));
+  } else if (selectedDifficulty === 'medium') {
+    filteredQuestions = allQuestions.filter(q => q.difficulty === 'medium');
+  } else if (selectedDifficulty === 'hard') {
+    filteredQuestions = allQuestions.filter(q => q.difficulty === 'hard');
+  } else {
+    // Show all
+    filteredQuestions = allQuestions;
+  }
+  
+  // Apply other filters
+  filteredQuestions = filteredQuestions.filter(question => {
     const trackMatches = selectedTrack === 'all' || question.track === selectedTrack;
-    const difficultyMatches = selectedDifficulty === 'all' || question.difficulty === selectedDifficulty;
-    
-    // Completion filter
     const isSolved = isQuestionSolved(question.id);
     const completionMatches = 
       completionFilter === 'all' || 
       (completionFilter === 'completed' && isSolved) ||
       (completionFilter === 'incomplete' && !isSolved);
-    
-    // Log first few questions for debugging
-    if (allQuestions.indexOf(question) < 5) {
-      console.log(`Question ${question.id}: difficulty="${question.difficulty}", difficultyMatches=${difficultyMatches}, trackMatches=${trackMatches}, completionMatches=${completionMatches}`);
-    }
-    
-    return trackMatches && difficultyMatches && completionMatches;
+    return trackMatches && completionMatches;
   });
-  
-  console.log('Filtered questions count:', filteredQuestions.length);
-  console.log('======================');
 
   // Debug logging - let's see what tracks actually exist in the data
   const uniqueTracks = [...new Set(allQuestions.map(q => q.track))];
