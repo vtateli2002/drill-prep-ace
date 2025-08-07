@@ -502,15 +502,14 @@ const QuestionView = () => {
                 
                 <TabsContent value="question" className="mt-4">
                   <div className="space-y-6">
-                    {/* Question Prompt Header */}
-                    <div className="mb-4">
-                      <h3 className="text-lg font-bold text-foreground mb-3 flex items-center gap-2">
-                        📌 Question Prompt
-                      </h3>
-                    </div>
-                    
-                    <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-lg p-6 border border-primary/10">
-                      <div className="prose prose-lg max-w-none">
+                    {/* Question Container */}
+                    <Card className="border-primary/30 bg-gradient-to-br from-primary/10 to-primary/5 shadow-lg">
+                      <CardHeader className="pb-3">
+                        <CardTitle className="text-xl text-primary flex items-center gap-2">
+                          ❓ Question
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
                         <div 
                           className="text-foreground leading-relaxed text-lg"
                           dangerouslySetInnerHTML={{
@@ -518,8 +517,8 @@ const QuestionView = () => {
                               .replace(/\n/g, '<br />')
                           }}
                         />
-                       </div>
-                     </div>
+                      </CardContent>
+                    </Card>
                      
                      {/* Financial Summary for hard accounting questions */}
                      {(() => {
@@ -586,62 +585,181 @@ const QuestionView = () => {
                 </TabsContent>
                 
                 <TabsContent value="learn" className="mt-4">
-                  {currentQuestion.learnContent ? (
+                  {currentQuestion.id === 'acc-easy-146' ? (
                     <div className="space-y-6">
-                      <div className="space-y-6">
-                        {/* Concept Section */}
-                        <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-md">
-                          <CardContent className="p-6">
-                            <h4 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
-                              📘 Concept
-                            </h4>
-                            <div className="text-base text-foreground leading-relaxed">
-                              {currentQuestion.learnContent.concept}
+                      {/* Concept Overview */}
+                      <Card className="border-primary/30 bg-gradient-to-br from-primary/10 to-primary/5 shadow-md">
+                        <CardHeader className="pb-3">
+                          <CardTitle className="text-xl text-primary flex items-center gap-2">
+                            📘 Concept Overview
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-4">
+                          <div>
+                            <h4 className="font-bold text-foreground mb-2">Accrual vs. Cash Accounting: Core Principle</h4>
+                            <ul className="space-y-2 text-foreground">
+                              <li>• <strong>Accrual accounting</strong> records revenue when services are performed, regardless of cash timing.</li>
+                              <li>• <strong>Cash accounting</strong> records revenue only when cash is received.</li>
+                              <li>• <strong>Accrual</strong> aligns performance with reporting periods, offering a more accurate picture of operations.</li>
+                            </ul>
+                          </div>
+                          <div className="bg-muted/50 rounded-lg p-4 border border-primary/20">
+                            <h4 className="font-bold text-foreground mb-2">Recognition Logic – Accrual Accounting</h4>
+                            <div className="space-y-1 text-foreground">
+                              <p>Was service provided? → <strong>Yes</strong></p>
+                              <p>→ Recognize revenue in that period</p>
+                              <p className="text-sm text-muted-foreground">Cash collection is recorded separately on the cash flow statement</p>
                             </div>
-                          </CardContent>
-                        </Card>
+                          </div>
+                        </CardContent>
+                      </Card>
 
-                        {/* Formula Section */}
-                        <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-md">
-                          <CardContent className="p-6">
-                            <h4 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
-                              🧮 Formula
-                            </h4>
-                            <div className="bg-muted/50 rounded-lg p-4 border border-success/20">
-                              <div className="text-base font-mono text-foreground leading-relaxed whitespace-pre-line">
-                                {currentQuestion.learnContent.formula}
-                              </div>
+                      {/* Why It Matters */}
+                      <Card className="border-orange-300 dark:border-orange-700 bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-950/30 dark:to-amber-950/30 shadow-md">
+                        <CardHeader className="pb-3">
+                          <CardTitle className="text-xl text-orange-800 dark:text-orange-200 flex items-center gap-2">
+                            🧠 Why It Matters
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <p className="text-orange-900 dark:text-orange-100 leading-relaxed">
+                            <strong>💼 In interviews</strong>, you'll often be asked to reconcile net income to cash flow. 
+                            Understanding when revenue is earned vs. received is critical when working with 3-statement models, 
+                            especially for SaaS, services, and deferred revenue-driven businesses.
+                          </p>
+                        </CardContent>
+                      </Card>
+
+                      {/* Formula */}
+                      <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-md">
+                        <CardHeader className="pb-3">
+                          <CardTitle className="text-xl text-success flex items-center gap-2">
+                            🧮 Formula
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="bg-muted/50 rounded-lg p-4 border border-success/20">
+                            <div className="text-base font-mono text-foreground leading-relaxed">
+                              Revenue recognized = Services performed (under accrual basis)
                             </div>
-                          </CardContent>
-                        </Card>
+                          </div>
+                        </CardContent>
+                      </Card>
 
-                        {/* Examples Section */}
-                        <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-md">
-                          <CardContent className="p-6">
-                            <h4 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
-                              💡 Examples
-                            </h4>
-                            <div className="space-y-2">
-                              {currentQuestion.learnContent.example.split('\n').map((example, index) => (
-                                <div 
-                                  key={index}
-                                  className="bg-muted/30 rounded-lg p-3 border border-success/20"
-                                >
-                                  <div className="text-base text-foreground leading-normal">
-                                    {example}
-                                  </div>
-                                </div>
-                              ))}
+                      {/* Examples */}
+                      <Card className="border-blue-300 dark:border-blue-700 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950/30 dark:to-cyan-950/30 shadow-md">
+                        <CardHeader className="pb-3">
+                          <CardTitle className="text-xl text-blue-800 dark:text-blue-200 flex items-center gap-2">
+                            📊 Examples
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-4">
+                          <div className="bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800 rounded-lg p-4">
+                            <h4 className="font-bold text-green-800 dark:text-green-200 mb-2">🟩 Example 1:</h4>
+                            <p className="text-green-900 dark:text-green-100 mb-2">Work completed in December; payment received in January</p>
+                            <p className="text-green-800 dark:text-green-200">➤ <strong>Accrual:</strong> Revenue = December</p>
+                            <p className="text-green-800 dark:text-green-200">➤ <strong>Cash:</strong> Revenue = January</p>
+                          </div>
+                          
+                          <div className="bg-yellow-50 dark:bg-yellow-950/30 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
+                            <h4 className="font-bold text-yellow-800 dark:text-yellow-200 mb-2">🟨 Example 2:</h4>
+                            <p className="text-yellow-900 dark:text-yellow-100 mb-2">$5,000 received in advance for a February project</p>
+                            <p className="text-yellow-800 dark:text-yellow-200">➤ <strong>Accrual:</strong> Revenue = February (when performed)</p>
+                            <p className="text-yellow-800 dark:text-yellow-200">➤ <strong>Cash:</strong> Revenue = Now (when received)</p>
+                          </div>
+                          
+                          <div className="bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800 rounded-lg p-4">
+                            <h4 className="font-bold text-red-800 dark:text-red-200 mb-2">🟥 Example 3:</h4>
+                            <p className="text-red-900 dark:text-red-100 mb-2">March services, May payment</p>
+                            <p className="text-red-800 dark:text-red-200">➤ <strong>Accrual</strong> = March</p>
+                            <p className="text-red-800 dark:text-red-200">➤ <strong>Cash</strong> = May</p>
+                          </div>
+                        </CardContent>
+                      </Card>
+
+                      {/* Common Mistakes */}
+                      <Card className="border-red-300 dark:border-red-700 bg-gradient-to-br from-red-50 to-pink-50 dark:from-red-950/30 dark:to-pink-950/30 shadow-md">
+                        <CardHeader className="pb-3">
+                          <CardTitle className="text-xl text-red-800 dark:text-red-200 flex items-center gap-2">
+                            🚫 Common Mistakes
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="space-y-3">
+                            <div className="flex items-start space-x-3">
+                              <span className="text-red-600 font-bold">⚠️</span>
+                              <p className="text-red-900 dark:text-red-100">Recognizing revenue when cash is received (wrong under accrual)</p>
                             </div>
-                          </CardContent>
-                        </Card>
-
-                      </div>
+                            <div className="flex items-start space-x-3">
+                              <span className="text-red-600 font-bold">⚠️</span>
+                              <p className="text-red-900 dark:text-red-100">Delaying recognition until invoice is paid</p>
+                            </div>
+                            <div className="flex items-start space-x-3">
+                              <span className="text-red-600 font-bold">⚠️</span>
+                              <p className="text-red-900 dark:text-red-100">Forgetting that cash collected ≠ revenue earned</p>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
                     </div>
                   ) : (
-                    <div className="text-center py-8">
-                      <p className="text-base text-muted-foreground">No learning content available for this question.</p>
-                    </div>
+                    // Original learn content for other questions
+                    currentQuestion.learnContent ? (
+                      <div className="space-y-6">
+                        <div className="space-y-6">
+                          {/* Concept Section */}
+                          <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-md">
+                            <CardContent className="p-6">
+                              <h4 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
+                                📘 Concept
+                              </h4>
+                              <div className="text-base text-foreground leading-relaxed">
+                                {currentQuestion.learnContent.concept}
+                              </div>
+                            </CardContent>
+                          </Card>
+
+                          {/* Formula Section */}
+                          <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-md">
+                            <CardContent className="p-6">
+                              <h4 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
+                                🧮 Formula
+                              </h4>
+                              <div className="bg-muted/50 rounded-lg p-4 border border-success/20">
+                                <div className="text-base font-mono text-foreground leading-relaxed whitespace-pre-line">
+                                  {currentQuestion.learnContent.formula}
+                                </div>
+                              </div>
+                            </CardContent>
+                          </Card>
+
+                          {/* Examples Section */}
+                          <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-md">
+                            <CardContent className="p-6">
+                              <h4 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
+                                💡 Examples
+                              </h4>
+                              <div className="space-y-2">
+                                {currentQuestion.learnContent.example.split('\n').map((example, index) => (
+                                  <div 
+                                    key={index}
+                                    className="bg-muted/30 rounded-lg p-3 border border-success/20"
+                                  >
+                                    <div className="text-base text-foreground leading-normal">
+                                      {example}
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            </CardContent>
+                          </Card>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="text-center py-8">
+                        <p className="text-base text-muted-foreground">No learning content available for this question.</p>
+                      </div>
+                    )
                   )}
                 </TabsContent>
 
