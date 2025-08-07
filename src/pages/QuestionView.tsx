@@ -650,15 +650,15 @@ const QuestionView = () => {
                         </CardContent>
                       </Card>
 
-                      {/* Examples - Navy Blue Theme */}
-                      <Card className="border-blue-500/30 bg-gradient-to-br from-blue-950/30 to-blue-900/20 shadow-lg">
+                      {/* Examples - Lighter Green */}
+                      <Card className="border-green-600/20 bg-gradient-to-br from-green-900/10 to-gray-800/10 shadow-lg">
                         <CardHeader className="pb-3">
-                          <CardTitle className="text-xl text-blue-300 flex items-center gap-2">
+                          <CardTitle className="text-xl text-green-400 flex items-center gap-2">
                             📚 Examples
                           </CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-6">
-                          <div className="p-4 border border-blue-500/40 rounded-lg bg-blue-950/20">
+                          <div className="p-4 border border-green-600/20 rounded-lg bg-green-900/10">
                             <h4 className="font-semibold mb-2 text-foreground">Example 1:</h4>
                             <p className="mb-2 text-base text-foreground leading-relaxed">Work completed in December, paid in January</p>
                             <div className="ml-4 space-y-1 text-sm">
@@ -667,7 +667,7 @@ const QuestionView = () => {
                             </div>
                           </div>
                           
-                          <div className="p-4 border border-blue-500/40 rounded-lg bg-blue-950/20">
+                          <div className="p-4 border border-green-600/20 rounded-lg bg-green-900/10">
                             <h4 className="font-semibold mb-2 text-foreground">Example 2:</h4>
                             <p className="mb-2 text-base text-foreground leading-relaxed">$5K paid in advance for a February service</p>
                             <div className="ml-4 space-y-1 text-sm">
@@ -676,7 +676,7 @@ const QuestionView = () => {
                             </div>
                           </div>
                           
-                          <div className="p-4 border border-blue-500/40 rounded-lg bg-blue-950/20">
+                          <div className="p-4 border border-green-600/20 rounded-lg bg-green-900/10">
                             <h4 className="font-semibold mb-2 text-foreground">Example 3:</h4>
                             <p className="mb-2 text-base text-foreground leading-relaxed">Services in March, paid in May</p>
                             <div className="ml-4 space-y-1 text-sm">
@@ -687,25 +687,25 @@ const QuestionView = () => {
                         </CardContent>
                       </Card>
 
-                      {/* Common Mistakes - Muted Amber/Olive Green */}
-                      <Card className="border-amber-600/20 bg-gradient-to-br from-amber-900/10 to-green-900/10 shadow-lg">
+                      {/* Common Mistakes - Olive Green */}
+                      <Card className="border-green-600/30 bg-gradient-to-br from-green-800/20 to-green-900/10 shadow-lg">
                         <CardHeader className="pb-3">
-                          <CardTitle className="text-xl text-amber-400 flex items-center gap-2">
+                          <CardTitle className="text-xl text-green-300 flex items-center gap-2">
                             ⚠️ Common Mistakes
                           </CardTitle>
                         </CardHeader>
                         <CardContent>
                           <div className="space-y-3">
                             <p className="flex items-start gap-2 text-base text-foreground leading-relaxed">
-                              <span className="text-amber-500">•</span>
+                              <span className="text-green-500">•</span>
                               <span>Recognizing revenue when cash is received (accrual = wrong)</span>
                             </p>
                             <p className="flex items-start gap-2 text-base text-foreground leading-relaxed">
-                              <span className="text-amber-500">•</span>
+                              <span className="text-green-500">•</span>
                               <span>Waiting for invoice to record revenue</span>
                             </p>
                             <p className="flex items-start gap-2 text-base text-foreground leading-relaxed">
-                              <span className="text-amber-500">•</span>
+                              <span className="text-green-500">•</span>
                               <span>Forgetting that cash ≠ revenue</span>
                             </p>
                           </div>
