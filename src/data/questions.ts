@@ -2333,7 +2333,13 @@ EBITDA = $120M
 Comps Avg = 10x → $1,200M
 Precedents Avg = 12x → $1,440M
 DCF = $1,350M
-→ Average = $1,330M`,
+→ Average = $1,330M
+
+🔺 Common Mistakes
+• Using only one methodology instead of triangulating multiple approaches
+• Applying outdated or irrelevant precedent transaction multiples
+• Not considering the quality and relevance of comparable companies
+• Weighting methodologies inappropriately based on market conditions`,
       formula: 'Implied Valuation = (Comps Val + Precedents Val + DCF Val) / 3',
       example: 'Comps: 8x × $50M = $400M; Precedents: 10x × $50M = $500M; DCF: $450M → Average = $450M\nComps: 12x × $75M = $900M; Precedents: 14x × $75M = $1,050M; DCF: $975M → Average = $975M\nComps: 15x × $30M = $450M; Precedents: 18x × $30M = $540M; DCF: $495M → Average = $495M'
     }
