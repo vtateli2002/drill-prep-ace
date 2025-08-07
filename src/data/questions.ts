@@ -2124,21 +2124,21 @@ What is the company's fully diluted Equity Value?`,
     answer: 1020000000,
     unit: '$',
     hint: 'Calculate fully diluted shares using the Treasury Stock Method, then multiply by share price.',
-    explanation: `**Formula:** Equity Value = (Basic Shares + Net Dilutive Shares) × Share Price
+    explanation: `Formula: Equity Value = (Basic Shares + Net Dilutive Shares) × Share Price
 
-**Step-by-step calculation:**
+Step-by-step calculation:
 
-1. **Basic shares:** 40 million
+1. Basic shares: 40 million
 
-2. **Calculate option proceeds:** 2M options × $15 strike = $30M total proceeds
+2. Calculate option proceeds: 2M options × $15 strike = $30M total proceeds
 
-3. **Calculate shares repurchased:** $30M proceeds ÷ $25 current price = 1.2M shares
+3. Calculate shares repurchased: $30M proceeds ÷ $25 current price = 1.2M shares
 
-4. **Calculate net new shares from options:** 2M new shares - 1.2M repurchased = 0.8M net dilution
+4. Calculate net new shares from options: 2M new shares - 1.2M repurchased = 0.8M net dilution
 
-5. **Calculate total diluted shares:** 40M + 0.8M = 40.8M shares
+5. Calculate total diluted shares: 40M + 0.8M = 40.8M shares
 
-6. **Calculate Equity Value:** 40.8M shares × $25 = $1,020M = $1.02B
+6. Calculate Equity Value: 40.8M shares × $25 = $1,020M = $1.02B
 
 The Treasury Stock Method assumes the company uses option exercise proceeds to repurchase shares at current market price, creating net dilution of only 0.8M shares rather than the full 2M options.`,
     learnContent: {
@@ -2166,24 +2166,24 @@ What is the company's fully diluted Equity Value?`,
     answer: 1596060000,
     unit: '$',
     hint: 'Apply TSM for options. RSUs and convertibles are fully dilutive and added in full.',
-    explanation: `**Formula:** Equity Value = (Basic + Net Options + RSUs + Convertibles) × Share Price
+    explanation: `Formula: Equity Value = (Basic + Net Options + RSUs + Convertibles) × Share Price
 
-**Step-by-step calculation:**
+Step-by-step calculation:
 
-1. **Basic Shares:** 80 million
+1. Basic Shares: 80 million
 
-2. **Options (Treasury Stock Method):**
+2. Options (Treasury Stock Method):
    - Option proceeds: 5M × $12 = $60M
    - Shares repurchased: $60M ÷ $18 = 3.333M
    - Net new shares from options: 5M - 3.333M = 1.667M
 
-3. **RSUs:** 3M (added fully when expected to vest)
+3. RSUs: 3M (added fully when expected to vest)
 
-4. **Convertibles:** 4M (added fully when in-the-money)
+4. Convertibles: 4M (added fully when in-the-money)
 
-5. **Total Diluted Shares:** 80M + 1.667M + 3M + 4M = 88.667M
+5. Total Diluted Shares: 80M + 1.667M + 3M + 4M = 88.667M
 
-6. **Equity Value:** 88.667M × $18 = $1,596.06M = $1,596,060,000
+6. Equity Value: 88.667M × $18 = $1,596.06M = $1,596,060,000
 
 RSUs and convertible securities are typically added in full when calculating dilution, while options use the Treasury Stock Method to account for the proceeds generated.`,
     learnContent: {
@@ -2214,25 +2214,25 @@ What is the company's fully diluted Equity Value?`,
     answer: 3166980000,
     unit: '$',
     hint: 'Apply TSM for options, add RSUs fully, and determine convertible share count using the conversion price.',
-    explanation: `**Formula:** Equity Value = (Basic + Net Options + RSUs + Convertible Shares) × Share Price
+    explanation: `Formula: Equity Value = (Basic + Net Options + RSUs + Convertible Shares) × Share Price
 
-**Step-by-step calculation:**
+Step-by-step calculation:
 
-1. **Basic Shares:** 120 million
+1. Basic Shares: 120 million
 
-2. **Options (Treasury Stock Method):**
+2. Options (Treasury Stock Method):
    - Option proceeds: 10M × $10 = $100M
    - Shares repurchased: $100M ÷ $22 = 4.545M
    - Net dilution: 10M - 4.545M = 5.455M
 
-3. **RSUs:** 6M (added fully when expected to vest)
+3. RSUs: 6M (added fully when expected to vest)
 
-4. **Convertible Bonds:**
+4. Convertible Bonds:
    - Convertible shares: $200M bond value ÷ $16 conversion price = 12.5M shares
 
-5. **Total Diluted Shares:** 120M + 5.455M + 6M + 12.5M = 143.955M
+5. Total Diluted Shares: 120M + 5.455M + 6M + 12.5M = 143.955M
 
-6. **Equity Value:** 143.955M × $22 = $3,166.98M = $3,166,980,000
+6. Equity Value: 143.955M × $22 = $3,166.98M = $3,166,980,000
 
 Convertible bonds are valued at their conversion ratio (bond value ÷ conversion price) when the current share price exceeds the conversion threshold, making conversion economically attractive.`,
     learnContent: {
@@ -2258,9 +2258,9 @@ What is the Enterprise Value?`,
     answer: 1175000000,
     unit: '$',
     hint: 'EV = Equity Value + Debt + Preferred + NCI − Cash',
-    explanation: `**Formula:** EV = $900M + $300M + $50M + $25M - $100M = $1,175M
+    explanation: `Formula: EV = $900M + $300M + $50M + $25M - $100M = $1,175M
 
-**Step-by-step calculation:**
+Step-by-step calculation:
 
 Start with Equity Value: $900M
 Add Debt: $900M + $300M = $1,200M
@@ -2268,7 +2268,7 @@ Add Preferred: $1,200M + $50M = $1,250M
 Add NCI: $1,250M + $25M = $1,275M
 Subtract Cash: $1,275M − $100M = $1,175M
 
-**Final Answer:** $1,175,000,000`,
+Final Answer: $1,175,000,000`,
     learnContent: {
       concept: 'To reconcile Equity Value to EV, add all capital structure-related claims and subtract non-operating assets like cash.',
       formula: 'EV = Equity Value + Debt + Preferred + NCI − Cash',
@@ -2297,9 +2297,9 @@ What is the company's Enterprise Value?`,
     answer: 2360000000,
     unit: '$',
     hint: 'Start from Equity Value, add all debt-like and financing-related items, and subtract all liquid non-operating assets.',
-    explanation: `**Formula:** EV = $1.75B + $600M + $120M + $80M + $70M + $40M - $200M - $100M = $2.36B
+    explanation: `Formula: EV = $1.75B + $600M + $120M + $80M + $70M + $40M - $200M - $100M = $2.36B
 
-**Step-by-step calculation:**
+Step-by-step calculation:
 
 Start with Equity Value = $1.75B
 Add Debt = $1.75B + $600M = $2.35B
@@ -2310,7 +2310,7 @@ Add Noncontrolling Interest = $2.62B + $40M = $2.66B
 Subtract Cash = $2.66B − $200M = $2.46B
 Subtract Short-Term Investments = $2.46B − $100M = $2.36B
 
-**Final Answer:** $2,360,000,000`,
+Final Answer: $2,360,000,000`,
     learnContent: {
       concept: 'EV adds all debt-like obligations and removes non-core assets to reflect operating enterprise value.',
       formula: 'EV = Equity + Net Debt + Preferred + NCI − Excess Assets',
@@ -2341,9 +2341,9 @@ What is the company's Enterprise Value?`,
     answer: 6920000000,
     unit: '$',
     hint: 'Only subtract liquid, non-operating assets. Add all debt-like and capital structure items.',
-    explanation: `**Formula:** EV = $5.6B + $1.4B + $300M + $150M + $100M + $250M - $500M - $200M - $180M = $6.92B
+    explanation: `Formula: EV = $5.6B + $1.4B + $300M + $150M + $100M + $250M - $500M - $200M - $180M = $6.92B
 
-**Step-by-step calculation:**
+Step-by-step calculation:
 
 Equity Value = $5.6B
 Long-Term Debt = $5.6B + $1.4B = $7.0B
@@ -2355,7 +2355,7 @@ Pension Liabilities = $7.55B + $250M = $7.80B
 − Short-Term Investments = $7.30B − $200M = $7.10B
 − Equity Investments = $7.10B − $180M = $6.92B
 
-**Final Answer:** $6,920,000,000`,
+Final Answer: $6,920,000,000`,
     learnContent: {
       concept: 'Enterprise Value reflects the capital structure-neutral value of a company\'s core operations.',
       formula: 'EV = Market Cap + Debt + Leases + Pensions + Preferred + NCI − Cash − Non-operating Assets',
@@ -10727,9 +10727,9 @@ What is the Enterprise Value?`,
     answer: 500000000,
     unit: '$',
     hint: 'Subtract both cash and non-core investments from the capital-backed value.',
-    explanation: `**Formula:** EV = Equity Value + Debt + Preferred + NCI - Cash - Non-operating Investments
+    explanation: `Formula: EV = Equity Value + Debt + Preferred + NCI - Cash - Non-operating Investments
 
-**Step-by-step calculation:**
+Step-by-step calculation:
 • Start with Equity Value: $420M
 • Add Debt: $420M + $180M = $600M
 • Add Preferred Stock: $600M + $30M = $630M
@@ -10765,9 +10765,9 @@ What is the Enterprise Value?`,
     answer: 2780000000,
     unit: '$',
     hint: 'Subtract all liquid, non-operating assets—but not operational held-for-sale assets.',
-    explanation: `**Formula:** EV = Equity Value + Debt + Preferred + NCI - Cash - Excess Insurance Reserves
+    explanation: `Formula: EV = Equity Value + Debt + Preferred + NCI - Cash - Excess Insurance Reserves
 
-**Step-by-step calculation:**
+Step-by-step calculation:
 • Start with Equity Value: $2.1B
 • Add Debt: $2.1B + $900M = $3.0B
 • Add Preferred Stock: $3.0B + $120M = $3.12B
@@ -10775,7 +10775,7 @@ What is the Enterprise Value?`,
 • Subtract Cash: $3.2B − $350M = $2.85B
 • Subtract Excess Insurance Reserves: $2.85B − $70M = $2.78B
 
-**Note:** Do not subtract held-for-sale warehouse as it's still operational.`,
+Note: Do not subtract held-for-sale warehouse as it's still operational.`,
     learnContent: {
       concept: 'Cash is subtracted because the acquirer "gets it for free" — they don\'t need to re-invest it. Same applies to non-core, liquid assets.',
       formula: 'EV = Equity + Net Debt + Preferred + NCI − Cash − Excess Liquid Assets',
@@ -10806,9 +10806,9 @@ Which of the above should be subtracted from Enterprise Value? Calculate the fin
     answer: 7210000000,
     unit: '$',
     hint: 'Subtract only non-operating, liquid assets: cash, short-term investments, and venture equity. Do not subtract restricted or operational assets.',
-    explanation: `**Formula:** EV = Equity Value + Debt + Preferred + NCI + Capital Leases - Cash - Short-Term Investments - Strategic Venture Investment
+    explanation: `Formula: EV = Equity Value + Debt + Preferred + NCI + Capital Leases - Cash - Short-Term Investments - Strategic Venture Investment
 
-**Step-by-step calculation:**
+Step-by-step calculation:
 • Start with Equity Value: $6.8B
 • Add Debt: $6.8B + $1.2B = $8.0B
 • Add Preferred Stock: $8.0B + $250M = $8.25B
@@ -10818,13 +10818,149 @@ Which of the above should be subtracted from Enterprise Value? Calculate the fin
 • Subtract Short-Term Investments: $8.01B − $300M = $7.71B
 • Subtract Strategic Venture Investment: $7.71B − $500M = $7.21B
 
-**Items NOT subtracted:**
+Items NOT subtracted:
 • Restricted Customer Deposits → tied to operations
 • Held-for-sale hosting asset → still operational`,
     learnContent: {
       concept: 'Subtract cash and non-core, liquid investments when calculating EV. Do not subtract operational or restricted-use assets.',
       formula: 'EV = Equity + Debt-like + Preferred + NCI − Cash − Non-operating Liquid Assets',
       example: 'Venture stakes and ST investments reduce EV. Escrowed deposits and hosting centers are essential and stay in EV.'
+    }
+  },
+
+  // Topic 5: EV Multiples vs. Equity Multiples - Easy
+  {
+    id: 'val_multiples_easy',
+    track: 'valuation',
+    difficulty: 'easy',
+    title: 'P/E Multiple Calculation',
+    description: `A company has the following data:
+
+Share Price: $20
+Shares Outstanding: 110 million
+Net Income: $120 million
+EBITDA: $220 million
+Revenue: $1.3 billion
+
+What is its P/E multiple?`,
+    answer: 18.33,
+    hint: 'P/E = Market Cap ÷ Net Income',
+    explanation: `Formula: P/E = Equity Value ÷ Net Income = $2.2B ÷ $120M = 18.33
+
+Step-by-step calculation:
+
+1. Calculate Equity Value:
+   Equity Value = Share Price × Shares Outstanding
+   Equity Value = $20 × 110M = $2.2B
+
+2. Identify Net Income:
+   Net Income = $120M
+
+3. Calculate P/E Multiple:
+   P/E = Equity Value ÷ Net Income
+   P/E = $2.2B ÷ $120M = 18.33
+
+Final Answer: 18.33`,
+    learnContent: {
+      concept: 'P/E multiple measures how much investors pay for each dollar of earnings.',
+      formula: 'P/E = Equity Value ÷ Net Income',
+      example: '$500M Market Cap ÷ $25M Net Income = 20x P/E\n$1B Equity Value ÷ $100M Earnings = 10x P/E\n$300M Market Cap ÷ $15M Net Income = 20x P/E'
+    }
+  },
+
+  // Topic 5: EV Multiples vs. Equity Multiples - Medium
+  {
+    id: 'val_multiples_medium',
+    track: 'valuation',
+    difficulty: 'medium',
+    title: 'EV/EBITDA Multiple Calculation',
+    description: `A company has the following:
+
+Market Cap: $3.3B
+Debt: $700M
+Preferred Stock: $150M
+Cash: $250M
+EBIT: $350M
+Depreciation & Amortization: $50M
+
+What is its EV/EBITDA multiple?`,
+    answer: 10.00,
+    hint: 'Calculate EBITDA first, then Enterprise Value, then divide.',
+    explanation: `Formula: EV/EBITDA = Enterprise Value ÷ EBITDA = $3.9B ÷ $400M = 9.75 ≈ 10.00
+
+Step-by-step calculation:
+
+1. Calculate EBITDA:
+   EBITDA = EBIT + Depreciation & Amortization
+   EBITDA = $350M + $50M = $400M
+
+2. Calculate Enterprise Value:
+   EV = Market Cap + Debt + Preferred - Cash
+   EV = $3.3B + $700M + $150M - $250M = $3.9B
+
+3. Calculate EV/EBITDA Multiple:
+   EV/EBITDA = $3.9B ÷ $400M = 9.75 ≈ 10.00
+
+Final Answer: 10.00`,
+    learnContent: {
+      concept: 'EV/EBITDA measures enterprise value relative to operational cash flow before capital structure effects.',
+      formula: 'EV/EBITDA = Enterprise Value ÷ EBITDA',
+      example: '$2B EV ÷ $200M EBITDA = 10x multiple\n$500M EV ÷ $100M EBITDA = 5x multiple\n$1.5B EV ÷ $150M EBITDA = 10x multiple'
+    }
+  },
+
+  // Topic 5: EV Multiples vs. Equity Multiples - Hard
+  {
+    id: 'val_multiples_hard',
+    track: 'valuation',
+    difficulty: 'hard',
+    title: 'Comparing EV/EBITDA Multiples Between Companies',
+    description: `You're comparing two companies:
+
+Company A:
+Share Price: $40
+Shares Outstanding: 150M
+Debt: $1.6B
+Preferred Stock: $300M
+NCI: $200M
+Cash: $800M
+EBIT: $450M
+D&A: $50M
+
+Company B:
+Share Price: $36
+Shares Outstanding: 125M
+Debt: $900M
+Cash: $300M
+EBIT: $350M
+D&A: $50M
+
+By how much does Company A's EV/EBITDA multiple exceed Company B's?`,
+    answer: 1.85,
+    hint: 'Calculate both companies\' EV/EBITDA multiples, then find the difference.',
+    explanation: `Formula: Difference = Company A EV/EBITDA - Company B EV/EBITDA = 14.6x - 12.75x = 1.85x
+
+Step-by-step calculation:
+
+Company A:
+1. Equity Value = $40 × 150M = $6.0B
+2. EV = $6.0B + $1.6B + $0.3B + $0.2B - $0.8B = $7.3B
+3. EBITDA = $450M + $50M = $500M
+4. EV/EBITDA = $7.3B ÷ $500M = 14.6x
+
+Company B:
+1. Equity Value = $36 × 125M = $4.5B
+2. EV = $4.5B + $0.9B - $0.3B = $5.1B
+3. EBITDA = $350M + $50M = $400M
+4. EV/EBITDA = $5.1B ÷ $400M = 12.75x
+
+Difference = 14.6x - 12.75x = 1.85x
+
+Final Answer: 1.85`,
+    learnContent: {
+      concept: 'Comparing EV/EBITDA multiples helps assess relative valuations between companies.',
+      formula: 'Multiple Difference = Company A Multiple - Company B Multiple',
+      example: 'Company X: 15x EV/EBITDA vs Company Y: 12x = 3x difference\nHigher multiples suggest premium valuation or growth expectations\nAnalyze differences in context of growth, margins, and risk profiles'
     }
   }
 ];
