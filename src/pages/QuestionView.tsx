@@ -473,14 +473,16 @@ const QuestionView = () => {
                 Daily Challenge
               </Badge>
             )}
-            {currentQuestion.id === 'acc-easy-146' && (
+            {currentQuestion.track === 'accounting' && (
               <div className="flex items-center space-x-2">
                 <BookOpen size={16} className="text-primary" />
                 <div className="text-sm">
-                  <div className="font-medium text-foreground">📘 Topic Progress: Accrual Accounting</div>
+                  <div className="font-medium text-foreground">📘 Progress: Accounting</div>
                   <div className="flex items-center space-x-2">
-                    <Progress value={30} className="w-20 h-2" />
-                    <span className="text-xs text-muted-foreground">3 of 10 mastered</span>
+                    <Progress value={Math.round((QUESTIONS.filter(q => q.track === 'accounting' && isQuestionSolved(q.id)).length / QUESTIONS.filter(q => q.track === 'accounting').length) * 100)} className="w-20 h-2" />
+                    <span className="text-xs text-muted-foreground">
+                      {QUESTIONS.filter(q => q.track === 'accounting' && isQuestionSolved(q.id)).length} of {QUESTIONS.filter(q => q.track === 'accounting').length} completed
+                    </span>
                   </div>
                 </div>
               </div>
@@ -500,6 +502,13 @@ const QuestionView = () => {
                 
                 <TabsContent value="question" className="mt-4">
                   <div className="space-y-6">
+                    {/* Question Prompt Header */}
+                    <div className="mb-4">
+                      <h3 className="text-lg font-bold text-foreground mb-3 flex items-center gap-2">
+                        📌 Question Prompt
+                      </h3>
+                    </div>
+                    
                     <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-lg p-6 border border-primary/10">
                       <div className="prose prose-lg max-w-none">
                         <div 
@@ -551,20 +560,19 @@ const QuestionView = () => {
                             }}
                           />
                           
-                          {/* Interview Angle section */}
-                          {currentQuestion.id === 'acc-easy-146' && (
-                            <div className="mt-6 p-4 bg-primary/10 border border-primary/20 rounded-lg">
-                              <h4 className="font-bold text-primary mb-2 flex items-center gap-2">
-                                <Target size={16} />
-                                🎯 Interview Angle:
-                              </h4>
-                              <p className="text-foreground leading-relaxed">
-                                This question tests your understanding of revenue recognition under accrual vs. cash accounting. 
-                                In interviews, you may be asked to walk through timing differences in a 3-statement model, 
-                                especially when reconciling net income to cash flow. Nail this concept early—it appears frequently.
-                              </p>
-                            </div>
-                          )}
+                          {/* Interview Angle section for all questions */}
+                          <div className="mt-6 p-4 bg-primary/10 border border-primary/20 rounded-lg">
+                            <h4 className="font-bold text-primary mb-2 flex items-center gap-2">
+                              <Target size={16} />
+                              🎯 Interview Angle:
+                            </h4>
+                            <p className="text-foreground leading-relaxed">
+                              {currentQuestion.id === 'acc-easy-146' ? 
+                                "This question tests your understanding of revenue recognition under accrual vs. cash accounting. In interviews, you may be asked to walk through timing differences in a 3-statement model, especially when reconciling net income to cash flow. Nail this concept early—it appears frequently." :
+                                `This ${currentQuestion.track} question tests fundamental concepts that frequently appear in finance interviews. Understanding these principles is crucial for technical rounds and case studies.`
+                              }
+                            </p>
+                          </div>
                         </CardContent>
                       </Card>
                     )}
@@ -622,84 +630,6 @@ const QuestionView = () => {
                           </CardContent>
                         </Card>
 
-                        {/* Mini-Interactions for Accrual vs. Cash Accounting question */}
-                        {currentQuestion.id === 'acc-easy-146' && (
-                          <div className="space-y-4">
-                            <h3 className="text-lg font-bold text-foreground">🧠 Quick Checks</h3>
-                            
-                            {/* Quick Check 1 */}
-                            <Card className="border-orange-200 dark:border-orange-800 bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-950/30 dark:to-amber-950/30">
-                              <CardContent className="p-4">
-                                <div className="space-y-2">
-                                  <p className="font-medium text-orange-900 dark:text-orange-100">💭 Quick Check 1 (True or False):</p>
-                                  <p className="text-orange-800 dark:text-orange-200">Accrual accounting recognizes revenue when cash is received.</p>
-                                  <div className="flex space-x-2">
-                                    <Button 
-                                      variant={microQuestionAnswers.q1 === true ? "default" : "outline"}
-                                      size="sm"
-                                      onClick={() => handleMicroAnswer('q1', true)}
-                                    >
-                                      True {getMicroQuestionFeedback('q1', microQuestionAnswers.q1, false)}
-                                    </Button>
-                                    <Button 
-                                      variant={microQuestionAnswers.q1 === false ? "default" : "outline"}
-                                      size="sm"
-                                      onClick={() => handleMicroAnswer('q1', false)}
-                                    >
-                                      False {getMicroQuestionFeedback('q1', microQuestionAnswers.q1, false)}
-                                    </Button>
-                                  </div>
-                                </div>
-                              </CardContent>
-                            </Card>
-
-                            {/* Quick Check 2 */}
-                            <Card className="border-orange-200 dark:border-orange-800 bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-950/30 dark:to-amber-950/30">
-                              <CardContent className="p-4">
-                                <div className="space-y-2">
-                                  <p className="font-medium text-orange-900 dark:text-orange-100">💭 Quick Check 2 (Multiple Choice):</p>
-                                  <p className="text-orange-800 dark:text-orange-200">Under accrual accounting, when is revenue recognized?</p>
-                                  <div className="space-y-1">
-                                    {[
-                                      { key: 'A', text: 'When cash is received' },
-                                      { key: 'B', text: 'When service is performed' },
-                                      { key: 'C', text: 'When the invoice is sent' }
-                                    ].map(option => (
-                                      <Button 
-                                        key={option.key}
-                                        variant={microQuestionAnswers.q2 === option.key ? "default" : "outline"}
-                                        size="sm"
-                                        className="w-full justify-start"
-                                        onClick={() => handleMicroAnswer('q2', option.key)}
-                                      >
-                                        {option.key}. {option.text} {getMicroQuestionFeedback('q2', microQuestionAnswers.q2, 'B')}
-                                      </Button>
-                                    ))}
-                                  </div>
-                                </div>
-                              </CardContent>
-                            </Card>
-
-                            {/* Quick Check 3 */}
-                            <Card className="border-orange-200 dark:border-orange-800 bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-950/30 dark:to-amber-950/30">
-                              <CardContent className="p-4">
-                                <div className="space-y-2">
-                                  <p className="font-medium text-orange-900 dark:text-orange-100">💭 Quick Check 3 (Fill-in-the-blank):</p>
-                                  <p className="text-orange-800 dark:text-orange-200">A company earns $8,000 in January but receives cash in February. Revenue for January under accrual accounting is: ____</p>
-                                  <div className="flex items-center space-x-2">
-                                    <Input
-                                      placeholder="Enter amount"
-                                      value={microQuestionAnswers.q3 || ''}
-                                      onChange={(e) => handleMicroAnswer('q3', e.target.value)}
-                                      className="w-32"
-                                    />
-                                    <span>{getMicroQuestionFeedback('q3', microQuestionAnswers.q3, 8000)}</span>
-                                  </div>
-                                </div>
-                              </CardContent>
-                            </Card>
-                          </div>
-                        )}
                       </div>
                     </div>
                   ) : (
@@ -842,16 +772,6 @@ const QuestionView = () => {
                       Show Explanation
                     </Button>
                     
-                    {/* Difficulty Toggle for future use */}
-                    {currentQuestion.id === 'acc-easy-146' && (
-                      <Button 
-                        variant="ghost" 
-                        className="flex-1 text-muted-foreground"
-                        disabled
-                      >
-                        🔓 Hard Mode (Soon)
-                      </Button>
-                    )}
                   </div>
                 </div>
               </CardContent>
