@@ -1196,7 +1196,6 @@ const QuestionView = () => {
                        <div className="text-center py-8">
                          <p className="text-base text-muted-foreground">No learning content available for this question.</p>
                        </div>
-                     )
                    )}
                  </TabsContent>
 
