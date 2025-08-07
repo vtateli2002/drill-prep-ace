@@ -11969,5 +11969,181 @@ Final Answer: $8,500,000,000`,
       formula: 'EV = Common Equity + Debt + Leases + Unfunded Liabilities + Preferred + NCI - Cash',
       example: 'Noncontrolling interest represents minority shareholders\' claims on subsidiaries, treated as equity-like in EV calculations'
     }
+  },
+  {
+    id: 'val-medium-wesley-comps-1',
+    track: 'valuation',
+    difficulty: 'medium',
+    title: 'Adjusting Multiples for Fair Comparison',
+    description: `✅ Topic: Normalized Valuation Multiples – EV/EBITDA
+🧠 Question Title
+Adjusting Multiples for Fair Comparison
+
+🟨 Prompt (Medium Difficulty)
+You are evaluating a retail company called "Wesley & Co" using public comps. Below are three peer companies with their Enterprise Value (EV) and EBITDA figures:
+
+Comp	EV (in $mm)	EBITDA (in $mm)	Notes
+A	900	90	Includes $10mm in one-time restructuring charges
+B	1,100	120	No adjustments needed
+C	950	85	Includes 100% of a 25%-owned affiliate contributing $20mm EBITDA
+
+Wesley & Co has normalized LTM EBITDA of $95mm.
+
+What is Wesley's implied Enterprise Value using the average adjusted EV/EBITDA multiple from the comps?`,
+    answer: 951.9,
+    unit: '$mm',
+    hint: 'Adjust EBITDA for each comp first: A adds back restructuring, C removes affiliate contribution.',
+    explanation: `🟨 Answer
+Adjust Comp EBITDA:
+
+A: 90 + 10 = 100
+
+B: 120 (no adjustment)
+
+C: 85 – (25% × 20) = 80
+
+EV/EBITDA:
+
+A: 900 / 100 = 9.0x
+
+B: 1,100 / 120 ≈ 9.17x
+
+C: 950 / 80 ≈ 11.88x
+
+Average = (9.0 + 9.17 + 11.88) / 3 ≈ 10.02x
+
+Implied EV = 95 × 10.02 ≈ $951.9 million
+
+✅ Final Answer: 951.9
+
+🟨 Explanation
+Formula:
+EV = Adjusted EBITDA × Adjusted EV/EBITDA
+
+Steps:
+
+Normalize EBITDA across comps
+
+Calculate EV/EBITDA using adjusted EBITDA
+
+Average the multiples
+
+Multiply by target company's normalized EBITDA
+
+🎯 Interview Angle
+This simulates real comp set normalization in valuation – showing you know how to adjust for affiliate ownership or one-time items, which is essential in interviews and on the job.`,
+    learnContent: {
+      concept: `📘 Core Concept
+Multiples must be based on comparable, apples-to-apples financials. Normalize EBITDA before using it in valuation.
+
+📊 How It Works
+Strip out noise (non-recurring charges)
+
+Remove overreported affiliate EBITDA
+
+Average EV/EBITDA to get implied valuation
+
+💡 Why It Matters
+Failure to normalize EBITDA inflates or deflates multiples – misleading the final valuation.
+
+🧮 Formula
+EV = Adjusted EBITDA × EV/EBITDA
+(Adjust comps before use)
+
+🔍 Examples
+Example 1:
+EV = $800mm, EBITDA = $70mm, includes $10mm legal charge
+→ Adj EBITDA = 80 → EV/EBITDA = 10x
+
+Example 2:
+EV = $900mm, EBITDA = $100mm
+→ No adjustment → EV/EBITDA = 9x
+
+Example 3:
+EV = $950mm, EBITDA = 95mm, includes 30%-owned affiliate w/ $15mm EBITDA
+→ Adj EBITDA = 95 – (30% × 15) = 90.5 → EV/EBITDA ≈ 10.5x`,
+      formula: 'EV = Adjusted EBITDA × EV/EBITDA Multiple',
+      example: 'Comp A: $900mm EV, $90mm EBITDA + $10mm one-time charge → Adjusted EBITDA = $100mm → EV/EBITDA = 9.0x'
+    }
+  },
+  {
+    id: 'val-easy-alto-comps-1',
+    track: 'valuation',
+    difficulty: 'easy',
+    title: 'Calculating Implied Valuation Using Simple Multiples',
+    description: `✅ Topic: Normalized Valuation Multiples – EV/EBITDA
+🧠 Question Title
+Calculating Implied Valuation Using Simple Multiples
+
+🟩 Prompt (Easy Difficulty)
+A company called "Alto Tech" is being valued using three public comps with the following metrics:
+
+Comp	EV (in $mm)	EBITDA (in $mm)
+A	1,000	100
+B	1,200	150
+C	900	90
+
+Alto Tech's normalized EBITDA is $110 million.
+
+What is its implied Enterprise Value based on the average EV/EBITDA multiple of the comps?`,
+    answer: 1026.3,
+    unit: '$mm',
+    hint: 'Calculate each comp\'s EV/EBITDA multiple, then average them and apply to Alto Tech.',
+    explanation: `🟩 Answer
+EV/EBITDA Multiples:
+
+A: 1,000 / 100 = 10.0x
+
+B: 1,200 / 150 = 8.0x
+
+C: 900 / 90 = 10.0x
+
+Average = (10.0 + 8.0 + 10.0) / 3 = 9.33x
+
+Implied EV = 110 × 9.33 ≈ $1,026.3 million
+
+✅ Final Answer: 1,026.3
+
+🟩 Explanation
+Formula:
+EV = EBITDA × Average EV/EBITDA
+
+Steps:
+
+Calculate each comp's multiple
+
+Take the average
+
+Multiply by Alto Tech's EBITDA
+
+🎯 Interview Angle
+Tests your ability to apply a fundamental valuation technique quickly and accurately.`,
+    learnContent: {
+      concept: `📘 Core Concept
+EV/EBITDA is a core multiple. This question ensures you know how to calculate and apply it in a straightforward scenario.
+
+📊 How It Works
+Use peer data to benchmark
+
+Multiply normalized EBITDA by peer multiple average
+
+💡 Why It Matters
+Quick benchmarking is common in pitch books and client updates – a basic skill every analyst must know.
+
+🧮 Formula
+EV = EBITDA × EV/EBITDA
+
+🔍 Examples
+Example 1:
+EV = $1,000mm, EBITDA = $100mm → 10x
+EV = $800mm, EBITDA = $80mm → 10x
+Avg = 10x → 90mm EBITDA → Implied EV = 900mm
+
+Example 2:
+EV = $1,100mm, EBITDA = $110mm → 10x
+Avg multiple × 95 EBITDA = 950mm implied`,
+      formula: 'EV = EBITDA × EV/EBITDA Multiple',
+      example: 'Comp A: 10x, Comp B: 8x, Comp C: 10x → Average = 9.33x → Target EBITDA $110mm → Implied EV = $1,026.3mm'
+    }
   }
 ];
