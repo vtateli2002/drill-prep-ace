@@ -12116,8 +12116,10 @@ Step-by-Step Breakdown:
 • Final WACC = 5.76% + 0.70% + 1.40% = 7.86%`,
     learnContent: {
       concept: 'WACC reflects a company\'s average cost of capital across all funding sources — equity, debt, and preferred — weighted by proportion of total capital.',
+      howItWorks: 'Each capital source is weighted based on its proportion of total capitalization. The cost of each component is then adjusted (e.g., for taxes in the case of debt) and summed to yield the blended cost of capital.',
+      whyItMatters: 'Inaccurate WACC leads to over- or under-valuation in DCF models and financial decision-making. Mistakes in preferred equity inclusion or tax adjustment are common and costly.',
       formula: 'WACC = (E/V × Re) + (D/V × Rd × (1-Tc)) + (P/V × Rp)\n\nWhere:\nE = Equity Value, D = Debt Value, P = Preferred Equity\nV = Total Capital (E + D + P)\nRe = Cost of Equity = Risk-Free Rate + Beta × Market Risk Premium\nRd = Cost of Debt, Tc = Tax Rate, Rp = Preferred Dividend Rate',
-      example: 'Example:\nEquity: $1,200M, Debt: $400M, Preferred: $400M\nRe = 9.6%, Rd = 5.0%, Rp = 7.0%, Tax Rate = 30%\nWACC = 7.86%'
+      example: 'Example 1:\nEquity: $1,200M, Debt: $400M, Preferred: $400M\nRe = 9.6%, Rd = 5.0%, Rp = 7.0%, Tax Rate = 30%\nWACC = 7.86%'
     }
   },
   {
@@ -12165,8 +12167,10 @@ What is Solara's WACC, expressed to the nearest hundredth of a percent?`,
 5. Final WACC = 0.65 × 12.80% + 0.35 × 4.05% = 8.32% + 1.42% = 9.73%`,
     learnContent: {
       concept: 'WACC represents the blended cost of capital a company pays for its financing (debt and equity). It\'s used as the discount rate in DCFs and benchmark for hurdle rates in capital allocation.',
+      howItWorks: 'WACC weights each component of the capital structure (equity and debt) by its proportion of total value and adjusts for tax savings on debt. Debt is adjusted post-tax because interest is tax-deductible. Equity cost is estimated using the Capital Asset Pricing Model (CAPM), factoring in market volatility and risk premiums.',
+      whyItMatters: 'WACC is central to valuation. Underestimating it inflates company value, while overestimating it may eliminate viable investments. Banks use it in fairness opinions, PE firms in hurdle rate comparisons, and corporates in budgeting. Understanding how to calculate WACC cleanly and adjust for international exposures or unique debt structures is crucial in high-stakes finance.',
       formula: 'WACC = (E/V × Re) + (D/V × Rd × (1-Tc))\n\nWhere:\nE = Equity Value, D = Debt Value\nV = Total Capital (E + D)\nRe = Cost of Equity = Risk-Free Rate + Beta × (Market Risk Premium + Country Risk Premium)\nRd = Pre-tax Cost of Debt, Tc = Tax Rate',
-      example: 'Example:\nEquity: $800M, Debt: $400M\nRisk-Free Rate = 3%, Beta = 1.2, Market Risk Premium = 5%\nInterest Rate on Debt = 6%, Tax Rate = 25%\nWACC = 8.25%'
+      example: 'Example 1:\nEquity: $800M, Debt: $400M\nRisk-Free Rate = 3%, Beta = 1.2, Market Risk Premium = 5%\nInterest Rate on Debt = 6%, Tax Rate = 25%\nWACC = 8.25%'
     }
   }
 ];

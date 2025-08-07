@@ -14,6 +14,8 @@ export interface Question {
   explanation?: string;
   learnContent?: {
     concept: string;
+    howItWorks?: string;
+    whyItMatters?: string;
     formula: string;
     example: string;
   };

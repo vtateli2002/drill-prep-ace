@@ -1024,6 +1024,129 @@ const QuestionView = () => {
                          </CardContent>
                       </Card>
                     </div>
+                  ) : currentQuestion.id === 'val-hard-wacc-solara-1' || currentQuestion.id === 'val-hard-wacc-axis-1' ? (
+                    // WACC questions with proper 5-section structure
+                    <div className="space-y-6">
+                      {/* Core Concept */}
+                      <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-lg">
+                        <CardHeader className="pb-3">
+                          <CardTitle className="text-xl text-success flex items-center gap-2">
+                            📘 Core Concept
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <p className="text-base text-foreground leading-relaxed">
+                            {currentQuestion.learnContent?.concept}
+                          </p>
+                        </CardContent>
+                      </Card>
+
+                      {/* How It Works */}
+                      <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-lg">
+                        <CardHeader className="pb-3">
+                          <CardTitle className="text-xl text-success flex items-center gap-2">
+                            🧠 How It Works
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="space-y-3 text-base text-foreground">
+                            {currentQuestion.id === 'val-hard-wacc-solara-1' ? (
+                              <>
+                                <p className="flex items-start gap-2 leading-relaxed">
+                                  <span>•</span>
+                                  <span>Calculate capital weights (equity and debt proportions)</span>
+                                </p>
+                                <p className="flex items-start gap-2 leading-relaxed">
+                                  <span>•</span>
+                                  <span>Determine cost of equity using CAPM with market and country risk premiums</span>
+                                </p>
+                                <p className="flex items-start gap-2 leading-relaxed">
+                                  <span>•</span>
+                                  <span>Calculate weighted average cost of debt across different instruments</span>
+                                </p>
+                                <p className="flex items-start gap-2 leading-relaxed">
+                                  <span>•</span>
+                                  <span>Apply tax shield to debt cost since interest is tax-deductible</span>
+                                </p>
+                                <p className="flex items-start gap-2 leading-relaxed">
+                                  <span>•</span>
+                                  <span>Combine weighted equity and debt costs for final WACC</span>
+                                </p>
+                              </>
+                            ) : (
+                              <>
+                                <p className="flex items-start gap-2 leading-relaxed">
+                                  <span>•</span>
+                                  <span>Calculate capital weights for equity, debt, and preferred stock</span>
+                                </p>
+                                <p className="flex items-start gap-2 leading-relaxed">
+                                  <span>•</span>
+                                  <span>Determine cost of equity using CAPM</span>
+                                </p>
+                                <p className="flex items-start gap-2 leading-relaxed">
+                                  <span>•</span>
+                                  <span>Apply after-tax cost to debt (tax-deductible interest)</span>
+                                </p>
+                                <p className="flex items-start gap-2 leading-relaxed">
+                                  <span>•</span>
+                                  <span>Use fixed dividend rate as cost of preferred equity</span>
+                                </p>
+                                <p className="flex items-start gap-2 leading-relaxed">
+                                  <span>•</span>
+                                  <span>Weight each component by proportion of total capital</span>
+                                </p>
+                              </>
+                            )}
+                          </div>
+                        </CardContent>
+                      </Card>
+
+                      {/* Why It Matters */}
+                      <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-lg">
+                        <CardHeader className="pb-3">
+                          <CardTitle className="text-xl text-success flex items-center gap-2">
+                            🎯 Why It Matters
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <p className="text-base text-foreground leading-relaxed">
+                            {currentQuestion.learnContent?.whyItMatters}
+                          </p>
+                        </CardContent>
+                      </Card>
+
+                      {/* Formula */}
+                      <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-lg">
+                        <CardHeader className="pb-3">
+                          <CardTitle className="text-xl text-success flex items-center gap-2">
+                            🧮 Formula
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="bg-muted/50 rounded-lg p-4 border border-success/20">
+                            <div className="text-base font-mono text-foreground leading-relaxed whitespace-pre-line">
+                              {currentQuestion.learnContent?.formula}
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+
+                      {/* Examples */}
+                      <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-lg">
+                        <CardHeader className="pb-3">
+                          <CardTitle className="text-xl text-success flex items-center gap-2">
+                            💡 Examples
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="bg-muted/30 rounded-lg p-3 border border-success/20">
+                            <div className="text-base text-foreground leading-normal whitespace-pre-line">
+                              {currentQuestion.learnContent?.example}
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
                   ) : (
                     // Original learn content for other questions
                     currentQuestion.learnContent ? (
