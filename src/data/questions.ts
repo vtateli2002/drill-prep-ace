@@ -12084,6 +12084,54 @@ Target EBITDA $110mm, Average multiple 9.33x → Implied EV = $1,026.3mm`
     }
   },
   {
+    id: 'val-hard-wacc-axis-1',
+    track: 'valuation',
+    difficulty: 'hard',
+    title: 'WACC with Preferred Equity and Multi-Class Capital Structure',
+    description: `You're calculating the WACC for Axis Biotech, a company with a combination of equity, debt, and preferred shares:
+
+Equity Value: $1,200 million
+
+Debt Value: $400 million
+
+All senior debt carries a 5.00% interest rate
+
+Preferred Equity: $400 million
+
+Pays a fixed 7.00% dividend
+
+Assume the following:
+
+Risk-Free Rate: 3.00%
+
+Market Risk Premium: 6.00%
+
+Beta: 1.10
+
+Tax Rate: 30%
+
+Calculate the WACC, including preferred stock. Express your final result to the nearest hundredth of a percent. No rounding is needed if you do the math properly.`,
+    answer: 7.86,
+    unit: '%',
+    explanation: `WACC = (0.60 × 9.60%) + (0.20 × 3.50%) + (0.20 × 7.00%) = 5.76% + 0.70% + 1.40% = 7.86%
+
+Step-by-Step Breakdown:
+
+• Total Capital = 1,200 + 400 + 400 = 2,000
+• Equity Weight = 1,200 / 2,000 = 0.60
+• Debt Weight = 400 / 2,000 = 0.20
+• Preferred Weight = 400 / 2,000 = 0.20
+• Cost of Equity (CAPM) = 3.00% + (1.10 × 6.00%) = 9.60%
+• After-Tax Cost of Debt = 5.00% × (1 - 0.30) = 3.50%
+• Cost of Preferred Equity = 7.00% (fixed dividend rate)
+• Final WACC = 5.76% + 0.70% + 1.40% = 7.86%`,
+    learnContent: {
+      concept: 'WACC reflects a company\'s average cost of capital across all funding sources — equity, debt, and preferred — weighted by proportion of total capital.',
+      formula: 'WACC = wₑ · rₑ + wₐ · rₐ · (1-T) + wₚ · rₚ\n\nWhere:\n• wₑ, wₐ, wₚ: weights of equity, debt, preferred\n• rₑ, rₐ, rₚ: respective costs\n• T: tax rate',
+      example: '• Equity-heavy company with no preferred stock: WACC only reflects equity and debt — simpler model.\n• Private company with preferred shareholders from past fundraising: must include fixed dividend cost.\n• LBO scenario: WACC must reflect higher debt load, leading to lower WACC but higher risk — importance of proper weighting.'
+    }
+  },
+  {
     id: 'val-hard-wacc-solara-1',
     track: 'valuation',
     difficulty: 'hard',
