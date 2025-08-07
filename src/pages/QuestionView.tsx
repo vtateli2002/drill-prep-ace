@@ -586,120 +586,146 @@ const QuestionView = () => {
                 
                 <TabsContent value="learn" className="mt-4">
                   {currentQuestion.id === 'acc-easy-146' ? (
-                    <div className="space-y-6">
-                      {/* Concept Overview */}
-                      <Card className="border-primary/30 bg-gradient-to-br from-primary/10 to-primary/5 shadow-md">
-                        <CardHeader className="pb-3">
-                          <CardTitle className="text-xl text-primary flex items-center gap-2">
-                            📘 Concept Overview
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent className="space-y-4">
-                          <div>
-                            <h4 className="font-bold text-foreground mb-2">Accrual vs. Cash Accounting: Core Principle</h4>
-                            <ul className="space-y-2 text-foreground">
-                              <li>• <strong>Accrual accounting</strong> records revenue when services are performed, regardless of cash timing.</li>
-                              <li>• <strong>Cash accounting</strong> records revenue only when cash is received.</li>
-                              <li>• <strong>Accrual</strong> aligns performance with reporting periods, offering a more accurate picture of operations.</li>
-                            </ul>
-                          </div>
-                          <div className="bg-muted/50 rounded-lg p-4 border border-primary/20">
-                            <h4 className="font-bold text-foreground mb-2">Recognition Logic – Accrual Accounting</h4>
-                            <div className="space-y-1 text-foreground">
-                              <p>Was service provided? → <strong>Yes</strong></p>
-                              <p>→ Recognize revenue in that period</p>
-                              <p className="text-sm text-muted-foreground">Cash collection is recorded separately on the cash flow statement</p>
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
-
-                      {/* Why It Matters */}
-                      <Card className="border-orange-300 dark:border-orange-700 bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-950/30 dark:to-amber-950/30 shadow-md">
-                        <CardHeader className="pb-3">
-                          <CardTitle className="text-xl text-orange-800 dark:text-orange-200 flex items-center gap-2">
-                            🧠 Why It Matters
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-orange-900 dark:text-orange-100 leading-relaxed">
-                            <strong>💼 In interviews</strong>, you'll often be asked to reconcile net income to cash flow. 
-                            Understanding when revenue is earned vs. received is critical when working with 3-statement models, 
-                            especially for SaaS, services, and deferred revenue-driven businesses.
+                    <div className="space-y-8">
+                      {/* Core Concept - Dark Green */}
+                      <Card className="bg-emerald-50 dark:bg-emerald-900/20 border-l-4 border-l-emerald-600 p-6">
+                        <div className="flex items-center gap-2 mb-4">
+                          <span className="text-lg">📘</span>
+                          <h3 className="font-bold text-lg text-emerald-800 dark:text-emerald-200">Core Concept</h3>
+                        </div>
+                        <div className="space-y-4">
+                          <p className="text-emerald-900 dark:text-emerald-100 font-medium">
+                            Accrual vs. Cash Accounting boils down to when revenue is recognized.
                           </p>
-                        </CardContent>
-                      </Card>
-
-                      {/* Formula */}
-                      <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-md">
-                        <CardHeader className="pb-3">
-                          <CardTitle className="text-xl text-success flex items-center gap-2">
-                            🧮 Formula
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <div className="bg-muted/50 rounded-lg p-4 border border-success/20">
-                            <div className="text-base font-mono text-foreground leading-relaxed">
-                              Revenue recognized = Services performed (under accrual basis)
-                            </div>
+                          <div className="space-y-2 ml-4">
+                            <p className="text-emerald-800 dark:text-emerald-200">• <strong>Accrual:</strong> when service is performed</p>
+                            <p className="text-emerald-800 dark:text-emerald-200">• <strong>Cash:</strong> when cash is received</p>
                           </div>
-                        </CardContent>
+                        </div>
                       </Card>
 
-                      {/* Examples */}
-                      <Card className="border-blue-300 dark:border-blue-700 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950/30 dark:to-cyan-950/30 shadow-md">
-                        <CardHeader className="pb-3">
-                          <CardTitle className="text-xl text-blue-800 dark:text-blue-200 flex items-center gap-2">
-                            📊 Examples
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent className="space-y-4">
-                          <div className="bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800 rounded-lg p-4">
-                            <h4 className="font-bold text-green-800 dark:text-green-200 mb-2">🟩 Example 1:</h4>
-                            <p className="text-green-900 dark:text-green-100 mb-2">Work completed in December; payment received in January</p>
-                            <p className="text-green-800 dark:text-green-200">➤ <strong>Accrual:</strong> Revenue = December</p>
-                            <p className="text-green-800 dark:text-green-200">➤ <strong>Cash:</strong> Revenue = January</p>
+                      {/* Mini-text divider */}
+                      <div className="text-center text-sm text-muted-foreground py-2 flex items-center justify-center gap-2">
+                        <span>💡</span>
+                        <span>Now that you understand the concept, let's look at how it actually works:</span>
+                      </div>
+
+                      {/* How It Works - No colored box; just bulleted text, lightly indented */}
+                      <div className="space-y-4 ml-4">
+                        <div className="flex items-center gap-2 mb-4">
+                          <span className="text-lg">📊</span>
+                          <h3 className="font-bold text-lg">How It Works</h3>
+                        </div>
+                        <div className="space-y-3 text-muted-foreground">
+                          <p className="flex items-start gap-2">
+                            <span>✅</span>
+                            <span>If service is performed, revenue is recognized (accrual)</span>
+                          </p>
+                          <p className="flex items-start gap-2">
+                            <span>⏱️</span>
+                            <span>Cash timing does not affect revenue recognition</span>
+                          </p>
+                          <p className="flex items-start gap-2">
+                            <span>💵</span>
+                            <span>Cash received is recorded separately in cash flow from operations</span>
+                          </p>
+                        </div>
+                        
+                        <div className="mt-6 p-4 bg-muted/50 rounded-lg border">
+                          <p className="font-bold text-center text-foreground">Revenue recognized = Services performed (under accrual)</p>
+                        </div>
+                      </div>
+
+                      {/* Mini-text divider */}
+                      <div className="text-center text-sm text-muted-foreground py-2 flex items-center justify-center gap-2">
+                        <span>🎯</span>
+                        <span>Why does this matter in interviews and modeling?</span>
+                      </div>
+
+                      {/* Why It Matters - Muted green or dark teal box */}
+                      <Card className="bg-teal-50 dark:bg-teal-900/20 border-l-4 border-l-teal-600 p-6">
+                        <div className="flex items-center gap-2 mb-4">
+                          <span className="text-lg">🧠</span>
+                          <h3 className="font-bold text-lg text-teal-800 dark:text-teal-200">Why It Matters</h3>
+                        </div>
+                        <div className="space-y-3 text-teal-900 dark:text-teal-100">
+                          <p>In 3-statement models, you'll reconcile net income (accrual) with cash inflow (cash).</p>
+                          <p>Accrual concepts appear frequently in interviews, especially for SaaS, services, and deferred revenue modeling.</p>
+                          <p>You need to know how timing differences affect the income statement vs. cash flow statement.</p>
+                        </div>
+                      </Card>
+
+                      {/* Mini-text divider */}
+                      <div className="text-center text-sm text-muted-foreground py-2 flex items-center justify-center gap-2">
+                        <span>📚</span>
+                        <span>Let's walk through a few examples:</span>
+                      </div>
+
+                      {/* Examples - Single block with border-separated examples. Each example is lightly shaded, NOT full fill. */}
+                      <Card className="border border-muted p-6">
+                        <div className="flex items-center gap-2 mb-6">
+                          <span className="text-lg">📊</span>
+                          <h3 className="font-bold text-lg">Examples</h3>
+                        </div>
+                        <div className="space-y-6">
+                          <div className="p-4 bg-muted/30 border-l-2 border-l-primary rounded-r-lg">
+                            <h4 className="font-semibold mb-2 flex items-center gap-2">
+                              <span>✅</span>
+                              <span>Example 1:</span>
+                            </h4>
+                            <p className="mb-2">Work completed in December, paid in January</p>
+                            <div className="ml-4 space-y-1 text-sm">
+                              <p><strong>Accrual:</strong> December</p>
+                              <p><strong>Cash:</strong> January</p>
+                            </div>
                           </div>
                           
-                          <div className="bg-yellow-50 dark:bg-yellow-950/30 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
-                            <h4 className="font-bold text-yellow-800 dark:text-yellow-200 mb-2">🟨 Example 2:</h4>
-                            <p className="text-yellow-900 dark:text-yellow-100 mb-2">$5,000 received in advance for a February project</p>
-                            <p className="text-yellow-800 dark:text-yellow-200">➤ <strong>Accrual:</strong> Revenue = February (when performed)</p>
-                            <p className="text-yellow-800 dark:text-yellow-200">➤ <strong>Cash:</strong> Revenue = Now (when received)</p>
+                          <div className="p-4 bg-muted/30 border-l-2 border-l-primary rounded-r-lg">
+                            <h4 className="font-semibold mb-2 flex items-center gap-2">
+                              <span>✅</span>
+                              <span>Example 2:</span>
+                            </h4>
+                            <p className="mb-2">$5K paid in advance for a February service</p>
+                            <div className="ml-4 space-y-1 text-sm">
+                              <p><strong>Accrual:</strong> February</p>
+                              <p><strong>Cash:</strong> Now</p>
+                            </div>
                           </div>
                           
-                          <div className="bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800 rounded-lg p-4">
-                            <h4 className="font-bold text-red-800 dark:text-red-200 mb-2">🟥 Example 3:</h4>
-                            <p className="text-red-900 dark:text-red-100 mb-2">March services, May payment</p>
-                            <p className="text-red-800 dark:text-red-200">➤ <strong>Accrual</strong> = March</p>
-                            <p className="text-red-800 dark:text-red-200">➤ <strong>Cash</strong> = May</p>
+                          <div className="p-4 bg-muted/30 border-l-2 border-l-primary rounded-r-lg">
+                            <h4 className="font-semibold mb-2 flex items-center gap-2">
+                              <span>✅</span>
+                              <span>Example 3:</span>
+                            </h4>
+                            <p className="mb-2">Services in March, paid in May</p>
+                            <div className="ml-4 space-y-1 text-sm">
+                              <p><strong>Accrual:</strong> March</p>
+                              <p><strong>Cash:</strong> May</p>
+                            </div>
                           </div>
-                        </CardContent>
+                        </div>
                       </Card>
 
-                      {/* Common Mistakes */}
-                      <Card className="border-red-300 dark:border-red-700 bg-gradient-to-br from-red-50 to-pink-50 dark:from-red-950/30 dark:to-pink-950/30 shadow-md">
-                        <CardHeader className="pb-3">
-                          <CardTitle className="text-xl text-red-800 dark:text-red-200 flex items-center gap-2">
-                            🚫 Common Mistakes
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <div className="space-y-3">
-                            <div className="flex items-start space-x-3">
-                              <span className="text-red-600 font-bold">⚠️</span>
-                              <p className="text-red-900 dark:text-red-100">Recognizing revenue when cash is received (wrong under accrual)</p>
-                            </div>
-                            <div className="flex items-start space-x-3">
-                              <span className="text-red-600 font-bold">⚠️</span>
-                              <p className="text-red-900 dark:text-red-100">Delaying recognition until invoice is paid</p>
-                            </div>
-                            <div className="flex items-start space-x-3">
-                              <span className="text-red-600 font-bold">⚠️</span>
-                              <p className="text-red-900 dark:text-red-100">Forgetting that cash collected ≠ revenue earned</p>
-                            </div>
-                          </div>
-                        </CardContent>
+                      {/* Common Mistakes - Light red-tinted background with red icon bullets */}
+                      <Card className="bg-red-50 dark:bg-red-900/20 border-l-4 border-l-red-500 p-6">
+                        <div className="flex items-center gap-2 mb-4">
+                          <span className="text-lg">⚠️</span>
+                          <h3 className="font-bold text-lg text-red-800 dark:text-red-200">Common Mistakes</h3>
+                        </div>
+                        <div className="space-y-3">
+                          <p className="flex items-start gap-2 text-red-900 dark:text-red-100">
+                            <span className="text-red-600">❌</span>
+                            <span>Recognizing revenue when cash is received (accrual = wrong)</span>
+                          </p>
+                          <p className="flex items-start gap-2 text-red-900 dark:text-red-100">
+                            <span className="text-red-600">❌</span>
+                            <span>Waiting for invoice to record revenue</span>
+                          </p>
+                          <p className="flex items-start gap-2 text-red-900 dark:text-red-100">
+                            <span className="text-red-600">❌</span>
+                            <span>Forgetting that cash ≠ revenue</span>
+                          </p>
+                        </div>
                       </Card>
                     </div>
                   ) : (
