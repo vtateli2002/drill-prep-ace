@@ -885,36 +885,88 @@ const QuestionView = () => {
                                  </div>
                                </div>
                              </>
-                           ) : (
-                             <>
-                               <div className="p-4 border border-success/20 rounded-lg bg-success/5">
-                                 <h4 className="font-semibold mb-2 text-foreground">Example 1:</h4>
-                                 <p className="mb-2 text-base text-foreground leading-relaxed">A comp has an EV of $1,000mm and reported EBITDA of $90mm. However, $10mm of the EBITDA is a gain from asset sales.</p>
-                                 <div className="ml-4 space-y-1 text-sm">
-                                   <p className="text-foreground">→ Adjusted EBITDA = $80mm</p>
-                                   <p className="text-foreground font-semibold">→ EV/EBITDA = 1,000 / 80 = 12.5x</p>
-                                 </div>
-                               </div>
-                               
-                               <div className="p-4 border border-success/20 rounded-lg bg-success/5">
-                                 <h4 className="font-semibold mb-2 text-foreground">Example 2:</h4>
-                                 <p className="mb-2 text-base text-foreground leading-relaxed">Another comp includes a $15mm one-time restructuring charge. Reported EBITDA is $70mm.</p>
-                                 <div className="ml-4 space-y-1 text-sm">
-                                   <p className="text-foreground">→ Adjusted EBITDA = 70 + 15 = $85mm</p>
-                                   <p className="text-foreground font-semibold">→ EV/EBITDA = 1,000 / 85 = 11.76x</p>
-                                 </div>
-                               </div>
-                               
-                               <div className="p-4 border border-success/20 rounded-lg bg-success/5">
-                                 <h4 className="font-semibold mb-2 text-foreground">Example 3:</h4>
-                                 <p className="mb-2 text-base text-foreground leading-relaxed">A comp consolidates a 25%-owned affiliate contributing $12mm EBITDA. Reported EBITDA is $100mm.</p>
-                                 <div className="ml-4 space-y-1 text-sm">
-                                   <p className="text-foreground">→ Adjusted EBITDA = 100 - (25% × 12) = 97</p>
-                                   <p className="text-foreground font-semibold">→ EV/EBITDA = 1,100 / 97 = 11.34x</p>
-                                 </div>
-                               </div>
-                             </>
-                           )}
+                            ) : currentQuestion.id === 'val-hard-normalize-1' ? (
+                              <>
+                                <div className="p-4 border border-success/20 rounded-lg bg-success/5">
+                                  <h4 className="font-semibold mb-2 text-foreground">Example 1:</h4>
+                                  <p className="mb-2 text-base text-foreground leading-relaxed">A comp has an EV of $1,000mm and reported EBITDA of $90mm. However, $10mm of the EBITDA is a gain from asset sales.</p>
+                                  <div className="ml-4 space-y-1 text-sm">
+                                    <p className="text-foreground">→ Adjusted EBITDA = $80mm</p>
+                                    <p className="text-foreground font-semibold">→ EV/EBITDA = 1,000 / 80 = 12.5x</p>
+                                  </div>
+                                </div>
+                                
+                                <div className="p-4 border border-success/20 rounded-lg bg-success/5">
+                                  <h4 className="font-semibold mb-2 text-foreground">Example 2:</h4>
+                                  <p className="mb-2 text-base text-foreground leading-relaxed">Another comp includes a $15mm one-time restructuring charge. Reported EBITDA is $70mm.</p>
+                                  <div className="ml-4 space-y-1 text-sm">
+                                    <p className="text-foreground">→ Adjusted EBITDA = 70 + 15 = $85mm</p>
+                                    <p className="text-foreground font-semibold">→ EV/EBITDA = 1,000 / 85 = 11.76x</p>
+                                  </div>
+                                </div>
+                                
+                                <div className="p-4 border border-success/20 rounded-lg bg-success/5">
+                                  <h4 className="font-semibold mb-2 text-foreground">Example 3:</h4>
+                                  <p className="mb-2 text-base text-foreground leading-relaxed">A comp consolidates a 25%-owned affiliate contributing $12mm EBITDA. Reported EBITDA is $100mm.</p>
+                                  <div className="ml-4 space-y-1 text-sm">
+                                    <p className="text-foreground">→ Adjusted EBITDA = 100 - (25% × 12) = 97</p>
+                                    <p className="text-foreground font-semibold">→ EV/EBITDA = 1,100 / 97 = 11.34x</p>
+                                  </div>
+                                </div>
+                              </>
+                            ) : currentQuestion.id === 'val-medium-wesley-comps-1' ? (
+                              <>
+                                <div className="p-4 border border-success/20 rounded-lg bg-success/5">
+                                  <h4 className="font-semibold mb-2 text-foreground">Example 1:</h4>
+                                  <p className="mb-2 text-base text-foreground leading-relaxed">EV = $800mm, EBITDA = $70mm, includes $10mm legal charge</p>
+                                  <div className="ml-4 space-y-1 text-sm">
+                                    <p className="text-foreground">→ Adj EBITDA = 80 → EV/EBITDA = 10x</p>
+                                  </div>
+                                </div>
+                                
+                                <div className="p-4 border border-success/20 rounded-lg bg-success/5">
+                                  <h4 className="font-semibold mb-2 text-foreground">Example 2:</h4>
+                                  <p className="mb-2 text-base text-foreground leading-relaxed">EV = $900mm, EBITDA = $100mm</p>
+                                  <div className="ml-4 space-y-1 text-sm">
+                                    <p className="text-foreground">→ No adjustment → EV/EBITDA = 9x</p>
+                                  </div>
+                                </div>
+                                
+                                <div className="p-4 border border-success/20 rounded-lg bg-success/5">
+                                  <h4 className="font-semibold mb-2 text-foreground">Example 3:</h4>
+                                  <p className="mb-2 text-base text-foreground leading-relaxed">EV = $950mm, EBITDA = 95mm, includes 30%-owned affiliate w/ $15mm EBITDA</p>
+                                  <div className="ml-4 space-y-1 text-sm">
+                                    <p className="text-foreground">→ Adj EBITDA = 95 – (30% × 15) = 90.5 → EV/EBITDA ≈ 10.5x</p>
+                                  </div>
+                                </div>
+                              </>
+                            ) : currentQuestion.id === 'val-easy-alto-comps-1' ? (
+                              <>
+                                <div className="p-4 border border-success/20 rounded-lg bg-success/5">
+                                  <h4 className="font-semibold mb-2 text-foreground">Example 1:</h4>
+                                  <p className="mb-2 text-base text-foreground leading-relaxed">EV = $1,000mm, EBITDA = $100mm → 10x</p>
+                                  <p className="mb-2 text-base text-foreground leading-relaxed">EV = $800mm, EBITDA = $80mm → 10x</p>
+                                  <div className="ml-4 space-y-1 text-sm">
+                                    <p className="text-foreground">Avg = 10x → 90mm EBITDA → Implied EV = 900mm</p>
+                                  </div>
+                                </div>
+                                
+                                <div className="p-4 border border-success/20 rounded-lg bg-success/5">
+                                  <h4 className="font-semibold mb-2 text-foreground">Example 2:</h4>
+                                  <p className="mb-2 text-base text-foreground leading-relaxed">EV = $1,100mm, EBITDA = $110mm → 10x</p>
+                                  <div className="ml-4 space-y-1 text-sm">
+                                    <p className="text-foreground">Avg multiple × 95 EBITDA = 950mm implied</p>
+                                  </div>
+                                </div>
+                              </>
+                            ) : (
+                              <>
+                                <div className="p-4 border border-success/20 rounded-lg bg-success/5">
+                                  <h4 className="font-semibold mb-2 text-foreground">Example 1:</h4>
+                                  <p className="mb-2 text-base text-foreground leading-relaxed">Standard valuation example</p>
+                                </div>
+                              </>
+                            )}
                          </CardContent>
                       </Card>
                     </div>
