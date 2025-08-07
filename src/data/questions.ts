@@ -11975,60 +11975,38 @@ Final Answer: $8,500,000,000`,
     track: 'valuation',
     difficulty: 'medium',
     title: 'Adjusting Multiples for Fair Comparison',
-    description: `✅ Topic: Normalized Valuation Multiples – EV/EBITDA
-🧠 Question Title
-Adjusting Multiples for Fair Comparison
+    description: `You are evaluating a retail company called "Wesley & Co" using public comps. Below are three peer companies with their Enterprise Value (EV) and EBITDA figures:
 
-🟨 Prompt (Medium Difficulty)
-You are evaluating a retail company called "Wesley & Co" using public comps. Below are three peer companies with their Enterprise Value (EV) and EBITDA figures:
+Company A: Enterprise Value $900mm, EBITDA $90mm, Includes $10mm in one-time restructuring charges
 
-Comp	EV (in $mm)	EBITDA (in $mm)	Notes
-A	900	90	Includes $10mm in one-time restructuring charges
-B	1,100	120	No adjustments needed
-C	950	85	Includes 100% of a 25%-owned affiliate contributing $20mm EBITDA
+Company B: Enterprise Value $1,100mm, EBITDA $120mm, No adjustments needed
+
+Company C: Enterprise Value $950mm, EBITDA $85mm, Includes 100% of a 25%-owned affiliate contributing $20mm EBITDA
 
 Wesley & Co has normalized LTM EBITDA of $95mm.
 
 What is Wesley's implied Enterprise Value using the average adjusted EV/EBITDA multiple from the comps?`,
-    answer: 951.9,
-    unit: '$mm',
+    answer: 951900000,
+    unit: '$',
     hint: 'Adjust EBITDA for each comp first: A adds back restructuring, C removes affiliate contribution.',
-    explanation: `🟨 Answer
-Adjust Comp EBITDA:
+    explanation: `Final Answer:
+Enterprise Value = Adjusted EBITDA × Average Normalized EV/EBITDA Multiple
+= $951,900,000
 
-A: 90 + 10 = 100
+• • •
 
-B: 120 (no adjustment)
+Step-by-step breakdown:
 
-C: 85 – (25% × 20) = 80
+1. Normalize each comp's EBITDA and compute EV/EBITDA
+Company A: 90 + 10 = 100 → EV/EBITDA = 900 / 100 = 9.0x
+Company B: 120 (no adjustment) → EV/EBITDA = 1,100 / 120 = 9.17x
+Company C: 85 - (25% × 20) = 80 → EV/EBITDA = 950 / 80 = 11.88x
 
-EV/EBITDA:
+2. Calculate average multiple
+(9.0 + 9.17 + 11.88) / 3 = 10.02x
 
-A: 900 / 100 = 9.0x
-
-B: 1,100 / 120 ≈ 9.17x
-
-C: 950 / 80 ≈ 11.88x
-
-Average = (9.0 + 9.17 + 11.88) / 3 ≈ 10.02x
-
-Implied EV = 95 × 10.02 ≈ $951.9 million
-
-✅ Final Answer: 951.9
-
-🟨 Explanation
-Formula:
-EV = Adjusted EBITDA × Adjusted EV/EBITDA
-
-Steps:
-
-Normalize EBITDA across comps
-
-Calculate EV/EBITDA using adjusted EBITDA
-
-Average the multiples
-
-Multiply by target company's normalized EBITDA
+3. Apply to Wesley & Co's EBITDA
+10.02 × $95mm = $951.9mm
 
 🎯 Interview Angle
 This simulates real comp set normalization in valuation – showing you know how to adjust for affiliate ownership or one-time items, which is essential in interviews and on the job.`,
@@ -12053,25 +12031,28 @@ EV = $950mm, EBITDA = 95mm, includes 30%-owned affiliate w/ $15mm EBITDA
     track: 'valuation',
     difficulty: 'easy',
     title: 'Calculating Implied Valuation Using Simple Multiples',
-    description: `✅ Topic: Normalized Valuation Multiples – EV/EBITDA
-🧠 Question Title
-Calculating Implied Valuation Using Simple Multiples
+    description: `A company called "Alto Tech" is being valued using three public comps with the following metrics:
 
-🟩 Prompt (Easy Difficulty)
-A company called "Alto Tech" is being valued using three public comps with the following metrics:
+Company A: Enterprise Value $1,000mm, EBITDA $100mm
 
-Comp	EV (in $mm)	EBITDA (in $mm)
-A	1,000	100
-B	1,200	150
-C	900	90
+Company B: Enterprise Value $1,200mm, EBITDA $150mm
+
+Company C: Enterprise Value $900mm, EBITDA $90mm
 
 Alto Tech's normalized EBITDA is $110 million.
 
 What is its implied Enterprise Value based on the average EV/EBITDA multiple of the comps?`,
-    answer: 1026.3,
-    unit: '$mm',
+    answer: 1026300000,
+    unit: '$',
     hint: 'Calculate each comp\'s EV/EBITDA multiple, then average them and apply to Alto Tech.',
-    explanation: `🟩 Answer
+    explanation: `Final Answer:
+Enterprise Value = EBITDA × Average EV/EBITDA Multiple
+= $1,026,300,000
+
+• • •
+
+Step-by-step breakdown:
+
 EV/EBITDA Multiples:
 
 A: 1,000 / 100 = 10.0x
@@ -12083,20 +12064,6 @@ C: 900 / 90 = 10.0x
 Average = (10.0 + 8.0 + 10.0) / 3 = 9.33x
 
 Implied EV = 110 × 9.33 ≈ $1,026.3 million
-
-✅ Final Answer: 1,026.3
-
-🟩 Explanation
-Formula:
-EV = EBITDA × Average EV/EBITDA
-
-Steps:
-
-Calculate each comp's multiple
-
-Take the average
-
-Multiply by Alto Tech's EBITDA
 
 🎯 Interview Angle
 Tests your ability to apply a fundamental valuation technique quickly and accurately.`,
