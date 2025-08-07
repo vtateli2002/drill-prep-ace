@@ -12204,30 +12204,8 @@ Clean, unrounded calculations under pressure
 This reflects real-life modeling where assumptions must flow logically, not just be memorized.`,
     learnContent: {
       concept: 'WACC represents the blended cost of capital a company pays for its financing (debt and equity). It\'s used as the discount rate in DCFs and benchmark for hurdle rates in capital allocation.',
-      formula: 'WACC = (E / V) × Re + (D / V) × Rd × (1 – Tc)\nWhere:\n• E = Equity Value\n• D = Debt Value\n• V = Total Capital = E + D\n• Re = Cost of Equity (via CAPM)\n• Rd = Pre-tax Cost of Debt\n• Tc = Tax Rate\n\nCAMP: Re = Risk-Free Rate + Beta × (Market Risk Premium + Country Risk Premium)',
-      example: `How It Works:
-WACC weights each component of the capital structure (equity and debt) by its proportion of total value and adjusts for tax savings on debt.
-
-Debt is adjusted post-tax because interest is tax-deductible. Equity cost is estimated using the Capital Asset Pricing Model (CAPM), factoring in market volatility and risk premiums.
-
-Why It Matters:
-WACC is central to valuation. Underestimating it inflates company value, while overestimating it may eliminate viable investments. Banks use it in fairness opinions, PE firms in hurdle rate comparisons, and corporates in budgeting.
-
-Understanding how to calculate WACC cleanly and adjust for international exposures or unique debt structures is crucial in high-stakes finance.
-
-Examples:
-
-Example 1:
-Company X: $600m equity, $400m debt at 6%, risk-free = 3%, MRP = 5%, beta = 1.2, tax = 30%
-→ WACC = 8.16%
-
-Example 2:
-Global Co: Uses $250m equity, $250m debt (split between bonds and notes), beta = 0.9, CRP = 3%
-→ Watch how international risk impacts CAMP
-
-Example 3:
-Startup Y: All-equity financed, beta = 1.5
-→ WACC = cost of equity = 13.5%, no debt benefits`
+      formula: 'WACC Formula (Full):\n\nWACC = (E/V × Re) + (D/V × Rd × (1-Tc))\n\nWhere:\n• E = Equity Value\n• D = Debt Value\n• V = Total Capital = E + D\n• Re = Cost of Equity (via CAPM)\n• Rd = Pre-tax Cost of Debt\n• Tc = Tax Rate\n\nCost of Equity (CAPM):\n\nRe = Risk-Free Rate + β × (Market Risk Premium + Country Risk Premium)',
+      example: 'Example 1:\nEquity = $800M, Debt = $400M\nRisk-Free Rate = 3%, Beta = 1.2, Market Risk Premium = 5%\nInterest Rate on Debt = 6%, Tax Rate = 25%\nWACC = 8.25%\n\nExample 2:\nEquity = $1,000M, Debt = $500M\nRisk-Free Rate = 4%, Beta = 1.1, Market Risk Premium = 6%, Country Risk Premium = 2%\nInterest Rate = 5.5%, Tax Rate = 30%\nWACC = 9.07%\n\nExample 3:\nEquity = $900M, Debt = $100M\nRisk-Free Rate = 2.5%, Beta = 1.3, Market Risk Premium = 6.5%\nInterest Rate = 4.5%, Tax Rate = 28%\nWACC = 8.13%'
     }
   }
 ];
