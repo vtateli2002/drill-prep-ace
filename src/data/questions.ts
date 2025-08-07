@@ -2263,54 +2263,7 @@ You've identified the following sets of comparables:
 
 Your internal DCF model for Nuvia yields an intrinsic valuation of $950 million.
 
-👉 What is Nuvia's implied valuation if you equally weight the outputs of the public comps average, precedent transactions average, and DCF?
-
-📘 **Core Concept**
-Each valuation method reflects a different view on value:
-• Comps = market sentiment
-• Precedents = deal premiums  
-• DCF = intrinsic cash flow-based value
-• Blending them produces a balanced, triangulated view.
-
-⚙️ **How It Works**
-• Comps Average × EBITDA
-• Precedents Average × EBITDA
-• Add DCF Value
-• Average the three
-
-💥 **Why It Matters**
-This is foundational for pitchbook valuation, especially when negotiating or advising on a strategic process. Knowing how to defend each methodology's contribution is essential for junior bankers.
-
-📐 **Formula:**
-Implied Valuation = (Comps Val + Precedents Val + DCF Val) / 3
-
-📚 **Examples**
-
-**Example 1:**
-EBITDA = $75M
-Comps Avg = 9x → $675M
-Precedents Avg = 12x → $900M
-DCF = $825M
-→ Average = $800M
-
-**Example 2:**
-EBITDA = $40M
-Comps Avg = 7x → $280M
-Precedents Avg = 9x → $360M
-DCF = $325M
-→ Average = $321.7M
-
-**Example 3:**
-EBITDA = $120M
-Comps Avg = 10x → $1,200M
-Precedents Avg = 12x → $1,440M
-DCF = $1,350M
-→ Average = $1,330M
-
-❌ **Common Mistakes**
-• Using median instead of average for comparables
-• Not applying equal weighting to each methodology
-• Forgetting to convert multiples to dollar values before averaging`,
+👉 What is Nuvia's implied valuation if you equally weight the outputs of the public comps average, precedent transactions average, and DCF?`,
     answer: 1050000000,
     unit: '$',
     hint: 'Calculate average multiples first, then apply to EBITDA, then average all three valuations.',
@@ -2349,9 +2302,53 @@ Key Points:
 • Equal weighting assumes no methodology is superior
 • Result represents consensus view across all approaches`,
     learnContent: {
-      concept: 'Football field valuation triangulates between market-based (comps), transaction-based (precedents), and intrinsic (DCF) methodologies.',
-      formula: 'Triangulated Value = (Comps Valuation + Precedents Valuation + DCF Valuation) ÷ 3',
-      example: 'Comps: 8x × $50M = $400M; Precedents: 10x × $50M = $500M; DCF: $450M → Average = $450M\nComps: 12x × $75M = $900M; Precedents: 14x × $75M = $1,050M; DCF: $975M → Average = $975M'
+      concept: `📘 **Core Concept**
+Each valuation method reflects a different view on value:
+• Comps = market sentiment
+• Precedents = deal premiums  
+• DCF = intrinsic cash flow-based value
+• Blending them produces a balanced, triangulated view.
+
+⚙️ **How It Works**
+• Comps Average × EBITDA
+• Precedents Average × EBITDA
+• Add DCF Value
+• Average the three
+
+💡 Formula: Revenue recognized = Services performed (under accrual)
+
+💥 **Why It Matters**
+This is foundational for pitchbook valuation, especially when negotiating or advising on a strategic process. Knowing how to defend each methodology's contribution is essential for junior bankers.
+
+📚 **Examples**
+
+Example 1:
+EBITDA = $75M
+Comps Avg = 9x → $675M
+Precedents Avg = 12x → $900M
+DCF = $825M
+→ Average = $800M
+
+Example 2:
+EBITDA = $40M
+Comps Avg = 7x → $280M
+Precedents Avg = 9x → $360M
+DCF = $325M
+→ Average = $321.7M
+
+Example 3:
+EBITDA = $120M
+Comps Avg = 10x → $1,200M
+Precedents Avg = 12x → $1,440M
+DCF = $1,350M
+→ Average = $1,330M
+
+⚠️ **Common Mistakes**
+• Using median instead of average for comparables
+• Not applying equal weighting to each methodology
+• Forgetting to convert multiples to dollar values before averaging`,
+      formula: 'Implied Valuation = (Comps Val + Precedents Val + DCF Val) / 3',
+      example: 'Comps: 8x × $50M = $400M; Precedents: 10x × $50M = $500M; DCF: $450M → Average = $450M\nComps: 12x × $75M = $900M; Precedents: 14x × $75M = $1,050M; DCF: $975M → Average = $975M\nComps: 15x × $30M = $450M; Precedents: 18x × $30M = $540M; DCF: $495M → Average = $495M'
     }
   },
   {
