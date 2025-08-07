@@ -12033,25 +12033,9 @@ Multiply by target company's normalized EBITDA
 🎯 Interview Angle
 This simulates real comp set normalization in valuation – showing you know how to adjust for affiliate ownership or one-time items, which is essential in interviews and on the job.`,
     learnContent: {
-      concept: `📘 Core Concept
-Multiples must be based on comparable, apples-to-apples financials. Normalize EBITDA before using it in valuation.
-
-📊 How It Works
-Strip out noise (non-recurring charges)
-
-Remove overreported affiliate EBITDA
-
-Average EV/EBITDA to get implied valuation
-
-💡 Why It Matters
-Failure to normalize EBITDA inflates or deflates multiples – misleading the final valuation.
-
-🧮 Formula
-EV = Adjusted EBITDA × EV/EBITDA
-(Adjust comps before use)
-
-🔍 Examples
-Example 1:
+      concept: 'Multiples must be based on comparable, apples-to-apples financials. Normalize EBITDA before using it in valuation.',
+      formula: 'EV = Adjusted EBITDA × EV/EBITDA Multiple (Adjust comps before use)',
+      example: `Example 1:
 EV = $800mm, EBITDA = $70mm, includes $10mm legal charge
 → Adj EBITDA = 80 → EV/EBITDA = 10x
 
@@ -12061,9 +12045,7 @@ EV = $900mm, EBITDA = $100mm
 
 Example 3:
 EV = $950mm, EBITDA = 95mm, includes 30%-owned affiliate w/ $15mm EBITDA
-→ Adj EBITDA = 95 – (30% × 15) = 90.5 → EV/EBITDA ≈ 10.5x`,
-      formula: 'EV = Adjusted EBITDA × EV/EBITDA Multiple',
-      example: 'Comp A: $900mm EV, $90mm EBITDA + $10mm one-time charge → Adjusted EBITDA = $100mm → EV/EBITDA = 9.0x'
+→ Adj EBITDA = 95 – (30% × 15) = 90.5 → EV/EBITDA ≈ 10.5x`
     }
   },
   {
@@ -12119,31 +12101,19 @@ Multiply by Alto Tech's EBITDA
 🎯 Interview Angle
 Tests your ability to apply a fundamental valuation technique quickly and accurately.`,
     learnContent: {
-      concept: `📘 Core Concept
-EV/EBITDA is a core multiple. This question ensures you know how to calculate and apply it in a straightforward scenario.
-
-📊 How It Works
-Use peer data to benchmark
-
-Multiply normalized EBITDA by peer multiple average
-
-💡 Why It Matters
-Quick benchmarking is common in pitch books and client updates – a basic skill every analyst must know.
-
-🧮 Formula
-EV = EBITDA × EV/EBITDA
-
-🔍 Examples
-Example 1:
+      concept: 'EV/EBITDA is a core multiple. This question ensures you know how to calculate and apply it in a straightforward scenario.',
+      formula: 'EV = EBITDA × EV/EBITDA Multiple',
+      example: `Example 1:
 EV = $1,000mm, EBITDA = $100mm → 10x
 EV = $800mm, EBITDA = $80mm → 10x
 Avg = 10x → 90mm EBITDA → Implied EV = 900mm
 
 Example 2:
 EV = $1,100mm, EBITDA = $110mm → 10x
-Avg multiple × 95 EBITDA = 950mm implied`,
-      formula: 'EV = EBITDA × EV/EBITDA Multiple',
-      example: 'Comp A: 10x, Comp B: 8x, Comp C: 10x → Average = 9.33x → Target EBITDA $110mm → Implied EV = $1,026.3mm'
+Avg multiple × 95 EBITDA = 950mm implied
+
+Example 3:
+Target EBITDA $110mm, Average multiple 9.33x → Implied EV = $1,026.3mm`
     }
   }
 ];
