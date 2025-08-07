@@ -319,7 +319,7 @@ const Problems = () => {
           </Card>
           
           {/* Problems List - Modern Gamified Style */}
-          <div className="space-y-3">
+          <div className="space-y-3" key={`${selectedTrack}-${selectedDifficulty}-${completionFilter}`}>
             {filteredQuestions.map((question, index) => {
               const isSolved = isQuestionSolved(question.id);
               const earnedXP = getQuestionXP(question.id);
@@ -341,6 +341,9 @@ const Problems = () => {
                           <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors truncate">
                             {question.title}
                           </h3>
+                          <span className="text-xs bg-gray-600 text-white px-2 py-0.5 rounded font-mono">
+                            {question.difficulty}
+                          </span>
                           {isSolved && (
                             <span className="text-xs bg-success/20 text-success px-2 py-0.5 rounded-full font-medium">
                               Solved
