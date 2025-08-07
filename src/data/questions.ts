@@ -11292,5 +11292,193 @@ Final Answer: 112 million shares`,
       formula: 'Total Dilution = ∑(All Equity Instruments × Vesting Probability) - Share Repurchases',
       example: 'Options: calculate using TSM\nRSUs: add full amount if certain to vest\nPerformance RSUs: multiply by probability\nRepurchases: subtract from total count'
     }
+  },
+
+  // Market Value vs Book Value Questions
+  {
+    id: 'val_mvbv_easy_1',
+    track: 'valuation',
+    difficulty: 'easy',
+    title: 'Market vs Book Value Difference',
+    description: `A company has:
+
+• Net PP&E: $400 million
+• Inventory: $100 million
+• Accounts receivable: $80 million
+• Cash: $70 million
+• Total liabilities: $500 million
+• Shares outstanding: 40 million
+• Share price: $25
+
+What is the difference between market value and book value of equity?
+
+Enter your answer in dollars (no commas or currency symbols).`,
+    answer: 280000000,
+    unit: 'dollars',
+    hint: 'Calculate book value (total assets - total liabilities), then market value (shares × price), then find the difference.',
+    explanation: `Formula: Difference = Market Value - Book Value = $1,000M - $150M = $850M
+
+Step-by-step calculation:
+
+1. Calculate Total Assets:
+   Net PP&E: $400M
+   Inventory: $100M
+   Accounts Receivable: $80M
+   Cash: $70M
+   Total Assets = $650M
+
+2. Calculate Book Value of Equity:
+   Book Value = Total Assets - Total Liabilities
+   Book Value = $650M - $500M = $150M
+
+3. Calculate Market Value of Equity:
+   Market Value = Shares Outstanding × Share Price
+   Market Value = 40M × $25 = $1,000M
+
+4. Calculate Difference:
+   Difference = Market Value - Book Value
+   Difference = $1,000M - $150M = $850M
+
+Final Answer: $850,000,000`,
+    learnContent: {
+      concept: 'Market value vs book value comparison measures the premium investors place on a company above its accounting net worth.',
+      formula: 'Difference = Market Value - Book Value = (Shares × Price) - (Total Assets - Total Liabilities)',
+      example: 'Market value reflects investor expectations and intangible assets; book value shows accounting net worth based on historical costs'
+    }
+  },
+
+  {
+    id: 'val_mvbv_medium_1',
+    track: 'valuation',
+    difficulty: 'medium',
+    title: 'Market vs Book Value with Complex Balance Sheet',
+    description: `A company reports the following:
+
+Assets:
+• Net PP&E: $1.1 billion
+• Goodwill: $300 million
+• Inventory: $200 million
+• Cash and short-term investments: $150 million
+
+Liabilities:
+• Accounts payable: $300 million
+• Accrued expenses: $200 million
+• Deferred revenue: $100 million
+• Operating lease liabilities: $250 million
+
+Other Info:
+• 90 million shares outstanding
+• Share price: $32
+
+What is the difference between market value and book value of equity?
+
+Enter your answer in dollars (no commas or currency symbols).`,
+    answer: 1980000000,
+    unit: 'dollars',
+    hint: 'Sum all assets, sum all liabilities, calculate book value, then compare to market value.',
+    explanation: `Formula: Difference = Market Value - Book Value = $2,880M - $900M = $1,980M
+
+Step-by-step calculation:
+
+1. Calculate Total Assets:
+   Net PP&E: $1,100M
+   Goodwill: $300M
+   Inventory: $200M
+   Cash and short-term investments: $150M
+   Total Assets = $1,750M
+
+2. Calculate Total Liabilities:
+   Accounts payable: $300M
+   Accrued expenses: $200M
+   Deferred revenue: $100M
+   Operating lease liabilities: $250M
+   Total Liabilities = $850M
+
+3. Calculate Book Value of Equity:
+   Book Value = Total Assets - Total Liabilities
+   Book Value = $1,750M - $850M = $900M
+
+4. Calculate Market Value of Equity:
+   Market Value = Shares Outstanding × Share Price
+   Market Value = 90M × $32 = $2,880M
+
+5. Calculate Difference:
+   Difference = Market Value - Book Value
+   Difference = $2,880M - $900M = $1,980M
+
+Final Answer: $1,980,000,000`,
+    learnContent: {
+      concept: 'Complex balance sheet analysis requires careful classification of all assets and liabilities, including operating lease liabilities and deferred revenue.',
+      formula: 'Book Value = Total Assets - Total Liabilities (including operating lease liabilities and deferred revenue as true liabilities)',
+      example: 'Modern accounting standards include lease liabilities and deferred revenue as actual liabilities that reduce equity value'
+    }
+  },
+
+  {
+    id: 'val_mvbv_medium_2',
+    track: 'valuation',
+    difficulty: 'medium',
+    title: 'Market vs Book Value with Investment Assets',
+    description: `A company reports the following:
+
+• Buildings and land: $1.8 billion
+• Equipment (net of depreciation): $700 million
+• Inventory: $400 million
+• Cash: $250 million
+• Long-term investments: $300 million
+• Operating lease right-of-use assets: $200 million
+• Accounts payable: $600 million
+• Accrued compensation: $250 million
+• Finance lease liabilities: $350 million
+• Deferred tax liabilities: $150 million
+• Long-term debt: $1.2 billion
+• Shares outstanding: 110 million
+• Share price: $50
+
+What is the difference between market value and book value of equity?
+
+Enter your answer in dollars (no commas or currency symbols).`,
+    answer: 4400000000,
+    unit: 'dollars',
+    hint: 'Add all asset figures, add all liability figures, calculate book value, then compare to market value.',
+    explanation: `Formula: Difference = Market Value - Book Value = $5,500M - $1,100M = $4,400M
+
+Step-by-step calculation:
+
+1. Calculate Total Assets:
+   Buildings and land: $1,800M
+   Equipment (net): $700M
+   Inventory: $400M
+   Cash: $250M
+   Long-term investments: $300M
+   Operating lease ROU assets: $200M
+   Total Assets = $3,650M
+
+2. Calculate Total Liabilities:
+   Accounts payable: $600M
+   Accrued compensation: $250M
+   Finance lease liabilities: $350M
+   Deferred tax liabilities: $150M
+   Long-term debt: $1,200M
+   Total Liabilities = $2,550M
+
+3. Calculate Book Value of Equity:
+   Book Value = Total Assets - Total Liabilities
+   Book Value = $3,650M - $2,550M = $1,100M
+
+4. Calculate Market Value of Equity:
+   Market Value = Shares Outstanding × Share Price
+   Market Value = 110M × $50 = $5,500M
+
+5. Calculate Difference:
+   Difference = Market Value - Book Value
+   Difference = $5,500M - $1,100M = $4,400M
+
+Final Answer: $4,400,000,000`,
+    learnContent: {
+      concept: 'Comprehensive balance sheet analysis includes all asset types (operating assets, investments, ROU assets) and various liability categories.',
+      formula: 'Market Premium = Market Value - Book Value, indicating investor expectations vs accounting value',
+      example: 'Large differences often indicate significant intangible value, growth expectations, or asset undervaluation not captured in book value'
+    }
   }
 ];
