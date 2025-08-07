@@ -493,10 +493,9 @@ const QuestionView = () => {
           <Card className="flex flex-col">
             <CardHeader>
               <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-                <TabsList className="grid w-full grid-cols-3">
+                <TabsList className="grid w-full grid-cols-2">
                   <TabsTrigger value="question">📝 Question</TabsTrigger>
                   <TabsTrigger value="learn">📘 Learn</TabsTrigger>
-                  {showExplanation && <TabsTrigger value="explanation">💡 Explanation</TabsTrigger>}
                 </TabsList>
                 
                 <TabsContent value="question" className="mt-4">
@@ -534,7 +533,7 @@ const QuestionView = () => {
                       </Card>
                     )}
                     
-                    {isSubmitted && currentQuestion.explanation && (
+                    {(isSubmitted || showExplanation) && currentQuestion.explanation && (
                       <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-lg">
                         <CardHeader className="pb-3">
                           <CardTitle className="text-xl text-success flex items-center gap-2">
@@ -551,6 +550,21 @@ const QuestionView = () => {
                                 .replace(/•/g, '&bull;')
                             }}
                           />
+                          
+                          {/* Interview Angle section */}
+                          {currentQuestion.id === 'acc-easy-146' && (
+                            <div className="mt-6 p-4 bg-primary/10 border border-primary/20 rounded-lg">
+                              <h4 className="font-bold text-primary mb-2 flex items-center gap-2">
+                                <Target size={16} />
+                                🎯 Interview Angle:
+                              </h4>
+                              <p className="text-foreground leading-relaxed">
+                                This question tests your understanding of revenue recognition under accrual vs. cash accounting. 
+                                In interviews, you may be asked to walk through timing differences in a 3-statement model, 
+                                especially when reconciling net income to cash flow. Nail this concept early—it appears frequently.
+                              </p>
+                            </div>
+                          )}
                         </CardContent>
                       </Card>
                     )}
@@ -695,54 +709,6 @@ const QuestionView = () => {
                   )}
                 </TabsContent>
 
-                {showExplanation && (
-                  <TabsContent value="explanation" className="mt-4">
-                    <div className="space-y-4">
-                      <div className="flex items-center justify-between">
-                        <h3 className="text-xl font-bold text-success flex items-center gap-2">
-                          <CheckCircle size={20} />
-                          💡 Explanation
-                        </h3>
-                        <Button 
-                          variant="outline" 
-                          size="sm"
-                          onClick={() => setActiveTab('learn')}
-                          className="flex items-center gap-2"
-                        >
-                          <BookOpen size={16} />
-                          🔍 Review Concept
-                        </Button>
-                      </div>
-                      
-                      {currentQuestion.explanation && (
-                        <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5">
-                          <CardContent className="p-4">
-                            <div 
-                              className="text-base text-foreground leading-relaxed"
-                              dangerouslySetInnerHTML={{
-                                __html: currentQuestion.explanation.replace(/\n/g, '<br />')
-                              }}
-                            />
-                          </CardContent>
-                        </Card>
-                      )}
-
-                      {/* Interview Angle for Accrual vs. Cash Accounting question */}
-                      {currentQuestion.id === 'acc-easy-146' && (
-                        <Card className="border-primary/30 bg-gradient-to-br from-primary/10 to-primary/5">
-                          <CardContent className="p-4">
-                            <h4 className="font-bold text-primary mb-2">🎯 Interview Angle:</h4>
-                            <p className="text-foreground leading-relaxed">
-                              This question tests your understanding of revenue recognition under accrual vs. cash accounting. 
-                              In interviews, you may be asked to walk through timing differences in a 3-statement model, 
-                              especially when reconciling net income to cash flow. Nail this concept early—it appears frequently.
-                            </p>
-                          </CardContent>
-                        </Card>
-                      )}
-                    </div>
-                  </TabsContent>
-                )}
               </Tabs>
             </CardHeader>
           </Card>
@@ -798,13 +764,21 @@ const QuestionView = () => {
                       >
                         Submit Answer
                       </Button>
-                      <Button
-                        variant="outline"
-                        onClick={handleHint}
-                        disabled={showHint || attemptCount >= 4}
-                      >
-                        <Lightbulb size={16} />
-                      </Button>
+                       <Button
+                         variant="outline"
+                         onClick={handleHint}
+                         disabled={showHint || attemptCount >= 4}
+                       >
+                         <Lightbulb size={16} />
+                       </Button>
+                       {!showExplanation && currentQuestion.explanation && (
+                         <Button
+                           variant="outline"
+                           onClick={() => setShowExplanation(true)}
+                         >
+                           Show Explanation
+                         </Button>
+                       )}
                     </>
                   ) : (
                     <>
