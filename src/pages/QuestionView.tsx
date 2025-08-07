@@ -712,6 +712,153 @@ const QuestionView = () => {
                         </CardContent>
                       </Card>
                     </div>
+                  ) : currentQuestion.id === 'val-medium-nuvia-1' ? (
+                    <div className="space-y-8">
+                      {/* Core Concept - Rich Forest Green */}
+                      <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-lg">
+                        <CardHeader className="pb-3">
+                          <CardTitle className="text-xl text-success flex items-center gap-2">
+                            📘 Core Concept
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-4">
+                          <p className="text-base text-foreground leading-relaxed">
+                            Each valuation method reflects a different view on value. Comps reflect market sentiment, precedents capture deal premiums, and DCF shows intrinsic cash flow-based value. Blending them produces a balanced, triangulated view that synthesizes multiple market perspectives.
+                          </p>
+                        </CardContent>
+                      </Card>
+
+                      {/* How It Works - Rich Forest Green */}
+                      <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-lg">
+                        <CardHeader className="pb-3">
+                          <CardTitle className="text-xl text-success flex items-center gap-2">
+                            🧠 How It Works
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-4">
+                          <div className="space-y-3 text-base text-foreground">
+                            <p className="flex items-start gap-2 leading-relaxed">
+                              <span>•</span>
+                              <span>Calculate average multiple for public comps and apply to EBITDA</span>
+                            </p>
+                            <p className="flex items-start gap-2 leading-relaxed">
+                              <span>•</span>
+                              <span>Calculate average multiple for precedent transactions and apply to EBITDA</span>
+                            </p>
+                            <p className="flex items-start gap-2 leading-relaxed">
+                              <span>•</span>
+                              <span>Include standalone DCF valuation</span>
+                            </p>
+                            <p className="flex items-start gap-2 leading-relaxed">
+                              <span>•</span>
+                              <span>Average all three methodologies with equal weighting</span>
+                            </p>
+                          </div>
+                        </CardContent>
+                      </Card>
+
+                      {/* Why It Matters - Rich Forest Green */}
+                      <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-lg">
+                        <CardHeader className="pb-3">
+                          <CardTitle className="text-xl text-success flex items-center gap-2">
+                            🎯 Why It Matters
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="space-y-3 text-base text-foreground leading-relaxed">
+                            <p>This is foundational for pitchbook valuation, especially when negotiating or advising on a strategic process. Knowing how to defend each methodology's contribution is essential for junior bankers and critical for fairness opinion work.</p>
+                          </div>
+                        </CardContent>
+                      </Card>
+
+                      {/* Formula - Rich Forest Green */}
+                      <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-lg">
+                        <CardHeader className="pb-3">
+                          <CardTitle className="text-xl text-success flex items-center gap-2">
+                            📊 Formula
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="bg-muted/50 rounded-lg p-4 border border-success/20">
+                            <div className="text-base font-mono text-foreground leading-relaxed">
+                              Implied Valuation = (Comps Val + Precedents Val + DCF Val) / 3
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+
+                      {/* Examples - Consistent Green */}
+                      <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-lg">
+                        <CardHeader className="pb-3">
+                          <CardTitle className="text-xl text-success flex items-center gap-2">
+                            📚 Examples
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-6">
+                          <div className="p-4 border border-success/20 rounded-lg bg-success/5">
+                            <h4 className="font-semibold mb-2 text-foreground">Example 1:</h4>
+                            <p className="mb-2 text-base text-foreground leading-relaxed">EBITDA = $75M</p>
+                            <div className="ml-4 space-y-1 text-sm">
+                              <p className="text-foreground">Comps Avg = 9x → $675M</p>
+                              <p className="text-foreground">Precedents Avg = 12x → $900M</p>
+                              <p className="text-foreground">DCF = $825M</p>
+                              <p className="text-foreground font-semibold">→ Average = $800M</p>
+                            </div>
+                          </div>
+                          
+                          <div className="p-4 border border-success/20 rounded-lg bg-success/5">
+                            <h4 className="font-semibold mb-2 text-foreground">Example 2:</h4>
+                            <p className="mb-2 text-base text-foreground leading-relaxed">EBITDA = $40M</p>
+                            <div className="ml-4 space-y-1 text-sm">
+                              <p className="text-foreground">Comps Avg = 7x → $280M</p>
+                              <p className="text-foreground">Precedents Avg = 9x → $360M</p>
+                              <p className="text-foreground">DCF = $325M</p>
+                              <p className="text-foreground font-semibold">→ Average = $321.7M</p>
+                            </div>
+                          </div>
+                          
+                          <div className="p-4 border border-success/20 rounded-lg bg-success/5">
+                            <h4 className="font-semibold mb-2 text-foreground">Example 3:</h4>
+                            <p className="mb-2 text-base text-foreground leading-relaxed">EBITDA = $120M</p>
+                            <div className="ml-4 space-y-1 text-sm">
+                              <p className="text-foreground">Comps Avg = 10x → $1,200M</p>
+                              <p className="text-foreground">Precedents Avg = 12x → $1,440M</p>
+                              <p className="text-foreground">DCF = $1,350M</p>
+                              <p className="text-foreground font-semibold">→ Average = $1,330M</p>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+
+                      {/* Common Mistakes - Olive Green */}
+                      <Card className="border-green-600/30 bg-gradient-to-br from-green-800/20 to-green-900/10 shadow-lg">
+                        <CardHeader className="pb-3">
+                          <CardTitle className="text-xl text-green-300 flex items-center gap-2">
+                            🔺 Common Mistakes
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="space-y-3">
+                            <p className="flex items-start gap-2 text-base text-foreground leading-relaxed">
+                              <span className="text-green-500">•</span>
+                              <span>Using only one methodology instead of triangulating multiple approaches</span>
+                            </p>
+                            <p className="flex items-start gap-2 text-base text-foreground leading-relaxed">
+                              <span className="text-green-500">•</span>
+                              <span>Applying outdated or irrelevant precedent transaction multiples</span>
+                            </p>
+                            <p className="flex items-start gap-2 text-base text-foreground leading-relaxed">
+                              <span className="text-green-500">•</span>
+                              <span>Not considering the quality and relevance of comparable companies</span>
+                            </p>
+                            <p className="flex items-start gap-2 text-base text-foreground leading-relaxed">
+                              <span className="text-green-500">•</span>
+                              <span>Weighting methodologies inappropriately based on market conditions</span>
+                            </p>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
                   ) : (
                     // Original learn content for other questions
                     currentQuestion.learnContent ? (
