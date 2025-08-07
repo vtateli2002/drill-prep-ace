@@ -2239,6 +2239,122 @@ EV = Market Cap + Total Debt + Finance Leases + Pension Liabilities + Preferred 
     }
   },
   {
+    id: 'val-medium-nuvia-1',
+    track: 'valuation',
+    difficulty: 'medium',
+    title: 'Triangulated Valuation – Football Field Analysis',
+    description: `📌 **Question**
+
+You're advising a software company called Nuvia on its upcoming strategic alternatives process. As part of your valuation analysis, you're preparing a football field to show the company's implied valuation using the three major methodologies.
+
+Nuvia's 2024 EBITDA is projected at $100 million
+
+You've identified the following sets of comparables:
+
+**Public Comps:**
+• FastLogic (9.5x)
+• CodeSphere (10.2x) 
+• ByteMax (10.3x)
+
+**Precedent Transactions:**
+• Sale of AlgoSoft at 11.8x
+• Acquisition of DevCloud at 12.5x
+• Merger of SyncIQ at 11.7x
+
+Your internal DCF model for Nuvia yields an intrinsic valuation of $950 million.
+
+👉 What is Nuvia's implied valuation if you equally weight the outputs of the public comps average, precedent transactions average, and DCF?
+
+📘 **Core Concept**
+Each valuation method reflects a different view on value:
+• Comps = market sentiment
+• Precedents = deal premiums  
+• DCF = intrinsic cash flow-based value
+• Blending them produces a balanced, triangulated view.
+
+⚙️ **How It Works**
+• Comps Average × EBITDA
+• Precedents Average × EBITDA
+• Add DCF Value
+• Average the three
+
+💥 **Why It Matters**
+This is foundational for pitchbook valuation, especially when negotiating or advising on a strategic process. Knowing how to defend each methodology's contribution is essential for junior bankers.
+
+📐 **Formula:**
+Implied Valuation = (Comps Val + Precedents Val + DCF Val) / 3
+
+📚 **Examples**
+
+**Example 1:**
+EBITDA = $75M
+Comps Avg = 9x → $675M
+Precedents Avg = 12x → $900M
+DCF = $825M
+→ Average = $800M
+
+**Example 2:**
+EBITDA = $40M
+Comps Avg = 7x → $280M
+Precedents Avg = 9x → $360M
+DCF = $325M
+→ Average = $321.7M
+
+**Example 3:**
+EBITDA = $120M
+Comps Avg = 10x → $1,200M
+Precedents Avg = 12x → $1,440M
+DCF = $1,350M
+→ Average = $1,330M
+
+❌ **Common Mistakes**
+• Using median instead of average for comparables
+• Not applying equal weighting to each methodology
+• Forgetting to convert multiples to dollar values before averaging`,
+    answer: 1050000000,
+    unit: '$',
+    hint: 'Calculate average multiples first, then apply to EBITDA, then average all three valuations.',
+    explanation: `💡 **Explanation**
+
+Final Answer:
+(10.0 × $100M + 12.0 × $100M + $950M) / 3 = $1,050,000,000
+
+• • •
+
+Step-by-step breakdown:
+
+1. Calculate average public comps multiple:
+   • (9.5 + 10.2 + 10.3) / 3 = 10.0x
+
+2. Apply to EBITDA:
+   • 10.0 × $100M = $1,000M
+
+3. Calculate average precedent transactions multiple:
+   • (11.8 + 12.5 + 11.7) / 3 = 12.0x
+
+4. Apply to EBITDA:
+   • 12.0 × $100M = $1,200M
+
+5. Include DCF valuation:
+   • DCF = $950M (as given)
+
+6. Average the three valuations:
+   → ($1,000M + $1,200M + $950M) / 3 = $1,050M
+
+🎯 **Interview Angle**
+This mirrors real analyst workflows — triangulating between comps, precedents, and DCF is standard in client-facing deliverables like football fields and fairness opinions. Interviewers want to see if you can synthesize valuations and defend the use of each methodology.
+
+Key Points:
+• Each methodology captures different market perspectives
+• Equal weighting assumes no methodology is superior
+• Result represents consensus view across all approaches`,
+    learnContent: {
+      concept: 'Football field valuation triangulates between market-based (comps), transaction-based (precedents), and intrinsic (DCF) methodologies.',
+      formula: 'Triangulated Value = (Comps Valuation + Precedents Valuation + DCF Valuation) ÷ 3',
+      example: 'Comps: 8x × $50M = $400M; Precedents: 10x × $50M = $500M; DCF: $450M → Average = $450M\nComps: 12x × $75M = $900M; Precedents: 14x × $75M = $1,050M; DCF: $975M → Average = $975M'
+    }
+  },
+  {
     id: 'val-easy-2',
     track: 'valuation',
     difficulty: 'easy',
