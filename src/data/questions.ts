@@ -12170,5 +12170,87 @@ What is Solara's WACC, expressed to the nearest hundredth of a percent?`,
       whyItMatters: 'WACC is central to valuation. Underestimating it inflates company value, while overestimating it may eliminate viable investments. Banks use it in fairness opinions, PE firms in hurdle rate comparisons, and corporates in budgeting. Understanding how to calculate WACC cleanly and adjust for international exposures or unique debt structures is crucial in high-stakes finance.',
       formula: 'WACC = (E/V × Re) + (D/V × Rd × (1-Tc))\n\nWhere:\nE = Equity Value, D = Debt Value\nV = Total Capital (E + D)\nRe = Cost of Equity = Risk-Free Rate + Beta × (Market Risk Premium + Country Risk Premium)\nRd = Pre-tax Cost of Debt, Tc = Tax Rate'
     }
+  },
+  {
+    id: 'val-easy-wacc-basic-1',
+    track: 'valuation',
+    difficulty: 'easy',
+    title: 'Basic WACC Calculation with Clean Capital Structure',
+    description: `A company has the following capital structure:
+
+• $650 million in equity
+• $350 million in debt
+
+The cost of equity is 12%. The cost of debt is 8%. The tax rate is 25%.
+
+What is the company's weighted average cost of capital (WACC)?`,
+    answer: 9.90,
+    unit: '%',
+    explanation: `Step-by-step:
+
+1. Total capital = $650 + $350 = $1,000 million
+2. Equity weight = 650 / 1,000 = 0.65  
+3. Debt weight = 350 / 1,000 = 0.35
+4. After-tax cost of debt = 8% × (1 – 0.25) = 6.00%
+5. WACC = (0.65 × 12%) + (0.35 × 6%)
+6. WACC = 7.80% + 2.10% = 9.90%
+
+Formula Application:
+WACC = (Equity % × Cost of Equity) + (Debt % × Cost of Debt × (1 – Tax Rate))
+= (0.65 × 12%) + (0.35 × 8% × (1 – 0.25))
+= (7.80%) + (2.10%)
+= 9.90%`,
+    learnContent: {
+      concept: 'WACC represents the average rate a company is expected to pay to finance its assets, weighted by the portion of equity and debt in the capital structure.',
+      howItWorks: 'WACC blends the cost of equity and after-tax cost of debt. It\'s used as the discount rate in DCF and reflects required return thresholds.',
+      whyItMatters: 'This is one of the most frequently tested finance interview topics. WACC is essential for valuing companies and making capital budgeting decisions.',
+      formula: 'WACC = (E/V × Re) + (D/V × Rd × (1 – Tc))\n\nAfter-tax cost of debt = Rd × (1 – Tc)'
+    }
+  },
+  {
+    id: 'val-medium-wacc-tiered-1',
+    track: 'valuation',
+    difficulty: 'medium',
+    title: 'WACC with Tiered Debt Instruments',
+    description: `A company is evaluating its capital structure:
+
+• $700 million in equity
+• $300 million in debt
+
+The equity has a cost of 10%. The debt consists of:
+• $180 million in senior notes at a 6% interest rate
+• $120 million in junior debt at a 9% interest rate
+
+The company's tax rate is 25%.
+
+What is the company's weighted average cost of capital (WACC)?`,
+    answer: 8.62,
+    unit: '%',
+    explanation: `Step-by-step:
+
+1. Total capital = $700 + $300 = $1,000 million
+2. Equity weight = 700 / 1000 = 0.70
+3. Debt weight = 300 / 1000 = 0.30
+
+Debt Breakdown:
+• Senior: 180 / 300 = 0.60, × 6% = 3.60%
+• Junior: 120 / 300 = 0.40, × 9% = 3.60%
+• Pre-tax blended cost of debt = 3.60% + 3.60% = 7.20%
+• After-tax cost of debt = 7.20% × (1 – 0.25) = 5.40%
+
+Final WACC:
+(0.70 × 10%) + (0.30 × 5.40%) = 7.00% + 1.62% = 8.62%
+
+Detailed Calculation:
+• Weighted debt from senior notes = 180 / 300 = 60%, × 6% = 3.60%
+• Weighted debt from junior notes = 120 / 300 = 40%, × 9% = 3.60%
+• Total pre-tax cost of debt = 7.20%, after-tax = 5.40%
+• WACC = (0.70 × 10%) + (0.30 × 5.40%) = 8.62%`,
+    learnContent: {
+      concept: 'This tests WACC with tiered capital structure — multiple debt instruments with different risk profiles and cost.',
+      howItWorks: 'You calculate a weighted cost for each debt layer, combine them, apply the tax shield, and then compute WACC with weighted capital sources.',
+      whyItMatters: 'In real-world valuation, capital structures are rarely simple. This simulates a more realistic scenario, which is frequently tested in interviews.',
+      formula: 'WACC = (E/V × Re) + (D/V × Rd × (1 – Tc))\n\nBlended Rd = Weighted average of all debt instruments\nAfter-tax Rd = Rd × (1 – Tc)'
+    }
   }
 ];
