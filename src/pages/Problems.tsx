@@ -327,7 +327,7 @@ const Problems = () => {
               const DifficultyIcon = difficultyConfig.icon;
 
               return (
-                <Card key={question.id} className={`group relative overflow-hidden border-l-4 ${isSolved ? 'border-l-success bg-success/5' : 'border-l-primary/20'} hover:shadow-lg hover:scale-[1.01] transition-all duration-200 cursor-pointer ${question.id !== 'val-medium-nuvia-1' ? 'border-2 border-red-500 bg-red-50 dark:bg-red-950/20' : ''}`}>
+                <Card key={question.id} className={`group relative overflow-hidden border-l-4 ${isSolved ? 'border-l-success bg-success/5' : 'border-l-primary/20'} hover:shadow-lg hover:scale-[1.01] transition-all duration-200 cursor-pointer ${question.id !== 'val-medium-nuvia-1' ? 'bg-muted/30 border-muted-foreground/20 opacity-75' : 'ring-2 ring-primary/10 bg-gradient-to-r from-primary/5 to-secondary/5'}`}>
                   <div className="p-5" onClick={() => handleStartQuestion(question.id)}>
                     <div className="flex items-center gap-4">
                       {/* Question Number with Gamified Design */}
