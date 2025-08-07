@@ -10705,5 +10705,126 @@ What is the **total amortization expense** recorded in Year 2, and how does it f
       formula: 'Total Amort = Pro-rata + Accelerated Write-off',
       example: '$80k unamortized, paid after 1 year of 5 → $16k + $64k = $80k total\n$200k, repaid at 75% mark → recognize full balance\n$60k fees, 3-yr term, repaid Y2 → write off remainder'
     }
+  },
+
+  // Topic 4: Why Cash is Subtracted in Enterprise Value - Easy
+  {
+    id: 'val_cash_subtract_easy',
+    track: 'valuation',
+    difficulty: 'easy',
+    title: 'Why Cash is Subtracted - Basic Concept',
+    description: `A company has:
+
+Market Cap: $420 million
+Debt: $180 million
+Preferred Stock: $30 million
+Noncontrolling Interest: $20 million
+Cash: $100 million
+
+The company also owns an unrelated $50 million stake in a public company (non-operating).
+
+What is the Enterprise Value?`,
+    answer: 500000000,
+    unit: '$',
+    hint: 'Subtract both cash and non-core investments from the capital-backed value.',
+    explanation: `**Formula:** EV = Equity Value + Debt + Preferred + NCI - Cash - Non-operating Investments
+
+**Step-by-step calculation:**
+• Start with Equity Value: $420M
+• Add Debt: $420M + $180M = $600M
+• Add Preferred Stock: $600M + $30M = $630M
+• Add Noncontrolling Interest: $630M + $20M = $650M
+• Subtract Cash: $650M − $100M = $550M
+• Subtract Non-operating equity investment: $550M − $50M = $500M`,
+    learnContent: {
+      concept: 'Cash and excess non-operating assets are subtracted because they\'re not required to generate operating profits.',
+      formula: 'EV = Equity + Debt + Preferred + NCI − Cash − Excess Investments',
+      example: 'If you acquired a company, you\'d "pay" for the business minus the cash you acquire. $400M Market Cap + $100M Debt − $50M Cash = $450M EV'
+    }
+  },
+
+  // Topic 4: Why Cash is Subtracted in Enterprise Value - Medium
+  {
+    id: 'val_cash_subtract_medium',
+    track: 'valuation',
+    difficulty: 'medium',
+    title: 'Why Cash is Subtracted - PE Evaluation',
+    description: `A PE firm is evaluating a business with the following:
+
+Equity Value: $2.1B
+Debt: $900M
+Preferred Stock: $120M
+Noncontrolling Interest: $80M
+Cash: $350M
+Excess Insurance Reserves (non-operating): $70M
+Held-for-sale core warehouse asset: $60M
+
+Assume the held-for-sale warehouse is still required for operations, but all other liquid reserves are non-operating.
+
+What is the Enterprise Value?`,
+    answer: 2780000000,
+    unit: '$',
+    hint: 'Subtract all liquid, non-operating assets—but not operational held-for-sale assets.',
+    explanation: `**Formula:** EV = Equity Value + Debt + Preferred + NCI - Cash - Excess Insurance Reserves
+
+**Step-by-step calculation:**
+• Start with Equity Value: $2.1B
+• Add Debt: $2.1B + $900M = $3.0B
+• Add Preferred Stock: $3.0B + $120M = $3.12B
+• Add NCI: $3.12B + $80M = $3.2B
+• Subtract Cash: $3.2B − $350M = $2.85B
+• Subtract Excess Insurance Reserves: $2.85B − $70M = $2.78B
+
+**Note:** Do not subtract held-for-sale warehouse as it's still operational.`,
+    learnContent: {
+      concept: 'Cash is subtracted because the acquirer "gets it for free" — they don\'t need to re-invest it. Same applies to non-core, liquid assets.',
+      formula: 'EV = Equity + Net Debt + Preferred + NCI − Cash − Excess Liquid Assets',
+      example: 'Cash, marketable securities, insurance floats reduce EV. Don\'t subtract real estate still essential to the business.'
+    }
+  },
+
+  // Topic 4: Why Cash is Subtracted in Enterprise Value - Hard
+  {
+    id: 'val_cash_subtract_hard',
+    track: 'valuation',
+    difficulty: 'hard',
+    title: 'Why Cash is Subtracted - Software Company Valuation',
+    description: `You are valuing a software company with:
+
+Equity Value: $6.8B
+Debt: $1.2B
+Preferred Stock: $250M
+Noncontrolling Interest: $160M
+Cash: $800M
+Short-Term Investments: $300M
+Strategic Venture Investment in a non-core AI startup: $500M
+Restricted Customer Deposits (held in escrow, not usable): $350M
+Capital Lease Liabilities: $400M
+Operating Property held for sale (used in core hosting): $100M
+
+Which of the above should be subtracted from Enterprise Value? Calculate the final Enterprise Value.`,
+    answer: 7210000000,
+    unit: '$',
+    hint: 'Subtract only non-operating, liquid assets: cash, short-term investments, and venture equity. Do not subtract restricted or operational assets.',
+    explanation: `**Formula:** EV = Equity Value + Debt + Preferred + NCI + Capital Leases - Cash - Short-Term Investments - Strategic Venture Investment
+
+**Step-by-step calculation:**
+• Start with Equity Value: $6.8B
+• Add Debt: $6.8B + $1.2B = $8.0B
+• Add Preferred Stock: $8.0B + $250M = $8.25B
+• Add Noncontrolling Interest: $8.25B + $160M = $8.41B
+• Add Capital Lease Liabilities: $8.41B + $400M = $8.81B
+• Subtract Cash: $8.81B − $800M = $8.01B
+• Subtract Short-Term Investments: $8.01B − $300M = $7.71B
+• Subtract Strategic Venture Investment: $7.71B − $500M = $7.21B
+
+**Items NOT subtracted:**
+• Restricted Customer Deposits → tied to operations
+• Held-for-sale hosting asset → still operational`,
+    learnContent: {
+      concept: 'Subtract cash and non-core, liquid investments when calculating EV. Do not subtract operational or restricted-use assets.',
+      formula: 'EV = Equity + Debt-like + Preferred + NCI − Cash − Non-operating Liquid Assets',
+      example: 'Venture stakes and ST investments reduce EV. Escrowed deposits and hosting centers are essential and stay in EV.'
+    }
   }
 ];
