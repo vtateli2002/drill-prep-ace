@@ -588,141 +588,141 @@ const QuestionView = () => {
                   {currentQuestion.id === 'acc-easy-146' ? (
                     <div className="space-y-8">
                       {/* Core Concept - Dark Green */}
-                      <Card className="bg-emerald-50 dark:bg-emerald-900/20 border-l-4 border-l-emerald-600 p-6">
+                      <Card className="bg-background dark:bg-[#1E2D24] border border-border p-6 rounded-lg">
                         <div className="flex items-center gap-2 mb-4">
                           <span className="text-lg">📘</span>
-                          <h3 className="font-bold text-lg text-emerald-800 dark:text-emerald-200">Core Concept</h3>
+                          <h3 className="font-semibold text-lg text-foreground">Core Concept</h3>
                         </div>
                         <div className="space-y-4">
-                          <p className="text-emerald-900 dark:text-emerald-100 font-medium">
+                          <p className="text-foreground font-medium leading-relaxed">
                             Accrual vs. Cash Accounting boils down to when revenue is recognized.
                           </p>
                           <div className="space-y-2 ml-4">
-                            <p className="text-emerald-800 dark:text-emerald-200">• <strong>Accrual:</strong> when service is performed</p>
-                            <p className="text-emerald-800 dark:text-emerald-200">• <strong>Cash:</strong> when cash is received</p>
+                            <p className="text-foreground leading-relaxed">• <strong>Accrual:</strong> when service is performed</p>
+                            <p className="text-foreground leading-relaxed">• <strong>Cash:</strong> when cash is received</p>
                           </div>
                         </div>
                       </Card>
-
-                      {/* Mini-text divider */}
-                      <div className="text-center text-sm text-muted-foreground py-2 flex items-center justify-center gap-2">
-                        <span>💡</span>
-                        <span>Now that you understand the concept, let's look at how it actually works:</span>
-                      </div>
 
                       {/* How It Works - No colored box; just bulleted text, lightly indented */}
                       <div className="space-y-4 ml-4">
                         <div className="flex items-center gap-2 mb-4">
                           <span className="text-lg">📊</span>
-                          <h3 className="font-bold text-lg">How It Works</h3>
+                          <h3 className="font-semibold text-lg text-foreground">How It Works</h3>
                         </div>
-                        <div className="space-y-3 text-muted-foreground">
-                          <p className="flex items-start gap-2">
+                        <div className="space-y-3 text-foreground">
+                          <p className="flex items-start gap-2 leading-relaxed">
                             <span>✅</span>
                             <span>If service is performed, revenue is recognized (accrual)</span>
                           </p>
-                          <p className="flex items-start gap-2">
+                          <p className="flex items-start gap-2 leading-relaxed">
                             <span>⏱️</span>
                             <span>Cash timing does not affect revenue recognition</span>
                           </p>
-                          <p className="flex items-start gap-2">
+                          <p className="flex items-start gap-2 leading-relaxed">
                             <span>💵</span>
                             <span>Cash received is recorded separately in cash flow from operations</span>
                           </p>
                         </div>
                         
-                        <div className="mt-6 p-4 bg-muted/50 rounded-lg border">
-                          <p className="font-bold text-center text-foreground">Revenue recognized = Services performed (under accrual)</p>
+                        <div className="mt-6 p-4 bg-muted rounded-lg border">
+                          <p className="font-semibold text-center text-foreground leading-relaxed">Revenue recognized = Services performed (under accrual)</p>
                         </div>
                       </div>
 
-                      {/* Mini-text divider */}
+                      {/* Divider */}
                       <div className="text-center text-sm text-muted-foreground py-2 flex items-center justify-center gap-2">
-                        <span>🎯</span>
-                        <span>Why does this matter in interviews and modeling?</span>
+                        <span>🔎</span>
+                        <span>Now let's connect this to real-world interviews and models...</span>
                       </div>
 
-                      {/* Why It Matters - Muted green or dark teal box */}
-                      <Card className="bg-teal-50 dark:bg-teal-900/20 border-l-4 border-l-teal-600 p-6">
+                      {/* Why It Matters - Dark Teal */}
+                      <Card className="bg-background dark:bg-[#1F2D33] border border-border p-6 rounded-lg">
                         <div className="flex items-center gap-2 mb-4">
                           <span className="text-lg">🧠</span>
-                          <h3 className="font-bold text-lg text-teal-800 dark:text-teal-200">Why It Matters</h3>
+                          <h3 className="font-semibold text-lg text-foreground">Why It Matters</h3>
                         </div>
-                        <div className="space-y-3 text-teal-900 dark:text-teal-100">
-                          <p>In 3-statement models, you'll reconcile net income (accrual) with cash inflow (cash).</p>
-                          <p>Accrual concepts appear frequently in interviews, especially for SaaS, services, and deferred revenue modeling.</p>
-                          <p>You need to know how timing differences affect the income statement vs. cash flow statement.</p>
+                        <div className="space-y-3 text-foreground">
+                          <p className="leading-relaxed">In 3-statement models, you'll reconcile net income (accrual) with cash inflow (cash).</p>
+                          <p className="leading-relaxed">Accrual concepts appear frequently in interviews, especially for SaaS, services, and deferred revenue modeling.</p>
+                          <p className="leading-relaxed">You need to know how timing differences affect the income statement vs. cash flow statement.</p>
                         </div>
                       </Card>
 
-                      {/* Mini-text divider */}
+                      {/* Divider */}
                       <div className="text-center text-sm text-muted-foreground py-2 flex items-center justify-center gap-2">
-                        <span>📚</span>
-                        <span>Let's walk through a few examples:</span>
+                        <span>🧪</span>
+                        <span>Let's break it down with real examples:</span>
                       </div>
 
-                      {/* Examples - Single block with border-separated examples. Each example is lightly shaded, NOT full fill. */}
-                      <Card className="border border-muted p-6">
+                      {/* Examples - Dark Gray */}
+                      <Card className="bg-background dark:bg-[#151B1F] border border-border p-6 rounded-lg">
                         <div className="flex items-center gap-2 mb-6">
-                          <span className="text-lg">📊</span>
-                          <h3 className="font-bold text-lg">Examples</h3>
+                          <span className="text-lg">📚</span>
+                          <h3 className="font-semibold text-lg text-foreground">Examples</h3>
                         </div>
                         <div className="space-y-6">
-                          <div className="p-4 bg-muted/30 border-l-2 border-l-primary rounded-r-lg">
-                            <h4 className="font-semibold mb-2 flex items-center gap-2">
+                          <div className="p-4 bg-muted/50 border-l-2 border-l-primary rounded-r-lg">
+                            <h4 className="font-semibold mb-2 flex items-center gap-2 text-foreground">
                               <span>✅</span>
                               <span>Example 1:</span>
                             </h4>
-                            <p className="mb-2">Work completed in December, paid in January</p>
+                            <p className="mb-2 text-foreground leading-relaxed">Work completed in December, paid in January</p>
                             <div className="ml-4 space-y-1 text-sm">
-                              <p><strong>Accrual:</strong> December</p>
-                              <p><strong>Cash:</strong> January</p>
+                              <p className="text-foreground"><strong>Accrual:</strong> December</p>
+                              <p className="text-foreground"><strong>Cash:</strong> January</p>
                             </div>
                           </div>
                           
-                          <div className="p-4 bg-muted/30 border-l-2 border-l-primary rounded-r-lg">
-                            <h4 className="font-semibold mb-2 flex items-center gap-2">
+                          <div className="p-4 bg-muted/50 border-l-2 border-l-primary rounded-r-lg">
+                            <h4 className="font-semibold mb-2 flex items-center gap-2 text-foreground">
                               <span>✅</span>
                               <span>Example 2:</span>
                             </h4>
-                            <p className="mb-2">$5K paid in advance for a February service</p>
+                            <p className="mb-2 text-foreground leading-relaxed">$5K paid in advance for a February service</p>
                             <div className="ml-4 space-y-1 text-sm">
-                              <p><strong>Accrual:</strong> February</p>
-                              <p><strong>Cash:</strong> Now</p>
+                              <p className="text-foreground"><strong>Accrual:</strong> February</p>
+                              <p className="text-foreground"><strong>Cash:</strong> Now</p>
                             </div>
                           </div>
                           
-                          <div className="p-4 bg-muted/30 border-l-2 border-l-primary rounded-r-lg">
-                            <h4 className="font-semibold mb-2 flex items-center gap-2">
+                          <div className="p-4 bg-muted/50 border-l-2 border-l-primary rounded-r-lg">
+                            <h4 className="font-semibold mb-2 flex items-center gap-2 text-foreground">
                               <span>✅</span>
                               <span>Example 3:</span>
                             </h4>
-                            <p className="mb-2">Services in March, paid in May</p>
+                            <p className="mb-2 text-foreground leading-relaxed">Services in March, paid in May</p>
                             <div className="ml-4 space-y-1 text-sm">
-                              <p><strong>Accrual:</strong> March</p>
-                              <p><strong>Cash:</strong> May</p>
+                              <p className="text-foreground"><strong>Accrual:</strong> March</p>
+                              <p className="text-foreground"><strong>Cash:</strong> May</p>
                             </div>
                           </div>
                         </div>
                       </Card>
 
-                      {/* Common Mistakes - Light red-tinted background with red icon bullets */}
-                      <Card className="bg-red-50 dark:bg-red-900/20 border-l-4 border-l-red-500 p-6">
+                      {/* Divider */}
+                      <div className="text-center text-sm text-muted-foreground py-2 flex items-center justify-center gap-2">
+                        <span>🚫</span>
+                        <span>Watch out for these common traps:</span>
+                      </div>
+
+                      {/* Common Mistakes - Dark Red Tint */}
+                      <Card className="bg-background dark:bg-[#2A1D1D] border border-border p-6 rounded-lg">
                         <div className="flex items-center gap-2 mb-4">
                           <span className="text-lg">⚠️</span>
-                          <h3 className="font-bold text-lg text-red-800 dark:text-red-200">Common Mistakes</h3>
+                          <h3 className="font-semibold text-lg text-foreground">Common Mistakes</h3>
                         </div>
                         <div className="space-y-3">
-                          <p className="flex items-start gap-2 text-red-900 dark:text-red-100">
-                            <span className="text-red-600">❌</span>
+                          <p className="flex items-start gap-2 text-foreground leading-relaxed">
+                            <span className="text-destructive">❌</span>
                             <span>Recognizing revenue when cash is received (accrual = wrong)</span>
                           </p>
-                          <p className="flex items-start gap-2 text-red-900 dark:text-red-100">
-                            <span className="text-red-600">❌</span>
+                          <p className="flex items-start gap-2 text-foreground leading-relaxed">
+                            <span className="text-destructive">❌</span>
                             <span>Waiting for invoice to record revenue</span>
                           </p>
-                          <p className="flex items-start gap-2 text-red-900 dark:text-red-100">
-                            <span className="text-red-600">❌</span>
+                          <p className="flex items-start gap-2 text-foreground leading-relaxed">
+                            <span className="text-destructive">❌</span>
                             <span>Forgetting that cash ≠ revenue</span>
                           </p>
                         </div>
