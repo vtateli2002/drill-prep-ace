@@ -18,6 +18,7 @@ import NotesUtility from '@/components/NotesUtility';
 import DrawingCanvas from '@/components/DrawingCanvas';
 import Calculator from '@/components/Calculator';
 import { FinancialSummary } from '@/components/FinancialSummary';
+import { validateAnswer } from '@/utils/answerValidation';
 
 const QuestionView = () => {
   const { questionId } = useParams<{ questionId: string }>();
@@ -218,10 +219,7 @@ const QuestionView = () => {
   const handleSubmit = async () => {
     if (!currentQuestion || !userAnswer) return;
 
-    const numericAnswer = parseFloat(userAnswer);
-    const correct = typeof currentQuestion.answer === 'string' 
-      ? userAnswer.trim().toLowerCase() === currentQuestion.answer.toLowerCase()
-      : Math.abs(numericAnswer - currentQuestion.answer) < 0.01;
+    const correct = validateAnswer(userAnswer, currentQuestion.answer);
     const newAttemptCount = attemptCount + 1;
     
     setAttemptCount(newAttemptCount);

@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { ChevronLeft, ChevronRight, Eye, EyeOff, BookOpen, CheckCircle, XCircle } from 'lucide-react';
 import { Track, Question, Difficulty, XP_VALUES, TRACK_NAMES } from '@/types/drill';
 import { useToast } from '@/hooks/use-toast';
+import { validateAnswer } from '@/utils/answerValidation';
 
 const PracticeMode = () => {
   const { track } = useParams<{ track: Track }>();
@@ -119,10 +120,7 @@ const PracticeMode = () => {
   const handleSubmit = () => {
     if (!currentQuestion || !userAnswer) return;
 
-    const numericAnswer = parseFloat(userAnswer);
-    const correct = typeof currentQuestion.answer === 'string' 
-      ? userAnswer.trim().toLowerCase() === currentQuestion.answer.toLowerCase()
-      : Math.abs(numericAnswer - currentQuestion.answer) < 0.01;
+    const correct = validateAnswer(userAnswer, currentQuestion.answer);
     
     setIsCorrect(correct);
     

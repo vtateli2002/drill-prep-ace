@@ -3551,7 +3551,9 @@ What is the asset turnover ratio?`,
 Revenue: $1,200,000
 Ending Accounts Receivable: $100,000
 
-Assume all sales are made on credit. What is the DSO (Days Sales Outstanding)? Use a 365-day year.`,
+Assume all sales are made on credit. What is the DSO (Days Sales Outstanding)? Use a 365-day year.
+
+*Note: Please round your answer to the nearest tenth (1 decimal place).*`,
     answer: 30.4,
     unit: 'days',
     hint: 'DSO = (Accounts Receivable ÷ Revenue) × 365',
@@ -3791,7 +3793,9 @@ Accounts Receivable: $60,000
 Inventory: $40,000
 Current Liabilities: $90,000
 
-What is the quick ratio?`,
+What is the quick ratio?
+
+*Note: Please round your answer to the nearest hundredth (2 decimal places).*`,
     answer: 1.22,
     hint: 'Quick Ratio = (Cash + AR) ÷ Current Liabilities',
     explanation: `Calculation:
@@ -10842,7 +10846,9 @@ Net Income: $120 million
 EBITDA: $220 million
 Revenue: $1.3 billion
 
-What is its P/E multiple?`,
+What is its P/E multiple?
+
+*Note: Please round your answer to the nearest hundredth (2 decimal places).*`,
     answer: 18.33,
     hint: 'P/E = Market Cap ÷ Net Income',
     explanation: `Formula: P/E = Equity Value ÷ Net Income = $2.2B ÷ $120M = 18.33
@@ -10883,7 +10889,9 @@ Cash: $250M
 EBIT: $350M
 Depreciation & Amortization: $50M
 
-What is its EV/EBITDA multiple?`,
+What is its EV/EBITDA multiple?
+
+*Note: Please round your answer to the nearest hundredth (2 decimal places).*`,
     answer: 10.00,
     hint: 'Calculate EBITDA first, then Enterprise Value, then divide.',
     explanation: `Formula: EV/EBITDA = Enterprise Value ÷ EBITDA = $3.9B ÷ $400M = 9.75 ≈ 10.00
@@ -10935,7 +10943,9 @@ Cash: $300M
 EBIT: $350M
 D&A: $50M
 
-By how much does Company A's EV/EBITDA multiple exceed Company B's?`,
+By how much does Company A's EV/EBITDA multiple exceed Company B's?
+
+*Note: Please round your answer to the nearest hundredth (2 decimal places).*`,
     answer: 1.85,
     hint: 'Calculate both companies\' EV/EBITDA multiples, then find the difference.',
     explanation: `Formula: Difference = Company A EV/EBITDA - Company B EV/EBITDA = 14.6x - 12.75x = 1.85x
