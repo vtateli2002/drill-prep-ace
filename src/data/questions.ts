@@ -11480,5 +11480,138 @@ Final Answer: $4,400,000,000`,
       formula: 'Market Premium = Market Value - Book Value, indicating investor expectations vs accounting value',
       example: 'Large differences often indicate significant intangible value, growth expectations, or asset undervaluation not captured in book value'
     }
+  },
+  // VALUATION QUESTIONS - Enterprise Value - Basic Components
+  {
+    id: 'val-easy-ev-basic-1',
+    track: 'valuation',
+    difficulty: 'easy',
+    title: 'Enterprise Value – Basic Components',
+    description: `A company has the following:
+
+Equity Value: $1.2 billion
+Cash: $150 million
+Debt: $600 million
+Operating lease liabilities: $300 million
+Unfunded pension liabilities: $200 million
+
+What is the Enterprise Value?`,
+    answer: 2150000000,
+    hint: 'EV = Equity Value + Debt-like items - Cash',
+    explanation: `Enterprise Value = Equity Value + Debt + Operating Leases + Pension Liabilities – Cash
+
+• • •
+
+Step-by-step calculation:
+
+Enterprise Value = $1,200,000,000 + $600,000,000 + $300,000,000 + $200,000,000 – $150,000,000
+
+Enterprise Value = $2,150,000,000
+
+Key Components:
+• Equity Value: Starting point (market value)
+• Add: All debt-like obligations
+• Add: Operating lease liabilities (debt-equivalent)
+• Add: Unfunded pension liabilities (debt-equivalent)
+• Subtract: Cash (reduces net obligations)
+
+Final Answer: $2,150,000,000`,
+    learnContent: {
+      concept: 'Enterprise Value represents the total value of a company\'s operations, adding debt-like obligations to equity value and subtracting cash.',
+      formula: 'EV = Equity Value + Total Debt + Debt-Equivalents - Cash',
+      example: 'Common debt-equivalents: operating leases, pension obligations, preferred stock, minority interest'
+    }
+  },
+  {
+    id: 'val-medium-ev-comprehensive-1',
+    track: 'valuation',
+    difficulty: 'medium',
+    title: 'Enterprise Value – Comprehensive Components',
+    description: `A company has:
+
+Market Cap: $2.5 billion
+Cash and short-term investments: $300 million
+Total debt: $700 million
+Unfunded pension liabilities: $250 million
+OPEB obligations (unfunded): $100 million
+Finance lease liabilities: $400 million
+Operating lease liabilities: $350 million
+
+What is the Enterprise Value?`,
+    answer: 4000000000,
+    hint: 'Include all debt-like obligations: debt, leases, pension, OPEB',
+    explanation: `Enterprise Value = Market Cap + Debt + Finance Leases + Operating Leases + Pension Liabilities + Unfunded OPEB – Cash
+
+• • •
+
+Step-by-step calculation:
+
+Enterprise Value = $2,500,000,000 + $700,000,000 + $400,000,000 + $350,000,000 + $250,000,000 + $100,000,000 – $300,000,000
+
+Enterprise Value = $4,000,000,000
+
+Debt-like Items Added:
+• Total debt: $700M
+• Finance lease liabilities: $400M
+• Operating lease liabilities: $350M
+• Unfunded pension liabilities: $250M
+• OPEB obligations (unfunded): $100M
+
+Cash Subtracted: $300M
+
+Final Answer: $4,000,000,000`,
+    learnContent: {
+      concept: 'Comprehensive EV calculation includes all forms of debt, lease obligations, and unfunded liabilities that represent claims on the enterprise.',
+      formula: 'EV = Market Cap + All Debt + All Leases + Pension/OPEB Liabilities - Cash',
+      example: 'OPEB = Other Post-Employment Benefits (healthcare, life insurance for retirees)'
+    }
+  },
+  {
+    id: 'val-hard-ev-complex-1',
+    track: 'valuation',
+    difficulty: 'hard',
+    title: 'Enterprise Value – Complex Capital Structure',
+    description: `You're analyzing a firm with:
+
+Market Cap: $6.2 billion
+Cash & equivalents: $450 million
+Gross debt: $1.1 billion
+Finance lease liabilities: $300 million
+Operating lease liabilities: $500 million
+Unfunded pension obligations: $400 million
+OPEB obligations (unfunded by $50 million)
+Preferred stock: $250 million
+Noncontrolling interest: $150 million
+
+What is the Enterprise Value?`,
+    answer: 8500000000,
+    hint: 'Include preferred stock and noncontrolling interest as equity-like claims',
+    explanation: `Enterprise Value = Equity Value + Gross Debt + Finance Leases + Operating Leases + Unfunded Pension + Unfunded OPEB + Preferred Stock + Noncontrolling Interest – Cash
+
+• • •
+
+Step-by-step calculation:
+
+Enterprise Value = $6,200,000,000 + $1,100,000,000 + $300,000,000 + $500,000,000 + $400,000,000 + $50,000,000 + $250,000,000 + $150,000,000 – $450,000,000
+
+Enterprise Value = $8,500,000,000
+
+Complex Capital Structure Components:
+• Market Cap (common equity): $6,200M
+• Gross debt: $1,100M
+• Finance lease liabilities: $300M
+• Operating lease liabilities: $500M
+• Unfunded pension obligations: $400M
+• Unfunded OPEB obligations: $50M
+• Preferred stock: $250M
+• Noncontrolling interest: $150M
+• Less: Cash & equivalents: ($450M)
+
+Final Answer: $8,500,000,000`,
+    learnContent: {
+      concept: 'Complex EV calculations include all forms of capital claims: debt, leases, unfunded obligations, preferred equity, and noncontrolling interests.',
+      formula: 'EV = Common Equity + Debt + Leases + Unfunded Liabilities + Preferred + NCI - Cash',
+      example: 'Noncontrolling interest represents minority shareholders\' claims on subsidiaries, treated as equity-like in EV calculations'
+    }
   }
 ];
