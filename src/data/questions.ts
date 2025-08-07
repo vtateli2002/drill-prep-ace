@@ -2105,6 +2105,142 @@ Key Points:
       example: 'Do not subtract "held for sale" assets if operational\nAdd unfunded pensions, leases, or legal obligations as debt-like liabilities\n$1B MC + $500M Debt + $100M Pensions − $200M Cash − $50M Investments = $1.35B EV'
     }
   },
+  {
+    id: 'val-easy-2',
+    track: 'valuation',
+    difficulty: 'easy',
+    title: 'Fully Diluted Equity Value - Treasury Stock Method',
+    description: `A company has the following:
+
+Shares Outstanding: 40 million
+Current Share Price: $25
+In-the-money Options: 2 million with a $15 strike price
+
+The company also has $50 million in cash and $200 million in debt.
+
+Assume the Treasury Stock Method applies to options.
+
+What is the company's fully diluted Equity Value?`,
+    answer: 1020000000,
+    unit: '$',
+    hint: 'Calculate fully diluted shares using the Treasury Stock Method, then multiply by share price.',
+    explanation: `**Formula:** Equity Value = (Basic Shares + Net Dilutive Shares) × Share Price
+
+**Step-by-step calculation:**
+
+1. **Basic shares:** 40 million
+
+2. **Calculate option proceeds:** 2M options × $15 strike = $30M total proceeds
+
+3. **Calculate shares repurchased:** $30M proceeds ÷ $25 current price = 1.2M shares
+
+4. **Calculate net new shares from options:** 2M new shares - 1.2M repurchased = 0.8M net dilution
+
+5. **Calculate total diluted shares:** 40M + 0.8M = 40.8M shares
+
+6. **Calculate Equity Value:** 40.8M shares × $25 = $1,020M = $1.02B
+
+The Treasury Stock Method assumes the company uses option exercise proceeds to repurchase shares at current market price, creating net dilution of only 0.8M shares rather than the full 2M options.`,
+    learnContent: {
+      concept: 'Equity Value = Share Price × Fully Diluted Shares Outstanding',
+      formula: 'Fully Diluted Equity Value = (Basic + Net Dilutive Shares) × Share Price',
+      example: '• 1M options @ $10, stock at $30 = $30M value, $10M proceeds → 0.67M net dilution\n• 50M shares @ $20 = $1.00B Equity Value'
+    }
+  },
+  {
+    id: 'val-medium-2',
+    track: 'valuation',
+    difficulty: 'medium',
+    title: 'Complex Dilution Analysis - Multiple Securities',
+    description: `A company reports the following:
+
+Basic Shares Outstanding: 80 million
+Share Price: $18
+5 million in-the-money options with a $12 strike price
+3 million RSUs (expected to vest)
+4 million convertible bonds, each convertible into 1 share
+
+Assume the share price is above the conversion threshold. Use the Treasury Stock Method for options and assume full dilution for RSUs and convertibles.
+
+What is the company's fully diluted Equity Value?`,
+    answer: 1596060000,
+    unit: '$',
+    hint: 'Apply TSM for options. RSUs and convertibles are fully dilutive and added in full.',
+    explanation: `**Formula:** Equity Value = (Basic + Net Options + RSUs + Convertibles) × Share Price
+
+**Step-by-step calculation:**
+
+1. **Basic Shares:** 80 million
+
+2. **Options (Treasury Stock Method):**
+   - Option proceeds: 5M × $12 = $60M
+   - Shares repurchased: $60M ÷ $18 = 3.333M
+   - Net new shares from options: 5M - 3.333M = 1.667M
+
+3. **RSUs:** 3M (added fully when expected to vest)
+
+4. **Convertibles:** 4M (added fully when in-the-money)
+
+5. **Total Diluted Shares:** 80M + 1.667M + 3M + 4M = 88.667M
+
+6. **Equity Value:** 88.667M × $18 = $1,596.06M = $1,596,060,000
+
+RSUs and convertible securities are typically added in full when calculating dilution, while options use the Treasury Stock Method to account for the proceeds generated.`,
+    learnContent: {
+      concept: 'Fully diluted Equity Value incorporates TSM for options and full add-in for RSUs and in-the-money convertibles.',
+      formula: 'Equity Value = (Basic + Net Options + RSUs + Convertibles) × Share Price',
+      example: '• Options @ strike below share price dilute via TSM\n• RSUs always added fully when expected to vest'
+    }
+  },
+  {
+    id: 'val-hard-2',
+    track: 'valuation',
+    difficulty: 'hard',
+    title: 'Advanced Dilution with Convertible Bonds',
+    description: `A company reports:
+
+Basic Shares: 120 million
+Share Price: $22
+10 million options with a $10 strike price
+6 million RSUs (fully expected to vest)
+$200 million of convertible bonds, each convertible into shares at a $16 price
+
+Assume:
+- Share price is above the conversion threshold
+- Options use Treasury Stock Method
+- RSUs and convertibles are fully dilutive
+
+What is the company's fully diluted Equity Value?`,
+    answer: 3166980000,
+    unit: '$',
+    hint: 'Apply TSM for options, add RSUs fully, and determine convertible share count using the conversion price.',
+    explanation: `**Formula:** Equity Value = (Basic + Net Options + RSUs + Convertible Shares) × Share Price
+
+**Step-by-step calculation:**
+
+1. **Basic Shares:** 120 million
+
+2. **Options (Treasury Stock Method):**
+   - Option proceeds: 10M × $10 = $100M
+   - Shares repurchased: $100M ÷ $22 = 4.545M
+   - Net dilution: 10M - 4.545M = 5.455M
+
+3. **RSUs:** 6M (added fully when expected to vest)
+
+4. **Convertible Bonds:**
+   - Convertible shares: $200M bond value ÷ $16 conversion price = 12.5M shares
+
+5. **Total Diluted Shares:** 120M + 5.455M + 6M + 12.5M = 143.955M
+
+6. **Equity Value:** 143.955M × $22 = $3,166.98M = $3,166,980,000
+
+Convertible bonds are valued at their conversion ratio (bond value ÷ conversion price) when the current share price exceeds the conversion threshold, making conversion economically attractive.`,
+    learnContent: {
+      concept: 'Fully diluted Equity Value includes all in-the-money instruments and RSUs, with precise conversion logic.',
+      formula: 'Equity Value = (Basic + Net Options + RSUs + Convertible Shares) × Share Price',
+      example: '• $150M in convertibles @ $15 = 10M shares if stock > $15\n• Strike prices below share price = dilutive under TSM'
+    }
+  },
 
   {
     id: 'acc-easy-21',
