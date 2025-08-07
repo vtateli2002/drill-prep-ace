@@ -628,8 +628,8 @@ const QuestionView = () => {
                             </p>
                           </div>
                           
-                          <div className="mt-6 p-4 bg-success/20 rounded-lg border border-success/30">
-                            <p className="font-semibold text-center text-foreground leading-relaxed">Formula: Revenue recognized = Services performed (under accrual)</p>
+                          <div className="mt-6 p-5 bg-success/30 rounded-lg border-2 border-success/50 shadow-inner">
+                            <p className="font-bold text-lg text-center text-success-foreground leading-relaxed">💡 Formula: Revenue recognized = Services performed (under accrual)</p>
                           </div>
                         </CardContent>
                       </Card>
@@ -650,15 +650,15 @@ const QuestionView = () => {
                         </CardContent>
                       </Card>
 
-                      {/* Examples - Lighter Green */}
-                      <Card className="border-green-600/20 bg-gradient-to-br from-green-900/10 to-gray-800/10 shadow-lg">
+                      {/* Examples - Consistent Green */}
+                      <Card className="border-success/30 bg-gradient-to-br from-success/10 to-success/5 shadow-lg">
                         <CardHeader className="pb-3">
-                          <CardTitle className="text-xl text-green-400 flex items-center gap-2">
+                          <CardTitle className="text-xl text-success flex items-center gap-2">
                             📚 Examples
                           </CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-6">
-                          <div className="p-4 border border-green-600/20 rounded-lg bg-green-900/10">
+                          <div className="p-4 border border-success/20 rounded-lg bg-success/5">
                             <h4 className="font-semibold mb-2 text-foreground">Example 1:</h4>
                             <p className="mb-2 text-base text-foreground leading-relaxed">Work completed in December, paid in January</p>
                             <div className="ml-4 space-y-1 text-sm">
@@ -667,7 +667,7 @@ const QuestionView = () => {
                             </div>
                           </div>
                           
-                          <div className="p-4 border border-green-600/20 rounded-lg bg-green-900/10">
+                          <div className="p-4 border border-success/20 rounded-lg bg-success/5">
                             <h4 className="font-semibold mb-2 text-foreground">Example 2:</h4>
                             <p className="mb-2 text-base text-foreground leading-relaxed">$5K paid in advance for a February service</p>
                             <div className="ml-4 space-y-1 text-sm">
@@ -676,7 +676,7 @@ const QuestionView = () => {
                             </div>
                           </div>
                           
-                          <div className="p-4 border border-green-600/20 rounded-lg bg-green-900/10">
+                          <div className="p-4 border border-success/20 rounded-lg bg-success/5">
                             <h4 className="font-semibold mb-2 text-foreground">Example 3:</h4>
                             <p className="mb-2 text-base text-foreground leading-relaxed">Services in March, paid in May</p>
                             <div className="ml-4 space-y-1 text-sm">
