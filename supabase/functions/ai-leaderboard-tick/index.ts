@@ -18,15 +18,18 @@ const calculateLevelFromXP = (totalXP: number): number => {
   }
 }
 
-// Build baseline XP targets for Top 20 as requested
-function buildBaselineTargets(): number[] {
-  const targets: number[] = [10000, 9000, 8000]
-  // 17 values between 5000 and 7000 (inclusive), ensure some spread to avoid ties
-  for (let i = 0; i < 17; i++) {
-    const val = 5000 + Math.floor(Math.random() * 2001) // 5000-7000
-    targets.push(val)
-  }
-  return targets
+// Title calculation consistent with DB function calculate_title_from_rank
+const calculateTitleFromRank = (userRank: number, totalUsers: number): string => {
+  if (userRank === 1) return 'CEO'
+  if (userRank === 2) return 'CFO'
+  if (userRank === 3) return 'CIO'
+  const percentile = (1 - (userRank - 1) / totalUsers) * 100
+  if (percentile >= 99.9) return 'Partner'
+  if (percentile >= 99) return 'Managing Director'
+  if (percentile >= 95) return 'Vice President'
+  if (percentile >= 90) return 'Associate'
+  if (percentile >= 80) return 'Analyst'
+  return 'Intern'
 }
 
 Deno.serve(async (req) => {
@@ -40,70 +43,96 @@ Deno.serve(async (req) => {
     const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
     const supabase = createClient(supabaseUrl, supabaseServiceKey)
 
-    // 1) Fetch AI rivals (bots)
-    const { data: bots, error: botsError } = await supabase
+    // 1) Snapshot previous rankings (across ALL users)
+    const { data: prevList, error: prevErr } = await supabase
       .from('profiles')
       .select('id, xp')
-      .eq('is_bot', true)
+      .order('xp', { ascending: false })
 
-    if (botsError) {
-      console.error('Error fetching AI rivals:', botsError)
-      return new Response(JSON.stringify({ error: 'Failed to fetch AI rivals' }), {
+    if (prevErr) {
+      console.error('Failed to fetch previous rankings:', prevErr)
+      return new Response(JSON.stringify({ error: 'Failed to fetch previous rankings' }), {
         status: 500,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       })
     }
 
-    if (!bots || bots.length === 0) {
-      return new Response(JSON.stringify({ message: 'No AI rivals found' }), {
-        status: 200,
+    const prevRankMap = new Map<string, number>()
+    prevList?.forEach((u, idx) => prevRankMap.set(u.id, idx + 1))
+
+    // 2) Fetch AI users (bots) and increment XP by +10..+30 only
+    const { data: bots, error: botsErr } = await supabase
+      .from('profiles')
+      .select('id, xp')
+      .eq('is_bot', true)
+
+    if (botsErr) {
+      console.error('Failed to fetch AI users:', botsErr)
+      return new Response(JSON.stringify({ error: 'Failed to fetch AI users' }), {
+        status: 500,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       })
     }
 
-    // 2) Determine baseline targets for shaping Top 20 (non-decreasing only)
-    const baselineTargets = buildBaselineTargets()
-
-    // Sort bots by current XP desc to assign baseline to top N bots
-    const sortedBots = [...bots].sort((a, b) => b.xp - a.xp)
-
     const nowISO = new Date().toISOString()
-    const updates = sortedBots.map((bot, idx) => {
-      const baseIncrease = 10 + Math.floor(Math.random() * 21) // 10-30
-      // Seed target for top 20 bots only; others just get incremental gains
-      const seedTarget = idx < 20 ? baselineTargets[idx] : undefined
-      const targetXP = seedTarget !== undefined ? Math.max(bot.xp + baseIncrease, seedTarget) : bot.xp + baseIncrease
-      const newXP = Math.max(bot.xp, targetXP) // never decrease
+    const botUpdates = (bots ?? []).map((b) => {
+      const inc = 10 + Math.floor(Math.random() * 21) // 10..30
+      const newXP = Math.max(0, (b.xp ?? 0) + inc)
       const newLevel = calculateLevelFromXP(newXP)
-      return { id: bot.id, xp: newXP, level: newLevel, updated_at: nowISO }
+      return { id: b.id as string, xp: newXP, level: newLevel, updated_at: nowISO }
     })
 
-    // 3) Persist updates in batches
-    const batchSize = 50
-    for (let i = 0; i < updates.length; i += batchSize) {
-      const batch = updates.slice(i, i + batchSize)
+    // 3) Persist bot XP/level updates in batches
+    const batchSize = 100
+    for (let i = 0; i < botUpdates.length; i += batchSize) {
+      const batch = botUpdates.slice(i, i + batchSize)
       for (const u of batch) {
         const { error: upErr } = await supabase
           .from('profiles')
           .update({ xp: u.xp, level: u.level, updated_at: u.updated_at })
           .eq('id', u.id)
-        if (upErr) {
-          console.error('Failed to update bot', u.id, upErr)
-        }
+        if (upErr) console.error('Failed to update bot', u.id, upErr)
       }
     }
 
-    // 4) Trigger rank change recalculation (existing edge function)
-    try {
-      // Using functions.invoke keeps everything within Supabase infra
-      const { error: invokeErr } = await supabase.functions.invoke('update-rank-changes', { body: {} })
-      if (invokeErr) console.error('Failed to invoke update-rank-changes:', invokeErr)
-    } catch (e) {
-      console.error('Error invoking update-rank-changes:', e)
+    // 4) Compute new rankings and rank changes (all users)
+    const { data: currList, error: currErr } = await supabase
+      .from('profiles')
+      .select('id, xp')
+      .order('xp', { ascending: false })
+
+    if (currErr) {
+      console.error('Failed to fetch current rankings:', currErr)
+      return new Response(JSON.stringify({ error: 'Failed to fetch current rankings' }), {
+        status: 500,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      })
     }
 
+    const totalUsers = currList?.length ?? 0
+    const rankUpdates = (currList ?? []).map((u, idx) => {
+      const currentRank = idx + 1
+      const prevRank = prevRankMap.get(u.id as string) ?? currentRank
+      const rankChange = prevRank - currentRank // + => improved
+      const newTitle = calculateTitleFromRank(currentRank, totalUsers)
+      return { id: u.id as string, rank_change: rankChange, rank: newTitle }
+    })
+
+    for (let i = 0; i < rankUpdates.length; i += batchSize) {
+      const batch = rankUpdates.slice(i, i + batchSize)
+      for (const u of batch) {
+        const { error: upErr } = await supabase
+          .from('profiles')
+          .update({ rank_change: u.rank_change, rank: u.rank, updated_at: nowISO })
+          .eq('id', u.id)
+        if (upErr) console.error('Failed to update rank change', u.id, upErr)
+      }
+    }
+
+    console.log(`Updated ${botUpdates.length} AI users; recalculated rank changes for ${rankUpdates.length} users`)
+
     return new Response(
-      JSON.stringify({ success: true, updated: updates.length }),
+      JSON.stringify({ success: true, botsUpdated: botUpdates.length, ranksRecalculated: rankUpdates.length }),
       { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     )
   } catch (e) {
