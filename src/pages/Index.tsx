@@ -20,44 +20,42 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Seo title="Drill — LeetCode for Investment Banking" description="Master IB technicals faster with gamified learning, real interview questions, and an AI rival." canonical={window.location.origin + '/'} />
-      {/* Hero Section */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="text-center space-y-8">
-          <div className="space-y-4">
-            <div className="flex justify-center">
-              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-2xl">D</span>
+      <header className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid opacity-[0.25] mask-fade-b pointer-events-none" aria-hidden="true" />
+        <div className="container mx-auto px-4 py-20 md:py-28">
+          <div className="text-center max-w-3xl mx-auto space-y-6">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">
+              The LeetCode for Investment Banking
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground">
+              Master technical interviews faster than ever before — with real questions, XP, and AI rivals.
+            </p>
+            <p className="text-base text-muted-foreground">
+              Built for aspiring analysts at top firms. Train with gamified practice sourced from real interviews.
+            </p>
+            <div className="pt-2">
+              <Button size="lg" onClick={() => navigate('/auth')} className="px-8 py-3 text-lg">
+                Start Your Prep Journey
+              </Button>
+            </div>
+            {/* Trust Bar */}
+            <div className="pt-10">
+              <p className="text-sm text-muted-foreground mb-4">
+                Students around the world have used Drill to land offers at top firms:
+              </p>
+              <div className="relative">
+                <div className="flex gap-3 md:gap-6 overflow-x-auto no-scrollbar justify-start md:justify-center px-1">
+                  {['Goldman Sachs','Evercore','Morgan Stanley','J.P. Morgan','Centerview','Lazard','PJT','Moelis','Bank of America','Citi','Perella Weinberg','Guggenheim'].map((firm) => (
+                    <span key={firm} className="shrink-0 rounded-full border border-border bg-card/50 px-3 md:px-4 py-2 text-xs md:text-sm text-foreground/90">
+                      {firm}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-            <h1 className="text-5xl font-bold text-foreground">
-              Master Investment Banking
-              <span className="block text-primary">Through Gamified Learning</span>
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Drill helps you ace investment banking interviews by gamifying technical prep. 
-              Solve questions, earn XP, and race against AI rivals to become interview-ready.
-            </p>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              onClick={() => navigate('/auth')}
-              className="px-8 py-3 text-lg"
-            >
-              Start Your Journey
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              onClick={() => navigate('/library')}
-              className="px-8 py-3 text-lg"
-            >
-              Browse Library
-            </Button>
           </div>
         </div>
-      </div>
+      </header>
 
       {/* Value Propositions */}
       <div className="container mx-auto px-4 py-16 border-t border-border">
