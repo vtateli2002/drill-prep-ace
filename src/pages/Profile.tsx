@@ -54,11 +54,13 @@ const Profile = () => {
   }, []);
 
   const rivalDailyXP = (() => {
-    const deadline = profile.interview_deadline ? new Date(profile.interview_deadline) : null;
-    const created = profile.created_at ? new Date(profile.created_at) : null;
+    const deadlineStr = profile?.interview_deadline ?? null;
+    const createdStr = profile?.created_at ?? null;
     const totalTargetXP = 800;
     const defaultDaily = 100;
-    if (deadline && created) {
+    if (deadlineStr && createdStr) {
+      const deadline = new Date(deadlineStr);
+      const created = new Date(createdStr);
       const daysTotal = Math.max(1, Math.ceil((deadline.getTime() - created.getTime()) / (1000 * 60 * 60 * 24)) + 1);
       const val = Math.round((totalTargetXP / daysTotal) / 10) * 10;
       return Math.max(10, val);
