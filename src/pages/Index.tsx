@@ -131,7 +131,7 @@ const Index = () => {
           </p>
           <Button 
             size="lg" 
-            onClick={() => navigate('/onboarding')}
+            onClick={() => navigate('/auth')}
             className="px-8 py-3 text-lg"
           >
             Begin Your Prep Journey
