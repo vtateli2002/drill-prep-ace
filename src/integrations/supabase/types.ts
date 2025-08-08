@@ -149,6 +149,7 @@ export type Database = {
         Row: {
           badges: Json | null
           created_at: string
+          current_rank: number | null
           difficulty_xp: Json | null
           id: string
           interview_deadline: string | null
@@ -170,6 +171,7 @@ export type Database = {
         Insert: {
           badges?: Json | null
           created_at?: string
+          current_rank?: number | null
           difficulty_xp?: Json | null
           id: string
           interview_deadline?: string | null
@@ -191,6 +193,7 @@ export type Database = {
         Update: {
           badges?: Json | null
           created_at?: string
+          current_rank?: number | null
           difficulty_xp?: Json | null
           id?: string
           interview_deadline?: string | null
