@@ -3,10 +3,11 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Checkbox } from '@/components/ui/checkbox';
-import { ArrowRight, Target, BookOpen, Bot, Shield, Bolt } from 'lucide-react';
+import { ArrowRight, Target, BookOpen } from 'lucide-react';
 import { Track, TRACK_NAMES } from '@/types/drill';
 import { useProfile } from '@/hooks/useProfile';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import RivalSelect from '@/components/RivalSelect';
 
 type OnboardingStep = 'welcome' | 'timeline' | 'rival' | 'tracks' | 'complete';
 type Goal = 'interview' | 'learning';
@@ -19,6 +20,27 @@ const TIMELINE_DAYS: Record<Timeline, number> = {
   '1-month': 30,
   '3-months': 90,
   'more': 120
+};
+
+const RIVAL_TAUNTS: Record<RivalId, string[]> = {
+  constance: [
+    'You’re falling behind. I just ran a 13-tab LBO before breakfast.',
+    'You haven’t solved anything today. How cute.'
+  ],
+  chadson: [
+    'Haha bro you’re studying? I just got fast-tracked without doing the HireVue.',
+    'Chadson already solved 15 problems today. Did you blink or something?'
+  ],
+  chartreuse: [
+    'I calculated your obsolescence in NPV. Spoiler: It’s negative.',
+    'You sleep. I compound.'
+  ]
+};
+
+const getRandomTaunt = (id: RivalId | null): string => {
+  if (!id) return '';
+  const list = RIVAL_TAUNTS[id];
+  return list[Math.floor(Math.random() * list.length)];
 };
 
 const Onboarding = () => {
@@ -188,87 +210,36 @@ const Onboarding = () => {
   }
 
   if (step === 'rival') {
+    const timelineDays = timeline ? TIMELINE_DAYS[timeline] : 30;
+    const displayName = selectedRival ? `${selectedRival.charAt(0).toUpperCase()}${selectedRival.slice(1)}` : '';
+    const taunt = getRandomTaunt(selectedRival);
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-4">
-        <Card className="w-full max-w-4xl">
-          <CardHeader className="text-center">
-            <CardTitle className="text-2xl">Choose your AI Rival</CardTitle>
-            <p className="text-muted-foreground">Pick who you'll race against throughout your plan.</p>
-          </CardHeader>
-          
-          <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {/* Constance */}
-              <button onClick={() => handleChooseRival('constance')} className="rounded-xl border border-border bg-muted/40 p-4 text-left hover:shadow-lg hover-scale">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-12 h-12 rounded bg-primary/10 flex items-center justify-center">
-                    <Shield className="text-primary" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-foreground">Constance</div>
-                    <div className="text-xs text-muted-foreground">The Technical Terminator</div>
-                  </div>
-                </div>
-                <p className="text-sm text-muted-foreground mb-3">Never sleeps. Speaks in EBITDA. Patagonia vest on, calculator in hand.</p>
-                <ul className="text-xs text-muted-foreground space-y-1">
-                  <li>• Constant pace (~125 XP/day)</li>
-                  <li>• Strong: Accounting & Valuation</li>
-                  <li>• Weak: Behavioral</li>
-                </ul>
-              </button>
+        <div className="w-full max-w-5xl space-y-4">
+          <div className="text-center">
+            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">Choose Your AI Rival</h1>
+            <p className="text-muted-foreground mt-1">Pick your opponent. XP pace adapts to your timeline.</p>
+          </div>
 
-              {/* Chadson */}
-              <button onClick={() => handleChooseRival('chadson')} className="rounded-xl border border-border bg-muted/40 p-4 text-left hover:shadow-lg hover-scale">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-12 h-12 rounded bg-primary/10 flex items-center justify-center">
-                    <Bolt className="text-primary" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-foreground">Chadson</div>
-                    <div className="text-xs text-muted-foreground">The Networking God</div>
-                  </div>
-                </div>
-                <p className="text-sm text-muted-foreground mb-3">Got his offer on vibes. Plays beer pong with MDs.</p>
-                <ul className="text-xs text-muted-foreground space-y-1">
-                  <li>• Erratic spikes (avg ~100 XP/day)</li>
-                  <li>• Strong: Fit & Behaviorals</li>
-                  <li>• Weak: Hardcore math</li>
-                </ul>
-              </button>
-
-              {/* Chartreuse */}
-              <button onClick={() => handleChooseRival('chartreuse')} className="rounded-xl border border-border bg-muted/40 p-4 text-left hover:shadow-lg hover-scale">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-12 h-12 rounded bg-primary/10 flex items-center justify-center">
-                    <Bot className="text-primary" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-foreground">Chartreuse</div>
-                    <div className="text-xs text-muted-foreground">The Unhinged Quant Queen</div>
-                  </div>
-                </div>
-                <p className="text-sm text-muted-foreground mb-3">47 tabs open. DCFs as religion. Wild energy.</p>
-                <ul className="text-xs text-muted-foreground space-y-1">
-                  <li>• Chaotic bursts (avg ~80 XP/day)</li>
-                  <li>• Strong: Modeling</li>
-                  <li>• Weak: Communication</li>
-                </ul>
-              </button>
-            </div>
-          </CardContent>
-        </Card>
+          <RivalSelect
+            selectedRival={selectedRival}
+            timelineDays={timelineDays}
+            onChoose={handleChooseRival}
+          />
+        </div>
 
         <Dialog open={confirmOpen} onOpenChange={setConfirmOpen}>
-          <DialogContent>
+          <DialogContent className="max-w-md">
             <DialogHeader>
-              <DialogTitle>
-                {selectedRival ? `You've chosen ${selectedRival.charAt(0).toUpperCase() + selectedRival.slice(1)}.` : 'Confirm Rival'}
+              <DialogTitle className="text-center text-xl sm:text-2xl">
+                {selectedRival ? `🔥 ${displayName.toUpperCase()} HAS ENTERED THE CHAT 🔥` : 'Confirm Rival'}
               </DialogTitle>
-              <DialogDescription>
+              <DialogDescription className="text-center mt-2">
+                {taunt && <div className="mb-2 italic">“{taunt}”</div>}
                 Your journey begins now. Keep up, or get left behind.
               </DialogDescription>
             </DialogHeader>
-            <div className="flex justify-end gap-2">
+            <div className="flex justify-center gap-2">
               <Button variant="ghost" onClick={() => setConfirmOpen(false)}>Change</Button>
               <Button onClick={completeRival}>Continue</Button>
             </div>
