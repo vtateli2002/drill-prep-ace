@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import type { RivalId } from '@/components/RivalSelect';
+import type { RivalId } from '@/features/rivals/utils/rivals';
 import constanceImg from '@/assets/rivals/constance.png';
 import chadsonImg from '@/assets/rivals/chadson.png';
 import chartreuseImg from '@/assets/rivals/chartreuse.png';

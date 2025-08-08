@@ -7,7 +7,7 @@ import { ArrowRight, Target, BookOpen } from 'lucide-react';
 import { Track, TRACK_NAMES } from '@/types/drill';
 import { useProfile } from '@/hooks/useProfile';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import RivalSelect from '@/components/RivalSelect';
+import { RivalSelect } from '@/features/rivals';
 import RivalCutsceneModal from '@/components/RivalCutsceneModal';
 
 type OnboardingStep = 'welcome' | 'timeline' | 'rival' | 'tracks' | 'complete';

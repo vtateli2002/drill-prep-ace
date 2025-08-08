@@ -1,19 +1,19 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Bot, Clock } from 'lucide-react';
 import { AIRival } from '@/types/drill';
-import { getRivalInfo } from '@/components/RivalHeader';
+import { getRivalInfo } from '@/features/rivals/utils/rivals';
 
-interface RivalProgressProps {
+interface RivalCardProps {
   rival: AIRival;
   userXP: number;
   rivalId?: string | null;
 }
 
-const RivalProgress = ({ rival, userXP, rivalId }: RivalProgressProps) => {
+const RivalCard = ({ rival, userXP, rivalId }: RivalCardProps) => {
   const isAhead = userXP > rival.totalXP;
   const xpDifference = Math.abs(userXP - rival.totalXP);
   const rivalInfo = getRivalInfo(rivalId);
-  
+
   return (
     <Card className={`border shadow-sm`}>
       <CardHeader className="pb-3">
@@ -31,7 +31,7 @@ const RivalProgress = ({ rival, userXP, rivalId }: RivalProgressProps) => {
           />
         </div>
       </CardHeader>
-      
+
       <CardContent className="space-y-4">
         <div className="grid grid-cols-2 gap-4">
           <div>
@@ -43,7 +43,7 @@ const RivalProgress = ({ rival, userXP, rivalId }: RivalProgressProps) => {
             <div className="text-xl font-bold text-foreground">{rival.totalXP.toLocaleString()}</div>
           </div>
         </div>
-        
+
         <div className="space-y-2">
           <div className="flex justify-between text-sm">
             <span className="text-muted-foreground">Race Status</span>
@@ -51,8 +51,8 @@ const RivalProgress = ({ rival, userXP, rivalId }: RivalProgressProps) => {
               {isAhead ? `+${xpDifference} ahead` : `-${xpDifference} behind`}
             </span>
           </div>
-          
-          <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Clock size={14} />
             <span>{rival.daysRemaining} days remaining</span>
             <span>•</span>
@@ -68,4 +68,4 @@ const RivalProgress = ({ rival, userXP, rivalId }: RivalProgressProps) => {
   );
 };
 
-export default RivalProgress;
+export default RivalCard;

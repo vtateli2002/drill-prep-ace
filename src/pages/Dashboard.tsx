@@ -3,13 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import XPProgress from '@/components/XPProgress';
 import TrackCard from '@/components/TrackCard';
-import RivalProgress from '@/components/RivalProgress';
 import RivalMotivationModal from '@/components/RivalMotivationModal';
 import DailyChallengeModal from '@/components/DailyChallengeModal';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Target, Loader2, Bot } from 'lucide-react';
-import { getRivalInfo } from '@/components/RivalHeader';
+import { Target, Loader2 } from 'lucide-react';
+import { RivalCard } from '@/features/rivals';
+import { getRivalInfo } from '@/features/rivals/utils/rivals';
 import { Track, AIRival, TRACK_NAMES } from '@/types/drill';
 import { useProfile } from '@/hooks/useProfile';
 import { useAuth } from '@/hooks/useAuth';
@@ -158,7 +158,7 @@ const Dashboard = () => {
           
           <div className="space-y-2">
             {aiRival && (
-              <RivalProgress rival={aiRival} userXP={profile.xp} rivalId={profile.rival_id} />
+              <RivalCard rival={aiRival} userXP={profile.xp} rivalId={profile.rival_id} />
             )}
             
           </div>
