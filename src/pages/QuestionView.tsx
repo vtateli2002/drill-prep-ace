@@ -20,6 +20,7 @@ import DrawingCanvas from '@/components/DrawingCanvas';
 import Calculator from '@/components/Calculator';
 import { FinancialSummary } from '@/components/FinancialSummary';
 import { validateAnswer } from '@/utils/answerValidation';
+import { QuestionHeader, AnswerPanel, ToolsPanel } from '@/features/question';
 
 const QuestionView = () => {
   const { questionId } = useParams<{ questionId: string }>();
