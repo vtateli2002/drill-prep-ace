@@ -39,3 +39,6 @@ verify_jwt = false
 
 [functions.ai-leaderboard-tick]
 verify_jwt = false
+
+[functions.dedupe-ai-usernames]
+verify_jwt = false
