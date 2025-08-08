@@ -36,6 +36,18 @@ const LeaderboardContent = () => {
 
   useEffect(() => {
     fetchLeaderboard();
+    // One-time dedupe run per browser session (safe, idempotent enough for dev)
+    try {
+      const runKey = 'dedupeAiUsernamesRun';
+      if (!sessionStorage.getItem(runKey)) {
+        supabase.functions
+          .invoke('dedupe-ai-usernames', { body: {} })
+          .then(() => sessionStorage.setItem(runKey, '1'))
+          .catch((err) => console.warn('dedupe-ai-usernames failed', err));
+      }
+    } catch (e) {
+      console.warn('dedupe session guard failed', e);
+    }
   }, []);
 
   useEffect(() => {
