@@ -36,15 +36,14 @@ const LeaderboardContent = () => {
 
   useEffect(() => {
     fetchLeaderboard();
-    // One-time normalization run per browser session (bump key to re-run when logic changes)
+    // Force a new normalization run for this session
     try {
-      const runKey = 'dedupeAiUsernamesRun_v2';
+      const runKey = 'dedupeAiUsernamesRun_v3';
       if (!sessionStorage.getItem(runKey)) {
         supabase.functions
           .invoke('dedupe-ai-usernames', { body: {} })
           .then(() => {
             sessionStorage.setItem(runKey, '1');
-            // refetch to reflect normalized names immediately
             fetchLeaderboard();
           })
           .catch((err) => console.warn('dedupe-ai-usernames failed', err));
