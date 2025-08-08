@@ -2,6 +2,7 @@ import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Crown } from 'lucide-react';
 import { getRankIcon, getRankChangeDisplay } from '@/features/leaderboard/utils/display';
+import { memo } from 'react';
 
 export interface LeaderboardUser {
   id: string;
@@ -70,4 +71,4 @@ const LeaderboardRow = ({ user, index }: RowProps) => {
   );
 };
 
-export default LeaderboardRow;
+export default memo(LeaderboardRow);

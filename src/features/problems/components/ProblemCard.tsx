@@ -5,6 +5,7 @@ import { Difficulty, Track } from '@/types/drill';
 import { formatTrackName } from '@/features/problems/utils/formatTrackName';
 import { getDifficultyConfig } from '@/features/problems/utils/configs';
 import QuestionProgress from '@/features/problems/components/QuestionProgress';
+import { memo } from 'react';
 
 export interface ProblemCardData {
   id: string;
@@ -86,4 +87,4 @@ const ProblemCard = ({ question, index, isSolved, earnedXP, baseXP, onStart }: P
   );
 };
 
-export default ProblemCard;
+export default memo(ProblemCard);

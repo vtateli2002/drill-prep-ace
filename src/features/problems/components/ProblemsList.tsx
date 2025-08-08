@@ -1,5 +1,6 @@
 import ProblemCard, { ProblemCardData } from '@/features/problems/components/ProblemCard';
-import { Difficulty, Track, XP_VALUES } from '@/types/drill';
+import { memo } from 'react';
+import { XP_VALUES } from '@/types/drill';
 
 interface ProblemsListProps {
   questions: ProblemCardData[];
@@ -31,4 +32,4 @@ const ProblemsList = ({ questions, isQuestionSolved, getQuestionXP, onStart }: P
   );
 };
 
-export default ProblemsList;
+export default memo(ProblemsList);

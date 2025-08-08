@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AIRival } from '@/types/drill';
 import { getRivalInfo } from '@/features/rivals/utils/rivals';
 import RaceStatus from '@/features/dashboard/components/RaceStatus';
+import { memo } from 'react';
 
 interface RivalCardProps {
   rival: AIRival;
@@ -63,4 +64,4 @@ const RivalCard = ({ rival, userXP, rivalId }: RivalCardProps) => {
   );
 };
 
-export default RivalCard;
+export default memo(RivalCard);
