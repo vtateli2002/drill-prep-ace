@@ -45,7 +45,7 @@ const Index = () => {
               </p>
               <div className="relative">
                 <div className="flex flex-wrap justify-center gap-3 md:gap-6 px-1">
-                  {['Goldman Sachs','Evercore','Morgan Stanley','J.P. Morgan','Centerview','Lazard','PJT','Moelis'].map((firm) => (
+                  {['Goldman Sachs','Evercore','Morgan Stanley','J.P. Morgan','Centerview','Lazard'].map((firm) => (
                     <span key={firm} className="rounded-full border border-border bg-card/50 px-3 md:px-4 py-2 text-xs md:text-sm text-foreground/90">
                       {firm}
                     </span>
