@@ -4,6 +4,7 @@ import { Loader2, Trophy } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useDynamicTitles } from '@/hooks/useDynamicTitles';
 import LeaderboardRow, { LeaderboardUser } from '@/features/leaderboard/components/LeaderboardRow';
+import { featureFlags } from '@/config/featureFlags';
 
 const LeaderboardContent = () => {
   const [leaderboardData, setLeaderboardData] = useState<LeaderboardUser[]>([]);
@@ -13,7 +14,9 @@ const LeaderboardContent = () => {
   const fetchLeaderboard = async () => {
     try {
       setLoading(true);
-      updateAllUserTitles().catch(console.error);
+      if (featureFlags.ENABLE_TITLE_UPDATES_ON_MOUNT) {
+        updateAllUserTitles().catch(console.error);
+      }
 
       const { data, error } = await supabase
         .from('profiles')
@@ -36,6 +39,7 @@ const LeaderboardContent = () => {
   }, []);
 
   useEffect(() => {
+    if (!featureFlags.ENABLE_LEADERBOARD_REALTIME) return;
     let timeoutId: NodeJS.Timeout;
     let isSubscribed = true;
 
