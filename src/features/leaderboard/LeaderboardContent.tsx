@@ -42,7 +42,11 @@ const LeaderboardContent = () => {
       if (!sessionStorage.getItem(runKey)) {
         supabase.functions
           .invoke('dedupe-ai-usernames', { body: {} })
-          .then(() => sessionStorage.setItem(runKey, '1'))
+          .then(() => {
+            sessionStorage.setItem(runKey, '1');
+            // refetch to reflect normalized names immediately
+            fetchLeaderboard();
+          })
           .catch((err) => console.warn('dedupe-ai-usernames failed', err));
       }
     } catch (e) {
