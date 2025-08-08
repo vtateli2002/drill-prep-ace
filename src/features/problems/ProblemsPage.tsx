@@ -39,6 +39,11 @@ const ProblemsPage = () => {
     console.log('Filter state changed:', { selectedTrack, selectedDifficulty, completionFilter });
   }, [selectedTrack, selectedDifficulty, completionFilter]);
 
+  const [visibleCount, setVisibleCount] = useState(100);
+  useEffect(() => {
+    setVisibleCount(100);
+  }, [selectedTrack, selectedDifficulty, completionFilter]);
+
   if (loading || qLoading) {
     return (
       <div className="min-h-screen bg-background">
@@ -58,10 +63,6 @@ const ProblemsPage = () => {
     isQuestionSolved,
   );
 
-  const [visibleCount, setVisibleCount] = useState(100);
-  useEffect(() => {
-    setVisibleCount(100);
-  }, [selectedTrack, selectedDifficulty, completionFilter]);
   const visibleQuestions = filteredQuestions.slice(0, visibleCount);
 
   const clearFilters = () => {
