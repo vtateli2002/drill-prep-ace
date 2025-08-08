@@ -6,7 +6,6 @@ import { Seo } from '@/components/Seo';
 import { useAuth } from '@/hooks/useAuth';
 import { motion } from 'framer-motion';
 import { HeroHeadline } from '@/components/hero/HeroHeadline';
-import { HeroParticles } from '@/components/hero/HeroParticles';
 import { HeroXPBar } from '@/components/hero/HeroXPBar';
 import { HeroLogosTicker } from '@/components/hero/HeroLogosTicker';
 
@@ -43,7 +42,7 @@ const Index = () => {
       <Seo title="Drill — LeetCode for Investment Banking" description="Master IB technicals faster with gamified learning, real interview questions, and an AI rival." canonical={window.location.origin + '/'} />
       <header className="relative overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-[0.25] mask-fade-b pointer-events-none" aria-hidden="true" />
-        <HeroParticles />
+        
         <style>{`
           @keyframes text-shine { 
             0% { background-position: -200% 0; }
