@@ -22,11 +22,31 @@ const Index = () => {
       <Seo title="Drill — LeetCode for Investment Banking" description="Master IB technicals faster with gamified learning, real interview questions, and an AI rival." canonical={window.location.origin + '/'} />
       <header className="relative overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-[0.25] mask-fade-b pointer-events-none" aria-hidden="true" />
+        <style>{`
+          @keyframes text-shine { 
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+          }
+          .text-shine {
+            background-image: linear-gradient(90deg,
+              hsl(var(--foreground)) 0%,
+              hsl(var(--foreground)) 30%,
+              hsl(var(--primary) / 0.9) 50%,
+              hsl(var(--foreground)) 70%,
+              hsl(var(--foreground)) 100%
+            );
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+          }
+          .animate-shine { animation: text-shine 2.8s linear infinite; }
+        `}</style>
         <div className="container mx-auto px-4 py-24 md:py-32">
           <div className="text-center max-w-5xl mx-auto space-y-8">
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-foreground leading-[1.05]">
               <span className="block">The LeetCode for</span>
-              <span className="block">Investment Banking</span>
+              <span className="block text-shine animate-shine">Investment Banking</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground">
               Master technical interviews faster than ever — with real questions, XP, and AI rivals.
