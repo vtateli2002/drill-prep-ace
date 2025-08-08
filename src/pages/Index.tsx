@@ -2,17 +2,19 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Target, Zap, Trophy, Brain } from 'lucide-react';
+import { useAuth } from '@/hooks/useAuth';
 
 const Index = () => {
   const navigate = useNavigate();
+  const { user } = useAuth();
 
   useEffect(() => {
-    // Check if user has completed onboarding
+    // Only redirect logged-in users who already completed onboarding
     const onboardingData = localStorage.getItem('drillOnboarding');
-    if (onboardingData) {
+    if (user && onboardingData) {
       navigate('/dashboard');
     }
-  }, [navigate]);
+  }, [user, navigate]);
 
   const features = [
     {
