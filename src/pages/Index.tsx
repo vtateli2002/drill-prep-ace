@@ -22,21 +22,25 @@ const Index = () => {
       <Seo title="Drill — LeetCode for Investment Banking" description="Master IB technicals faster with gamified learning, real interview questions, and an AI rival." canonical={window.location.origin + '/'} />
       <header className="relative overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-[0.25] mask-fade-b pointer-events-none" aria-hidden="true" />
-        <div className="container mx-auto px-4 py-20 md:py-28">
-          <div className="text-center max-w-3xl mx-auto space-y-6">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">
-              The LeetCode for Investment Banking
+        <div className="container mx-auto px-4 py-24 md:py-32">
+          <div className="text-center max-w-5xl mx-auto space-y-8">
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-foreground leading-[1.05]">
+              <span className="block">The LeetCode for</span>
+              <span className="block">Investment Banking</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground">
-              Master technical interviews faster than ever before — with real questions, XP, and AI rivals.
+              Master technical interviews faster than ever — with real questions, XP, and AI rivals.
             </p>
             <p className="text-base text-muted-foreground">
               Built for aspiring analysts at top firms. Train with gamified practice sourced from real interviews.
             </p>
-            <div className="pt-2">
-              <Button size="lg" onClick={() => navigate('/auth')} className="px-8 py-3 text-lg">
+            <div className="pt-4">
+              <Button size="lg" onClick={() => navigate('/auth')} className="px-8 py-3 text-lg rounded-full">
                 Start Your Prep Journey
               </Button>
+              <p className="mt-3 text-xs md:text-sm text-muted-foreground">
+                Get started in under 30 seconds — no credit card required
+              </p>
             </div>
             {/* Trust Bar */}
             <div className="pt-10">
