@@ -15,6 +15,9 @@ export interface UserProfile {
   track_progress: any;
   difficulty_xp: any;
   rival_xp: number;
+  rival_id?: string | null;
+  onboarding_plan?: any;
+  onboarding_started_at?: string | null;
   interview_deadline?: string;
   created_at: string;
   updated_at: string;

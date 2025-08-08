@@ -154,9 +154,12 @@ export type Database = {
           interview_deadline: string | null
           is_bot: boolean | null
           level: number
+          onboarding_plan: Json | null
+          onboarding_started_at: string | null
           profile_pic: string | null
           rank: string
           rank_change: number | null
+          rival_id: string | null
           rival_xp: number
           streak: number
           track_progress: Json | null
@@ -172,9 +175,12 @@ export type Database = {
           interview_deadline?: string | null
           is_bot?: boolean | null
           level?: number
+          onboarding_plan?: Json | null
+          onboarding_started_at?: string | null
           profile_pic?: string | null
           rank?: string
           rank_change?: number | null
+          rival_id?: string | null
           rival_xp?: number
           streak?: number
           track_progress?: Json | null
@@ -190,9 +196,12 @@ export type Database = {
           interview_deadline?: string | null
           is_bot?: boolean | null
           level?: number
+          onboarding_plan?: Json | null
+          onboarding_started_at?: string | null
           profile_pic?: string | null
           rank?: string
           rank_change?: number | null
+          rival_id?: string | null
           rival_xp?: number
           streak?: number
           track_progress?: Json | null
@@ -256,6 +265,10 @@ export type Database = {
       }
       calculate_xp_for_level: {
         Args: { level_num: number }
+        Returns: number
+      }
+      jsonb_int: {
+        Args: { js: Json; key: string; default_val: number }
         Returns: number
       }
       standardize_difficulty_xp: {

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -13,6 +14,7 @@ import { useRealProgress } from '@/hooks/useRealProgress';
 import { BADGES, RANK_TITLES } from '@/types/leaderboard';
 
 const Profile = () => {
+  const navigate = useNavigate();
   const { profile, loading, calculatePercentile } = useProfile();
   const { signOut } = useAuth();
   const { trackStats, difficultyXP, loading: progressLoading } = useRealProgress();
@@ -53,20 +55,21 @@ const Profile = () => {
     }
   }, []);
 
-  const rivalDailyXP = (() => {
-    const deadlineStr = profile?.interview_deadline ?? null;
-    const createdStr = profile?.created_at ?? null;
-    const totalTargetXP = 800;
-    const defaultDaily = 100;
-    if (deadlineStr && createdStr) {
-      const deadline = new Date(deadlineStr);
-      const created = new Date(createdStr);
-      const daysTotal = Math.max(1, Math.ceil((deadline.getTime() - created.getTime()) / (1000 * 60 * 60 * 24)) + 1);
-      const val = Math.round((totalTargetXP / daysTotal) / 10) * 10;
-      return Math.max(10, val);
-    }
-    return defaultDaily;
-  })();
+  const rivalNameMap: Record<string, string> = { constance: 'Constance', chadson: 'Chadson', chartreuse: 'Chartreuse' };
+  const rivalName = profile?.rival_id ? (rivalNameMap[profile.rival_id] || 'FinanceBot') : 'FinanceBot';
+
+  const timelineDaysMap = {
+    '1-week': 7,
+    '2-weeks': 14,
+    '1-month': 30,
+    '3-months': 90,
+    'more': 120
+  } as const;
+
+  const planDays = (profile?.onboarding_plan && (profile.onboarding_plan as any).timeline_days)
+    || (onboarding?.timeline ? timelineDaysMap[onboarding.timeline] : 30);
+
+  const rivalDailyXP = Math.max(10, Math.round((((15720 * 0.5) / Math.max(1, Number(planDays))) / 10)) * 10);
 
   const timelineLabels = {
     '1-week': '1 Week',
@@ -80,13 +83,6 @@ const Profile = () => {
   const startedAt = onboarding?.completedAt
     ? new Date(onboarding.completedAt)
     : (profile?.created_at ? new Date(profile.created_at) : null);
-  const timelineDaysMap = {
-    '1-week': 7,
-    '2-weeks': 14,
-    '1-month': 30,
-    '3-months': 90,
-    'more': 120
-  } as const;
   const addDays = (date: Date, days: number) => new Date(date.getTime() + days * 24 * 60 * 60 * 1000);
   const computedTargetDate = profile?.interview_deadline
     ? new Date(profile.interview_deadline)

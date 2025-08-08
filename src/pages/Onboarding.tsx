@@ -1,21 +1,38 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Checkbox } from '@/components/ui/checkbox';
-import { ArrowRight, Target, BookOpen } from 'lucide-react';
+import { ArrowRight, Target, BookOpen, Bot, Shield, Bolt } from 'lucide-react';
 import { Track, TRACK_NAMES } from '@/types/drill';
+import { useProfile } from '@/hooks/useProfile';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 
-type OnboardingStep = 'welcome' | 'timeline' | 'tracks' | 'complete';
+type OnboardingStep = 'welcome' | 'timeline' | 'rival' | 'tracks' | 'complete';
 type Goal = 'interview' | 'learning';
 type Timeline = '1-week' | '2-weeks' | '1-month' | '3-months' | 'more';
+type RivalId = 'constance' | 'chadson' | 'chartreuse';
+
+const TIMELINE_DAYS: Record<Timeline, number> = {
+  '1-week': 7,
+  '2-weeks': 14,
+  '1-month': 30,
+  '3-months': 90,
+  'more': 120
+};
 
 const Onboarding = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { updateProfile } = useProfile();
+  const isEdit = new URLSearchParams(location.search).get('edit') === 'true';
+
   const [step, setStep] = useState<OnboardingStep>('welcome');
   const [goal, setGoal] = useState<Goal | null>(null);
   const [timeline, setTimeline] = useState<Timeline | null>(null);
   const [selectedTracks, setSelectedTracks] = useState<Track[]>([]);
+  const [selectedRival, setSelectedRival] = useState<RivalId | null>(null);
+  const [confirmOpen, setConfirmOpen] = useState(false);
 
   const handleGoalSelect = (selectedGoal: Goal) => {
     setGoal(selectedGoal);
@@ -24,7 +41,7 @@ const Onboarding = () => {
 
   const handleTimelineSelect = (selectedTimeline: Timeline) => {
     setTimeline(selectedTimeline);
-    setStep('tracks');
+    setStep('rival');
   };
 
   const toggleTrack = (track: Track) => {
@@ -35,14 +52,40 @@ const Onboarding = () => {
     );
   };
 
-  const handleComplete = () => {
-    // Save onboarding data to localStorage or API
+  const handleChooseRival = (r: RivalId) => {
+    setSelectedRival(r);
+    setConfirmOpen(true);
+  };
+
+  const completeRival = () => {
+    setConfirmOpen(false);
+    setStep('tracks');
+  };
+
+  const handleComplete = async () => {
     localStorage.setItem('drillOnboarding', JSON.stringify({
       goal,
       timeline,
       tracks: selectedTracks,
+      rival_id: selectedRival,
       completedAt: new Date().toISOString()
     }));
+
+    try {
+      const timelineDays = timeline ? TIMELINE_DAYS[timeline] : 30;
+      await updateProfile?.({
+        rival_id: selectedRival as any,
+        onboarding_plan: {
+          goal,
+          timeline,
+          tracks: selectedTracks,
+          timeline_days: timelineDays
+        } as any,
+        onboarding_started_at: new Date().toISOString().slice(0, 10)
+      });
+    } catch (_) {
+      // swallow errors to avoid blocking onboarding UX
+    }
     
     navigate('/dashboard');
   };
@@ -74,9 +117,9 @@ const Onboarding = () => {
             <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
               <span className="text-primary-foreground font-bold text-2xl">D</span>
             </div>
-            <CardTitle className="text-3xl mb-2">Welcome to Drill</CardTitle>
+            <CardTitle className="text-3xl mb-2">{isEdit ? 'Adjust Your Plan' : 'Welcome to Drill'}</CardTitle>
             <p className="text-muted-foreground text-lg">
-              Your gamified investment banking interview prep platform
+              {isEdit ? 'Update your goal, timeline and rival.' : 'Your gamified investment banking interview prep platform'}
             </p>
           </CardHeader>
           
@@ -140,6 +183,97 @@ const Onboarding = () => {
             ))}
           </CardContent>
         </Card>
+      </div>
+    );
+  }
+
+  if (step === 'rival') {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center p-4">
+        <Card className="w-full max-w-4xl">
+          <CardHeader className="text-center">
+            <CardTitle className="text-2xl">Choose your AI Rival</CardTitle>
+            <p className="text-muted-foreground">Pick who you'll race against throughout your plan.</p>
+          </CardHeader>
+          
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {/* Constance */}
+              <button onClick={() => handleChooseRival('constance')} className="rounded-xl border border-border bg-muted/40 p-4 text-left hover:shadow-lg hover-scale">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-12 h-12 rounded bg-primary/10 flex items-center justify-center">
+                    <Shield className="text-primary" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-foreground">Constance</div>
+                    <div className="text-xs text-muted-foreground">The Technical Terminator</div>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground mb-3">Never sleeps. Speaks in EBITDA. Patagonia vest on, calculator in hand.</p>
+                <ul className="text-xs text-muted-foreground space-y-1">
+                  <li>• Constant pace (~125 XP/day)</li>
+                  <li>• Strong: Accounting & Valuation</li>
+                  <li>• Weak: Behavioral</li>
+                </ul>
+              </button>
+
+              {/* Chadson */}
+              <button onClick={() => handleChooseRival('chadson')} className="rounded-xl border border-border bg-muted/40 p-4 text-left hover:shadow-lg hover-scale">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-12 h-12 rounded bg-primary/10 flex items-center justify-center">
+                    <Bolt className="text-primary" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-foreground">Chadson</div>
+                    <div className="text-xs text-muted-foreground">The Networking God</div>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground mb-3">Got his offer on vibes. Plays beer pong with MDs.</p>
+                <ul className="text-xs text-muted-foreground space-y-1">
+                  <li>• Erratic spikes (avg ~100 XP/day)</li>
+                  <li>• Strong: Fit & Behaviorals</li>
+                  <li>• Weak: Hardcore math</li>
+                </ul>
+              </button>
+
+              {/* Chartreuse */}
+              <button onClick={() => handleChooseRival('chartreuse')} className="rounded-xl border border-border bg-muted/40 p-4 text-left hover:shadow-lg hover-scale">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-12 h-12 rounded bg-primary/10 flex items-center justify-center">
+                    <Bot className="text-primary" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-foreground">Chartreuse</div>
+                    <div className="text-xs text-muted-foreground">The Unhinged Quant Queen</div>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground mb-3">47 tabs open. DCFs as religion. Wild energy.</p>
+                <ul className="text-xs text-muted-foreground space-y-1">
+                  <li>• Chaotic bursts (avg ~80 XP/day)</li>
+                  <li>• Strong: Modeling</li>
+                  <li>• Weak: Communication</li>
+                </ul>
+              </button>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Dialog open={confirmOpen} onOpenChange={setConfirmOpen}>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>
+                {selectedRival ? `You've chosen ${selectedRival.charAt(0).toUpperCase() + selectedRival.slice(1)}.` : 'Confirm Rival'}
+              </DialogTitle>
+              <DialogDescription>
+                Your journey begins now. Keep up, or get left behind.
+              </DialogDescription>
+            </DialogHeader>
+            <div className="flex justify-end gap-2">
+              <Button variant="ghost" onClick={() => setConfirmOpen(false)}>Change</Button>
+              <Button onClick={completeRival}>Continue</Button>
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
     );
   }
