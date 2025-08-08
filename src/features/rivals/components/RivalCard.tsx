@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Clock } from 'lucide-react';
 import { AIRival } from '@/types/drill';
 import { getRivalInfo } from '@/features/rivals/utils/rivals';
+import RaceStatus from '@/features/dashboard/components/RaceStatus';
 
 interface RivalCardProps {
   rival: AIRival;
@@ -52,12 +52,7 @@ const RivalCard = ({ rival, userXP, rivalId }: RivalCardProps) => {
         </div>
 
         {/* Race Status Row */}
-        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-          <Clock size={14} />
-          <span>{rival.daysRemaining} days remaining</span>
-          <span>•</span>
-          <span>{rival.dailyXPGoal} XP/day goal</span>
-        </div>
+        <RaceStatus daysRemaining={rival.daysRemaining} xpPerDay={rival.dailyXPGoal} />
 
         {/* Footer Message */}
         <div className="p-3 rounded-md bg-muted text-xs text-muted-foreground">
