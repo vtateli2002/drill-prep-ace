@@ -44,9 +44,9 @@ const Index = () => {
                 Students around the world have used Drill to land offers at top firms:
               </p>
               <div className="relative">
-                <div className="flex gap-3 md:gap-6 overflow-x-auto no-scrollbar justify-start md:justify-center px-1">
-                  {['Goldman Sachs','Evercore','Morgan Stanley','J.P. Morgan','Centerview','Lazard','PJT','Moelis','Bank of America','Citi','Perella Weinberg','Guggenheim'].map((firm) => (
-                    <span key={firm} className="shrink-0 rounded-full border border-border bg-card/50 px-3 md:px-4 py-2 text-xs md:text-sm text-foreground/90">
+                <div className="flex flex-wrap justify-center gap-3 md:gap-6 px-1">
+                  {['Goldman Sachs','Evercore','Morgan Stanley','J.P. Morgan','Centerview','Lazard','PJT','Moelis'].map((firm) => (
+                    <span key={firm} className="rounded-full border border-border bg-card/50 px-3 md:px-4 py-2 text-xs md:text-sm text-foreground/90">
                       {firm}
                     </span>
                   ))}
