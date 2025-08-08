@@ -5,9 +5,9 @@ import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { CheckCircle, Filter, Loader2, Trophy, X } from 'lucide-react';
-import { QUESTIONS } from '@/data/questions';
+// Questions are lazy-loaded to reduce initial bundle size
 import { useQuestions } from '@/hooks/useQuestions';
-import { Difficulty, Track } from '@/types/drill';
+import { Difficulty, Track, Question } from '@/types/drill';
 import TrackFilter from '@/features/problems/components/TrackFilter';
 import DifficultyFilter from '@/features/problems/components/DifficultyFilter';
 import ProblemsList from '@/features/problems/components/ProblemsList';
@@ -19,11 +19,27 @@ const ProblemsPage = () => {
   const [selectedDifficulty, setSelectedDifficulty] = useState<Difficulty | 'all'>('all');
   const [completionFilter, setCompletionFilter] = useState<CompletionFilter>('all');
 
+  const [allQuestions, setAllQuestions] = useState<Question[]>([]);
+  const [qLoading, setQLoading] = useState(true);
+
+  useEffect(() => {
+    let active = true;
+    (async () => {
+      const mod = await import('@/data/questions');
+      if (!active) return;
+      setAllQuestions((mod as any).QUESTIONS as Question[]);
+      setQLoading(false);
+    })();
+    return () => {
+      active = false;
+    };
+  }, []);
+
   useEffect(() => {
     console.log('Filter state changed:', { selectedTrack, selectedDifficulty, completionFilter });
   }, [selectedTrack, selectedDifficulty, completionFilter]);
 
-  if (loading) {
+  if (loading || qLoading) {
     return (
       <div className="min-h-screen bg-background">
         <Navbar />
@@ -34,7 +50,6 @@ const ProblemsPage = () => {
     );
   }
 
-  const allQuestions = QUESTIONS;
   const filteredQuestions = getFilteredProblems(
     allQuestions as any,
     selectedTrack,
@@ -42,6 +57,12 @@ const ProblemsPage = () => {
     completionFilter,
     isQuestionSolved,
   );
+
+  const [visibleCount, setVisibleCount] = useState(100);
+  useEffect(() => {
+    setVisibleCount(100);
+  }, [selectedTrack, selectedDifficulty, completionFilter]);
+  const visibleQuestions = filteredQuestions.slice(0, visibleCount);
 
   const clearFilters = () => {
     setSelectedTrack('all');
@@ -150,11 +171,19 @@ const ProblemsPage = () => {
           </Card>
 
           <ProblemsList
-            questions={filteredQuestions as any}
+            questions={visibleQuestions as any}
             isQuestionSolved={isQuestionSolved}
             getQuestionXP={getQuestionXP}
             onStart={(id) => (window.location.href = `/question/${id}`)}
           />
+
+          {filteredQuestions.length > visibleCount && (
+            <div className="flex justify-center">
+              <Button variant="outline" onClick={() => setVisibleCount((c) => c + 100)}>
+                Load more ({visibleCount}/{filteredQuestions.length})
+              </Button>
+            </div>
+          )}
 
           {filteredQuestions.length === 0 && (
             <div className="text-center py-12">

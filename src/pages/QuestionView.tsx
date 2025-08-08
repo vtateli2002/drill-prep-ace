@@ -444,52 +444,23 @@ const QuestionView = () => {
       <Navbar />
       
       <div className="container mx-auto px-4 py-6">
-        <div className="mb-6">
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => {
+          <QuestionHeader
+            question={currentQuestion}
+            isFromDailyChallenge={isFromDailyChallenge}
+            returnToModal={returnToModal}
+            onBack={() => {
               if (returnToModal) {
                 navigate('/dashboard');
               } else {
                 navigate('/problems');
               }
             }}
-            className="mb-4"
-          >
-            <ArrowLeft size={16} className="mr-2" />
-            {returnToModal ? 'Back to Dashboard' : 'Back to Problems'}
-          </Button>
-          
-          <div className="flex items-center space-x-4">
-            <h1 className="text-2xl font-bold text-foreground">{currentQuestion.title}</h1>
-            <Badge variant="outline">{TRACK_NAMES[currentQuestion.track]}</Badge>
-            <Badge className={`${getDifficultyColor(currentQuestion.difficulty)} text-white`}>
-              {currentQuestion.difficulty.replace('-', ' ').toUpperCase()}
-            </Badge>
-            <Badge variant="secondary">+{XP_VALUES[currentQuestion.difficulty]}{isFromDailyChallenge ? ' × 2' : ''} XP</Badge>
-            {isFromDailyChallenge && (
-              <Badge className="bg-primary text-primary-foreground">
-                <Target className="w-3 h-3 mr-1" />
-                Daily Challenge
-              </Badge>
-            )}
-            {currentQuestion.track === 'accounting' && (
-              <div className="flex items-center space-x-2">
-                <BookOpen size={16} className="text-primary" />
-                <div className="text-sm">
-                  <div className="font-medium text-foreground">📘 Progress: Accounting</div>
-                  <div className="flex items-center space-x-2">
-                    <Progress value={Math.round((QUESTIONS.filter(q => q.track === 'accounting' && isQuestionSolved(q.id)).length / QUESTIONS.filter(q => q.track === 'accounting').length) * 100)} className="w-20 h-2" />
-                    <span className="text-xs text-muted-foreground">
-                      {QUESTIONS.filter(q => q.track === 'accounting' && isQuestionSolved(q.id)).length} of {QUESTIONS.filter(q => q.track === 'accounting').length} completed
-                    </span>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
+            difficultyClass={getDifficultyColor(currentQuestion.difficulty)}
+            accountingProgress={currentQuestion.track === 'accounting' ? {
+              completed: QUESTIONS.filter(q => q.track === 'accounting' && isQuestionSolved(q.id)).length,
+              total: QUESTIONS.filter(q => q.track === 'accounting').length
+            } : null}
+          />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 h-[calc(100vh-200px)]">
           {/* Left Panel - Question & Learn Tabs */}
@@ -1202,147 +1173,32 @@ const QuestionView = () => {
 
           {/* Right Panel - Answer & Utilities */}
           <div className="space-y-4">
-            {/* Answer Section */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Your Answer</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-2">
-                    <Input
-                      type="text"
-                      value={userAnswer}
-                      onChange={(e) => {
-                        setUserAnswer(e.target.value);
-                        setFormatError('');
-                      }}
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter') {
-                          handleSubmit();
-                        }
-                      }}
-                      placeholder="Enter your answer"
-                      className="flex-1"
-                      disabled={isSubmitted}
-                    />
-                    {currentQuestion.unit && (
-                      <span className="text-muted-foreground font-medium">
-                        {currentQuestion.unit}
-                      </span>
-                    )}
-                  </div>
-                  
-                  {formatError && (
-                    <div className="flex items-center space-x-2 p-3 bg-warning/10 border border-warning/30 rounded-lg">
-                      <AlertTriangle size={16} className="text-warning" />
-                      <p className="text-sm text-warning">{formatError}</p>
-                    </div>
-                  )}
-                </div>
-                
-                <div className="flex items-center space-x-3">
-                  {!isSubmitted ? (
-                    <>
-                      <Button
-                        onClick={handleSubmit}
-                        disabled={!userAnswer}
-                        className="flex-1"
-                      >
-                        Submit Answer
-                      </Button>
-                       <Button
-                         variant="outline"
-                         onClick={handleHint}
-                         disabled={showHint || attemptCount >= 4}
-                       >
-                         <Lightbulb size={16} />
-                       </Button>
-                       {!showExplanation && currentQuestion.explanation && (
-                         <Button
-                           variant="outline"
-                           onClick={() => setShowExplanation(true)}
-                         >
-                           Show Explanation
-                         </Button>
-                       )}
-                    </>
-                  ) : (
-                    <>
-                      <div className="flex items-center space-x-2">
-                        {isCorrect ? (
-                          <CheckCircle className="text-success" size={24} />
-                        ) : (
-                          <XCircle className="text-destructive" size={24} />
-                        )}
-                        <span className="text-sm font-medium">
-                          {isCorrect ? 'Correct!' : `Correct answer: ${currentQuestion.answer}${currentQuestion.unit || ''}`}
-                        </span>
-                      </div>
-                       <div className="flex space-x-2">
-                         {!isCorrect && (
-                           <Button variant="outline" onClick={handleReset}>
-                             Try Again
-                           </Button>
-                         )}
-                       </div>
-                    </>
-                  )}
-                </div>
-                
-                {/* Always visible action buttons */}
-                <div className="pt-3 border-t">
-                  <div className="flex space-x-3">
-                    <Button 
-                      variant="outline" 
-                      onClick={handlePreviousQuestion}
-                      className="flex-1 border-primary/20 hover:bg-primary/5 hover:border-primary/40"
-                    >
-                      Previous Question
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      onClick={() => {
-                        if (returnToModal) {
-                          navigate('/dashboard');
-                        } else {
-                          handleNextQuestion();
-                        }
-                      }}
-                      className="flex-1 border-primary/20 hover:bg-primary/5 hover:border-primary/40"
-                    >
-                      {returnToModal ? 'Back to Challenge' : 'Next Question'}
-                    </Button>
-                    
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <AnswerPanel
+              question={currentQuestion}
+              userAnswer={userAnswer}
+              setUserAnswer={setUserAnswer}
+              formatError={formatError}
+              clearFormatError={() => setFormatError('')}
+              isSubmitted={isSubmitted}
+              isCorrect={isCorrect}
+              showExplanation={showExplanation}
+              setShowExplanation={setShowExplanation}
+              attemptCount={attemptCount}
+              onSubmit={handleSubmit}
+              onHint={handleHint}
+              onReset={handleReset}
+              onPrev={handlePreviousQuestion}
+              onNext={() => {
+                if (returnToModal) {
+                  navigate('/dashboard');
+                } else {
+                  handleNextQuestion();
+                }
+              }}
+              returnToModal={returnToModal}
+            />
 
-            {/* Utility Tabs */}
-            <Card className="flex-1">
-              <CardHeader>
-                <Tabs defaultValue="notes" className="w-full">
-                  <TabsList className="grid w-full grid-cols-3">
-                    <TabsTrigger value="notes">🗒️ Notes</TabsTrigger>
-                    <TabsTrigger value="scribble">✏️ Draw</TabsTrigger>
-                    <TabsTrigger value="calculator">🧮 Calculator</TabsTrigger>
-                  </TabsList>
-                  
-                  <TabsContent value="notes" className="mt-4">
-                    <NotesUtility />
-                  </TabsContent>
-                  
-                  <TabsContent value="scribble" className="mt-4">
-                    <DrawingCanvas />
-                  </TabsContent>
-                  
-                  <TabsContent value="calculator" className="mt-4">
-                    <Calculator />
-                  </TabsContent>
-                </Tabs>
-              </CardHeader>
-            </Card>
+            <ToolsPanel />
           </div>
         </div>
       </div>

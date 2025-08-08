@@ -13,7 +13,7 @@ const LeaderboardContent = () => {
   const fetchLeaderboard = async () => {
     try {
       setLoading(true);
-      updateAllUserTitles().catch(console.error);
+      // Disabled to prevent excessive PATCH updates on mount
 
       const { data, error } = await supabase
         .from('profiles')
