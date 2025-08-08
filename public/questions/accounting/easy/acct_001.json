@@ -1,0 +1,23 @@
+{
+  "id": "acct_001",
+  "track": "Accounting",
+  "difficulty": "Easy",
+  "title": "Accrual vs. Cash Accounting – Timing Differences",
+  "description": "A company performs $10,000 of consulting work in December but receives cash payment in January. Under accrual accounting, how much revenue is recognized in December?",
+  "answer": 10000,
+  "unit": "$",
+  "hint": "Revenue is recognized when work is performed, not when cash is received.",
+  "explanation": "Revenue is recognized in December because that’s when the work was performed. Cash basis would recognize it in January. Accrual basis = performance period.",
+  "interviewAngle": "This concept shows up often when reconciling net income to cash flow. Accrual vs. cash timing is tested in SaaS, services, or 3-statement model walk-throughs.",
+  "learnContent": {
+    "coreConcept": "Accrual = when work is done; Cash = when payment is received.",
+    "howItWorks": "If service is performed, it's accrual revenue. Cash received later shows up in CFO.",
+    "whyItMatters": "This affects the income statement vs. cash flow timing. Common modeling point in interviews.",
+    "formula": "Revenue recognized = Services performed (under accrual)"
+  },
+  "metadata": {
+    "version": 1,
+    "tags": ["Revenue Recognition", "3 Statement Modeling"],
+    "retries": 3
+  }
+}

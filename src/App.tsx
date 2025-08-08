@@ -16,6 +16,7 @@ import Leaderboard from "./pages/Leaderboard";
 import Profile from "./pages/Profile";
 import DailyChallengeStandalone from "./components/DailyChallengeStandalone";
 import NotFound from "./pages/NotFound";
+import CleanQuestion from "./pages/CleanQuestion";
 
 const queryClient = new QueryClient();
 
@@ -70,6 +71,7 @@ const App = () => (
               </ProtectedRoute>
             } />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="/clean/question" element={<CleanQuestion />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
