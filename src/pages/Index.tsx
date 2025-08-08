@@ -4,6 +4,9 @@ import { Button } from '@/components/ui/button';
 import { Code2, Gamepad2, NotebookText, Flame } from 'lucide-react';
 import { Seo } from '@/components/Seo';
 import { useAuth } from '@/hooks/useAuth';
+import { motion } from 'framer-motion';
+import { HeroHeadline } from '@/components/hero/HeroHeadline';
+import { HeroParticles } from '@/components/hero/HeroParticles';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -17,7 +20,7 @@ const Index = () => {
     }
   }, [user, navigate]);
 
-  const letters = Array.from("Investment Banking");
+  //
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -38,6 +41,7 @@ const Index = () => {
       <Seo title="Drill — LeetCode for Investment Banking" description="Master IB technicals faster with gamified learning, real interview questions, and an AI rival." canonical={window.location.origin + '/'} />
       <header className="relative overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-[0.25] mask-fade-b pointer-events-none" aria-hidden="true" />
+        <HeroParticles />
         <style>{`
           @keyframes text-shine { 
             0% { background-position: -200% 0; }
@@ -78,27 +82,29 @@ const Index = () => {
         `}</style>
         <div className="container mx-auto px-4 py-24 md:py-32">
           <div className="text-center max-w-5xl mx-auto space-y-8">
-            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-foreground leading-[1.05]">
-              <span className="block">The LeetCode for</span>
-              <span className="block">
-                {letters.map((ch, i) => (
-                  <span
-                    key={i}
-                    className="text-shine animate-shine reveal-char"
-                    style={{ animationDelay: `${i * 40}ms` }}
-                  >
-                    {ch === ' ' ? '\u00A0' : ch}
-                  </span>
-                ))}
-              </span>
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground">
+            <HeroHeadline />
+            <motion.p
+              className="text-lg md:text-xl text-muted-foreground"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, type: 'spring', stiffness: 380, damping: 28 }}
+            >
               Master technical interviews faster than ever — with real questions, XP, and AI rivals.
-            </p>
-            <p className="text-base text-muted-foreground">
+            </motion.p>
+            <motion.p
+              className="text-base text-muted-foreground"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7, type: 'spring', stiffness: 380, damping: 28 }}
+            >
               Built for aspiring analysts at top firms. Train with gamified practice sourced from real interviews.
-            </p>
-            <div className="pt-4">
+            </motion.p>
+            <motion.div
+              className="pt-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9, type: 'spring', stiffness: 420, damping: 26 }}
+            >
               <Button size="lg" onClick={() => navigate('/auth')} className="group relative overflow-hidden px-8 py-3 text-lg rounded-full transition-transform duration-200 hover:-translate-y-0.5">
                 <span className="relative z-10">Start Your Prep Journey</span>
                 <span aria-hidden className="btn-shine" />
@@ -106,7 +112,7 @@ const Index = () => {
               <p className="mt-3 text-xs md:text-sm text-muted-foreground">
                 Get started in under 30 seconds — no credit card required
               </p>
-            </div>
+            </motion.div>
             {/* Trust Bar */}
             <div className="pt-10">
               <p className="text-sm text-muted-foreground mb-4">
