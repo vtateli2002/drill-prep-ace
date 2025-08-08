@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Target, Zap, Trophy, Brain } from 'lucide-react';
+import { Code2, Gamepad2, NotebookText, Flame } from 'lucide-react';
+import { Seo } from '@/components/Seo';
 import { useAuth } from '@/hooks/useAuth';
 
 const Index = () => {
@@ -16,31 +17,9 @@ const Index = () => {
     }
   }, [user, navigate]);
 
-  const features = [
-    {
-      icon: Target,
-      title: 'Gamified Learning',
-      description: 'Earn XP, level up, and compete with AI rivals'
-    },
-    {
-      icon: Brain,
-      title: 'Interview-Ready',
-      description: 'Master core IB concepts with practice questions'
-    },
-    {
-      icon: Zap,
-      title: 'Adaptive Difficulty',
-      description: 'From easy concepts to interview-ready challenges'
-    },
-    {
-      icon: Trophy,
-      title: 'Track Progress',
-      description: 'Monitor your growth across all finance tracks'
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-background">
+      <Seo title="Drill — LeetCode for Investment Banking" description="Master IB technicals faster with gamified learning, real interview questions, and an AI rival." canonical={window.location.origin + '/'} />
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-16">
         <div className="text-center space-y-8">
@@ -63,7 +42,7 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
-              onClick={() => navigate('/onboarding')}
+              onClick={() => navigate('/auth')}
               className="px-8 py-3 text-lg"
             >
               Start Your Journey
@@ -80,28 +59,41 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Features Section */}
+      {/* Value Propositions */}
       <div className="container mx-auto px-4 py-16 border-t border-border">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Why Choose Drill?</h2>
-          <p className="text-muted-foreground">
-            The most effective way to prepare for investment banking technical interviews
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <div key={index} className="text-center space-y-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto">
-                  <Icon className="text-primary" size={24} />
-                </div>
-                <h3 className="text-lg font-semibold text-foreground">{feature.title}</h3>
-                <p className="text-muted-foreground text-sm">{feature.description}</p>
-              </div>
-            );
-          })}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <article className="bg-card border border-border rounded-xl p-6 shadow-sm">
+            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+              <Code2 className="text-primary" size={20} />
+            </div>
+            <h3 className="text-xl font-semibold text-foreground mb-1">The LeetCode for Investment Banking</h3>
+            <p className="text-muted-foreground">Drill is built like a coding platform — but for finance. Structured, trackable, and performance-based.</p>
+            <p className="text-sm italic text-muted-foreground mt-2">Become technical faster. Retain it longer. Outperform your competition.</p>
+          </article>
+          <article className="bg-card border border-border rounded-xl p-6 shadow-sm">
+            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+              <Gamepad2 className="text-primary" size={20} />
+            </div>
+            <h3 className="text-xl font-semibold text-foreground mb-1">Gamified IB Technicals</h3>
+            <p className="text-muted-foreground">Earn XP. Unlock badges. Race against an AI rival.</p>
+            <p className="text-sm italic text-muted-foreground mt-2">Drill makes repetition addicting — and effective.</p>
+          </article>
+          <article className="bg-card border border-border rounded-xl p-6 shadow-sm">
+            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+              <NotebookText className="text-primary" size={20} />
+            </div>
+            <h3 className="text-xl font-semibold text-foreground mb-1">Includes Questions Sourced from Real Interviews</h3>
+            <p className="text-muted-foreground">Many questions are based on actual screens from bulge brackets and elite boutiques.</p>
+            <p className="text-sm italic text-muted-foreground mt-2">You’re not just practicing — you’re preparing for what really gets asked.</p>
+          </article>
+          <article className="bg-card border border-border rounded-xl p-6 shadow-sm">
+            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+              <Flame className="text-primary" size={20} />
+            </div>
+            <h3 className="text-xl font-semibold text-foreground mb-1">Beyond the 400 Questions Guide</h3>
+            <p className="text-muted-foreground">No more PDFs. Drill teaches by doing — with layered logic, instant feedback, and deep explanations.</p>
+            <p className="text-sm italic text-muted-foreground mt-2">Learn faster, master deeper, and outperform every candidate still reading static guides.</p>
+          </article>
         </div>
       </div>
 
