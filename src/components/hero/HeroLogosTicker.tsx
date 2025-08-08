@@ -42,21 +42,6 @@ export const HeroLogosTicker: React.FC = () => {
         </div>
       </motion.div>
 
-      {/* Row 2 (desktop) */}
-      <motion.div
-        className="group overflow-hidden mt-4 hidden md:block"
-        initial={{ opacity: 0, y: 6 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, ease: 'easeOut', delay: 1.2 }}
-      >
-        <div className={`${trackClass} animate-[ticker_28s_linear_infinite] group-hover:[animation-play-state:paused]`}
-             style={{ animationDirection: 'reverse' as const }}
-        >
-          {duplicated.map((l, i) => (
-            <LogoItem key={`${l.name}-row2-${i}`} {...l} />
-          ))}
-        </div>
-      </motion.div>
     </div>
   )
 }
