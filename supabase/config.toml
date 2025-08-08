@@ -36,3 +36,6 @@ verify_jwt = false
 
 [functions.update-ai-rival-xp]
 verify_jwt = false
+
+[functions.ai-leaderboard-tick]
+verify_jwt = false
