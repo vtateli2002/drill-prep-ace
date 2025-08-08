@@ -51,7 +51,11 @@ const App = () => (
               />
               <Route
                 path="/onboarding"
-                element={<Onboarding />}
+                element={
+                  <ProtectedRoute>
+                    <Onboarding />
+                  </ProtectedRoute>
+                }
               />
               <Route
                 path="/practice/:track"

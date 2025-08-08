@@ -18,14 +18,33 @@ const Auth = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Check if user is already logged in
-    const checkUser = async () => {
+    // Check if user is already logged in and route based on onboarding status
+    const routeAfterAuth = async () => {
       const { data: { session } } = await supabase.auth.getSession();
-      if (session) {
+      if (!session) return;
+
+      const localOnboarded = !!localStorage.getItem('drillOnboarding');
+      if (localOnboarded) {
         navigate('/dashboard');
+        return;
+      }
+
+      try {
+        const { data } = await supabase
+          .from('profiles')
+          .select('onboarding_plan,onboarding_started_at')
+          .eq('id', session.user.id)
+          .single();
+
+        const hasOnboarded = !!(data?.onboarding_plan || data?.onboarding_started_at);
+        navigate(hasOnboarded ? '/dashboard' : '/onboarding');
+      } catch {
+        // Fallback: if profile missing, send to onboarding
+        navigate('/onboarding');
       }
     };
-    checkUser();
+
+    routeAfterAuth();
   }, [navigate]);
 
   const handleEmailAuth = async (e: React.FormEvent) => {
@@ -38,12 +57,12 @@ const Auth = () => {
         const { error } = await supabase.auth.signUp({
           email,
           password,
-          options: {
-            emailRedirectTo: `${window.location.origin}/dashboard`,
-            data: {
-              full_name: username || email.split('@')[0],
+            options: {
+              emailRedirectTo: `${window.location.origin}/auth`,
+              data: {
+                full_name: username || email.split('@')[0],
+              }
             }
-          }
         });
         
         if (error) throw error;
@@ -55,7 +74,26 @@ const Auth = () => {
         });
         
         if (error) throw error;
-        navigate('/dashboard');
+        // Decide destination based on onboarding status
+        const { data: { session } } = await supabase.auth.getSession();
+        if (session) {
+          const localOnboarded = !!localStorage.getItem('drillOnboarding');
+          if (localOnboarded) {
+            navigate('/dashboard');
+          } else {
+            try {
+              const { data } = await supabase
+                .from('profiles')
+                .select('onboarding_plan,onboarding_started_at')
+                .eq('id', session.user.id)
+                .single();
+              const hasOnboarded = !!(data?.onboarding_plan || data?.onboarding_started_at);
+              navigate(hasOnboarded ? '/dashboard' : '/onboarding');
+            } catch {
+              navigate('/onboarding');
+            }
+          }
+        }
       }
     } catch (error: any) {
       setError(error.message);
@@ -72,7 +110,7 @@ const Auth = () => {
       const { error } = await supabase.auth.signInWithOAuth({
         provider: 'linkedin_oidc',
         options: {
-          redirectTo: `${window.location.origin}/dashboard`
+          redirectTo: `${window.location.origin}/auth`
         }
       });
       
