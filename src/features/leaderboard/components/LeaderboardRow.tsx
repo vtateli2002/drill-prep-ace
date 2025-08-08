@@ -20,7 +20,7 @@ interface RowProps {
   index: number;
 }
 
-const nameClean = (u: LeaderboardUser) => (u.is_bot ? u.username.replace(/[0-9]/g, '') || u.username : u.username);
+const nameClean = (u: LeaderboardUser) => u.username;
 
 const LeaderboardRow = ({ user, index }: RowProps) => {
   const change = getRankChangeDisplay(user.rank_change);
