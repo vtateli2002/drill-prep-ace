@@ -1,24 +1,35 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
 import { Bot, Clock } from 'lucide-react';
 import { AIRival } from '@/types/drill';
+import { getRivalInfo } from '@/components/RivalHeader';
 
 interface RivalProgressProps {
   rival: AIRival;
   userXP: number;
+  rivalId?: string | null;
 }
 
-const RivalProgress = ({ rival, userXP }: RivalProgressProps) => {
+const RivalProgress = ({ rival, userXP, rivalId }: RivalProgressProps) => {
   const isAhead = userXP > rival.totalXP;
   const xpDifference = Math.abs(userXP - rival.totalXP);
+  const rivalInfo = getRivalInfo(rivalId);
   
   return (
     <Card className={`border-2 ${isAhead ? 'border-success/30' : 'border-destructive/30'}`}>
       <CardHeader className="pb-3">
-        <CardTitle className="flex items-center space-x-2 text-lg">
-          <Bot size={20} className="text-muted-foreground" />
-          <span>AI Rival: {rival.name}</span>
-        </CardTitle>
+        <div className="flex items-center justify-between">
+          <CardTitle className="flex items-center gap-2 text-lg">
+            <Bot size={20} className="text-muted-foreground" />
+            <span>AI Rival: {rivalInfo.name}</span>
+          </CardTitle>
+          <img
+            src={rivalInfo.img}
+            alt={`${rivalInfo.name} avatar`}
+            className="h-16 w-16 rounded-full object-cover ring-2 ring-primary/50"
+            style={{ boxShadow: '0 0 16px hsl(var(--primary) / 0.35)' }}
+            loading="lazy"
+          />
+        </div>
       </CardHeader>
       
       <CardContent className="space-y-4">

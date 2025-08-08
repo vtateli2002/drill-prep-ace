@@ -9,7 +9,7 @@ import DailyChallengeModal from '@/components/DailyChallengeModal';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Target, Loader2, Bot } from 'lucide-react';
-import RivalHeader, { getRivalInfo } from '@/components/RivalHeader';
+import { getRivalInfo } from '@/components/RivalHeader';
 import { Track, AIRival, TRACK_NAMES } from '@/types/drill';
 import { useProfile } from '@/hooks/useProfile';
 import { useAuth } from '@/hooks/useAuth';
@@ -119,8 +119,7 @@ const Dashboard = () => {
             </p>
           </div>
           
-          <div className="flex items-center justify-end gap-4">
-            <RivalHeader rivalId={profile.rival_id} />
+          <div className="flex flex-col sm:flex-row gap-3">
             <Button onClick={handleDailyChallenge} className="px-6">
               <Target className="mr-2" size={16} />
               Daily Challenge
@@ -159,7 +158,7 @@ const Dashboard = () => {
           
           <div className="space-y-2">
             {aiRival && (
-              <RivalProgress rival={aiRival} userXP={profile.xp} />
+              <RivalProgress rival={aiRival} userXP={profile.xp} rivalId={profile.rival_id} />
             )}
             
             {/* AI Rival Explanation */}
