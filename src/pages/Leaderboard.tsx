@@ -16,7 +16,6 @@ interface LeaderboardUser {
   rank: string;
   profile_pic?: string;
   rank_change?: number;
-  is_bot?: boolean;
 }
 
 const Leaderboard = () => {
@@ -34,10 +33,6 @@ const Leaderboard = () => {
     if (change > 0) return { text: `🔼 +${change}`, color: 'text-green-500' };
     return { text: `🔽 ${change}`, color: 'text-red-500' };
   };
-  const sanitizeUsername = (name: string) => {
-    const cleaned = name.replace(/[0-9]/g, '').replace(/[_-]+/g, ' ').replace(/\s+/g, ' ').trim();
-    return cleaned || name;
-  };
 
   useEffect(() => {
     fetchLeaderboard();
@@ -52,7 +47,7 @@ const Leaderboard = () => {
       
       const { data, error } = await supabase
         .from('profiles')
-        .select('id, username, xp, level, rank, profile_pic, rank_change, is_bot')
+        .select('id, username, xp, level, rank, profile_pic, rank_change')
         .order('xp', { ascending: false })
         .limit(20);
 
@@ -101,14 +96,6 @@ const Leaderboard = () => {
     };
   }, [loading]);
 
-  // Hard refresh every 10 minutes to ensure fresh rankings
-  useEffect(() => {
-    const id = setInterval(() => {
-      fetchLeaderboard();
-    }, 10 * 60 * 1000);
-    return () => clearInterval(id);
-  }, []);
-
   if (loading) {
     return (
       <div className="min-h-screen bg-background">
@@ -141,33 +128,31 @@ const Leaderboard = () => {
             </div>
 
             <div className="space-y-2 mt-4">
-              {leaderboardData.map((user, index) => {
-                const displayName = user.is_bot ? sanitizeUsername(user.username) : user.username;
-                return (
-                  <div
-                    key={user.id}
-                    className={`grid grid-cols-12 gap-4 p-3 rounded-lg transition-colors hover:bg-muted/50 ${
-                      index < 3 ? 'bg-primary/10 border border-primary/20' : ''
-                    }`}
-                  >
-                    <div className="col-span-1 flex items-center">
-                      <div className="flex items-center space-x-2">
-                        {index === 0 && <Crown className="text-yellow-500" size={16} />}
-                        {index === 1 && <Crown className="text-gray-400" size={16} />}
-                        {index === 2 && <Crown className="text-amber-600" size={16} />}
-                        <span className="font-bold text-foreground">#{index + 1}</span>
-                      </div>
+              {leaderboardData.map((user, index) => (
+                <div
+                  key={user.id}
+                  className={`grid grid-cols-12 gap-4 p-3 rounded-lg transition-colors hover:bg-muted/50 ${
+                    index < 3 ? 'bg-primary/10 border border-primary/20' : ''
+                  }`}
+                >
+                  <div className="col-span-1 flex items-center">
+                    <div className="flex items-center space-x-2">
+                      {index === 0 && <Crown className="text-yellow-500" size={16} />}
+                      {index === 1 && <Crown className="text-gray-400" size={16} />}
+                      {index === 2 && <Crown className="text-amber-600" size={16} />}
+                      <span className="font-bold text-foreground">#{index + 1}</span>
                     </div>
+                  </div>
 
-                    <div className="col-span-4 flex items-center space-x-3">
-                      <Avatar className="h-8 w-8">
-                        <AvatarImage src={user.profile_pic || `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(displayName)}`} />
-                        <AvatarFallback className="text-xs bg-primary/10 text-primary font-medium">
-                          {displayName.substring(0, 2).toUpperCase()}
-                        </AvatarFallback>
-                      </Avatar>
-                      <span className="font-medium text-foreground">{displayName}</span>
-                    </div>
+                  <div className="col-span-4 flex items-center space-x-3">
+                    <Avatar className="h-8 w-8">
+                      <AvatarImage src={user.profile_pic || `https://api.dicebear.com/7.x/avataaars/svg?seed=${user.username}`} />
+                      <AvatarFallback className="text-xs bg-primary/10 text-primary font-medium">
+                        {user.username.substring(0, 2).toUpperCase()}
+                      </AvatarFallback>
+                    </Avatar>
+                    <span className="font-medium text-foreground">{user.username}</span>
+                  </div>
 
                   <div className="col-span-2 flex items-center justify-center">
                     <Badge variant="secondary" className="text-xs">
@@ -189,7 +174,7 @@ const Leaderboard = () => {
                     </span>
                   </div>
                 </div>
-              })}
+              ))}
               
               {leaderboardData.length === 0 && (
                 <div className="text-center py-8 text-muted-foreground">
