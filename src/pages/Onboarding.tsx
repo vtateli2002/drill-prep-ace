@@ -240,19 +240,19 @@ const Onboarding = () => {
         />
 
         <Dialog open={confirmOpen} onOpenChange={setConfirmOpen}>
-          <DialogContent className="max-w-md">
-            <DialogHeader>
-              <DialogTitle className="text-center text-xl sm:text-2xl">
-                {selectedRival ? `🔥 ${displayName.toUpperCase()} HAS ENTERED THE CHAT 🔥` : 'Confirm Rival'}
+          <DialogContent className="sm:max-w-2xl bg-background/95 border border-border shadow-lg">
+            <DialogHeader className="space-y-2">
+              <DialogTitle className="text-center text-3xl sm:text-4xl font-extrabold tracking-tight">
+                {selectedRival ? `${displayName.toUpperCase()} — ${selectedRival === 'constance' ? 'The Technical Terminator' : selectedRival === 'chadson' ? 'The Networking God' : 'The Unhinged Quant Queen'}` : 'Confirm Rival'}
               </DialogTitle>
-              <DialogDescription className="text-center mt-2">
-                {taunt && <div className="mb-2 italic">“{taunt}”</div>}
-                Your journey begins now. Keep up, or get left behind.
+              <DialogDescription className="text-center mt-1 text-base sm:text-lg">
+                {taunt && <div className="mb-2 italic text-primary text-lg sm:text-xl">“{taunt}”</div>}
+                This is your race. Stay consistent, stack XP, and beat your rival.
               </DialogDescription>
             </DialogHeader>
-            <div className="flex justify-center gap-2">
-              <Button variant="ghost" onClick={() => setConfirmOpen(false)}>Change</Button>
-              <Button onClick={completeRival}>Continue</Button>
+            <div className="flex justify-center gap-3 pt-2">
+              <Button variant="ghost" size="lg" onClick={() => setConfirmOpen(false)}>Change</Button>
+              <Button size="lg" onClick={completeRival}>Continue</Button>
             </div>
           </DialogContent>
         </Dialog>
