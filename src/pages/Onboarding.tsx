@@ -8,6 +8,7 @@ import { Track, TRACK_NAMES } from '@/types/drill';
 import { useProfile } from '@/hooks/useProfile';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import RivalSelect from '@/components/RivalSelect';
+import RivalCutsceneModal from '@/components/RivalCutsceneModal';
 
 type OnboardingStep = 'welcome' | 'timeline' | 'rival' | 'tracks' | 'complete';
 type Goal = 'interview' | 'learning';
@@ -55,6 +56,7 @@ const Onboarding = () => {
   const [selectedTracks, setSelectedTracks] = useState<Track[]>([]);
   const [selectedRival, setSelectedRival] = useState<RivalId | null>(null);
   const [confirmOpen, setConfirmOpen] = useState(false);
+  const [cutsceneOpen, setCutsceneOpen] = useState(false);
 
   const handleGoalSelect = (selectedGoal: Goal) => {
     setGoal(selectedGoal);
@@ -76,7 +78,14 @@ const Onboarding = () => {
 
   const handleChooseRival = (r: RivalId) => {
     setSelectedRival(r);
-    setConfirmOpen(true);
+    setCutsceneOpen(true);
+    setConfirmOpen(false);
+
+    // Auto-advance to confirmation after short cutscene
+    setTimeout(() => {
+      setCutsceneOpen(false);
+      setConfirmOpen(true);
+    }, 4200);
   };
 
   const completeRival = () => {
@@ -218,7 +227,7 @@ const Onboarding = () => {
         <div className="w-full max-w-5xl space-y-4">
           <div className="text-center">
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">Choose Your AI Rival</h1>
-            <p className="text-muted-foreground mt-1">Pick your opponent. XP pace adapts to your timeline.</p>
+            <p className="text-muted-foreground mt-1">Pick your opponent. XP pace adapts to your interview timeline.</p>
           </div>
 
           <RivalSelect
@@ -227,6 +236,14 @@ const Onboarding = () => {
             onChoose={handleChooseRival}
           />
         </div>
+
+        {/* Cutscene reveal modal */}
+        <RivalCutsceneModal
+          open={cutsceneOpen}
+          onClose={() => setCutsceneOpen(false)}
+          rivalId={selectedRival}
+          timelineDays={timelineDays}
+        />
 
         <Dialog open={confirmOpen} onOpenChange={setConfirmOpen}>
           <DialogContent className="max-w-md">
