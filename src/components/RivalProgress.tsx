@@ -25,8 +25,8 @@ const RivalProgress = ({ rival, userXP, rivalId }: RivalProgressProps) => {
           <img
             src={rivalInfo.img}
             alt={`${rivalInfo.name} avatar`}
-            className="h-16 w-16 rounded-full object-cover ring-2 ring-primary/50"
-            style={{ boxShadow: '0 0 16px hsl(var(--primary) / 0.35)' }}
+            className="h-24 w-24 md:h-32 md:w-32 rounded-full object-cover ring-2 ring-primary/50 hover-scale"
+            style={{ boxShadow: '0 0 20px hsl(var(--primary) / 0.4)' }}
             loading="lazy"
           />
         </div>
