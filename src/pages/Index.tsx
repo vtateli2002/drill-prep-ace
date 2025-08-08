@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import { HeroHeadline } from '@/components/hero/HeroHeadline';
 import { HeroParticles } from '@/components/hero/HeroParticles';
 import { HeroXPBar } from '@/components/hero/HeroXPBar';
+import { HeroLogosTicker } from '@/components/hero/HeroLogosTicker';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -115,35 +116,8 @@ const Index = () => {
             >
               Used by students to land offers at top firms:
             </motion.p>
-            <div className="relative">
-              <div className="flex flex-col items-center gap-3 md:gap-4 px-1">
-                <div className="flex flex-wrap justify-center gap-3 md:gap-6">
-                  {['Goldman Sachs','J.P. Morgan','Evercore','Morgan Stanley','Centerview','Lazard'].map((firm, i) => (
-                    <motion.span
-                      key={firm}
-                      className="rounded-full border border-border bg-card/50 px-3 md:px-4 py-2 text-xs md:text-sm text-foreground/90"
-                      initial={{ opacity: 0, y: 8 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 1.2 + i * 0.06, type: 'spring', stiffness: 380, damping: 26 }}
-                    >
-                      {firm}
-                    </motion.span>
-                  ))}
-                </div>
-                <div className="flex flex-wrap justify-center gap-3 md:gap-6">
-                  {['Bank of America','Moelis','Citi','Perella Weinberg','Guggenheim'].map((firm, i) => (
-                    <motion.span
-                      key={firm}
-                      className="rounded-full border border-border bg-card/50 px-3 md:px-4 py-2 text-xs md:text-sm text-foreground/90"
-                      initial={{ opacity: 0, y: 8 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 1.5 + i * 0.06, type: 'spring', stiffness: 380, damping: 26 }}
-                    >
-                      {firm}
-                    </motion.span>
-                  ))}
-                </div>
-              </div>
+            <div className="relative w-full">
+              <HeroLogosTicker />
             </div>
           </div>
         </div>
