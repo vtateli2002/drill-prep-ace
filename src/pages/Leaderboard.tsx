@@ -16,6 +16,7 @@ interface LeaderboardUser {
   rank: string;
   profile_pic?: string;
   rank_change?: number;
+  is_bot?: boolean;
 }
 
 const Leaderboard = () => {
@@ -47,7 +48,7 @@ const Leaderboard = () => {
       
       const { data, error } = await supabase
         .from('profiles')
-        .select('id, username, xp, level, rank, profile_pic, rank_change')
+        .select('id, username, xp, level, rank, profile_pic, rank_change, is_bot')
         .order('xp', { ascending: false })
         .limit(20);
 
@@ -146,12 +147,12 @@ const Leaderboard = () => {
 
                   <div className="col-span-4 flex items-center space-x-3">
                     <Avatar className="h-8 w-8">
-                      <AvatarImage src={user.profile_pic || `https://api.dicebear.com/7.x/avataaars/svg?seed=${user.username}`} />
+                      <AvatarImage src={user.profile_pic || `https://api.dicebear.com/7.x/avataaars/svg?seed=${(user.is_bot ? user.username.replace(/[0-9]/g, '') || user.username : user.username)}`} />
                       <AvatarFallback className="text-xs bg-primary/10 text-primary font-medium">
-                        {user.username.substring(0, 2).toUpperCase()}
+                        {(user.is_bot ? user.username.replace(/[0-9]/g, '') || user.username : user.username).substring(0, 2).toUpperCase()}
                       </AvatarFallback>
                     </Avatar>
-                    <span className="font-medium text-foreground">{user.username}</span>
+                    <span className="font-medium text-foreground">{user.is_bot ? user.username.replace(/[0-9]/g, '') || user.username : user.username}</span>
                   </div>
 
                   <div className="col-span-2 flex items-center justify-center">
