@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Bot, Clock } from 'lucide-react';
+import { Clock } from 'lucide-react';
 import { AIRival } from '@/types/drill';
 import { getRivalInfo } from '@/features/rivals/utils/rivals';
 
@@ -17,50 +17,50 @@ const RivalCard = ({ rival, userXP, rivalId }: RivalCardProps) => {
   return (
     <Card className={`border shadow-sm`}>
       <CardHeader className="pb-3">
-        <div className="flex items-center justify-between">
-          <CardTitle className="flex items-center gap-2 text-lg">
-            <Bot size={20} className="text-muted-foreground" />
-            <span>AI Rival: {rivalInfo.name}</span>
+        <div className="flex items-start justify-between">
+          <CardTitle className="text-lg">
+            <span className="font-semibold">AI Rival:</span>{' '}
+            <span className="text-foreground">{rivalInfo.name}</span>
           </CardTitle>
           <img
             src={rivalInfo.img}
             alt={`${rivalInfo.name} avatar`}
-            className="h-24 w-24 md:h-32 md:w-32 rounded-full object-cover ring-2 ring-primary/50 hover-scale"
-            style={{ boxShadow: '0 0 20px hsl(var(--primary) / 0.4)' }}
+            className="h-[60px] w-[60px] rounded-full object-cover ring-2 ring-primary/40"
+            style={{ boxShadow: '0 0 18px hsl(var(--primary) / 0.35)' }}
             loading="lazy"
           />
         </div>
       </CardHeader>
 
       <CardContent className="space-y-4">
-        <div className="grid grid-cols-2 gap-4">
-          <div>
+        {/* XP Comparison Row */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="text-left">
             <div className="text-sm text-muted-foreground mb-1">Your XP</div>
             <div className="text-xl font-bold text-foreground">{userXP.toLocaleString()}</div>
           </div>
-          <div>
+          <div className="text-left">
             <div className="text-sm text-muted-foreground mb-1">Rival XP</div>
             <div className="text-xl font-bold text-foreground">{rival.totalXP.toLocaleString()}</div>
           </div>
-        </div>
-
-        <div className="space-y-2">
-          <div className="flex justify-between text-sm">
-            <span className="text-muted-foreground">Race Status</span>
-            <span className={`font-medium ${isAhead ? 'text-success' : 'text-destructive'}`}>
+          <div className="text-left">
+            <div className="text-sm text-muted-foreground mb-1">Net difference</div>
+            <div className={`text-xl font-semibold ${isAhead ? 'text-success' : 'text-destructive'}`}>
               {isAhead ? `+${xpDifference} ahead` : `-${xpDifference} behind`}
-            </span>
-          </div>
-
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Clock size={14} />
-            <span>{rival.daysRemaining} days remaining</span>
-            <span>•</span>
-            <span>{rival.dailyXPGoal} XP/day goal</span>
+            </div>
           </div>
         </div>
 
-        <div className="mt-2 pt-3 border-t border-border text-xs text-muted-foreground">
+        {/* Race Status Row */}
+        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <Clock size={14} />
+          <span>{rival.daysRemaining} days remaining</span>
+          <span>•</span>
+          <span>{rival.dailyXPGoal} XP/day goal</span>
+        </div>
+
+        {/* Footer Message */}
+        <div className="p-3 rounded-md bg-muted text-xs text-muted-foreground">
           This AI rival is custom-built for your interview timeline. Your goal: beat {rivalInfo.name} before your interview date.
         </div>
       </CardContent>
