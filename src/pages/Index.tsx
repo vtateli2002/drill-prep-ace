@@ -114,22 +114,27 @@ const Index = () => {
               </p>
             </motion.div>
             {/* Trust Bar */}
-            <div className="pt-10">
-              <p className="text-sm text-muted-foreground mb-4">
-                Students around the world have used Drill to land offers at top firms:
-              </p>
-              <div className="relative">
-                <div className="flex flex-wrap justify-center gap-3 md:gap-6 px-1">
-                  {['Goldman Sachs','Evercore','Morgan Stanley','J.P. Morgan','Centerview','Lazard'].map((firm, i) => (
-                    <span
-                      key={firm}
-                      className="reveal rounded-full border border-border bg-card/50 px-3 md:px-4 py-2 text-xs md:text-sm text-foreground/90"
-                      style={{ transitionDelay: `${i * 60}ms` }}
-                    >
-                      {firm}
-                    </span>
-                  ))}
-                </div>
+            <motion.p
+              className="text-sm text-muted-foreground mb-4"
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.1, type: 'spring', stiffness: 380, damping: 28 }}
+            >
+              Used by students to land offers at top firms:
+            </motion.p>
+            <div className="relative">
+              <div className="flex flex-wrap justify-center gap-3 md:gap-6 px-1">
+                {['Goldman Sachs','J.P. Morgan','Evercore','Morgan Stanley','Centerview','Lazard','Blackstone','Bank of America','Moelis'].map((firm, i) => (
+                  <motion.span
+                    key={firm}
+                    className="rounded-full border border-border bg-card/50 px-3 md:px-4 py-2 text-xs md:text-sm text-foreground/90"
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.2 + i * 0.06, type: 'spring', stiffness: 380, damping: 26 }}
+                  >
+                    {firm}
+                  </motion.span>
+                ))}
               </div>
             </div>
           </div>
