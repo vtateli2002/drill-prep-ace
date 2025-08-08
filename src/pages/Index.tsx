@@ -17,6 +17,22 @@ const Index = () => {
     }
   }, [user, navigate]);
 
+  const letters = Array.from("Investment Banking");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <Seo title="Drill — LeetCode for Investment Banking" description="Master IB technicals faster with gamified learning, real interview questions, and an AI rival." canonical={window.location.origin + '/'} />
@@ -41,12 +57,40 @@ const Index = () => {
             color: transparent;
           }
           .animate-shine { animation: text-shine 2.8s linear infinite; }
+
+          @keyframes char-reveal {
+            0% { opacity: 0; transform: translateY(12px); }
+            100% { opacity: 1; transform: translateY(0); }
+          }
+          .reveal-char { display: inline-block; animation: char-reveal 0.6s cubic-bezier(0.22,1,0.36,1) both; }
+
+          .reveal { opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .6s ease; }
+          .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+          .btn-shine { position: absolute; inset: -20% auto -20% -20%; width: 50%; background: linear-gradient(120deg, transparent 0%, hsl(var(--foreground) / 0.08) 50%, transparent 100%); transform: translateX(-200%) rotate(12deg); transition: transform .6s ease; }
+          .group:hover .btn-shine { transform: translateX(300%) rotate(12deg); }
+
+          @media (prefers-reduced-motion: reduce) {
+            .animate-shine { animation: none !important; }
+            .reveal, .reveal-char { opacity: 1 !important; transform: none !important; transition: none !important; animation: none !important; }
+            .btn-shine { display: none !important; }
+          }
         `}</style>
         <div className="container mx-auto px-4 py-24 md:py-32">
           <div className="text-center max-w-5xl mx-auto space-y-8">
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-foreground leading-[1.05]">
               <span className="block">The LeetCode for</span>
-              <span className="block text-shine animate-shine">Investment Banking</span>
+              <span className="block">
+                {letters.map((ch, i) => (
+                  <span
+                    key={i}
+                    className="text-shine animate-shine reveal-char"
+                    style={{ animationDelay: `${i * 40}ms` }}
+                  >
+                    {ch === ' ' ? '\u00A0' : ch}
+                  </span>
+                ))}
+              </span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground">
               Master technical interviews faster than ever — with real questions, XP, and AI rivals.
@@ -55,8 +99,9 @@ const Index = () => {
               Built for aspiring analysts at top firms. Train with gamified practice sourced from real interviews.
             </p>
             <div className="pt-4">
-              <Button size="lg" onClick={() => navigate('/auth')} className="px-8 py-3 text-lg rounded-full">
-                Start Your Prep Journey
+              <Button size="lg" onClick={() => navigate('/auth')} className="group relative overflow-hidden px-8 py-3 text-lg rounded-full transition-transform duration-200 hover:-translate-y-0.5">
+                <span className="relative z-10">Start Your Prep Journey</span>
+                <span aria-hidden className="btn-shine" />
               </Button>
               <p className="mt-3 text-xs md:text-sm text-muted-foreground">
                 Get started in under 30 seconds — no credit card required
@@ -69,8 +114,12 @@ const Index = () => {
               </p>
               <div className="relative">
                 <div className="flex flex-wrap justify-center gap-3 md:gap-6 px-1">
-                  {['Goldman Sachs','Evercore','Morgan Stanley','J.P. Morgan','Centerview','Lazard'].map((firm) => (
-                    <span key={firm} className="rounded-full border border-border bg-card/50 px-3 md:px-4 py-2 text-xs md:text-sm text-foreground/90">
+                  {['Goldman Sachs','Evercore','Morgan Stanley','J.P. Morgan','Centerview','Lazard'].map((firm, i) => (
+                    <span
+                      key={firm}
+                      className="reveal rounded-full border border-border bg-card/50 px-3 md:px-4 py-2 text-xs md:text-sm text-foreground/90"
+                      style={{ transitionDelay: `${i * 60}ms` }}
+                    >
                       {firm}
                     </span>
                   ))}
@@ -84,7 +133,7 @@ const Index = () => {
       {/* Value Propositions */}
       <div className="container mx-auto px-4 py-16 border-t border-border">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <article className="bg-card border border-border rounded-xl p-6 shadow-sm">
+          <article className="reveal bg-card border border-border rounded-xl p-6 shadow-sm" style={{ transitionDelay: '0ms' }}>
             <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
               <Code2 className="text-primary" size={20} />
             </div>
@@ -92,7 +141,7 @@ const Index = () => {
             <p className="text-muted-foreground">Drill is built like a coding platform — but for finance. Structured, trackable, and performance-based.</p>
             <p className="text-sm italic text-muted-foreground mt-2">Become technical faster. Retain it longer. Outperform your competition.</p>
           </article>
-          <article className="bg-card border border-border rounded-xl p-6 shadow-sm">
+          <article className="reveal bg-card border border-border rounded-xl p-6 shadow-sm" style={{ transitionDelay: '80ms' }}>
             <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
               <Gamepad2 className="text-primary" size={20} />
             </div>
@@ -100,7 +149,7 @@ const Index = () => {
             <p className="text-muted-foreground">Earn XP. Unlock badges. Race against an AI rival.</p>
             <p className="text-sm italic text-muted-foreground mt-2">Drill makes repetition addicting — and effective.</p>
           </article>
-          <article className="bg-card border border-border rounded-xl p-6 shadow-sm">
+          <article className="reveal bg-card border border-border rounded-xl p-6 shadow-sm" style={{ transitionDelay: '160ms' }}>
             <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
               <NotebookText className="text-primary" size={20} />
             </div>
@@ -108,7 +157,7 @@ const Index = () => {
             <p className="text-muted-foreground">Many questions are based on actual screens from bulge brackets and elite boutiques.</p>
             <p className="text-sm italic text-muted-foreground mt-2">You’re not just practicing — you’re preparing for what really gets asked.</p>
           </article>
-          <article className="bg-card border border-border rounded-xl p-6 shadow-sm">
+          <article className="reveal bg-card border border-border rounded-xl p-6 shadow-sm" style={{ transitionDelay: '240ms' }}>
             <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
               <Flame className="text-primary" size={20} />
             </div>
