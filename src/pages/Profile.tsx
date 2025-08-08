@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Progress } from '@/components/ui/progress';
 import { Button } from '@/components/ui/button';
-import { Trophy, Zap, Target, Award, Loader2, User, LogOut } from 'lucide-react';
+import { Trophy, Zap, Target, Award, Loader2, User, LogOut, Bot, CalendarDays, Timer, Flame, Flag } from 'lucide-react';
 import { useProfile } from '@/hooks/useProfile';
 import { useAuth } from '@/hooks/useAuth';
 import { useQuestions } from '@/hooks/useQuestions';
@@ -67,6 +67,35 @@ const Profile = () => {
     }
     return defaultDaily;
   })();
+
+  const timelineLabels = {
+    '1-week': '1 Week',
+    '2-weeks': '2 Weeks',
+    '1-month': '1 Month',
+    '3-months': '3 Months',
+    'more': 'More than 3 Months'
+  } as const;
+  const displayGoal = onboarding?.goal ? (onboarding.goal === 'interview' ? 'Interview Prep' : 'Learning') : '—';
+  const prettyTimeline = onboarding?.timeline ? timelineLabels[onboarding.timeline] : '—';
+  const startedAt = onboarding?.completedAt
+    ? new Date(onboarding.completedAt)
+    : (profile?.created_at ? new Date(profile.created_at) : null);
+  const timelineDaysMap = {
+    '1-week': 7,
+    '2-weeks': 14,
+    '1-month': 30,
+    '3-months': 90,
+    'more': 120
+  } as const;
+  const addDays = (date: Date, days: number) => new Date(date.getTime() + days * 24 * 60 * 60 * 1000);
+  const computedTargetDate = profile?.interview_deadline
+    ? new Date(profile.interview_deadline)
+    : (onboarding?.timeline && startedAt
+      ? addDays(startedAt, timelineDaysMap[onboarding.timeline])
+      : null);
+  const goalReminder = computedTargetDate
+    ? `Beat FinanceBot before ${computedTargetDate.toLocaleDateString()}`
+    : 'Set your goal to get a Rival deadline';
 
   const handleSignOut = async () => {
     await signOut();
@@ -210,35 +239,59 @@ const Profile = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="space-y-2">
-                  <h3 className="font-semibold text-foreground">Onboarding Choices</h3>
-                  <div className="text-sm text-muted-foreground">
-                    <div>Goal: <span className="font-medium text-foreground">{onboarding?.goal ? (onboarding.goal === 'interview' ? 'Interview Prep' : 'Learning') : '—'}</span></div>
-                    <div>Timeline: <span className="font-medium text-foreground">{onboarding?.timeline ? onboarding.timeline.replace('-', ' ') : '—'}</span></div>
-                    <div>Started: <span className="font-medium text-foreground">{onboarding?.completedAt ? new Date(onboarding.completedAt).toLocaleDateString() : '—'}</span></div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Your Plan */}
+                <div className="rounded-xl border border-border bg-muted/40 p-4">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Target className="text-primary" size={16} />
+                    <h3 className="text-sm font-semibold text-foreground">Your Plan</h3>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <Trophy className="w-4 h-4" /> Goal
+                      </div>
+                      <div className="text-sm font-medium text-foreground">{displayGoal}</div>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <Timer className="w-4 h-4" /> Timeline
+                      </div>
+                      <div className="text-right">
+                        <div className="text-sm font-medium text-foreground">{prettyTimeline}</div>
+                        {startedAt && (
+                          <div className="text-xs text-muted-foreground">Started: {startedAt.toLocaleDateString()}</div>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className="space-y-2">
-                  <h3 className="font-semibold text-foreground">Selected Tracks</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {(onboarding?.tracks || []).length > 0 ? (
-                      onboarding!.tracks.map((t) => (
-                        <Badge key={t} variant="secondary" className="text-xs">{t === 'ma' ? 'M&A' : t.toUpperCase()}</Badge>
-                      ))
-                    ) : (
-                      <span className="text-sm text-muted-foreground">—</span>
-                    )}
+
+                {/* AI Rival */}
+                <div className="rounded-xl border border-border bg-muted/40 p-4">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Bot className="text-primary" size={16} />
+                    <h3 className="text-sm font-semibold text-foreground">AI Rival: FinanceBot</h3>
                   </div>
-                </div>
-                <div className="space-y-2">
-                  <h3 className="font-semibold text-foreground">AI Rival Pace</h3>
-                  <div className="text-sm text-muted-foreground">
-                    <div>Daily Rival XP: <span className="font-semibold text-foreground">{rivalDailyXP}</span></div>
-                    {profile.interview_deadline && (
-                      <div>Interview Date: <span className="font-medium text-foreground">{new Date(profile.interview_deadline).toLocaleDateString()}</span></div>
-                    )}
-                    <div>Rival XP so far: <span className="font-semibold text-foreground">{profile.rival_xp}</span></div>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <Timer className="w-4 h-4" /> Daily XP Pace
+                      </div>
+                      <div className="text-sm font-semibold text-foreground">{rivalDailyXP} XP/day</div>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <Flame className="w-4 h-4" /> Rival XP to Date
+                      </div>
+                      <div className="text-sm font-semibold text-foreground">{(profile.rival_xp || 0).toLocaleString()} XP</div>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <Flag className="w-4 h-4" /> Your Goal
+                      </div>
+                      <div className="text-sm font-medium text-foreground text-right">{goalReminder}</div>
+                    </div>
                   </div>
                 </div>
               </div>
