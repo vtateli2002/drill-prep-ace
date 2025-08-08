@@ -9,6 +9,7 @@ import DailyChallengeModal from '@/components/DailyChallengeModal';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Target, Loader2, Bot } from 'lucide-react';
+import RivalHeader, { getRivalInfo } from '@/components/RivalHeader';
 import { Track, AIRival, TRACK_NAMES } from '@/types/drill';
 import { useProfile } from '@/hooks/useProfile';
 import { useAuth } from '@/hooks/useAuth';
@@ -26,8 +27,9 @@ const Dashboard = () => {
   const { shouldShowModal: shouldShowLoginChallenge, hideDailyChallengeModal } = useLoginDailyChallenge();
 
   // Create AI rival object from profile data
+  const rivalMeta = getRivalInfo(profile?.rival_id);
   const aiRival = profile ? {
-    name: "FinanceBot",
+    name: rivalMeta.name,
     totalXP: profile.rival_xp || 0,
     dailyXPGoal: 300,
     daysRemaining: profile.interview_deadline 
@@ -117,7 +119,8 @@ const Dashboard = () => {
             </p>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-3">
+          <div className="flex items-center justify-end gap-4">
+            <RivalHeader rivalId={profile.rival_id} />
             <Button onClick={handleDailyChallenge} className="px-6">
               <Target className="mr-2" size={16} />
               Daily Challenge
@@ -163,7 +166,7 @@ const Dashboard = () => {
             <div className="flex items-center gap-2 p-3 bg-muted rounded-lg">
               <Bot className="h-4 w-4 text-primary" />
               <p className="text-sm text-muted-foreground">
-                This AI rival is custom-built for your interview timeline. Your goal: beat FinanceBot before your interview date.
+                This AI rival is custom-built for your interview timeline. Your goal: beat {rivalMeta.name} before your interview date.
               </p>
             </div>
           </div>
