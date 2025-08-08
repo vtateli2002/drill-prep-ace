@@ -14,6 +14,110 @@ export type Database = {
   }
   public: {
     Tables: {
+      attempts: {
+        Row: {
+          attempt_number: number
+          created_at: string
+          difficulty: string
+          id: string
+          is_correct: boolean
+          notes: string | null
+          question_id: string
+          submitted_answer: number | null
+          track: string
+          user_id: string
+          xp_awarded: number
+        }
+        Insert: {
+          attempt_number?: number
+          created_at?: string
+          difficulty: string
+          id?: string
+          is_correct?: boolean
+          notes?: string | null
+          question_id: string
+          submitted_answer?: number | null
+          track: string
+          user_id: string
+          xp_awarded?: number
+        }
+        Update: {
+          attempt_number?: number
+          created_at?: string
+          difficulty?: string
+          id?: string
+          is_correct?: boolean
+          notes?: string | null
+          question_id?: string
+          submitted_answer?: number | null
+          track?: string
+          user_id?: string
+          xp_awarded?: number
+        }
+        Relationships: []
+      }
+      badge_unlocks: {
+        Row: {
+          badge_id: string
+          id: string
+          metadata: Json | null
+          unlocked_at: string
+          user_id: string
+        }
+        Insert: {
+          badge_id: string
+          id?: string
+          metadata?: Json | null
+          unlocked_at?: string
+          user_id: string
+        }
+        Update: {
+          badge_id?: string
+          id?: string
+          metadata?: Json | null
+          unlocked_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "badge_unlocks_badge_id_fkey"
+            columns: ["badge_id"]
+            isOneToOne: false
+            referencedRelation: "badges"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      badges: {
+        Row: {
+          created_at: string
+          description: string | null
+          icon: string | null
+          id: string
+          name: string
+          slug: string
+          xp_reward: number
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          icon?: string | null
+          id?: string
+          name: string
+          slug: string
+          xp_reward?: number
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          icon?: string | null
+          id?: string
+          name?: string
+          slug?: string
+          xp_reward?: number
+        }
+        Relationships: []
+      }
       daily_challenges: {
         Row: {
           challenge_date: string
