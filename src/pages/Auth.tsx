@@ -121,6 +121,24 @@ const Auth = () => {
     }
   };
 
+  const handleGoogleAuth = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: `${window.location.origin}/auth`,
+          queryParams: { prompt: 'select_account' },
+        },
+      });
+      if (error) throw error;
+    } catch (error: any) {
+      setError(error.message);
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
       <Card className="w-full max-w-md bg-card border-border">
@@ -213,6 +231,16 @@ const Auth = () => {
             </div>
           </div>
           
+          <Button
+            variant="outline"
+            className="w-full"
+            onClick={handleGoogleAuth}
+            disabled={loading}
+          >
+            {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+            Continue with Google
+          </Button>
+
           <Button 
             variant="outline" 
             className="w-full" 
