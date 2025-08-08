@@ -2,14 +2,12 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import XPProgress from '@/components/XPProgress';
-import TrackCard from '@/components/TrackCard';
 import RivalMotivationModal from '@/components/RivalMotivationModal';
 import DailyChallengeModal from '@/components/DailyChallengeModal';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Target, Loader2 } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
 import { RivalCard } from '@/features/rivals';
 import { getRivalInfo } from '@/features/rivals/utils/rivals';
+import { DashboardHeader, QuickStats, TracksGrid } from '@/features/dashboard';
 import { Track, AIRival, TRACK_NAMES } from '@/types/drill';
 import { useProfile } from '@/hooks/useProfile';
 import { useAuth } from '@/hooks/useAuth';
@@ -108,24 +106,7 @@ const Dashboard = () => {
       <Navbar />
       
       <div className="container mx-auto px-4 py-6 space-y-6">
-        {/* Header Section */}
-        <div className="flex flex-col lg:flex-row gap-6">
-          <div className="flex-1">
-            <h1 className="text-3xl font-bold text-foreground mb-2">
-              Welcome back to Drill
-            </h1>
-            <p className="text-muted-foreground">
-              Keep grinding to beat your AI rival and ace those interviews.
-            </p>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-3">
-            <Button onClick={handleDailyChallenge} className="px-6">
-              <Target className="mr-2" size={16} />
-              Daily Challenge
-            </Button>
-          </div>
-        </div>
+        <DashboardHeader onDailyChallenge={handleDailyChallenge} />
 
         {/* Progress Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -137,23 +118,7 @@ const Dashboard = () => {
               streak={profile.streak}
             />
             
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Quick Stats</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-2 gap-4 text-center">
-                  <div>
-                    <div className="text-2xl font-bold text-primary">{profile.xp}</div>
-                    <div className="text-sm text-muted-foreground">Total XP</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-primary">{profile.streak}</div>
-                    <div className="text-sm text-muted-foreground">Day Streak</div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <QuickStats xp={profile.xp} streak={profile.streak} />
           </div>
           
           <div className="space-y-2">
@@ -164,25 +129,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Tracks Section - Always show all 4 tracks */}
-        <div>
-          <h2 className="text-2xl font-bold text-foreground mb-4">Your Tracks</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {allTracks.map((track) => {
-              const stats = trackStats[track];
-              return (
-                <TrackCard
-                  key={track}
-                  track={track}
-                  completed={stats.completed}
-                  total={stats.total}
-                  xp={stats.xp}
-                  onStart={() => handleStartTrack(track)}
-                />
-              );
-            })}
-          </div>
-        </div>
+        <TracksGrid tracks={allTracks} trackStats={trackStats} onStart={handleStartTrack} />
       </div>
 
       {/* Modals */}
