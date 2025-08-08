@@ -16,6 +16,7 @@ const Auth = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : '';
 
   useEffect(() => {
     // Check if user is already logged in and route based on onboarding status
@@ -160,6 +161,17 @@ const Auth = () => {
               <AlertDescription>{error}</AlertDescription>
             </Alert>
           )}
+          
+          <div className="space-y-2">
+            <Label className="text-foreground">Current Site URL</Label>
+            <div className="flex gap-2">
+              <Input readOnly value={siteUrl} />
+              <Button type="button" variant="secondary" onClick={() => navigator.clipboard.writeText(siteUrl)}>
+                Copy
+              </Button>
+            </div>
+            <p className="text-xs text-muted-foreground">Use this in Supabase Site URL and Google Authorized JavaScript origin.</p>
+          </div>
           
           <form onSubmit={handleEmailAuth} className="space-y-4">
             {isSignUp && (
