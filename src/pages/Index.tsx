@@ -58,6 +58,8 @@ const Index = () => {
           }
           .animate-shine { animation: text-shine 2.8s linear infinite; }
 
+          @keyframes overlay-in { from { opacity: 0; } to { opacity: 1; } }
+
           @keyframes char-reveal {
             0% { opacity: 0; transform: translateY(12px); }
             100% { opacity: 1; transform: translateY(0); }
@@ -80,16 +82,25 @@ const Index = () => {
           <div className="text-center max-w-5xl mx-auto space-y-8">
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-foreground leading-[1.05]">
               <span className="block">The LeetCode for</span>
-              <span className="block">
-                {letters.map((ch, i) => (
-                  <span
-                    key={i}
-                    className="text-shine animate-shine reveal-char"
-                    style={{ animationDelay: `${i * 40}ms` }}
-                  >
-                    {ch === ' ' ? '\u00A0' : ch}
-                  </span>
-                ))}
+              <span className="block relative inline-block">
+                <span
+                  aria-hidden
+                  className="absolute inset-0 text-shine pointer-events-none select-none"
+                  style={{ animation: 'text-shine 2.8s linear infinite 2200ms, overlay-in 1ms linear 2200ms forwards' }}
+                >
+                  Investment Banking
+                </span>
+                <span className="relative">
+                  {letters.map((ch, i) => (
+                    <span
+                      key={i}
+                      className="reveal-char"
+                      style={{ animationDelay: `${i * 40}ms` }}
+                    >
+                      {ch === ' ' ? '\u00A0' : ch}
+                    </span>
+                  ))}
+                </span>
               </span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground">
