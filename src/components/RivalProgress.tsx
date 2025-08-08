@@ -15,7 +15,7 @@ const RivalProgress = ({ rival, userXP, rivalId }: RivalProgressProps) => {
   const rivalInfo = getRivalInfo(rivalId);
   
   return (
-    <Card className={`border-2 ${isAhead ? 'border-success/30' : 'border-destructive/30'}`}>
+    <Card className={`border shadow-sm`}>
       <CardHeader className="pb-3">
         <div className="flex items-center justify-between">
           <CardTitle className="flex items-center gap-2 text-lg">
@@ -58,6 +58,10 @@ const RivalProgress = ({ rival, userXP, rivalId }: RivalProgressProps) => {
             <span>•</span>
             <span>{rival.dailyXPGoal} XP/day goal</span>
           </div>
+        </div>
+
+        <div className="mt-2 pt-3 border-t border-border text-xs text-muted-foreground">
+          This AI rival is custom-built for your interview timeline. Your goal: beat {rivalInfo.name} before your interview date.
         </div>
       </CardContent>
     </Card>

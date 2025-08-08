@@ -161,13 +161,6 @@ const Dashboard = () => {
               <RivalProgress rival={aiRival} userXP={profile.xp} rivalId={profile.rival_id} />
             )}
             
-            {/* AI Rival Explanation */}
-            <div className="flex items-center gap-2 p-3 bg-muted rounded-lg">
-              <Bot className="h-4 w-4 text-primary" />
-              <p className="text-sm text-muted-foreground">
-                This AI rival is custom-built for your interview timeline. Your goal: beat {rivalMeta.name} before your interview date.
-              </p>
-            </div>
           </div>
         </div>
 
