@@ -17,7 +17,7 @@ const rankForLevel = (lvl: number) => {
   return 'Analyst'
 }
 
-export const HeroXPBar: React.FC<HeroXPBarProps> = ({ className = '', startLevel = 4, weeklyXP = 2300 }) => {
+export const HeroXPBar: React.FC<HeroXPBarProps> = ({ className = '', startLevel = 1, weeklyXP = 2300 }) => {
   const [level, setLevel] = useState(startLevel)
   const [tick, setTick] = useState(0) // fires each full cycle (level-up)
   const [bubbleTick, setBubbleTick] = useState(0) // fires XP gain bubbles
