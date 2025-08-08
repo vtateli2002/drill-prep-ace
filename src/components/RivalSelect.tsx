@@ -94,7 +94,7 @@ const RivalSelect: FC<RivalSelectProps> = ({ onChoose, timelineDays, selectedRiv
                 {/* slow parallax sheen */}
                 <div className="pointer-events-none absolute -inset-10 opacity-10 animate-[slide-in-right_6s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-foreground/20 to-transparent" />
                 <img
-                  src={rival.img}
+                  src={rival.id === 'constance' ? `${rival.img}?v=2` : rival.img}
                   alt={`${rival.name} pixel sprite`}
                   className="relative w-40 h-40 sm:w-48 sm:h-48 object-contain drop-shadow-md transition-transform duration-200 group-hover:scale-105"
                   loading="lazy"

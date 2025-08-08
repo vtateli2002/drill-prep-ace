@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import type { RivalId } from '@/components/RivalSelect';
 import constanceImg from '@/assets/rivals/constance.png';
 import chadsonImg from '@/assets/rivals/chadson.png';
@@ -102,6 +102,8 @@ export default function RivalCutsceneModal({ open, onClose, rivalId, timelineDay
   return (
     <Dialog open={open} onOpenChange={(v) => !v && onClose()}>
       <DialogContent className="sm:max-w-3xl md:max-w-4xl border-primary/30 bg-background/95 overflow-hidden cursor-pointer" onClick={onClose}>
+        <DialogTitle className="sr-only">{data ? `${data.name} — ${data.nickname}` : 'Rival intro'}</DialogTitle>
+        <DialogDescription className="sr-only">Intro cutscene</DialogDescription>
         {data && (
           <div className="relative rounded-xl">
             {/* Rival-specific animated backgrounds */}
@@ -154,7 +156,7 @@ export default function RivalCutsceneModal({ open, onClose, rivalId, timelineDay
 
             <div className="relative z-10 flex flex-col items-center text-center py-6 sm:py-8">
               <img
-                src={data.img}
+                src={rivalId === 'constance' ? `${data.img}?v=2` : data.img}
                 alt="rival cutscene"
                 className="w-56 h-56 object-contain drop-shadow-xl animate-enter"
               />
