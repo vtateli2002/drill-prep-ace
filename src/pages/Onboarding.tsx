@@ -80,12 +80,6 @@ const Onboarding = () => {
     setSelectedRival(r);
     setCutsceneOpen(true);
     setConfirmOpen(false);
-
-    // Auto-advance to confirmation after short cutscene
-    setTimeout(() => {
-      setCutsceneOpen(false);
-      setConfirmOpen(true);
-    }, 4200);
   };
 
   const completeRival = () => {
@@ -240,7 +234,7 @@ const Onboarding = () => {
         {/* Cutscene reveal modal */}
         <RivalCutsceneModal
           open={cutsceneOpen}
-          onClose={() => setCutsceneOpen(false)}
+          onClose={() => { setCutsceneOpen(false); setConfirmOpen(true); }}
           rivalId={selectedRival}
           timelineDays={timelineDays}
         />
