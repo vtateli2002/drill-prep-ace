@@ -101,7 +101,7 @@ export default function RivalCutsceneModal({ open, onClose, rivalId, timelineDay
 
   return (
     <Dialog open={open} onOpenChange={(v) => !v && onClose()}>
-      <DialogContent className="sm:max-w-3xl md:max-w-4xl border-primary/30 bg-background/95 overflow-hidden">
+      <DialogContent className="sm:max-w-3xl md:max-w-4xl border-primary/30 bg-background/95 overflow-hidden cursor-pointer" onClick={onClose}>
         {data && (
           <div className="relative rounded-xl">
             {/* Rival-specific animated backgrounds */}
