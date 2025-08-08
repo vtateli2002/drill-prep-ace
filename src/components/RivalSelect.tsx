@@ -1,6 +1,4 @@
 import { FC, useMemo } from 'react';
-import { Progress } from '@/components/ui/progress';
-import { Card, CardContent } from '@/components/ui/card';
 import constanceImg from '@/assets/rivals/constance.png';
 import chadsonImg from '@/assets/rivals/chadson.png';
 import chartreuseImg from '@/assets/rivals/chartreuse.png';
@@ -25,130 +23,149 @@ const RivalSelect: FC<RivalSelectProps> = ({ onChoose, timelineDays, selectedRiv
     {
       id: 'constance' as const,
       name: 'Constance',
-      nickname: 'The Technical Terminator',
-      description:
-        'Cold stare. Calculator always glowing. Never misses, never sleeps.',
+      nickname: 'Goldman Stanley’s TMT Terminator',
+      description: 'Cold stare. Glowing calculator. Always calculating.',
       multiplier: 1.0,
       img: constanceImg,
-      highlights: ['Strong: Accounting & Valuation', 'Weak: Behavioral'],
-      stats: { strength: 95, weakness: 35, speed: 100 },
+      bg: 'from-emerald-500/30 via-emerald-400/10 to-transparent',
+      accent: 'text-emerald-300',
+      ring: 'ring-emerald-400/60',
+      glow: 'shadow-[0_0_30px_rgba(16,185,129,0.35)]',
     },
     {
       id: 'chadson' as const,
       name: 'Chadson',
       nickname: 'The Networking God',
-      description:
-        'Backwards cap, shades, and a fast-track to offers — on vibes alone.',
+      description: 'Shades on. Solo cup up. Offer secured.',
       multiplier: 0.75,
       img: chadsonImg,
-      highlights: ['Strong: Fit & Behaviorals', 'Weak: Hardcore math'],
-      stats: { strength: 70, weakness: 55, speed: 75 },
+      bg: 'from-fuchsia-500/25 via-pink-400/10 to-transparent',
+      accent: 'text-fuchsia-300',
+      ring: 'ring-fuchsia-400/60',
+      glow: 'shadow-[0_0_30px_rgba(217,70,239,0.35)]',
     },
     {
       id: 'chartreuse' as const,
       name: 'Chartreuse',
       nickname: 'The Unhinged Quant Queen',
-      description:
-        'Jittery energy. 47 tabs open. Believes in DCFs as religion.',
+      description: '47 tabs. Models forever. She whispers: I love DCFs…',
       multiplier: 0.5,
       img: chartreuseImg,
-      highlights: ['Strong: Modeling', 'Weak: Communication'],
-      stats: { strength: 92, weakness: 30, speed: 50 },
+      bg: 'from-lime-400/30 via-lime-300/10 to-transparent',
+      accent: 'text-lime-300',
+      ring: 'ring-lime-400/60',
+      glow: 'shadow-[0_0_30px_rgba(163,230,53,0.35)]',
     },
   ];
 
   return (
-    <Card className="w-full border-border bg-background/60">
-      <CardContent className="p-4 sm:p-6">
-        {/* Only grid here; header is rendered by parent to avoid duplicates */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-          {rivals.map((rival) => {
-            const xpPerDay = Math.max(10, Math.round(baseDaily * rival.multiplier));
-            const isActive = selectedRival === rival.id;
-            return (
-              <button
-                key={rival.id}
-                onClick={() => onChoose(rival.id)}
-                className={`group relative overflow-hidden rounded-2xl border border-border bg-muted/40 p-4 sm:p-5 text-left transition-all hover:shadow-lg hover:shadow-primary/25 hover-scale focus:outline-none ${
-                  isActive ? 'ring-2 ring-primary shadow-primary/30' : 'hover:ring-1 hover:ring-primary/40'
-                }`}
-              >
-                {/* Selected badge */}
-                {isActive && (
-                  <span className="absolute top-3 right-3 z-10 rounded px-2 py-0.5 text-[10px] sm:text-xs bg-primary/15 text-primary border border-primary/30">
-                    Selected
-                  </span>
-                )}
-
-                <div className="flex flex-col items-center text-center">
-                  <div className="relative w-44 h-44 sm:w-48 sm:h-48 mb-3 sm:mb-4">
-                    <div className="absolute inset-0 rounded-xl blur-xl opacity-20 bg-primary/40 group-hover:opacity-40 transition-opacity" />
-                    <img
-                      src={rival.img}
-                      alt={`${rival.name} pixel avatar`}
-                      className="w-full h-full object-contain drop-shadow-md animate-[fade-in_0.3s_ease-out] group-hover:animate-bounce"
-                      loading="lazy"
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+      {rivals.map((rival) => {
+        const xpPerDay = Math.max(10, Math.round(baseDaily * rival.multiplier));
+        const isActive = selectedRival === rival.id;
+        return (
+          <button
+            key={rival.id}
+            onClick={() => onChoose(rival.id)}
+            className={`group relative overflow-hidden rounded-3xl p-5 sm:p-6 min-h-[420px] text-left transition-all duration-200 border border-border bg-gradient-to-b ${rival.bg} ${
+              isActive ? `ring-2 ${rival.ring} ${rival.glow}` : 'hover:ring-2 hover:ring-primary/50'
+            } hover:shadow-xl hover:shadow-primary/20`}
+          >
+            {/* Animated background elements per rival */}
+            {rival.id === 'constance' && (
+              <>
+                {/* neon floor */}
+                <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-primary/25 to-transparent" />
+                {/* terminals */}
+                <div className="pointer-events-none absolute top-4 right-4 grid grid-cols-3 gap-1 opacity-40">
+                  {Array.from({ length: 9 }).map((_, i) => (
+                    <span
+                      key={i}
+                      className="h-2 w-3 bg-primary/40 animate-pulse"
+                      style={{ animationDelay: `${(i % 3) * 0.2}s` }}
                     />
-                  </div>
-
-                  <div className="space-y-1">
-                    <div className="text-xl sm:text-2xl font-extrabold tracking-tight uppercase">{rival.name}</div>
-                    <div className="text-xs sm:text-sm text-muted-foreground font-medium">{rival.nickname}</div>
-                  </div>
-
-                  <p className="mt-3 text-sm sm:text-base text-muted-foreground min-h-[2.5rem]">
-                    {rival.description}
-                  </p>
-
-                  {/* XP/day strip */}
-                  <div className="mt-4 w-full">
-                    <div className="flex items-center justify-between text-xs sm:text-sm mb-2">
-                      <span className="text-muted-foreground">XP/day</span>
-                      <span className="font-semibold">{xpPerDay.toLocaleString()}</span>
-                    </div>
-                    <Progress value={rival.multiplier * 100} className="h-2 rounded-none" />
-                  </div>
-
-                  {/* Pixel-style stat bars */}
-                  <div className="mt-4 w-full space-y-2">
-                    {[
-                      { label: 'Strength', val: rival.stats.strength },
-                      { label: 'Weakness', val: rival.stats.weakness },
-                      { label: 'XP Speed', val: Math.round(rival.multiplier * 100) },
-                    ].map((row) => (
-                      <div key={row.label} className="w-full">
-                        <div className="flex items-center justify-between text-[10px] sm:text-xs mb-1 text-muted-foreground">
-                          <span>{row.label}</span>
-                          <span className="font-medium text-foreground">{row.val}</span>
-                        </div>
-                        <div className="h-2 w-full bg-muted rounded-none">
-                          <div
-                            className="h-full bg-primary"
-                            style={{ width: `${Math.min(100, Math.max(0, row.val))}%` }}
-                          />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Highlights */}
-                  <div className="mt-3 flex flex-wrap gap-2 justify-center">
-                    {rival.highlights.map((h) => (
-                      <span
-                        key={h}
-                        className="rounded-full bg-primary/10 text-primary px-2.5 py-1 text-[10px] sm:text-xs"
-                      >
-                        {h}
-                      </span>
-                    ))}
-                  </div>
+                  ))}
                 </div>
-              </button>
-            );
-          })}
-        </div>
-      </CardContent>
-    </Card>
+              </>
+            )}
+            {rival.id === 'chadson' && (
+              <>
+                {/* party lights */}
+                <div className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-primary/20 to-transparent" />
+                {Array.from({ length: 6 }).map((_, i) => (
+                  <span
+                    key={i}
+                    className="pointer-events-none absolute top-6 rounded-full h-2 w-2 bg-primary/60 animate-bounce"
+                    style={{ left: `${10 + i * 14}%`, animationDelay: `${i * 0.1}s` }}
+                  />
+                ))}
+                {/* pong table line */}
+                <div className="pointer-events-none absolute bottom-16 left-6 right-6 h-0.5 bg-primary/40" />
+              </>
+            )}
+            {rival.id === 'chartreuse' && (
+              <>
+                {/* desk glow */}
+                <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-primary/25 to-transparent" />
+                {/* floating tabs */}
+                {Array.from({ length: 7 }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="pointer-events-none absolute rounded-sm border border-primary/30 bg-background/70 backdrop-blur-sm animate-[fade-in_0.3s_ease-out]"
+                    style={{
+                      top: `${10 + i * 5}%`,
+                      left: `${8 + (i * 11) % 70}%`,
+                      width: `${40 + (i % 3) * 12}px`,
+                      height: `${12 + (i % 2) * 6}px`,
+                      animationDelay: `${i * 0.08}s`,
+                    }}
+                  />
+                ))}
+              </>
+            )}
+
+            {/* Content */}
+            <div className="relative z-10 h-full w-full flex flex-col items-center justify-between">
+              {/* Top text */}
+              <div className="w-full text-center">
+                <div className="text-2xl sm:text-3xl font-extrabold tracking-tight uppercase drop-shadow">
+                  {rival.name}
+                </div>
+                <div className={`mt-1 text-xs sm:text-sm font-semibold ${rival.accent}`}>{rival.nickname}</div>
+              </div>
+
+              {/* Avatar */}
+              <div className="relative grid place-items-center">
+                {/* glow pulse */}
+                <div className={`absolute inset-0 blur-2xl opacity-25 ${isActive ? 'opacity-40' : ''} bg-primary`} />
+                <img
+                  src={rival.img}
+                  alt={`${rival.name} animated pixel sprite`}
+                  className="relative w-48 h-48 sm:w-56 sm:h-56 object-contain drop-shadow-lg transition-transform duration-200 group-hover:scale-105"
+                />
+
+                {/* Idle micro-animations overlays */}
+                {rival.id === 'constance' && (
+                  <span className="absolute bottom-6 right-10 h-2 w-6 rounded-sm bg-primary/70 animate-pulse" />
+                )}
+                {rival.id === 'chadson' && (
+                  <span className="absolute bottom-8 left-12 h-3 w-3 rounded-full bg-primary/70 animate-bounce" />
+                )}
+                {rival.id === 'chartreuse' && (
+                  <span className="absolute -top-1 right-12 h-2 w-7 rounded-sm bg-primary/60 animate-pulse" />
+                )}
+              </div>
+
+              {/* Bottom CTA + XP/day */}
+              <div className="w-full flex items-center justify-between">
+                <span className="text-muted-foreground text-xs sm:text-sm">XP/day</span>
+                <span className="text-base sm:text-lg font-bold">{xpPerDay.toLocaleString()}</span>
+              </div>
+            </div>
+          </button>
+        );
+      })}
+    </div>
   );
 };
 
