@@ -36,6 +36,36 @@ const Profile = () => {
     }
   }, [profile?.xp, calculatePercentile]);
 
+  type OnboardingData = {
+    goal: 'interview' | 'learning' | null;
+    timeline: '1-week' | '2-weeks' | '1-month' | '3-months' | 'more' | null;
+    tracks: string[];
+    completedAt?: string;
+  };
+  const [onboarding, setOnboarding] = useState<OnboardingData | null>(null);
+
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem('drillOnboarding');
+      if (raw) setOnboarding(JSON.parse(raw));
+    } catch (_) {
+      // ignore
+    }
+  }, []);
+
+  const rivalDailyXP = (() => {
+    const deadline = profile.interview_deadline ? new Date(profile.interview_deadline) : null;
+    const created = profile.created_at ? new Date(profile.created_at) : null;
+    const totalTargetXP = 800;
+    const defaultDaily = 100;
+    if (deadline && created) {
+      const daysTotal = Math.max(1, Math.ceil((deadline.getTime() - created.getTime()) / (1000 * 60 * 60 * 24)) + 1);
+      const val = Math.round((totalTargetXP / daysTotal) / 10) * 10;
+      return Math.max(10, val);
+    }
+    return defaultDaily;
+  })();
+
   const handleSignOut = async () => {
     await signOut();
   };
@@ -164,6 +194,50 @@ const Profile = () => {
                       </div>
                     );
                   })}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Your Plan & AI Rival */}
+          <Card className="lg:col-span-3 bg-card border-border">
+            <CardHeader>
+              <CardTitle className="text-foreground flex items-center">
+                <Target className="mr-2" size={20} />
+                Your Plan & AI Rival
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-foreground">Onboarding Choices</h3>
+                  <div className="text-sm text-muted-foreground">
+                    <div>Goal: <span className="font-medium text-foreground">{onboarding?.goal ? (onboarding.goal === 'interview' ? 'Interview Prep' : 'Learning') : '—'}</span></div>
+                    <div>Timeline: <span className="font-medium text-foreground">{onboarding?.timeline ? onboarding.timeline.replace('-', ' ') : '—'}</span></div>
+                    <div>Started: <span className="font-medium text-foreground">{onboarding?.completedAt ? new Date(onboarding.completedAt).toLocaleDateString() : '—'}</span></div>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-foreground">Selected Tracks</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {(onboarding?.tracks || []).length > 0 ? (
+                      onboarding!.tracks.map((t) => (
+                        <Badge key={t} variant="secondary" className="text-xs">{t === 'ma' ? 'M&A' : t.toUpperCase()}</Badge>
+                      ))
+                    ) : (
+                      <span className="text-sm text-muted-foreground">—</span>
+                    )}
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-foreground">AI Rival Pace</h3>
+                  <div className="text-sm text-muted-foreground">
+                    <div>Daily Rival XP: <span className="font-semibold text-foreground">{rivalDailyXP}</span></div>
+                    {profile.interview_deadline && (
+                      <div>Interview Date: <span className="font-medium text-foreground">{new Date(profile.interview_deadline).toLocaleDateString()}</span></div>
+                    )}
+                    <div>Rival XP so far: <span className="font-semibold text-foreground">{profile.rival_xp}</span></div>
+                  </div>
                 </div>
               </div>
             </CardContent>
