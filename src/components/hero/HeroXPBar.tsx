@@ -1,28 +1,23 @@
 import React from 'react'
-import { motion, useReducedMotion } from 'framer-motion'
+import { motion } from 'framer-motion'
 
-export const HeroXPBar: React.FC<{ target?: number }> = ({ target = 71 }) => {
-  const prefersReduced = useReducedMotion()
-  const widthTarget = prefersReduced ? `${target}%` : `${target}%`
+interface HeroXPBarProps {
+  className?: string
+}
 
+export const HeroXPBar: React.FC<HeroXPBarProps> = ({ className = '' }) => {
   return (
-    <div className="mt-3 flex items-center justify-center">
-      <div className="relative w-full max-w-xl" aria-label="XP Progress" role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={target}>
-        <div className="h-4 rounded-full border border-border bg-card" />
+    <div className={`w-full max-w-xl ${className}`} aria-label="XP Progress">
+      <div className="relative">
+        {/* Track */}
+        <div className="h-2 rounded-full border border-border/50 bg-card/60" />
+        {/* Fill */}
         <motion.div
-          className="absolute inset-y-0 left-0 h-4 rounded-full bg-primary"
+          className="absolute inset-y-0 left-0 h-2 rounded-full shadow-[0_0_12px_hsl(var(--primary)/0.45)] bg-[linear-gradient(90deg,hsl(var(--primary)),hsl(var(--primary)/0.85))]"
           initial={{ width: '0%' }}
-          animate={{ width: widthTarget }}
-          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+          animate={{ width: ['0%', '100%'] }}
+          transition={{ duration: 2.5, ease: 'easeInOut', repeat: Infinity, repeatType: 'loop' }}
         />
-        <motion.span
-          className="absolute -top-6 right-0 text-sm font-semibold text-foreground"
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, type: 'spring', stiffness: 400, damping: 30 }}
-        >
-          {target}%
-        </motion.span>
       </div>
     </div>
   )

@@ -7,6 +7,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { motion } from 'framer-motion';
 import { HeroHeadline } from '@/components/hero/HeroHeadline';
 import { HeroParticles } from '@/components/hero/HeroParticles';
+import { HeroXPBar } from '@/components/hero/HeroXPBar';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -80,39 +81,31 @@ const Index = () => {
             .btn-shine { display: none !important; }
           }
         `}</style>
-        <div className="container mx-auto px-4 py-24 md:py-32">
-          <div className="text-center max-w-5xl mx-auto space-y-8">
-            <HeroHeadline />
-            <motion.p
-              className="text-lg md:text-xl text-muted-foreground"
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, type: 'spring', stiffness: 380, damping: 28 }}
-            >
-              Master technical interviews faster than ever — with real questions, XP, and AI rivals.
-            </motion.p>
-            <motion.p
-              className="text-base text-muted-foreground"
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7, type: 'spring', stiffness: 380, damping: 28 }}
-            >
-              Built for aspiring analysts at top firms. Train with gamified practice sourced from real interviews.
-            </motion.p>
-            <motion.div
-              className="pt-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9, type: 'spring', stiffness: 420, damping: 26 }}
-            >
-              <Button size="lg" onClick={() => navigate('/auth')} className="group relative overflow-hidden px-8 py-3 text-lg rounded-full transition-transform duration-200 hover:-translate-y-0.5">
-                <span className="relative z-10">Start Your Prep Journey</span>
-                <span aria-hidden className="btn-shine" />
-              </Button>
-              <p className="mt-3 text-xs md:text-sm text-muted-foreground">
-                Get started in under 30 seconds — no credit card required
-              </p>
-            </motion.div>
+        <div className="container mx-auto px-4 pt-28 md:pt-36 pb-24">
+          <div className="text-center mx-auto max-w-[800px] flex flex-col items-center gap-y-6">
+            <div className="flex flex-col items-center gap-y-6">
+              <HeroHeadline />
+              <motion.p
+                className="text-lg md:text-xl text-muted-foreground"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.4, ease: 'easeOut' }}
+              >
+                Master technical interviews through real questions, XP, and AI-powered rivals.
+              </motion.p>
+              <motion.div
+                className="pt-1"
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.4, ease: 'easeOut' }}
+              >
+                <Button size="lg" onClick={() => navigate('/auth')} className="group relative overflow-hidden px-8 py-3 text-lg rounded-full transition-transform duration-200 hover:-translate-y-0.5">
+                  <span className="relative z-10">Start Your Prep Journey</span>
+                  <span aria-hidden className="btn-shine" />
+                </Button>
+              </motion.div>
+              <HeroXPBar className="mt-8" />
+            </div>
             {/* Trust Bar */}
             <motion.p
               className="text-sm text-muted-foreground mb-4"
