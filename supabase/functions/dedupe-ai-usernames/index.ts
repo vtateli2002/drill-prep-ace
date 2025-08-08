@@ -1,130 +1,124 @@
-// Dedupe AI usernames (is_bot=true) ensuring believable, unique names
-// CORS + service role client, safe to call from the app
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.53.0';
+// Normalize bot usernames to one word (letters only) with optional numeric suffix for uniqueness.
+// Ensures no duplicates among bots and avoids collisions with human usernames.
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.53.0'
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-};
-
-function titleCase(s: string) {
-  return s
-    .toLowerCase()
-    .split(/\s+/)
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(' ');
 }
 
-const FIRST_NAMES = [
-  'Alex','Sam','Taylor','Jordan','Casey','Quinn','Riley','Parker','Avery','Morgan','Cameron','Drew','Jamie','Kendall','Reese','Blake','Emerson','Hayden','Rowan','Sage','Elliot','Micah','Logan','Skyler','Finley','Harper','Noah','Liam','Mia','Zoe','Chloe','Aiden','Ethan','Olivia','Ava','Isla','Mason','Ella','Leo','Nora'
-];
-const LAST_NAMES = [
-  'Adler','Bennett','Carter','Dalton','Ellis','Foster','Greene','Hayes','Irving','Jensen','Keaton','Lawson','Mitchell','Nolan','Owens','Prescott','Quincy','Reynolds','Sawyer','Thompson','Underwood','Vaughn','Walker','Xavier','Young','Zimmer','Hughes','Carver','Bishop','Porter','Klein','Hart','Banks','Shaw','Ford','Stone','Webb','Wade','Lane','Cole'
-];
+function lettersOnly(input: string) {
+  return (input || '').toLowerCase().replace(/[^a-z]/g, '')
+}
 
-function* nameGenerator(existing: Set<string>) {
-  const max = FIRST_NAMES.length * LAST_NAMES.length * 3;
-  let i = 0;
-  while (i < max) {
-    const first = FIRST_NAMES[Math.floor(Math.random() * FIRST_NAMES.length)];
-    const last = LAST_NAMES[Math.floor(Math.random() * LAST_NAMES.length)];
-    let candidate = `${first} ${last}`;
-    if (!existing.has(candidate.toLowerCase())) {
-      yield candidate;
-      existing.add(candidate.toLowerCase());
+function pickBaseFromUsername(username: string): string {
+  const raw = (username || '').toLowerCase()
+  // Split on non-letters and pick the longest token >=3; fallback to first token
+  const tokens = raw.split(/[^a-z]+/).filter(Boolean)
+  if (tokens.length === 0) return ''
+  const long = [...tokens].sort((a, b) => b.length - a.length)[0]
+  const candidate = lettersOnly(long)
+  return candidate.length >= 3 ? candidate : lettersOnly(tokens[0])
+}
+
+const FALLBACK_NAMES = [
+  'alex','sam','taylor','jordan','casey','quinn','riley','parker','avery','morgan','cameron','drew','jamie','reese','blake','emerson','hayden','rowan','sage','elliot','micah','logan','skyler','finley','harper','mason','ella','leo','nora','chase','ryan','carter','luca','miles','felix','river','phoenix','wren','nova','kai','aria','sloan','jude','lena','zara','reed','jett','lena','piper','remy'
+]
+
+function* fallbackNameGen(used: Set<string>) {
+  let i = 0
+  while (true) {
+    const base = FALLBACK_NAMES[i % FALLBACK_NAMES.length]
+    let name = base
+    if (used.has(name)) {
+      // Find smallest available numeric suffix starting from 2
+      let n = 2
+      while (used.has(`${base}${n}`)) n++
+      name = `${base}${n}`
     }
-    // fallback with middle initial if collision persists
-    const initial = String.fromCharCode(65 + Math.floor(Math.random() * 26));
-    candidate = `${first} ${initial}. ${last}`;
-    if (!existing.has(candidate.toLowerCase())) {
-      yield candidate;
-      existing.add(candidate.toLowerCase());
-    }
-    // last resort: add a number
-    const num = 10 + Math.floor(Math.random() * 89);
-    candidate = `${first} ${last} ${num}`;
-    if (!existing.has(candidate.toLowerCase())) {
-      yield candidate;
-      existing.add(candidate.toLowerCase());
-    }
-    i++;
+    used.add(name)
+    yield name
+    i++
   }
+}
+
+function uniqueName(base: string, used: Set<string>): string {
+  const b = lettersOnly(base)
+  const validBase = b && b.length >= 3 ? b : ''
+  if (validBase) {
+    if (!used.has(validBase)) {
+      used.add(validBase)
+      return validBase
+    }
+    // Find smallest available numeric suffix starting at 2
+    let n = 2
+    while (used.has(`${validBase}${n}`)) n++
+    const candidate = `${validBase}${n}`
+    used.add(candidate)
+    return candidate
+  }
+  // Fallback pool
+  const gen = fallbackNameGen(used)
+  return gen.next().value as string
 }
 
 Deno.serve(async (req) => {
-  if (req.method === 'OPTIONS') {
-    return new Response(null, { headers: corsHeaders });
-  }
+  if (req.method === 'OPTIONS') return new Response(null, { headers: corsHeaders })
 
-  const SUPABASE_URL = Deno.env.get('SUPABASE_URL');
-  const SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
+  const SUPABASE_URL = Deno.env.get('SUPABASE_URL')
+  const SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')
   if (!SUPABASE_URL || !SERVICE_ROLE_KEY) {
-    return new Response(JSON.stringify({ error: 'Missing Supabase env vars' }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json', ...corsHeaders },
-    });
+    return new Response(JSON.stringify({ error: 'Missing Supabase env vars' }), { status: 500, headers: { 'Content-Type': 'application/json', ...corsHeaders } })
   }
 
-  const supabase = createClient(SUPABASE_URL, SERVICE_ROLE_KEY);
+  const supabase = createClient(SUPABASE_URL, SERVICE_ROLE_KEY)
 
   try {
-    const { data: allProfiles, error } = await supabase
+    // Load ALL usernames to avoid collisions with humans
+    const { data: allProfiles, error: allErr } = await supabase
       .from('profiles')
       .select('id, username, is_bot')
-      .order('username');
+    if (allErr) throw allErr
 
-    if (error) throw error;
-
-    const existingLower = new Set<string>();
+    const used = new Set<string>()
     for (const p of allProfiles || []) {
-      if (p.username) existingLower.add(String(p.username).trim().toLowerCase());
+      const uname = (p.username || '').toString().trim()
+      if (!uname) continue
+      used.add(uname.toLowerCase())
     }
 
-    // group bot usernames by normalized value
-    const groups = new Map<string, string[]>();
+    // Prepare updates for bots only
+    const updates: { id: string; username: string }[] = []
     for (const p of allProfiles || []) {
-      if (!p.is_bot) continue;
-      const uname = (p.username || '').toString();
-      const norm = uname.trim().toLowerCase();
-      if (!norm) continue;
-      if (!groups.has(norm)) groups.set(norm, []);
-      groups.get(norm)!.push(p.id);
+      if (!p.is_bot) continue
+      const current = (p.username || '').toString().trim().toLowerCase()
+      const base = pickBaseFromUsername(current)
+      let next = uniqueName(base, used)
+      // If current already equals next and follows one-word-with-optional-number rule, skip
+      const isOneWord = /^[a-z]+[0-9]*$/.test(current)
+      if (isOneWord && current === next) continue
+      // Ensure we don't set to empty by accident
+      if (!next) continue
+      updates.push({ id: p.id as string, username: next })
     }
 
-    let duplicatesFound = 0;
-    const updates: { id: string; username: string }[] = [];
-    const gen = nameGenerator(existingLower);
-
-    for (const [, ids] of groups) {
-      if (ids.length <= 1) continue;
-      duplicatesFound += ids.length - 1;
-      // keep first as-is; reassign the rest
-      for (let i = 1; i < ids.length; i++) {
-        const next = gen.next();
-        if (next.done) break;
-        const newName = titleCase(next.value);
-        updates.push({ id: ids[i], username: newName });
-      }
+    // Batch updates to avoid timeouts
+    let updated = 0
+    const batchSize = 200
+    for (let i = 0; i < updates.length; i += batchSize) {
+      const batch = updates.slice(i, i + batchSize)
+      const promises = batch.map((u) =>
+        supabase.from('profiles').update({ username: u.username }).eq('id', u.id)
+      )
+      const results = await Promise.all(promises)
+      results.forEach((r) => { if (!r.error) updated++ })
     }
 
-    // perform updates
-    let updated = 0;
-    for (const u of updates) {
-      const { error: upErr } = await supabase
-        .from('profiles')
-        .update({ username: u.username })
-        .eq('id', u.id);
-      if (!upErr) updated++;
-    }
-
-    const result = { duplicatesFound, updated };
-    return new Response(JSON.stringify(result), {
-      headers: { 'Content-Type': 'application/json', ...corsHeaders },
-    });
+    return new Response(
+      JSON.stringify({ processed: allProfiles?.length ?? 0, updated, note: 'Bot usernames normalized to one word with numeric suffix if needed.' }),
+      { headers: { 'Content-Type': 'application/json', ...corsHeaders } }
+    )
   } catch (e) {
-    return new Response(JSON.stringify({ error: String(e) }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json', ...corsHeaders },
-    });
+    return new Response(JSON.stringify({ error: String(e) }), { status: 500, headers: { 'Content-Type': 'application/json', ...corsHeaders } })
   }
-});
+})

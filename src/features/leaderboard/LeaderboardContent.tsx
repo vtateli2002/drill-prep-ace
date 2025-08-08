@@ -36,9 +36,9 @@ const LeaderboardContent = () => {
 
   useEffect(() => {
     fetchLeaderboard();
-    // One-time dedupe run per browser session (safe, idempotent enough for dev)
+    // One-time normalization run per browser session (bump key to re-run when logic changes)
     try {
-      const runKey = 'dedupeAiUsernamesRun';
+      const runKey = 'dedupeAiUsernamesRun_v2';
       if (!sessionStorage.getItem(runKey)) {
         supabase.functions
           .invoke('dedupe-ai-usernames', { body: {} })
