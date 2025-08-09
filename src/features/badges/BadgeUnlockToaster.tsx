@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { useAuth } from '@/hooks/useAuth';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const MESSAGES = [
   'Momentum builds mastery.',
@@ -25,7 +25,9 @@ export default function BadgeUnlockToaster() {
   const { user } = useAuth();
   const { toast } = useToast();
   const navigate = useNavigate();
+  const location = useLocation();
   const shown = useRef<Set<string>>(new Set()); // avoid duplicate toasts per session
+  const previewShown = useRef(false);
 
   useEffect(() => {
     if (!user) return;
@@ -87,6 +89,33 @@ export default function BadgeUnlockToaster() {
       supabase.removeChannel(channel);
     };
   }, [user, toast, navigate]);
+
+  // Preview toast on the Badges page for a quick visual check
+  useEffect(() => {
+    if (location.pathname === '/badges' && !previewShown.current) {
+      previewShown.current = true;
+      const name = 'Quick Math';
+      const tier = 1;
+      const icon = '🏆';
+      const style = TIER_STYLES[tier];
+      const message = MESSAGES[Math.floor(Math.random() * MESSAGES.length)];
+
+      toast({
+        className: [
+          'cursor-pointer',
+          'bg-card text-card-foreground border border-border',
+          'rounded-lg',
+          'ring-1',
+          style.ring,
+          style.shadow,
+        ].join(' '),
+        duration: 4000,
+        onClick: () => navigate('/badges'),
+        title: `${icon} ${name} Unlocked!`,
+        description: message,
+      });
+    }
+  }, [location.pathname, toast, navigate]);
 
   return null;
 }
