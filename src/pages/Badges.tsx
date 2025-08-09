@@ -18,16 +18,16 @@ const TIER_STYLES = {
     grad: 'from-tracks-accounting/70 to-transparent',
   },
   rainmaker: {
-    text: 'text-tracks-lbo',
-    bg: 'bg-tracks-lbo/10',
-    ring: 'ring-tracks-lbo/40',
-    grad: 'from-tracks-lbo/70 to-transparent',
-  },
-  boardroom: {
     text: 'text-tracks-valuation',
     bg: 'bg-tracks-valuation/10',
     ring: 'ring-tracks-valuation/40',
     grad: 'from-tracks-valuation/70 to-transparent',
+  },
+  boardroom: {
+    text: 'text-tracks-lbo',
+    bg: 'bg-tracks-lbo/10',
+    ring: 'ring-tracks-lbo/40',
+    grad: 'from-tracks-lbo/70 to-transparent',
   },
 } as const;
 
@@ -213,14 +213,14 @@ const Badges = () => {
             />
             <TierCard
               id="rainmaker"
-              icon={Crown}
+              icon={Trophy}
               variant="rainmaker"
               title="Rainmaker Badges"
               description="Rare achievements. Track mastery and long streaks."
             />
             <TierCard
               id="boardroom"
-              icon={Trophy}
+              icon={Crown}
               variant="boardroom"
               title="Boardroom Badges"
               description="Legendary. Only a few ever unlock these."
@@ -249,7 +249,7 @@ const Badges = () => {
 
         <TierSection
           id="rainmaker"
-          icon={Crown}
+          icon={Trophy}
           variant="rainmaker"
           title="Tier 3 · Rainmaker"
           description="Expert-level achievements with real challenge."
@@ -258,7 +258,7 @@ const Badges = () => {
 
         <TierSection
           id="boardroom"
-          icon={Trophy}
+          icon={Crown}
           variant="boardroom"
           title="Tier 4 · Boardroom"
           description="Legendary, rare, and sometimes mysterious."
