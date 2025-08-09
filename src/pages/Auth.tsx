@@ -264,19 +264,6 @@ const Auth = () => {
             <span>Continue with Google</span>
           </Button>
 
-          <Button 
-            variant="outline" 
-            className="w-full" 
-            onClick={handleLinkedInAuth}
-            disabled={loading}
-          >
-            {loading ? (
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-            ) : (
-              <Linkedin className="mr-2 h-4 w-4" aria-hidden="true" />
-            )}
-            <span>Continue with LinkedIn</span>
-          </Button>
           
           <div className="text-center">
             <Button
