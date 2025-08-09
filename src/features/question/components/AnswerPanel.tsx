@@ -87,9 +87,9 @@ const AnswerPanel = ({
               <Button variant="outline" onClick={onHint} disabled={showExplanation || attemptCount >= 4}>
                 <Lightbulb size={16} />
               </Button>
-              {!showExplanation && question.explanation && (
-                <Button variant="outline" onClick={() => setShowExplanation(true)}>
-                  Show Explanation
+              {question.explanation && (
+                <Button variant="outline" onClick={() => setShowExplanation(!showExplanation)}>
+                  {showExplanation ? 'Hide Explanation' : 'Show Explanation'}
                 </Button>
               )}
             </>

@@ -69,6 +69,13 @@ const QuestionView = () => {
     }
   }, [questionId]);
 
+  // Reset explanation visibility when question changes
+  useEffect(() => {
+    if (questionId) {
+      setShowExplanation(false);
+    }
+  }, [questionId]);
+
   // Extract financial summary data for hard accounting questions
   const getFinancialSummary = (question: Question) => {
     if (question.track !== 'accounting' || question.difficulty !== 'hard') return null;
