@@ -3,6 +3,7 @@ import { Seo } from '@/components/Seo';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Briefcase, LineChart, Trophy, Crown, ChevronRight, Lock, Award } from 'lucide-react';
+import { useBadges } from '@/features/badges/useBadges';
 
 const TIER_STYLES = {
   analyst: {
@@ -179,6 +180,8 @@ const TierSection = ({
 
 const Badges = () => {
   const canonical = typeof window !== 'undefined' ? `${window.location.origin}/badges` : undefined;
+  const { byTier, loading, error } = useBadges();
+  console.log({ byTier });
   return (
     <div className="min-h-screen bg-background">
       <Seo
@@ -235,7 +238,7 @@ const Badges = () => {
           variant="analyst"
           title="Tier 1 · Analyst"
           description="Beginner achievements to kickstart momentum."
-          badges={DEFAULT_TIER_BADGES.analyst}
+          badges={byTier[1]}
         />
 
         <TierSection
@@ -244,7 +247,7 @@ const Badges = () => {
           variant="associate"
           title="Tier 2 · Associate"
           description="Intermediate goals for consistent progress."
-          badges={DEFAULT_TIER_BADGES.associate}
+          badges={byTier[2]}
         />
 
         <TierSection
@@ -253,7 +256,7 @@ const Badges = () => {
           variant="rainmaker"
           title="Tier 3 · Rainmaker"
           description="Expert-level achievements with real challenge."
-          badges={DEFAULT_TIER_BADGES.rainmaker}
+          badges={byTier[3]}
         />
 
         <TierSection
@@ -262,7 +265,7 @@ const Badges = () => {
           variant="boardroom"
           title="Tier 4 · Boardroom"
           description="Legendary, rare, and sometimes mysterious."
-          badges={DEFAULT_TIER_BADGES.boardroom}
+          badges={byTier[4]}
         />
       </main>
     </div>
