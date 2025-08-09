@@ -25,10 +25,10 @@ const TierCard = ({
       grad: 'from-success/70 to-transparent',
     },
     associate: {
-      text: 'text-primary',
-      bg: 'bg-primary/10',
-      ring: 'ring-primary/40',
-      grad: 'from-primary/70 to-transparent',
+      text: 'text-tracks-accounting',
+      bg: 'bg-tracks-accounting/10',
+      ring: 'ring-tracks-accounting/40',
+      grad: 'from-tracks-accounting/70 to-transparent',
     },
     rainmaker: {
       text: 'text-tracks-lbo',
@@ -37,10 +37,10 @@ const TierCard = ({
       grad: 'from-tracks-lbo/70 to-transparent',
     },
     boardroom: {
-      text: 'text-accent',
-      bg: 'bg-accent/10',
-      ring: 'ring-accent/40',
-      grad: 'from-accent/70 to-transparent',
+      text: 'text-tracks-valuation',
+      bg: 'bg-tracks-valuation/10',
+      ring: 'ring-tracks-valuation/40',
+      grad: 'from-tracks-valuation/70 to-transparent',
     },
   } as const;
   const s = styles[variant];
