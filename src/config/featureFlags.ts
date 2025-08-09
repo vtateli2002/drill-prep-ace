@@ -23,6 +23,7 @@ export type FeatureFlags = {
 
   ENABLE_DEBUG_LOGS: boolean;
   ENABLE_TOASTS: boolean;
+  ENABLE_EDGE_SECRET_HEADER: boolean;
 
   ENABLE_QUESTION_TOOLS_DRAWING: boolean;
   ENABLE_QUESTION_TOOLS_EXCEL: boolean;
@@ -51,6 +52,7 @@ const defaultFlags: FeatureFlags = {
 
   ENABLE_DEBUG_LOGS: true,
   ENABLE_TOASTS: true,
+  ENABLE_EDGE_SECRET_HEADER: false,
 
   ENABLE_QUESTION_TOOLS_DRAWING: false,
   ENABLE_QUESTION_TOOLS_EXCEL: false,
@@ -86,6 +88,9 @@ const aliasMap: Record<string, keyof FeatureFlags> = {
   tools_drawing: 'ENABLE_QUESTION_TOOLS_DRAWING',
   tools_excel: 'ENABLE_QUESTION_TOOLS_EXCEL',
   tools_notes: 'ENABLE_QUESTION_TOOLS_NOTES',
+
+  edgesecret: 'ENABLE_EDGE_SECRET_HEADER',
+  edge_secret: 'ENABLE_EDGE_SECRET_HEADER',
 
   pagesize: 'PROBLEMS_PAGE_PAGE_SIZE',
   problems_page_page_size: 'PROBLEMS_PAGE_PAGE_SIZE',
