@@ -51,8 +51,8 @@ const TierCard = ({
         <CardContent className="p-5 flex items-start gap-4">
           <div className="shrink-0">
             <div className={`p-[2px] rounded-full bg-gradient-to-b ${s.grad} transition-transform duration-300 group-hover:scale-105`}>
-              <div className={`w-12 h-12 rounded-full ${s.bg} ${s.text} grid place-items-center ring-1 ${s.ring}`}>
-                <Icon size={22} />
+              <div className={`w-12 h-12 rounded-full ${s.bg} ${s.text} grid place-items-center ring-1 ${s.ring} ring-offset-2 ring-offset-card group-hover:ring-2`}>
+                <Icon size={24} />
               </div>
             </div>
           </div>
@@ -105,14 +105,14 @@ const Badges = () => {
             />
             <TierCard
               id="rainmaker"
-              icon={Trophy}
+              icon={Crown}
               variant="rainmaker"
               title="Rainmaker Badges"
               description="Rare achievements. Track mastery and long streaks."
             />
             <TierCard
               id="boardroom"
-              icon={Crown}
+              icon={Trophy}
               variant="boardroom"
               title="Boardroom Badges"
               description="Legendary. Only a few ever unlock these."
