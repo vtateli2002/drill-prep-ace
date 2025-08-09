@@ -348,6 +348,10 @@ export type Database = {
         Args: { p_user: string }
         Returns: undefined
       }
+      check_and_award_tier3: {
+        Args: { p_user: string }
+        Returns: undefined
+      }
       get_current_streak: {
         Args: { p_tz?: string } | { p_user: string; p_tz?: string }
         Returns: number

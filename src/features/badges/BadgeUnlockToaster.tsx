@@ -12,6 +12,12 @@ const MESSAGES = [
   "You're leveling up like a pro.",
 ];
 
+const RAINMAKER_MESSAGES = [
+  'Elite progress. Keep pushing.',
+  "You’re operating at the next level.",
+  "That’s mastery in motion.",
+];
+
 // Map tier -> classes using semantic tokens (HSL) with subtle glow
 const TIER_STYLES: Record<number, { ring: string; shadow: string; emoji?: string }>
   = {
@@ -66,6 +72,7 @@ export default function BadgeUnlockToaster() {
           const icon = (badge?.icon as string | null) ?? '🏆';
           const style = TIER_STYLES[tier] ?? TIER_STYLES[1];
           const isTier2 = tier === 2;
+          const isTier3 = tier === 3;
 
           shown.current.add(badgeId);
 
@@ -79,13 +86,22 @@ export default function BadgeUnlockToaster() {
               style.shadow,
             ].join(' '),
             duration: 4000,
-            onClick: () => navigate(isTier2 ? '/badges#associate' : '/badges'),
-            title: isTier2 ? 'Tier 2 Badge Unlocked – Associate' : '🎉 Badge Unlocked!',
-            description: isTier2
+            onClick: () => navigate(isTier3 ? '/badges#rainmaker' : isTier2 ? '/badges#associate' : '/badges'),
+            title: isTier3
+              ? 'Tier 3 Badge Unlocked – Rainmaker'
+              : isTier2
+              ? 'Tier 2 Badge Unlocked – Associate'
+              : '🎉 Badge Unlocked!',
+            description: isTier3
+              ? RAINMAKER_MESSAGES[Math.floor(Math.random() * RAINMAKER_MESSAGES.length)]
+              : isTier2
               ? "Impressive progress! You've hit a major milestone toward mastery."
               : `You’re now an ${name}! Keep going!`,
             action: (
-              <ToastAction altText="View All Badges" onClick={() => navigate(isTier2 ? '/badges#associate' : '/badges')}>
+              <ToastAction
+                altText="View All Badges"
+                onClick={() => navigate(isTier3 ? '/badges#rainmaker' : isTier2 ? '/badges#associate' : '/badges')}
+              >
                 View All Badges
               </ToastAction>
             ),
