@@ -14,6 +14,18 @@ export type Database = {
   }
   public: {
     Tables: {
+      admin_users: {
+        Row: {
+          user_id: string
+        }
+        Insert: {
+          user_id: string
+        }
+        Update: {
+          user_id?: string
+        }
+        Relationships: []
+      }
       attempts: {
         Row: {
           attempt_number: number
@@ -300,6 +312,36 @@ export type Database = {
       }
     }
     Views: {
+      public_profiles: {
+        Row: {
+          id: string | null
+          is_bot: boolean | null
+          level: number | null
+          profile_pic: string | null
+          rank: string | null
+          username: string | null
+          xp: number | null
+        }
+        Insert: {
+          id?: string | null
+          is_bot?: boolean | null
+          level?: number | null
+          profile_pic?: string | null
+          rank?: string | null
+          username?: string | null
+          xp?: number | null
+        }
+        Update: {
+          id?: string | null
+          is_bot?: boolean | null
+          level?: number | null
+          profile_pic?: string | null
+          rank?: string | null
+          username?: string | null
+          xp?: number | null
+        }
+        Relationships: []
+      }
       user_correct_days: {
         Row: {
           answered_on: string | null
@@ -377,6 +419,10 @@ export type Database = {
       }
       award_tier1_streaks_daily: {
         Args: Record<PropertyKey, never>
+        Returns: undefined
+      }
+      award_xp: {
+        Args: { p_user: string; p_amount: number; p_reason: string }
         Returns: undefined
       }
       calculate_level_from_xp: {
