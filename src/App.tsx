@@ -7,6 +7,7 @@ import { Suspense, lazy } from "react";
 import { Loader2 } from "lucide-react";
 import { AuthProvider } from "./hooks/useAuth";
 import ProtectedRoute from "./components/ProtectedRoute";
+import BadgeUnlockToaster from "./features/badges/BadgeUnlockToaster";
 
 // Route-based code splitting
 const Index = lazy(() => import("./pages/Index"));
@@ -27,11 +28,13 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <AuthProvider>
-        <BrowserRouter>
+     <TooltipProvider>
+       <Toaster />
+       <Sonner />
+       <AuthProvider>
+         <BrowserRouter>
+           {/* Global listener for badge unlock toasts */}
+           <BadgeUnlockToaster />
           <Suspense
             fallback={
               <div className="min-h-screen bg-background flex items-center justify-center">
