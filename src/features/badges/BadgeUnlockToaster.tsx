@@ -18,6 +18,12 @@ const RAINMAKER_MESSAGES = [
   "That’s mastery in motion.",
 ];
 
+const BOARDROOM_MESSAGES = [
+  'You’ve entered rare air.',
+  'Elite tier unlocked—well played.',
+  'This is what mastery looks like.',
+];
+
 // Map tier -> classes using semantic tokens (HSL) with subtle glow
 const TIER_STYLES: Record<number, { ring: string; shadow: string; emoji?: string }>
   = {
@@ -73,6 +79,7 @@ export default function BadgeUnlockToaster() {
           const style = TIER_STYLES[tier] ?? TIER_STYLES[1];
           const isTier2 = tier === 2;
           const isTier3 = tier === 3;
+          const isTier4 = tier === 4;
 
           shown.current.add(badgeId);
 
@@ -86,13 +93,19 @@ export default function BadgeUnlockToaster() {
               style.shadow,
             ].join(' '),
             duration: 4000,
-            onClick: () => navigate(isTier3 ? '/badges#rainmaker' : isTier2 ? '/badges#associate' : '/badges'),
-            title: isTier3
+            onClick: () => navigate(
+              isTier4 ? '/badges#boardroom' : isTier3 ? '/badges#rainmaker' : isTier2 ? '/badges#associate' : '/badges'
+            ),
+            title: isTier4
+              ? 'Tier 4 Badge Unlocked – Boardroom'
+              : isTier3
               ? 'Tier 3 Badge Unlocked – Rainmaker'
               : isTier2
               ? 'Tier 2 Badge Unlocked – Associate'
               : '🎉 Badge Unlocked!',
-            description: isTier3
+            description: isTier4
+              ? BOARDROOM_MESSAGES[Math.floor(Math.random() * BOARDROOM_MESSAGES.length)]
+              : isTier3
               ? RAINMAKER_MESSAGES[Math.floor(Math.random() * RAINMAKER_MESSAGES.length)]
               : isTier2
               ? "Impressive progress! You've hit a major milestone toward mastery."
@@ -100,7 +113,9 @@ export default function BadgeUnlockToaster() {
             action: (
               <ToastAction
                 altText="View All Badges"
-                onClick={() => navigate(isTier3 ? '/badges#rainmaker' : isTier2 ? '/badges#associate' : '/badges')}
+                onClick={() => navigate(
+                  isTier4 ? '/badges#boardroom' : isTier3 ? '/badges#rainmaker' : isTier2 ? '/badges#associate' : '/badges'
+                )}
               >
                 View All Badges
               </ToastAction>

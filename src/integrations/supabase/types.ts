@@ -92,6 +92,7 @@ export type Database = {
         Row: {
           created_at: string
           description: string | null
+          hidden_until_unlock: boolean
           icon: string | null
           id: string
           name: string
@@ -102,6 +103,7 @@ export type Database = {
         Insert: {
           created_at?: string
           description?: string | null
+          hidden_until_unlock?: boolean
           icon?: string | null
           id?: string
           name: string
@@ -112,6 +114,7 @@ export type Database = {
         Update: {
           created_at?: string
           description?: string | null
+          hidden_until_unlock?: boolean
           icon?: string | null
           id?: string
           name?: string
@@ -349,6 +352,10 @@ export type Database = {
         Returns: undefined
       }
       check_and_award_tier3: {
+        Args: { p_user: string }
+        Returns: undefined
+      }
+      check_and_award_tier4: {
         Args: { p_user: string }
         Returns: undefined
       }
