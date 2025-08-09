@@ -3,7 +3,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { useAuth } from '@/hooks/useAuth';
 import { useNavigate, useLocation } from 'react-router-dom';
-
+import { ToastAction } from '@/components/ui/toast';
 const MESSAGES = [
   'Momentum builds mastery.',
   'Another step toward the top!',
@@ -78,8 +78,13 @@ export default function BadgeUnlockToaster() {
             ].join(' '),
             duration: 4000,
             onClick: () => navigate('/badges'),
-            title: `${icon} ${name} Unlocked!`,
-            description: message,
+            title: `🎉 Badge Unlocked!`,
+            description: `You’re now an ${name}! Keep going!`,
+            action: (
+              <ToastAction altText="View All Badges" onClick={() => navigate('/badges')}>
+                View All Badges
+              </ToastAction>
+            ),
           });
         }
       )
@@ -111,8 +116,13 @@ export default function BadgeUnlockToaster() {
         ].join(' '),
         duration: 4000,
         onClick: () => navigate('/badges'),
-        title: `${icon} ${name} Unlocked!`,
-        description: message,
+        title: `🎉 Badge Unlocked!`,
+        description: `You’re now an ${name}! Keep going!`,
+        action: (
+          <ToastAction altText="View All Badges" onClick={() => navigate('/badges')}>
+            View All Badges
+          </ToastAction>
+        ),
       });
     }
   }, [location.pathname, toast, navigate]);

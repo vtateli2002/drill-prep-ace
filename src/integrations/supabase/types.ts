@@ -310,6 +310,10 @@ export type Database = {
         Args: { p_user: string; p_slug: string }
         Returns: undefined
       }
+      _normalized_track: {
+        Args: { p: string }
+        Returns: string
+      }
       _upsert_badge: {
         Args: {
           p_slug: string
