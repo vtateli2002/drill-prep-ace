@@ -3,16 +3,16 @@ import { Award } from 'lucide-react';
 import { useBadges, UIBadge } from '@/features/badges/useBadges';
 
 // Tier styles to match the Badges page
-const TIER_STYLES: Record<'analyst' | 'associate' | 'rainmaker' | 'boardroom', { text?: string; bg?: string; ring?: string; grad?: string; icon?: string }> = {
+const TIER_STYLES: Record<'analyst' | 'associate' | 'rainmaker' | 'boardroom', { text?: string; bg?: string; ring?: string; grad?: string; icon?: string; outerGrad?: string; ringColor?: string }> = {
   analyst: {
     text: 'text-success',
     bg: 'bg-success/10',
     ring: 'ring-success/40',
     grad: 'from-success/70 to-transparent',
   },
-  associate: { icon: 'badge-icon--blue badge--blue' },
-  rainmaker: { icon: 'badge-icon--purple badge--purple' },
-  boardroom: { icon: 'badge-icon--gold badge--gold' },
+  associate: { icon: 'badge-icon--blue badge--blue', outerGrad: 'from-[hsl(var(--tier-blue-bg))] to-transparent', ringColor: 'ring-[hsl(var(--tier-blue-base)/0.4)]' },
+  rainmaker: { icon: 'badge-icon--purple badge--purple', outerGrad: 'from-[hsl(var(--tier-purple-bg))] to-transparent', ringColor: 'ring-[hsl(var(--tier-purple-base)/0.4)]' },
+  boardroom: { icon: 'badge-icon--gold badge--gold', outerGrad: 'from-[hsl(var(--tier-gold-bg))] to-transparent', ringColor: 'ring-[hsl(var(--tier-gold-base)/0.4)]' },
 };
 
 type Variant = keyof typeof TIER_STYLES;
@@ -31,8 +31,8 @@ function BadgeTile({ badge }: { badge: UIBadge }) {
   return (
     <div className="relative group rounded-lg border border-border bg-card/60 p-4 transition-all hover:shadow-lg hover-scale">
       <div className="flex items-start gap-3">
-        <div className={`p-[2px] rounded-full ${s.icon ? '' : `bg-gradient-to-b ${s.grad}`}`}>{/* icon wrapper */}
-          <div className={`w-10 h-10 rounded-full grid place-items-center ring-offset-2 ring-offset-card group-hover:ring-2 ${s.icon ? s.icon : `${(s as any).bg} ${(s as any).text} ring-1 ${(s as any).ring}`}`}>
+        <div className={`p-[2px] rounded-full bg-gradient-to-b ${s.outerGrad || s.grad || ''}`}>{/* icon wrapper */}
+          <div className={`w-10 h-10 rounded-full grid place-items-center ring-1 ${s.ringColor || s.ring || ''} ring-offset-2 ring-offset-card group-hover:ring-2 ${s.icon ? s.icon : `${(s as any).bg} ${(s as any).text}`}`}>
             <Award size={18} className="text-inherit" />
           </div>
         </div>

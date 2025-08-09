@@ -7,7 +7,7 @@ import { useBadges } from '@/features/badges/useBadges';
 import { useAuth } from '@/hooks/useAuth';
 import { getProgress, BadgeProgress } from '@/features/badges/progressApi';
 import { useEffect, useState } from 'react';
-type TierStyle = { text?: string; bg?: string; ring?: string; grad?: string; icon?: string };
+type TierStyle = { text?: string; bg?: string; ring?: string; grad?: string; icon?: string; outerGrad?: string; ringColor?: string };
 const TIER_STYLES: Record<'analyst' | 'associate' | 'rainmaker' | 'boardroom', TierStyle> = {
   analyst: {
     text: 'text-success',
@@ -17,12 +17,18 @@ const TIER_STYLES: Record<'analyst' | 'associate' | 'rainmaker' | 'boardroom', T
   },
   associate: {
     icon: 'badge-icon--blue badge--blue',
+    outerGrad: 'from-[hsl(var(--tier-blue-bg))] to-transparent',
+    ringColor: 'ring-[hsl(var(--tier-blue-base)/0.4)]',
   },
   rainmaker: {
     icon: 'badge-icon--purple badge--purple',
+    outerGrad: 'from-[hsl(var(--tier-purple-bg))] to-transparent',
+    ringColor: 'ring-[hsl(var(--tier-purple-base)/0.4)]',
   },
   boardroom: {
     icon: 'badge-icon--gold badge--gold',
+    outerGrad: 'from-[hsl(var(--tier-gold-bg))] to-transparent',
+    ringColor: 'ring-[hsl(var(--tier-gold-base)/0.4)]',
   },
 };
 
@@ -99,8 +105,8 @@ const BadgeCard = ({ item, variant, extra }: { item: BadgeItem; variant: keyof t
   return (
     <div className="relative group rounded-lg border border-border bg-card/60 p-4 transition-all hover:shadow-lg hover:scale-[1.02]">
       <div className="flex items-start gap-3">
-        <div className={`p-[2px] rounded-full ${s.icon ? '' : `bg-gradient-to-b ${s.grad}`}`}>{/* icon wrapper */}
-          <div className={`w-10 h-10 rounded-full grid place-items-center ring-offset-2 ring-offset-card group-hover:ring-2 ${s.icon ? s.icon : `${s.bg} ${s.text} ring-1 ${s.ring}`}`}>
+        <div className={`p-[2px] rounded-full bg-gradient-to-b ${s.outerGrad || s.grad || ''}`}>{/* outer halo */}
+          <div className={`w-10 h-10 rounded-full grid place-items-center ring-1 ${s.ringColor || s.ring || ''} ring-offset-2 ring-offset-card group-hover:ring-2 ${s.icon ? s.icon : `${s.bg} ${s.text}`}`}>
             <Award size={18} className="text-inherit" />
           </div>
         </div>
@@ -139,8 +145,8 @@ const TierCard = ({
       <Card className="transition-all group-hover:shadow-lg border-border bg-card">
         <CardContent className="p-5 flex items-start gap-4">
           <div className="shrink-0">
-              <div className={`p-[2px] rounded-full ${s.icon ? '' : `bg-gradient-to-b ${s.grad}`} transition-transform duration-300 group-hover:scale-105`}>
-                <div className={`w-12 h-12 rounded-full grid place-items-center ring-offset-2 ring-offset-card group-hover:ring-2 ${s.icon ? s.icon : `${s.bg} ${s.text} ring-1 ${s.ring}`}`}>
+              <div className={`p-[2px] rounded-full bg-gradient-to-b ${s.outerGrad || s.grad || ''} transition-transform duration-300 group-hover:scale-105`}>
+                <div className={`w-12 h-12 rounded-full grid place-items-center ring-1 ${s.ringColor || s.ring || ''} ring-offset-2 ring-offset-card group-hover:ring-2 ${s.icon ? s.icon : `${s.bg} ${s.text}`}`}>
                   <Icon size={24} className="text-inherit" />
                 </div>
               </div>
