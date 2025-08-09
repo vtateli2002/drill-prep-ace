@@ -38,7 +38,7 @@ type BadgeItem = {
   unlocked: boolean;
 };
 
-const TIER_BADGES: Record<keyof typeof TIER_STYLES, BadgeItem[]> = {
+const DEFAULT_TIER_BADGES: Record<keyof typeof TIER_STYLES, BadgeItem[]> = {
   analyst: [
     { id: 'an-1', name: 'First Win', condition: 'Solve 1 problem', unlocked: true },
     { id: 'an-2', name: 'Getting Warm', condition: 'Solve 5 problems', unlocked: true },
@@ -235,7 +235,7 @@ const Badges = () => {
           variant="analyst"
           title="Tier 1 · Analyst"
           description="Beginner achievements to kickstart momentum."
-          badges={TIER_BADGES.analyst}
+          badges={DEFAULT_TIER_BADGES.analyst}
         />
 
         <TierSection
@@ -244,7 +244,7 @@ const Badges = () => {
           variant="associate"
           title="Tier 2 · Associate"
           description="Intermediate goals for consistent progress."
-          badges={TIER_BADGES.associate}
+          badges={DEFAULT_TIER_BADGES.associate}
         />
 
         <TierSection
@@ -253,7 +253,7 @@ const Badges = () => {
           variant="rainmaker"
           title="Tier 3 · Rainmaker"
           description="Expert-level achievements with real challenge."
-          badges={TIER_BADGES.rainmaker}
+          badges={DEFAULT_TIER_BADGES.rainmaker}
         />
 
         <TierSection
@@ -262,7 +262,7 @@ const Badges = () => {
           variant="boardroom"
           title="Tier 4 · Boardroom"
           description="Legendary, rare, and sometimes mysterious."
-          badges={TIER_BADGES.boardroom}
+          badges={DEFAULT_TIER_BADGES.boardroom}
         />
       </main>
     </div>
