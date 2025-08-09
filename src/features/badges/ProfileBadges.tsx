@@ -3,32 +3,17 @@ import { Award } from 'lucide-react';
 import { useBadges, UIBadge } from '@/features/badges/useBadges';
 
 // Tier styles to match the Badges page
-const TIER_STYLES = {
+const TIER_STYLES: Record<'analyst' | 'associate' | 'rainmaker' | 'boardroom', { text?: string; bg?: string; ring?: string; grad?: string; icon?: string }> = {
   analyst: {
     text: 'text-success',
     bg: 'bg-success/10',
     ring: 'ring-success/40',
     grad: 'from-success/70 to-transparent',
   },
-  associate: {
-    text: 'text-tracks-accounting',
-    bg: 'bg-tracks-accounting/10',
-    ring: 'ring-tracks-accounting/40',
-    grad: 'from-tracks-accounting/70 to-transparent',
-  },
-  rainmaker: {
-    text: 'text-tracks-valuation',
-    bg: 'bg-tracks-valuation/10',
-    ring: 'ring-tracks-valuation/40',
-    grad: 'from-tracks-valuation/70 to-transparent',
-  },
-  boardroom: {
-    text: 'text-tracks-lbo',
-    bg: 'bg-tracks-lbo/10',
-    ring: 'ring-tracks-lbo/40',
-    grad: 'from-tracks-lbo/70 to-transparent',
-  },
-} as const;
+  associate: { icon: 'badge-icon--blue' },
+  rainmaker: { icon: 'badge-icon--purple' },
+  boardroom: { icon: 'badge-icon--gold' },
+};
 
 type Variant = keyof typeof TIER_STYLES;
 const getVariant = (tier?: number): Variant => {
@@ -42,12 +27,12 @@ const getVariant = (tier?: number): Variant => {
 };
 
 function BadgeTile({ badge }: { badge: UIBadge }) {
-  const v = TIER_STYLES[getVariant(badge.tier)];
+  const s = TIER_STYLES[getVariant(badge.tier)];
   return (
     <div className="relative group rounded-lg border border-border bg-card/60 p-4 transition-all hover:shadow-lg hover-scale">
       <div className="flex items-start gap-3">
-        <div className={`p-[2px] rounded-full bg-gradient-to-b ${v.grad}`}>
-          <div className={`w-10 h-10 rounded-full ${v.bg} ${v.text} grid place-items-center ring-1 ${v.ring} ring-offset-2 ring-offset-card group-hover:ring-2`}>
+        <div className={`p-[2px] rounded-full ${s.icon ? '' : `bg-gradient-to-b ${s.grad}`}`}>{/* icon wrapper */}
+          <div className={`w-10 h-10 rounded-full grid place-items-center ring-offset-2 ring-offset-card group-hover:ring-2 ${s.icon ? s.icon : `${(s as any).bg} ${(s as any).text} ring-1 ${(s as any).ring}`}`}>
             <Award size={18} />
           </div>
         </div>

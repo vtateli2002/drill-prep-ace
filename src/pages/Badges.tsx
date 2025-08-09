@@ -7,7 +7,8 @@ import { useBadges } from '@/features/badges/useBadges';
 import { useAuth } from '@/hooks/useAuth';
 import { getProgress, BadgeProgress } from '@/features/badges/progressApi';
 import { useEffect, useState } from 'react';
-const TIER_STYLES = {
+type TierStyle = { text?: string; bg?: string; ring?: string; grad?: string; icon?: string };
+const TIER_STYLES: Record<'analyst' | 'associate' | 'rainmaker' | 'boardroom', TierStyle> = {
   analyst: {
     text: 'text-success',
     bg: 'bg-success/10',
@@ -15,24 +16,15 @@ const TIER_STYLES = {
     grad: 'from-success/70 to-transparent',
   },
   associate: {
-    text: 'text-tracks-accounting',
-    bg: 'bg-tracks-accounting/10',
-    ring: 'ring-tracks-accounting/40',
-    grad: 'from-tracks-accounting/70 to-transparent',
+    icon: 'badge-icon--blue',
   },
   rainmaker: {
-    text: 'text-tracks-valuation',
-    bg: 'bg-tracks-valuation/10',
-    ring: 'ring-tracks-valuation/40',
-    grad: 'from-tracks-valuation/70 to-transparent',
+    icon: 'badge-icon--purple',
   },
   boardroom: {
-    text: 'text-tracks-lbo',
-    bg: 'bg-tracks-lbo/10',
-    ring: 'ring-tracks-lbo/40',
-    grad: 'from-tracks-lbo/70 to-transparent',
+    icon: 'badge-icon--gold',
   },
-} as const;
+};
 
 type BadgeItem = { id: string; name: string; condition: string; unlocked: boolean; slug?: string };
 
@@ -107,8 +99,8 @@ const BadgeCard = ({ item, variant, extra }: { item: BadgeItem; variant: keyof t
   return (
     <div className="relative group rounded-lg border border-border bg-card/60 p-4 transition-all hover:shadow-lg hover:scale-[1.02]">
       <div className="flex items-start gap-3">
-        <div className={`p-[2px] rounded-full bg-gradient-to-b ${s.grad}`}>
-          <div className={`w-10 h-10 rounded-full ${s.bg} ${s.text} grid place-items-center ring-1 ${s.ring} ring-offset-2 ring-offset-card group-hover:ring-2`}>
+        <div className={`p-[2px] rounded-full ${s.icon ? '' : `bg-gradient-to-b ${s.grad}`}`}>{/* icon wrapper */}
+          <div className={`w-10 h-10 rounded-full grid place-items-center ring-offset-2 ring-offset-card group-hover:ring-2 ${s.icon ? s.icon : `${s.bg} ${s.text} ring-1 ${s.ring}`}`}>
             <Award size={18} />
           </div>
         </div>
@@ -147,8 +139,8 @@ const TierCard = ({
       <Card className="transition-all group-hover:shadow-lg border-border bg-card">
         <CardContent className="p-5 flex items-start gap-4">
           <div className="shrink-0">
-            <div className={`p-[2px] rounded-full bg-gradient-to-b ${s.grad} transition-transform duration-300 group-hover:scale-105`}>
-              <div className={`w-12 h-12 rounded-full ${s.bg} ${s.text} grid place-items-center ring-1 ${s.ring} ring-offset-2 ring-offset-card group-hover:ring-2`}>
+            <div className={`p-[2px] rounded-full ${s.icon ? '' : `bg-gradient-to-b ${s.grad}`} transition-transform duration-300 group-hover:scale-105`}>
+              <div className={`w-12 h-12 rounded-full grid place-items-center ring-offset-2 ring-offset-card group-hover:ring-2 ${s.icon ? s.icon : `${s.bg} ${s.text} ring-1 ${s.ring}`}`}>
                 <Icon size={24} />
               </div>
             </div>
@@ -189,8 +181,8 @@ const TierSection = ({
       <Card className="bg-card border-border">
         <CardHeader>
           <div className="flex items-center gap-3">
-            <div className={`p-[2px] rounded-full bg-gradient-to-b ${s.grad}`}>
-              <div className={`w-10 h-10 rounded-full ${s.bg} ${s.text} grid place-items-center ring-1 ${s.ring}`}>
+            <div className={`p-[2px] rounded-full ${s.icon ? '' : `bg-gradient-to-b ${s.grad}`}`}>
+              <div className={`w-10 h-10 rounded-full grid place-items-center ${s.icon ? s.icon : `${s.bg} ${s.text} ring-1 ${s.ring}`}`}>
                 <Icon size={18} />
               </div>
             </div>
