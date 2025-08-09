@@ -158,3 +158,4 @@ All colors MUST be HSL.
       0 0 0 2px hsl(var(--tier-gold-500) / 0.24),
       0 8px 22px hsl(var(--tier-gold-600) / 0.35);
   }
+}
