@@ -249,8 +249,19 @@ const Auth = () => {
             onClick={handleGoogleAuth}
             disabled={loading}
           >
-            {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-            Continue with Google
+            {loading ? (
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            ) : (
+              <span className="mr-2 inline-flex items-center">
+                <svg aria-hidden="true" viewBox="0 0 24 24" className="h-4 w-4">
+                  <path fill="#EA4335" d="M12 10.2v3.6h5.1c-.2 1.2-.9 2.3-2 3.1l3.2 2.5c1.9-1.8 3-4.3 3-7.3 0-.7-.1-1.4-.2-2H12z"/>
+                  <path fill="#34A853" d="M12 22c2.7 0 5-0.9 6.6-2.5l-3.2-2.5c-.9.6-2 .9-3.4.9-2.6 0-4.8-1.7-5.6-4.1H2.9v2.6C4.5 19.8 8 22 12 22z"/>
+                  <path fill="#4285F4" d="M6.4 13.8c-.2-.6-.4-1.3-.4-1.8s.1-1.2.3-1.8V6.6H2.9C2.3 7.9 2 9.4 2 12s.3 4.1.9 5.4l3.5-2.6z"/>
+                  <path fill="#FBBC05" d="M12 5.5c1.5 0 2.8.5 3.9 1.5l2.9-2.9C16.9 2.4 14.7 1.6 12 1.6 8 1.6 4.5 3.8 2.9 6.6L6.3 9C7.1 7.2 9.4 5.5 12 5.5z"/>
+                </svg>
+              </span>
+            )}
+            <span>Continue with Google</span>
           </Button>
 
           <Button 
