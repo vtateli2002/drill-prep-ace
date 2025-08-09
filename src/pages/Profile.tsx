@@ -11,7 +11,7 @@ import { useProfile } from '@/hooks/useProfile';
 import { useAuth } from '@/hooks/useAuth';
 import { useQuestions } from '@/hooks/useQuestions';
 import { useRealProgress } from '@/hooks/useRealProgress';
-import { BADGES, RANK_TITLES } from '@/types/leaderboard';
+import { RANK_TITLES } from '@/types/leaderboard';
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -25,11 +25,6 @@ const Profile = () => {
     return config ? config.emoji : '🎓';
   };
 
-  // Get real badges from profile
-  const unlockedBadges = (profile?.badges || []).filter((badge: any) => badge.unlocked);
-  const lockedBadges = BADGES.filter(badge => 
-    !(profile?.badges || []).some((userBadge: any) => userBadge.id === badge.id && userBadge.unlocked)
-  );
 
   // Calculate real percentile
   useEffect(() => {
@@ -299,38 +294,18 @@ const Profile = () => {
             <CardHeader>
               <CardTitle className="text-foreground flex items-center">
                 <Award className="mr-2" size={20} />
-                Badge Collection
+                Badges
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-6">
-                {/* Unlocked Badges */}
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 p-4 rounded-lg border border-border bg-muted/40">
                 <div>
-                  <h3 className="font-semibold text-foreground mb-4">Unlocked ({unlockedBadges.length})</h3>
-                  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                    {unlockedBadges.map((badge) => (
-                      <div key={badge.id} className="text-center p-4 bg-muted/50 rounded-lg border border-primary/20">
-                        <div className="text-3xl mb-2">{badge.emoji}</div>
-                        <div className="text-sm font-medium text-foreground mb-1">{badge.name}</div>
-                        <div className="text-xs text-muted-foreground">{badge.description}</div>
-                      </div>
-                    ))}
-                  </div>
+                  <p className="text-foreground font-medium">Explore your badge tiers</p>
+                  <p className="text-sm text-muted-foreground">We’re rolling out a new, tiered badge system. View tiers and designs on the Badges page.</p>
                 </div>
-
-                {/* Locked Badges */}
-                <div>
-                  <h3 className="font-semibold text-foreground mb-4">Locked ({lockedBadges.length})</h3>
-                  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                    {lockedBadges.map((badge) => (
-                      <div key={badge.id} className="text-center p-4 bg-muted/30 rounded-lg opacity-60">
-                        <div className="text-3xl mb-2 grayscale">{badge.emoji}</div>
-                        <div className="text-sm font-medium text-muted-foreground mb-1">{badge.name}</div>
-                        <div className="text-xs text-muted-foreground">{badge.description}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                <Button variant="secondary" onClick={() => navigate('/badges')}>
+                  View Badges
+                </Button>
               </div>
             </CardContent>
           </Card>

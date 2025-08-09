@@ -1,4 +1,4 @@
-import { LeaderboardUser, RANK_TITLES, BADGES } from '@/types/leaderboard';
+import { LeaderboardUser } from '@/types/leaderboard';
 
 const RAW_LEADERBOARD_DATA = [
   {

@@ -21,6 +21,7 @@ const Profile = lazy(() => import("./pages/Profile"));
 const DailyChallengeStandalone = lazy(() => import("./components/DailyChallengeStandalone"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const CleanQuestion = lazy(() => import("./pages/CleanQuestion"));
+const Badges = lazy(() => import("./pages/Badges"));
 
 const queryClient = new QueryClient();
 
@@ -86,6 +87,14 @@ const App = () => (
                 element={
                   <ProtectedRoute>
                     <Leaderboard />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/badges"
+                element={
+                  <ProtectedRoute>
+                    <Badges />
                   </ProtectedRoute>
                 }
               />
