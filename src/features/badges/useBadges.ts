@@ -3,6 +3,7 @@ import { supabase } from '@/integrations/supabase/client';
 
 export type UIBadge = {
   id: string;
+  slug: string;
   name: string;
   condition: string;
   unlocked: boolean;
@@ -62,6 +63,7 @@ export function useBadges() {
             const masked = hidden && !unlocked;
             return {
               id: b.id,
+              slug: b.slug,
               name: masked ? '???' : b.name,
               condition: masked ? 'Legendary badge. Keep going.' : (b.description ?? ''),
               unlocked,

@@ -307,6 +307,54 @@ export type Database = {
         }
         Relationships: []
       }
+      v_badge_progress: {
+        Row: {
+          acc_correct: number | null
+          clean_first_try: number | null
+          days_active_30: number | null
+          distinct_tracks: number | null
+          hard_clean: number | null
+          lbo_correct: number | null
+          level_now: number | null
+          mna_correct: number | null
+          notes_count: number | null
+          total_correct: number | null
+          user_id: string | null
+          val_correct: number | null
+          xp_now: number | null
+        }
+        Insert: {
+          acc_correct?: never
+          clean_first_try?: never
+          days_active_30?: never
+          distinct_tracks?: never
+          hard_clean?: never
+          lbo_correct?: never
+          level_now?: never
+          mna_correct?: never
+          notes_count?: never
+          total_correct?: never
+          user_id?: string | null
+          val_correct?: never
+          xp_now?: never
+        }
+        Update: {
+          acc_correct?: never
+          clean_first_try?: never
+          days_active_30?: never
+          distinct_tracks?: never
+          hard_clean?: never
+          lbo_correct?: never
+          level_now?: never
+          mna_correct?: never
+          notes_count?: never
+          total_correct?: never
+          user_id?: string | null
+          val_correct?: never
+          xp_now?: never
+        }
+        Relationships: []
+      }
     }
     Functions: {
       _award_badge_if_missing: {
@@ -358,6 +406,29 @@ export type Database = {
       check_and_award_tier4: {
         Args: { p_user: string }
         Returns: undefined
+      }
+      get_badge_progress_for_user: {
+        Args: { p_user: string }
+        Returns: {
+          user_id: string
+          total_correct: number
+          days_active_30: number
+          clean_first_try: number
+          hard_clean: number
+          acc_correct: number
+          val_correct: number
+          mna_correct: number
+          lbo_correct: number
+          distinct_tracks: number
+          level_now: number
+          xp_now: number
+          notes_count: number
+          streak_current: number
+          catalog_total_active: number
+          catalog_user_solved: number
+          best_track_solved: number
+          best_track_total: number
+        }[]
       }
       get_current_streak: {
         Args: { p_tz?: string } | { p_user: string; p_tz?: string }

@@ -2,9 +2,13 @@ import Navbar from '@/components/Navbar';
 import { Seo } from '@/components/Seo';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Briefcase, LineChart, Trophy, Crown, ChevronRight, Lock, Award } from 'lucide-react';
+import { Briefcase, LineChart, Trophy, Crown, ChevronRight, Lock, Award, Info } from 'lucide-react';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { useBadges } from '@/features/badges/useBadges';
-
+import { useAuth } from '@/hooks/useAuth';
+import { useToast } from '@/hooks/use-toast';
+import { getProgress, recompute, BadgeProgress } from '@/features/badges/progressApi';
+import { useEffect, useState } from 'react';
 const TIER_STYLES = {
   analyst: {
     text: 'text-success',
@@ -32,12 +36,7 @@ const TIER_STYLES = {
   },
 } as const;
 
-type BadgeItem = {
-  id: string;
-  name: string;
-  condition: string;
-  unlocked: boolean;
-};
+type BadgeItem = { id: string; name: string; condition: string; unlocked: boolean; slug?: string };
 
 const DEFAULT_TIER_BADGES: Record<keyof typeof TIER_STYLES, BadgeItem[]> = {
   analyst: [
@@ -69,7 +68,43 @@ const DEFAULT_TIER_BADGES: Record<keyof typeof TIER_STYLES, BadgeItem[]> = {
   ],
 };
 
-const BadgeCard = ({ item, variant }: { item: BadgeItem; variant: keyof typeof TIER_STYLES }) => {
+const ProgressBar = ({ n, d }: { n: number; d: number }) => {
+  const pct = Math.max(0, Math.min(100, d ? Math.round((n / d) * 100) : 0));
+  return (
+    <div className="mt-2 h-1.5 w-full rounded bg-muted">
+      <div className="h-1.5 rounded bg-primary" style={{ width: `${pct}%` }} />
+    </div>
+  );
+};
+
+type ProgressInfo =
+  | { kind: 'single'; label: string; n: number; d: number }
+  | { kind: 'dual'; n1: number; d1: number; n2: number; d2: number; label1: string; label2: string }
+  | null;
+
+const computeProgress = (slug: string, u: BadgeProgress | null): ProgressInfo => {
+  if (!u) return null;
+  switch (slug) {
+    case 'accounting_ace': return { kind: 'single', label: 'Accounting', n: u.acc_correct, d: 20 };
+    case 'valuation_veteran': return { kind: 'single', label: 'Valuation', n: u.val_correct, d: 20 };
+    case 'ma_master': return { kind: 'single', label: 'M&A', n: u.mna_correct, d: 20 };
+    case 'lbo_lead': return { kind: 'single', label: 'LBO', n: u.lbo_correct, d: 20 };
+    case 'steady_gains': return { kind: 'single', label: 'XP', n: u.xp_now, d: 2000 };
+    case 'closer': return { kind: 'single', label: 'Best track', n: u.best_track_solved, d: u.best_track_total || 1 };
+    case 'mastery_i': return { kind: 'single', label: 'Correct', n: u.total_correct, d: 100 };
+    case 'long_game': return { kind: 'single', label: 'Streak days', n: u.streak_current, d: 14 };
+    case 'deep_focus': return { kind: 'single', label: 'First-try', n: u.clean_first_try, d: 20 };
+    case 'mentor': return { kind: 'single', label: 'Notes', n: u.notes_count, d: 10 };
+    case 'level_20': return { kind: 'single', label: 'Level', n: u.level_now, d: 20 };
+    case 'relentless_30': return { kind: 'single', label: 'Streak days', n: u.streak_current, d: 30 };
+    case 'iron_will_10h': return { kind: 'single', label: 'Hard clean', n: u.hard_clean, d: 10 };
+    case 'cross_track_50': return { kind: 'dual', n1: u.total_correct, d1: 50, n2: u.distinct_tracks, d2: 3, label1: 'Correct', label2: 'Tracks' };
+    case 'shark_all': return { kind: 'single', label: 'All questions', n: u.catalog_user_solved, d: u.catalog_total_active || 1 };
+    default: return null;
+  }
+};
+
+const BadgeCard = ({ item, variant, extra }: { item: BadgeItem; variant: keyof typeof TIER_STYLES; extra?: React.ReactNode }) => {
   const s = TIER_STYLES[variant];
   return (
     <div className="relative group rounded-lg border border-border bg-card/60 p-4 transition-all hover:shadow-lg hover:scale-[1.02]">
@@ -82,6 +117,7 @@ const BadgeCard = ({ item, variant }: { item: BadgeItem; variant: keyof typeof T
         <div className={item.unlocked ? '' : 'opacity-60'}>
           <div className="font-semibold text-foreground leading-tight">{item.name}</div>
           <div className="text-xs text-muted-foreground mt-1">{item.condition}</div>
+          {extra}
         </div>
       </div>
       {!item.unlocked && (
@@ -139,6 +175,7 @@ const TierSection = ({
   description,
   variant,
   badges,
+  progress,
 }: {
   id: string;
   icon: any;
@@ -146,6 +183,7 @@ const TierSection = ({
   description: string;
   variant: keyof typeof TIER_STYLES;
   badges: BadgeItem[];
+  progress: BadgeProgress | null;
 }) => {
   const s = TIER_STYLES[variant];
   return (
@@ -166,9 +204,48 @@ const TierSection = ({
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
-            {badges.map((b) => (
-              <BadgeCard key={b.id} item={b} variant={variant} />
-            ))}
+            {badges.map((b) => {
+              const info = (!b.unlocked && (b as any).slug) ? computeProgress((b as any).slug as string, progress) : null;
+              let extra: React.ReactNode = null;
+              if (info && (info as any).kind === 'single') {
+                const s: any = info;
+                extra = (
+                  <div className="mt-2">
+                    <div className="flex items-center justify-between text-[11px] text-muted-foreground">
+                      <TooltipProvider>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <span className="underline decoration-dotted cursor-help">Why locked?</span>
+                          </TooltipTrigger>
+                          <TooltipContent>{`${s.label}: ${s.n}/${s.d}`}</TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                      <span>{s.n}/{s.d}</span>
+                    </div>
+                    <ProgressBar n={s.n} d={s.d} />
+                  </div>
+                );
+              } else if (info && (info as any).kind === 'dual') {
+                const d: any = info;
+                extra = (
+                  <div className="mt-2">
+                    <div className="flex items-center justify-between text-[11px] text-muted-foreground">
+                      <TooltipProvider>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <span className="underline decoration-dotted cursor-help">Why locked?</span>
+                          </TooltipTrigger>
+                          <TooltipContent>{`${d.label1}: ${d.n1}/${d.d1} · ${d.label2}: ${d.n2}/${d.d2}`}</TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                      <span>{d.n1}/{d.d1} · {d.n2}/{d.d2}</span>
+                    </div>
+                    <ProgressBar n={d.n1} d={d.d1} />
+                  </div>
+                );
+              }
+              return <BadgeCard key={b.id} item={b} variant={variant} extra={extra} />;
+            })}
           </div>
         </CardContent>
       </Card>
@@ -180,7 +257,31 @@ const TierSection = ({
 const Badges = () => {
   const canonical = typeof window !== 'undefined' ? `${window.location.origin}/badges` : undefined;
   const { byTier, loading, error } = useBadges();
-  console.log({ byTier });
+  const { user } = useAuth();
+  const { toast } = useToast();
+  const [progress, setProgress] = useState<BadgeProgress | null>(null);
+  const [recalcLoading, setRecalcLoading] = useState(false);
+
+  useEffect(() => {
+    if (!user) return;
+    getProgress(user.id).then(setProgress).catch(console.error);
+  }, [user]);
+
+  const handleRecompute = async () => {
+    if (!user) return;
+    try {
+      setRecalcLoading(true);
+      await recompute(user.id);
+      toast({ title: 'Recomputed badge progress.' });
+    } catch (e) {
+      console.error(e);
+      toast({ title: 'Recompute failed' });
+    } finally {
+      setRecalcLoading(false);
+      getProgress(user.id).then(setProgress).catch(console.error);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Seo
@@ -190,9 +291,14 @@ const Badges = () => {
       />
       <Navbar />
       <main className="container mx-auto px-4 py-8">
-        <header className="mb-8">
-          <h1 className="text-3xl font-bold text-foreground">🏆 Badges</h1>
-          <p className="text-muted-foreground mt-2">Earn rewards as you master investment banking technicals.</p>
+        <header className="mb-8 flex items-center justify-between">
+          <div>
+            <h1 className="text-3xl font-bold text-foreground">🏆 Badges</h1>
+            <p className="text-muted-foreground mt-2">Earn rewards as you master investment banking technicals.</p>
+          </div>
+          <Button size="sm" variant="outline" onClick={handleRecompute} disabled={recalcLoading || !user}>
+            {recalcLoading ? 'Recomputing…' : 'Recompute badges'}
+          </Button>
         </header>
 
         {/* Tier icons grid */}
@@ -238,6 +344,7 @@ const Badges = () => {
           title="Tier 1 · Analyst"
           description="Beginner achievements to kickstart momentum."
           badges={byTier[1]}
+          progress={progress}
         />
 
         <TierSection
@@ -247,6 +354,7 @@ const Badges = () => {
           title="Tier 2 · Associate"
           description="Intermediate goals for consistent progress."
           badges={byTier[2]}
+          progress={progress}
         />
 
         <TierSection
@@ -256,6 +364,7 @@ const Badges = () => {
           title="Tier 3 · Rainmaker"
           description="Expert-level achievements with real challenge."
           badges={byTier[3]}
+          progress={progress}
         />
 
         <TierSection
@@ -265,6 +374,7 @@ const Badges = () => {
           title="Tier 4 · Boardroom"
           description="Legendary, rare, and sometimes mysterious."
           badges={byTier[4]}
+          progress={progress}
         />
       </main>
     </div>
