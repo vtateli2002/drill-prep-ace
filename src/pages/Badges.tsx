@@ -16,13 +16,13 @@ const TIER_STYLES: Record<'analyst' | 'associate' | 'rainmaker' | 'boardroom', T
     grad: 'from-success/70 to-transparent',
   },
   associate: {
-    icon: 'badge-icon--blue',
+    icon: 'badge-icon--blue badge--blue',
   },
   rainmaker: {
-    icon: 'badge-icon--purple',
+    icon: 'badge-icon--purple badge--purple',
   },
   boardroom: {
-    icon: 'badge-icon--gold',
+    icon: 'badge-icon--gold badge--gold',
   },
 };
 

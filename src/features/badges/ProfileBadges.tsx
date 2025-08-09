@@ -10,9 +10,9 @@ const TIER_STYLES: Record<'analyst' | 'associate' | 'rainmaker' | 'boardroom', {
     ring: 'ring-success/40',
     grad: 'from-success/70 to-transparent',
   },
-  associate: { icon: 'badge-icon--blue' },
-  rainmaker: { icon: 'badge-icon--purple' },
-  boardroom: { icon: 'badge-icon--gold' },
+  associate: { icon: 'badge-icon--blue badge--blue' },
+  rainmaker: { icon: 'badge-icon--purple badge--purple' },
+  boardroom: { icon: 'badge-icon--gold badge--gold' },
 };
 
 type Variant = keyof typeof TIER_STYLES;
