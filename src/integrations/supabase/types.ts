@@ -255,7 +255,13 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      user_correct_days: {
+        Row: {
+          answered_on: string | null
+          user_id: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       calculate_level_from_xp: {
@@ -268,6 +274,10 @@ export type Database = {
       }
       calculate_xp_for_level: {
         Args: { level_num: number }
+        Returns: number
+      }
+      get_current_streak: {
+        Args: { p_tz?: string } | { p_user: string; p_tz?: string }
         Returns: number
       }
       jsonb_int: {

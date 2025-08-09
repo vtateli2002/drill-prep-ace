@@ -90,7 +90,7 @@ const Profile = () => {
       ? addDays(startedAt, timelineDaysMap[onboarding.timeline])
       : null);
   const goalReminder = computedTargetDate
-    ? `Beat FinanceBot before ${computedTargetDate.toLocaleDateString()}`
+    ? `Beat ${rivalName} before ${computedTargetDate.toLocaleDateString()}`
     : 'Set your goal to get a Rival deadline';
 
   const handleSignOut = async () => {
@@ -267,7 +267,7 @@ const Profile = () => {
                 <div className="rounded-xl border border-border bg-muted/40 p-4">
                   <div className="flex items-center gap-2 mb-3">
                     <Bot className="text-primary" size={16} />
-                    <h3 className="text-sm font-semibold text-foreground">AI Rival: FinanceBot</h3>
+                  <h3 className="text-sm font-semibold text-foreground">AI Rival: {rivalName}</h3>
                   </div>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
