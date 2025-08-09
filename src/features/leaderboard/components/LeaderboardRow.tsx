@@ -1,7 +1,7 @@
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Crown } from 'lucide-react';
-import { getRankIcon, getRankChangeDisplay } from '@/features/leaderboard/utils/display';
+import { getRankIcon } from '@/features/leaderboard/utils/display';
 import { memo } from 'react';
 
 export interface LeaderboardUser {
@@ -11,7 +11,7 @@ export interface LeaderboardUser {
   level: number;
   rank: string;
   profile_pic?: string;
-  rank_change?: number;
+  
   is_bot?: boolean;
 }
 
@@ -23,7 +23,7 @@ interface RowProps {
 const nameClean = (u: LeaderboardUser) => u.username;
 
 const LeaderboardRow = ({ user, index }: RowProps) => {
-  const change = getRankChangeDisplay(user.rank_change);
+  
 
   return (
     <div
@@ -60,12 +60,8 @@ const LeaderboardRow = ({ user, index }: RowProps) => {
         <span className="text-foreground font-medium">{user.level}</span>
       </div>
 
-      <div className="col-span-2 flex items-center justify-center">
+      <div className="col-span-3 flex items-center justify-center">
         <span className="text-foreground font-medium">{user.xp.toLocaleString()}</span>
-      </div>
-
-      <div className="col-span-1 flex items-center justify-center">
-        <span className={`text-sm font-medium ${change.color}`}>{change.text}</span>
       </div>
     </div>
   );

@@ -20,7 +20,7 @@ const LeaderboardContent = () => {
 
       const { data, error } = await supabase
         .from('profiles')
-        .select('id, username, xp, level, rank, profile_pic, rank_change, is_bot')
+        .select('id, username, xp, level, rank, profile_pic, is_bot')
         .order('xp', { ascending: false })
         .limit(20);
 
@@ -102,8 +102,7 @@ const LeaderboardContent = () => {
             <div className="col-span-4 text-left">Player</div>
             <div className="col-span-2 text-center">Title</div>
             <div className="col-span-2 text-center">Level</div>
-            <div className="col-span-2 text-center">XP</div>
-            <div className="col-span-1 text-center">Change</div>
+            <div className="col-span-3 text-center">XP</div>
           </div>
 
           <div className="space-y-2 mt-4">
