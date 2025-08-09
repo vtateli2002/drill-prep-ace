@@ -105,11 +105,19 @@ const BadgeCard = ({ item, variant, extra }: { item: BadgeItem; variant: keyof t
   return (
     <div className="relative group rounded-lg border border-border bg-card/60 p-4 transition-all hover:shadow-lg hover:scale-[1.02]">
       <div className="flex items-start gap-3">
-        <div className={`p-[2px] rounded-full bg-gradient-to-b ${s.outerGrad || s.grad || ''}`}>{/* outer halo */}
-          <div className={`w-10 h-10 rounded-full grid place-items-center ring-1 ${s.ringColor || s.ring || ''} ring-offset-2 ring-offset-card group-hover:ring-2 ${s.icon ? s.icon : `${s.bg} ${s.text}`}`}>
-            <Award size={18} className="text-inherit" />
+        {variant === 'analyst' ? (
+          <div className={`p-[2px] rounded-full bg-gradient-to-b ${s.grad}`}>
+            <div className={`w-10 h-10 rounded-full ${s.bg} ${s.text} grid place-items-center ring-1 ${s.ring} ring-offset-2 ring-offset-card group-hover:ring-2`}>
+              <Award size={18} className="text-inherit" />
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className={`tier-ring ${variant === 'associate' ? 'tier-blue' : variant === 'rainmaker' ? 'tier-purple' : 'tier-gold'}`}>
+            <div className={`tier-ring__inner w-10 h-10 ring-1 ${variant === 'associate' ? 'ring-[hsl(var(--tier-blue-base)/0.4)]' : variant === 'rainmaker' ? 'ring-[hsl(var(--tier-purple-base)/0.4)]' : 'ring-[hsl(var(--tier-gold-base)/0.4)]'} ring-offset-2 ring-offset-card group-hover:ring-2`}>
+              <Award size={18} className="text-inherit" />
+            </div>
+          </div>
+        )}
         <div className={item.unlocked ? '' : 'opacity-60'}>
           <div className="font-semibold text-foreground leading-tight">{item.name}</div>
           <div className="text-xs text-muted-foreground mt-1">{item.condition}</div>
@@ -145,11 +153,19 @@ const TierCard = ({
       <Card className="transition-all group-hover:shadow-lg border-border bg-card">
         <CardContent className="p-5 flex items-start gap-4">
           <div className="shrink-0">
-              <div className={`p-[2px] rounded-full bg-gradient-to-b ${s.outerGrad || s.grad || ''} transition-transform duration-300 group-hover:scale-105`}>
-                <div className={`w-12 h-12 rounded-full grid place-items-center ring-1 ${s.ringColor || s.ring || ''} ring-offset-2 ring-offset-card group-hover:ring-2 ${s.icon ? s.icon : `${s.bg} ${s.text}`}`}>
-                  <Icon size={24} className="text-inherit" />
+              {variant === 'analyst' ? (
+                <div className={`p-[2px] rounded-full bg-gradient-to-b ${s.grad} transition-transform duration-300 group-hover:scale-105`}>
+                  <div className={`w-12 h-12 rounded-full ${s.bg} ${s.text} grid place-items-center ring-1 ${s.ring} ring-offset-2 ring-offset-card group-hover:ring-2`}>
+                    <Icon size={24} className="text-inherit" />
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <div className={`tier-ring ${variant === 'associate' ? 'tier-blue' : variant === 'rainmaker' ? 'tier-purple' : 'tier-gold'} transition-transform duration-300 group-hover:scale-105`}>
+                  <div className={`tier-ring__inner w-12 h-12 ring-1 ${variant === 'associate' ? 'ring-[hsl(var(--tier-blue-base)/0.4)]' : variant === 'rainmaker' ? 'ring-[hsl(var(--tier-purple-base)/0.4)]' : 'ring-[hsl(var(--tier-gold-base)/0.4)]'} ring-offset-2 ring-offset-card group-hover:ring-2`}>
+                    <Icon size={24} className="text-inherit" />
+                  </div>
+                </div>
+              )}
           </div>
           <div className="flex-1">
             <div className="flex items-center justify-between">
@@ -187,11 +203,19 @@ const TierSection = ({
       <Card className="bg-card border-border">
         <CardHeader>
           <div className="flex items-center gap-3">
-            <div className={`p-[2px] rounded-full ${s.icon ? '' : `bg-gradient-to-b ${s.grad}`}`}>
-              <div className={`w-10 h-10 rounded-full grid place-items-center ${s.icon ? s.icon : `${s.bg} ${s.text} ring-1 ${s.ring}`}`}>
-                <Icon size={18} className="text-inherit" />
+            {variant === 'analyst' ? (
+              <div className={`p-[2px] rounded-full bg-gradient-to-b ${s.grad}`}>
+                <div className={`w-10 h-10 rounded-full ${s.bg} ${s.text} grid place-items-center ring-1 ${s.ring}`}>
+                  <Icon size={18} className="text-inherit" />
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className={`tier-ring ${variant === 'associate' ? 'tier-blue' : variant === 'rainmaker' ? 'tier-purple' : 'tier-gold'}`}>
+                <div className={`tier-ring__inner w-10 h-10 ring-1 ${variant === 'associate' ? 'ring-[hsl(var(--tier-blue-base)/0.4)]' : variant === 'rainmaker' ? 'ring-[hsl(var(--tier-purple-base)/0.4)]' : 'ring-[hsl(var(--tier-gold-base)/0.4)]'}`}>
+                  <Icon size={18} className="text-inherit" />
+                </div>
+              </div>
+            )}
             <div>
               <CardTitle className="text-foreground">{title}</CardTitle>
               <p className="text-sm text-muted-foreground">{description}</p>

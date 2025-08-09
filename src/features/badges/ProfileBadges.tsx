@@ -27,15 +27,24 @@ const getVariant = (tier?: number): Variant => {
 };
 
 function BadgeTile({ badge }: { badge: UIBadge }) {
-  const s = TIER_STYLES[getVariant(badge.tier)];
+  const variant = getVariant(badge.tier);
+  const s = TIER_STYLES[variant];
   return (
     <div className="relative group rounded-lg border border-border bg-card/60 p-4 transition-all hover:shadow-lg hover-scale">
       <div className="flex items-start gap-3">
-        <div className={`p-[2px] rounded-full bg-gradient-to-b ${s.outerGrad || s.grad || ''}`}>{/* icon wrapper */}
-          <div className={`w-10 h-10 rounded-full grid place-items-center ring-1 ${s.ringColor || s.ring || ''} ring-offset-2 ring-offset-card group-hover:ring-2 ${s.icon ? s.icon : `${(s as any).bg} ${(s as any).text}`}`}>
-            <Award size={18} className="text-inherit" />
+        {variant === 'analyst' ? (
+          <div className={`p-[2px] rounded-full bg-gradient-to-b ${s.grad}`}>{/* outer halo */}
+            <div className={`w-10 h-10 rounded-full ${s.bg} ${s.text} grid place-items-center ring-1 ${s.ring} ring-offset-2 ring-offset-card group-hover:ring-2`}>
+              <Award size={18} className="text-inherit" />
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className={`tier-ring ${variant === 'associate' ? 'tier-blue' : variant === 'rainmaker' ? 'tier-purple' : 'tier-gold'}`}>
+            <div className={`tier-ring__inner w-10 h-10 ring-1 ${variant === 'associate' ? 'ring-[hsl(var(--tier-blue-base)/0.4)]' : variant === 'rainmaker' ? 'ring-[hsl(var(--tier-purple-base)/0.4)]' : 'ring-[hsl(var(--tier-gold-base)/0.4)]'} ring-offset-2 ring-offset-card group-hover:ring-2`}>
+              <Award size={18} className="text-inherit" />
+            </div>
+          </div>
+        )}
         <div>
           <div className="font-semibold text-foreground leading-tight line-clamp-1">{badge.name}</div>
           <div className="text-xs text-muted-foreground mt-1 line-clamp-2">{badge.condition}</div>
