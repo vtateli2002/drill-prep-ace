@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+
 import Navbar from '@/components/Navbar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -12,9 +12,10 @@ import { useAuth } from '@/hooks/useAuth';
 import { useQuestions } from '@/hooks/useQuestions';
 import { useRealProgress } from '@/hooks/useRealProgress';
 import { RANK_TITLES } from '@/types/leaderboard';
+import ProfileBadges from '@/features/badges/ProfileBadges';
 
 const Profile = () => {
-  const navigate = useNavigate();
+  
   const { profile, loading, calculatePercentile } = useProfile();
   const { signOut } = useAuth();
   const { trackStats, difficultyXP, loading: progressLoading } = useRealProgress();
@@ -298,15 +299,7 @@ const Profile = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 p-4 rounded-lg border border-border bg-muted/40">
-                <div>
-                  <p className="text-foreground font-medium">Explore your badge tiers</p>
-                  <p className="text-sm text-muted-foreground">We’re rolling out a new, tiered badge system. View tiers and designs on the Badges page.</p>
-                </div>
-                <Button variant="secondary" onClick={() => navigate('/badges')}>
-                  View Badges
-                </Button>
-              </div>
+              <ProfileBadges />
             </CardContent>
           </Card>
         </div>
