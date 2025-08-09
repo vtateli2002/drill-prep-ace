@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -292,11 +292,14 @@ const Profile = () => {
 
           {/* Badges */}
           <Card className="lg:col-span-3 bg-card border-border">
-            <CardHeader>
+            <CardHeader className="flex flex-row items-center justify-between">
               <CardTitle className="text-foreground flex items-center">
                 <Award className="mr-2" size={20} />
                 Badges
               </CardTitle>
+              <Button asChild className="hover-scale" aria-label="View all badges">
+                <Link to="/badges">View All Badges</Link>
+              </Button>
             </CardHeader>
             <CardContent>
               <ProfileBadges />
