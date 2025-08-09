@@ -94,4 +94,11 @@ All colors MUST be HSL.
 
   .no-scrollbar::-webkit-scrollbar { display: none; }
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* Brief highlight when navigating to a section via hash */
+  section:target {
+    outline: 2px solid hsl(var(--ring) / 0.5);
+    outline-offset: 4px;
+    transition: outline 0.3s ease;
+  }
 }

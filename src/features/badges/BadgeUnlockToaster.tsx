@@ -62,12 +62,11 @@ export default function BadgeUnlockToaster() {
           const tier: number = badge?.tier ?? 1;
           const icon = (badge?.icon as string | null) ?? '🏆';
           const style = TIER_STYLES[tier] ?? TIER_STYLES[1];
-          const message = MESSAGES[Math.floor(Math.random() * MESSAGES.length)];
+          const isTier2 = tier === 2;
 
           shown.current.add(badgeId);
 
           toast({
-            // Root styling: dark card background with tier glow
             className: [
               'cursor-pointer',
               'bg-card text-card-foreground border border-border',
@@ -77,11 +76,13 @@ export default function BadgeUnlockToaster() {
               style.shadow,
             ].join(' '),
             duration: 4000,
-            onClick: () => navigate('/badges'),
-            title: `🎉 Badge Unlocked!`,
-            description: `You’re now an ${name}! Keep going!`,
+            onClick: () => navigate(isTier2 ? '/badges#associate' : '/badges'),
+            title: isTier2 ? 'Tier 2 Badge Unlocked – Associate' : '🎉 Badge Unlocked!',
+            description: isTier2
+              ? "Impressive progress! You've hit a major milestone toward mastery."
+              : `You’re now an ${name}! Keep going!`,
             action: (
-              <ToastAction altText="View All Badges" onClick={() => navigate('/badges')}>
+              <ToastAction altText="View All Badges" onClick={() => navigate(isTier2 ? '/badges#associate' : '/badges')}>
                 View All Badges
               </ToastAction>
             ),
