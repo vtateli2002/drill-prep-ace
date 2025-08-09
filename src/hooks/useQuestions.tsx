@@ -3,7 +3,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from './useAuth';
 import { useProfile } from './useProfile';
 import { XP_VALUES } from '@/types/drill';
-import { BADGES } from '@/types/leaderboard';
+
 
 export interface SolvedQuestion {
   id: string;
@@ -156,21 +156,8 @@ export const useQuestions = () => {
           await updateTrackProgress(track, trackData.completed + 1, 4);
         }
 
-        // Check for new badges
+        // Badges temporarily disabled during new tier rollout
         await fetchSolvedQuestions();
-        const newBadges = [...(profile.badges || [])];
-        
-        for (const badge of BADGES) {
-          const isUnlocked = await checkBadgeUnlocked(badge.id, newBadges, solvedQuestions, profile);
-          if (isUnlocked) {
-            newBadges.push({ ...badge, unlocked: true });
-            setNewBadge(badge); // Show congratulations modal
-          }
-        }
-
-        if (newBadges.length > (profile.badges || []).length) {
-          await updateProfile({ badges: newBadges });
-        }
       }
 
       await fetchSolvedQuestions();
