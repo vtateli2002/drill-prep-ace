@@ -96,6 +96,7 @@ export type Database = {
           id: string
           name: string
           slug: string
+          tier: number
           xp_reward: number
         }
         Insert: {
@@ -105,6 +106,7 @@ export type Database = {
           id?: string
           name: string
           slug: string
+          tier?: number
           xp_reward?: number
         }
         Update: {
@@ -114,7 +116,26 @@ export type Database = {
           id?: string
           name?: string
           slug?: string
+          tier?: number
           xp_reward?: number
+        }
+        Relationships: []
+      }
+      calculator_events: {
+        Row: {
+          created_at: string
+          id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          user_id?: string
         }
         Relationships: []
       }
@@ -214,6 +235,27 @@ export type Database = {
         }
         Relationships: []
       }
+      user_notes: {
+        Row: {
+          created_at: string
+          id: string
+          question_id: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          question_id?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          question_id?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
       user_questions: {
         Row: {
           attempt_count: number | null
@@ -264,6 +306,24 @@ export type Database = {
       }
     }
     Functions: {
+      _award_badge_if_missing: {
+        Args: { p_user: string; p_slug: string }
+        Returns: undefined
+      }
+      _upsert_badge: {
+        Args: {
+          p_slug: string
+          p_name: string
+          p_description: string
+          p_tier: number
+          p_icon: string
+        }
+        Returns: string
+      }
+      award_tier1_streaks_daily: {
+        Args: Record<PropertyKey, never>
+        Returns: undefined
+      }
       calculate_level_from_xp: {
         Args: { total_xp: number }
         Returns: number
@@ -275,6 +335,10 @@ export type Database = {
       calculate_xp_for_level: {
         Args: { level_num: number }
         Returns: number
+      }
+      check_and_award_tier1: {
+        Args: { p_user: string }
+        Returns: undefined
       }
       get_current_streak: {
         Args: { p_tz?: string } | { p_user: string; p_tz?: string }
