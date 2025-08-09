@@ -33,7 +33,7 @@ function BadgeTile({ badge }: { badge: UIBadge }) {
       <div className="flex items-start gap-3">
         <div className={`p-[2px] rounded-full ${s.icon ? '' : `bg-gradient-to-b ${s.grad}`}`}>{/* icon wrapper */}
           <div className={`w-10 h-10 rounded-full grid place-items-center ring-offset-2 ring-offset-card group-hover:ring-2 ${s.icon ? s.icon : `${(s as any).bg} ${(s as any).text} ring-1 ${(s as any).ring}`}`}>
-            <Award size={18} />
+            <Award size={18} className="text-inherit" />
           </div>
         </div>
         <div>

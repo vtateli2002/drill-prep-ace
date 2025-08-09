@@ -112,15 +112,16 @@ All colors MUST be HSL.
 
   /* Badge icon styles for tier vibrancy */
   .badge-icon--blue {
-    color: hsl(var(--tier-blue-500));
+    color: #fff; /* force white icon stroke */
     background-image: linear-gradient(180deg, hsl(var(--tier-blue-600)), hsl(var(--tier-blue-500)));
     border: 1px solid hsl(var(--tier-blue-600) / 0.55);
     box-shadow:
-      inset 0 0 0 1px hsl(var(--tier-blue-500) / 0.65),
+      inset 0 0 0 1px rgba(255,255,255,.12),
       0 0 0 2px hsl(var(--tier-blue-500) / 0.18),
       0 6px 18px hsl(var(--tier-blue-600) / 0.28);
     transition: box-shadow 150ms ease, filter 150ms ease;
   }
+  .badge-icon--blue svg { color: #fff; stroke-width: 2.25; }
   .group:hover .badge-icon--blue { box-shadow:
       inset 0 0 0 1px hsl(var(--tier-blue-500) / 0.7),
       0 0 0 2px hsl(var(--tier-blue-500) / 0.24),
@@ -128,15 +129,16 @@ All colors MUST be HSL.
   }
 
   .badge-icon--purple {
-    color: hsl(var(--tier-purple-500));
+    color: #fff; /* force white icon stroke */
     background-image: linear-gradient(180deg, hsl(var(--tier-purple-600)), hsl(var(--tier-purple-500)));
     border: 1px solid hsl(var(--tier-purple-600) / 0.55);
     box-shadow:
-      inset 0 0 0 1px hsl(var(--tier-purple-500) / 0.65),
+      inset 0 0 0 1px rgba(255,255,255,.12),
       0 0 0 2px hsl(var(--tier-purple-500) / 0.18),
       0 6px 18px hsl(var(--tier-purple-600) / 0.28);
     transition: box-shadow 150ms ease, filter 150ms ease;
   }
+  .badge-icon--purple svg { color: #fff; stroke-width: 2.25; }
   .group:hover .badge-icon--purple { box-shadow:
       inset 0 0 0 1px hsl(var(--tier-purple-500) / 0.7),
       0 0 0 2px hsl(var(--tier-purple-500) / 0.24),
@@ -144,15 +146,16 @@ All colors MUST be HSL.
   }
 
   .badge-icon--gold {
-    color: hsl(var(--tier-gold-500));
+    color: #fff; /* force white icon stroke */
     background-image: linear-gradient(180deg, hsl(var(--tier-gold-600)), hsl(var(--tier-gold-500)));
     border: 1px solid hsl(var(--tier-gold-600) / 0.55);
     box-shadow:
-      inset 0 0 0 1px hsl(var(--tier-gold-500) / 0.65),
+      inset 0 0 0 1px rgba(255,255,255,.12),
       0 0 0 2px hsl(var(--tier-gold-500) / 0.18),
       0 6px 18px hsl(var(--tier-gold-600) / 0.28);
     transition: box-shadow 150ms ease, filter 150ms ease;
   }
+  .badge-icon--gold svg { color: #fff; stroke-width: 2.25; }
   .group:hover .badge-icon--gold { box-shadow:
       inset 0 0 0 1px hsl(var(--tier-gold-500) / 0.7),
       0 0 0 2px hsl(var(--tier-gold-500) / 0.24),
