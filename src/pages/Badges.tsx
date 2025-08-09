@@ -205,7 +205,7 @@ const TierSection = ({
           <div className="flex items-center gap-3">
             {variant === 'analyst' ? (
               <div className={`p-[2px] rounded-full bg-gradient-to-b ${s.grad}`}>
-                <div className={`w-10 h-10 rounded-full ${s.bg} ${s.text} grid place-items-center ring-1 ${s.ring}`}>
+                <div className={`w-10 h-10 rounded-full ${s.bg} ${s.text} grid place-items-center ring-1 ${s.ring} ring-offset-2 ring-offset-card`}>
                   <Icon size={18} className="text-inherit" />
                 </div>
               </div>
