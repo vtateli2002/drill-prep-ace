@@ -1,13 +1,11 @@
 import Navbar from '@/components/Navbar';
 import { Seo } from '@/components/Seo';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { Briefcase, LineChart, Trophy, Crown, ChevronRight, Lock, Award, Info } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { useBadges } from '@/features/badges/useBadges';
 import { useAuth } from '@/hooks/useAuth';
-import { useToast } from '@/hooks/use-toast';
-import { getProgress, recompute, BadgeProgress } from '@/features/badges/progressApi';
+import { getProgress, BadgeProgress } from '@/features/badges/progressApi';
 import { useEffect, useState } from 'react';
 const TIER_STYLES = {
   analyst: {
@@ -258,29 +256,12 @@ const Badges = () => {
   const canonical = typeof window !== 'undefined' ? `${window.location.origin}/badges` : undefined;
   const { byTier, loading, error } = useBadges();
   const { user } = useAuth();
-  const { toast } = useToast();
   const [progress, setProgress] = useState<BadgeProgress | null>(null);
-  const [recalcLoading, setRecalcLoading] = useState(false);
 
   useEffect(() => {
     if (!user) return;
     getProgress(user.id).then(setProgress).catch(console.error);
   }, [user]);
-
-  const handleRecompute = async () => {
-    if (!user) return;
-    try {
-      setRecalcLoading(true);
-      await recompute(user.id);
-      toast({ title: 'Recomputed badge progress.' });
-    } catch (e) {
-      console.error(e);
-      toast({ title: 'Recompute failed' });
-    } finally {
-      setRecalcLoading(false);
-      getProgress(user.id).then(setProgress).catch(console.error);
-    }
-  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -291,14 +272,9 @@ const Badges = () => {
       />
       <Navbar />
       <main className="container mx-auto px-4 py-8">
-        <header className="mb-8 flex items-center justify-between">
-          <div>
-            <h1 className="text-3xl font-bold text-foreground">🏆 Badges</h1>
-            <p className="text-muted-foreground mt-2">Earn rewards as you master investment banking technicals.</p>
-          </div>
-          <Button size="sm" variant="outline" onClick={handleRecompute} disabled={recalcLoading || !user}>
-            {recalcLoading ? 'Recomputing…' : 'Recompute badges'}
-          </Button>
+        <header className="mb-8">
+          <h1 className="text-3xl font-bold text-foreground">🏆 Badges</h1>
+          <p className="text-muted-foreground mt-2">Earn rewards as you master investment banking technicals.</p>
         </header>
 
         {/* Tier icons grid */}
