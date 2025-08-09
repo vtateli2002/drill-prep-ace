@@ -54,9 +54,12 @@ export default function BadgeUnlockToaster() {
           // Fetch badge details
           const { data: badge } = await supabase
             .from('badges')
-            .select('id, name, tier, icon')
+            .select('id, slug, name, tier, icon')
             .eq('id', badgeId)
             .single();
+
+          // Skip deprecated Quick Math badge
+          if (badge?.slug === 'quick_math') return;
 
           const name = badge?.name ?? 'Badge';
           const tier: number = badge?.tier ?? 1;
@@ -96,37 +99,6 @@ export default function BadgeUnlockToaster() {
     };
   }, [user, toast, navigate]);
 
-  // Preview toast on the Badges page for a quick visual check
-  useEffect(() => {
-    if (location.pathname === '/badges' && !previewShown.current) {
-      previewShown.current = true;
-      const name = 'Quick Math';
-      const tier = 1;
-      const icon = '🏆';
-      const style = TIER_STYLES[tier];
-      const message = MESSAGES[Math.floor(Math.random() * MESSAGES.length)];
-
-      toast({
-        className: [
-          'cursor-pointer',
-          'bg-card text-card-foreground border border-border',
-          'rounded-lg',
-          'ring-1',
-          style.ring,
-          style.shadow,
-        ].join(' '),
-        duration: 4000,
-        onClick: () => navigate('/badges'),
-        title: `🎉 Badge Unlocked!`,
-        description: `You’re now an ${name}! Keep going!`,
-        action: (
-          <ToastAction altText="View All Badges" onClick={() => navigate('/badges')}>
-            View All Badges
-          </ToastAction>
-        ),
-      });
-    }
-  }, [location.pathname, toast, navigate]);
 
   return null;
 }

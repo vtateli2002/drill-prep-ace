@@ -45,7 +45,6 @@ const DEFAULT_TIER_BADGES: Record<keyof typeof TIER_STYLES, BadgeItem[]> = {
     { id: 'an-2', name: 'Getting Warm', condition: 'Solve 5 problems', unlocked: true },
     { id: 'an-3', name: 'On a Roll', condition: '3-day streak', unlocked: false },
     { id: 'an-4', name: 'Note Taker', condition: 'Add first note', unlocked: false },
-    { id: 'an-5', name: 'Quick Math', condition: 'Use calculator tool', unlocked: false },
   ],
   associate: [
     { id: 'as-1', name: 'Consistent', condition: '7-day streak', unlocked: false },

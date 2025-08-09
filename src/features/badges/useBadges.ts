@@ -18,7 +18,7 @@ export function useBadges() {
   const fetchBadges = async () => {
     const { data, error } = await supabase
       .from('badges')
-      .select('id, name, description, tier')
+      .select('id, slug, name, description, tier')
       .order('tier', { ascending: true })
       .order('name', { ascending: true });
     if (error) throw error;
@@ -54,13 +54,15 @@ export function useBadges() {
         const unlockedSet = new Set((unlocksData || []).map((u) => u.badge_id));
         setUnlockIds(unlockedSet);
 
-        const uiBadges: UIBadge[] = (badgesData || []).map((b: any) => ({
-          id: b.id,
-          name: b.name,
-          condition: b.description ?? '',
-          unlocked: unlockedSet.has(b.id),
-          tier: b.tier ?? 1,
-        }));
+        const uiBadges: UIBadge[] = (badgesData || [])
+          .filter((b: any) => b.slug !== 'quick_math')
+          .map((b: any) => ({
+            id: b.id,
+            name: b.name,
+            condition: b.description ?? '',
+            unlocked: unlockedSet.has(b.id),
+            tier: b.tier ?? 1,
+          }));
         setBadges(uiBadges);
       } catch (e: any) {
         console.error('useBadges load error:', e);
