@@ -54,7 +54,7 @@ const Index = () => {
             background-image: linear-gradient(90deg,
               hsl(var(--foreground)) 0%,
               hsl(var(--foreground)) 30%,
-              hsl(var(--primary) / 0.9) 50%,
+              #10b981 50%,
               hsl(var(--foreground)) 70%,
               hsl(var(--foreground)) 100%
             );
@@ -64,6 +64,15 @@ const Index = () => {
             color: transparent;
           }
           .animate-shine { animation: text-shine 2.8s linear infinite; }
+
+          @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+          }
+          .animate-gradient { 
+            background-size: 200% 200%;
+            animation: gradient-shift 8s ease infinite; 
+          }
 
           @keyframes char-reveal {
             0% { opacity: 0; transform: translateY(12px); }

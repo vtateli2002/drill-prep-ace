@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Target, TrendingUp, Trophy, Zap } from 'lucide-react';
+import { GradientChart } from './GradientChart';
 
 const features = [
   {
@@ -65,7 +66,7 @@ export const ProductShowcase = () => {
           </div>
         </div>
 
-        {/* Right: Product Image */}
+        {/* Right: Product Visualization */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -73,17 +74,38 @@ export const ProductShowcase = () => {
           transition={{ duration: 0.5 }}
           className="relative"
         >
-          <div className="relative rounded-xl overflow-hidden border border-border shadow-2xl bg-card">
-            <div className="aspect-[4/3] bg-gradient-to-br from-primary/5 to-primary/10 flex items-center justify-center">
-              <div className="text-center p-8">
-                <div className="text-6xl mb-4">📊</div>
-                <p className="text-lg font-medium text-foreground">Dashboard Preview</p>
-                <p className="text-sm text-muted-foreground mt-2">Track progress, compete, and master IB technicals</p>
+          <div className="relative rounded-xl overflow-hidden border border-border shadow-2xl bg-gradient-to-br from-slate-950 to-slate-900 p-6">
+            <div className="space-y-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-1">Your Learning Journey</h3>
+                  <p className="text-sm text-slate-400">Real-time progress tracking</p>
+                </div>
+                <div className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-medium">
+                  Active
+                </div>
+              </div>
+              
+              <GradientChart />
+
+              <div className="grid grid-cols-3 gap-4 pt-2">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-emerald-400">127</div>
+                  <div className="text-xs text-slate-400">Completed</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-cyan-400">15</div>
+                  <div className="text-xs text-slate-400">Day Streak</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-teal-400">92%</div>
+                  <div className="text-xs text-slate-400">Accuracy</div>
+                </div>
               </div>
             </div>
           </div>
           {/* Decorative gradient blur */}
-          <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-primary/10 blur-3xl -z-10 opacity-50" />
+          <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500/20 via-teal-500/20 to-cyan-500/20 blur-3xl -z-10 opacity-50" />
         </motion.div>
       </div>
     </section>
