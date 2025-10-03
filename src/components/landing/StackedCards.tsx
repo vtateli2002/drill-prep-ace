@@ -35,13 +35,9 @@ const cards = [
 
 const Card = ({ card, index, progress, range, targetScale }: any) => {
   const scale = useTransform(progress, range, [1, targetScale]);
-  const isFirst = index === 0;
-  const isLast = index === cards.length - 1;
-  const wrapperHeight = isFirst || isLast ? 'h-[560px] md:h-[520px]' : 'h-screen';
-  const alignClass = isFirst ? 'items-start' : isLast ? 'items-end' : 'items-center';
 
   return (
-    <div className={`${wrapperHeight} flex ${alignClass} justify-center sticky`} style={{ top: `calc(64px + ${index * 20}px)` }}>
+    <div className="h-screen flex items-center justify-center sticky" style={{ top: `calc(80px + ${index * 25}px)` }}>
       <motion.div
         style={{ scale }}
         className={`relative w-full max-w-4xl h-[450px] rounded-2xl bg-gradient-to-br ${card.gradient} p-[1px] shadow-2xl`}
