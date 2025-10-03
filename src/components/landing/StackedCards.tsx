@@ -77,7 +77,7 @@ export const StackedCards = () => {
 
   return (
     <section ref={containerRef} className="relative">
-      <div className="container mx-auto px-4 pt-32 pb-16 text-center">
+      <div className="container mx-auto px-4 pt-16 pb-8 text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
           Why Choose Drill?
         </h2>
