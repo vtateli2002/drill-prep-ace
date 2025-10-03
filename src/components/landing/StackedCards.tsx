@@ -76,8 +76,8 @@ export const StackedCards = () => {
   });
 
   return (
-    <section ref={containerRef} className="relative py-20">
-      <div className="container mx-auto px-4 pb-8 text-center">
+    <section ref={containerRef} className="relative py-12">
+      <div className="container mx-auto px-4 pb-4 text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
           Why Choose Drill?
         </h2>
