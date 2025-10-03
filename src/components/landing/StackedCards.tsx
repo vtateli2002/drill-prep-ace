@@ -37,7 +37,7 @@ const Card = ({ card, index, progress, range, targetScale }: any) => {
   const scale = useTransform(progress, range, [1, targetScale]);
 
   return (
-    <div className="h-screen flex items-center justify-center sticky" style={{ top: `calc(80px + ${index * 25}px)` }}>
+    <div className="h-[600px] flex items-center justify-center sticky" style={{ top: `calc(80px + ${index * 25}px)` }}>
       <motion.div
         style={{ scale }}
         className={`relative w-full max-w-4xl h-[450px] rounded-2xl bg-gradient-to-br ${card.gradient} p-[1px] shadow-2xl`}
@@ -76,8 +76,8 @@ export const StackedCards = () => {
   });
 
   return (
-    <section ref={containerRef} className="relative">
-      <div className="container mx-auto px-4 pt-32 pb-16 text-center">
+    <section ref={containerRef} className="relative py-20 border-t border-border">
+      <div className="container mx-auto px-4 mb-12 text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
           Why Choose Drill?
         </h2>
