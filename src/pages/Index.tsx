@@ -10,6 +10,7 @@ import { HeroXPBar } from '@/components/hero/HeroXPBar';
 import { HeroLogosTicker } from '@/components/hero/HeroLogosTicker';
 import { ProductShowcase } from '@/components/hero/ProductShowcase';
 import { Testimonials } from '@/components/hero/Testimonials';
+import { StackedCards } from '@/components/landing/StackedCards';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -133,49 +134,8 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Value Propositions */}
-      <section className="container mx-auto px-4 py-20 border-t border-border">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Why Choose Drill?</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            The most effective way to prepare for investment banking technical interviews
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <article className="reveal bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow" style={{ transitionDelay: '0ms' }}>
-            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-              <Code2 className="text-primary" size={20} />
-            </div>
-            <h3 className="text-xl font-semibold text-foreground mb-1">The LeetCode for Investment Banking</h3>
-            <p className="text-muted-foreground">Drill is built like a coding platform — but for finance. Structured, trackable, and performance-based.</p>
-            <p className="text-sm italic text-muted-foreground mt-2">Become technical faster. Retain it longer. Outperform your competition.</p>
-          </article>
-          <article className="reveal bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow" style={{ transitionDelay: '80ms' }}>
-            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-              <Gamepad2 className="text-primary" size={20} />
-            </div>
-            <h3 className="text-xl font-semibold text-foreground mb-1">Gamified IB Technicals</h3>
-            <p className="text-muted-foreground">Earn XP. Unlock badges. Race against an AI rival.</p>
-            <p className="text-sm italic text-muted-foreground mt-2">Drill makes repetition addicting — and effective.</p>
-          </article>
-          <article className="reveal bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow" style={{ transitionDelay: '160ms' }}>
-            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-              <NotebookText className="text-primary" size={20} />
-            </div>
-            <h3 className="text-xl font-semibold text-foreground mb-1">Includes Questions Sourced from Real Interviews</h3>
-            <p className="text-muted-foreground">Many questions are based on actual screens from bulge brackets and elite boutiques.</p>
-            <p className="text-sm italic text-muted-foreground mt-2">You're not just practicing — you're preparing for what really gets asked.</p>
-          </article>
-          <article className="reveal bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow" style={{ transitionDelay: '240ms' }}>
-            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-              <Flame className="text-primary" size={20} />
-            </div>
-            <h3 className="text-xl font-semibold text-foreground mb-1">Beyond the 400 Questions Guide</h3>
-            <p className="text-muted-foreground">No more PDFs. Drill teaches by doing — with layered logic, instant feedback, and deep explanations.</p>
-            <p className="text-sm italic text-muted-foreground mt-2">Learn faster, master deeper, and outperform every candidate still reading static guides.</p>
-          </article>
-        </div>
-      </section>
+      {/* Stacked Cards - Why Choose Drill */}
+      <StackedCards />
 
       {/* Product Showcase */}
       <ProductShowcase />
