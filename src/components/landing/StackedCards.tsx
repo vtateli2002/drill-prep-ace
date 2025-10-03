@@ -34,23 +34,12 @@ const cards = [
 ];
 
 const Card = ({ card, index, progress, range, targetScale }: any) => {
-  const container = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ['start end', 'start start'],
-  });
-
   const scale = useTransform(progress, range, [1, targetScale]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
 
   return (
-    <div ref={container} className="sticky top-20 flex items-center justify-center">
+    <div className="sticky flex items-center justify-center" style={{ top: `calc(5rem + ${index * 25}px)` }}>
       <motion.div
-        style={{
-          scale,
-          opacity,
-          top: `calc(5rem + ${index * 25}px)`,
-        }}
+        style={{ scale }}
         className={`relative w-full max-w-4xl h-[450px] rounded-2xl bg-gradient-to-br ${card.gradient} p-[1px] shadow-2xl`}
       >
         <div className="w-full h-full rounded-2xl bg-background/95 backdrop-blur-xl p-12 flex flex-col justify-center">
@@ -97,7 +86,7 @@ export const StackedCards = () => {
         </p>
       </div>
 
-      <div className="space-y-8">
+      <div>
         {cards.map((card, i) => {
           const targetScale = 1 - (cards.length - i) * 0.05;
           const range = [i * 0.25, 1];
@@ -114,9 +103,6 @@ export const StackedCards = () => {
           );
         })}
       </div>
-
-      {/* Extra spacing at the bottom to allow full scroll */}
-      <div className="h-screen" />
     </section>
   );
 };
