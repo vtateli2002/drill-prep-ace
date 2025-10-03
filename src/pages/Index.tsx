@@ -8,6 +8,8 @@ import { motion } from 'framer-motion';
 import { HeroHeadline } from '@/components/hero/HeroHeadline';
 import { HeroXPBar } from '@/components/hero/HeroXPBar';
 import { HeroLogosTicker } from '@/components/hero/HeroLogosTicker';
+import { ProductShowcase } from '@/components/hero/ProductShowcase';
+import { Testimonials } from '@/components/hero/Testimonials';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -123,9 +125,15 @@ const Index = () => {
       </header>
 
       {/* Value Propositions */}
-      <div className="container mx-auto px-4 py-16 border-t border-border">
+      <section className="container mx-auto px-4 py-20 border-t border-border">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Why Choose Drill?</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            The most effective way to prepare for investment banking technical interviews
+          </p>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <article className="reveal bg-card border border-border rounded-xl p-6 shadow-sm" style={{ transitionDelay: '0ms' }}>
+          <article className="reveal bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow" style={{ transitionDelay: '0ms' }}>
             <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
               <Code2 className="text-primary" size={20} />
             </div>
@@ -133,7 +141,7 @@ const Index = () => {
             <p className="text-muted-foreground">Drill is built like a coding platform — but for finance. Structured, trackable, and performance-based.</p>
             <p className="text-sm italic text-muted-foreground mt-2">Become technical faster. Retain it longer. Outperform your competition.</p>
           </article>
-          <article className="reveal bg-card border border-border rounded-xl p-6 shadow-sm" style={{ transitionDelay: '80ms' }}>
+          <article className="reveal bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow" style={{ transitionDelay: '80ms' }}>
             <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
               <Gamepad2 className="text-primary" size={20} />
             </div>
@@ -141,15 +149,15 @@ const Index = () => {
             <p className="text-muted-foreground">Earn XP. Unlock badges. Race against an AI rival.</p>
             <p className="text-sm italic text-muted-foreground mt-2">Drill makes repetition addicting — and effective.</p>
           </article>
-          <article className="reveal bg-card border border-border rounded-xl p-6 shadow-sm" style={{ transitionDelay: '160ms' }}>
+          <article className="reveal bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow" style={{ transitionDelay: '160ms' }}>
             <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
               <NotebookText className="text-primary" size={20} />
             </div>
             <h3 className="text-xl font-semibold text-foreground mb-1">Includes Questions Sourced from Real Interviews</h3>
             <p className="text-muted-foreground">Many questions are based on actual screens from bulge brackets and elite boutiques.</p>
-            <p className="text-sm italic text-muted-foreground mt-2">You’re not just practicing — you’re preparing for what really gets asked.</p>
+            <p className="text-sm italic text-muted-foreground mt-2">You're not just practicing — you're preparing for what really gets asked.</p>
           </article>
-          <article className="reveal bg-card border border-border rounded-xl p-6 shadow-sm" style={{ transitionDelay: '240ms' }}>
+          <article className="reveal bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow" style={{ transitionDelay: '240ms' }}>
             <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
               <Flame className="text-primary" size={20} />
             </div>
@@ -158,49 +166,70 @@ const Index = () => {
             <p className="text-sm italic text-muted-foreground mt-2">Learn faster, master deeper, and outperform every candidate still reading static guides.</p>
           </article>
         </div>
-      </div>
+      </section>
+
+      {/* Product Showcase */}
+      <ProductShowcase />
 
       {/* Tracks Section */}
-      <div className="container mx-auto px-4 py-16 border-t border-border">
+      <section className="container mx-auto px-4 py-20 border-t border-border">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Master 4 Core Tracks</h2>
-          <p className="text-muted-foreground">
-            Comprehensive coverage of essential investment banking topics
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Master 4 Core Tracks</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Comprehensive coverage of essential investment banking topics with hundreds of real interview questions
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             { name: 'Accounting', color: 'tracks-accounting', count: '10 topics' },
             { name: 'Valuation', color: 'tracks-valuation', count: '8 topics' },
             { name: 'LBO', color: 'tracks-lbo', count: '12 topics' },
             { name: 'M&A', color: 'tracks-ma', count: '6 topics' }
           ].map((track, index) => (
-            <div key={index} className="bg-card border border-border rounded-lg p-4 text-center">
-              <div className={`w-4 h-4 bg-${track.color} rounded-full mx-auto mb-2`} />
-              <h3 className="font-semibold text-foreground">{track.name}</h3>
+            <div key={index} className="bg-card border border-border rounded-xl p-6 text-center hover:shadow-md transition-shadow">
+              <div className={`w-8 h-8 bg-${track.color} rounded-full mx-auto mb-3`} />
+              <h3 className="text-lg font-semibold text-foreground mb-1">{track.name}</h3>
               <p className="text-sm text-muted-foreground">{track.count}</p>
             </div>
           ))}
         </div>
-      </div>
+      </section>
+
+      {/* Testimonials */}
+      <Testimonials />
 
       {/* CTA Section */}
-      <div className="container mx-auto px-4 py-16 border-t border-border">
-        <div className="text-center space-y-6">
-          <h2 className="text-3xl font-bold text-foreground">Ready to Get Started?</h2>
-          <p className="text-muted-foreground max-w-md mx-auto">
-            Join thousands of students who have successfully prepared for their investment banking interviews with Drill.
+      <section className="container mx-auto px-4 py-24 border-t border-border">
+        <div className="max-w-3xl mx-auto text-center space-y-8">
+          <div className="space-y-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground">Ready to Ace Your Interviews?</h2>
+            <p className="text-lg md:text-xl text-muted-foreground">
+              Join thousands of students who have successfully prepared for their investment banking interviews with Drill. Start your journey today.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button 
+              size="lg" 
+              onClick={() => navigate('/auth')}
+              className="px-8 py-6 text-lg rounded-full"
+            >
+              Start Free Today
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline"
+              onClick={() => navigate('/problems')}
+              className="px-8 py-6 text-lg rounded-full"
+            >
+              Browse Questions
+            </Button>
+          </div>
+          <p className="text-sm text-muted-foreground">
+            No credit card required • Get started in 2 minutes
           </p>
-          <Button 
-            size="lg" 
-            onClick={() => navigate('/auth')}
-            className="px-8 py-3 text-lg"
-          >
-            Begin Your Prep Journey
-          </Button>
         </div>
-      </div>
+      </section>
     </div>
   );
 };
