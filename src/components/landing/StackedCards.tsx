@@ -76,12 +76,12 @@ export const StackedCards = () => {
   });
 
   return (
-    <section ref={containerRef} className="relative py-12">
-      <div className="container mx-auto px-4 pb-4 text-center">
+    <section ref={containerRef} className="relative pt-12 pb-0">
+      <div className="container mx-auto px-4 pb-2 text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
           Why Choose Drill?
         </h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-0">
           The most effective way to prepare for investment banking technical interviews
         </p>
       </div>
